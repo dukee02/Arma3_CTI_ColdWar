@@ -4,11 +4,11 @@ respawnDelay = 3;
 respawnDialog = false;
 
 //--- Require briefing.html to show up.
-onLoadMission = "WW2 - BECTI - [IFA3] V2.0";
+onLoadMission = "ColdWar - BECTI V2.0_beta";
 onLoadMissionTime = false;
-onLoadName = "WW2 - BECTI - [IFA3] V2.0";
+onLoadName = "ColdWar - BECTI V2.0_beta";
 
-briefingName = "WW2 - BECTI - [IFA3] V2.0";
+briefingName = "ColdWar - BECTI V2.0_beta";
 
 //--- ArmA 3 Specifics
 dev = "Benny";
@@ -19,5 +19,5 @@ author = "Benny modified by dukee";
 class Header {
 	gameType = CTI;
 	minPlayers = 1;
-	maxPlayers = 32;
+	maxPlayers = 20;
 };

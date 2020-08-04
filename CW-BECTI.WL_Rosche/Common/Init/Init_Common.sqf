@@ -151,18 +151,6 @@ if(CTI_DK_SIDE >= 0) then {
 		((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_DK.sqf";
 	};*/
 };
-//CTI_POL_SIDE declaration
-if(CTI_POL_SIDE >= 0) then {
-	((CTI_POL_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_POL.sqf";
-	((CTI_POL_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_POL.sqf";
-	/*if((CTI_POL_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_POL_SIDE >= 1 && CTI_EAST_AI < 0)) then {
-		((CTI_POL_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_POL.sqf";
-	};
-	if((CTI_POL_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_POL_SIDE >= 1 && CTI_EAST_TOWNS < 0) || (CTI_POL_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
-		((CTI_POL_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_POL.sqf";
-	};*/
-};
-
 //CTI_SOV_CUP_SIDE declaration
 if(CTI_SOV_CUP_SIDE >= 0) then {
 	((CTI_SOV_CUP_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_SOV_CUP.sqf";
