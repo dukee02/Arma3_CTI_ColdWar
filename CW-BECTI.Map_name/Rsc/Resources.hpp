@@ -467,7 +467,6 @@ class RscMapControl {
 type = CT_MAP;
 style = ST_PICTURE;
 moveOnEdges = 1;
-widthRailWay = 1;
 x = "SafeZoneXAbs";
 y = "SafeZoneY + 1.5 * ( ( ((safezoneW / safezoneH) min 1.2) / 1.2) / 25)";
 w = "SafeZoneWAbs";

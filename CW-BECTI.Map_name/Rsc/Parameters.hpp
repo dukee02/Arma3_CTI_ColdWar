@@ -165,18 +165,12 @@ class Params {
 		title = "AI: Keep units on JIP";
 		values[] = {0,1};
 		texts[] = {"No","Yes"};//{"Disabled","Enabled"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_AI_COMMANDER_ENABLED {
 		title = "AI: Commander";
 		values[] = {0,1};
 		texts[] = {"Disabled", "Enabled"};
-		default = 1;
-	};
-	class CTI_AI_TEAMS_ENABLED {
-		title = "AI: Teams";
-		values[] = {0,1,2,3,4};
-		texts[] = {"Disabled", "1/4 Slots", "1/2 Slots", "3/4 Slots", "All Slots"};
 		default = 1;
 	};
 	class CTI_AI_TEAMS_GROUPSIZE {
@@ -808,6 +802,12 @@ class Params {
 		title = "=========================== LOG ============================";
 		values[] = {1};
 		texts[] = {""};
+		default = 1;
+	};
+	class CTI_AI_TEAMS_ENABLED {
+		title = "AI: Teams";
+		values[] = {0,1,2,3,4};
+		texts[] = {"Disabled", "1/4 Slots", "1/2 Slots", "3/4 Slots", "All Slots"};
 		default = 1;
 	};
 	class CTI_Log_Level {
