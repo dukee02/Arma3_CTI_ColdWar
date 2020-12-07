@@ -60,6 +60,10 @@ if (typeName _side == "SIDE") then {_side = (_side) call CTI_CO_FNC_GetSideID};
 
 _vehicle = createVehicle [_type, _position, [], 7, _special];
 _vehicle setDir _direction;
+clearMagazineCargo _vehicle;
+clearWeaponCargo _vehicle;
+//_truck addWeaponCargo ["M16", 5];
+//_truck addMagazineCargo ["M16", 5];
 
 //if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_CreateVehicle.sqf", format ["type: <%1> special: <%2>",  _type, _special]] call CTI_CO_FNC_Log;};
 if (_special != "FLY") then {
@@ -72,31 +76,35 @@ if (_special != "FLY") then {
 		_tmp_ship_is = "not sab";
 		//_vehicle setDirection (direction _vehicle + 90);
 		
-		if(_type == "VIOC_B_sab_item_carrier_2" || _type == "VIOC_B_sab_boat_cruiser" || _type == "VIOC_B_sab_boat_cruiser_rn" || _type == "VIOC_B_sab_boat_cruiser_i" || _type == "VIOC_B_sab_boat_cruiser_o" || 
-		_type == "VIOC_B_sab_boat_battleship" || _type == "VIOC_B_sab_boat_battleship_rn" || _type == "VIOC_B_sab_boat_battleship_i" || _type == "VIOC_B_sab_boat_battleship_o" || 
-		_type == "VIOC_O_sab_item_carrier_2" || _type == "VIOC_O_sab_boat_cruiser" || _type == "VIOC_O_sab_boat_cruiser_rn" || _type == "VIOC_O_sab_boat_cruiser_i" || _type == "VIOC_O_sab_boat_cruiser_o" || 
-		_type == "VIOC_O_sab_boat_battleship" || _type == "VIOC_O_sab_boat_battleship_rn" || _type == "VIOC_O_sab_boat_battleship_i" || _type == "VIOC_O_sab_boat_battleship_o") then {
-			
-			_save_pos = [_position, 0, 200, 1, 2, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
-			_vehicle setPos [_save_pos select 0, _save_pos select 1, 1];
-			_tmp_ship_is = "large (spwan + 200m)";
-		} else {
-			if(_type == "VIOC_B_sab_boat_freighter_o" || _type == "VIOC_B_sab_boat_freighter" || _type == "VIOC_B_sab_boat_freighter_i" || _type == "VIOC_B_sab_boat_liberty" ||
-			_type == "VIOC_B_sab_boat_liberty_rn" || _type == "VIOC_B_sab_boat_liberty_i" || _type == "VIOC_B_sab_boat_destroyer" || _type == "VIOC_B_sab_boat_destroyer_rn" ||
-			_type == "VIOC_B_sab_boat_destroyer_i" || _type == "VIOC_B_sab_boat_destroyer_o" || _type == "VIOC_B_sab_boat_u7_o" || _type == "VIOC_B_sab_boat_u7_i" || _type == "VIOC_B_sab_boat_u7" ||
-			_type == "VIOC_O_sab_boat_freighter_o" || _type == "VIOC_O_sab_boat_freighter" || _type == "VIOC_O_sab_boat_freighter_i" || _type == "VIOC_O_sab_boat_liberty" ||
-			_type == "VIOC_O_sab_boat_liberty_rn" || _type == "VIOC_O_sab_boat_liberty_i" || _type == "VIOC_O_sab_boat_destroyer" || _type == "VIOC_O_sab_boat_destroyer_rn" ||
-			_type == "VIOC_O_sab_boat_destroyer_i" || _type == "VIOC_O_sab_boat_destroyer_o" || _type == "VIOC_O_sab_boat_u7_o" || _type == "VIOC_O_sab_boat_u7_i" || _type == "VIOC_O_sab_boat_u7") then {
+		if(CTI_SAB_ADDON > 0) then {
+			if(_type == "VIOC_B_sab_item_carrier_2" || _type == "VIOC_B_sab_boat_cruiser" || _type == "VIOC_B_sab_boat_cruiser_rn" || _type == "VIOC_B_sab_boat_cruiser_i" || _type == "VIOC_B_sab_boat_cruiser_o" || 
+			_type == "VIOC_B_sab_boat_battleship" || _type == "VIOC_B_sab_boat_battleship_rn" || _type == "VIOC_B_sab_boat_battleship_i" || _type == "VIOC_B_sab_boat_battleship_o" || 
+			_type == "VIOC_O_sab_item_carrier_2" || _type == "VIOC_O_sab_boat_cruiser" || _type == "VIOC_O_sab_boat_cruiser_rn" || _type == "VIOC_O_sab_boat_cruiser_i" || _type == "VIOC_O_sab_boat_cruiser_o" || 
+			_type == "VIOC_O_sab_boat_battleship" || _type == "VIOC_O_sab_boat_battleship_rn" || _type == "VIOC_O_sab_boat_battleship_i" || _type == "VIOC_O_sab_boat_battleship_o") then {
 				
-				_save_pos = [_position, 0, 100, 1, 2, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
+				_save_pos = [_position, 0, 200, 1, 2, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
 				_vehicle setPos [_save_pos select 0, _save_pos select 1, 1];
-				_tmp_ship_is = "medium (spwan + 100m)";
+				_tmp_ship_is = "large (spwan + 200m)";
 			} else {
-				_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 1];
-				_tmp_ship_is = "small no spawn change";
+				if(_type == "VIOC_B_sab_boat_freighter_o" || _type == "VIOC_B_sab_boat_freighter" || _type == "VIOC_B_sab_boat_freighter_i" || _type == "VIOC_B_sab_boat_liberty" ||
+				_type == "VIOC_B_sab_boat_liberty_rn" || _type == "VIOC_B_sab_boat_liberty_i" || _type == "VIOC_B_sab_boat_destroyer" || _type == "VIOC_B_sab_boat_destroyer_rn" ||
+				_type == "VIOC_B_sab_boat_destroyer_i" || _type == "VIOC_B_sab_boat_destroyer_o" || _type == "VIOC_B_sab_boat_u7_o" || _type == "VIOC_B_sab_boat_u7_i" || _type == "VIOC_B_sab_boat_u7" ||
+				_type == "VIOC_O_sab_boat_freighter_o" || _type == "VIOC_O_sab_boat_freighter" || _type == "VIOC_O_sab_boat_freighter_i" || _type == "VIOC_O_sab_boat_liberty" ||
+				_type == "VIOC_O_sab_boat_liberty_rn" || _type == "VIOC_O_sab_boat_liberty_i" || _type == "VIOC_O_sab_boat_destroyer" || _type == "VIOC_O_sab_boat_destroyer_rn" ||
+				_type == "VIOC_O_sab_boat_destroyer_i" || _type == "VIOC_O_sab_boat_destroyer_o" || _type == "VIOC_O_sab_boat_u7_o" || _type == "VIOC_O_sab_boat_u7_i" || _type == "VIOC_O_sab_boat_u7") then {
+					
+					_save_pos = [_position, 0, 100, 1, 2, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
+					_vehicle setPos [_save_pos select 0, _save_pos select 1, 1];
+					_tmp_ship_is = "medium (spwan + 100m)";
+				} else {
+					_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 1];
+					_tmp_ship_is = "small no spawn change";
+				};
 			};
+		} else {
+			_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 1];
+			_tmp_ship_is = "small no spawn change";
 		};
-		
 		if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_CreateVehicle.sqf", format["Ship is:[%1] type: [%2]", _tmp_ship_is, _type]] call CTI_CO_FNC_Log;};
 		
 		//placeing onto the water
