@@ -155,6 +155,12 @@ class Params {
 		texts[] = {"Disable this units","0","1","2","3","4"};
 		default = 2; //2
 	};
+	class CTI_ECONOMY_TIME_MULTI {
+		title = "UPGRADE: Time multiplier (times capped[min,max]: Inf:[5s,50s]|Light,Ship:[10s,300s]|Heavy,Air:[20s,600s])";
+		values[] = {1,2,3,4,5,6,8,10};
+		texts[] = {"1","2","3","4","5","6","8","10"};
+		default = 2; //5
+	};
 	class SEPERATOR_AI {
 		title = "============ AI ============";
 		values[] = {0,1};
@@ -165,19 +171,13 @@ class Params {
 		title = "AI: Keep units on JIP";
 		values[] = {0,1};
 		texts[] = {"No","Yes"};//{"Disabled","Enabled"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_AI_COMMANDER_ENABLED {
 		title = "AI: Commander";
 		values[] = {0,1};
 		texts[] = {"Disabled", "Enabled"};
 		default = 1;
-	};
-	class CTI_AI_TEAMS_GROUPSIZE {
-		title = "AI: Team Size (AI)";
-		values[] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,35,40,45,50,60,70,80,90,100};
-		texts[] = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","35","40","45","50","60","70","80","90","100"};
-		default = 10;
 	};
 	class CTI_AI_PLAYER_TEAMS_GROUPSIZE {
 		title = "AI: Team Size (Player)";
@@ -804,16 +804,22 @@ class Params {
 		texts[] = {""};
 		default = 1;
 	};
-	class CTI_AI_TEAMS_ENABLED {
-		title = "AI: Teams";
-		values[] = {0,1,2,3,4};
-		texts[] = {"Disabled", "1/4 Slots", "1/2 Slots", "3/4 Slots", "All Slots"};
-		default = 1;
-	};
 	class CTI_Log_Level {
 		title = "LOG: Set level of Logging";
 		values[] = {0,1,2,3};
 		texts[] = {"Error","Warning","Information","Debug"};
 		default = 0;
 	};	
+	class CTI_AI_TEAMS_ENABLED {
+		title = "AI: Teams";
+		values[] = {0,1,2,3,4};
+		texts[] = {"Disabled", "1/4 Slots", "1/2 Slots", "3/4 Slots", "All Slots"};
+		default = 1;
+	};
+	class CTI_AI_TEAMS_GROUPSIZE {
+		title = "AI: Team Size (AI)";
+		values[] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,35,40,45,50,60,70,80,90,100};
+		texts[] = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","35","40","45","50","60","70","80","90","100"};
+		default = 10;
+	};
 };

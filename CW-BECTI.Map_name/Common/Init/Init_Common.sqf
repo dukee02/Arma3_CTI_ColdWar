@@ -118,28 +118,6 @@ switch(CTI_X_AI) do {
 	default: {};"no changes"
 };
 */
-//CTI_BW_SIDE declaration
-if(CTI_BW_SIDE >= 0) then {
-	((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_BW.sqf";
-	((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_BW.sqf";
-	if((CTI_BW_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_BW_SIDE == 1 && CTI_EAST_AI < 0)) then {
-		((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_BW.sqf";
-	};
-	if((CTI_BW_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_BW_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_BW_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
-		((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_BW.sqf";
-	};
-};
-//CTI_NVA_SIDE declaration
-if(CTI_NVA_SIDE >= 0) then {
-	((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NVA.sqf";
-	((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NVA.sqf";
-	if((CTI_NVA_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_AI < 0)) then {
-		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA.sqf";
-	};
-	if((CTI_NVA_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NVA_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
-		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA.sqf";
-	};
-};
 //CTI_DK_SIDE declaration
 if(CTI_DK_SIDE >= 0) then {
 	((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_DK.sqf";
@@ -171,6 +149,28 @@ if(CTI_SOV_RHS_SIDE >= 0) then {
 	};
 	if((CTI_SOV_RHS_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_SOV_RHS_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_SOV_RHS_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
 		((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
+	};
+};
+//CTI_BW_SIDE declaration
+if(CTI_BW_SIDE >= 0) then {
+	((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_BW.sqf";
+	((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_BW.sqf";
+	if((CTI_BW_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_BW_SIDE == 1 && CTI_EAST_AI < 0)) then {
+		((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_BW.sqf";
+	};
+	if((CTI_BW_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_BW_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_BW_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+		((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_BW.sqf";
+	};
+};
+//CTI_NVA_SIDE declaration
+if(CTI_NVA_SIDE >= 0) then {
+	((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NVA.sqf";
+	((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NVA.sqf";
+	if((CTI_NVA_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_AI < 0)) then {
+		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA.sqf";
+	};
+	if((CTI_NVA_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NVA_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA.sqf";
 	};
 };
 //if(CTI_GUER_TOWNS == 0) then {((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_FFI.sqf";};
