@@ -179,16 +179,22 @@ if(CTI_NVA_SIDE >= 0) then {
 if(CTI_WEST_TOWNS >= 0) then {
 	switch(CTI_WEST_TOWNS) do {
 		case 0: {
-			((CTI_UK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_BW.sqf";
+			((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_BW.sqf";
 		};
 		case 1: {
-			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA.sqf";
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA.sqf";
 		};
+		//case 3: {
+		//	((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_DK.sqf";
+		//};
+		//case 4: {
+		//	((CTI_POL_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_POL.sqf";
+		//};
 		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
+			((CTI_SOV_CUP_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
 		};
 		case 7: {
-			((CTI_GER_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
+			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
 		};
 		default {};
 	};
@@ -196,16 +202,16 @@ if(CTI_WEST_TOWNS >= 0) then {
 if(CTI_EAST_TOWNS >= 0) then {
 	switch(CTI_EAST_TOWNS) do {
 		case 0: {
-			((CTI_UK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_BW.sqf";
+			((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_BW.sqf";
 		};
 		case 1: {
-			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA.sqf";
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA.sqf";
 		};
 		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
+			((CTI_SOV_CUP_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
 		};
 		case 7: {
-			((CTI_GER_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
+			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
 		};
 		default {};
 	};
@@ -213,16 +219,16 @@ if(CTI_EAST_TOWNS >= 0) then {
 if(CTI_WEST_AI >= 0) then {
 	switch(CTI_WEST_AI) do {
 		case 0: {
-			((CTI_UK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_BW.sqf";
+			((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_BW.sqf";
 		};
 		case 1: {
-			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA.sqf";
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA.sqf";
 		};
 		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
+			((CTI_SOV_CUP_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
 		};
 		case 7: {
-			((CTI_GER_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
+			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
 		};
 		default {};
 	};
@@ -230,16 +236,16 @@ if(CTI_WEST_AI >= 0) then {
 if(CTI_EAST_AI >= 0) then {
 	switch(CTI_EAST_AI) do {
 		case 0: {
-			((CTI_UK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_BW.sqf";
+			((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_BW.sqf";
 		};
 		case 1: {
-			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA.sqf";
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA.sqf";
 		};
 		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
+			((CTI_SOV_CUP_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
 		};
 		case 7: {
-			((CTI_GER_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
+			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
 		};
 		default {};
 	};
