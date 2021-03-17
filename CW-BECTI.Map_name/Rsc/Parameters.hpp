@@ -607,8 +607,8 @@ class Params {
 	};
 	class CTI_TOWNS_AMOUNT {
 		title = "TOWNS: Amount";
-		values[] = {6}; //values[] = {0,1,2,3,4,5,6};
-		texts[] = {"Full"}; //texts[] = {"Extra Small","Small","Medium","Large","West","East","Full"};
+		values[] = {6};	//{0,1,2,3,4,5,6};
+		texts[] = {"Full"}; //{"Extra Small","Small","Medium","Large","South","North","Full"};
 		default = 6;
 	};
 	class CTI_TOWNS_CAMPS_CREATE {
