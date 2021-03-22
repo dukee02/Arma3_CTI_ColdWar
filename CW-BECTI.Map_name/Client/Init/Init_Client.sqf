@@ -31,6 +31,9 @@ CTI_CL_FNC_OnCampCaptured = compileFinal preprocessFile "Client\Functions\Client
 CTI_CL_FNC_OnExplosivePlaced = compileFinal preprocessFile "Client\Functions\Client_OnExplosivePlaced.sqf";
 CTI_CL_FNC_OnHQDestroyed = compileFinal preprocessFile "Client\Functions\Client_OnHQDestroyed.sqf";
 CTI_CL_FNC_OnFriendlyStructureDestroyed = compileFinal preprocessFile "Client\Functions\Client_OnFriendlyStructureDestroyed.sqf";
+
+CTI_CL_FNC_OnEnemyStructureDestroyed = compileFinal preprocessFile "Client\Functions\Client_OnEnemyStructureDestroyed.sqf";
+
 CTI_CL_FNC_OnJailed = compileFinal preprocessFile "Client\Functions\Client_OnJailed.sqf";
 CTI_CL_FNC_OnMissionEnding = compileFinal preprocessFile "Client\Functions\Client_OnMissionEnding.sqf";
 CTI_CL_FNC_OnPlayerFired = compileFinal preprocessFile "Client\Functions\Client_OnPlayerFired.sqf";
@@ -136,33 +139,21 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_ServiceMenu.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_UnitsCamera.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_UpgradeMenu.sqf";
 
-//--- Load used vanilla Gear
-if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
+//if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
 
-//--- Load GM Gear if DLC is owned
-if(CTI_MAIN_ADDON == 0 && 1042220 in (getDLCs 1)) then {
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
+if(CTI_GER_SIDE == (CTI_P_SideJoined) call CTI_CO_FNC_GetSideID) then {
+	(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GER.sqf";
 };
-//--- Load BW Gear
-if(CTI_BW_ADDON > 0) then {
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_BWadd_West.sqf"};
-	//if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+if(CTI_SOV_SIDE == (CTI_P_SideJoined) call CTI_CO_FNC_GetSideID) then {
+	(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV.sqf";
 };
-//--- Load RHS Gear
-if (CTI_RHS_ADDON > 0) then { 
-	//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_East.sqf"};
+if(CTI_US_SIDE == (CTI_P_SideJoined) call CTI_CO_FNC_GetSideID) then {
+	(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US.sqf";
 };
-//--- Load CUP Gear
-if (CTI_CUP_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_West.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_East.sqf"};
+if(CTI_UK_SIDE == (CTI_P_SideJoined) call CTI_CO_FNC_GetSideID) then {
+	(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_UK.sqf";
 };
-
-if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_West.sqf"};
-if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_East.sqf"};
 
 CTI_InitClient = true;
 
