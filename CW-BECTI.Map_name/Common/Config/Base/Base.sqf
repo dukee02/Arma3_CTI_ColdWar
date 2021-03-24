@@ -950,17 +950,19 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	//_classes_town pushBack 		format["%1", _sid];
 	//_categories_town pushBack 	"View";
 	
-	_classes_town pushBack 		format["%1gm_gc_army_fagot_launcher_tripod", _sid];
-	_categories_town pushBack 	"AT";
-	
-	if (CTI_CUP_ADDON == 0 && CTI_RHS_ADDON == 0) then {
-		_classes_town pushBack 		format["%1gm_ge_army_mg3_aatripod", _sid];
+	if(CTI_MAIN_ADDON == 0) then {
+		_classes_town pushBack 		format["%1gm_gc_army_dshkm_aatripod", _sid];
 		_categories_town pushBack 	"MG";
 		
-		_classes_town pushBack 		format["%1gm_ge_army_mg3_aatripod", _sid];
+		_classes_town pushBack 		format["%1gm_gc_army_spg9_tripod", _sid];
+		_categories_town pushBack 	"AT";
+		
+		_classes_town pushBack 		format["%1gm_gc_army_fagot_launcher_tripod", _sid];
+		_categories_town pushBack 	"AT";
+			
+		_classes_town pushBack 		format["%1gm_gc_army_dshkm_aatripod", _sid];
 		_categories_town pushBack 	"AA";
 	};
-	
 	if (CTI_CUP_ADDON > 0 && CTI_SOV_CUP_SIDE != CTI_NVA_SIDE) then {
 		_classes_town pushBack 		format["%1CUP_O_KORD_high_RU", _sid];
 		_categories_town pushBack 	"MG";

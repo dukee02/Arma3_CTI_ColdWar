@@ -91,28 +91,119 @@ _c = [];
 if(CTI_MAIN_ADDON == 0) then {
 	//Level start
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_demolition_g3a4_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_grenadier_g3a3_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf44_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf44_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_engineer_g3a4_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_radioman_g3a3_parka_80_win", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_oli", _sid];
+			_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_demolition_g3a4_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_grenadier_g3a3_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf44_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf44_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_engineer_g3a4_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_radioman_g3a3_parka_80_ols", _sid];
+		};
 		_c pushBack format["%1gm_ge_army_militarypolice_p1_80_oli", _sid];
 		_c pushBack format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid];
-		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
 		_c pushBack format["%1gm_ge_army_demolition_g3a4_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_grenadier_g3a3_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf44_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf44_80_ols", _sid];
+		_c pushBack format["%1gm_ge_army_engineer_g3a4_80_ols", _sid];
+		_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
+		_c pushBack format["%1gm_ge_army_radioman_g3a3_80_ols", _sid];
+		
+		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
+		_c pushBack format["%1gm_ge_army_pilot_p1_80_oli", _sid];
+		_c pushBack format["%1gm_ge_army_pilot_80_rolled_sar", _sid];
 	};
 	//Level 1
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 1) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1gm_ge_army_machinegunner_mg3_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_machinegunner_assistant_g3a3_mg3_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf84_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf84_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_officer_p1_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_milan_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_paratrooper_g3a4_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_antiair_g3a3_fim43_parka_80_win", _sid];
+			_c pushBack format["%1gm_ge_army_marksman_g3a3_parka_80_win", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1gm_ge_army_machinegunner_mg3_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_machinegunner_assistant_g3a3_mg3_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf84_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf84_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_officer_p1_parka_80_oli", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_milan_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_paratrooper_g3a4_parka_80_oli", _sid];
+			_c pushBack format["%1gm_ge_army_antiair_g3a3_fim43_parka_80_ols", _sid];
+			_c pushBack format["%1gm_ge_army_marksman_g3a3_parka_80_ols", _sid];
+		};
 		_c pushBack format["%1gm_ge_army_machinegunner_mg3_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_machinegunner_assistant_g3a3_mg3_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf84_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf84_80_ols", _sid];
-		_c pushBack format["%1gm_ge_army_engineer_g3a4_80_ols", _sid];
-		_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
-	};
-	//Level 2
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
 		_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_officer_p1_80_oli", _sid];
 		_c pushBack format["%1gm_ge_army_antitank_g3a3_milan_80_ols", _sid];
+		_c pushBack format["%1gm_ge_army_grenadier_hk69a1_80_ols", _sid];
+		_c pushBack format["%1gm_ge_army_paratrooper_g3a4_80_oli", _sid];
+		_c pushBack format["%1gm_ge_army_antiair_g3a3_fim43_80_ols", _sid];
+		_c pushBack format["%1gm_ge_army_marksman_g3a3_80_ols", _sid];
+	};
+	//Level 2
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1gm_ge_army_antiair_g36a1_fim43_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g36a1_pzf3_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_antitank_g36a1_milan_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_demolition_g36a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_machinegunner_mg3_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_machinegunner_assistant_g36a1_mg3_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_marksman_g3a3_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_medic_g36a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_officer_p1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_paratrooper_g36a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_engineer_g36a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_radioman_g36a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_rifleman_g36a1_90_win", _sid];
+			_c pushBack format["%1gm_ge_army_squadleader_g36a1_p2a1_90_win", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+		};
+		_c pushBack format["%1gm_ge_army_antiair_g36a1_fim43_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_antitank_g36a1_pzf3_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_antitank_g36a1_milan_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_crew_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_demolition_g36a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_grenadier_hk69a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_machinegunner_mg3_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_machinegunner_assistant_g36a1_mg3_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_marksman_g3a3_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_medic_g36a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_officer_p1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_paratrooper_g36a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_engineer_g36a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_radioman_g36a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_rifleman_g36a1_90_flk", _sid];
+		_c pushBack format["%1gm_ge_army_squadleader_g36a1_p2a1_90_flk", _sid];
 	};
 	_adds=3;
 };
@@ -235,8 +326,9 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_ge_army_bicycle_01_oli", _sid];
 		_c pushBack format["%1gm_ge_army_k125", _sid];
 		_c pushBack format["%1gm_ge_army_iltis_cargo", _sid];
-		_c pushBack format["%1gm_ge_army_c1300l_container", _sid];
-		_c pushBack format["%1gm_ge_army_c1300l_cargo", _sid];
+		_c pushBack format["%1gm_ge_army_u1300l_container", _sid];
+		_c pushBack format["%1gm_ge_army_u1300l_cargo", _sid];
+		_c pushBack format["%1gm_ge_army_u1300l_firefighter", _sid];
 		
 		//_c pushBack "gm_ge_army_c1300l_repair";		//repairtruck	
 	};
@@ -244,7 +336,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		_c pushBack format["%1gm_ge_army_iltis_mg3", _sid];
 		_c pushBack format["%1gm_ge_army_iltis_milan", _sid];
-		_c pushBack format["%1gm_ge_army_c1300l_medic", _sid];			//medic
+		_c pushBack format["%1gm_ge_army_u1300l_medic", _sid];			//medic
 		_c pushBack format["%1gm_ge_army_kat1_451_container", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_451_cargo", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_454_cargo", _sid];
@@ -470,6 +562,8 @@ if(CTI_MAIN_ADDON == 0) then {
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 1) then {
+		_c pushBack format["%1gm_ge_army_marder1a1a", _sid];	
+		_c pushBack format["%1gm_ge_army_marder1a1plus", _sid];	
 		_c pushBack format["%1gm_ge_army_gepard1a1", _sid];	
 		_c pushBack format["%1gm_ge_army_Leopard1a1", _sid];	
 		_c pushBack format["%1gm_ge_army_Leopard1a1a1", _sid];
@@ -477,6 +571,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 2) then {
+		_c pushBack format["%1gm_ge_army_marder1a2", _sid];	
 		_c pushBack format["%1gm_ge_army_Leopard1a3", _sid];
 		_c pushBack format["%1gm_ge_army_Leopard1a3a1", _sid];
 	};

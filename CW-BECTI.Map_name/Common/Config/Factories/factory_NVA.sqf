@@ -74,6 +74,7 @@ if(CTI_MAIN_ADDON == 0) then {
 			_c pushBack format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid];
 			_c pushBack format["%1gm_gc_army_antitank_mpiak74n_rpg7_80_win", _sid];
 			_c pushBack format["%1gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_win", _sid];
+			_c pushBack format["%1gm_gc_army_radioman_mpiak74n_80_win", _sid];
 		};
 		_c pushBack format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid];
 		_c pushBack format["%1gm_gc_army_demolition_mpiaks74n_80_str", _sid];
@@ -81,6 +82,7 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_antitank_mpiak74n_rpg7_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_antitank_assistant_mpiak74n_rpg7_80_str", _sid];
+		_c pushBack format["%1gm_gc_army_radioman_mpiak74n_80_str", _sid];
 	};
 	//Level 1
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 1) then {
@@ -90,12 +92,15 @@ if(CTI_MAIN_ADDON == 0) then {
 			_c pushBack format["%1gm_gc_army_machinegunner_pk_80_win", _sid];
 			_c pushBack format["%1gm_gc_army_machinegunner_assistant_mpiak74n_pk_80_win", _sid];
 			_c pushBack format["%1gm_gc_army_medic_mpiak74n_80_win", _sid];
+			_c pushBack format["%1gm_gc_army_paratrooper_mpiaks74n_80_win", _sid];
 		};
 		_c pushBack format["%1gm_gc_army_machinegunner_lmgrpk_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_machinegunner_assistant_mpiak74n_lmgrpk_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_machinegunner_pk_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_machinegunner_assistant_mpiak74n_pk_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_medic_mpiak74n_80_str", _sid];
+		_c pushBack format["%1gm_gc_army_paratrooper_mpiaks74n_80_str", _sid];
+		_c pushBack format["%1gm_gc_airforce_pilot_pm_80_blu", _sid];
 	};
 	//Level 2
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
@@ -103,10 +108,14 @@ if(CTI_MAIN_ADDON == 0) then {
 			_c pushBack format["%1gm_gc_army_squadleader_mpiak74n_80_win", _sid];
 			_c pushBack format["%1gm_gc_army_officer_pm_80_win", _sid];
 			_c pushBack format["%1gm_gc_army_antitank_mpiak74n_fagot_80_win", _sid];
+			_c pushBack format["%1gm_gc_army_antiair_mpiak74n_9k32m_80_win", _sid];
+			_c pushBack format["%1gm_gc_army_marksman_svd_80_win", _sid];
 		};
 		_c pushBack format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid];
 		_c pushBack format["%1gm_gc_army_officer_80_gry", _sid];
 		_c pushBack format["%1gm_gc_army_antitank_mpiak74n_fagot_80_str", _sid];
+		_c pushBack format["%1gm_gc_army_antiair_mpiak74n_9k32m_80_str", _sid];
+		_c pushBack format["%1gm_gc_army_marksman_svd_80_str", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_BARRACKS];
@@ -135,6 +144,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_RHS_ADDON > 0) then { _adds = 1; } else { _adds = 0; };
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {
 		_c pushBack format["%1gm_gc_army_ural375d_medic", _sid];
+		_c pushBack format["%1gm_gc_army_ural375d_cargo", _sid];
 		_c pushBack format["%1gm_gc_army_ural44202", _sid];
 		_c pushBack format["%1gm_gc_army_ural4320_cargo", _sid];
 		//_u pushBack "gm_gc_army_ural4320_reammo";		//Ammotruck
@@ -143,6 +153,9 @@ if(CTI_MAIN_ADDON == 0) then {
 	};	
 	//Level 1
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+		_c pushBack format["%1gm_gc_army_uaz469_cargo", _sid];
+		_c pushBack format["%1gm_gc_army_uaz469_dshkm", _sid];
+		_c pushBack format["%1gm_gc_army_uaz469_spg9", _sid];
 		_c pushBack format["%1gm_gc_army_brdm2", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_brdm2um", _sid];//unarmed			
 	};

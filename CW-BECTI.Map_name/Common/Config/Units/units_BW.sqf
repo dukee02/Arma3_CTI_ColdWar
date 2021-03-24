@@ -47,10 +47,188 @@ if(CTI_MAIN_ADDON == 0) then {//Level start
 	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		//};
-		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-		//};
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_demolition_g3a4_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_grenadier_g3a3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf44_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf44_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_engineer_g3a4_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_radioman_g3a3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_oli", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_demolition_g3a4_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_grenadier_g3a3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf44_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf44_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_engineer_g3a4_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_radioman_g3a3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		};
 		_c pushBack format["%1gm_ge_army_militarypolice_p1_80_oli", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -62,16 +240,6 @@ if(CTI_MAIN_ADDON == 0) then {//Level start
 		_d pushBack 0;
 		
 		_c pushBack format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid];
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_BARRACKS;
-		_s pushBack "";
-		_d pushBack 0;
-		
-		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -121,16 +289,294 @@ if(CTI_MAIN_ADDON == 0) then {//Level start
 		_s pushBack "";
 		_d pushBack 0;
 		
+		_c pushBack format["%1gm_ge_army_engineer_g3a4_80_ols", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_radioman_g3a3_80_ols", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		
+		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_pilot_p1_80_oli", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_pilot_80_rolled_sar", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;		
 	};
 	//Level 1
 	_tech_level = _tech_level + 1;
 	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 1) then {
-		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		//};
-		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-		//};
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1gm_ge_army_machinegunner_mg3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_machinegunner_assistant_g3a3_mg3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf84_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf84_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+
+			_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_officer_p1_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_milan_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+				
+			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_paratrooper_g3a4_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antiair_g3a3_fim43_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_marksman_g3a3_parka_80_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1gm_ge_army_machinegunner_mg3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_machinegunner_assistant_g3a3_mg3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf84_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf84_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+
+			_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_officer_p1_parka_80_oli", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antitank_g3a3_milan_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+				
+			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_paratrooper_g3a4_parka_80_oli", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_antiair_g3a3_fim43_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+			
+			_c pushBack format["%1gm_ge_army_marksman_g3a3_parka_80_ols", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		};
 		
 		_c pushBack format["%1gm_ge_army_machinegunner_mg3_80_ols", _sid];
 		_p pushBack '';
@@ -171,37 +617,6 @@ if(CTI_MAIN_ADDON == 0) then {//Level start
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
 		_d pushBack 0;
-		
-		_c pushBack format["%1gm_ge_army_engineer_g3a4_80_ols", _sid];
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_BARRACKS;
-		_s pushBack "";
-		_d pushBack 0;
-		
-		_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_BARRACKS;
-		_s pushBack "";
-		_d pushBack 0;
-		
-	};
-	//Level 2
-	_tech_level = _tech_level + 1;
-	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
-		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		//};
-		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-		//};
 
 		_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_80_ols", _sid];
 		_p pushBack '';
@@ -232,7 +647,364 @@ if(CTI_MAIN_ADDON == 0) then {//Level start
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
 		_d pushBack 0;
+			
+		_c pushBack format["%1gm_ge_army_grenadier_hk69a1_80_ols", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
 		
+		_c pushBack format["%1gm_ge_army_paratrooper_g3a4_80_oli", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_antiair_g3a3_fim43_80_ols", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_marksman_g3a3_80_ols", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+	};
+	//Level 2
+	_tech_level = _tech_level + 1;
+	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 2) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+			_c pushBack format["%1gm_ge_army_antiair_g36a1_fim43_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_antitank_g36a1_pzf3_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_antitank_g36a1_milan_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_demolition_g36a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_machinegunner_mg3_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_machinegunner_assistant_g36a1_mg3_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_marksman_g3a3_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_medic_g36a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_officer_p1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_paratrooper_g36a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_engineer_g36a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_radioman_g36a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_rifleman_g36a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		
+			_c pushBack format["%1gm_ge_army_squadleader_g36a1_p2a1_90_win", _sid];
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+			_f pushBack CTI_FACTORY_BARRACKS;
+			_s pushBack "";
+			_d pushBack 0;
+		};
+		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+		//};
+		_c pushBack format["%1gm_ge_army_antiair_g36a1_fim43_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_antitank_g36a1_pzf3_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_antitank_g36a1_milan_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_crew_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_demolition_g36a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_grenadier_hk69a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_machinegunner_mg3_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_machinegunner_assistant_g36a1_mg3_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_marksman_g3a3_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_medic_g36a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_officer_p1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_paratrooper_g36a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_engineer_g36a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_radioman_g36a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_rifleman_g36a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_squadleader_g36a1_p2a1_90_flk", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_BARRACKS;
+		_s pushBack "";
+		_d pushBack 0;
 	};
 };
 
@@ -1014,6 +1786,16 @@ if(CTI_MAIN_ADDON == 0) then {
 		_d pushBack 0;
 		
 		_c pushBack format["%1gm_ge_army_u1300l_cargo", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_u1300l_firefighter", _sid];
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -2032,6 +2814,26 @@ if(CTI_MAIN_ADDON == 0) then {
 		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 		//};
 		
+		_c pushBack format["%1gm_ge_army_marder1a1a", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_marder1a1plus", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
+		
 		_c pushBack format["%1gm_ge_army_gepard1a1", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -2082,6 +2884,15 @@ if(CTI_MAIN_ADDON == 0) then {
 		//};
 		//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 		//};
+		_c pushBack format["%1gm_ge_army_marder1a2", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
 		
 		_c pushBack format["%1gm_ge_army_Leopard1a3", _sid];
 		_p pushBack '';

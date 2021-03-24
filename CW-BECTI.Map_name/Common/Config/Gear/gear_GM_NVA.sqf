@@ -406,8 +406,55 @@ _i pushBack "gm_gc_army_facewear_schm41m";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
 
+_i pushBack "gm_headgear_foliage_summer_forest_01";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_forest_02";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_forest_03";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_forest_04";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_grass_01";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_grass_02";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_grass_03";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
+_i pushBack "gm_headgear_foliage_summer_grass_04";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)/2);
+
 //---Attachments
 _tech_level = 0;
+_i pushBack "gm_zvn64_rear_ak";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)));
+
+_i pushBack "gm_zvn64_front";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)));
+
+_i pushBack "gm_bayonet_6x3_wud";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)));
+
+_i pushBack "gm_bayonet_6x3_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)));
 
 _i pushBack "gm_pgo7v_blk";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
