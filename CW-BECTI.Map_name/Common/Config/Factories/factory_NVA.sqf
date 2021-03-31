@@ -30,7 +30,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 
 //check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
 _priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-if (isNil "_priorUnits" || _ai == 2) then { 
+if (isNil "_priorUnits" || _ai == 1) then { 
 	
 	if(CTI_MAIN_ADDON == 0) then {
 		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
