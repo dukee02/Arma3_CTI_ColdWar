@@ -227,24 +227,18 @@ class Params {
 		texts[] = {"Disabled","Enabled"};
 		default = 1;
 	};
-	class CTI_BASE_BUILDING_DAMAGE_SYSTEM {
-		title = "BASE: Handle Building destruction";
-		values[] = {0,1,2,3};
-		texts[] = {"delete building","repair building, no penalty","repair building with full prise, if can paied","repair building with half prise, if can paied"};
-		default = 0;
-	};
 	class CTI_BASE_FOB_MAX {
 		title = "BASE: FOB Limit";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
 		texts[] = {"Disabled","1","2","3","4","5","6","7","8","9","10"};
 		default = 6;
 	};
-	class CTI_BASE_START_TOWN {
+	/*class CTI_BASE_START_TOWN {
 		title = "BASE: Start Near towns";
 		values[] = {0,1};
 		texts[] = {"No","Yes"};//{"Disabled","Enabled"};
-		default = 1;
-	};
+		default = 0;
+	};*/
 	class CTI_BASE_STARTUP_PLACEMENT {
 		title = "BASE: Start-up Placement";
 		values[] = {1000,2000,4000,6000,8000,10000};
