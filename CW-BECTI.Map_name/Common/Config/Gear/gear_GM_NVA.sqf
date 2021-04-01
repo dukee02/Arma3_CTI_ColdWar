@@ -230,7 +230,7 @@ _p pushBack round ((30*762*39)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+
 //_p pushBack round 200*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //Level 2
-_tech_level = _tech_level + 2;
+_tech_level = _tech_level + 1;
 
 _i pushBack "gm_svd_wud";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
