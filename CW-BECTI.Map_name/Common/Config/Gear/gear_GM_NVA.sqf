@@ -536,6 +536,10 @@ _i pushBack "gm_gc_army_gauzeBandage";
 _u pushBack 0;
 _p pushBack 15;
 
+_i pushBack "Toolkit";
+_u pushBack 0;
+_p pushBack 750;
+
 _i pushBack "gm_gc_army_medkit";
 _u pushBack 0;
 _p pushBack 15;

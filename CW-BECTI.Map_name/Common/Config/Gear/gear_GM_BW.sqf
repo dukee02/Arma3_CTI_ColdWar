@@ -1146,6 +1146,10 @@ _i pushBack "gm_watch_kosei_80";
 _u pushBack 0;
 _p pushBack 1;
 
+_i pushBack "Toolkit";
+_u pushBack 0;
+_p pushBack 750;
+
 /*_i pushBack "gm_repairkit_01";
 _u pushBack 0;
 _p pushBack 25;*/
