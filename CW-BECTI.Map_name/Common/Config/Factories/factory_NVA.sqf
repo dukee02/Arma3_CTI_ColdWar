@@ -223,9 +223,9 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
 		_c pushBack format["%1gm_gc_airforce_mi2p", _sid];
 		_c pushBack format["%1gm_gc_airforce_mi2t", _sid];
+		_c pushBack format["%1gm_gc_airforce_mi2sr", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		_c pushBack format["%1gm_gc_airforce_mi2sr", _sid];
 		_c pushBack format["%1gm_gc_airforce_l410s_salon", _sid];
 		_c pushBack format["%1gm_gc_airforce_l410t", _sid];
 	};

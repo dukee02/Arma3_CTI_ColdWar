@@ -752,11 +752,7 @@ if(CTI_MAIN_ADDON == 0) then {
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
 		_d pushBack 0;
-	};
-	_tech_level = 1;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
-	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
+		
 		_c pushBack format["%1gm_gc_airforce_mi2sr", _sid];//Medic
 		_p pushBack '';
 		_n pushBack ("Mi2sr Mobile Respawn");
@@ -766,7 +762,11 @@ if(CTI_MAIN_ADDON == 0) then {
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "service-medic";
 		_d pushBack 0;	
-		
+	};
+	_tech_level = 1;
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
 		_c pushBack format["%1gm_gc_airforce_l410s_salon", _sid];
 		_p pushBack '';
 		_n pushBack '';
