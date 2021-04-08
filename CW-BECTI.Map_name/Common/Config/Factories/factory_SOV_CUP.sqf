@@ -265,11 +265,11 @@ if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
 		_c pushBack format["%1CUP_O_Mi24_P_Dynamic_RU", _sid];
 		_c pushBack format["%1CUP_O_Mi24_V_Dynamic_RU", _sid];
+		_c pushBack format["%1CUP_O_Ka60_Grey_RU", _sid];
 		_c pushBack format["%1CUP_O_Su25_Dyn_RU", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
 		_c pushBack format["%1CUP_O_Ka50_DL_RU", _sid];
-		_c pushBack format["%1CUP_O_Ka60_Grey_RU", _sid];
 		_c pushBack format["%1CUP_O_SU34_RU", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {

@@ -1059,6 +1059,16 @@ if(CTI_CUP_ADDON > 0) then {
 		_s pushBack "";
 		_d pushBack 0;
 		
+		_c pushBack format["%1CUP_O_Ka60_Grey_RU", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_AIR;
+		_s pushBack "";
+		_d pushBack 0;
+		
 		_c pushBack format["%1CUP_O_Su25_Dyn_RU", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -1078,16 +1088,6 @@ if(CTI_CUP_ADDON > 0) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_AIR;
-		_s pushBack "";
-		_d pushBack 0;
-		
-		_c pushBack format["%1CUP_O_Ka60_Grey_RU", _sid];
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_AIR;
