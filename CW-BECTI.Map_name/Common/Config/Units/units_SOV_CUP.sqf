@@ -1007,17 +1007,7 @@ if(CTI_CUP_ADDON > 0) then {
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;
-		
-		_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];					//Medic
-		_p pushBack '';
-		_n pushBack (format ["Mi8 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
-		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_AIR;
-		_s pushBack "service-medic";
-		_d pushBack 0;		
+		_d pushBack 0;	
 	};
 	_tech_level = 1;
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
@@ -1033,6 +1023,16 @@ if(CTI_CUP_ADDON > 0) then {
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
 		_d pushBack 0;
+		
+		_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];					//Medic
+		_p pushBack '';
+		_n pushBack (format ["Mi8 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
+		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_AIR;
+		_s pushBack "service-medic";
+		_d pushBack 0;	
 	};
 	_tech_level = 2;
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));

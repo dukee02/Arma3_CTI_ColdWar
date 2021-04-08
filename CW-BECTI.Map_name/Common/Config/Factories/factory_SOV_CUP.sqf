@@ -257,10 +257,10 @@ _c = [];
 if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
 		_c pushBack format["%1CUP_O_Mi8_VIV_RU", _sid];
-		_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];//Medic
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
 		_c pushBack format["%1CUP_O_Mi8_RU", _sid];
+		_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];//Medic
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
 		_c pushBack format["%1CUP_O_Mi24_P_Dynamic_RU", _sid];

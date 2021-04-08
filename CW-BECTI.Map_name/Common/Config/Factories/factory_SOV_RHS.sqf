@@ -375,13 +375,13 @@ _c = [];
 //Level 0
 if(CTI_RHS_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
-		_c pushBack format["%1RHS_Mi8AMT_vdv", _sid];//Medic
 		_c pushBack format["%1RHS_Mi8mt_vdv", _sid];
 		_c pushBack format["%1RHS_Mi8mt_Cargo_vdv", _sid];
 		_c pushBack format["%1RHS_Mi8T_vdv", _sid];
 	};
 	
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
+		_c pushBack format["%1RHS_Mi8AMT_vdv", _sid];//Medic
 		_c pushBack format["%1RHS_Mi8MTV3_vdv", _sid];
 		_c pushBack format["%1RHS_Mi8mtv3_Cargo_vdv", _sid];
 		_c pushBack format["%1RHS_Mi8MTV3_heavy_vdv", _sid];

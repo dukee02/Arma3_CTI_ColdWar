@@ -2126,16 +2126,6 @@ if(CTI_RHS_ADDON > 0) then {
 	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		
-		_c pushBack format["%1RHS_Mi8AMT_vdv", _sid];			//Medic
-		_p pushBack '';
-		_n pushBack (format ["Mi8 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
-		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_AIR;
-		_s pushBack "service-medic";
-		_d pushBack 0;
-		
 		_c pushBack format["%1RHS_Mi8mt_vdv", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -2170,6 +2160,16 @@ if(CTI_RHS_ADDON > 0) then {
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+		
+		_c pushBack format["%1RHS_Mi8AMT_vdv", _sid];			//Medic
+		_p pushBack '';
+		_n pushBack (format ["Mi8 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
+		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_AIR;
+		_s pushBack "service-medic";
+		_d pushBack 0;
 		
 		_c pushBack format["%1RHS_Mi8MTV3_vdv", _sid];
 		_p pushBack '';

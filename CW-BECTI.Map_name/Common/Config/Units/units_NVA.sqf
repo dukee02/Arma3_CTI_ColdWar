@@ -755,7 +755,7 @@ if(CTI_MAIN_ADDON == 0) then {
 		
 		_c pushBack format["%1gm_gc_airforce_mi2sr", _sid];//Medic
 		_p pushBack '';
-		_n pushBack ("Mi2sr Mobile Respawn");
+		_n pushBack (format ["Mi2sr Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
 		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
