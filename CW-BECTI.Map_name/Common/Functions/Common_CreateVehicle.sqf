@@ -63,6 +63,7 @@ _vehicle setDir _direction;
 
 clearMagazineCargo _vehicle;
 clearWeaponCargo _vehicle;
+clearItemCargo _vehicle;
 
 //if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_CreateVehicle.sqf", format ["type: <%1> special: <%2>",  _type, _special]] call CTI_CO_FNC_Log;};
 if (_special != "FLY") then {
