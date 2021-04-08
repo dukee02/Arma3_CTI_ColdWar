@@ -149,7 +149,52 @@ _i pushBack "gm_1Rnd_265mm_flare_multi_nbc_DM47";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 10*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
+//-----------MPs----------------------
+
+_i pushBack "gm_mp5a2_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+
+_i pushBack "gm_mp5a3_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+
+_i pushBack "gm_30Rnd_9x19mm_B_DM51_mp5_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "gm_30Rnd_9x19mm_B_DM11_mp5_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "gm_30Rnd_9x19mm_B_DM51_mp5a3_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "gm_30Rnd_9x19mm_B_DM11_mp5a3_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "gm_30Rnd_9x19mm_AP_DM91_mp5_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "gm_30Rnd_9x19mm_AP_DM91_mp5a3_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+//Level 1
+_tech_level = _tech_level + 1;
+_i pushBack "gm_mp5sd2_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+
+_i pushBack "gm_mp5sd3_blk";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+
 //-----------Assaultgun----------------------
+_tech_level = 0;
 _i pushBack "gm_m16a1_blk";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
