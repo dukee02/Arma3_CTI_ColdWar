@@ -155,8 +155,14 @@ class Params {
 		texts[] = {"Disable this units","0","1","2","3","4"};
 		default = 2; //2
 	};
+	class CTI_ECONOMY_UPGRADE_TIMECAP {
+		title = "UPGRADE: Max Time needed for upgrades (concerns higher tier upgrades)";
+		values[] = {300,400,500,600,700,800,900,1000,1100,1200};
+		texts[] = {"300s","400s","500s","600s","700s","800s","900s","1000s","1100s","1200s"};
+		default = 600; //600
+	};
 	class CTI_ECONOMY_TIME_MULTI {
-		title = "UPGRADE: Time multiplier (times capped[min,max]: Inf:[5s,50s]|Light,Ship:[10s,300s]|Heavy,Air:[20s,600s])";
+		title = "BASE: Buildtime multiplier (times capped[min,max]: Inf:[5s,50s]|Light,Ship:[10s,300s]|Heavy,Air:[20s,600s])";
 		values[] = {1,2,3,4,5,6,8,10};
 		texts[] = {"1","2","3","4","5","6","8","10"};
 		default = 2; //5
@@ -271,44 +277,44 @@ class Params {
 	};
 	class CTI_ECONOMY_CURRENCY_SYSTEM {
 		title = "INCOME: Currency";
-		values[] = {0};
-		texts[] = {"Money and Supply"};
+		values[] = {0,1};
+		texts[] = {"Money and Supply","only Money"};
 		default = 0;
 	};
 	class CTI_ECONOMY_STARTUP_FUNDS_EAST_COMMANDER {
 		title = "INCOME: Starting Funds (East Commander)";
-		values[] = {10000,15000,20000,25000,30000,35000,40000,45000,50000,60000,80000,100000,200000,300000,400000,500000};
-		texts[] = {"$10000","$15000","$20000","$25000","$30000","$35000","$40000","$45000","$50000","$60000","$80000","$100000","$200000","$300000","$400000","$500000"};
+		values[] = {10000,15000,20000,25000,30000,35000,40000,45000,50000,60000,80000,100000,200000,300000,400000,500000,600000,700000,800000};
+		texts[] = {"$10000","$15000","$20000","$25000","$30000","$35000","$40000","$45000","$50000","$60000","$80000","$100000","$200000","$300000","$400000","$500000","$600000","$700000","$800000"};
 		default = 10000;
 	};
 	class CTI_ECONOMY_STARTUP_FUNDS_EAST {
 		title = "INCOME: Starting Funds (East Players)";
-		values[] = {1000,1500,2400,3200,6000,8000,10000,12500,15000,20000,30000,35000,40000,45000,50000};
-		texts[] = {"$1000","$1500","$2400","$3200","$6000","$8000","$10000","$12500","$15000","$20000","$30000","$35000","$40000","$45000","$50000"};
-		default = 3200;
+		values[] = {4000,5000,6000,8000,10000,12500,15000,20000,30000,35000,40000,45000,50000,60000,70000,80000,90000,100000};
+		texts[] = {"$4000","$5000","$6000","$8000","$10000","$12500","$15000","$20000","$30000","$35000","$40000","$45000","$50000","$60000","$70000","$80000","$90000","$100000"};
+		default = 15000;
 	};
 	class CTI_ECONOMY_STARTUP_SUPPLY_EAST {
 		title = "INCOME: Starting Supply (East)";
-		values[] = {3000,5000,7000,9000,10000,20000,25000,50000,75000,106000};
-		texts[] = {"S3000","S5000","S7000","S9000","S10000","S20000","S25000","S50000","S75000","S106000"};
+		values[] = {3000,5000,7000,9000,10000,20000,25000,50000,75000,110000,130000,150000,170000,200000,300000};
+		texts[] = {"S3000","S5000","S7000","S9000","S10000","S20000","S25000","S50000","S75000","S110000","S130000","S150000","S170000","S200000","S300000"};
 		default = 10000;
 	};
 	class CTI_ECONOMY_STARTUP_FUNDS_WEST_COMMANDER {
 		title = "INCOME: Starting Funds (West Commander)";
-		values[] = {10000,15000,20000,25000,30000,35000,40000,45000,50000,60000,80000,100000,200000,300000,400000,500000};
-		texts[] = {"$10000","$15000","$20000","$25000","$30000","$35000","$40000","$45000","$50000","$60000","$80000","$100000","$200000","$300000","$400000","$500000"};
+		values[] = {10000,15000,20000,25000,30000,35000,40000,45000,50000,60000,80000,100000,200000,300000,400000,500000,600000,700000,800000};
+		texts[] = {"$10000","$15000","$20000","$25000","$30000","$35000","$40000","$45000","$50000","$60000","$80000","$100000","$200000","$300000","$400000","$500000","$600000","$700000","$800000"};
 		default = 10000;
 	};
 	class CTI_ECONOMY_STARTUP_FUNDS_WEST {
 		title = "INCOME: Starting Funds (West Players)";
-		values[] = {1000,1500,2400,3200,6000,8000,10000,12500,15000,20000,30000,35000,40000,45000,50000};
-		texts[] = {"$1000","$1500","$2400","$3200","$6000","$8000","$10000","$12500","$15000","$20000","$30000","$35000","$40000","$45000","$50000"};
-		default = 3200;
+		values[] = {4000,5000,6000,8000,10000,12500,15000,20000,30000,35000,40000,45000,50000,60000,70000,80000,90000,100000};
+		texts[] = {"$4000","$5000","$6000","$8000","$10000","$12500","$15000","$20000","$30000","$35000","$40000","$45000","$50000","$60000","$70000","$80000","$90000","$100000"};
+		default = 15000;
 	};
 	class CTI_ECONOMY_STARTUP_SUPPLY_WEST {
 		title = "INCOME: Starting Supply (West)";
-		values[] = {3000,5000,7000,9000,10000,20000,25000,50000,75000,106000};
-		texts[] = {"S3000","S5000","S7000","S9000","S10000","S20000","S25000","S50000","S75000","S106000"};
+		values[] = {3000,5000,7000,9000,10000,20000,25000,50000,75000,110000,130000,150000,170000,200000,300000};
+		texts[] = {"S3000","S5000","S7000","S9000","S10000","S20000","S25000","S50000","S75000","S110000","S130000","S150000","S170000","S200000","S300000"};
 		default = 10000;
 	};
 	class CTI_ECONOMY_TOWNS_OCCUPATION {
@@ -388,138 +394,6 @@ class Params {
 		values[] = {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18};
 		texts[] = {"12 AM","1 AM","2 AM","3 AM","4 AM","5 AM","6 AM","7 AM","8 AM","9 AM","10 AM","11 AM","12 PM","1 PM","2 PM","3 PM","4 PM","5 PM","6 PM","7 PM","8 PM","9 PM","10 PM","11 PM","Random"};
 		default = -1;
-	};
-	class CTI_WEATHER_RAIN {
-		title = "WEATHER: Rain (Rain Requires Overcast Greater High)";
-		values[] = {-1,0,30,50,75,100};
-		texts[] = {"Random","Clear","Light","Medium","High","Max"};
-		default = 0;
-	};
-	class CTI_WEATHER_RAIN_COEF {
-		title = "WEATHER: Rain Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = 0;
-	};
-	class CTI_WEATHER_SNOW {
-		title = "WEATHER: Snow Storms";
-		values[] = {0,1,2,3,4};
-		texts[] = {"Clear","Light","Medium","High","Max"};
-		default = 0;
-	};
-	class CTI_WEATHER_SNOW_COEF {
-		title = "WEATHER: Snow Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = 0;
-	};
-	class CTI_WEATHER_DUST {
-		title = "WEATHER: Dust Storms";
-		values[] = {0,1,2,3,4};
-		texts[] = {"Clear","Light","Medium - Adds Wall of Dust","High - Adds Effect on Objects","Max - Adds Lethal Wall"};
-		default = 0;
-	};
-	class CTI_WEATHER_DUST_COEF {
-		title = "WEATHER: Dust Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = 0;
-	};
-	class CTI_WEATHER_MONSOON {
-		title = "WEATHER: Monsoon Storms";
-		values[] = {0,1,2};
-		texts[] = {"Clear","No Damage","Damage Objects"};
-		default = 0;
-	};
-	class CTI_WEATHER_MONSOON_COEF {
-		title = "WEATHER: Monsoon Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = 0;
-	};
-	class CTI_WEATHER_OVERCAST {
-		title = "WEATHER: Overcast";
-		values[] = {-1,0,30,50,75,100};
-		texts[] = {"Random","Clear","Light","Medium","High","Max"};
-		default = -1;
-	};
-	class CTI_WEATHER_OVERCAST_COEF {
-		title = "WEATHER: Overcast Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = -1;
-	};
-	class CTI_WEATHER_FOG {
-		title = "WEATHER: Fog value";
-		values[] = {-1,0,10,20,30,40,50,60,70,80,90,100};
-		texts[] = {"Random","Clear","10","20","30","40","50","60","70","80","90","MAX"};
-		default = -1;
-	};
-	class CTI_WEATHER_FOG_COEF {
-		title = "WEATHER: Fog Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = 0.1;
-	};
-	class CTI_WEATHER_FOG_DECAY {
-		title = "WEATHER: Fog decay level";
-		values[] = {-1,0,0.02,0.04,0.06,0.08,0.1,0.15,0.20,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","0.02","0.04","0.06","0.08","0.1","0.15","0.20","0.25","0.5","0.75","1"};
-		default = -1;
-	};
-	class CTI_WEATHER_FOG_DECAY_COEF {
-		title = "WEATHER: Fog decay Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = -1;
-	};
-	class CTI_WEATHER_FOG_ALT {
-		title = "WEATHER: Fog altitude";
-		values[] = {-1,0,1,5,25,50,100,200,300,400,500,600,700,800,900,1000};
-		texts[] = {"Random","0m","1m","5m","25m","50m","100m","200m","300m","400m","500m","600m","700m","800m","900m","1km"};
-		default = -1;
-	};
-	class CTI_WEATHER_FOG_ALT_COEF {
-		title = "WEATHER: Fog altitude Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = -1;
-	};
-	class CTI_WEATHER_WIND {
-		title = "WEATHER: Wind";
-		values[] = {-1,0,30,50,75,100};
-		texts[] = {"Random","Clear","Light","Medium","High","Max"};
-		default = -1;
-	};
-	class CTI_WEATHER_WIND_COEF {
-		title = "WEATHER: Wind Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = -1;
-	};
-	class CTI_WEATHER_WAVES {
-		title = "WEATHER: Waves";
-		values[] = {-1,0,30,50,75,100};
-		texts[] = {"Random","Clear","Light","Medium","High","Max"};
-		default = -1;
-	};
-	class CTI_WEATHER_WAVES_COEF {
-		title = "WEATHER: Waves Variance";
-		values[] = {-1,0,0.1,0.25,0.5,0.75,1};
-		texts[] = {"Random","None","10%","25%","50%","75%","Chaos"};
-		default = -1;
-	};
-	class CTI_WEATHER_VARIANCE_TIME {
-		title = "WEATHER: Frequency of weather changes (or between of storms)";
-		values[] = {-1,0,60,120,300,600,900,1800,2700,3600,5400,7200};
-		texts[] = {"Random","No Change","1min","2min","5min","10min","15min","30min","45min","60min","90min","120min"};
-		default = 1800;
-	};
-	class CTI_WEATHER_STORM_TIME {
-		title = "WEATHER: Duration of Storms (dust storms and monsoons)";
-		values[] = {-1,60,120,300,600,900,1800,2700,3600,5400,7200,14400};
-		texts[] = {"Random","1min","2min","5min","10min","15min","30min","45min","60min","90min","120min","240min"};
-		default = 900;
 	};
   	class CTI_WEATHER_FAST {
 		title = "WEATHER: Day Duration";

@@ -542,6 +542,68 @@ with missionNamespace do {
 	if (isNil 'CTI_VEHICLES_EMPTY_TIMEOUT') then {CTI_VEHICLES_EMPTY_TIMEOUT = 900};
 	if (isNil 'CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX') then {CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX = 2}; //--- Maximum amount of Independent Salvage Trucks which may be present per side
 };
+//----------------------------------------------WEATHER-------------------------------------------------------//
+
+CTI_WEATHER_RAIN = 0;				//Rain (Rain Requires Overcast Greater High {-1,0,30,50,75,100} texts = {"Random","Clear","Light","Medium","High","Max"}
+CTI_WEATHER_RAIN_COEF = 0;			//Rain Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"}
+CTI_WEATHER_SNOW = 0;				//Snow Storms {0,1,2,3,4} texts = {"Clear","Light","Medium","High","Max"};
+CTI_WEATHER_SNOW_COEF = 0;			//Snow Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_DUST = 0;				//Dust Storms {0,1,2,3,4} texts = {"Clear","Light","Medium - Adds Wall of Dust","High - Adds Effect on Objects","Max - Adds Lethal Wall"};
+CTI_WEATHER_DUST_COEF = 0;			//Dust Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_MONSOON = 0;			//Monsoon Storms {0,1,2} texts = {"Clear","No Damage","Damage Objects"};
+CTI_WEATHER_MONSOON_COEF = 0;		//Monsoon Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_OVERCAST = -1;			//Overcast {-1,0,30,50,75,100} texts = {"Random","Clear","Light","Medium","High","Max"};
+CTI_WEATHER_OVERCAST_COEF = -1;		//Overcast Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_FOG = -1;				//Fog value {-1,0,10,20,30,40,50,60,70,80,90,100} texts = {"Random","Clear","10","20","30","40","50","60","70","80","90","MAX"};
+CTI_WEATHER_FOG_COEF = 0.1;			//Fog Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_FOG_DECAY = -1;			//Fog decay level {-1,0,0.02,0.04,0.06,0.08,0.1,0.15,0.20,0.25,0.5,0.75,1} texts = {"Random","None","0.02","0.04","0.06","0.08","0.1","0.15","0.20","0.25","0.5","0.75","1"};
+CTI_WEATHER_FOG_DECAY_COEF = -1;	//Fog decay Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_FOG_ALT = -1;			//Fog altitude {-1,0,1,5,25,50,100,200,300,400,500,600,700,800,900,1000} texts = {"Random","0m","1m","5m","25m","50m","100m","200m","300m","400m","500m","600m","700m","800m","900m","1km"};
+CTI_WEATHER_FOG_ALT_COEF = -1;		//Fog altitude Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_WIND = -1;				//Wind {-1,0,30,50,75,100} texts = {"Random","Clear","Light","Medium","High","Max"};
+CTI_WEATHER_WIND_COEF = -1;			//Wind Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_WAVES = -1;				//Waves {-1,0,30,50,75,100} texts = {"Random","Clear","Light","Medium","High","Max"};
+CTI_WEATHER_WAVES_COEF = -1;		//Waves Variance {-1,0,0.1,0.25,0.5,0.75,1} texts = {"Random","None","10%","25%","50%","75%","Chaos"};
+CTI_WEATHER_VARIANCE_TIME = -1;		//Frequency of weather changes (or between of storms) {-1,0,60,120,300,600,900,1800,2700,3600,5400,7200} texts = {"Random","No Change","1min","2min","5min","10min","15min","30min","45min","60min","90min","120min"};
+CTI_WEATHER_STORM_TIME = 60;		//Duration of Storms (dust storms and monsoons) {-1,60,120,300,600,900,1800,2700,3600,5400,7200,14400} texts = {"Random","1min","2min","5min","10min","15min","30min","45min","60min","90min","120min","240min"};
+
+with missionNamespace do {
+	if (isNil 'CTI_WEATHER_INITIAL') then {CTI_WEATHER_INITIAL = 10};		//Inital Time {-6,-5,-4,-3,-2,-1,0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18} texts = {"12 AM","1 AM","2 AM","3 AM","4 AM","5 AM","6 AM","7 AM","8 AM","9 AM","10 AM","11 AM","12 PM","1 PM","2 PM","3 PM","4 PM","5 PM","6 PM","7 PM","8 PM","9 PM","10 PM","11 PM","Random"};
+	if (isNil 'CTI_WEATHER_FAST') then {CTI_WEATHER_FAST = 12};				//Day Duration {1,2,3,4,5,6,7,8,9,10,11,12} texts = {"1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours"};
+	if (isNil 'CTI_WEATHER_FAST_NIGHT') then {CTI_WEATHER_FAST_NIGHT = 1};	//Night Duration {0.25,0.5,0.75,1,2,3,4,5,6,7,8,9,10,11,12} texts = {"15 min","30 min","45 min","1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours"};
+	
+	if (isNil 'CTI_WEATHER_CHANGES') then {CTI_WEATHER_CHANGES = 0};
+	switch(CTI_WEATHER_CHANGES) do {
+		case 1: {
+			CTI_WEATHER_OVERCAST = 0;
+			CTI_WEATHER_OVERCAST_COEF = 0;
+			CTI_WEATHER_FOG = 0;
+			CTI_WEATHER_FOG_COEF = 0;
+			CTI_WEATHER_FOG_DECAY = 0;
+			CTI_WEATHER_FOG_DECAY_COEF = 0;
+			CTI_WEATHER_FOG_ALT = 0;
+			CTI_WEATHER_FOG_ALT_COEF = 0;
+			CTI_WEATHER_WIND = 0;
+			CTI_WEATHER_WIND_COEF = 0;
+			CTI_WEATHER_WAVES = 0;
+			CTI_WEATHER_WAVES_COEF = 0;
+			CTI_WEATHER_VARIANCE_TIME = 0;
+		};
+		case 2: {
+			CTI_WEATHER_RAIN = -1;
+			CTI_WEATHER_RAIN_COEF = -1;
+			CTI_WEATHER_SNOW = 1;
+			CTI_WEATHER_SNOW_COEF = -1;
+			CTI_WEATHER_DUST = 1;
+			CTI_WEATHER_DUST_COEF = -1;
+			CTI_WEATHER_MONSOON = 1;
+			CTI_WEATHER_MONSOON_COEF = -1;
+			CTI_WEATHER_STORM_TIME = -1;
+		};
+		default{};
+	};
+};
+
 //-----------------------------------------------------------------------------------------------------------------------//
 
 CTI_ARTILLERY_FILTER = 0; //--- Toggle artillery magazines like mines and AT mines (0: Disabled, 1: Enabled)
@@ -616,20 +678,12 @@ with missionNamespace do {
 	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};
-	
-	//delete
-	//if (isNil 'CTI_GER_SIDE') then {CTI_GER_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	//if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	//if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	//if (isNil 'CTI_UK_SIDE') then {CTI_UK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	//end
-	
+		
 	if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//Check if CTI_MAIN_ADDON is 0, what means that Global Mobilization DLC is active, if not change the preseted GM-Nations to disabled
 	if (isNil 'CTI_NVA_SIDE' || CTI_MAIN_ADDON > 0) then {if(CTI_MAIN_ADDON > 0) then {CTI_NVA_SIDE = -1} else {CTI_NVA_SIDE = 1};};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		
 	if (isNil 'CTI_SOV_CUP_SIDE') then {CTI_SOV_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_RHS_SIDE') then {CTI_SOV_RHS_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	
@@ -640,13 +694,13 @@ with missionNamespace do {
 	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 0}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, 0: Short, 1: Medium, 2: Long, 3: Far)
 	
 	CTI_ECONOMY_INCOME_COEF = 10; //--- Town Multiplicator Coefficient (SV * x)
+	CTI_ECONOMY_SUPPLY_TIME_INCREASE_DELAY = 80; //--- Increase SV delay.
 	//CTI_ECONOMY_INCOME_DIVIDED = 2.75; //--- Prevent commander from being a millionaire, and add the rest to the players pool.
 	//CTI_ECONOMY_INCOME_PERCENT_MAX = 100; //--- Commander may set income up to x%.
 	CTI_ECONOMY_POOL_AWARD_PERCENTAGE_WEST = 0.3;
 	CTI_ECONOMY_POOL_AWARD_PERCENTAGE_EAST = 0.3;
 	CTI_ECONOMY_POOL_RESOURCES_PERCENTAGE_WEST = 0.1;
 	CTI_ECONOMY_POOL_RESOURCES_PERCENTAGE_EAST = 0.1;
-	CTI_ECONOMY_SUPPLY_TIME_INCREASE_DELAY = 80; //--- Increase SV delay.
 
 	if (isNil "CTI_ECONOMY_CURRENCY_SYSTEM") then {CTI_ECONOMY_CURRENCY_SYSTEM = 0}; //--- 0: Funds + Supply, 1: Funds.
 	if (isNil 'CTI_ECONOMY_INCOME_CYCLE') then {CTI_ECONOMY_INCOME_CYCLE = 60}; //--- Income Interval (Delay between each paycheck).
@@ -657,11 +711,6 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_STARTUP_FUNDS_WEST_COMMANDER') then {CTI_ECONOMY_STARTUP_FUNDS_WEST_COMMANDER = 9000};
 	if (isNil 'CTI_ECONOMY_STARTUP_SUPPLY_WEST') then {CTI_ECONOMY_STARTUP_SUPPLY_WEST = 1200};
 	if (isNil 'CTI_ECONOMY_TOWNS_OCCUPATION') then {CTI_ECONOMY_TOWNS_OCCUPATION = 1}; //--- Determine if towns need to be occupied to bring more resources
-	
-	// CTI_ECONOMY_STARTUP_FUNDS_EAST = 80000;
-	// CTI_ECONOMY_STARTUP_FUNDS_EAST_COMMANDER = 400000;
-	// CTI_ECONOMY_STARTUP_FUNDS_WEST = 80000;
-	// CTI_ECONOMY_STARTUP_FUNDS_WEST_COMMANDER = 400000;
 	
 	if (isNil 'CTI_ECONOMY_PRIZE_WEAPONS') then {CTI_ECONOMY_PRIZE_WEAPONS = 100};
 	if (isNil 'CTI_ECONOMY_PRIZE_EQUIPMENT') then {CTI_ECONOMY_PRIZE_EQUIPMENT = 100};
@@ -682,32 +731,6 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_UPGRADE_TIMECAP') then {CTI_ECONOMY_UPGRADE_TIMECAP = 600};
 	if (isNil 'CTI_ECONOMY_TIME_MULTI') then {CTI_ECONOMY_TIME_MULTI = 2};
 	
-	if (isNil 'CTI_WEATHER_FAST') then {CTI_WEATHER_FAST = 12};
-	if (isNil 'CTI_WEATHER_FAST_NIGHT') then {CTI_WEATHER_FAST_NIGHT = 1};
-	if (isNil 'CTI_WEATHER_INITIAL') then {CTI_WEATHER_INITIAL = 10};
-	if (isNil 'CTI_WEATHER_RAIN') then {CTI_WEATHER_RAIN = -1};
-	if (isNil 'CTI_WEATHER_RAIN_COEF') then {CTI_WEATHER_RAIN_COEF = -1};
-	if (isNil 'CTI_WEATHER_SNOW') then {CTI_WEATHER_SNOW = 0};
-	if (isNil 'CTI_WEATHER_SNOW_COEF') then {CTI_WEATHER_SNOW_COEF = -1};
-	if (isNil 'CTI_WEATHER_DUST') then {CTI_WEATHER_DUST = 0};
-	if (isNil 'CTI_WEATHER_DUST_COEF') then {CTI_WEATHER_DUST_COEF = -1};
-	if (isNil 'CTI_WEATHER_MONSOON') then {CTI_WEATHER_MONSOON = 0};
-	if (isNil 'CTI_WEATHER_MONSOON_COEF') then {CTI_WEATHER_MONSOON_COEF = -1};
-	if (isNil 'CTI_WEATHER_OVERCAST') then {CTI_WEATHER_OVERCAST = -1};
-	if (isNil 'CTI_WEATHER_OVERCAST_COEF') then {CTI_WEATHER_OVERCAST_COEF = -1};
-	if (isNil 'CTI_WEATHER_FOG') then {CTI_WEATHER_FOG = -1};
-	if (isNil 'CTI_WEATHER_FOG_COEF') then {CTI_WEATHER_FOG_COEF = -1};
-	if (isNil 'CTI_WEATHER_FOG_DECAY') then {CTI_WEATHER_FOG_DECAY = -1};
-	if (isNil 'CTI_WEATHER_FOG_DECAY_COEF') then {CTI_WEATHER_FOG_DECAY_COEF = -1};
-	if (isNil 'CTI_WEATHER_FOG_ALT') then {CTI_WEATHER_FOG_ALT = -1};
-	if (isNil 'CTI_WEATHER_FOG_ALT_COEF') then {CTI_WEATHER_FOG_ALT_COEF = -1};
-	if (isNil 'CTI_WEATHER_WIND') then {CTI_WEATHER_WIND = -1};
-	if (isNil 'CTI_WEATHER_WIND_COEF') then {CTI_WEATHER_WIND_COEF = -1};
-	if (isNil 'CTI_WEATHER_WAVES') then {CTI_WEATHER_WAVES = -1};
-	if (isNil 'CTI_WEATHER_WAVES_COEF') then {CTI_WEATHER_WAVES_COEF = -1};
-	if (isNil 'CTI_WEATHER_VARIANCE_TIME') then {CTI_WEATHER_VARIANCE_TIME = -1};
-	if (isNil 'CTI_WEATHER_STORM_TIME') then {CTI_WEATHER_STORM_TIME = -1};
-
 	CTI_GAMEPLAY_VOTE_TIME = if (CTI_Debug) then {8} else {60};
 	
 	if (isNil 'CTI_GAMEPLAY_TEAMSTACK_DISABLE') then {CTI_GAMEPLAY_TEAMSTACK_DISABLE = 1}; //--- Teamstacking script. (0: Disabled, 1: +1 Player Advantage, 2: +2 Player Advantage, 3: +3 Player Advantage, 4: +4 Player Advantage, 5: +5 Player Advantage).
@@ -720,7 +743,6 @@ with missionNamespace do {
 	if (isNil "CTI_RESPAWN_CAMPS_MODE") then {CTI_RESPAWN_CAMPS_MODE = 2}; 
 	if (isNil "CTI_RESPAWN_CAMPS_RANGE") then {CTI_RESPAWN_CAMPS_RANGE = 500}; //--- Range at which a unit can spawn at a camp
 	if (isNil "CTI_RESPAWN_CAMPS_RULE_MODE") then {CTI_RESPAWN_CAMPS_RULE_MODE = 2}; //--- Respawn Camps Rule (0: Disabled, 1: West | East, 2: West | East | Resistance).
-		
 	if (isNil 'CTI_RESPAWN_FOB_RANGE') then {CTI_RESPAWN_FOB_RANGE = 1750}; //--- Range at which a unit can spawn at a FOB
 	if (isNil 'CTI_RESPAWN_MOBILE') then {CTI_RESPAWN_MOBILE = 1};
 	if (isNil 'CTI_RESPAWN_TIMER') then {CTI_RESPAWN_TIMER = 30};
@@ -729,9 +751,7 @@ with missionNamespace do {
 	CTI_RESPAWN_CAMPS_SAFE_RADIUS = 50;
 	
 	if (isNil 'CTI_MARKERS_INFANTRY') then {CTI_MARKERS_INFANTRY = 1}; //--- Track infantry on map
-	
 	if (isNil 'CTI_UNITS_FATIGUE') then {CTI_UNITS_FATIGUE = 0};
-		
 	if (isNil 'CTI_NO_UPGRADE_MODE') then {CTI_NO_UPGRADE_MODE = 0};
 		
 };
