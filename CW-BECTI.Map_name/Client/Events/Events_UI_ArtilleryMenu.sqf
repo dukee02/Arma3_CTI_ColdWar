@@ -136,7 +136,9 @@ switch (_action) do {
 					_artillery_piece = _x select 0;
 					if (alive _artillery_piece) then { //--- The artillery piece is alive and kicking
 						if ([_artillery_piece, _artillery_magazine, _target, _artillery_range select 0, _artillery_range select 1] call CTI_UI_Artillery_CanFire) then { //--- Ultimate check about ranges
-							_artillery_piece doArtilleryFire [_target, _artillery_magazine, _artillery_burst];
+							["DEBUG", "FILE: Events_UI_ArtilleryMenu.sqf", format["Artytest: <%1|%2|%3>", _target, _artillery_magazine, _artillery_burst]] call CTI_CO_FNC_Log;
+							//_artillery_piece doArtilleryFire [_target, _artillery_magazine, _artillery_burst];
+							_artillery_piece commandArtilleryFire [_target, _artillery_magazine, _artillery_burst];
 						};
 					};
 				} forEach _artillery;
