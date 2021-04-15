@@ -7,24 +7,33 @@ _faction = "West";
 _t = [];
 
 // Vanilla templates
-_t = _t 	+ [[[["arifle_Mk20_plain_F",[],["30Rnd_556x45_Stanag"]],["",[],[""]],["",["","","",""],[""]]],[["U_I_pilotCoveralls",["Medikit","Medikit"]],["V_BandollierB_rgr",["SmokeShell","SmokeShell","MiniGrenade","HandGrenade"]],["B_AssaultPack_sgg",["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"]]],["H_Bandanna_sgg",""],[["", "Binocular"],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
+//deactivated for the moment, maybe will come back later
+//_t = _t 	+ [[[["arifle_Mk20_plain_F",[],["30Rnd_556x45_Stanag"]],["",[],[""]],["",[],[""]]],[["U_I_pilotCoveralls",["Medikit","Medikit"]],["V_BandollierB_rgr",["SmokeShell","SmokeShell","MiniGrenade","HandGrenade"]],["B_AssaultPack_sgg",["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"]]],["H_Bandanna_sgg",""],[["", "Binocular"],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
 
 // GM templates
-_t = _t 	+ [[[["gm_g3a4_oli",[],["gm_20Rnd_762x51mm_B_DM41_g3_blk"]],["",[],[""]],["",[],[""]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_burnBandage"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_20Rnd_762x51mm_B_DM41_g3_blk","gm_20Rnd_762x51mm_B_DM41_g3_blk","gm_20Rnd_762x51mm_B_DM41_g3_blk"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","itemwatch"]]]];
-_t = _t 	+ [[[["gm_mg3_blk",[],["gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn"]],["",[],[""]],["",[],[""]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_burnBandage"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn","gm_120Rnd_762x51mm_B_T_DM21A1_mg3_grn"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","itemwatch"]]]];
-
+_t = _t 	+ [[[["gm_g3a4_oli",[],["gm_20Rnd_762x51mm_b_t_DM21_g3_blk"]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_gauzeCompress"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","ItemWatch"]]]];
+_t = _t 	+ [[[["gm_mg3_blk",[],["gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_gauzeCompress"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_120Rnd_762x51mm_b_t_DM21_mg3_grn","gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","ItemWatch"]]]];
 
 /*
-_t = _t 	+ [[
-[["arifle_Mk20_plain_F",["","",""],["30Rnd_556x45_Stanag"]],
-["",[],[]],
-["",["","",""],[""]]],
-[["U_I_pilotCoveralls",["Medikit","Medikit"]],
-["V_BandollierB_rgr",["SmokeShell","SmokeShell","MiniGrenade","HandGrenade"]],
-["B_AssaultPack_sgg",["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"]]],
-["H_Bandanna_sgg",""],
-[["", "Binocular"],["itemmap","","itemradio","ItemCompass","ItemWatch"]]
-]];
+_t = _t 	+ [
+	[
+		[
+			["arifle_Mk20_plain_F",[],["30Rnd_556x45_Stanag"]],
+			["",[],[""]],
+			["",[],[""]]
+		],
+		[
+			["U_I_pilotCoveralls",["Medikit","Medikit"]],
+			["V_BandollierB_rgr",["SmokeShell","SmokeShell","MiniGrenade","HandGrenade"]],
+			["B_AssaultPack_sgg",["30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag","30Rnd_556x45_Stanag"]]
+		],
+		["H_Bandanna_sgg",""],
+		[
+			["", "Binocular"],
+			["itemmap","","itemradio","ItemCompass","ItemWatch"]
+		]
+	]
+];
 */
 
 [_faction, _t] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_Set.sqf"; 	
