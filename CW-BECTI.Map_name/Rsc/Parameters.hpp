@@ -197,12 +197,6 @@ class Params {
 		texts[] = {"",""};
 		default = 0;
 	};
-	class CTI_ARTILLERY_SETUP {
-		title = "ARTILLERY: Setup";
-		values[] = {-2,-1,0,1,2,3};
-		texts[] = {"Disabled","Ballistic Computer","Short","Medium","Long","Extreme"};
-		default = -1;
-	};
 	class CTI_BASE_AREA_MAX {
 		title = "BASE: Areas Limit";
 		values[] = {0,1,2,3,4,5,6,7,8};
@@ -258,7 +252,7 @@ class Params {
 		default = 6000;
 	};
 	class CTI_BASE_WORKERS_LIMIT {
-		title = "BASE: Worker Limit";
+		title = "BASE: Worker Limit (Automatical repairs Buildings and Vehicles over time)";
 		values[] = {5,10,15,20,30,40,50};
 		texts[] = {"5","10","15","20","30","40","50"};
 		default = 20;
@@ -419,6 +413,18 @@ class Params {
 		texts[] = {"",""};
 		default = 0;
 	};
+	class CTI_ARTILLERY_SETUP {
+		title = "ARTILLERY: Setup";
+		values[] = {-2,-1,0,1,2,3};
+		texts[] = {"Disabled","Ballistic Computer","Short","Medium","Long","Extreme"};
+		default = -1;
+	};
+	class CTI_ARTILLERY_TIMEOUT {
+		title = "ARTILLERY: Delay between each fire mission";
+		values[] = {0,60,120,180,240,300,600};
+		texts[] = {"Disabled","0","60","120","180","240","300","600"};
+		default = 180;
+	};
 	class CTI_GAMEPLAY_TEAMSTACK_DISABLE {
 		title = "GAMEPLAY: Kick Team Stackers";
 		values[] = {0,1,2,3,4,5};
@@ -553,8 +559,10 @@ class Params {
 	};
 	class CTI_TOWNS_STARTING_MODE {
 		title = "TOWNS: Starting Mode";
-		values[] = {-1,0,1,2,3,4,5};
-		texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
+		//values[] = {-1,0,1,2,3,4,5};
+		//texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
+		values[] = {-1,1,4,5};
+		texts[] = {"pre defined","50% East, 50% West", "Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
 		default = -1;
 	};
 	class CTI_TOWNS_VEHICLES_LOCK {

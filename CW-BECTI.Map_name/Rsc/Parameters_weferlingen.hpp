@@ -197,12 +197,6 @@ class Params {
 		texts[] = {"",""};
 		default = 0;
 	};
-	class CTI_ARTILLERY_SETUP {
-		title = "ARTILLERY: Setup";
-		values[] = {-2,-1,0,1,2,3};
-		texts[] = {"Disabled","Ballistic Computer","Short","Medium","Long","Extreme"};
-		default = -1;
-	};
 	class CTI_BASE_AREA_MAX {
 		title = "BASE: Areas Limit";
 		values[] = {0,1,2,3,4,5,6,7,8};
@@ -233,6 +227,12 @@ class Params {
 		texts[] = {"Disabled","Enabled"};
 		default = 1;
 	};
+	class CTI_BASE_BUILDING_DAMAGE_SYSTEM {
+		title = "BASE: Handle Building destruction";
+		values[] = {0,1,2,3};
+		texts[] = {"delete building","repair building, no penalty","repair building with full prise, if can paied","repair building with half prise, if can paied"};
+		default = 0;
+	};
 	class CTI_BASE_FOB_MAX {
 		title = "BASE: FOB Limit";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
@@ -252,7 +252,7 @@ class Params {
 		default = 6000;
 	};
 	class CTI_BASE_WORKERS_LIMIT {
-		title = "BASE: Worker Limit";
+		title = "BASE: Worker Limit (Automatical repairs Buildings and Vehicles over time)";
 		values[] = {5,10,15,20,30,40,50};
 		texts[] = {"5","10","15","20","30","40","50"};
 		default = 20;
@@ -401,11 +401,29 @@ class Params {
 		texts[] = {"15 min","30 min","45 min","1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours"};
 		default = 1;
 	};
+  	class CTI_WEATHER_CHANGES {
+		title = "WEATHER: Simple presets";
+		values[] = {0,1,2};
+		texts[] = {"Sunny start, random normal weather","Sunny", "complete random"};
+		default = 0;
+	};
 	class SEPERATOR_GAMEPLAY {
 		title = "============ Gameplay ============";
 		values[] = {0,1};
 		texts[] = {"",""};
 		default = 0;
+	};
+	class CTI_ARTILLERY_SETUP {
+		title = "ARTILLERY: Setup";
+		values[] = {-2,-1,0,1,2,3};
+		texts[] = {"Disabled","Ballistic Computer","Short","Medium","Long","Extreme"};
+		default = -1;
+	};
+	class CTI_ARTILLERY_TIMEOUT {
+		title = "ARTILLERY: Delay between each fire mission";
+		values[] = {0,60,120,180,240,300,600};
+		texts[] = {"Disabled","0","60","120","180","240","300","600"};
+		default = 180;
 	};
 	class CTI_GAMEPLAY_TEAMSTACK_DISABLE {
 		title = "GAMEPLAY: Kick Team Stackers";
