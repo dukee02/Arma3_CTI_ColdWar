@@ -13,12 +13,13 @@ _c = _c + ["O_Mortar_01_F"];
 _m = _m + [["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white", "8Rnd_82mm_Mo_LG"]];
 _b = _b + [[1, 2, 4, 8]];
 _r = _r + [[[90,500], [350,2000], [800,4000], [800,4000]]];
-if(CTI_REDD_ADDON == 1) then {
-	_c = _c + ["Redd_Tank_M120_Tampella"];
-	_m = _m + [["Redd_8Rnd_120mm_Mo_shells", "Redd_8Rnd_120mm_Mo_annz_shells", "Redd_8Rnd_120mm_Mo_Flare_white", "Redd_8Rnd_120mm_Mo_Smoke_white", "Redd_1Rnd_120mm_Mo_shells", "Redd_1Rnd_120mm_Mo_annz_shells", "Redd_1Rnd_120mm_Mo_Flare_white", "Redd_1Rnd_120mm_Mo_Smoke_white"]];
-	_b = _b + [[1, 2, 4, 8]];
-	_r = _r + [[[90,500], [350,2000], [800,4000], [800,4000]]];
-};
+//no real config for M120 in REDD, only manuel fire atm
+//if(CTI_REDD_ADDON == 1) then {
+//	_c = _c + ["Redd_Tank_M120_Tampella"];
+//	_m = _m + [["Redd_8Rnd_120mm_Mo_shells", "Redd_8Rnd_120mm_Mo_annz_shells", "Redd_8Rnd_120mm_Mo_Flare_white", "Redd_8Rnd_120mm_Mo_Smoke_white", "Redd_1Rnd_120mm_Mo_shells", "Redd_1Rnd_120mm_Mo_annz_shells", "Redd_1Rnd_120mm_Mo_Flare_white", "Redd_1Rnd_120mm_Mo_Smoke_white"]];
+//	_b = _b + [[1, 2, 4, 8]];
+//	_r = _r + [[[90,500], [350,2000], [800,4000], [800,4000]]];
+//};
 if(CTI_CUP_ADDON > 0) then {
 	_c = _c + ["CUP_O_2b14_82mm_RU"];
 	_m = _m + [["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"]];
@@ -34,7 +35,7 @@ if(CTI_RHS_ADDON > 0) then {
 	_c = _c + ["rhs_2b14_82mm_vdv"];
 	_m = _m + [["rhs_mag_3vo18_10", "rhs_mag_3vs25m_10", "rhs_mag_53_va_832a_10", "rhs_mag_d832du_10"]];
 	_b = _b + [[1, 2, 4, 8]];
-	_r = _r + [[[90,500], [350,2000], [800,4000], [800,4000]]];
+	_r = _r + [[[90,550], [380,2200], [780,4500], [780,4500]]];
 };
 //static Artillery guns:
 if(CTI_CUP_ADDON > 0) then {
@@ -54,7 +55,7 @@ if(CTI_RHS_ADDON > 0) then {
 	_c = _c + ["rhs_D30_vdv"];
 	_m = _m + [["rhs_mag_of462", "rhs_mag_of462_10", "rhs_mag_3of56", "rhs_mag_3of56_10", "rhs_mag_3of56_5", "rhs_mag_bk6m", "rhs_mag_bk6m_26", "rhs_mag_bk6m_5", "rhs_mag_bk13", "rhs_mag_bk13_26", "rhs_mag_bk13_5", "rhs_mag_d462", "rhs_mag_d462_2", "rhs_mag_s463", "rhs_mag_s463_2", "rhs_mag_3of69m", "rhs_mag_3of69m_2"]];
 	_b = _b + [[2, 4, 8, 12]];
-	_r = _r + [[[830,4400], [2060,6000], [5300,15400], [5300,15400]]];
+	_r = _r + [[[820,2400], [2050,6000], [5300,15400], [5300,15400]]];
 };
 
 //SPGs
@@ -64,7 +65,7 @@ if(CTI_RHS_ADDON > 0) then {
 	_c = _c + ["rhs_2s3_tv"];
 	_m = _m + [["rhs_mag_HE_2a33", "rhs_mag_WP_2a33", "rhs_mag_Atomic_2a33", "rhs_mag_LASER_2a33", "rhs_mag_SMOKE_2a33", "rhs_mag_ILLUM_2a33", "rhs_mag_HE_2a33_26", "rhs_mag_WP_2a33_26", "rhs_mag_Atomic_2a_2633_26", "rhs_mag_LASER_2a33_26", "rhs_mag_SMOKE_2a33_26", "rhs_mag_ILLUM_2a33_26"]];
 	_b = _b + [[2, 4, 8, 12]];
-	_r = _r + [[[1000,5000], [1000,10000], [1000,15000], [1000,20000]]];
+	_r = _r + [[[1035,2400], [2570,6000], [6550,15400], [6550,15400]]];
 };
 
 //Arty Rocket launcher:
@@ -76,13 +77,14 @@ if(CTI_CUP_ADDON > 0) then {
 	_b = _b + [[1, 2, 5, 10, 20, 40]];
 	_r = _r + [[[1500,8500], [1710,9800], [2110,12000], [2750,15500]]];
 };
-//RHS Arty dosn't have any ammo in there setup
-//if(CTI_RHS_ADDON > 0) then {
-//	_c = _c + ["RHS_BM21_VDV_01"];
-//	_m = _m + [["12Rnd_230mm_rockets"]];
-//	_b = _b + [[1, 2, 5, 10, 20, 40]];
-//	_r = _r + [[[1000,5000], [1000,10000], [1000,15000], [1000,20000]]];
-//};
+//RHS Arty dosn't have any ammo in there setup, maybe this works
+//round name: M-21OF
+if(CTI_RHS_ADDON > 0) then {
+	_c = _c + ["RHS_BM21_VDV_01"];
+	_m = _m + [["rhs_mag_m21of_1"]];
+	_b = _b + [[1, 2, 5, 10, 20, 40]];
+	_r = _r + [[[5000,6500], [6500,8300], [8300,10000], [13000,16000]]];
+};
 
 
 

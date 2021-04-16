@@ -1804,6 +1804,47 @@ if(CTI_MAIN_ADDON == 0) then {
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;
+		
+		
+		_c pushBack format["%1gm_ge_civ_typ1200", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_pol_typ1200", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_ff_typ1200", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;
 			
 		//_u pushBack "gm_ge_army_u1300l_repair";		//repairtruck	
 	};

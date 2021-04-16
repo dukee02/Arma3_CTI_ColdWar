@@ -139,6 +139,11 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_c pushBack format["%1gm_gc_army_bicycle_01_oli", _sid];
 		_c pushBack format["%1gm_gc_army_p601", _sid];
+		
+		//_c pushBack format["%1gm_gc_civ_p601", _sid];
+		//_c pushBack format["%1gm_gc_dp_p601", _sid];
+		//_c pushBack format["%1gm_gc_pol_p601", _sid];
+		//_c pushBack format["%1gm_gc_ff_p601", _sid];
 	};
 	//Level 1 if RHS is not active, else Level 2
 	if(CTI_RHS_ADDON > 0) then { _adds = 1; } else { _adds = 0; };
@@ -318,6 +323,11 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_c pushBack format["%1gm_gc_army_bicycle_01_oli", _sid];	
 		_c pushBack format["%1gm_gc_army_p601", _sid];
+		
+		_c pushBack format["%1gm_gc_civ_p601", _sid];
+		_c pushBack format["%1gm_gc_dp_p601", _sid];
+		_c pushBack format["%1gm_gc_pol_p601", _sid];
+		_c pushBack format["%1gm_gc_ff_p601", _sid];
 	};	
 	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 		if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
