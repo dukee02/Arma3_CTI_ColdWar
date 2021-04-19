@@ -1239,7 +1239,7 @@ if(CTI_RHS_ADDON > 0) then {
 		_c pushBack format["%1rhs_gaz66_ap2_vdv", _sid];			//Medic
 		_p pushBack '';
 		_n pushBack (format ["GAZ66 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
-		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -2249,7 +2249,7 @@ if(CTI_RHS_ADDON > 0) then {
 		_c pushBack format["%1RHS_Su25SM_vvsc", _sid];
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_o pushBack (((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)))*2);
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_AIR;
@@ -2289,7 +2289,7 @@ if(CTI_RHS_ADDON > 0) then {
 		_c pushBack format["%1rhs_mig29s_vvsc", _sid];
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_AIR;
@@ -2299,7 +2299,7 @@ if(CTI_RHS_ADDON > 0) then {
 		_c pushBack format["%1rhs_mig29sm_vvsc", _sid];
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_o pushBack ((CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_AIR;
