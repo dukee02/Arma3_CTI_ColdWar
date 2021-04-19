@@ -148,7 +148,6 @@ _c = [];
 if(CTI_CUP_ADDON == 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_c pushBack format["%1CUP_O_UAZ_Unarmed_RU", _sid];
-		_c pushBack format["%1CUP_O_UAZ_AMB_RU", _sid];				//Medic
 		_c pushBack format["%1CUP_O_UAZ_Open_RU", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
@@ -160,6 +159,7 @@ if(CTI_CUP_ADDON == 1) then {
 		_c pushBack format["%1CUP_O_BRDM2_RUS", _sid];				//MG + 2cm
 		_c pushBack format["%1CUP_O_BRDM2_ATGM_RUS", _sid];			//4x ATGM
 		_c pushBack format["%1CUP_O_BRDM2_HQ_RUS", _sid];			//MG		
+		_c pushBack format["%1CUP_O_UAZ_AMB_RU", _sid];				//Medic
 	};
 	if(CTI_RHS_ADDON > 0) then { _adds = 1; } else { _adds = 0; };
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {

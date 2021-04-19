@@ -148,7 +148,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	//Level 1 if RHS is not active, else Level 2
 	if(CTI_RHS_ADDON > 0) then { _adds = 1; } else { _adds = 0; };
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {
-		_c pushBack format["%1gm_gc_army_ural375d_medic", _sid];
+		_c pushBack format["%1gm_gc_army_ural375d_medic", _sid];		//Medic
 		_c pushBack format["%1gm_gc_army_ural375d_cargo", _sid];
 		_c pushBack format["%1gm_gc_army_ural44202", _sid];
 		_c pushBack format["%1gm_gc_army_ural4320_cargo", _sid];
