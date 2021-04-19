@@ -655,13 +655,13 @@ _i pushBack "gm_ge_army_vest_80_medic";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
 
-_i pushBack "gm_ge_army_vest_80_mp_wht";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
+//_i pushBack "gm_ge_army_vest_80_mp_wht";
+//_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+//_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
 
-_i pushBack "gm_ge_army_vest_80_officer";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
+//_i pushBack "gm_ge_army_vest_80_officer";
+//_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+//_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
 
 _i pushBack "gm_ge_pol_vest_80_wht";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
