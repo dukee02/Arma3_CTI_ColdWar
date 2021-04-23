@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2817;
+		nextID=2847;
 	};
 	class Camera
 	{
 		pos[]={3116.6389,428.68188,3541.1213};
-		dir[]={-0.58788419,-0.59305465,0.55018163};
-		up[]={-0.43301284,0.80515927,0.40524226};
-		aside[]={0.68331385,-1.5620026e-007,0.73013997};
+		dir[]={-0.58787787,-0.59304816,0.55017585};
+		up[]={-0.43300319,0.80516696,0.40523368};
+		aside[]={0.68330652,-2.9802322e-008,0.73013157};
 	};
 };
 binarizationWanted=0;
@@ -66,9 +66,9 @@ randomSeed=7728140;
 class ScenarioData
 {
 	author="Benny,dukee";
-	overviewText="Cold-War CTI - GlobalMobilization";
-	overviewTextLocked="Cold-War CTI - GlobalMobilization";
-	onLoadMission="Cold-War CTI - GlobalMobilization";
+	overviewText="VIO-CTI Cold-War";
+	overviewTextLocked="VIO-CTI Cold-War";
+	onLoadMission="VIO-CTI Cold-War";
 	respawnDialog=0;
 	respawn=3;
 	class Header
@@ -138,8 +138,8 @@ class Mission
 	assetType="Free";
 	class Intel
 	{
-		briefingName="Cold-War CTI - GlobalMobilization";
-		overviewText="WW2 - BECTI - [IFA3] V2.0";
+		briefingName="VIO-CTI Cold-War";
+		overviewText="VIO-CTI Cold-War";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
