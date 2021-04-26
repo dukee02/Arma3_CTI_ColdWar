@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=2847;
+		nextID=2862;
 	};
 	class Camera
 	{
-		pos[]={3116.6389,428.68188,3541.1213};
-		dir[]={-0.58787787,-0.59304816,0.55017585};
-		up[]={-0.43300319,0.80516696,0.40523368};
-		aside[]={0.68330652,-2.9802322e-008,0.73013157};
+		pos[]={3029.9893,495.06699,4323.0664};
+		dir[]={-0.14121982,-0.39234772,0.90891331};
+		up[]={-0.060237341,0.91981661,0.38769674};
+		aside[]={0.98814672,-1.20599e-008,0.15353058};
 	};
 };
 binarizationWanted=0;
@@ -2239,7 +2239,7 @@ class Mission
 								angles[]={0.014992379,0.72907639,0.0049916417};
 							};
 							name="Town7";
-							init="call{nullReturn = [this, ""Kamino Firing Range"", resistance, 30, 60, 600] execVM ""Common\Init\Init_Location.sqf""}";
+							init="call{nullReturn = [this, ""Kamino Firing Range"", resistance, 30, 120, 1200] execVM ""Common\Init\Init_Location.sqf""}";
 							id=1325;
 							type="LocationArea_F";
 						};
@@ -2431,7 +2431,7 @@ class Mission
 								angles[]={0.0024958209,0.54937726,0.079831354};
 							};
 							name="Town0";
-							init="call{nullReturn = [this, ""Agia Marina"", resistance, 30, 120, 1200] execVM ""Common\Init\Init_Location.sqf""}";
+							init="call{nullReturn = [this, ""Agia Marina"", resistance, 30, 60, 600] execVM ""Common\Init\Init_Location.sqf""}";
 							id=1309;
 							type="LocationArea_F";
 						};

@@ -732,6 +732,10 @@ _i pushBack "gm_ge_backpack_satchel_80_san";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
 
+_i pushBack "B_Parachute";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
+
 _tech_level = 2;
 
 _i pushBack "gm_ge_army_backpack_90_flk";
@@ -1207,6 +1211,7 @@ _i pushBack "Toolkit";
 _u pushBack 0;
 _p pushBack 750;
 
+//don't work corretly in CTI
 /*_i pushBack "gm_repairkit_01";
 _u pushBack 0;
 _p pushBack 25;*/
@@ -1218,6 +1223,19 @@ _p pushBack 15;
 _i pushBack "gm_ge_army_gauzeCompress";
 _u pushBack 0;
 _p pushBack 15;
+
+//no alternative for this in GM
+_i pushBack "Laserdesignator";
+_u pushBack 3;
+_p pushBack 1000;
+
+_i pushBack "Laserbatteries";
+_u pushBack 0;
+_p pushBack 50;
+
+_i pushBack "MineDetector";
+_u pushBack 0;
+_p pushBack 300;
 
 
 [_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";

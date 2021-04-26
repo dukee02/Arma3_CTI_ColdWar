@@ -92,7 +92,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	//Level start
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_win", _sid];
+			//_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_win", _sid];
 			_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid];
 			_c pushBack format["%1gm_ge_army_demolition_g3a4_parka_80_win", _sid];
 			_c pushBack format["%1gm_ge_army_grenadier_g3a3_parka_80_win", _sid];
@@ -103,7 +103,7 @@ if(CTI_MAIN_ADDON == 0) then {
 			_c pushBack format["%1gm_ge_army_radioman_g3a3_parka_80_win", _sid];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_oli", _sid];
+			//_c pushBack format["%1gm_ge_army_militarypolice_p1_parka_80_oli", _sid];
 			_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_demolition_g3a4_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_grenadier_g3a3_parka_80_ols", _sid];
@@ -113,7 +113,7 @@ if(CTI_MAIN_ADDON == 0) then {
 			_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_radioman_g3a3_parka_80_ols", _sid];
 		};
-		_c pushBack format["%1gm_ge_army_militarypolice_p1_80_oli", _sid];
+		//_c pushBack format["%1gm_ge_army_militarypolice_p1_80_oli", _sid];
 		_c pushBack format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_demolition_g3a4_80_ols", _sid];
 		_c pushBack format["%1gm_ge_army_grenadier_g3a3_80_ols", _sid];

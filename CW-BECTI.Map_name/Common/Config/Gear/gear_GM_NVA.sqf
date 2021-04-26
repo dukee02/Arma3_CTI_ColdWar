@@ -476,6 +476,10 @@ _i pushBack "gm_gc_army_backpack_80_at_str";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
 
+_i pushBack "B_Parachute";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
+
 _i pushBack "gm_fagot_launcher_weaponBag";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2)+((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*4);
@@ -616,12 +620,25 @@ _i pushBack "gm_gc_army_gauzeBandage";
 _u pushBack 0;
 _p pushBack 15;
 
+_i pushBack "gm_gc_army_medkit";
+_u pushBack 0;
+_p pushBack 15;
+
 _i pushBack "Toolkit";
 _u pushBack 0;
 _p pushBack 750;
 
-_i pushBack "gm_gc_army_medkit";
+//no alternative for this in GM
+_i pushBack "Laserdesignator_02";
+_u pushBack 3;
+_p pushBack 1000;
+
+_i pushBack "Laserbatteries";
 _u pushBack 0;
-_p pushBack 15;
+_p pushBack 50;
+
+_i pushBack "MineDetector";
+_u pushBack 0;
+_p pushBack 300;
 
 [_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf"; 
