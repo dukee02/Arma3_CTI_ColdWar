@@ -503,7 +503,7 @@ class Params {
 		//texts[] = {"Extra Small","Small","Medium","Large","East","West","Full"};
 		values[] = {0,1,2,3,6};
 		texts[] = {"Extra Small","Small","Medium","Large","Full"};
-		default = 6;
+		default = 3;
 	};
 	class CTI_TOWNS_CAMPS_CREATE {
 		title = "TOWNS: Camps";
