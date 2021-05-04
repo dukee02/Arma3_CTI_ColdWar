@@ -3,31 +3,24 @@ _sid = "";
 
 if(_side == west) then {
 	//_sid = "VIOC_B_";
+	if(CTI_CAMO_ACTIVATION == 1) then {
+		missionNamespace setVariable [format["CTI_%1_HQ", _side], "B_T_APC_Wheeled_01_cannon_F"];
+	} else {
+		missionNamespace setVariable [format["CTI_%1_HQ", _side], "B_APC_Wheeled_01_cannon_F"];
+	};
 } 
 else {
 	if(_side == east) then {
 		//_sid = "VIOC_O_";
+		if(CTI_CAMO_ACTIVATION == 1) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "O_T_APC_Wheeled_02_rcws_v2_ghex_F"];
+		} else {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "O_APC_Wheeled_02_rcws_v2_F"];
+		};
 	} 
 	else {
 		//_sid = "VIOC_I_";
 	};
-};
-
-if(CTI_SOV_CUP_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_O_Ural_RU"];
-};
-if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhs_gaz66_r142_vdv"];
-};
-if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_MAIN_ADDON == 0) then {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_m113a1g_command"];
-	} else {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "BW_LKW_Geraet_Fleck"];
-	};
-};
-if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12"];
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then { ["VIOC_DEBUG", "FILE: Common\Config\Base\Base.sqf", format ["Set HQ Vehicle [%1] for side [%2]", missionNamespace getVariable format["CTI_%1_HQ", _side], _side]] call CTI_CO_FNC_Log };
@@ -146,33 +139,33 @@ _specials pushBack 		[["DMG_Reduce", 40]];
 
 _headers pushBack		[CTI_BARRACKS, "Barracks", "Barracks"];
 //_classes pushBack		["CDF_WarfareBBarracks", "Land_Scaffolding_New_F"];
-_classes pushBack		["Land_Cargo_House_V1_F", "Land_Cargo_House_V1_ruins_F"];
+_classes pushBack 		["Land_Cargo_HQ_V2_F", "Land_Cargo_HQ_V2_ruins_F"];
 _prices pushBack		2000;
 _times pushBack			60;
 _placements pushBack 	[270, 35];
 _helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
 _specials pushBack 		[["DMG_Reduce", 25]];
 
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_headers pushBack		[CTI_LIGHT, "Light Vehicle Factory", "Light"];
-	//_classes pushBack		["CDF_WarfareBLightFactory", "Land_Scaffolding_New_F"];
-	_classes pushBack		["Land_Medevac_HQ_V1_F", "Land_Medevac_HQ_V1_ruins_F"];
-	_prices pushBack 		4000;
-	_times pushBack 		80;
-	_placements pushBack 	[180, 30];
-	_helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
-	_specials pushBack 		[["DMG_Reduce", 25]];
-};
-
 _headers pushBack 		[CTI_CONTROLCENTER, "Control Center", "CC"];
 //_classes pushBack 		["GUE_WarfareBUAVterminal", "Land_PowGen_Big_ruins"];	
-_classes pushBack 		["Land_Research_HQ_F", "Land_Research_HQ_ruins_F", ["Land_Research_HQ_F"]];							  
+_classes pushBack 		["Land_Research_HQ_F", "Land_Research_HQ_ruins_F"];							  
 _prices pushBack 		4000;
 _times pushBack 		90;
 _placements pushBack 	[90, 25];
 _helper pushBack		[""];
 _specials pushBack 		[["DMG_Reduce", 25]];
 
+if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+	_headers pushBack		[CTI_LIGHT, "Light Vehicle Factory", "Light"];
+	//_classes pushBack		["CDF_WarfareBLightFactory", "Land_Scaffolding_New_F"];
+	//_classes pushBack		["Land_Medevac_HQ_V1_F", "Land_Medevac_HQ_V1_ruins_F"];
+	_classes pushBack 		["Land_Cargo_HQ_V3_F", "Land_Cargo_HQ_V3_ruins_F"];
+	_prices pushBack 		4000;
+	_times pushBack 		80;
+	_placements pushBack 	[180, 30];
+	_helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
+	_specials pushBack 		[["DMG_Reduce", 25]];
+};
 
 if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
 	_headers pushBack 		[CTI_HEAVY, "Heavy Vehicle Factory", "Heavy"];
@@ -188,7 +181,8 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
 if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
 	_headers pushBack 		[CTI_AIR, "Aircraft Factory", "Air"];
 	//_classes pushBack 		["RU_WarfareBAircraftFactory", "Land_Scaffolding_New_F"];
-	_classes pushBack 		["Land_Airport_Tower_F", "Land_Airport_Tower_ruins_F"];
+	//_classes pushBack 		["Land_Airport_Tower_F", "Land_Airport_Tower_ruins_F"];		//cant destroy ruins
+	_classes pushBack 		["Land_Medevac_HQ_V1_F", "Land_Medevac_HQ_V1_ruins_F"];
 	_prices pushBack 		8000;
 	_times pushBack 		140;
 	_placements pushBack 	[180, 40];
@@ -198,7 +192,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
 
 _headers pushBack 		[CTI_AMMO, "Ammo Depot", "Ammo"];
 //_classes pushBack 		["RU_WarfareBVehicleServicePoint", "Land_PowGen_Big_ruins"];
-_classes pushBack 		["Land_Cargo_HQ_V2_F", "Land_Cargo_HQ_V2_ruins_F"];
+//_classes pushBack 		["Land_Cargo_HQ_V2_F", "Land_Cargo_HQ_V2_ruins_F"];
+_classes pushBack		["Land_Cargo_House_V1_F", "Land_Cargo_House_V1_ruins_F"];
 _prices pushBack 		2000;
 _times pushBack 		90;
 _placements pushBack 	[90, 25];
@@ -207,7 +202,8 @@ _specials pushBack 		[["DMG_Reduce", 25]];
 
 _headers pushBack 		[CTI_REPAIR, "Repair Depot", "Repair"];
 //_classes pushBack 		["TK_GUE_WarfareBContructionSite_Base_EP1", "Land_PowGen_Big_ruins"];
-_classes pushBack 		["Land_Cargo_HQ_V3_F", "Land_Cargo_HQ_V3_ruins_F"];
+//_classes pushBack 		["Land_Cargo_HQ_V3_F", "Land_Cargo_HQ_V3_ruins_F"];
+_classes pushBack 		["Land_Cargo_House_V3_F", "Land_Cargo_House_V3_ruins_F"];
 _prices pushBack 		4000;
 _times pushBack 		90;
 _placements pushBack 	[90, 25];
@@ -217,7 +213,7 @@ _specials pushBack 		[["DMG_Reduce", 25]];
 if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
 	_headers pushBack 		[CTI_NAVAL, "Naval Yard", "Naval"];
 	//_classes pushBack 		["Land_Lighthouse_small_F", "Land_Lighthouse_small_ruins_F"];
-	_classes pushBack 		["Land_Lighthouse_small_F", "Land_Lighthouse_small_ruins_F"];
+	_classes pushBack 		["Land_Cargo_House_V2_F", "Land_Cargo_House_V2_ruins_F"];
 	_prices pushBack 		3000;
 	_times pushBack 		80;
 	_placements pushBack 	[180, 60];
@@ -234,378 +230,230 @@ _prices = [];
 _placements = [];  
 _categories = [];
 
-
-_headers pushBack 			["FOB",[["RuinOnDestroyed", "Land_Shed_M01_ruins_EP1"], ["FOB"],["Condition", {_cpt = if (isNil {CTI_P_SideLogic getVariable "cti_fobs"}) then {1000} else {count (CTI_P_SideLogic getVariable "cti_fobs")}; (_cpt < CTI_BASE_FOB_MAX) && (call CTI_CL_FNC_IsPlayerCommander || (!(call CTI_CL_FNC_IsPlayerCommander) && CTI_P_TeamsRequests_FOB > 0))}]]];
-_classes pushBack 			"INS_WarfareBFieldhHospital";
+if(CTI_FOB_BUILD_EVERYONE == 0) then {
+	_headers pushBack 			["FOB",[["RuinOnDestroyed", "Land_Medevac_house_V1_ruins_F"],["FOB"],["Condition", {_cpt = if (isNil {CTI_P_SideLogic getVariable "cti_fobs"}) then {1000} else {count (CTI_P_SideLogic getVariable "cti_fobs")}; (_cpt < CTI_BASE_FOB_MAX) && (call CTI_CL_FNC_IsPlayerCommander || (!(call CTI_CL_FNC_IsPlayerCommander) && CTI_P_TeamsRequests_FOB > 0))}]]];
+} else {
+	_headers pushBack 			["FOB",[["RuinOnDestroyed", "Land_Medevac_house_V1_ruins_F"],["FOB"],["Condition", {_cpt = if (isNil {CTI_P_SideLogic getVariable "cti_fobs"}) then {1000} else {count (CTI_P_SideLogic getVariable "cti_fobs")}; (_cpt < CTI_BASE_FOB_MAX) && (call CTI_CL_FNC_IsPlayerCommander || (!(call CTI_CL_FNC_IsPlayerCommander) && CTI_P_TeamsRequests_FOB == 0))}]]];
+	//_headers pushBack 			["FOB",[["RuinOnDestroyed", "Land_Medevac_house_V1_ruins_F"],["FOB"],["Condition", {_cpt = if (isNil {CTI_P_SideLogic getVariable "cti_fobs"}) then {1000} else {count (CTI_P_SideLogic getVariable "cti_fobs")}; (_cpt < CTI_BASE_FOB_MAX)}]]];
+};
+_classes pushBack 			"Land_Medevac_house_V1_F";
 _prices pushBack 			5000;
 _placements pushBack 		[180, 15];
 _categories pushBack 		"Fortification";
 
 
 //******************************BASE GUN DEFENSE 1******************************
-if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-	//};
-	//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-	//};
-	
-	if(CTI_MAIN_ADDON == 0) then {
-		_headers pushBack 		"MG3 AA (GM)";
-		_classes pushBack 		"gm_ge_army_mg3_aatripod";
-		_prices pushBack 		1500;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		
-		_headers pushBack 		"AT Milan (GM)";
-		_classes pushBack 		"gm_ge_army_milan_launcher_tripod";
-		_prices pushBack 		7000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	};
-	if(CTI_BW_ADDON > 0) then {
-		if(CTI_EF_TORNADO_ADDON >= 1) then {
-			/*_headers pushBack 		"Radar";
-			_classes pushBack 		"TBW_MEADS_Radar_Fleck";
-			_prices pushBack 		4000;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
+if(_side == west) then {
+	_headers pushBack 		"Static Designator";
+	_classes pushBack 		"B_Static_Designator_01_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
 
-			_headers pushBack 		"SAM Launcher";
-			_classes pushBack 		"TBW_MEADS_Launcher_Fleck";
-			_prices pushBack 		20000;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";*/
-		};
-	};
-	if (CTI_CUP_ADDON > 0) then {
-		_headers pushBack 		"Static MG (M2)";
-		_classes pushBack 		"CUP_B_M2StaticMG_US";
+	_headers pushBack 		"HMG";
+	_classes pushBack 		"B_HMG_01_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+
+	_headers pushBack 		"HMG high";
+	_classes pushBack 		"B_HMG_01_high_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+
+	_headers pushBack 		"HMG";
+	_classes pushBack 		"B_HMG_01_A_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	
+	_headers pushBack 		"GMG";
+	_classes pushBack 		"B_GMG_01_F";
+	_prices pushBack 		3000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"GMG high";
+	_classes pushBack 		"B_GMG_01_high_F";
+	_prices pushBack 		3000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"GMG";
+	_classes pushBack 		"B_GMG_01_A_F";
+	_prices pushBack 		3000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	
+	_headers pushBack 		"Mortar";
+	_classes pushBack 		"B_Mortar_01_F";
+	_prices pushBack 		5000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"AT";
+	_classes pushBack 		"B_static_AT_F";
+	_prices pushBack 		8000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"AA";
+	_classes pushBack 		"B_static_AA_F";
+	_prices pushBack 		8000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+
+
+	if(CTI_APEX_ADDON == 0) then {
+		_headers pushBack 		"HMG tanoa";
+		_classes pushBack 		"B_T_HMG_01_F";
 		_prices pushBack 		1500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Static MG low (M2)";
-		_classes pushBack 		"CUP_B_M2StaticMG_MiniTripod_US";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Arty";
-		_classes pushBack 		"CUP_B_M119_US";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Mortar";
-		_classes pushBack 		"CUP_B_M252_US";
-		_prices pushBack 		5000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AT Defense (TOW)";
-		_classes pushBack 		"CUP_B_TOW_TriPod_US";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	};
-	if (CTI_REDD_ADDON > 0) then {
-		_headers pushBack 		"Static MG (MG3)";
-		_classes pushBack 		"rnt_mg3_static";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Static MG low (MG3 ai)";
-		_classes pushBack 		"rnt_mg3_static_ai";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Static GW (GMW)";
-		_classes pushBack 		"rnt_gmw_static";
+		_headers pushBack 		"GMG tanoa";
+		_classes pushBack 		"B_T_GMG_01_F";
 		_prices pushBack 		3000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Mortar (REDD)";
-		_classes pushBack 		"Redd_Tank_M120_Tampella";
+		_headers pushBack 		"Mortar";
+		_classes pushBack 		"B_T_Mortar_01_F";
 		_prices pushBack 		5000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AT Milan (REDD)";
-		_classes pushBack 		"Redd_Milan_Static";
+		
+		_headers pushBack 		"AT";
+		_classes pushBack 		"B_T_Static_AT_F";
 		_prices pushBack 		8000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"AA";
+		_classes pushBack 		"B_T_Static_AA_F";
+		_prices pushBack 		8000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+	};
+	
+	if(CTI_BASE_SPECIAL >= 1) then {
+		_headers pushBack 		"Radar System";
+		_classes pushBack 		"B_Radar_System_01_F";
+		_prices pushBack 		1000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"SAM System";
+		_classes pushBack 		"B_SAM_System_03_F";
+		_prices pushBack 		25000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 	};
 };
 
-/*if(CTI_EF_TORNADO_ADDON >= 1) then {
+if(_side == east) then {
+	_headers pushBack 		"Static Designator";
+	_classes pushBack 		"O_Static_Designator_02_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+
+	_headers pushBack 		"HMG";
+	_classes pushBack 		"O_HMG_01_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+
+	_headers pushBack 		"HMG high";
+	_classes pushBack 		"O_HMG_01_high_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+
+	_headers pushBack 		"HMG";
+	_classes pushBack 		"O_HMG_01_A_F";
+	_prices pushBack 		1500;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
 	
-		_headers pushBack 		"Radar";
+	
+	_headers pushBack 		"GMG";
+	_classes pushBack 		"O_GMG_01_F";
+	_prices pushBack 		3000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"GMG high";
+	_classes pushBack 		"O_GMG_01_high_F";
+	_prices pushBack 		3000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"GMG";
+	_classes pushBack 		"O_GMG_01_A_F";
+	_prices pushBack 		3000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	
+	_headers pushBack 		"Mortar";
+	_classes pushBack 		"O_Mortar_01_F";
+	_prices pushBack 		5000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"AT";
+	_classes pushBack 		"O_static_AT_F";
+	_prices pushBack 		8000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"AA";
+	_classes pushBack 		"O_static_AA_F";
+	_prices pushBack 		8000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	if(CTI_BASE_SPECIAL >= 1) then {
+		_headers pushBack 		"Radar System";
 		_classes pushBack 		"O_Radar_System_02_F";
-		_prices pushBack 		4000;
+		_prices pushBack 		1000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
-
-		_headers pushBack 		"SAM Launcher";
+		
+		_headers pushBack 		"SAM System";
 		_classes pushBack 		"O_SAM_System_04_F";
-		_prices pushBack 		20000;
+		_prices pushBack 		25000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
-	};	*/
+	};
+};
 
-if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"AT Fagot (GM)";
-	_classes pushBack 		"gm_gc_army_fagot_launcher_tripod";
-	_prices pushBack 		7000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	if (CTI_CUP_ADDON > 0 && CTI_SOV_CUP_SIDE != CTI_NVA_SIDE) then {
-		_headers pushBack 		"Static MG (KORD)";
-		_classes pushBack 		"CUP_O_KORD_high_RU";
-		_prices pushBack 		1500;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		
-		_headers pushBack 		"Static MG low (KORD)";
-		_classes pushBack 		"CUP_O_KORD_RU";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Static GW (AGS)";
-		_classes pushBack 		"CUP_O_AGS_RU";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"D30 Arty";
-		_classes pushBack 		"CUP_O_D30_RU";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"D30 AT";
-		_classes pushBack 		"CUP_O_D30_AT_RU";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Mortar";
-		_classes pushBack 		"CUP_O_2b14_82mm_RU";
-		_prices pushBack 		5000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AT Defense (Metis)";
-		_classes pushBack 		"CUP_O_Metis_RU";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AA Defense (ZU23)";
-		_classes pushBack 		"CUP_O_ZU23_RU";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	};
-	if (CTI_RHS_ADDON > 0 && CTI_SOV_RHS_SIDE != CTI_NVA_SIDE) then {
-	
-		_headers pushBack 		"Static MG (KORD)";
-		_classes pushBack 		"rhs_KORD_high_VDV";
-		_prices pushBack 		1500;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		
-		_headers pushBack 		"Static MG low (KORD)";
-		_classes pushBack 		"rhs_KORD_VDV";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		
-		_headers pushBack 		"Static MG low (NSV)";
-		_classes pushBack 		"RHS_NSV_TriPod_VDV";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Static AT (SPG9)";
-		_classes pushBack 		"rhs_SPG9M_VDV";
-		_prices pushBack 		4000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Static GW (AGS)";
-		_classes pushBack 		"RHS_AGS30_TriPod_VDV";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"D30 Arty";
-		_classes pushBack 		"rhs_D30_vdv";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"D30 AT";
-		_classes pushBack 		"rhs_D30_at_vdv";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"Mortar";
-		_classes pushBack 		"rhs_2b14_82mm_vdv";
-		_prices pushBack 		5000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AT Defense (Metis)";
-		_classes pushBack 		"rhs_Metis_9k115_2_vdv";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AT Defense (Kornet)";
-		_classes pushBack 		"rhs_Kornet_9M133_2_vdv";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AA Defense (ZU23)";
-		_classes pushBack 		"RHS_ZU23_VDV";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	
-		_headers pushBack 		"AA Defense (Igla)";
-		_classes pushBack 		"rhs_Igla_AA_pod_vdv";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-	};
-};
-if(CTI_SOV_CUP_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"Static MG (KORD)";
-	_classes pushBack 		"CUP_O_KORD_high_RU";
-	_prices pushBack 		1500;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"Static MG low (KORD)";
-	_classes pushBack 		"CUP_O_KORD_RU";
+if(CTI_BASE_SPECIAL >= 2) then {
+	_headers pushBack 		"Ship Gun";
+	_classes pushBack 		"B_Ship_Gun_01_F";
 	_prices pushBack 		1000;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Defense";
 	
-	_headers pushBack 		"Static GW (AGS)";
-	_classes pushBack 		"CUP_O_AGS_RU";
-	_prices pushBack 		3000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"D30 Arty";
-	_classes pushBack 		"CUP_O_D30_RU";
-	_prices pushBack 		6000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"D30 AT";
-	_classes pushBack 		"CUP_O_D30_AT_RU";
-	_prices pushBack 		6000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"Mortar";
-	_classes pushBack 		"CUP_O_2b14_82mm_RU";
-	_prices pushBack 		5000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"AT Defense (Metis)";
-	_classes pushBack 		"CUP_O_Metis_RU";
-	_prices pushBack 		8000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"AA Defense (ZU23)";
-	_classes pushBack 		"CUP_O_ZU23_RU";
-	_prices pushBack 		8000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-};
-if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"Static MG (KORD)";
-	_classes pushBack 		"rhs_KORD_high_VDV";
-	_prices pushBack 		1500;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"Static MG low (KORD)";
-	_classes pushBack 		"rhs_KORD_VDV";
+	_headers pushBack 		"AAA System";
+	_classes pushBack 		"B_AAA_System_01_F";
 	_prices pushBack 		1000;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Defense";
 	
-	_headers pushBack 		"Static MG low (NSV)";
-	_classes pushBack 		"RHS_NSV_TriPod_VDV";
+	_headers pushBack 		"SAM System";
+	_classes pushBack 		"B_SAM_System_01_F";
 	_prices pushBack 		1000;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Defense";
 	
-	_headers pushBack 		"Static AT (SPG9)";
-	_classes pushBack 		"rhs_SPG9M_VDV";
-	_prices pushBack 		4000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"Static GW (AGS)";
-	_classes pushBack 		"RHS_AGS30_TriPod_VDV";
-	_prices pushBack 		3000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"D30 Arty";
-	_classes pushBack 		"rhs_D30_vdv";
-	_prices pushBack 		6000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"D30 AT";
-	_classes pushBack 		"rhs_D30_at_vdv";
-	_prices pushBack 		6000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"Mortar";
-	_classes pushBack 		"rhs_2b14_82mm_vdv";
-	_prices pushBack 		5000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"AT Defense (Metis)";
-	_classes pushBack 		"rhs_Metis_9k115_2_vdv";
-	_prices pushBack 		8000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"AT Defense (Kornet)";
-	_classes pushBack 		"rhs_Kornet_9M133_2_vdv";
-	_prices pushBack 		8000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"AA Defense (ZU23)";
-	_classes pushBack 		"RHS_ZU23_VDV";
-	_prices pushBack 		8000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	
-	_headers pushBack 		"AA Defense (Igla)";
-	_classes pushBack 		"rhs_Igla_AA_pod_vdv";
-	_prices pushBack 		8000;
+	_headers pushBack 		"MRLS";
+	_classes pushBack 		"B_Ship_MRLS_01_F";
+	_prices pushBack 		1000;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Defense";
 };
@@ -666,123 +514,6 @@ _classes pushBack 		"Land_LampHalogen_F";
 _prices pushBack 		5;
 _placements pushBack 	[90, 15];
 _categories pushBack 	"Misc";
-
-/*_headers pushBack 		"Flag";
-_classes pushBack 		"Flag_NATO_F";
-_prices pushBack 		50;
-_placements pushBack 	[90, 15];
-_categories pushBack 	"Misc";*/
-
-if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"Banner West Germany";
-	_classes pushBack 		"gm_banner_GE";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag West Germany";
-	_classes pushBack 		"gm_flag_GE";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-};
-if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"Banner East Germany";
-	_classes pushBack 		"gm_banner_GC";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag East Germany";
-	_classes pushBack 		"gm_flag_GC";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-};
-if(CTI_DK_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"Banner Denmark";
-	_classes pushBack 		"gm_banner_DK";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag Denmark";
-	_classes pushBack 		"gm_flag_DK";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-};
-if(CTI_POL_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"Banner Poland";
-	_classes pushBack 		"gm_banner_PL";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag Poland";
-	_classes pushBack 		"gm_flag_PL";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-};
-
-if(_side == west) then {
-	_headers pushBack 		"Banner USA";
-	_classes pushBack 		"gm_banner_US";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag USA";
-	_classes pushBack 		"Flag_US_F";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-	
-	_headers pushBack 		"Banner NATO";
-	_classes pushBack 		"Banner_01_NATO_F";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag NATO";
-	_classes pushBack 		"Flag_NATO_F";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag West Germany";
-	_classes pushBack 		"FlagCarrierGermany_EP1";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag UNO";
-	_classes pushBack 		"Flag_UNO_F";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-};
-if(_side == east) then {
-	_headers pushBack 		"Banner USSR";
-	_classes pushBack 		"gm_banner_UR";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag USSR";
-	_classes pushBack 		"gm_flag_UR";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-
-	_headers pushBack 		"Flag Russia";
-	_classes pushBack 		"FlagCarrierRU";
-	_prices pushBack 		50;
-	_placements pushBack 	[90, 15];
-	_categories pushBack 	"Misc";
-	
-};
 
 _headers pushBack 		"Warning Sign- Mines";
 _classes pushBack 		"Land_Sign_Mines_F";
@@ -874,7 +605,7 @@ _prices pushBack 		20;
 _placements pushBack 	[0, 7];
 _categories pushBack 	"Walls";
 
-_headers pushBack 		"Camo net";
+/*_headers pushBack 		"Camo net";
 _classes pushBack 		"CamoNet_BLUFOR_F";
 _prices pushBack 		50;
 _placements pushBack 	[0, 15];
@@ -890,9 +621,7 @@ _headers pushBack 		"Camo net vehicle";
 _classes pushBack 		"CamoNet_BLUFOR_big_F";
 _prices pushBack 		50;
 _placements pushBack 	[0, 15];
-_categories pushBack 	"Camo";
-
-
+_categories pushBack 	"Camo";*/
 
 
 [_side, _headers, _classes, _prices, _placements, _categories] call compile preprocessFileLineNumbers "Common\Config\Base\Set_Defenses.sqf";
@@ -900,144 +629,53 @@ _categories pushBack 	"Camo";
 //Defense Guns for Towns
 _classes_town = [];
 _categories_town = [];
-
-if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-	//};
-	//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-	//};
-	//_classes_town pushBack 		format["%1", _sid];
-	//_categories_town pushBack 	"View";
-	
-	if(CTI_MAIN_ADDON == 0) then {
-		_classes_town pushBack 		format["%1gm_ge_army_mg3_aatripod", _sid];
+if(_side == west) then {
+		_classes_town pushBack 		format["%1B_HMG_01_high_F", _sid];
 		_categories_town pushBack 	"MG";
 		
-		_classes_town pushBack 		format["%1gm_ge_army_milan_launcher_tripod", _sid];
-		_categories_town pushBack 	"AT";
-		
-		_classes_town pushBack 		format["%1gm_ge_army_mg3_aatripod", _sid];
-		_categories_town pushBack 	"AA";
-	};
-	if (CTI_CUP_ADDON > 0) then {
-		_classes_town pushBack 		format["%1CUP_B_M2StaticMG_US", _sid];
-		_categories_town pushBack 	"MG";
-		
-		_classes_town pushBack 		format["%1CUP_B_M119_US", _sid];
+		_classes_town pushBack 		format["%1B_GMG_01_high_F", _sid];
 		_categories_town pushBack 	"Artillery";
 	
-		_classes_town pushBack 		format["%1CUP_B_M252_US", _sid];
+		_classes_town pushBack 		format["%1B_Mortar_01_F", _sid];
 		_categories_town pushBack 	"Mortar";
 		
-		_classes_town pushBack 		format["%1CUP_B_TOW_TriPod_US", _sid];
-		_categories_town pushBack 	"AT";
-	};
-	if (CTI_REDD_ADDON > 0) then {
-		_classes_town pushBack 		format["%1rnt_mg3_static", _sid];
-		_categories_town pushBack 	"MG";
-		
-		_classes_town pushBack 		format["%1Redd_Milan_Static", _sid];
+		_classes_town pushBack 		format["%1B_static_AT_F", _sid];
 		_categories_town pushBack 	"AT";
 		
-		_classes_town pushBack 		format["%1Redd_Tank_M120_Tampella", _sid];
-		_categories_town pushBack 	"Mortar";
-	};
-	
-	//_classes_town pushBack 		format["%1", _sid];
-	//_categories_town pushBack 	"AA";	
+		_classes_town pushBack 		format["%1B_static_AA_F", _sid];
+		_categories_town pushBack 	"AA";
 };
-if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	//_classes_town pushBack 		format["%1", _sid];
-	//_categories_town pushBack 	"View";
-	
-	if(CTI_MAIN_ADDON == 0) then {
-		_classes_town pushBack 		format["%1gm_gc_army_dshkm_aatripod", _sid];
+if(_side == east) then {
+		_classes_town pushBack 		format["%1O_HMG_01_high_F", _sid];
 		_categories_town pushBack 	"MG";
 		
-		_classes_town pushBack 		format["%1gm_gc_army_spg9_tripod", _sid];
-		_categories_town pushBack 	"AT";
-		
-		_classes_town pushBack 		format["%1gm_gc_army_fagot_launcher_tripod", _sid];
-		_categories_town pushBack 	"AT";
-			
-		_classes_town pushBack 		format["%1gm_gc_army_dshkm_aatripod", _sid];
-		_categories_town pushBack 	"AA";
-	};
-	if (CTI_CUP_ADDON > 0 && CTI_SOV_CUP_SIDE != CTI_NVA_SIDE) then {
-		_classes_town pushBack 		format["%1CUP_O_KORD_high_RU", _sid];
-		_categories_town pushBack 	"MG";
-		
-		_classes_town pushBack 		format["%1CUP_O_2b14_82mm_RU", _sid];
-		_categories_town pushBack 	"Mortar";
-		
-		_classes_town pushBack 		format["%1CUP_O_ZU23_RU", _sid];
-		_categories_town pushBack 	"AA";
-		
-		_classes_town pushBack 		format["%1CUP_O_D30_RU", _sid];
+		_classes_town pushBack 		format["%1O_GMG_01_high_F", _sid];
 		_categories_town pushBack 	"Artillery";
-	};
-	if (CTI_RHS_ADDON > 0 && CTI_SOV_RHS_SIDE != CTI_NVA_SIDE) then {
-		_classes_town pushBack 		format["%1rhs_KORD_high_VDV", _sid];
-		_categories_town pushBack 	"MG";
-		
-		_classes_town pushBack 		format["%1rhs_2b14_82mm_vdv", _sid];
+	
+		_classes_town pushBack 		format["%1O_Mortar_01_F", _sid];
 		_categories_town pushBack 	"Mortar";
 		
-		_classes_town pushBack 		format["%1rhs_Igla_AA_pod_vdv", _sid];
-		_categories_town pushBack 	"AA";
+		_classes_town pushBack 		format["%1O_static_AT_F", _sid];
+		_categories_town pushBack 	"AT";
 		
-		_classes_town pushBack 		format["%1rhs_D30_vdv", _sid];
+		_classes_town pushBack 		format["%1O_static_AA_F", _sid];
+		_categories_town pushBack 	"AA";
+};
+if(_side == east) then {
+		_classes_town pushBack 		format["%1I_HMG_02_high_F", _sid];
+		_categories_town pushBack 	"MG";
+		
+		_classes_town pushBack 		format["%1I_HMG_01_high_F", _sid];
 		_categories_town pushBack 	"Artillery";
-	};
 	
-	/*_classes_town pushBack 		format["%1", _sid];
-	_categories_town pushBack 	"Mortar";
-	
-	_classes_town pushBack 		format["%1", _sid];
-	_categories_town pushBack 	"AA";
-	
-	_classes_town pushBack 		format["%1", _sid];
-	_categories_town pushBack 	"Artillery";*/
-};
-if(CTI_SOV_CUP_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	//_classes_town pushBack 		format["%1", _sid];
-	//_categories_town pushBack 	"View";
-	
-	_classes_town pushBack 		format["%1CUP_O_KORD_high_RU", _sid];
-	_categories_town pushBack 	"MG";
-	
-	_classes_town pushBack 		format["%1CUP_O_2b14_82mm_RU", _sid];
-	_categories_town pushBack 	"Mortar";
-	
-	_classes_town pushBack 		format["%1CUP_O_ZU23_RU", _sid];
-	_categories_town pushBack 	"AA";
-	
-	_classes_town pushBack 		format["%1CUP_O_Metis_RU", _sid];
-	_categories_town pushBack 	"AT";
-	
-	_classes_town pushBack 		format["%1CUP_O_D30_RU", _sid];
-	_categories_town pushBack 	"Artillery";
-	
-};
-if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	//_classes_town pushBack 		format["%1", _sid];
-	//_categories_town pushBack 	"View";
-	
-	_classes_town pushBack 		format["%1rhs_KORD_high_VDV", _sid];
-	_categories_town pushBack 	"MG";
-	
-	_classes_town pushBack 		format["%1rhs_2b14_82mm_vdv", _sid];
-	_categories_town pushBack 	"Mortar";
-	
-	_classes_town pushBack 		format["%1rhs_Igla_AA_pod_vdv", _sid];
-	_categories_town pushBack 	"AA";
-	
-	_classes_town pushBack 		format["%1rhs_Metis_9k115_2_vdv", _sid];
-	_categories_town pushBack 	"AT";
-	
-	_classes_town pushBack 		format["%1rhs_D30_vdv", _sid];
-	_categories_town pushBack 	"Artillery";
-	
+		_classes_town pushBack 		format["%1I_Mortar_01_F", _sid];
+		_categories_town pushBack 	"Mortar";
+		
+		_classes_town pushBack 		format["%1I_static_AT_F", _sid];
+		_categories_town pushBack 	"AT";
+		
+		_classes_town pushBack 		format["%1I_static_AA_F", _sid];
+		_categories_town pushBack 	"AA";
 };
 
 //--- Defenses management for towns.
