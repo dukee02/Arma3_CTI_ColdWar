@@ -17,7 +17,7 @@ else {
 	};
 };
 if (CTI_Log_Level >= CTI_Log_Debug) then {
-	["VIOC_DEBUG", "FILE: common\config\Towns_SOV.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;
+	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;
 };
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
@@ -31,8 +31,6 @@ if(CTI_MAIN_ADDON > 0 || CTI_ECONOMY_LEVEL_INFANTRY >= 4) then {
 	INFANTRY_MG = [[format["%1rhs_vdv_medic", _sid],1],[format["%1rhs_vdv_rifleman", _sid],1],[format["%1rhs_vdv_arifleman", _sid],1],[format["%1rhs_vdv_at", _sid],1],[format["%1rhs_vdv_machinegunner", _sid],1],[format["%1rhs_vdv_machinegunner", _sid],1]];
 	INFANTRY_AT = [[format["%1rhs_vdv_medic", _sid],1],[format["%1rhs_vdv_rifleman", _sid],1],[format["%1rhs_vdv_arifleman", _sid],1],[format["%1rhs_vdv_LAT", _sid],1],[format["%1rhs_vdv_grenadier_rpg", _sid],1],[format["%1rhs_vdv_des_RShG2", _sid],1]];
 
-	//if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-	//};
 	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
 		INFANTRY = [[format["%1rhs_vdv_des_medic", _sid],1],[format["%1rhs_vdv_des_rifleman", _sid],1],[format["%1rhs_vdv_des_rifleman", _sid],1],[format["%1rhs_vdv_des_arifleman", _sid],1],[format["%1rhs_vdv_des_arifleman", _sid],1],[format["%1rhs_vdv_des_at", _sid],1]];
 		INFANTRY_MG = [[format["%1rhs_vdv_des_medic", _sid],1],[format["%1rhs_vdv_des_rifleman", _sid],1],[format["%1rhs_vdv_des_arifleman", _sid],1],[format["%1rhs_vdv_des_at", _sid],1],[format["%1rhs_vdv_des_machinegunner", _sid],1],[format["%1rhs_vdv_des_machinegunner", _sid],1]];
@@ -53,9 +51,6 @@ if(CTI_MAIN_ADDON > 0 || CTI_ECONOMY_LEVEL_INFANTRY >= 4) then {
 		["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_LIGHT", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_LIGHT", _tag]]] call CTI_CO_FNC_Log;
 		["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_MG", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_MG", _tag]]] call CTI_CO_FNC_Log;
 		["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_AT", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_AT", _tag]]] call CTI_CO_FNC_Log;
-		//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_LIGHT", _tag], INFANTRY]] call CTI_CO_FNC_Log;
-		//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_MG", _tag], INFANTRY_MG]] call CTI_CO_FNC_Log;
-		//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_AT", _tag], INFANTRY_AT]] call CTI_CO_FNC_Log;
 	};
 };
 
@@ -97,8 +92,6 @@ if (isNil {missionNamespace getVariable format["%1WHEELED_SQ_LIGHT", _tag]}) the
 if (CTI_Log_Level >= CTI_Log_Debug) then {
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1WHEELED_SQ_LIGHT", _tag], missionNamespace getVariable format["%1WHEELED_SQ_LIGHT", _tag]]] call CTI_CO_FNC_Log;
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1WHEELED_SQ_HEAVY", _tag], missionNamespace getVariable format["%1WHEELED_SQ_HEAVY", _tag]]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1WHEELED_SQ_LIGHT", _tag], WHEELED_LIGHT]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1WHEELED_SQ_HEAVY", _tag], WHEELED_HEAVY]] call CTI_CO_FNC_Log;
 };
 
 
@@ -153,9 +146,6 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1TRACKED_SQ_LIGHT", _tag], missionNamespace getVariable format["%1TRACKED_SQ_LIGHT", _tag]]] call CTI_CO_FNC_Log;
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1TRACKED_SQ_MEDIUM", _tag], missionNamespace getVariable format["%1TRACKED_SQ_MEDIUM", _tag]]] call CTI_CO_FNC_Log;
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1TRACKED_SQ_HEAVY", _tag], missionNamespace getVariable format["%1TRACKED_SQ_HEAVY", _tag]]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1TRACKED_SQ_LIGHT", _tag], TRACKED_LIGHT]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1TRACKED_SQ_MEDIUM", _tag], TRACKED_MEDIUM]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1TRACKED_SQ_HEAVY", _tag], TRACKED_HEAVY]] call CTI_CO_FNC_Log;
 };
 
 //Town Air setup
@@ -193,8 +183,6 @@ if (isNil {missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]}) then 
 if (CTI_Log_Level >= CTI_Log_Debug) then {
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1AIR_SQ_FIGHTER", _tag], missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]]] call CTI_CO_FNC_Log;
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1AIR_SQ_BOMBER", _tag], missionNamespace getVariable format["%1AIR_SQ_BOMBER", _tag]]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1AIR_SQ_FIGHTER", _tag], AIR_FIGHTER]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1AIR_SQ_BOMBER", _tag], AIR_BOMBER]] call CTI_CO_FNC_Log;
 };
 
 //Town Anti-Air setup
@@ -217,5 +205,4 @@ if (isNil {missionNamespace getVariable format["%1SQ_ANTI_AIR", _tag]}) then {
 };
 if (CTI_Log_Level >= CTI_Log_Debug) then {
 	["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1SQ_ANTI_AIR", _tag], missionNamespace getVariable format["%1SQ_ANTI_AIR", _tag]]] call CTI_CO_FNC_Log;
-	//["VIOC_DEBUG", "FILE: common\config\Towns_SOV_RHS.sqf", format["Town Squad <%1> with units <%2> ", format["%1SQ_ANTI_AIR", _tag], ANTI_AIR]] call CTI_CO_FNC_Log;
 };

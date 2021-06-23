@@ -11,7 +11,11 @@ _squads = [];
 for '_i' from 0 to (count _v)-1 do {
 	_pool = [];
 	{ 
+		//["VIO_DEBUG", "FILE: Common\Config\Squads\Squads_Set.sqf", format ["Squad: <%1>", _x select 0]] call CTI_CO_FNC_Log;
 		//--- Make sure that the pool contain valid units
+		if((_x select 0) isEqualType []) then {
+			_x = _x select 0;
+		};
 		if (isClass(configFile >> "CfgVehicles" >> _x select 0)) then {
 			_pool pushBack _x;
 		} else {

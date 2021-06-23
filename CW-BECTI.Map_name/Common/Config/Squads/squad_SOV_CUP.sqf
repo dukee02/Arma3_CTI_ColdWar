@@ -38,7 +38,7 @@ missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], ["Air"]];
 
 //Infantry setup for the AI groups
 units_infantry = [];
-if((CTI_MAIN_ADDON == 0 && CTI_ECONOMY_LEVEL_INFANTRY >= 3) || CTI_MAIN_ADDON == 1) then {
+if((CTI_MAIN_ADDON == 0 && CTI_ECONOMY_LEVEL_INFANTRY >= 3) || CTI_MAIN_ADDON == 1 || CTI_MAIN_ADDON == -1) then {
 	units_infantry = [[format["%1CUP_O_RU_Medic_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_GL_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_GL_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_AT_VDV", _sid],1]];
 	//if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
 	//	units_infantry = [[format["%1gm_gc_army_medic_mpiak74n_80_win", _sid],1],[format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid],1],[format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid],1],[format["%1gm_gc_army_demolition_mpiaks74n_80_win", _sid],1],[format["%1gm_gc_army_demolition_mpiaks74n_80_win", _sid],1],[format["%1gm_gc_army_antitank_mpiak74n_rpg7_80_win", _sid],1]];
@@ -183,6 +183,6 @@ _c pushBack "Air";
 _s pushBack [];
 
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\squads\squad_SOV.sqf", format["generated squads: [%1] ", count _v]] call CTI_CO_FNC_Log};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\squads\squad_SOV_CUP.sqf", format["generated squads: [%1] ", count _v]] call CTI_CO_FNC_Log};
 
 [_side, _v, _t, _p, _f, _m, _c, _s] call compile preprocessFileLineNumbers "Common\Config\Squads\Squads_Set.sqf";

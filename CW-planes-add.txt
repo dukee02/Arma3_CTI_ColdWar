@@ -1,0 +1,114 @@
+
+FIR_A10A_Fulda_NV		//März 1977					Erdkampfflugzeug
+FIR_A10C_MD
+FIR_AV8B_NA_VMA211		//April 1969				VTOL-Erdkampfflugzeug
+FIR_AV8B_VMA214_01
+FIR_F14A_VF213_95low	//September 1974			Abfangjäger
+FIR_F15A_Baz_673		//November 1974				Mehrzweckkampfflugzeug/Luftüberlegenheitsjäger
+FIR_F16C_900830			//August 1978				Mehrzweckkampfflugzeug
+FIR_F22_Blank
+EAWS_EF2000_ITA_CAP
+SU_35_cherna
+
+Tornado_AWS_ADV_OPF		//1980						Jagdbomber
+Tornado_AWS_camo_ger
+Su33_Protatype_PT_2		//1994						Luftüberlegenheitsjäger
+SU_35_russianaval		//2009 						Mehrzweckkampfflugzeug
+SU_35_russiablu			//2009 						Mehrzweckkampfflugzeug
+sab_su34_O				//Dezember 2011				Jagdbomber
+EAWS_EF2000_taki_CAP	//Juli 2006					Mehrzweckkampfflugzeug
+EAWS_EF2000_genericdesert_CAP
+
+
+sab_panther_o			//Mai 1949					Jagdbomber
+sab_t28trojan_o			//1950						Trainingsflugzeug
+sab_mystere_o			//1954						Jagdbomber
+sab_fiat_o				//August 1956				Erdkampf- und Aufklärungsflugzeug
+sab_magister_o			//1957						Strahltrainer
+sab_etendard_o			//Mai 1958					trägergestütztes Jagdflugzeug
+sab_f104_o				//Februar 1958				Abfangjäger
+sab_mirageiv_o			//Oktober 1964				Strategischer Bomber
+sab_sf260_o				//Juli 1964					Trainingsflugzeug
+sab_pc7_o				//1978						Schulflugzeug
+sab_alphajet_o			//1979						Leichter Jagdbomber
+sab_baehawk_o			//1974						Erdkampfflugzeug
+sab_mb339_o				//August 1979				Leichtes Erdkampfflugzeug
+sab_m2000_o				//Juni 1984					Mehrzweckkampfflugzeug
+sab_pc9_o				//Mai 1984					Schulflugzeug
+sab_pc21_o				//Juli 2002					Schulflugzeug
+
+
+
+
+sab_alphajet_b
+sab_baehawk_b
+sab_baehawk_b_2
+sab_f104_b
+sab_panther_b
+sab_fiat_b
+sab_magister_b
+sab_mb339_b
+sab_mystere_b
+sab_m2000_b
+sab_mirageiv_b
+sab_pc21_b
+sab_pc7_b
+sab_pc9_b
+sab_sf260_b
+sab_etendard_b
+sab_t28trojan_b
+sab_t45goshawk_b		//1991						Trainingsflugzeug
+
+
+sab_alphajet_i
+sab_baehawk_i
+sab_baehawk_i_2
+sab_f104_i
+sab_panther_i
+sab_fiat_i
+sab_magister_i
+sab_mb339_i
+sab_mystere_i
+sab_m2000_i
+sab_mirageiv_i
+sab_pc21_i
+sab_pc7_i
+sab_pc9_i
+sab_sf260_i
+sab_etendard_i
+sab_t28trojan_i
+
+
+
+
+
+
+
+A-346A Goblin				November 2011			Leichtes Erdkampfflugzeug
+YAK-131M Focuser-C			Februar 2010			leichtes Angriffsflugzeug
+
+
+Tornado_AWS_camo_ger
+Tornado_AWS_GER
+Tornado_AWS_ecr_ger
+
+Tornado_AWS_ADV_IND
+Tornado_AWS_ind
+
+Tornado_AWS_ADV_OPF
+Tornado_AWS_ecr_opf
+Tornado_AWS_opf
+
+Tornado_AWS_ADV_blu
+Tornado_AWS_ecr_blu
+Tornado_AWS_blu
+
+
+
+
+Project Tornado
+MIG-29 Fulcrum AWS
+SU-34SM FULLBACK-D AWS
+
+
+

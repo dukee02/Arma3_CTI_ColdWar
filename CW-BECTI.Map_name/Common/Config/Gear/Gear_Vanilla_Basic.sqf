@@ -1,7 +1,18 @@
 private ["_faction", "_i", "_p", "_side", "_u"];
 
 _side = _this;
-_faction = "West";
+/*if(_side == west) then {
+	_faction = "West";
+} 
+else {
+	if(_side == east) then {
+		_faction = "East";
+	} 
+	else {
+		_faction = "";
+	};
+};*/
+_faction = switch (_side) do {case west: {"West"}; case east: {"East"}; default {"Civilian"}};
 
 _i = [];
 _u = [];
@@ -23,16 +34,9 @@ _i pushBack "";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((rnds*caliber)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 */
-/*
-//-------Weapons + Ammo------------
-_i pushBack "arifle_Mk20_plain_F";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-_i pushBack "30Rnd_556x45_Stanag";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round ((30*556*45)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-*/
+//-------Weapons + Ammo------------
+
 
 //--------MG-------------
 
@@ -41,7 +45,7 @@ _p pushBack round ((30*556*45)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+
 
 
 //-------GL-Ammo-----------------------
-/*
+
 _i pushBack "1Rnd_HE_Grenade_shell";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
@@ -93,10 +97,10 @@ _p pushBack round (20)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_L
 _i pushBack "1Rnd_SmokeOrange_Grenade_shell";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (20)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-*/
+
 
 //---------Grenades-----------------------------
-/*
+
 _i pushBack "MiniGrenade";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
@@ -104,70 +108,62 @@ _p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_L
 _i pushBack "HandGrenade";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-*/
+
 //---------Smoke/Flare-------------------------
 _i pushBack "SmokeShell";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "SmokeShellRed";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "SmokeShellGreen";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "SmokeShellYellow";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "SmokeShellPurple";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "SmokeShellBlue";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "SmokeShellOrange";
-_u pushBack 0;
-_p pushBack 10;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "FlareWhite_F";
-_u pushBack 0;
-_p pushBack 5;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (5)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "FlareGreen_F";
-_u pushBack 0;
-_p pushBack 5;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (5)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "FlareRed_F";
-_u pushBack 0;
-_p pushBack 5;
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (5)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _i pushBack "FlareYellow_F";
-_u pushBack 0;
-_p pushBack 5;
-
-
-/*
-//--- Uniforms
-_i pushBack "U_B_HeliPilotCoveralls";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+_p pushBack round (5)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+
+
+//--- Uniforms
+
 
 //--- Vests
-_i pushBack "V_BandollierB_rgr";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
+
 
 //--- Backpacks
-_i pushBack "B_AssaultPack_sgg";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
-*/
-//--- Glasses
+
 
 /*
 //--- Attachments
@@ -405,33 +401,62 @@ _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVE
 _i pushBack "bipod_02_F_tan";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
-
+*/
 //--- Helms
-_i pushBack "H_Bandanna_sgg";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
+
+
+//--- Glasses
+_i pushBack "g_goggles_vr";
+_u pushBack 0;
+_p pushBack 1;
 
 //--- Items
-_i pushBack "NVGoggles";
-_u pushBack 0;
-_p pushBack 500;
+if(_side == west) then {
+	_i pushBack "NVGoggles";
+	_u pushBack 0;
+	_p pushBack 500;
+} else {
+	_i pushBack "NVGoggles_OPFOR";
+	_u pushBack 0;
+	_p pushBack 500;
+};
 
-_i pushBack "Binocular";
-_u pushBack 0;
-_p pushBack 100;
+if(_side == west) then {
+	_i pushBack "Laserdesignator";
+	_u pushBack 2;
+	_p pushBack 1000;
+} else {
+	_i pushBack "Laserdesignator_02";
+	_u pushBack 2;
+	_p pushBack 1000;
+};
 
-_i pushBack "Laserdesignator";
-_u pushBack 3;
-_p pushBack 1000;
+_i pushBack "Laserbatteries";
+_u pushBack 2;
+_p pushBack 50;
 
 _i pushBack "ItemGPS";
 _u pushBack 0;
 _p pushBack 100;
 
-_i pushBack "B_UavTerminal";
-_u pushBack 1;
-_p pushBack 1500;
-*/
+if(_side == west) then {
+	_i pushBack "B_UavTerminal";
+	_u pushBack 1;
+	_p pushBack 1500;
+} else {
+	_i pushBack "O_UavTerminal";
+	_u pushBack 1;
+	_p pushBack 1500;
+};
+
+_i pushBack "MineDetector";
+_u pushBack 0;
+_p pushBack 300;
+
+_i pushBack "Binocular";
+_u pushBack 0;
+_p pushBack 100;
+
 _i pushBack "ItemMap";
 _u pushBack 0;
 _p pushBack 2;
@@ -448,17 +473,17 @@ _i pushBack "itemwatch";
 _u pushBack 0;
 _p pushBack 1;
 
-_i pushBack "Toolkit";
-_u pushBack 0;
-_p pushBack 750;
-/*
 _i pushBack "FirstAidKit";
 _u pushBack 0;
 _p pushBack 150;
 
+_i pushBack "Toolkit";
+_u pushBack 0;
+_p pushBack 750;
+
 _i pushBack "Medikit";
 _u pushBack 0;
 _p pushBack 400;
-*/
+
 
 [_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";

@@ -31,6 +31,16 @@ if(CTI_CUP_ADDON > 0) then {
 	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+	
+	_c pushBack "CUP_B_M1129_MC_MK19_Desert";
+	_m pushBack ["CUP_32Rnd_120mm_HE_M934", "CUP_6Rnd_120mm_Smoke_M929"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+
+	_c pushBack "CUP_B_M1129_MC_MK19_Woodland";
+	_m pushBack ["CUP_32Rnd_120mm_HE_M934", "CUP_6Rnd_120mm_Smoke_M929"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
 };
 if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_2b14_82mm_vdv";
@@ -78,6 +88,26 @@ if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_O_BM21_RU";
 	_m pushBack ["CUP_40Rnd_GRAD_HE"];
 	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	
+	_c pushBack "CUP_B_M270_HE_USMC";
+	_m pushBack ["CUP_12Rnd_MLRS_HE"];
+	_b pushBack [1, 2, 3, 6, 12];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	
+	_c pushBack "CUP_B_M270_DPICM_USMC";
+	_m pushBack ["CUP_12Rnd_MLRS_DPICM"];
+	_b pushBack [1, 2, 3, 6, 12];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	
+	_c pushBack "CUP_B_M270_HE_USA";
+	_m pushBack ["CUP_12Rnd_MLRS_HE"];
+	_b pushBack [1, 2, 3, 6, 12];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	
+	_c pushBack "CUP_B_M270_DPICM_USA";
+	_m pushBack ["CUP_12Rnd_MLRS_DPICM"];
+	_b pushBack [1, 2, 3, 6, 12];
 	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
 };
 

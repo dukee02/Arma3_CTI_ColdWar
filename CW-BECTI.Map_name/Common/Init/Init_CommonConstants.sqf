@@ -697,6 +697,7 @@ with missionNamespace do {
 	if (isNil 'CTI_NVA_SIDE' || CTI_MAIN_ADDON > 0) then {if(CTI_MAIN_ADDON > 0) then {CTI_NVA_SIDE = -1} else {CTI_NVA_SIDE = 1};};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_US_CUP_SIDE') then {CTI_US_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_CUP_SIDE') then {CTI_SOV_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_RHS_SIDE') then {CTI_SOV_RHS_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	

@@ -758,6 +758,6 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
 	_d pushBack 0;
 };*/
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_GER.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_DK.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};
 
 [_side, _faction, _c, _p, _n, _o, _t, _u, _f, _s, _d] call compile preprocessFileLineNumbers "Common\Config\Units\Set_Units.sqf";

@@ -24,110 +24,128 @@ else {
 	};
 };
 
-if(CTI_MAIN_ADDON == 0) then {_adds = 3;};
-
 //*********************************************************************************************************************************************
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
 
 //check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
 _priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
 if ((isNil "_priorUnits" || _ai == 5) && CTI_CUP_ADDON > 0) then { 
 	
-	//if(CTI_MAIN_ADDON > 0) then {
-		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_VDV", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Light_VDV_EMR", _sid]];
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light_des", _sid]];
 
-		missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Crew_VDV_EMR", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_VDV_EMR", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Crew_VDV_EMR", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_O_RU_Pilot_VDV_EMR", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_AR_VDV_EMR", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot_des", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
 
 		//Set starting vehicles
 		missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-			[format["%1CUP_O_UAZ_Unarmed_RU", _sid], []], 
-			[format["%1CUP_O_UAZ_Open_RU", _sid], []]
+			[format["%1CUP_B_HMMWV_Unarmed_USA", _sid], []], 
+			[format["%1CUP_B_HMMWV_Unarmed_USA", _sid], []]
 		]];
-	//};
+	} else {
+		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light", _sid]];
+
+		missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot", _sid]];
+		missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew", _sid]];
+
+		//Set starting vehicles
+		missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
+			[format["%1CUP_B_HMMWV_Unarmed_USMC", _sid], []], 
+			[format["%1CUP_B_HMMWV_Unarmed_USMC", _sid], []]
+		]];
+	};
 	if (CTI_Log_Level >= CTI_Log_Debug) then {
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Diver: <%1>", missionNamespace getVariable format["CTI_%1_Diver", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Soldier: <%1>", missionNamespace getVariable format["CTI_%1_Soldier", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Crew: <%1>", missionNamespace getVariable format["CTI_%1_Crew", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Pilot: <%1>", missionNamespace getVariable format["CTI_%1_Pilot", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Static: <%1>", missionNamespace getVariable format["CTI_%1_Static", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Diver: <%1>", missionNamespace getVariable format["CTI_%1_Diver", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Soldier: <%1>", missionNamespace getVariable format["CTI_%1_Soldier", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Crew: <%1>", missionNamespace getVariable format["CTI_%1_Crew", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Pilot: <%1>", missionNamespace getVariable format["CTI_%1_Pilot", _side]]] call CTI_CO_FNC_Log;
+		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Static: <%1>", missionNamespace getVariable format["CTI_%1_Static", _side]]] call CTI_CO_FNC_Log;
 	};
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["starting vehicles for side %1 declared", _side]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["starting vehicles for side %1 declared", _side]] call CTI_CO_FNC_Log;};
 
 //*********************************************************************************************************************************************
 //											Infantry units																					  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Barracks Factory.
 _c = [];
+if(CTI_MAIN_ADDON == 0) then {_adds = 3;};
 if(CTI_CUP_ADDON > 0) then {
 	//VDV_EMR = green camo - VDV = brown camo
 	//Level start (Level 3 with CW)
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0+_adds) then {
-		_c pushBack format["%1CUP_O_RU_Soldier_AR_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_Light_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Crew_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_Saiga_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_GL_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_AT_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Explosive_Specialist_VDV_EMR", _sid];
-
-		_c pushBack format["%1CUP_O_RU_Soldier_AR_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_Light_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Crew_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_Saiga_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_GL_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_AT_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Explosive_Specialist_VDV", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_USMC_Crew_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Engineer_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_GL_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_SpecOps_SD_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_LAT_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_Light_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Medic_des", _sid];
+		};
+		_c pushBack format["%1CUP_B_USMC_Crew", _sid];
+		_c pushBack format["%1CUP_B_USMC_Engineer", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_GL", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier", _sid];
+		_c pushBack format["%1CUP_B_USMC_SpecOps_SD", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_LAT", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_Light", _sid];
+		_c pushBack format["%1CUP_B_USMC_Medic", _sid];
 	};
-	
 	//Level 1 (Level 4 with CW)
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 1+_adds) then {
-		_c pushBack format["%1CUP_O_RU_Soldier_AA_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_LAT_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_MG_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Engineer_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Medic_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_Marksman_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Spotter_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Officer_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Pilot_VDV_EMR", _sid];	
-
-		_c pushBack format["%1CUP_O_RU_Soldier_AA_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_LAT_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_MG_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Engineer_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Medic_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_Marksman_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Spotter_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Officer_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Pilot_VDV", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_USMC_Soldier_AT_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_AR_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_MG_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Pilot_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_SpecOps_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_UAV_des", _sid];
+		};
+		_c pushBack format["%1CUP_B_USMC_Soldier_AT", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_AR", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_MG", _sid];
+		_c pushBack format["%1CUP_B_USMC_Pilot", _sid];
+		_c pushBack format["%1CUP_B_USMC_SpecOps", _sid];
+		_c pushBack format["%1CUP_B_US_Pilot", _sid];
+		_c pushBack format["%1CUP_B_US_Pilot_Light", _sid];
 	};
 	
 	//Level 2 (Level 5 with CW)
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 2+_adds) then {
-		_c pushBack format["%1CUP_O_RU_Soldier_HAT_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Sniper_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Sniper_KSVK_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_SL_VDV_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_VDV_EMR", _sid];
-
-		_c pushBack format["%1CUP_O_RU_Soldier_HAT_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Sniper_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Sniper_KSVK_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_SL_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_VDV", _sid];
-		_c pushBack format["%1CUP_O_RU_Commander_VDV", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_USMC_Soldier_HAT_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_Marksman_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_AA_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Officer_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Sniper_M40A3_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Sniper_M107_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Spotter_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_SL_des", _sid];
+			_c pushBack format["%1CUP_B_USMC_Soldier_TL_des", _sid];
+		};
+		_c pushBack format["%1CUP_B_USMC_Soldier_HAT", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_Marksman", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_AA", _sid];
+		_c pushBack format["%1CUP_B_USMC_Officer", _sid];
+		_c pushBack format["%1CUP_B_USMC_Sniper_M40A3", _sid];
+		_c pushBack format["%1CUP_B_USMC_Sniper_M107", _sid];
+		_c pushBack format["%1CUP_B_USMC_Spotter", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_SL", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_TL", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_BARRACKS];
@@ -137,7 +155,7 @@ if (isNil "_priorUnits") then {
 	_c append _priorUnits; 
 };
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_BARRACKS, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_BARRACKS, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_BARRACKS], _c];
 
 //*********************************************************************************************************************************************
@@ -147,52 +165,96 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_BARRACKS], _c
 _c = [];
 if(CTI_CUP_ADDON == 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		_c pushBack format["%1CUP_O_UAZ_Unarmed_RU", _sid];
-		_c pushBack format["%1CUP_O_UAZ_Open_RU", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_M1152_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_M1151_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_Transport_USA", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_Terminal_USA", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
+		};
+		_c pushBack format["%1CUP_B_M1030_USMC", _sid];
+		_c pushBack format["%1CUP_B_TowingTractor_USMC", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1152_USMC", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		_c pushBack format["%1CUP_O_UAZ_SPG9_RU", _sid];			//SPG (AT)
-		_c pushBack format["%1CUP_O_UAZ_AGS30_RU", _sid];			//GMG
-		_c pushBack format["%1CUP_O_UAZ_MG_RU", _sid];				//MG
-		_c pushBack format["%1CUP_O_UAZ_METIS_RU", _sid];			//Metris (ATGM)
-		
-		_c pushBack format["%1CUP_O_BRDM2_RUS", _sid];				//MG + 2cm
-		_c pushBack format["%1CUP_O_BRDM2_ATGM_RUS", _sid];			//4x ATGM
-		_c pushBack format["%1CUP_O_BRDM2_HQ_RUS", _sid];			//MG		
-		_c pushBack format["%1CUP_O_UAZ_AMB_RU", _sid];				//Medic
-	};
-	if(CTI_RHS_ADDON > 0) then { _adds = 1; } else { _adds = 0; };
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {
-		_c pushBack format["%1CUP_O_Ural_Open_RU", _sid];
-		_c pushBack format["%1CUP_O_Ural_ZU23_RU", _sid];			//Flak
-		_c pushBack format["%1CUP_O_BM21_RU", _sid];				//Artytruck
-		_c pushBack format["%1CUP_O_Ural_RU", _sid];
-		_c pushBack format["%1CUP_O_Ural_Empty_RU", _sid];
-		//_u pushBack "CUP_O_Ural_Reammo_RU";			//Ammotruck
-		//_u pushBack "CUP_O_Ural_Refuel_RU";			//Fueltruck
-		//_u pushBack "CUP_O_Ural_Repair_RU";			//Repairtruck
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_HMMWV_Ambulance_USA", _sid];		//Medic
+			_c pushBack format["%1CUP_B_HMMWV_MK19_USA", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_TOW_USA", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_Crows_M2_USA", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_Crows_MK19_USA", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_M2_USA", _sid];
+			_c pushBack format["%1CUP_B_M1165_GMV_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_SOV_M2_USA", _sid];
+			_c pushBack format["%1CUP_B_LAV25_HQ_desert_USMC", _sid];
+			_c pushBack format["%1CUP_B_MTVR_USA", _sid];
+			//_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
+			//_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+			//_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
+		};
+		_c pushBack format["%1CUP_B_HMMWV_Ambulance_USMC", _sid];			//Medic
+		_c pushBack format["%1CUP_B_HMMWV_M1114_USMC", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_MK19_USMC", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_TOW_USMC", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_M2_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1165_GMV_USMC", _sid];
+		_c pushBack format["%1CUP_B_LAV25_HQ_USMC", _sid];
+		_c pushBack format["%1CUP_B_LAV25_HQ_green", _sid];
+		_c pushBack format["%1CUP_B_MTVR_USMC", _sid];
+		//_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
+		//_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
+		//_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 2) then {
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_c pushBack format["%1CUP_O_BTR60_Winter_RU", _sid];	//2cm + MG	
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_HMMWV_M2_GPK_USA", _sid];
+			_c pushBack format["%1CUP_B_M1151_M2_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_M1151_Deploy_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_M1151_Mk19_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_M1167_DSRT_USMC", _sid];
+			_c pushBack format["%1CUP_B_LAV25_desert_USMC", _sid];
+			_c pushBack format["%1CUP_B_LAV25M240_desert_USMC", _sid];
 		};
-		_c pushBack format["%1CUP_O_BTR60_RU", _sid];				//2cm + MG
-		_c pushBack format["%1CUP_O_BTR60_Green_RU", _sid];			//2cm + MG
-		_c pushBack format["%1CUP_O_GAZ_Vodnik_PK_RU", _sid];		//MG front + rear
-		_c pushBack format["%1CUP_O_GAZ_Vodnik_AGS_RU", _sid];		//GMG + rear MG
-		_c pushBack format["%1CUP_O_GAZ_Vodnik_BPPU_RU", _sid];		//3cm Cannon
-		_c pushBack format["%1CUP_O_GAZ_Vodnik_MedEvac_RU", _sid];	//Medic
+		_c pushBack format["%1CUP_B_M1151_M2_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1151_Deploy_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1151_Mk19_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1167_USMC", _sid];
+		_c pushBack format["%1CUP_B_LAV25_USMC", _sid];
+		_c pushBack format["%1CUP_B_LAV25M240_USMC", _sid];
+		_c pushBack format["%1CUP_B_LAV25M240_green", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
-		_c pushBack format["%1CUP_O_Kamaz_RU", _sid];
-		_c pushBack format["%1CUP_O_Kamaz_Open_RU", _sid];
-		//_u pushBack "CUP_O_Kamaz_Reammo_RU";			//Ammotruck
-		//_u pushBack "CUP_O_Kamaz_Refuel_RU";			//Fueltruck
-		//_u pushBack "CUP_O_Kamaz_Repair_RU";			//Repairtruck
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_M1130_CV_M2_Desert", _sid];
+			_c pushBack format["%1CUP_B_M1133_MEV_Desert", _sid];
+			_c pushBack format["%1CUP_B_M1126_ICV_M2_Desert", _sid];
+			_c pushBack format["%1CUP_B_M1126_ICV_MK19_Desert", _sid];
+			_c pushBack format["%1CUP_B_HMMWV_Avenger_USA", _sid];
+			_c pushBack format["%1CUP_B_M1135_ATGMV_Desert", _sid];
+		};
+		_c pushBack format["%1CUP_B_M1130_CV_M2_Woodland", _sid];
+		_c pushBack format["%1CUP_B_M1133_MEV_Woodland", _sid];
+		_c pushBack format["%1CUP_B_M1126_ICV_M2_Woodland", _sid];
+		_c pushBack format["%1CUP_B_M1126_ICV_MK19_Woodland", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_Avenger_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1135_ATGMV_Woodland", _sid];
 	};
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 4+_adds) then {
-		_c pushBack format["%1CUP_O_BTR90_RU", _sid];
-		_c pushBack format["%1CUP_O_BTR90_HQ_RU", _sid];
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 4) then {
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_RG31_Mk19_OD_USA", _sid];
+			_c pushBack format["%1CUP_B_RG31E_M2_OD_USA", _sid];
+			_c pushBack format["%1CUP_B_RG31_M2_OD_USA", _sid];
+			_c pushBack format["%1CUP_B_RG31_M2_OD_GC_USA", _sid];
+			_c pushBack format["%1CUP_B_M1129_MC_MK19_Desert", _sid];
+			_c pushBack format["%1CUP_B_M1128_MGS_Desert", _sid];
+		};
+		_c pushBack format["%1CUP_B_RG31_Mk19_USA", _sid];
+		_c pushBack format["%1CUP_B_RG31E_M2_USA", _sid];
+		_c pushBack format["%1CUP_B_RG31_M2_USA", _sid];
+		_c pushBack format["%1CUP_B_RG31_M2_GC_USA", _sid];
+		_c pushBack format["%1CUP_B_M1129_MC_MK19_Woodland", _sid];
+		_c pushBack format["%1CUP_B_M1128_MGS_Woodland", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
@@ -201,7 +263,7 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_LIGHT, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_LIGHT, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_LIGHT], _c];
 
 //*********************************************************************************************************************************************
@@ -211,29 +273,47 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_LIGHT], _c];
 _c = [];
 if(CTI_CUP_ADDON == 1) then {
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
-		_c pushBack format["%1CUP_O_BMP2_RU", _sid];			//2cm + Metris(ATGM)
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_M113_desert_USA", _sid];
+		};
+		_c pushBack format["%1CUP_B_AAV_Unarmed_USMC", _sid];
+		_c pushBack format["%1CUP_B_M113_USA", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 1) then {
-		_c pushBack format["%1CUP_O_BMP2_AMB_RU", _sid];		//Medic
-		_c pushBack format["%1CUP_O_BMP_HQ_RU", _sid];			//Cannon		
+		_c pushBack format["%1CUP_B_AAV_USMC", _sid];	
+		_c pushBack format["%1CUP_B_M163_USA", _sid];
+		_c pushBack format["%1CUP_B_M113_Med_USA", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 2) then {
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			_c pushBack format["%1CUP_O_MTLB_pk_WDL_RU", _sid];
-		};
-		_c pushBack format["%1CUP_O_MTLB_pk_Green_RU", _sid];
-		_c pushBack format["%1CUP_O_MTLB_pk_Winter_RU", _sid];
-		_c pushBack format["%1CUP_O_BMP3_RU", _sid];
+		_c pushBack format["%1CUP_B_M60A3_USMC", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
-		_c pushBack format["%1CUP_O_T72_RU", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_M7Bradley_USA_D", _sid];
+			_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
+		};
+		_c pushBack format["%1CUP_B_M7Bradley_USA_W", _sid];
+		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 4) then {
-		_c pushBack format["%1CUP_O_2S6_RU", _sid];
-		_c pushBack format["%1CUP_O_2S6M_RU", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_M2Bradley_USA_D", _sid];
+			_c pushBack format["%1CUP_B_M6LineBacker_USA_D", _sid];
+			_c pushBack format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid];
+		};
+		_c pushBack format["%1CUP_B_M2Bradley_USA_W", _sid];
+		_c pushBack format["%1CUP_B_M6LineBacker_USA_W", _sid];
+		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 5) then {
-		_c pushBack format["%1CUP_O_T90_RU", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_M2A3Bradley_USA_D", _sid];
+			_c pushBack format["%1CUP_B_M270_DPICM_USA", _sid];
+			_c pushBack format["%1CUP_B_M270_HE_USA", _sid];
+		};
+		_c pushBack format["%1CUP_B_M2A3Bradley_USA_W", _sid];
+		_c pushBack format["%1CUP_B_M270_DPICM_USMC", _sid];
+		_c pushBack format["%1CUP_B_M270_HE_USMC", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_HEAVY];
@@ -243,7 +323,7 @@ if (isNil "_priorUnits") then {
 	_c append _priorUnits; 
 };
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_HEAVY, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_HEAVY, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_HEAVY], _c];
 
 //*********************************************************************************************************************************************
@@ -256,24 +336,55 @@ _c = [];
 //};
 if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
-		_c pushBack format["%1CUP_O_Mi8_VIV_RU", _sid];
+		_c pushBack format["%1CUP_B_MH6J_USA", _sid];
+		_c pushBack format["%1CUP_B_MH6J_OBS_USA", _sid];
+		_c pushBack format["%1CUP_B_MH6M_USA", _sid];
+		_c pushBack format["%1CUP_B_MH6M_OBS_USA", _sid];
+		_c pushBack format["%1CUP_B_UH1Y_UNA_USMC", _sid];
+		_c pushBack format["%1CUP_MH60S_Unarmed_USN", _sid];
+		_c pushBack format["%1CUP_MH60S_Unarmed_FFV_USN", _sid];
+		_c pushBack format["%1CUP_B_UH60M_Unarmed_US", _sid];
+		_c pushBack format["%1CUP_B_UH60M_Unarmed_FFV_US", _sid];
+		_c pushBack format["%1CUP_B_UH60M_Unarmed_FFV_MEV_US", _sid];
+		_c pushBack format["%1CUP_B_AC47_Spooky_USA", _sid];
+		_c pushBack format["%1CUP_B_C47_USA", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		_c pushBack format["%1CUP_O_Mi8_RU", _sid];
-		_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];//Medic
+		_c pushBack format["%1CUP_B_UH1Y_MEV_USMC", _sid];
+		_c pushBack format["%1CUP_B_AH6J_USA", _sid];
+		_c pushBack format["%1CUP_B_AH6M_USA", _sid];
+		_c pushBack format["%1CUP_B_UH1Y_Gunship_Dynamic_USMC", _sid];
+		_c pushBack format["%1CUP_B_MH60S_USMC", _sid];
+		_c pushBack format["%1CUP_B_UH60S_USN", _sid];
+		_c pushBack format["%1CUP_B_UH60M_US", _sid];
+		_c pushBack format["%1CUP_B_UH60M_FFV_US", _sid];
+		_c pushBack format["%1CUP_B_CH47F_USA", _sid];
+		_c pushBack format["%1CUP_B_CH47F_VIV_USA", _sid];
+		_c pushBack format["%1CUP_B_MH47E_USA", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
-		_c pushBack format["%1CUP_O_Mi24_P_Dynamic_RU", _sid];
-		_c pushBack format["%1CUP_O_Mi24_V_Dynamic_RU", _sid];
-		_c pushBack format["%1CUP_O_Ka60_Grey_RU", _sid];
-		_c pushBack format["%1CUP_O_Su25_Dyn_RU", _sid];
+		_c pushBack format["%1CUP_B_AH1Z_Dynamic_USMC", _sid];
+		_c pushBack format["%1CUP_B_MH60L_DAP_2x_USN", _sid];
+		_c pushBack format["%1CUP_B_MH60L_DAP_4x_USN", _sid];
+		_c pushBack format["%1CUP_B_MH60L_DAP_2x_US", _sid];
+		_c pushBack format["%1CUP_B_MH60L_DAP_4x_US", _sid];
+		_c pushBack format["%1CUP_B_CH53E_USMC", _sid];
+		_c pushBack format["%1CUP_B_CH53E_VIV_USMC", _sid];
+		_c pushBack format["%1CUP_B_AV8B_DYN_USMC", _sid];
+		_c pushBack format["%1CUP_B_C130J_USMC", _sid];
+		_c pushBack format["%1CUP_B_C130J_Cargo_USMC", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-		_c pushBack format["%1CUP_O_Ka50_DL_RU", _sid];
-		_c pushBack format["%1CUP_O_SU34_RU", _sid];
+		_c pushBack format["%1CUP_B_A10_DYN_USA", _sid];
+		_c pushBack format["%1CUP_B_MV22_USMC", _sid];
+		_c pushBack format["%1CUP_B_MV22_USMC_RAMPGUN", _sid];
+		_c pushBack format["%1CUP_B_MV22_VIV_USMC", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-		_c pushBack format["%1CUP_O_Ka52_RU", _sid];
+		_c pushBack format["%1CUP_B_AH64_DL_USA", _sid];
+		_c pushBack format["%1CUP_B_AH64D_DL_USA", _sid];
+		_c pushBack format["%1CUP_B_F35B_USMC", _sid];
+		_c pushBack format["%1CUP_B_F35B_Stealth_USMC", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR];
@@ -282,7 +393,7 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_AIR, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_AIR, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 
 //*********************************************************************************************************************************************
@@ -291,8 +402,10 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
 if(CTI_CUP_ADDON > 0) then {
-	_c pushBack format["%1CUP_O_Ural_Repair_RU", _sid];				//Repairtruck
-	_c pushBack format["%1CUP_O_Kamaz_Repair_RU", _sid];			//Repairtruck
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
+	};
+	_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
 	if(CTI_MAIN_ADDON == 1 ) then {
 	_c pushBack format["CTI_Salvager_%1", _side];
 	};
@@ -303,7 +416,7 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_REPAIR, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_REPAIR, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 
 //*********************************************************************************************************************************************
@@ -312,10 +425,12 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
 _c = [];
 if(CTI_CUP_ADDON > 0) then {
-	_c pushBack format["%1CUP_O_Ural_Reammo_RU", _sid];				//Ammotruck
-	_c pushBack format["%1CUP_O_Kamaz_Reammo_RU", _sid];			//Ammotruck
-	_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
-	_c pushBack format["%1CUP_O_Kamaz_Refuel_RU", _sid];			//Fueltruck
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+	};
+	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
+	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AMMO];
 if (isNil "_priorUnits") then { 
@@ -323,7 +438,7 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_AMMO, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_AMMO, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 
 //*********************************************************************************************************************************************
@@ -334,23 +449,31 @@ _c = [];
 if(CTI_MAIN_ADDON == 0) then {
 	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-			//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			//};
-			//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			//};
-			_c pushBack format["%1CUP_O_RU_Soldier_VDV", _sid];
-			_c pushBack format["%1CUP_O_RU_Medic_VDV_EMR", _sid];
+			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+				_c pushBack format["%1CUP_B_USMC_Soldier_Light_des", _sid];
+				_c pushBack format["%1CUP_B_USMC_Medic_des", _sid];
+			};
+			_c pushBack format["%1CUP_B_USMC_Soldier_Light", _sid];
+			_c pushBack format["%1CUP_B_USMC_Medic", _sid];
 		};
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		_c pushBack format["%1CUP_O_UAZ_Open_RU", _sid];	
-		_c pushBack format["%1CUP_O_UAZ_Unarmed_RU", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
+		};
+		_c pushBack format["%1CUP_B_M1030_USMC", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
 	};	
 	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 		if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-			_c pushBack format["%1CUP_O_Ural_Repair_RU", _sid];				//repairtruck
-			_c pushBack format["%1CUP_O_Ural_Reammo_RU", _sid];				//ammotruck
-			_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
+			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
+				_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
+				_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
+				_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+			};
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
 		};
 	};
 };
@@ -360,16 +483,22 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_DEPOT, count _c]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_DEPOT, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_DEPOT], _c];
 
 //*********************************************************************************************************************************************
 //											 Naval Factory units																		  	  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Naval Factory.
-/*_c = [];
+_c = [];
 if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
-	_u pushBack format["%1O_Boat_Transport_01_F", _sid];
+	_c pushBack format["%1CUP_B_LCU1600_USMC", _sid];
+	_c pushBack format["%1CUP_B_RHIB_USMC", _sid];
+	_c pushBack format["%1CUP_B_Seafox_USMC", _sid];
+	_c pushBack format["%1CUP_B_Zodiac_USMC", _sid];
+};
+if(CTI_ECONOMY_LEVEL_NAVAL >= 1) then {
+	_c pushBack format["%1CUP_B_RHIB2Turret_USMC", _sid];
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_NAVAL];
 if (isNil "_priorUnits") then { 
@@ -377,6 +506,5 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["units in factory %1: [%2] ", CTI_NAVAL, count _c]] call CTI_CO_FNC_Log;};
-missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_NAVAL], _c];*/
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["units in factory %1: [%2] ", CTI_NAVAL, count _c]] call CTI_CO_FNC_Log;};
+missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_NAVAL], _c];

@@ -139,18 +139,35 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_ServiceMenu.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_UnitsCamera.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_UpgradeMenu.sqf";
 
-if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
+(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Vanilla_Basic.sqf";
+
+switch(CTI_MAIN_ADDON) do {
+	case 0: {	//Global Mobilization - Cold War
+		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
+		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
+	};
+	case 1: {	//BW-Mod & BW add vs. RUS (CUP and/or RHS)
+		//--- Load BW Gear if BW mode is active
+		if(CTI_BW_ADDON > 0) then {
+			if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_BWadd_West.sqf"};
+		};
+	};
+	default {	//Cold-War (CUP and/or RHS)
+		//if (CTI_CUP_ADDON > 0) then { 
+		//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
+		//};
+	};
+};
 //--- Load GM Gear if DLC is owned
-if(CTI_MAIN_ADDON == 0 && 1042220 in (getDLCs 1)) then {
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
-};
+//if(CTI_MAIN_ADDON == 0 && 1042220 in (getDLCs 1)) then {
+//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
+//	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
+//};
 //--- Load BW Gear
-if(CTI_BW_ADDON > 0) then {
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_BWadd_West.sqf"};
+//if(CTI_BW_ADDON > 0) then {
+//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_BWadd_West.sqf"};
 	//if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
-};
+//};
 //--- Load RHS Gear
 if (CTI_RHS_ADDON > 0) then { 
 	//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
@@ -158,11 +175,12 @@ if (CTI_RHS_ADDON > 0) then {
 };
 //--- Load CUP Gear
 if (CTI_CUP_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_West.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_East.sqf"};
+	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
+	//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_West.sqf"};
+	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_CUP_SOV.sqf"};
 };
-if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_West.sqf"};
-if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template_East.sqf"};
+
+(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template.sqf";
 
 CTI_InitClient = true;
 

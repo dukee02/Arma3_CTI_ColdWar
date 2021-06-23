@@ -11,7 +11,7 @@ class Params {
 		texts[] = {"deactivated","BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = 0; //0
+		default = -1; //0
 	};
 	class CTI_NVA_SIDE {
 		title = "NVA (East Germany) Side";
@@ -19,7 +19,7 @@ class Params {
 		texts[] = {"deactivated", "OPFOR (East)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = 1;
+		default = -1;
 	};
 	class CTI_DK_SIDE {
 		title = "Denmark Side";
@@ -27,7 +27,7 @@ class Params {
 		texts[] = {"deactivated","BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = 0; //0
+		default = -1; //0
 	};
 	class CTI_POL_SIDE {
 		title = "Polish Side";
@@ -35,7 +35,15 @@ class Params {
 		texts[] = {"deactivated", "OPFOR (East)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = 1;
+		default = -1;
+	};
+	class CTI_US_CUP_SIDE {
+		title = "US Army/USMC Side (CUP Mod)";
+		values[] = {-1,0};
+		texts[] = {"deactivated", "BLUFOR (West)"};
+		//values[] = {-1,0,1,2};
+		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
+		default = 0; //-1
 	};
 	class CTI_SOV_CUP_SIDE {
 		title = "Soviet Side (CUP Mod)";
@@ -43,7 +51,7 @@ class Params {
 		texts[] = {"deactivated", "OPFOR (East)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = -1; //-1
+		default = 1; //-1
 	};
 	class CTI_SOV_RHS_SIDE {
 		title = "Soviet Side (RHS Mod)";
@@ -63,32 +71,32 @@ class Params {
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,0};
-		texts[] = {"no changes","Bundeswehr (West Germany)"};
+		values[] = {-1,0,2,4};
+		texts[] = {"no changes","Bundeswehr (West Germany)","Denmark","USA (CUP Mod)"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_EAST_TOWNS {
 		title = "OPFOR (East) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,1,5,7};
-		texts[] = {"no changes","NVA (East Germany)", "Soviet (CUP Mod)", "Soviet (RHS Mod)"};
+		values[] = {-1,1,3,5,7};
+		texts[] = {"no changes","NVA (East Germany)", "Polish", "Soviet (CUP Mod)", "Soviet (RHS Mod)"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_WEST_AI {
 		title = "BLUFOR (West) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,0};
-		texts[] = {"no changes","Bundeswehr (West Germany)"};
+		values[] = {-1,0,2,4};
+		texts[] = {"no changes","Bundeswehr (West Germany)","Denmark","USA (CUP Mod)"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_EAST_AI {
 		title = "OPFOR (East) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,1,5,7};
-		texts[] = {"no changes","NVA (East Germany)", "Soviet (CUP Mod)", "Soviet (RHS Mod)"};
+		values[] = {-1,1,3,5,7};
+		texts[] = {"no changes","NVA (East Germany)", "Polish", "Soviet (CUP Mod)", "Soviet (RHS Mod)"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
@@ -658,16 +666,16 @@ class Params {
 		default = 1;
 	};
 	class CTI_MAIN_ADDON {
-		title = "ADDON: Main BW untis (80s or modern)";
-		values[] = {0,1};
-		texts[] = {"Global Mobilization - Cold War","BW-Mod & BW add"};
-		default = 0;
+		title = "ADDON: Main Cold-War or BW untis (80s or modern)";
+		values[] = {-1,0,1};
+		texts[] = {"Cold-War (CUP and/or RHS)","Global Mobilization - Cold War","BW-Mod & BW add vs. RUS (CUP and/or RHS)"};
+		default = -1;
 	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_BW_ADDON {
 		title = "ADDON: BWA3 Support - Vehicles west";

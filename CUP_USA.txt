@@ -40,7 +40,6 @@ CUP_B_USMC_Soldier_LAT
 CUP_B_USMC_Soldier_Light
 CUP_B_USMC_Medic
 
-
 CUP_B_USMC_Soldier_AT
 CUP_B_USMC_Soldier_AR
 CUP_B_USMC_Soldier_MG
@@ -152,6 +151,7 @@ CUP_B_M163_USA
 CUP_B_AAV_USMC
 
 CUP_B_M60A3_USMC
+
 CUP_B_M7Bradley_USA_D
 CUP_B_M7Bradley_USA_W
 CUP_B_M1A1_DES_US_Army
