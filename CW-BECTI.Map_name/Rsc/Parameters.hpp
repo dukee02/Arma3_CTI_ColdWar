@@ -63,11 +63,11 @@ class Params {
 	};
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
-		values[] = {-1};
-		texts[] = {"disabled for the moment"};
+		values[] = {-1,0};
+		texts[] = {"disabled","National Party of Chernarus (NPoC)"};
 		//values[] = {0,1,2};
 		//texts[] = {"FFI (Infantry with unarmed cars - difficulty very easy)","Polish Units (Infantry with armed trucks - difficulty easy)","3rd Party (needs one Side on GUER - difficulty normal)"};
-		default = -1;
+		default = 0;
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";

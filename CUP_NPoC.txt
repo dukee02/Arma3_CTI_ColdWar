@@ -15,7 +15,6 @@ CUP_I_GUE_Villager
 CUP_I_GUE_Ammobearer
 CUP_I_GUE_Crew
 CUP_I_GUE_Soldier_GL
-CUP_I_GUE_Soldier_GL
 CUP_I_GUE_Engineer
 CUP_I_GUE_Medic
 CUP_I_GUE_Soldier_AKS74
@@ -79,9 +78,9 @@ CUP_I_Hilux_zu23_NAPA
 
 CUP_I_Datsun_AA
 CUP_I_Datsun_AA_Random
-CUP_I_Hilux_igla_NAPA
-
 CUP_I_Hilux_armored_zu23_NAPA
+
+CUP_I_Hilux_igla_NAPA
 
 CUP_I_Hilux_armored_igla_NAPA
 
