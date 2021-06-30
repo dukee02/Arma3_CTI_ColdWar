@@ -63,8 +63,8 @@ class Params {
 	};
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
-		values[] = {-1,0};
-		texts[] = {"disabled","National Party of Chernarus (NPoC)"};
+		values[] = {-1,0,1};
+		texts[] = {"disabled","National Party of Chernarus (NPoC)","Royal Army Corps of Sahrani (RACS)"};
 		//values[] = {0,1,2};
 		//texts[] = {"FFI (Infantry with unarmed cars - difficulty very easy)","Polish Units (Infantry with armed trucks - difficulty easy)","3rd Party (needs one Side on GUER - difficulty normal)"};
 		default = 0;
@@ -553,12 +553,6 @@ class Params {
 		texts[] = {"Disabled","Light","Medium","Hard","Impossible"};
 		default = 2;
 	};
-	/*class CTI_TOWNS_RESISTANCE_UNITS {
-		title = "TOWNS: Resistance Units";
-		values[] = {0,1,2};
-		texts[] = {"Poland","France","3rd Nation"};
-		default = 0;
-	};*/
 	class CTI_UNITS_TOWN_PURCHASE {
 		title = "TOWNS: Purchase Infantry";
 		values[] = {0,1};
@@ -573,10 +567,10 @@ class Params {
 	};
 	class CTI_TOWNS_STARTING_MODE {
 		title = "TOWNS: Starting Mode";
-		//values[] = {-1,0,1,2,3,4,5};
-		//texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
-		values[] = {-1,1,4,5};
-		texts[] = {"pre defined","50% East, 50% West", "Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
+		values[] = {-1,0,1,2,3,4,5};
+		texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
+		//values[] = {-1,1,4,5};
+		//texts[] = {"pre defined","50% East, 50% West", "Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
 		default = -1;
 	};
 	class CTI_TOWNS_VEHICLES_LOCK {

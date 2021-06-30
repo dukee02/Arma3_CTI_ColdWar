@@ -44,12 +44,12 @@ if(CTI_NO_UPGRADE_MODE == 1) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Barracks Factory.
 if(CTI_CUP_ADDON > 0) then {
-	//VDV_EMR = green camo - VDV = brown camo
 	//Level 0 (Level 3 with CW)
 	if(CTI_MAIN_ADDON == 0) then { _tech_level = 3; } else { _tech_level = 0; };
-	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
+		_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_USMC_Crew_des", _sid];
 			_p pushBack '';
@@ -215,9 +215,10 @@ if(CTI_CUP_ADDON > 0) then {
 	
 	//Level 1 (Level 4 with CW)
 	_tech_level = _tech_level+1;
-	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
+		_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_USMC_Soldier_AT_des", _sid];
 			_p pushBack '';
@@ -352,9 +353,10 @@ if(CTI_CUP_ADDON > 0) then {
 	
 	//Level 2 (Level 5 with CW)
 	_tech_level = _tech_level+1;
-	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
+		_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_USMC_Soldier_HAT_des", _sid];
 			_p pushBack '';
@@ -545,9 +547,10 @@ if(CTI_CUP_ADDON > 0) then {
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 if(CTI_CUP_ADDON == 1) then {
 	_tech_level = 0;
-	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+		_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M1152_DSRT_USMC", _sid];
 			_p pushBack '';
@@ -639,10 +642,11 @@ if(CTI_CUP_ADDON == 1) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 1;
-	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+		_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_HMMWV_Ambulance_USA", _sid];		//Medic
@@ -837,9 +841,9 @@ if(CTI_CUP_ADDON == 1) then {
 	};
 	
 	_tech_level = 2;
-	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+		_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_HMMWV_M2_GPK_USA", _sid];
@@ -982,10 +986,12 @@ if(CTI_CUP_ADDON == 1) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 3;
-	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+		_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M1130_CV_M2_Desert", _sid];
 			_p pushBack '';
@@ -1110,9 +1116,10 @@ if(CTI_CUP_ADDON == 1) then {
 	};
 	
 	if(CTI_RHS_ADDON > 0) then { _tech_level = 5; } else { _tech_level = 3; };
-	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+		_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_RG31_Mk19_OD_USA", _sid];
 			_p pushBack '';
@@ -1242,11 +1249,12 @@ if(CTI_CUP_ADDON == 1) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Heavy Factory.
 //Level 0
-_tech_level = 0;
 if(CTI_CUP_ADDON == 1) then {
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	_tech_level = 0;
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M113_desert_USA", _sid];
 			_p pushBack '';
@@ -1276,12 +1284,13 @@ if(CTI_CUP_ADDON == 1) then {
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 0;
-			
 	};
+	
 	_tech_level = 1;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		_c pushBack format["%1CUP_B_AAV_USMC", _sid];	
 		_p pushBack '';
 		_n pushBack '';
@@ -1312,10 +1321,12 @@ if(CTI_CUP_ADDON == 1) then {
 		_s pushBack "service-medic";
 		_d pushBack 0;	
 	};
+	
 	_tech_level = 2;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	
 		_c pushBack format["%1CUP_B_M60A3_USMC", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -1326,10 +1337,12 @@ if(CTI_CUP_ADDON == 1) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 3;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M7Bradley_USA_D", _sid];
 			_p pushBack '';
@@ -1371,10 +1384,12 @@ if(CTI_CUP_ADDON == 1) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 4;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M2Bradley_USA_D", _sid];
 			_p pushBack '';
@@ -1436,10 +1451,12 @@ if(CTI_CUP_ADDON == 1) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 5;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M2A3Bradley_USA_D", _sid];
 			_p pushBack '';
@@ -1510,9 +1527,10 @@ if(CTI_CUP_ADDON == 1) then {
 //--- Below is classnames for Units and AI avaiable to puchase from Air Factory.
 if(CTI_CUP_ADDON > 0) then {
 	_tech_level = 0;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		_c pushBack format["%1CUP_B_MH6J_USA", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -1633,10 +1651,12 @@ if(CTI_CUP_ADDON > 0) then {
 		_s pushBack "";
 		_d pushBack 0;	
 	};
+	
 	_tech_level = 1;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	
 		_c pushBack format["%1CUP_B_UH1Y_MEV_USMC", _sid];					//Medic
 		_p pushBack '';
 		_n pushBack (format ["UH1Y Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
@@ -1747,10 +1767,12 @@ if(CTI_CUP_ADDON > 0) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 2;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		_c pushBack format["%1CUP_B_AH1Z_Dynamic_USMC", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -1851,10 +1873,12 @@ if(CTI_CUP_ADDON > 0) then {
 		_s pushBack "";
 		_d pushBack 0;
 	};
+	
 	_tech_level = 3;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+		
 		_c pushBack format["%1CUP_B_A10_DYN_USA", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -1896,10 +1920,12 @@ if(CTI_CUP_ADDON > 0) then {
 		_d pushBack 0;
 		
 	};
+	
 	_tech_level = 4;
-	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+		_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	
 		_c pushBack format["%1CUP_B_AH64_DL_USA", _sid];
 		_p pushBack '';
 		_n pushBack '';
@@ -1962,7 +1988,7 @@ if(CTI_CUP_ADDON > 0) then {
 		_s pushBack "service-repairtruck";
 		_d pushBack 0;
 	};
-	_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
+	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Repairtruck
 	_p pushBack '';
 	_n pushBack 'Repair Truck';
 	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
@@ -2004,7 +2030,6 @@ if(CTI_CUP_ADDON > 0) then {
 	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 	
-	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
 		_p pushBack '';
@@ -2026,7 +2051,7 @@ if(CTI_CUP_ADDON > 0) then {
 		_s pushBack "service-fueltruck";
 		_d pushBack 0;
 	};
-	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
+	_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Ammotruck
 	_p pushBack '';
 	_n pushBack 'Ammo Truck';
 	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
@@ -2036,7 +2061,7 @@ if(CTI_CUP_ADDON > 0) then {
 	_s pushBack "service-ammotruck";
 	_d pushBack 0;	
 	
-	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
+	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Fueltruck
 	_p pushBack '';
 	_n pushBack 'Fuel Truck';
 	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
@@ -2052,9 +2077,10 @@ if(CTI_CUP_ADDON > 0) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Naval Factory.
 _tech_level = 0;
-_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
+	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+	
 	_u pushBack format["%CUP_B_LCU1600_USMC", _sid];
 	_p pushBack '';
 	_n pushBack '';
@@ -2095,7 +2121,11 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
 	_s pushBack "";
 	_d pushBack 0;
 };
+_tech_level = 1;
 if(CTI_ECONOMY_LEVEL_NAVAL >= 1) then {
+	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+	
 	_u pushBack format["%CUP_B_RHIB2Turret_USMC", _sid];
 	_p pushBack '';
 	_n pushBack '';

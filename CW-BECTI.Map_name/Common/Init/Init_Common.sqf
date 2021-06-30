@@ -200,7 +200,10 @@ if(CTI_GUER_TOWNS == 0) then {
 	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NPoC_CUP.sqf";
 	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPoC_CUP.sqf";
 };
-//if(CTI_GUER_TOWNS == 1) then {((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_POL.sqf";};
+if(CTI_GUER_TOWNS == 1) then {
+	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_RACS_CUP.sqf";
+	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_RACS_CUP.sqf";
+};
 
 if(CTI_WEST_TOWNS >= 0) then {
 	switch(CTI_WEST_TOWNS) do {

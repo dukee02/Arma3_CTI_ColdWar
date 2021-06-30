@@ -405,7 +405,7 @@ if(CTI_CUP_ADDON > 0) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
 	};
-	_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
+	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Repairtruck
 	if(CTI_MAIN_ADDON == 1 ) then {
 	_c pushBack format["CTI_Salvager_%1", _side];
 	};
@@ -426,11 +426,11 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 _c = [];
 if(CTI_CUP_ADDON > 0) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
-			_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];			//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];		//Fueltruck
 	};
-	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
-	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
+	_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Ammotruck
+	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Fueltruck
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AMMO];
 if (isNil "_priorUnits") then { 
