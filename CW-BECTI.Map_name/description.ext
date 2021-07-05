@@ -31,7 +31,11 @@ rearmObjects[] = {
 	"rnt_lkw_7t_mil_gl_kat_i_mun_trope",
 	"rnt_lkw_7t_mil_gl_kat_i_mun_fleck",
 	"CUP_O_Ural_Reammo_RU",
-	"rhs_gaz66_ammo_vdv"
+	"rhs_gaz66_ammo_vdv",
+	"CUP_I_MTVR_Ammo_RACS",
+	"CUP_B_MTVR_Refuel_USMC",
+	"CUP_B_MTVR_Ammo_USA",
+	"CUP_B_MTVR_Ammo_USMC"
 	};
 
 //Distance needed from rearmObjects[]
