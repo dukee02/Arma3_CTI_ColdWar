@@ -15,7 +15,7 @@ Tornado_AWS_camo_ger
 Su33_Protatype_PT_2		//1994						Luftüberlegenheitsjäger
 SU_35_russianaval		//2009 						Mehrzweckkampfflugzeug
 SU_35_russiablu			//2009 						Mehrzweckkampfflugzeug
-sab_su34_O				//Dezember 2011				Jagdbomber
+sab_su34_O				//1994						Luftüberlegenheitsjäger
 EAWS_EF2000_taki_CAP	//Juli 2006					Mehrzweckkampfflugzeug
 EAWS_EF2000_genericdesert_CAP
 
@@ -109,6 +109,862 @@ Tornado_AWS_blu
 Project Tornado
 MIG-29 Fulcrum AWS
 SU-34SM FULLBACK-D AWS
+
+
+
+
+
+
+//classes
+The Sukhoi Su-33 Flanker-D									//1994						Luftüberlegenheitsjäger
+https://steamcommunity.com/sharedfiles/filedetails/?id=947654254
+Su33_Chine				China camo
+Su33_Chine_PT
+Su33_Protatype_PT_2		RUS camo
+
+Sukhoi Su-34												//9. Dezember 2011				Jagdbomber
+https://steamcommunity.com/sharedfiles/filedetails/?id=375638518
+sab_su34_O
+sab_su34_C
+sab_su34_I
+
+SU-35 Flanker E												//2009 						Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=743108251
+JS_JC_SU35			//CSAT camo
+
+
+SU-34SM FULLBACK-D AWS										//9. Dezember 2011				Jagdbomber
+https://steamcommunity.com/sharedfiles/filedetails/?id=1653549887
+	! needs FIR AWS !		not linked!!!
+AWS_SU34_CDF_BOMBER
+
+AWS_SU34_genericopfor_BOMBER
+AWS_SU34_plaaf_BOMBER
+AWS_SU34_RU_BOMBER
+AWS_SU34_sla_BOMBER
+AWS_SU34_TK_BOMBER
+
+Project Lightning - F-35B Armaverse Version					31. Juli 2015				Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=1600293139
+	! needs FIR AWS !
+FIR_F35B_Blank1
+FIR_F35B_Blank2
+FIR_F35B_Arctic
+FIR_F35B_MFG1				//GER
+FIR_F35B_MFG2				//GER
+FIR_F35B_RAF01				//UK
+FIR_F35B_RAF02
+FIR_F35B_VMFA211			//US
+FIR_F35B_VMFA214Special
+FIR_F35B_VMFA214
+FIR_F35B_VMFA251
+FIR_F35B_DarkGrey
+FIR_F35B_VMFA531
+
+Panavia Tornado AWS and variants								//1980						Jagdbomber
+https://steamcommunity.com/sharedfiles/filedetails/?id=1653557085
+	! needs FIR AWS !
+Tornado_AWS_ADV_ita			//Air Defence Variant (ADV)
+Tornado_AWS_ADV_uk
+Tornado_AWS_ecr_ger
+Tornado_AWS_ECR_ita			//Suppression of Enemy Air Defenses (SEAD)
+Tornado_AWS_UK_DS
+Tornado_AWS_UK_617
+Tornado_AWS_camo_uk
+Tornado_AWS_camo_ger
+Tornado_AWS_GER
+Tornado_AWS_1
+Tornado_AWS_camo_ita
+Tornado_AWS_50_DS
+
+Tornado_AWS_ADV_OPF
+Tornado_AWS_ecr_opf
+Tornado_AWS_opf
+
+Tornado_AWS_ADV_IND
+Tornado_AWS_ind
+
+MIG-29 Fulcrum AWS											//Juni 1983					Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=1816588598
+	! needs FIR AWS !
+Mig29AWS_chern
+Mig29AWS_blufor
+Mig29AWS_livonia
+
+Mig29AWS_chernreb
+Mig29AWS_rus
+Mig29AWS_sla
+Mig29AWS_taki
+Mig29AWS_SMT_rus
+
+FA-18 Super Hornet											//1999						Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=743099837
+JS_JC_FA18E			//1 seat
+JS_JC_FA18F			//2 seats
+
+F-22 Raptor													//15. Dezember 2005			Luftüberlegenheitsjäger
+https://steamcommunity.com/sharedfiles/filedetails/?id=1114015070
+	! needs FIR AWS !
+FIR_F22_Blank
+FIR_F22_Blank2
+FIR_F22_Blank3
+FIR_F22_Blue			//US
+FIR_F22_TY
+FIR_F22_FF
+FIR_F22_Gryphus1		//unknown icon
+FIR_F22_Mobius1			//unknown icon
+
+FIR_F22_ENEMY_TYPE_A
+
+F-2 Viper ZERO												//2000						Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=527176874
+	! needs FIR AWS !
+FIR_F2A_60Ani		//1 seat JPN
+FIR_F2A_TACMEET
+FIR_F2A_Blank
+FIR_F2A_IMAS		//yellow manga
+FIR_F2B_21sq		//2 seats
+FIR_F2B_Blank
+
+F-16 Fighting Falcon										//August 1978				Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=366423278
+	! needs FIR AWS !
+FIR_F16C_900830				//55th USAF
+FIR_F16C_910345
+FIR_F16C_910355
+FIR_F16C_910378
+FIR_F16C_910381
+FIR_F16C_910384
+FIR_F16C_910385
+FIR_F16C_910387
+FIR_F16C_910389
+FIR_F16C_910390
+FIR_F16C_910394
+FIR_F16C_910395
+FIR_F16C_923923
+FIR_F16C_930532
+FIR_F16C_930540
+FIR_F16C_930546
+FIR_F16C_930550_sqd
+FIR_F16C_930552
+FIR_F16C_940045
+FIR_F16C_940049
+FIR_F16C_960084
+FIR_F16C_970110
+FIR_F16C_970111
+FIR_F16C_980003
+FIR_F16D_900482
+
+FIR_F16C_000225				//77th USAF
+FIR_F16C_000226
+FIR_F16C_017050
+FIR_F16C_017052
+FIR_F16C_900806
+FIR_F16C_900821
+FIR_F16C_910353
+FIR_F16C_910364
+FIR_F16C_910368
+FIR_F16C_910371
+FIR_F16C_910376_Wing
+FIR_F16C_910377_sqd
+FIR_F16C_910380
+FIR_F16C_910463
+FIR_F16C_923910
+FIR_F16C_923920
+FIR_F16C_930536
+FIR_F16C_930544
+FIR_F16C_940041
+FIR_F16C_940042
+FIR_F16C_940043
+FIR_F16C_940044
+FIR_F16C_940046
+FIR_F16C_940047
+FIR_F16D_910476
+
+FIR_F16C_000218				79th USAF
+FIR_F16C_000220
+FIR_F16C_000221
+FIR_F16C_000222
+FIR_F16C_000223
+FIR_F16C_000224
+FIR_F16C_000227
+FIR_F16C_017051
+FIR_F16C_900826
+FIR_F16C_910348
+FIR_F16C_910369
+FIR_F16C_910372
+FIR_F16C_910379_sqd
+FIR_F16C_910398
+FIR_F16C_923904
+FIR_F16C_923906
+FIR_F16C_930458
+FIR_F16C_940039
+FIR_F16C_940048_Wing
+FIR_F16C_970108
+FIR_F16C_970109
+FIR_F16C_990082
+FIR_F16D_900845
+FIR_F16D_910468
+FIR_F16D_910480
+FIR_F16C_910359
+
+FIR_F16C_HO_311FS			//other camo
+FIR_F16C_HO_49WG
+FIR_F16C_HO_8FS
+FIR_F16C_Ag_arctic
+FIR_F16C_Ag_flanker
+FIR_F16C_Ag_lizard
+FIR_F16C_AV
+FIR_F16C_Blank2
+FIR_F16C_Blank3
+FIR_F16C_Blank
+FIR_F16C_CFTTEST
+FIR_F16C_Makos
+FIR_F16C_Osan
+FIR_F16C_MERC
+FIR_F16C_HG
+FIR_F16C_Polish
+FIR_F16C_ROKAF_B32
+FIR_F16C_SW_HGV
+FIR_F16C_WP
+FIR_F16C_WP_Juvat
+FIR_F16C_Polish_CFT
+FIR_F16C_WW
+FIR_F16C_ROKAF_Hess
+FIR_F16C_ROKAF
+
+FIR_F16C_RS_512TFS			//Ramstein
+FIR_F16C_RS_400
+FIR_F16C_RS_526TFS
+FIR_F16C_RS_86TFW2
+FIR_F16C_RS_86TFW
+FIR_F16C_RS_86WG
+
+FIR_F16C_SW_Candy			//camo pack 1
+FIR_F16C_SW_Hammer
+FIR_F16C_SW_Max
+FIR_F16C_TJ_614TFS
+FIR_F16C_TJ_228
+FIR_F16C_TJ_247
+FIR_F16C_TJ_257
+FIR_F16C_HL_474
+FIR_F16C_HL_488
+FIR_F16C_MY_515
+
+FIR_F16C_RS_Special			//camo pack 2
+FIR_F16C_HR_301
+FIR_F16C_RS_302
+FIR_F16C_HR_393
+FIR_F16C_SP_546
+FIR_F16C_WR_216
+FIR_F16C_SP_225
+FIR_F16C_WR_254
+FIR_F16C_TJ_367
+FIR_F16C_TJ_369
+
+FIR_F16C_ANG_AL				//camo pack 3 states
+FIR_F16C_ANG_AZ
+FIR_F16C_ANG_FS
+FIR_F16C_ANG_CA
+FIR_F16C_ANG_CO
+FIR_F16C_ANG_DC
+FIR_F16C_ANG_SI
+FIR_F16C_ANG_IN
+FIR_F16C_ANG_IA
+FIR_F16C_ANG_MN
+FIR_F16C_ANG_MO
+FIR_F16C_ANG_NJ
+FIR_F16C_ANG_NM
+FIR_F16C_ANG_NY
+FIR_F16C_ANG_OH
+FIR_F16C_ANG_OK_DARK
+FIR_F16C_ANG_OK
+FIR_F16C_ANG_SC
+FIR_F16C_ANG_SD
+FIR_F16C_ANG_TX
+FIR_F16C_ANG_VT
+FIR_F16C_ANG_VA
+FIR_F16C_ANG_WI
+FIR_F16D_ANG_MN
+
+FIR_F16C_AS_2				//camo pack 4
+FIR_F16C_AS_3
+FIR_F16C_AS_1
+FIR_F16C_BS
+FIR_F16C_LS
+FIR_F16C_PostDepot
+FIR_F16C_Interim
+FIR_F16C_Shark
+FIR_F16C_WAHGV
+FIR_F16C_WASplinter1
+FIR_F16C_WASplinter2
+FIR_F16D_AK_Flanker
+FIR_F16D_WP_Flanker
+
+FIR_F16D_CFTTEST			//F16D camo pack
+FIR_F16D_ROKAF
+FIR_F16D_Polish_CFT
+FIR_F16D_AV
+FIR_F16D_Blank
+FIR_F16D_WP_Fanton
+FIR_F16D_WP
+
+FIR_F16C_ENEMY_TYPE_A		//OPFOR camo but US insignia
+
+F-15 Eagle												//November 1974				Mehrzweckkampfflugzeug/Luftüberlegenheitsjäger
+https://steamcommunity.com/sharedfiles/filedetails/?id=582478120
+	! needs FIR AWS !
+FIR_F15C_Blank
+FIR_F15C_GALM1
+FIR_F15C_GALM2
+FIR_F15D_Blank
+FIR_F15E_Blank
+FIR_F15A_Baz_673
+FIR_F15SE_Blank
+
+FIR_F15A_318FIS_1			//US
+FIR_F15A_318FIS_2
+FIR_F15A_5FIS
+FIR_F15A_AK_43d
+FIR_F15A_BT
+FIR_F15A_BT_Tigermeet
+FIR_F15A_FF
+FIR_F15A_HO_7th
+FIR_F15B_318FIS
+FIR_F15B_48FIS
+FIR_F15B_5FIS
+FIR_F15C_AK_CFT
+FIR_F15C_BT_22TFS
+FIR_F15C_BT_36TFW
+FIR_F15C_CR_32TFS
+FIR_F15C_CFT_57FIS
+FIR_F15C_ZZ_12TFS
+FIR_F15C_ZZ_18TFW
+FIR_F15C_ZZ_44TFS
+FIR_F15C_ZZ_67TFS
+FIR_F15E_Demo
+FIR_F15C_67FS
+FIR_F15C_FL
+FIR_F15C_LN
+FIR_F15D_LN
+FIR_F15E_GARUDA1
+FIR_F15E_AK_11AF
+FIR_F15E_LN_492
+FIR_F15E_LN_494
+FIR_F15E_MO_389
+FIR_F15E_SJ
+FIR_F15E_SJ_334
+FIR_F15E_SJ_335
+FIR_F15E_SJ_336
+FIR_F15K_1st
+FIR_F15SE_CR
+FIR_F15SE_LN
+FIR_F15SE_LA
+FIR_F15SE_Reaper
+FIR_F15SE_ROKAF
+
+FIR_F15DJ_202TFS			//JPN
+FIR_F15DJ_203TFS
+FIR_F15DJ_204TFS
+FIR_F15DJ_303TFS
+FIR_F15J_JASDF_202TFS
+FIR_F15J_JASDF_203TFS
+FIR_F15J_JASDF_204TFS
+FIR_F15J_JASDF_303TFS
+FIR_F15J_204TFS_TACMEET
+FIR_F15J_303TFS_TACMEET
+FIR_F15J_304TFS
+FIR_F15J_306TFS
+FIR_F15J_IRST
+FIR_F15DJ_ARG1
+FIR_F15J_ME4_912
+FIR_F15J_ME4_924
+FIR_F15J_ME4_945
+FIR_F15J_ME4_948
+FIR_F15J_ME4_949
+
+F-14 Tomcat													//September 1974			Abfangjäger
+https://steamcommunity.com/sharedfiles/filedetails/?id=537154025
+	! needs FIR AWS !
+FIR_F14A_VF213_95low			//skin pack 1
+FIR_F14A_VF213_First
+FIR_F14A_VF213_Early
+FIR_F14A_VF213_95high
+FIR_F14D_VF213_AJ200
+FIR_F14D_VF213_AJ205
+FIR_F14D_VF213_AJ207
+FIR_F14D_VF213_AJ211
+FIR_F14D_VF213_2001
+
+FIR_F14A_VF201_HIVIZ			//skin pack 2
+FIR_F14A_VF201_LOVIZ
+FIR_F14A_VF202_HIVIZ
+FIR_F14A_VF202_LOVIZ
+FIR_F14A_VF301_HIVIZ
+FIR_F14A_VF301_LOVIZ
+FIR_F14A_VF302_HIVIZ
+FIR_F14A_VF302_LOVIZ
+
+
+FIR_F14A_VF101_A101				//skin pack 3
+FIR_F14B_VF101_B101
+FIR_F14B_VF101_B101_2
+FIR_F14B_VF101_TOMATO
+FIR_F14D_VF101_D163
+
+FIR_F14A_Iceman
+FIR_F14A_Maverick
+
+FIR_F14B_VMFA232CAG
+FIR_F14B_VMFA232
+FIR_F14B_VMFA451CAG
+FIR_F14B_VMFA451
+FIR_F14B_VMFA531CAG
+FIR_F14B_VMFA531
+
+FIR_F14A_HBK1
+FIR_F14A_A88
+FIR_F14A_NSAWC						//blue
+FIR_F14A_VF1
+FIR_F14A_VF111
+FIR_F14A_VF114
+FIR_F14A_VF124
+FIR_F14A_VF14
+FIR_F14A_VF143
+FIR_F14A_VF154
+FIR_F14A_VF191
+FIR_F14A_VF194
+FIR_F14A_VF21
+FIR_F14A_VF211
+FIR_F14A_VF24
+FIR_F14A_VF33
+FIR_F14A_VF41
+FIR_F14A_VF51
+FIR_F14A_VF84
+FIR_F14A_VFA206
+FIR_F14A_VX4						//black
+FIR_F14A_Wardog
+FIR_F14A_Wardog2
+FIR_F14A_Wardog3
+FIR_F14A_Wardog4
+FIR_F14A_Blank
+FIR_F14A_ISAF
+FIR_F14B_UNSPACY
+FIR_F14B_VF102
+FIR_F14B_VF103_Sluggers
+FIR_F14B_VF103
+FIR_F14B_VF103_ChristmasSpecial
+FIR_F14B_VF11
+FIR_F14B_VF142
+FIR_F14B_VF32
+FIR_F14B_VF74
+FIR_F14B_Blank
+FIR_F14D_VF31_ChristmasSpecial
+FIR_F14D_Blank
+FIR_F14D_AC6
+FIR_F14D_MIKU						//manga
+FIR_F14D_Razgriz					//black
+FIR_F14D_Schnee						//black
+FIR_F14D_Trigger
+FIR_F14D_VF101
+FIR_F14D_VF2
+FIR_F14D_VF213
+FIR_F14D_VF31CAG
+
+FIR_F14B_VF103_AA100
+FIR_F14B_VF103_AA101
+FIR_F14B_VF103_AA102
+FIR_F14B_VF103_AA103
+FIR_F14B_VF103_AA104
+FIR_F14B_VF103_AA105
+FIR_F14B_VF103_AA107
+FIR_F14B_VF103_AA110
+FIR_F14B_VF103_AA111
+FIR_F14B_VF103_AA112
+
+FIR_F14A_VF154_NF100
+FIR_F14A_VF154_NF101
+FIR_F14A_VF154_NF102
+FIR_F14A_VF154_NF103
+FIR_F14A_VF154_NF105
+FIR_F14A_VF154_NF106
+FIR_F14A_VF154_NF107
+FIR_F14A_VF154_NF110
+FIR_F14A_VF154_NF111
+FIR_F14A_VF154_NF112
+FIR_F14A_VF154_NF113
+
+FIR_F14D_VF31_AJ100_Last
+FIR_F14D_VF31_AJ100
+FIR_F14D_VF31_AJ101_Last
+FIR_F14D_VF31_AJ101
+FIR_F14D_VF31_AJ102_Last
+FIR_F14D_VF31_AJ102
+FIR_F14D_VF31_AJ103_Last
+FIR_F14D_VF31_AJ103
+FIR_F14D_VF31_AJ104
+FIR_F14D_VF31_AJ105
+FIR_F14D_VF31_AJ106
+FIR_F14D_VF31_AJ107
+FIR_F14D_VF31_AJ110
+FIR_F14D_VF31_AJ111_Christine
+FIR_F14D_VF31_AJ111
+FIR_F14D_VF31_AJ112
+
+FIR_F14D_ENEMY_TYPE_A			//OPFOR
+
+F/A-18 Hornet												//7. Januar 1983			Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=1849091860
+	! needs FIR AWS !
+FIR_F18C_SPAF
+FIR_F18C_RCAF
+FIR_F18C_RAAF
+FIR_F18C_RNZAF
+FIR_F18C_MALS11
+FIR_F18C_VMFA314CAG
+FIR_F18C_VMFA314
+FIR_F18C_Blank
+FIR_F18C_Blank_Aggressor
+FIR_F18C_FINNISH
+FIR_F18C_MAG31_WW2
+FIR_F18C_MALS31
+FIR_F18C_ROKAF
+FIR_F18C_Scar
+FIR_F18C_SWISS
+FIR_F18C_Wildcat_USN
+FIR_F18C_Hellcat_USN
+FIR_F18C_Hellcat_USN_Enterprise
+FIR_F18C_Wildcat_USMC
+FIR_F18C_VFA106CAG
+FIR_F18C_VFA106
+FIR_F18C_VFA131CAG
+FIR_F18C_VFA131
+FIR_F18C_VFA15_75year
+FIR_F18C_VFA15CAG
+FIR_F18C_VFA15
+FIR_F18C_VMFAAW224CAG
+FIR_F18C_VMFA232CAG
+FIR_F18C_VMFA232
+FIR_F18C_VMFA251CAG
+FIR_F18C_VMFA251
+FIR_F18D_FINNISH
+FIR_F18D_RMAF
+FIR_F18D_Swiss
+FIR_F18D_VMF224
+FIR_F18D_VMFAAW224_CO
+FIR_F18D_VMFAAW224_02
+FIR_F18D_VMFAAW533CO
+FIR_F18D_VMFAAW533
+
+FIR_F18C_Enemy_Type1
+
+Eurofighter Typhoon AWS										//Juli 2006					Mehrzweckkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=1625724231
+	! needs FIR AWS !
+EAWS_EF2000_ITA51_CAP
+EAWS_EF2000_specialita_CAP
+EAWS_EF2000_genericartic2_CAP
+EAWS_EF2000_aus_CAP
+EAWS_EF2000_bel_CAP
+EAWS_EF2000_can_CAP
+EAWS_EF2000_genericdesert2_CAP
+EAWS_EF2000_FRA_CAP
+EAWS_EF2000_Genericblu_CAP
+EAWS_EF2000_GER_CAP
+EAWS_EF2000_genericgray2_CAP
+EAWS_EF2000_poland_CAP
+EAWS_EF2000_rafhist_CAP
+EAWS_EF2000_UK_CAP
+EAWS_EF2000_Spa_CAP
+EAWS_EF2000_spaspecial_CAP
+
+EAWS_EF2000_genericartic_CAP		//OPFOR
+EAWS_EF2000_genericdesert_CAP
+EAWS_EF2000_Genericopfor_CAP
+EAWS_EF2000_genericgray_CAP
+EAWS_EF2000_taki_CAP
+
+EAWS_EF2000_genericartic3_CAP		//IND
+EAWS_EF2000_genericdesert3_CAP
+EAWS_EF2000_Genericind_CAP
+EAWS_EF2000_genericgray3_CAP
+EAWS_EF2000_racs_CAP
+
+EA-18G Growler													//22. September 2009			EloKa-Kampfflugzeug 	Elektronische Kampfführung (EloKa) (Englisch EW (electronic warfare))
+https://steamcommunity.com/sharedfiles/filedetails/?id=1227179728
+	! needs FIR AWS !
+FIR_EA18G_390ECS
+FIR_EA18G_Blank
+FIR_EA18G_NA
+EA18G_RAAF
+EA18G_129CAG
+EA18G_129LOW
+FIR_EA18G_VAQ130
+EA18G_VAQ131
+EA18G_132LOW
+FIR_EA18G_VAQ136
+EA18G_137CAG
+EA18G_137LOW
+FIR_EA18G_VAQ138
+EA18G_139CAG
+EA18G_139LOW
+EA18G_141CAG
+EA18G_141LOW
+EA18G_142CAG
+EA18G_142LOW
+EA18G_209CAG
+EA18G_209LOW
+
+AV-8B Harrier 2												//April 1969				VTOL-Erdkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=1260802825
+	! needs FIR AWS !
+STOL "Short Take-Off and Landing"
+FIR_AV8B_NA_Blank
+FIR_AV8B_NA_VMA211
+FIR_AV8B_Blank
+FIR_AV8B_VMA211_OLD
+FIR_AV8B_VMA223
+FIR_AV8B_VMA223_OLD
+FIR_AV8B_VMA231_02
+FIR_AV8B_VMA311
+FIR_AV8B_GR7A_Lucy
+FIR_AV8B_GR9A_Blank
+FIR_AV8B_GR9A_2
+
+FIR_AV8B_VMA214_01
+FIR_AV8B_VMA214_02
+FIR_AV8B_VMA214_03
+FIR_AV8B_VMA214_04
+FIR_AV8B_VMA214_05
+FIR_AV8B_VMA214_06
+FIR_AV8B_VMA214_07
+FIR_AV8B_VMA214_08
+FIR_AV8B_VMA214_09
+FIR_AV8B_VMA214_11
+FIR_AV8B_VMA214_12
+FIR_AV8B_VMA214_15
+FIR_AV8B_VMA214_20
+FIR_AV8B_VMA214_22
+
+A-10 Warthog												//März 1977					Erdkampfflugzeug
+https://steamcommunity.com/sharedfiles/filedetails/?id=787892271
+	! needs FIR AWS !
+FIR_A10A_Fulda_SB_608			//skinpack 1 camo
+FIR_A10A_Fulda_SB_620
+FIR_A10A_Fulda_LM
+FIR_A10A_Fulda_AN
+FIR_A10A_Fulda_NV
+FIR_A10A_Fulda_IN
+FIR_A10A_Fulda_BD
+FIR_A10A_Fulda_NO
+FIR_A10A_Fulda_AR_509TFS
+FIR_A10A_Fulda_AR_511TFS
+FIR_A10A_Fulda_CT
+FIR_A10A_Fulda_EL_74TFS
+FIR_A10A_Fulda_EL_75TFS
+FIR_A10A_Fulda_EL_76TFS
+FIR_A10A_Fulda_MA
+FIR_A10A_Fulda_MB_353TFS
+FIR_A10A_Fulda_MB_355TFS
+FIR_A10A_Fulda_MB_356TFS
+FIR_A10A_Fulda_MD
+FIR_A10A_Fulda_NY
+FIR_A10A_Fulda_PA
+FIR_A10A_Fulda_WI
+FIR_A10A_Fulda_WR_510TFS
+FIR_A10A_Fulda_WR_78TFS
+FIR_A10A_Fulda_WR_91TFS
+FIR_A10A_Fulda_WR_92TFS
+FIR_A10A_Fulda_WR_White
+
+FIR_A10A_MD				//white		//skinpack 2
+FIR_A10A_Camo1
+FIR_A10A_Camo2
+FIR_A10A_47fs			//white
+FIR_A10A_WR_Bonus
+FIR_A10A_74fs			//white
+FIR_A10A_Blank			//white
+FIR_A10A_Blank2			//camo
+FIR_A10A_Grey_Bonus
+FIR_A10A_Sand_Bonus
+FIR_A10A_Snow_Bonus
+	
+FIR_A10C_MD					//skinpack 3
+FIR_A10C_FR
+FIR_A10C_47FS_Tigress
+FIR_A10C_FT
+FIR_A10C_Blank
+FIR_A10C_Camo
+FIR_A10C_OS
+
+FIR_A10C_Enemy_Type1
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+A-346A Goblin & YAK-131M Focuser-C
+https://steamcommunity.com/sharedfiles/filedetails/?id=1655223509
+Errors:
+ 9:33:15 Warning Message: No entry 'bin\config.bin/CfgWeapons.fir_MasterArm'.
+ 9:33:15 Warning Message: No entry '.scope'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: Error: creating weapon fir_MasterArm with scope=private
+ 9:33:15 Warning Message: No entry '.displayName'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.nameSound'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.type'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.picture'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.Library'.
+ 9:33:15 Warning Message: No entry '.libTextDesc'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.model'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.simulation'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.fireLightDuration'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.fireLightIntensity'.
+ 9:33:15 Warning Message: '/' is not a value
+ 9:33:15 Warning Message: No entry '.fireLightDiffuse'.
+ 9:33:15 Warning Message: Size: '/' not an array
+ 
+M346K_itacap
+M346K_bulg
+M346K_germania
+M346K_grecia
+M346K_israele
+M346K_polonia
+M346K_raf
+M346K_spa
+
+YAK131_nordcorea
+YAK131_cinacap
+YAK131_bielorussia
+M346K_libia
+YAK131_russia
+YAK131_russianavycap
+YAK131_taki
+YAK131_vietnamcap
+
+
+F/A-18E/F Super Hornet - former Project Rhino Demo
+https://steamcommunity.com/sharedfiles/filedetails/?id=1600297734
+	! needs FIR AWS !
+Errors:
+ 8:28:37 In Vehicle: fir_fa18ef\fir_f18e.p3d missing driver get in direction point
+ 8:28:37 Warning Message: Cannot open object flan_ea18g\model\cockpitexterior.p3d
+ 8:28:37 Warning Message: Cannot open object flan_ea18g\model\flan_ea18g_wreck.p3d
+ 8:28:37 unable to create weapon for missile 'FIR_SuperHornet_Fueltank_Standard_P_1rnd_M', check config entry'pylonWeapon'
+ 8:28:37 unable to create weapon for missile 'FIR_SuperHornet_Fueltank_Standard_P_1rnd_M', check config entry'pylonWeapon'
+ 8:28:37 unable to create weapon for missile 'FIR_SuperHornet_Fueltank_Standard_P_1rnd_M', check config entry'pylonWeapon'
+ 8:28:48 Value radar not recognized as a source
+FIR_FA18E_VFA106
+FIR_FA18E_VFA15CAG
+FIR_FA18E_VFA15
+FIR_FA18E_VFA31CAG
+FIR_FA18F_Blank
+FIR_FA18F_VB6
+FIR_FA18F_VFA102CAG
+FIR_FA18F_VFA102
+FIR_FA18F_VFA103CAG_2019
+FIR_FA18F_VFA103CAG_2018
+FIR_FA18F_VFA103CAG
+FIR_FA18F_VFA103_Christmas
+FIR_FA18F_VFA103
+FIR_FA18F_VFA106CAG
+FIR_FA18F_VFA106_Christmas
+FIR_FA18F_VFA106
+FIR_FA18F_VFA154CAG
+FIR_FA18F_VFA2
+FIR_FA18F_VFA2_2020
+FIR_FA18F_VFA2CAG
+FIR_FA18F_VFA2CAG_2020
+FIR_FA18F_VFA163
+
+
+
+FA-18X Black Wasp
+https://steamcommunity.com/sharedfiles/filedetails/?id=325853043
+Errors:
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.scope'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: Error: creating weapon ItemInfo with scope=private
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.displayName'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.nameSound'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.type'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.picture'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.Library'.
+15:29:47 Warning Message: No entry '.libTextDesc'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.model'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.simulation'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.fireLightDuration'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.fireLightIntensity'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.fireLightDiffuse'.
+15:29:47 Warning Message: Size: '/' not an array
+15:29:47 Warning Message: Size: '/' not an array
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.fireLightAmbient'.
+15:29:47 Warning Message: Size: '/' not an array
+15:29:47 Warning Message: Size: '/' not an array
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.weaponLockDelay'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.weaponLockSystem'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.cmImmunity'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.weight'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.lockingTargetSound'.
+15:29:47 Warning Message: Size: '/' not an array
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.lockedTargetSound'.
+15:29:47 Warning Message: Size: '/' not an array
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.detectRange'.
+15:29:47 Warning Message: '/' is not a value
+15:29:47 Warning Message: No entry 'bin\config.bin/CfgWeapons/ItemInfo.muzzles'.
+15:29:47 Warning Message: Size: '/' not an array
+
+
+Sukhoi Su-33 Flanker-D
+https://steamcommunity.com/sharedfiles/filedetails/?id=938821663
+		!!! needs CBA !!!
+Errors:
+10:01:20 Warning Message: Cannot load texture \su_33_flanker_d\tex\su34\data\su34_int_co.paa.
+10:01:20 Warning Message: Cannot load texture rktsu33\brown\su33_brown_dt.paa.
+10:01:20 Warning Message: Cannot load texture air_dot.paa.
+10:02:19 Warning Message: Cannot load texture su_33_flanker_d\paa\sacaa.paa.
+10:02:19 Warning Message: Cannot load texture glt_missilebox\tex\env_land_co.paa.
+10:02:19 Warning Message: Cannot load texture glt_missilebox\tex\default_ti_ca.paa.
+10:02:19 Warning Message: Cannot load texture glt_missilebox\glt_ch29\nohq\kh29l_nohq.paa.
+10:02:19 Warning Message: Cannot load texture glt_missilebox\glt_ch29\smdi\kh29l_smdi.paa.
+10:02:19 Warning Message: Cannot load texture glt_missilebox\tex\env_land_co.paa.
+10:02:19 Warning Message: Cannot load texture glt_missilebox\tex\default_ti_ca.paa.
 
 
 

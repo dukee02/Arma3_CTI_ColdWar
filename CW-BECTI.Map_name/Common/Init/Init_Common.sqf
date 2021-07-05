@@ -197,12 +197,21 @@ if(CTI_NVA_SIDE >= 0) then {
 };
 
 if(CTI_GUER_TOWNS == 0) then {
-	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NPoC_CUP.sqf";
-	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPoC_CUP.sqf";
+	(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\units_NPoC_CUP.sqf";
+	(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NPoC_CUP.sqf";
+	(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPoC_CUP.sqf";
 };
 if(CTI_GUER_TOWNS == 1) then {
-	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_RACS_CUP.sqf";
-	((resistance) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_RACS_CUP.sqf";
+	(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\units_RACS_CUP.sqf";
+	(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_RACS_CUP.sqf";
+	(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_RACS_CUP.sqf";
+};
+
+if(CTI_AIR_ADDON >= 0) then {
+	{ 
+		(_x) call compile preprocessFileLineNumbers "Common\Config\Units\units_other_mods.sqf";
+		(_x) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_other_mods.sqf";
+	} forEach [west, east, resistance];
 };
 
 if(CTI_WEST_TOWNS >= 0) then {

@@ -660,7 +660,7 @@ class Params {
 	class CTI_MAIN_ADDON {
 		title = "ADDON: Main Cold-War or BW untis (80s or modern)";
 		values[] = {-1,0,1};
-		texts[] = {"Cold-War (CUP and/or RHS)","Global Mobilization - Cold War","BW-Mod & BW add vs. RUS (CUP and/or RHS)"};
+		texts[] = {"Cold-War (CUP and/or RHS)","Global Mobilization - Cold War","BW-Mod & BW add vs. RUS (CUP and/or RHS AFRF)"};
 		default = -1;
 	};
 	class CTI_CUP_ADDON {
@@ -693,10 +693,10 @@ class Params {
 		texts[] = {"Disabled","Enabled"};
 		default = 0;
 	};
-	class CTI_EF_TORNADO_ADDON {
-		title = "ADDON: Eurofighter + Tornado - Air west";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
+	class CTI_AIR_ADDON {
+		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
+		values[] = {-1,0,1,2};
+		texts[] = {"ignore loaded plane addons", "ACTIVE: only some skins each plane", "ACTIVE: more skins each plane", "ACTIVE: without restrictions !!can result in a large list in the factory!!"};
 		default = 0;
 	};
 	class SEPARATOR_LOG {
