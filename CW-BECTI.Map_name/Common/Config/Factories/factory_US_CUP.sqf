@@ -446,7 +446,7 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
-if(CTI_MAIN_ADDON == 0) then {
+if(CTI_CUP_ADDON > 0) then {
 	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active

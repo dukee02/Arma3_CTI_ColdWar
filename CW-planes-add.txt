@@ -19,6 +19,8 @@ sab_su34_O				//1994						Luftüberlegenheitsjäger
 EAWS_EF2000_taki_CAP	//Juli 2006					Mehrzweckkampfflugzeug
 EAWS_EF2000_genericdesert_CAP
 
+Military Aviation
+https://steamcommunity.com/sharedfiles/filedetails/?id=938711359
 
 sab_panther_o			//Mai 1949					Jagdbomber
 sab_t28trojan_o			//1950						Trainingsflugzeug
