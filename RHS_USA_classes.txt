@@ -1,0 +1,1690 @@
+// Export of 'RHS_USA.Stratis' by dukee on v0.9
+
+
+rhsusf_stryker_m1126_m2_d
+rhsusf_stryker_m1126_mk19_d
+rhsusf_stryker_m1127_m2_d
+rhsusf_stryker_m1132_m2_np_d
+rhsusf_stryker_m1132_m2_d
+rhsusf_stryker_m1134_d
+rhsusf_m113d_usarmy_supply
+rhsusf_m113d_usarmy
+rhsusf_m113d_usarmy_M240
+rhsusf_m113d_usarmy_medical
+rhsusf_m113d_usarmy_MK19
+rhsusf_m113d_usarmy_unarmed
+rhsusf_m109d_usarmy
+RHS_M119_D
+rhsusf_M142_usarmy_D
+RHS_M252_D
+rhsusf_m1025_d_m2
+rhsusf_m1025_d_Mk19
+rhsusf_m1025_d
+rhsusf_m1043_d_m2
+rhsusf_m1043_d_mk19
+rhsusf_m1043_d
+rhsusf_m1045_d
+rhsusf_m998_d_2dr_fulltop
+rhsusf_m998_d_2dr_halftop
+rhsusf_m998_d_2dr
+rhsusf_m998_d_4dr_fulltop
+rhsusf_m998_d_4dr_halftop
+rhsusf_m998_d_4dr
+rhsusf_m1151_usarmy_d
+rhsusf_m1151_m2crows_usarmy_d
+rhsusf_m1151_mk19crows_usarmy_d
+rhsusf_m1151_m2_v1_usarmy_d
+rhsusf_m1151_m2_lras3_v1_usarmy_d
+rhsusf_m1151_m240_v1_usarmy_d
+rhsusf_m1151_mk19_v1_usarmy_d
+rhsusf_m1151_m2_v2_usarmy_d
+rhsusf_m1151_m240_v2_usarmy_d
+rhsusf_m1151_mk19_v2_usarmy_d
+rhsusf_m1152_usarmy_d
+rhsusf_m1152_rsv_usarmy_d
+rhsusf_m1152_sicps_usarmy_d
+rhsusf_m1165_usarmy_d
+rhsusf_m966_d
+RHS_AH64D
+RHS_AH64DGrey
+RHS_CH_47F_10
+RHS_CH_47F_10_cargo
+RHS_CH_47F_light
+RHS_UH60M_d
+RHS_UH60M_ESSS_d
+RHS_UH60M_ESSS2_d
+RHS_UH60M2_d
+RHS_UH60M_MEV2_d
+RHS_UH60M_MEV_d
+RHS_M2A2
+RHS_M2A2_BUSKI
+RHS_M2A3
+RHS_M2A3_BUSKI
+RHS_M2A3_BUSKIII
+RHS_M6
+
+rhsusf_army_ocp_rifleman_10th
+rhsusf_army_ocp_rifleman_1stcav
+rhsusf_army_ocp_aa
+rhsusf_army_ocp_ah64_pilot
+rhsusf_army_ocp_javelin_assistant
+rhsusf_army_ocp_javelin
+rhsusf_army_ocp_maaws
+rhsusf_army_ocp_autorifleman
+rhsusf_army_ocp_autoriflemana
+rhsusf_army_ocp_rifleman_m590
+rhsusf_army_ocp_medic
+rhsusf_army_ocp_crewman
+rhsusf_army_ocp_combatcrewman
+rhsusf_army_ocp_driver
+rhsusf_army_ocp_driver_armored
+rhsusf_army_ocp_engineer
+rhsusf_army_ocp_explosives
+rhsusf_army_ocp_fso
+rhsusf_army_ocp_grenadier
+rhsusf_army_ocp_helicrew
+rhsusf_army_ocp_helipilot
+rhsusf_army_ocp_jfo
+rhsusf_army_ocp_machinegunner
+rhsusf_army_ocp_machinegunnera
+rhsusf_army_ocp_marksman
+rhsusf_army_ocp_officer
+rhsusf_army_ocp_rifleman
+rhsusf_army_ocp_riflemanl
+rhsusf_army_ocp_riflemanat
+rhsusf_army_ocp_rifleman_m16
+rhsusf_army_ocp_rifleman_m4
+rhsusf_army_ocp_sniper
+rhsusf_army_ocp_sniper_m107
+rhsusf_army_ocp_sniper_m24sws
+rhsusf_army_ocp_squadleader
+rhsusf_army_ocp_teamleader
+rhsusf_army_ocp_uav
+rhsusf_army_ocp_rifleman_101st
+rhsusf_army_ocp_rifleman_82nd
+
+rhsusf_army_ocp_arb_maaws
+rhsusf_army_ocp_arb_autorifleman
+rhsusf_army_ocp_arb_autoriflemana
+rhsusf_army_ocp_arb_rifleman_m590
+rhsusf_army_ocp_arb_medic
+rhsusf_army_ocp_arb_engineer
+rhsusf_army_ocp_arb_grenadier
+rhsusf_army_ocp_arb_machinegunner
+rhsusf_army_ocp_arb_machinegunnera
+rhsusf_army_ocp_arb_marksman
+rhsusf_army_ocp_arb_rifleman
+rhsusf_army_ocp_arb_riflemanl
+rhsusf_army_ocp_arb_riflemanat
+rhsusf_army_ocp_rifleman_arb_m16
+rhsusf_army_ocp_arb_sniper_m107
+rhsusf_army_ocp_arb_squadleader
+rhsusf_army_ocp_arb_teamleader
+
+//desert
+rhsusf_M1117_D
+rhsusf_M1117_O
+rhsusf_M1220_usarmy_d
+rhsusf_M1220_M153_M2_usarmy_d
+rhsusf_M1220_M153_MK19_usarmy_d
+rhsusf_M1220_M2_usarmy_d
+rhsusf_M1220_MK19_usarmy_d
+rhsusf_M1230_M2_usarmy_d
+rhsusf_M1230_MK19_usarmy_d
+rhsusf_M1230a1_usarmy_d
+rhsusf_M1232_usarmy_d
+rhsusf_M1232_M2_usarmy_d
+rhsusf_M1232_MK19_usarmy_d
+rhsusf_M1237_M2_usarmy_d
+rhsusf_M1237_MK19_usarmy_d
+rhsusf_m1240a1_usarmy_d
+rhsusf_m1240a1_m2_usarmy_d
+rhsusf_m1240a1_m240_usarmy_d
+rhsusf_m1240a1_mk19_usarmy_d
+rhsusf_m1240a1_m2_uik_usarmy_d
+rhsusf_m1240a1_m240_uik_usarmy_d
+rhsusf_m1240a1_mk19_uik_usarmy_d
+rhsusf_m1240a1_m2crows_usarmy_d
+rhsusf_m1240a1_mk19crows_usarmy_d
+rhsusf_m1a1aimd_usarmy
+rhsusf_m1a1aim_tuski_d
+rhsusf_m1a2sep1d_usarmy
+rhsusf_m1a2sep1tuskid_usarmy
+rhsusf_m1a2sep1tuskiid_usarmy
+rhsusf_m1a2sep2d_usarmy
+rhsusf_M1078A1P2_D_fmtv_usarmy
+rhsusf_M1078A1P2_D_flatbed_fmtv_usarmy
+rhsusf_M1078A1P2_B_D_fmtv_usarmy
+rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy
+rhsusf_M1078A1P2_B_M2_D_fmtv_usarmy
+rhsusf_M1078A1P2_B_M2_D_flatbed_fmtv_usarmy
+rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy
+rhsusf_M1083A1P2_D_fmtv_usarmy
+rhsusf_M1083A1P2_D_flatbed_fmtv_usarmy
+rhsusf_M1083A1P2_B_D_fmtv_usarmy
+rhsusf_M1083A1P2_B_D_flatbed_fmtv_usarmy
+rhsusf_M1083A1P2_B_M2_D_fmtv_usarmy
+rhsusf_M1083A1P2_B_M2_D_flatbed_fmtv_usarmy
+rhsusf_M1084A1P2_D_fmtv_usarmy
+rhsusf_M1084A1P2_B_D_fmtv_usarmy
+rhsusf_M1084A1P2_B_M2_D_fmtv_usarmy
+rhsusf_M1085A1P2_B_D_Medical_fmtv_usarmy
+rhsusf_M977A4_usarmy_d
+rhsusf_M977A4_AMMO_usarmy_d
+rhsusf_M977A4_REPAIR_usarmy_d
+rhsusf_M977A4_BKIT_usarmy_d
+rhsusf_M977A4_AMMO_BKIT_usarmy_d
+rhsusf_M977A4_BKIT_M2_usarmy_d
+rhsusf_M977A4_AMMO_BKIT_M2_usarmy_d
+rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_d
+rhsusf_M977A4_REPAIR_BKIT_usarmy_d
+rhsusf_M978A4_usarmy_d
+rhsusf_M978A4_BKIT_usarmy_d
+RHS_Stinger_AA_pod_D
+RHS_M2StaticMG_D
+RHS_M2StaticMG_MiniTripod_D
+RHS_TOW_TriPod_D
+RHS_MK19_TriPod_D
+
+rhsusf_stryker_m1126_m2_wd
+rhsusf_stryker_m1126_mk19_wd
+rhsusf_stryker_m1127_m2_wd
+rhsusf_stryker_m1132_m2_np_wd
+rhsusf_stryker_m1132_m2_wd
+rhsusf_stryker_m1134_wd
+rhsusf_m113_usarmy_supply
+rhsusf_m113_usarmy
+rhsusf_m113_usarmy_M2_90
+rhsusf_m113_usarmy_M240
+rhsusf_m113_usarmy_medical
+rhsusf_m113_usarmy_MK19
+rhsusf_m113_usarmy_MK19_90
+rhsusf_m113_usarmy_unarmed
+rhsusf_m109_usarmy
+RHS_M119_WD
+rhsusf_M142_usarmy_WD
+RHS_M252_WD
+rhsusf_m1025_w_m2
+rhsusf_m1025_w_mk19
+rhsusf_m1025_w
+rhsusf_m1043_w_m2
+rhsusf_m1043_w_mk19
+rhsusf_m1043_w
+rhsusf_m1045_w
+rhsusf_m998_w_2dr_fulltop
+rhsusf_m998_w_2dr_halftop
+rhsusf_m998_w_2dr
+rhsusf_m998_w_4dr_fulltop
+rhsusf_m998_w_4dr_halftop
+rhsusf_m998_w_4dr
+rhsusf_m1151_usarmy_wd
+rhsusf_m1151_m2crows_usarmy_wd
+rhsusf_m1151_mk19crows_usarmy_wd
+rhsusf_m1151_m2_v1_usarmy_wd
+rhsusf_m1151_m2_lras3_v1_usarmy_wd
+rhsusf_m1151_m240_v1_usarmy_wd
+rhsusf_m1151_mk19_v1_usarmy_wd
+rhsusf_m1151_m2_v2_usarmy_wd
+rhsusf_m1151_m240_v2_usarmy_wd
+rhsusf_m1151_mk19_v2_usarmy_wd
+rhsusf_m1152_usarmy_wd
+rhsusf_m1152_rsv_usarmy_wd
+rhsusf_m1152_sicps_usarmy_wd
+rhsusf_m1165_usarmy_wd
+rhsusf_m966_w
+RHS_AH64D_wd
+RHS_CH_47F
+RHS_CH_47F_cargo
+RHS_UH60M
+RHS_UH60M_ESSS
+RHS_UH60M_ESSS2
+RHS_UH60M2
+RHS_UH60M_MEV2
+RHS_UH60M_MEV
+RHS_M2A2_wd
+RHS_M2A2_BUSKI_WD
+RHS_M2A3_wd
+RHS_M2A3_BUSKI_wd
+RHS_M2A3_BUSKIII_wd
+RHS_M6_wd
+
+rhsusf_army_ucp_rifleman_101st
+rhsusf_army_ucp_rifleman_10th
+rhsusf_army_ucp_rifleman_1stcav
+rhsusf_army_ucp_rifleman_82nd
+rhsusf_army_ucp_aa
+rhsusf_army_ucp_ah64_pilot
+rhsusf_army_ucp_javelin_assistant
+rhsusf_army_ucp_javelin
+rhsusf_army_ucp_maaws
+rhsusf_army_ucp_autorifleman
+rhsusf_army_ucp_autoriflemana
+rhsusf_army_ucp_rifleman_m590
+rhsusf_army_ucp_medic
+rhsusf_army_ucp_crewman
+rhsusf_army_ucp_combatcrewman
+rhsusf_army_ucp_driver
+rhsusf_army_ucp_driver_armored
+rhsusf_army_ucp_engineer
+rhsusf_army_ucp_explosives
+rhsusf_army_ucp_fso
+rhsusf_army_ucp_grenadier
+rhsusf_army_ucp_helicrew
+rhsusf_army_ucp_helipilot
+rhsusf_army_ucp_jfo
+rhsusf_army_ucp_machinegunner
+rhsusf_army_ucp_machinegunnera
+rhsusf_army_ucp_marksman
+rhsusf_army_ucp_officer
+rhsusf_army_ucp_rifleman
+rhsusf_army_ucp_riflemanl
+rhsusf_army_ucp_riflemanat
+rhsusf_army_ucp_rifleman_m16
+rhsusf_army_ucp_rifleman_m4
+rhsusf_army_ucp_sniper
+rhsusf_army_ucp_sniper_m107
+rhsusf_army_ucp_sniper_m24sws
+rhsusf_army_ucp_squadleader
+rhsusf_army_ucp_teamleader
+rhsusf_army_ucp_uav
+rhsusf_army_ucp_arb_maaws
+rhsusf_army_ucp_arb_autorifleman
+rhsusf_army_ucp_arb_autoriflemana
+rhsusf_army_ucp_arb_rifleman_m590
+rhsusf_army_ucp_arb_medic
+rhsusf_army_ucp_arb_engineer
+rhsusf_army_ucp_arb_grenadier
+rhsusf_army_ucp_arb_machinegunner
+rhsusf_army_ucp_arb_machinegunnera
+rhsusf_army_ucp_arb_marksman
+rhsusf_army_ucp_arb_rifleman
+rhsusf_army_ucp_arb_riflemanl
+rhsusf_army_ucp_arb_riflemanat
+rhsusf_army_ucp_rifleman_arb_m16
+rhsusf_army_ucp_arb_sniper_m107
+rhsusf_army_ucp_arb_squadleader
+rhsusf_army_ucp_arb_teamleader
+
+rhsusf_M1117_W
+rhsusf_M1220_usarmy_wd
+rhsusf_M1220_M153_M2_usarmy_wd
+rhsusf_M1220_M153_MK19_usarmy_wd
+rhsusf_M1220_M2_usarmy_wd
+rhsusf_M1220_MK19_usarmy_wd
+rhsusf_M1230_M2_usarmy_wd
+rhsusf_M1230_MK19_usarmy_wd
+rhsusf_M1230a1_usarmy_wd
+rhsusf_M1232_usarmy_wd
+rhsusf_M1232_M2_usarmy_wd
+rhsusf_M1232_MK19_usarmy_wd
+rhsusf_M1237_M2_usarmy_wd
+rhsusf_M1237_MK19_usarmy_wd
+rhsusf_m1240a1_usarmy_wd
+rhsusf_m1240a1_m2_usarmy_wd
+rhsusf_m1240a1_m240_usarmy_wd
+rhsusf_m1240a1_mk19_usarmy_wd
+rhsusf_m1240a1_m2_uik_usarmy_wd
+rhsusf_m1240a1_m240_uik_usarmy_wd
+rhsusf_m1240a1_mk19_uik_usarmy_wd
+rhsusf_m1240a1_m2crows_usarmy_wd
+rhsusf_m1240a1_mk19crows_usarmy_wd
+rhsusf_m1a1aimwd_usarmy
+rhsusf_m1a1aim_tuski_wd
+rhsusf_m1a2sep1wd_usarmy
+rhsusf_m1a2sep1tuskiwd_usarmy
+rhsusf_m1a2sep1tuskiiwd_usarmy
+rhsusf_m1a2sep2wd_usarmy
+rhsusf_M1078A1P2_WD_fmtv_usarmy
+rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy
+rhsusf_M1078A1P2_B_WD_fmtv_usarmy
+rhsusf_M1078A1P2_B_WD_flatbed_fmtv_usarmy
+rhsusf_M1078A1P2_B_M2_WD_fmtv_usarmy
+rhsusf_M1078A1P2_B_M2_WD_flatbed_fmtv_usarmy
+rhsusf_M1078A1P2_B_WD_CP_fmtv_usarmy
+rhsusf_M1083A1P2_WD_fmtv_usarmy
+rhsusf_M1083A1P2_WD_flatbed_fmtv_usarmy
+rhsusf_M1083A1P2_B_WD_fmtv_usarmy
+rhsusf_M1083A1P2_B_WD_flatbed_fmtv_usarmy
+rhsusf_M1083A1P2_B_M2_WD_fmtv_usarmy
+rhsusf_M1083A1P2_B_M2_WD_flatbed_fmtv_usarmy
+rhsusf_M1084A1P2_WD_fmtv_usarmy
+rhsusf_M1084A1P2_B_WD_fmtv_usarmy
+rhsusf_M1084A1P2_B_M2_WD_fmtv_usarmy
+rhsusf_M1085A1P2_B_WD_Medical_fmtv_usarmy
+rhsusf_M977A4_usarmy_wd
+rhsusf_M977A4_AMMO_usarmy_wd
+rhsusf_M977A4_REPAIR_usarmy_wd
+rhsusf_M977A4_BKIT_usarmy_wd
+rhsusf_M977A4_AMMO_BKIT_usarmy_wd
+rhsusf_M977A4_BKIT_M2_usarmy_wd
+rhsusf_M977A4_AMMO_BKIT_M2_usarmy_wd
+rhsusf_M977A4_REPAIR_BKIT_M2_usarmy_wd
+rhsusf_M977A4_REPAIR_BKIT_usarmy_wd
+rhsusf_M978A4_usarmy_wd
+rhsusf_M978A4_BKIT_usarmy_wd
+RHS_Stinger_AA_pod_WD
+RHS_M2StaticMG_WD
+RHS_M2StaticMG_MiniTripod_WD
+RHS_TOW_TriPod_WD
+RHS_MK19_TriPod_WD
+
+rhsusf_navy_marpat_d_medic
+rhsusf_navy_sarc_d
+rhsusf_navy_sarc_d_fast
+rhsusf_navy_marpat_wd_medic
+rhsusf_navy_sarc_w
+rhsusf_navy_sarc_w_fast
+
+rhsusf_mkvsoc
+rhsusf_m1165a1_gmv_m134d_m240_socom_d
+rhsusf_m1165a1_gmv_m2_m240_socom_d
+rhsusf_m1165a1_gmv_mk19_m240_socom_d
+rhsusf_mrzr4_d
+
+RHS_MELB_AH6M
+RHS_MELB_MH6M
+RHS_MELB_H6M
+
+rhsusf_socom_marsoc_elementleader
+rhsusf_socom_marsoc_cso_eod
+rhsusf_socom_marsoc_cso_grenadier
+rhsusf_socom_marsoc_jfo
+rhsusf_socom_marsoc_jtac
+rhsusf_socom_marsoc_marksman
+rhsusf_socom_marsoc_cso_mechanic
+rhsusf_socom_marsoc_cso
+rhsusf_socom_marsoc_cso_breacher
+rhsusf_socom_marsoc_cso_cqb
+rhsusf_socom_marsoc_cso_light
+rhsusf_socom_marsoc_cso_mk17_light
+rhsusf_socom_marsoc_cso_mk17
+rhsusf_socom_marsoc_sarc
+rhsusf_socom_marsoc_sniper
+rhsusf_socom_marsoc_spotter
+rhsusf_socom_marsoc_sniper_m107
+rhsusf_socom_marsoc_teamchief
+rhsusf_socom_marsoc_teamleader
+rhsusf_socom_swcc_crewman
+rhsusf_socom_swcc_officer
+
+rhsusf_infantry_socom_armysf_rifleman
+rhsusf_M1238A1_socom_d
+rhsusf_M1238A1_M2_socom_d
+rhsusf_M1238A1_Mk19_socom_d
+rhsusf_M1239_socom_d
+rhsusf_M1239_M2_socom_d
+rhsusf_M1239_MK19_socom_d
+rhsusf_M1239_M2_Deploy_socom_d
+rhsusf_M1239_MK19_Deploy_socom_d
+rhsusf_m1245_m2crows_socom_d
+rhsusf_m1245_mk19crows_socom_d
+rhsusf_m1245_m2crows_socom_deploy
+rhsusf_m1245_mk19crows_socom_deploy
+rhsusf_M1078A1R_SOV_M2_D_fmtv_socom
+rhsusf_M1084A1R_SOV_M2_D_fmtv_socom
+rhsusf_m1165_asv_m240_usaf_d
+rhsusf_airforce_jetpilot
+rhsusf_airforce_pilot
+rhsusf_airforce_security_force_rifleman
+
+RHS_A10
+RHS_C130J
+RHS_C130J_Cargo
+rhsusf_f22
+RHS_M252_USMC_D
+rhsusf_m1025_d_s_m2
+rhsusf_m1025_d_s_Mk19
+rhsusf_m1025_d_s
+rhsusf_m1043_d_s_m2
+rhsusf_m1043_d_s_mk19
+rhsusf_m1043_d_s
+rhsusf_m1045_d_s
+rhsusf_m998_d_s_2dr_halftop
+rhsusf_m998_d_s_2dr
+rhsusf_m998_d_s_2dr_fulltop
+rhsusf_m998_d_s_4dr_halftop
+rhsusf_m998_d_s_4dr
+rhsusf_m998_d_s_4dr_fulltop
+rhsusf_m1151_usmc_d
+rhsusf_m1151_m2crows_usmc_d
+rhsusf_m1151_mk19crows_usmc_d
+rhsusf_m1151_m2_v3_usmc_d
+rhsusf_m1151_m240_v3_usmc_d
+rhsusf_m1151_mk19_v3_usmc_d
+rhsusf_m1152_usmc_d
+rhsusf_m1152_rsv_usmc_d
+rhsusf_m1165_usmc_d
+
+RHS_AH1Z
+rhsusf_CH53E_USMC_D
+rhsusf_CH53e_USMC_D_cargo
+rhsusf_CH53E_USMC_GAU21_D
+RHS_UH1Y_FFAR_d
+RHS_UH1Y_d
+RHS_UH1Y_UNARMED_d
+
+rhsusf_usmc_marpat_d_stinger
+rhsusf_usmc_marpat_d_smaw
+rhsusf_usmc_marpat_d_javelin_assistant
+rhsusf_usmc_marpat_d_javelin
+rhsusf_usmc_marpat_d_autorifleman_m249
+rhsusf_usmc_marpat_d_autorifleman
+rhsusf_usmc_marpat_d_autorifleman_m249_ass
+rhsusf_usmc_marpat_d_rifleman_m590
+rhsusf_usmc_marpat_d_engineer
+rhsusf_usmc_marpat_d_crewman
+rhsusf_usmc_marpat_d_combatcrewman
+rhsusf_usmc_marpat_d_marksman
+rhsusf_usmc_marpat_d_driver
+rhsusf_usmc_marpat_d_explosives
+rhsusf_usmc_marpat_d_fso
+rhsusf_usmc_marpat_d_grenadier
+rhsusf_usmc_marpat_d_grenadier_m32
+rhsusf_usmc_marpat_d_gunner
+rhsusf_usmc_marpat_d_helicrew
+rhsusf_usmc_marpat_d_helipilot
+rhsusf_usmc_marpat_d_jfo
+rhsusf_usmc_marpat_d_machinegunner
+rhsusf_usmc_marpat_d_machinegunner_ass
+rhsusf_usmc_marpat_d_officer
+rhsusf_usmc_marpat_d_rifleman_light
+rhsusf_usmc_marpat_d_riflemanat
+rhsusf_usmc_marpat_d_rifleman
+rhsusf_usmc_marpat_d_rifleman_m4
+rhsusf_usmc_marpat_d_rifleman_law
+rhsusf_usmc_marpat_d_sniper_m110
+rhsusf_usmc_marpat_d_sniper
+rhsusf_usmc_marpat_d_spotter
+rhsusf_usmc_marpat_d_sniper_m107
+rhsusf_usmc_marpat_d_squadleader
+rhsusf_usmc_marpat_d_teamleader
+rhsusf_usmc_marpat_d_uav
+
+rhsusf_usmc_lar_marpat_d_crewman
+rhsusf_usmc_lar_marpat_d_combatcrewman
+rhsusf_usmc_lar_marpat_d_machinegunner
+rhsusf_usmc_lar_marpat_d_riflemanat
+rhsusf_usmc_lar_marpat_d_autorifleman
+rhsusf_usmc_lar_marpat_d_grenadier_m32
+rhsusf_usmc_lar_marpat_d_rifleman
+rhsusf_usmc_lar_marpat_d_rifleman_light
+rhsusf_usmc_lar_marpat_d_marksman
+rhsusf_usmc_lar_marpat_d_squadleader
+rhsusf_usmc_lar_marpat_d_teamleader
+rhsusf_usmc_recon_marpat_d_machinegunner_m249
+rhsusf_usmc_recon_marpat_d_machinegunner_m249_fast
+rhsusf_usmc_recon_marpat_d_machinegunner_m249_lite
+rhsusf_usmc_recon_marpat_d_autorifleman
+rhsusf_usmc_recon_marpat_d_autorifleman_fast
+rhsusf_usmc_recon_marpat_d_autorifleman_lite
+rhsusf_usmc_recon_marpat_d_grenadier_m32
+rhsusf_usmc_recon_marpat_d_machinegunner
+rhsusf_usmc_recon_marpat_d_marksman
+rhsusf_usmc_recon_marpat_d_marksman_fast
+rhsusf_usmc_recon_marpat_d_marksman_lite
+rhsusf_usmc_recon_marpat_d_officer
+rhsusf_usmc_recon_marpat_d_rifleman
+rhsusf_usmc_recon_marpat_d_rifleman_fast
+rhsusf_usmc_recon_marpat_d_rifleman_lite
+rhsusf_usmc_recon_marpat_d_rifleman_at
+rhsusf_usmc_recon_marpat_d_rifleman_at_fast
+rhsusf_usmc_recon_marpat_d_rifleman_at_lite
+rhsusf_usmc_recon_marpat_d_sniper_M107
+rhsusf_usmc_recon_marpat_d_teamleader
+rhsusf_usmc_recon_marpat_d_teamleader_fast
+rhsusf_usmc_recon_marpat_d_teamleader_lite
+
+rhsusf_CGRCAT1A2_usmc_d
+rhsusf_CGRCAT1A2_M2_usmc_d
+rhsusf_CGRCAT1A2_Mk19_usmc_d
+rhsusf_M1232_MC_M2_usmc_d
+rhsusf_M1232_MC_MK19_usmc_d
+rhsusf_m1240a1_usmc_d
+rhsusf_m1240a1_m2_usmc_d
+rhsusf_m1240a1_m240_usmc_d
+rhsusf_m1240a1_mk19_usmc_d
+rhsusf_m1240a1_m2crows_usmc_d
+rhsusf_m1240a1_mk19crows_usmc_d
+rhsusf_m1a1fep_d
+RHS_Stinger_AA_pod_USMC_D
+RHS_M2StaticMG_USMC_D
+RHS_M2StaticMG_MiniTripod_USMC_D
+RHS_TOW_TriPod_USMC_D
+RHS_MK19_TriPod_USMC_D
+rhsusf_M142_usmc_WD
+RHS_M252_USMC_WD
+rhsusf_m1025_w_s_m2
+rhsusf_m1025_w_s_Mk19
+rhsusf_m1025_w_s
+rhsusf_m1043_w_s_m2
+rhsusf_m1043_w_s_mk19
+rhsusf_m1043_w_s
+rhsusf_m1045_w_s
+rhsusf_m998_w_s_2dr_halftop
+rhsusf_m998_w_s_2dr
+rhsusf_m998_w_s_2dr_fulltop
+rhsusf_m998_w_s_4dr_halftop
+rhsusf_m998_w_s_4dr
+rhsusf_m998_w_s_4dr_fulltop
+rhsusf_m1151_usmc_wd
+rhsusf_m1151_m2crows_usmc_wd
+rhsusf_m1151_mk19crows_usmc_wd
+rhsusf_m1151_m2_v3_usmc_wd
+rhsusf_m1151_m240_v3_usmc_wd
+rhsusf_m1151_mk19_v3_usmc_wd
+rhsusf_m1152_usmc_wd
+rhsusf_m1152_rsv_usmc_wd
+rhsusf_m1165_usmc_wd
+
+RHS_AH1Z_wd
+rhsusf_CH53E_USMC
+rhsusf_CH53e_USMC_cargo
+rhsusf_CH53E_USMC_GAU21
+RHS_UH1Y_FFAR
+RHS_UH1Y
+RHS_UH1Y_UNARMED
+
+rhsusf_usmc_marpat_wd_stinger
+rhsusf_usmc_marpat_wd_smaw
+rhsusf_usmc_marpat_wd_javelin_assistant
+rhsusf_usmc_marpat_wd_javelin
+rhsusf_usmc_marpat_wd_autorifleman_m249
+rhsusf_usmc_marpat_wd_autorifleman
+rhsusf_usmc_marpat_wd_autorifleman_m249_ass
+rhsusf_usmc_marpat_wd_rifleman_m590
+rhsusf_usmc_marpat_wd_engineer
+rhsusf_usmc_marpat_wd_crewman
+rhsusf_usmc_marpat_wd_combatcrewman
+rhsusf_usmc_marpat_wd_marksman
+rhsusf_usmc_marpat_wd_driver
+rhsusf_usmc_marpat_wd_explosives
+rhsusf_usmc_marpat_wd_fso
+rhsusf_usmc_marpat_wd_grenadier
+rhsusf_usmc_marpat_wd_grenadier_m32
+rhsusf_usmc_marpat_wd_gunner
+rhsusf_usmc_marpat_wd_helicrew
+rhsusf_usmc_marpat_wd_helipilot
+rhsusf_usmc_marpat_wd_jfo
+rhsusf_usmc_marpat_wd_machinegunner
+rhsusf_usmc_marpat_wd_machinegunner_ass
+rhsusf_usmc_marpat_wd_officer
+rhsusf_usmc_marpat_wd_rifleman_light
+rhsusf_usmc_marpat_wd_riflemanat
+rhsusf_usmc_marpat_wd_rifleman
+rhsusf_usmc_marpat_wd_rifleman_m4
+rhsusf_usmc_marpat_wd_rifleman_law
+rhsusf_usmc_marpat_wd_sniper_m110
+rhsusf_usmc_marpat_wd_sniper
+rhsusf_usmc_marpat_wd_spotter
+rhsusf_usmc_marpat_wd_sniper_M107
+rhsusf_usmc_marpat_wd_squadleader
+rhsusf_usmc_marpat_wd_teamleader
+rhsusf_usmc_marpat_wd_uav
+
+rhsusf_usmc_lar_marpat_wd_crewman
+rhsusf_usmc_lar_marpat_wd_combatcrewman
+rhsusf_usmc_lar_marpat_wd_machinegunner
+rhsusf_usmc_lar_marpat_wd_riflemanat
+rhsusf_usmc_lar_marpat_wd_autorifleman
+rhsusf_usmc_lar_marpat_wd_grenadier_m32
+rhsusf_usmc_lar_marpat_wd_rifleman
+rhsusf_usmc_lar_marpat_wd_rifleman_light
+rhsusf_usmc_lar_marpat_wd_marksman
+rhsusf_usmc_lar_marpat_wd_squadleader
+rhsusf_usmc_lar_marpat_wd_teamleader
+rhsusf_usmc_recon_marpat_wd_machinegunner_m249
+rhsusf_usmc_recon_marpat_wd_machinegunner_m249_fast
+rhsusf_usmc_recon_marpat_wd_machinegunner_m249_lite
+rhsusf_usmc_recon_marpat_wd_autorifleman
+rhsusf_usmc_recon_marpat_wd_autorifleman_fast
+rhsusf_usmc_recon_marpat_wd_autorifleman_lite
+rhsusf_usmc_recon_marpat_wd_grenadier_m32
+rhsusf_usmc_recon_marpat_wd_machinegunner
+rhsusf_usmc_recon_marpat_wd_marksman
+rhsusf_usmc_recon_marpat_wd_marksman_fast
+rhsusf_usmc_recon_marpat_wd_marksman_lite
+rhsusf_usmc_recon_marpat_wd_officer
+rhsusf_usmc_recon_marpat_wd_rifleman
+rhsusf_usmc_recon_marpat_wd_rifleman_fast
+rhsusf_usmc_recon_marpat_wd_rifleman_lite
+rhsusf_usmc_recon_marpat_wd_rifleman_at
+rhsusf_usmc_recon_marpat_wd_rifleman_at_fast
+rhsusf_usmc_recon_marpat_wd_rifleman_at_lite
+rhsusf_usmc_recon_marpat_wd_sniper_M107
+rhsusf_usmc_recon_marpat_wd_teamleader
+rhsusf_usmc_recon_marpat_wd_teamleader_fast
+rhsusf_usmc_recon_marpat_wd_teamleader_lite
+
+rhsusf_CGRCAT1A2_usmc_wd
+rhsusf_CGRCAT1A2_M2_usmc_wd
+rhsusf_CGRCAT1A2_Mk19_usmc_wd
+rhsusf_M1232_MC_M2_usmc_wd
+rhsusf_M1232_MC_MK19_usmc_wd
+rhsusf_m1240a1_usmc_wd
+rhsusf_m1240a1_m2_usmc_wd
+rhsusf_m1240a1_m240_usmc_wd
+rhsusf_m1240a1_mk19_usmc_wd
+rhsusf_m1240a1_m2crows_usmc_wd
+rhsusf_m1240a1_mk19crows_usmc_wd
+rhsusf_m1a1fep_wd
+rhsusf_m1a1fep_od
+rhsusf_m1a1hc_wd
+
+RHS_Stinger_AA_pod_USMC_WD
+RHS_M2StaticMG_USMC_WD
+RHS_M2StaticMG_MiniTripod_USMC_WD
+RHS_TOW_TriPod_USMC_WD
+RHS_MK19_TriPod_USMC_WD
+
+
+
+
+
+//------------------Pistols-----------------------------------------------------------------
+this addWeapon "rhsusf_weap_glock17g4";
+this addItemToBackpack "rhsusf_mag_17Rnd_9x19_JHP";
+this addItemToBackpack "rhsusf_mag_17Rnd_9x19_FMJ";
+
+this addWeapon "rhsusf_weap_m1911a1";
+this addHandgunItem "rhsusf_mag_7x45acp_MHP";
+
+this addWeapon "rhsusf_weap_m9";
+this addItemToBackpack "rhsusf_mag_15Rnd_9x19_JHP";
+this addItemToBackpack "rhsusf_mag_15Rnd_9x19_FMJ";
+
+
+//------------------SMG-----------------------------------------------------------------
+
+this addWeapon "rhsusf_weap_MP7A2_folded";
+this addWeapon "rhsusf_weap_MP7A2_folded_winter";
+this addWeapon "rhsusf_weap_MP7A2_folded_aor1";
+this addWeapon "rhsusf_weap_MP7A2_folded_desert";
+this addItemToBackpack "rhsusf_mag_40Rnd_46x30_FMJ";
+this addItemToBackpack "rhsusf_mag_40Rnd_46x30_JHP";
+this addItemToBackpack "rhsusf_mag_40Rnd_46x30_AP";
+
+
+this addWeapon "rhsusf_weap_MP7A2";
+this addWeapon "rhsusf_weap_MP7A2_aor1";
+this addWeapon "rhsusf_weap_MP7A2_desert";
+this addWeapon "rhsusf_weap_MP7A2_winter";
+
+this addItemToBackpack "rhsusf_mag_40Rnd_46x30_FMJ";
+this addItemToBackpack "rhsusf_mag_40Rnd_46x30_JHP";
+this addItemToBackpack "rhsusf_mag_40Rnd_46x30_AP";
+
+
+//------------------Shotgun-----------------------------------------------------------------
+
+this addWeapon "rhs_weap_M590_5RD";
+this addItemToBackpack "rhsusf_5Rnd_FRAG";
+this addItemToBackpack "rhsusf_5Rnd_HE";
+this addItemToBackpack "rhsusf_5Rnd_Slug";
+this addItemToBackpack "rhsusf_5Rnd_00Buck";
+
+this addWeapon "rhs_weap_M590_8RD";
+this addItemToBackpack "rhsusf_8Rnd_FRAG";
+this addItemToBackpack "rhsusf_8Rnd_HE";
+this addItemToBackpack "rhsusf_8Rnd_Slug";
+this addItemToBackpack "rhsusf_8Rnd_00Buck";
+
+//------------------GL-----------------------------------------------------------------
+this addWeapon "rhs_weap_M320";
+
+this addWeapon "rhs_weap_m32";
+this addItemToBackpack "rhs_mag_M441_HE";
+this addItemToBackpack "rhs_mag_M433_HEDP";
+this addItemToBackpack "rhs_mag_M397_HET";
+this addItemToBackpack "rhs_mag_m576";
+this addItemToBackpack "rhs_mag_m4009";
+this addItemToBackpack "rhs_mag_M583A1_white";
+this addItemToBackpack "rhs_mag_m661_green";
+this addItemToBackpack "rhs_mag_m662_red";
+this addItemToBackpack "rhs_mag_M585_white_cluster";
+this addItemToBackpack "rhs_mag_M663_green_cluster";
+this addItemToBackpack "rhs_mag_M664_red_cluster";
+this addItemToBackpack "rhs_mag_m713_Red";
+this addItemToBackpack "rhs_mag_m714_White";
+this addItemToBackpack "rhs_mag_m715_Green";
+this addItemToBackpack "rhs_mag_m716_yellow";
+this addItemToBackpack "rhs_mag_M781_Practice";
+
+
+//------------------Assault-----------------------------------------------------------------
+
+this addWeapon "rhs_weap_hk416d10";
+this addWeapon "rhs_weap_hk416d10_LMT";
+this addWeapon "rhs_weap_hk416d10_LMT_d";
+this addWeapon "rhs_weap_hk416d10_LMT_wd";
+this addWeapon "rhs_weap_hk416d145";
+this addWeapon "rhs_weap_hk416d145_d";
+this addWeapon "rhs_weap_hk416d145_d_2";
+this addWeapon "rhs_weap_hk416d145_wd";
+this addWeapon "rhs_weap_hk416d145_wd_2";
+
+this addWeapon "rhs_weap_hk416d10_m320";
+this addWeapon "rhs_weap_hk416d145_m320";
+
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_Stanag";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M193_Stanag";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M200_Stanag";
+this addItemToBackpack "30Rnd_556x45_Stanag";
+this addItemToBackpack "30Rnd_556x45_Stanag_green";
+this addItemToBackpack "30Rnd_556x45_Stanag_red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Yellow";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M193_Stanag";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M200_Stanag";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M855_Stanag";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M855A1_Stanag";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_Mk262_Stanag";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M193_2MAG_Stanag";
+this addItemToBackpack "rhs_mag_20Rnd_556x45_M196_2MAG_Stanag_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag_Pull";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag_Ranger";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_Stanag_Ranger_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk262_Stanag_Ranger";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_EPM";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_SCAR";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_PMAG";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk262_PMAG";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG_Tan";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_M855_PMAG_Tan_Tracer_Red";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan";
+this addItemToBackpack "rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan";
+this addItemToBackpack "150Rnd_556x45_Drum_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Mag_Tracer_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Sand_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Green_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Sand_Mag_Tracer_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Green_Mag_Tracer_F";
+this addItemToBackpack "rhs_mag_100Rnd_556x45_M855A1_cmag";
+this addItemToBackpack "rhs_mag_100Rnd_556x45_M855A1_cmag_mixed";
+this addItemToBackpack "rhs_mag_100Rnd_556x45_M855_cmag";
+this addItemToBackpack "rhs_mag_100Rnd_556x45_M855_cmag_mixed";
+this addItemToBackpack "rhs_mag_100Rnd_556x45_Mk318_cmag";
+this addItemToBackpack "rhs_mag_100Rnd_556x45_Mk262_cmag";
+
+
+this addWeapon "rhs_weap_m16a4";
+this addWeapon "rhs_weap_m16a4_carryhandle";
+this addWeapon "rhs_weap_m16a4_imod";
+
+this addWeapon "rhs_weap_m16a4_carryhandle_M203";
+this addWeapon "rhs_weap_m16a4_imod_M203";
+
+
+this addWeapon "rhs_weap_m4";
+this addWeapon "rhs_weap_m4_carryhandle";
+this addWeapon "rhs_weap_m4_carryhandle_mstock";
+this addWeapon "rhs_weap_m4_mstock";
+
+this addWeapon "rhs_weap_m4_carryhandle_m203";
+this addWeapon "rhs_weap_m4_carryhandle_m203S";
+this addWeapon "rhs_weap_m4_m203";
+this addWeapon "rhs_weap_m4_m203S";
+this addWeapon "rhs_weap_m4_m320";
+
+this addWeapon "rhs_weap_m4a1_carryhandle";
+this addWeapon "rhs_weap_m4a1_carryhandle_mstock";
+this addWeapon "rhs_weap_m4a1_blockII";
+this addWeapon "rhs_weap_m4a1_blockII_bk";
+this addWeapon "rhs_weap_m4a1_blockII_KAC_bk";
+this addWeapon "rhs_weap_m4a1_blockII_d";
+this addWeapon "rhs_weap_m4a1_blockII_KAC_d";
+this addWeapon "rhs_weap_m4a1_blockII_KAC";
+this addWeapon "rhs_weap_m4a1_blockII_wd";
+this addWeapon "rhs_weap_m4a1_blockII_KAC_wd";
+this addWeapon "rhs_weap_m4a1";
+this addWeapon "rhs_weap_m4a1_d";
+this addWeapon "rhs_weap_m4a1_d_mstock";
+this addWeapon "rhs_weap_m4a1_mstock";
+this addWeapon "rhs_weap_m4a1_wd";
+this addWeapon "rhs_weap_m4a1_wd_mstock";
+
+this addWeapon "rhs_weap_m4a1_carryhandle_m203";
+this addWeapon "rhs_weap_m4a1_carryhandle_m203S";
+this addWeapon "rhs_weap_m4a1_blockII_M203_bk";
+this addWeapon "rhs_weap_m4a1_blockII_M203_d";
+this addWeapon "rhs_weap_m4a1_blockII_M203";
+this addWeapon "rhs_weap_m4a1_blockII_M203_wd";
+this addWeapon "rhs_weap_m4a1_m203s_d";
+this addWeapon "rhs_weap_m4a1_m203";
+this addWeapon "rhs_weap_m4a1_m203s";
+this addWeapon "rhs_weap_m4a1_m320";
+this addWeapon "rhs_weap_m4a1_m203s_wd";
+
+this addWeapon "rhs_weap_m27iar";
+this addWeapon "rhs_weap_m27iar_grip";
+
+this addWeapon "rhs_weap_mk18";
+this addWeapon "rhs_weap_mk18_bk";
+this addWeapon "rhs_weap_mk18_KAC_bk";
+this addWeapon "rhs_weap_mk18_d";
+this addWeapon "rhs_weap_mk18_KAC_d";
+this addWeapon "rhs_weap_mk18_KAC";
+this addWeapon "rhs_weap_mk18_wd";
+this addWeapon "rhs_weap_mk18_KAC_wd";
+
+this addWeapon "rhs_weap_mk18_m320";
+
+
+
+
+this addWeapon "rhs_weap_m14";
+this addWeapon "rhs_weap_m14_d";
+this addWeapon "rhs_weap_m14_fiberglass";
+this addWeapon "rhs_weap_m14_rail";
+this addWeapon "rhs_weap_m14_rail_d";
+this addWeapon "rhs_weap_m14_rail_fiberglass";
+this addWeapon "rhs_weap_m14_rail_wd";
+this addWeapon "rhs_weap_m14_ris";
+this addWeapon "rhs_weap_m14_ris_d";
+this addWeapon "rhs_weap_m14_ris_fiberglass";
+this addWeapon "rhs_weap_m14_ris_wd";
+this addWeapon "rhs_weap_m14_wd";
+
+this addWeapon "rhs_weap_m14ebrri";
+
+this addItemToBackpack "rhsusf_20Rnd_762x51_m80_Mag";
+this addItemToBackpack "rhsusf_20Rnd_762x51_m118_special_Mag";
+this addItemToBackpack "rhsusf_20Rnd_762x51_m993_Mag";
+this addItemToBackpack "rhsusf_20Rnd_762x51_m62_Mag";
+this addItemToBackpack "20Rnd_762x51_Mag";
+this addItemToBackpack "10Rnd_Mk14_762x51_Mag";
+
+this addWeapon "rhs_weap_m14_socom";
+this addWeapon "rhs_weap_m14_socom_rail";
+
+
+
+this addWeapon "rhs_weap_m24sws";
+this addWeapon "rhs_weap_m24sws_d";
+this addWeapon "rhs_weap_m24sws_wd";
+this addItemToBackpack "rhsusf_5Rnd_762x51_m118_special_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_m62_Mag";
+
+
+this addWeapon "rhs_weap_m40a5";
+this addWeapon "rhs_weap_m40a5_d";
+this addWeapon "rhs_weap_m40a5_wd";
+this addItemToBackpack "rhsusf_5Rnd_762x51_AICS_m118_special_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_AICS_m993_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_AICS_m62_Mag";
+this addItemToBackpack "rhsusf_10Rnd_762x51_m118_special_Mag";
+this addItemToBackpack "rhsusf_10Rnd_762x51_m993_Mag";
+this addItemToBackpack "rhsusf_10Rnd_762x51_m62_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_m118_special_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_m993_Mag";
+this addItemToBackpack "rhsusf_5Rnd_762x51_m62_Mag";
+
+
+
+
+this addWeapon "rhs_weap_sr25";
+this addWeapon "rhs_weap_sr25_d";
+this addWeapon "rhs_weap_sr25_ec";
+this addWeapon "rhs_weap_sr25_ec_d";
+this addWeapon "rhs_weap_sr25_ec_wd";
+this addWeapon "rhs_weap_sr25_wd";
+this addItemToBackpack "rhsusf_20Rnd_762x51_SR25_m118_special_Mag";
+this addItemToBackpack "rhsusf_20Rnd_762x51_SR25_mk316_special_Mag";
+this addItemToBackpack "rhsusf_20Rnd_762x51_SR25_m993_Mag";
+this addItemToBackpack "rhsusf_20Rnd_762x51_SR25_m62_Mag";
+
+
+this addWeapon "rhs_weap_mk17_CQC";
+this addWeapon "rhs_weap_mk17_LB";
+this addWeapon "rhs_weap_mk17_STD";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m80_ball";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m61_ap";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m62_tracer";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m118_special";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_mk316_special";
+
+
+this addWeapon "rhs_weap_SCARH_USA_CQC";
+this addWeapon "rhs_weap_SCARH_USA_LB";
+this addWeapon "rhs_weap_SCARH_USA_STD";
+
+
+
+
+this addWeapon "rhs_weap_XM2010";
+this addWeapon "rhs_weap_XM2010_wd";
+this addWeapon "rhs_weap_XM2010_d";
+this addWeapon "rhs_weap_XM2010_sa";
+this addPrimaryWeaponItem "rhsusf_5Rnd_300winmag_xm2010";
+
+
+
+
+
+
+
+this addWeapon "rhs_weap_M107";
+this addWeapon "rhs_weap_M107_d";
+this addWeapon "rhs_weap_M107_w";
+this addItemToBackpack "rhsusf_mag_10Rnd_STD_50BMG_M33";
+this addItemToBackpack "rhsusf_mag_10Rnd_STD_50BMG_mk211";
+
+
+
+
+//--lmg--
+
+
+
+//--MG--
+this addWeapon "rhs_weap_m249";
+this addWeapon "rhs_weap_m249_pip";
+this addWeapon "rhs_weap_m249_light_L";
+this addWeapon "rhs_weap_m249_pip_L_para";
+this addWeapon "rhs_weap_m249_pip_L";
+this addWeapon "rhs_weap_m249_pip_ris";
+this addWeapon "rhs_weap_m249_light_S";
+this addWeapon "rhs_weap_m249_pip_S_para";
+this addWeapon "rhs_weap_m249_pip_S";
+this addItemToBackpack "rhsusf_200Rnd_556x45_box";
+this addItemToBackpack "rhsusf_200rnd_556x45_mixed_box";
+this addItemToBackpack "rhsusf_200rnd_556x45_M855_box";
+this addItemToBackpack "rhsusf_200rnd_556x45_M855_mixed_box";
+this addItemToBackpack "200Rnd_556x45_Box_F";
+this addItemToBackpack "200Rnd_556x45_Box_Red_F";
+this addItemToBackpack "200Rnd_556x45_Box_Tracer_F";
+this addItemToBackpack "200Rnd_556x45_Box_Tracer_Red_F";
+this addItemToBackpack "rhsusf_200Rnd_556x45_soft_pouch";
+this addItemToBackpack "rhsusf_200Rnd_556x45_mixed_soft_pouch";
+this addItemToBackpack "rhsusf_200Rnd_556x45_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_200Rnd_556x45_mixed_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_200Rnd_556x45_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_200Rnd_556x45_mixed_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_200Rnd_556x45_M855_soft_pouch";
+this addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch";
+this addItemToBackpack "rhsusf_200Rnd_556x45_M855_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_200Rnd_556x45_M855_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_200Rnd_556x45_M855_mixed_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_100Rnd_556x45_soft_pouch";
+this addItemToBackpack "rhsusf_100Rnd_556x45_mixed_soft_pouch";
+this addItemToBackpack "rhsusf_100Rnd_556x45_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_100Rnd_556x45_mixed_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_100Rnd_556x45_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_100Rnd_556x45_mixed_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M855_soft_pouch";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M855_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M855_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M855_mixed_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M995_soft_pouch";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M995_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M995_soft_pouch_coyote";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M200_soft_pouch";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M200_soft_pouch_ucp";
+this addItemToBackpack "rhsusf_100Rnd_556x45_M200_soft_pouch_coyote";
+
+
+this addWeapon "rhs_weap_m240B";
+this addWeapon "rhs_weap_m240G";
+
+this addItemToBackpack "rhsusf_100Rnd_762x51";
+this addItemToBackpack "rhsusf_100Rnd_762x51_m61_ap";
+this addItemToBackpack "rhsusf_100Rnd_762x51_m62_tracer";
+this addItemToBackpack "rhsusf_100Rnd_762x51_m80a1epr";
+this addItemToBackpack "rhsusf_100Rnd_762x51_m82_blank";
+this addItemToBackpack "rhsusf_50Rnd_762x51";
+this addItemToBackpack "rhsusf_50Rnd_762x51_m61_ap";
+this addItemToBackpack "rhsusf_50Rnd_762x51_m62_tracer";
+this addItemToBackpack "rhsusf_50Rnd_762x51_m80a1epr";
+this addItemToBackpack "rhsusf_50Rnd_762x51_m82_blank";
+
+
+
+
+
+//----------------------------------------AT------------------------------------------------------------------
+
+this addWeapon "rhs_weap_m72a7";
+this addWeapon "rhs_weap_M136";
+this addWeapon "rhs_weap_M136_hedp";
+this addWeapon "rhs_weap_M136_hp";
+
+
+this addWeapon "rhs_weap_maaws";
+this addItemToBackpack "rhs_mag_maaws_HEAT";
+this addItemToBackpack "rhs_mag_maaws_HEDP";
+this addItemToBackpack "rhs_mag_maaws_HE";
+
+
+this addWeapon "rhs_weap_smaw";
+this addWeapon "rhs_weap_smaw_green";
+this addItemToBackpack "rhs_mag_smaw_HEAA";
+this addItemToBackpack "rhs_mag_smaw_SR";
+this addItemToBackpack "rhs_mag_smaw_HEDP";
+
+
+
+this addWeapon "rhs_weap_fim92";
+this addItemToBackpack "rhs_fim92_mag";
+
+
+
+this addWeapon "rhs_weap_fgm148";
+this addItemToBackpack "rhs_fgm148_magazine_AT";
+
+
+
+
+
+
+
+
+
+
+
+
+
+//----------------------------------------OPTICS------------------------------------------------------------------
+this addHandgunItem "rhsusf_acc_omega9k";
+
+this addPrimaryWeaponItem "rhsusf_acc_mrds";
+this addPrimaryWeaponItem "rhsusf_acc_mrds_fwd";
+this addPrimaryWeaponItem "rhsusf_acc_mrds_c";
+this addPrimaryWeaponItem "rhsusf_acc_mrds_fwd_c";
+this addPrimaryWeaponItem "rhsusf_acc_RM05";
+this addPrimaryWeaponItem "rhsusf_acc_RM05_fwd";
+this addPrimaryWeaponItem "rhsusf_acc_eotech_xps3";
+this addPrimaryWeaponItem "rhsusf_acc_EOTECH";
+
+this addPrimaryWeaponItem "rhsusf_acc_T1_high";
+this addPrimaryWeaponItem "rhsusf_acc_T1_low";
+this addPrimaryWeaponItem "rhsusf_acc_T1_low_fwd";
+this addPrimaryWeaponItem "rhsusf_acc_RX01_NoFilter";
+this addPrimaryWeaponItem "rhsusf_acc_RX01";
+this addPrimaryWeaponItem "rhsusf_acc_RX01_NoFilter_tan";
+this addPrimaryWeaponItem "rhsusf_acc_RX01_tan";
+this addPrimaryWeaponItem "rhsusf_acc_su230";
+this addPrimaryWeaponItem "rhsusf_acc_su230_c";
+this addPrimaryWeaponItem "rhsusf_acc_su230_mrds";
+this addPrimaryWeaponItem "rhsusf_acc_su230_mrds_c";
+this addPrimaryWeaponItem "rhsusf_acc_su230a";
+this addPrimaryWeaponItem "rhsusf_acc_su230a_c";
+this addPrimaryWeaponItem "rhsusf_acc_su230a_mrds";
+this addPrimaryWeaponItem "rhsusf_acc_su230a_mrds_c";
+this addPrimaryWeaponItem "rhsusf_acc_g33_T1";
+this addPrimaryWeaponItem "rhsusf_acc_g33_xps3";
+this addPrimaryWeaponItem "rhsusf_acc_g33_xps3_tan";
+this addPrimaryWeaponItem "rhsusf_acc_eotech_552";
+this addPrimaryWeaponItem "rhsusf_acc_eotech_552_d";
+this addPrimaryWeaponItem "rhsusf_acc_eotech_552_wd";
+
+this addPrimaryWeaponItem "rhsusf_acc_ACOG_MDO";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG_RMR";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG_d";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG_wd";
+
+this addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50_md";
+this addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50f1_h58";
+this addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50f1_md";
+this addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50f1_h58_sun";
+this addPrimaryWeaponItem "rhsusf_acc_nxs_3515x50f1_md_sun";
+this addPrimaryWeaponItem "rhsusf_acc_nxs_5522x56_md";
+this addPrimaryWeaponItem "rhsusf_acc_nxs_5522x56_md_sun";
+this addPrimaryWeaponItem "rhsusf_acc_ELCAN";
+this addPrimaryWeaponItem "rhsusf_acc_ELCAN_ard";
+this addPrimaryWeaponItem "rhsusf_acc_M2A1";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG2";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG3";
+this addPrimaryWeaponItem "rhsusf_acc_compm4";
+
+this addPrimaryWeaponItem "rhsusf_acc_M8541";
+this addPrimaryWeaponItem "rhsusf_acc_M8541_d";
+this addPrimaryWeaponItem "rhsusf_acc_M8541_mrds";
+this addPrimaryWeaponItem "rhsusf_acc_M8541_wd";
+this addPrimaryWeaponItem "rhsusf_acc_premier_low";
+this addPrimaryWeaponItem "rhsusf_acc_premier";
+this addPrimaryWeaponItem "rhsusf_acc_premier_mrds";
+this addPrimaryWeaponItem "rhsusf_acc_LEUPOLDMK4_2";
+this addPrimaryWeaponItem "rhsusf_acc_LEUPOLDMK4_2_d";
+this addPrimaryWeaponItem "rhsusf_acc_LEUPOLDMK4_2_mrds";
+
+this addPrimaryWeaponItem "rhsusf_acc_premier_anpvs27";
+this addPrimaryWeaponItem "rhsusf_acc_anpas13gv1";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG2_USMC";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG3_USMC";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG_USMC";
+this addPrimaryWeaponItem "rhsusf_acc_anpvs27";
+this addPrimaryWeaponItem "rhsusf_acc_ACOG_anpvs27";
+
+this addSecondaryWeaponItem "rhs_optic_maaws";
+
+this addSecondaryWeaponItem "rhsusf_acc_ACOG2_USMC";
+this addSecondaryWeaponItem "rhsusf_acc_ACOG3_USMC";
+this addSecondaryWeaponItem "rhsusf_acc_ACOG_USMC";
+this addSecondaryWeaponItem "rhsusf_acc_ACOG";
+this addSecondaryWeaponItem "rhsusf_acc_ACOG2";
+this addSecondaryWeaponItem "rhsusf_acc_ACOG3";
+this addSecondaryWeaponItem "rhsusf_acc_eotech_552";
+this addSecondaryWeaponItem "rhs_weap_optic_smaw";
+
+
+//----------------------------------------Attachments------------------------------------------------------------------
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15side";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_top";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15side_bk";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk_top";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15A";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq16a";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq16a_top";
+this addPrimaryWeaponItem "rhsusf_acc_M952V";
+this addPrimaryWeaponItem "rhsusf_acc_wmx";
+this addPrimaryWeaponItem "rhsusf_acc_wmx_bk";
+
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_wmx";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_wmx_light";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_light";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq15_bk_light";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq16a_light";
+this addPrimaryWeaponItem "rhsusf_acc_anpeq16a_light_top";
+
+this addPrimaryWeaponItem "rhsusf_acc_M2010S";
+this addPrimaryWeaponItem "rhsusf_acc_M2010S_d";
+this addPrimaryWeaponItem "rhsusf_acc_M2010S_sa";
+this addPrimaryWeaponItem "rhsusf_acc_M2010S_wd";
+
+
+
+//----------------------------------------muzzles------------------------------------------------------------------
+//lmg--
+this addPrimaryWeaponItem "rhsusf_acc_rotex_mp7_aor1";
+this addPrimaryWeaponItem "rhsusf_acc_rotex_mp7";
+this addPrimaryWeaponItem "rhsusf_acc_rotex_mp7_desert";
+this addPrimaryWeaponItem "rhsusf_acc_rotex_mp7_winter";
+
+//assault
+this addPrimaryWeaponItem "rhsusf_acc_SF3P556";
+this addPrimaryWeaponItem "rhsusf_acc_SFMB556";
+this addPrimaryWeaponItem "rhsusf_acc_m14_flashsuppresor";
+
+this addPrimaryWeaponItem "rhsusf_acc_nt4_black";
+this addPrimaryWeaponItem "rhsusf_acc_nt4_tan";
+this addPrimaryWeaponItem "rhsusf_acc_rotex5_grey";
+this addPrimaryWeaponItem "rhsusf_acc_rotex5_tan";
+this addPrimaryWeaponItem "rhsusf_acc_aac_762sd_silencer";
+this addPrimaryWeaponItem "rhsusf_acc_aac_762sdn6_silencer";
+this addPrimaryWeaponItem "rhsusf_acc_aac_scarh_silencer";
+
+this addPrimaryWeaponItem "rhsusf_acc_aac_m14dcqd_silencer";
+this addPrimaryWeaponItem "rhsusf_acc_aac_m14dcqd_silencer_d";
+this addPrimaryWeaponItem "rhsusf_acc_aac_m14dcqd_silencer_wd";
+this addPrimaryWeaponItem "rhsusf_acc_m14_flashsuppresor";
+
+this addPrimaryWeaponItem "rhsusf_acc_m24_muzzlehider_black";
+this addPrimaryWeaponItem "rhsusf_acc_m24_muzzlehider_d";
+this addPrimaryWeaponItem "rhsusf_acc_m24_muzzlehider_wd";
+this addPrimaryWeaponItem "rhsusf_acc_m24_silencer_black";
+this addPrimaryWeaponItem "rhsusf_acc_m24_silencer_d";
+this addPrimaryWeaponItem "rhsusf_acc_m24_silencer_wd";
+
+this addPrimaryWeaponItem "rhsusf_acc_SR25S";
+this addPrimaryWeaponItem "rhsusf_acc_SR25S_d";
+this addPrimaryWeaponItem "rhsusf_acc_SR25S_wd";
+
+//MG--
+this addPrimaryWeaponItem "rhsusf_acc_ARDEC_M240";
+
+//----------------------------------------bipods------------------------------------------------------------------
+
+this addPrimaryWeaponItem "rhsusf_acc_grip2";
+this addPrimaryWeaponItem "rhsusf_acc_grip2_tan";
+this addPrimaryWeaponItem "rhsusf_acc_grip2_wd";
+this addPrimaryWeaponItem "rhsusf_acc_grip1";
+this addPrimaryWeaponItem "rhsusf_acc_harris_bipod";
+this addPrimaryWeaponItem "rhsusf_acc_kac_grip";
+this addPrimaryWeaponItem "rhsusf_acc_rvg_blk";
+this addPrimaryWeaponItem "rhsusf_acc_rvg_de";
+this addPrimaryWeaponItem "rhsusf_acc_tacsac_blk";
+this addPrimaryWeaponItem "rhsusf_acc_tacsac_blue";
+this addPrimaryWeaponItem "rhsusf_acc_tacsac_tan";
+this addPrimaryWeaponItem "rhsusf_acc_tdstubby_blk";
+this addPrimaryWeaponItem "rhsusf_acc_tdstubby_tan";
+this addPrimaryWeaponItem "rhsusf_acc_grip3";
+this addPrimaryWeaponItem "rhsusf_acc_grip3_tan";
+this addPrimaryWeaponItem "rhsusf_acc_harris_swivel";
+this addPrimaryWeaponItem "rhsusf_acc_m14_bipod";
+this addPrimaryWeaponItem "rhsusf_acc_saw_bipod";
+
+
+
+
+
+//----------------------------------------Uniforms------------------------------------------------------------------
+
+this forceAddUniform "rhs_uniform_abu";
+this forceAddUniform "rhs_uniform_acu_ocp";
+this forceAddUniform "rhs_uniform_acu_oefcp";
+this forceAddUniform "rhs_uniform_acu_ucpd";
+this forceAddUniform "rhs_uniform_acu_ucp";
+this forceAddUniform "rhs_uniform_acu_ucp2";
+this forceAddUniform "rhs_uniform_bdu_erdl";
+this forceAddUniform "rhs_uniform_cu_ocp";
+this forceAddUniform "rhs_uniform_cu_ocp_101st";
+this forceAddUniform "rhs_uniform_cu_ocp_10th";
+this forceAddUniform "rhs_uniform_cu_ocp_1stcav";
+this forceAddUniform "rhs_uniform_cu_ocp_82nd";
+this forceAddUniform "rhs_uniform_cu_ucp";
+this forceAddUniform "rhs_uniform_cu_ucp_101st";
+this forceAddUniform "rhs_uniform_cu_ucp_10th";
+this forceAddUniform "rhs_uniform_cu_ucp_1stcav";
+this forceAddUniform "rhs_uniform_cu_ucp_82nd";
+this forceAddUniform "rhs_uniform_FROG01_d";
+this forceAddUniform "rhs_uniform_FROG01_wd";
+this forceAddUniform "rhs_uniform_g3_aor2";
+this forceAddUniform "rhs_uniform_g3_blk";
+this forceAddUniform "rhs_uniform_g3_m81";
+this forceAddUniform "rhs_uniform_g3_mc";
+this forceAddUniform "rhs_uniform_g3_rgr";
+this forceAddUniform "rhs_uniform_g3_tan";
+
+
+
+//----------------------------------------Vests------------------------------------------------------------------
+
+this addVest "rhsusf_iotv_ocp_Grenadier";
+this addVest "rhsusf_iotv_ucp_Grenadier";
+this addVest "rhsusf_iotv_ocp_Medic";
+this addVest "rhsusf_iotv_ucp_Medic";
+this addVest "rhsusf_iotv_ocp";
+this addVest "rhsusf_iotv_ocp_Repair";
+this addVest "rhsusf_iotv_ucp_Repair";
+this addVest "rhsusf_iotv_ocp_Rifleman";
+this addVest "rhsusf_iotv_ucp_Rifleman";
+this addVest "rhsusf_iotv_ocp_SAW";
+this addVest "rhsusf_iotv_ucp_SAW";
+this addVest "rhsusf_iotv_ocp_Squadleader";
+this addVest "rhsusf_iotv_ucp_Squadleader";
+this addVest "rhsusf_iotv_ocp_Teamleader";
+this addVest "rhsusf_iotv_ucp_Teamleader";
+this addVest "rhsusf_iotv_ucp";
+this addVest "rhsusf_mbav";
+this addVest "rhsusf_mbav_grenadier";
+this addVest "rhsusf_mbav_light";
+this addVest "rhsusf_mbav_mg";
+this addVest "rhsusf_mbav_medic";
+this addVest "rhsusf_mbav_rifleman";
+this addVest "rhsusf_plateframe_sapi";
+this addVest "rhsusf_plateframe_grenadier";
+this addVest "rhsusf_plateframe_light";
+this addVest "rhsusf_plateframe_machinegunner";
+this addVest "rhsusf_plateframe_marksman";
+this addVest "rhsusf_plateframe_medic";
+this addVest "rhsusf_plateframe_rifleman";
+this addVest "rhsusf_plateframe_teamleader";
+this addVest "rhsusf_spc";
+this addVest "rhsusf_spc_corpsman";
+this addVest "rhsusf_spc_crewman";
+this addVest "rhsusf_spc_iar";
+this addVest "rhsusf_spc_light";
+this addVest "rhsusf_spc_mg";
+this addVest "rhsusf_spc_marksman";
+this addVest "rhsusf_spc_patchless";
+this addVest "rhsusf_spc_patchless_radio";
+this addVest "rhsusf_spc_rifleman";
+this addVest "rhsusf_spc_sniper";
+this addVest "rhsusf_spc_squadleader";
+this addVest "rhsusf_spc_teamleader";
+this addVest "rhsusf_spcs_ocp_crewman";
+this addVest "rhsusf_spcs_ucp_crewman";
+this addVest "rhsusf_spcs_ocp_grenadier";
+this addVest "rhsusf_spcs_ucp_grenadier";
+this addVest "rhsusf_spcs_ocp_machinegunner";
+this addVest "rhsusf_spcs_ucp_machinegunner";
+this addVest "rhsusf_spcs_ocp_medic";
+this addVest "rhsusf_spcs_ucp_medic";
+this addVest "rhsusf_spcs_ocp";
+this addVest "rhsusf_spcs_ocp_rifleman_alt";
+this addVest "rhsusf_spcs_ucp_rifleman_alt";
+this addVest "rhsusf_spcs_ocp_rifleman";
+this addVest "rhsusf_spcs_ucp_rifleman";
+this addVest "rhsusf_spcs_ocp_saw";
+this addVest "rhsusf_spcs_ucp_saw";
+this addVest "rhsusf_spcs_ocp_sniper";
+this addVest "rhsusf_spcs_ucp_sniper";
+this addVest "rhsusf_spcs_ocp_squadleader";
+this addVest "rhsusf_spcs_ucp_squadleader";
+this addVest "rhsusf_spcs_ocp_teamleader_alt";
+this addVest "rhsusf_spcs_ucp_teamleader_alt";
+this addVest "rhsusf_spcs_ocp_teamleader";
+this addVest "rhsusf_spcs_ucp_teamleader";
+this addVest "rhsusf_spcs_ucp";
+
+
+//----------------------------------------Backpacks------------------------------------------------------------------
+this addBackpack "rhsusf_falconii_coy";
+this addBackpack "rhsusf_falconii_mc";
+this addBackpack "rhsusf_falconii";
+this addBackpack "rhsusf_eject_Parachute_backpack";
+
+this addBackpack "rhsusf_assault_eagleaiii_coy";
+this addBackpack "B_rhsusf_B_BACKPACK";
+this addBackpack "rhsusf_assault_eagleaiii_ocp";
+this addBackpack "rhsusf_assault_eagleaiii_ucp";
+
+
+this addBackpack "RHS_M2_Gun_Bag";
+this addBackpack "RHS_M2_Tripod_Bag";
+this addBackpack "rhs_M252_Gun_Bag";
+this addBackpack "rhs_M252_Bipod_Bag";
+this addBackpack "RHS_M2_MiniTripod_Bag";
+this addBackpack "RHS_Mk19_Gun_Bag";
+this addBackpack "RHS_Mk19_Tripod_Bag";
+this addBackpack "rhs_Tow_Gun_Bag";
+this addBackpack "rhs_TOW_Tripod_Bag";
+
+
+
+
+//----------------------------------------Headgear------------------------------------------------------------------
+this addHeadgear "rhs_Booniehat_m81";
+this addHeadgear "rhs_booniehat2_marpatd";
+this addHeadgear "rhs_booniehat2_marpatwd";
+this addHeadgear "rhs_Booniehat_ocp";
+this addHeadgear "rhs_Booniehat_ucp";
+this addHeadgear "rhsusf_Bowman";
+this addHeadgear "rhsusf_bowman_cap";
+this addHeadgear "rhs_xmas_antlers";
+this addHeadgear "rhsusf_patrolcap_ocp";
+this addHeadgear "rhsusf_patrolcap_ucp";
+this addHeadgear "rhs_8point_marpatd";
+this addHeadgear "rhs_8point_marpatwd";
+
+this addHeadgear "rhsusf_ach_bare";
+this addHeadgear "rhsusf_ach_bare_des";
+this addHeadgear "rhsusf_ach_bare_des_ess";
+this addHeadgear "rhsusf_ach_bare_des_headset";
+this addHeadgear "rhsusf_ach_bare_des_headset_ess";
+this addHeadgear "rhsusf_ach_bare_ess";
+this addHeadgear "rhsusf_ach_bare_headset";
+this addHeadgear "rhsusf_ach_bare_headset_ess";
+this addHeadgear "rhsusf_ach_bare_semi";
+this addHeadgear "rhsusf_ach_bare_semi_ess";
+this addHeadgear "rhsusf_ach_bare_semi_headset";
+this addHeadgear "rhsusf_ach_bare_semi_headset_ess";
+this addHeadgear "rhsusf_ach_bare_tan";
+this addHeadgear "rhsusf_ach_bare_tan_ess";
+this addHeadgear "rhsusf_ach_bare_tan_headset";
+this addHeadgear "rhsusf_ach_bare_tan_headset_ess";
+this addHeadgear "rhsusf_ach_bare_wood";
+this addHeadgear "rhsusf_ach_bare_wood_ess";
+this addHeadgear "rhsusf_ach_bare_wood_headset";
+this addHeadgear "rhsusf_ach_bare_wood_headset_ess";
+this addHeadgear "rhsusf_ach_helmet_DCU";
+this addHeadgear "rhsusf_ach_helmet_DCU_early";
+this addHeadgear "rhsusf_ach_helmet_DCU_early_rhino";
+this addHeadgear "rhsusf_ach_helmet_M81";
+this addHeadgear "rhsusf_ach_helmet_ocp";
+this addHeadgear "rhsusf_ach_helmet_ocp_alt";
+this addHeadgear "rhsusf_ach_helmet_ESS_ocp";
+this addHeadgear "rhsusf_ach_helmet_ESS_ocp_alt";
+this addHeadgear "rhsusf_ach_helmet_headset_ocp";
+this addHeadgear "rhsusf_ach_helmet_headset_ocp_alt";
+this addHeadgear "rhsusf_ach_helmet_headset_ess_ocp";
+this addHeadgear "rhsusf_ach_helmet_headset_ess_ocp_alt";
+this addHeadgear "rhsusf_ach_helmet_camo_ocp";
+this addHeadgear "rhsusf_ach_helmet_ocp_norotos";
+this addHeadgear "rhsusf_ach_helmet_ucp";
+this addHeadgear "rhsusf_ach_helmet_ucp_alt";
+this addHeadgear "rhsusf_ach_helmet_ESS_ucp";
+this addHeadgear "rhsusf_ach_helmet_ESS_ucp_alt";
+this addHeadgear "rhsusf_ach_helmet_headset_ucp";
+this addHeadgear "rhsusf_ach_helmet_headset_ucp_alt";
+this addHeadgear "rhsusf_ach_helmet_headset_ess_ucp";
+this addHeadgear "rhsusf_ach_helmet_headset_ess_ucp_alt";
+this addHeadgear "rhsusf_ach_helmet_ucp_norotos";
+this addHeadgear "rhsusf_cvc_green_helmet";
+this addHeadgear "rhsusf_cvc_green_alt_helmet";
+this addHeadgear "rhsusf_cvc_green_ess";
+this addHeadgear "rhsusf_cvc_helmet";
+this addHeadgear "rhsusf_cvc_alt_helmet";
+this addHeadgear "rhsusf_cvc_ess";
+this addHeadgear "rhsusf_opscore_aor1";
+this addHeadgear "rhsusf_opscore_aor1_pelt";
+this addHeadgear "rhsusf_opscore_aor1_pelt_nsw";
+this addHeadgear "rhsusf_opscore_aor2";
+this addHeadgear "rhsusf_opscore_aor2_pelt";
+this addHeadgear "rhsusf_opscore_aor2_pelt_nsw";
+this addHeadgear "rhsusf_opscore_bk";
+this addHeadgear "rhsusf_opscore_bk_pelt";
+this addHeadgear "rhsusf_opscore_coy_cover";
+this addHeadgear "rhsusf_opscore_coy_cover_pelt";
+this addHeadgear "rhsusf_opscore_fg";
+this addHeadgear "rhsusf_opscore_fg_pelt";
+this addHeadgear "rhsusf_opscore_fg_pelt_cam";
+this addHeadgear "rhsusf_opscore_fg_pelt_nsw";
+this addHeadgear "rhsusf_opscore_mc_cover";
+this addHeadgear "rhsusf_opscore_mc_cover_pelt";
+this addHeadgear "rhsusf_opscore_mc_cover_pelt_nsw";
+this addHeadgear "rhsusf_opscore_mc_cover_pelt_cam";
+this addHeadgear "rhsusf_opscore_mc";
+this addHeadgear "rhsusf_opscore_mc_pelt";
+this addHeadgear "rhsusf_opscore_mc_pelt_nsw";
+this addHeadgear "rhsusf_opscore_paint";
+this addHeadgear "rhsusf_opscore_paint_pelt";
+this addHeadgear "rhsusf_opscore_paint_pelt_nsw";
+this addHeadgear "rhsusf_opscore_paint_pelt_nsw_cam";
+this addHeadgear "rhsusf_opscore_rg_cover";
+this addHeadgear "rhsusf_opscore_rg_cover_pelt";
+this addHeadgear "rhsusf_opscore_ut";
+this addHeadgear "rhsusf_opscore_ut_pelt";
+this addHeadgear "rhsusf_opscore_ut_pelt_cam";
+this addHeadgear "rhsusf_opscore_ut_pelt_nsw";
+this addHeadgear "rhsusf_opscore_ut_pelt_nsw_cam";
+this addHeadgear "rhsusf_opscore_mar_fg";
+this addHeadgear "rhsusf_opscore_mar_fg_pelt";
+this addHeadgear "rhsusf_opscore_mar_ut";
+this addHeadgear "rhsusf_opscore_mar_ut_pelt";
+this addHeadgear "rhsusf_hgu56p_black";
+this addHeadgear "rhsusf_hgu56p_mask_black";
+this addHeadgear "rhsusf_hgu56p_mask_black_skull";
+this addHeadgear "rhsusf_hgu56p_visor_black";
+this addHeadgear "rhsusf_hgu56p_visor_mask_black";
+this addHeadgear "rhsusf_hgu56p_visor_mask_Empire_black";
+this addHeadgear "rhsusf_hgu56p_visor_mask_black_skull";
+this addHeadgear "rhsusf_hgu56p_green";
+this addHeadgear "rhsusf_hgu56p_mask_green";
+this addHeadgear "rhsusf_hgu56p_mask_green_mo";
+this addHeadgear "rhsusf_hgu56p_visor_green";
+this addHeadgear "rhsusf_hgu56p_visor_mask_green";
+this addHeadgear "rhsusf_hgu56p_visor_mask_green_mo";
+this addHeadgear "rhsusf_hgu56p";
+this addHeadgear "rhsusf_hgu56p_mask";
+this addHeadgear "rhsusf_hgu56p_mask_mo";
+this addHeadgear "rhsusf_hgu56p_mask_skull";
+this addHeadgear "rhsusf_hgu56p_visor";
+this addHeadgear "rhsusf_hgu56p_visor_mask";
+this addHeadgear "rhsusf_hgu56p_visor_mask_mo";
+this addHeadgear "rhsusf_hgu56p_visor_mask_skull";
+this addHeadgear "rhsusf_hgu56p_pink";
+this addHeadgear "rhsusf_hgu56p_mask_pink";
+this addHeadgear "rhsusf_hgu56p_visor_pink";
+this addHeadgear "rhsusf_hgu56p_visor_mask_pink";
+this addHeadgear "rhsusf_hgu56p_saf";
+this addHeadgear "rhsusf_hgu56p_mask_saf";
+this addHeadgear "rhsusf_hgu56p_visor_saf";
+this addHeadgear "rhsusf_hgu56p_visor_mask_saf";
+this addHeadgear "rhsusf_hgu56p_mask_smiley";
+this addHeadgear "rhsusf_hgu56p_visor_mask_smiley";
+this addHeadgear "rhsusf_hgu56p_tan";
+this addHeadgear "rhsusf_hgu56p_mask_tan";
+this addHeadgear "rhsusf_hgu56p_visor_tan";
+this addHeadgear "rhsusf_hgu56p_visor_mask_tan";
+this addHeadgear "rhsusf_hgu56p_usa";
+this addHeadgear "rhsusf_hgu56p_visor_usa";
+this addHeadgear "rhsusf_hgu56p_white";
+this addHeadgear "rhsusf_hgu56p_visor_white";
+this addHeadgear "rhsusf_ihadss";
+this addHeadgear "RHS_jetpilot_usaf";
+this addHeadgear "rhsusf_lwh_helmet_M1942";
+this addHeadgear "rhsusf_lwh_helmet_marpatd";
+this addHeadgear "rhsusf_lwh_helmet_marpatd_ess";
+this addHeadgear "rhsusf_lwh_helmet_marpatd_headset";
+this addHeadgear "rhsusf_lwh_helmet_marpatwd";
+this addHeadgear "rhsusf_lwh_helmet_marpatwd_blk_ess";
+this addHeadgear "rhsusf_lwh_helmet_marpatwd_headset_blk2";
+this addHeadgear "rhsusf_lwh_helmet_marpatwd_headset_blk";
+this addHeadgear "rhsusf_lwh_helmet_marpatwd_headset";
+this addHeadgear "rhsusf_lwh_helmet_marpatwd_ess";
+this addHeadgear "rhsusf_mich_bare";
+this addHeadgear "rhsusf_mich_bare_alt";
+this addHeadgear "rhsusf_mich_bare_headset";
+this addHeadgear "rhsusf_mich_bare_norotos";
+this addHeadgear "rhsusf_mich_bare_norotos_alt";
+this addHeadgear "rhsusf_mich_bare_norotos_alt_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_arc";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_alt";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_alt_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_headset";
+this addHeadgear "rhsusf_mich_bare_semi";
+this addHeadgear "rhsusf_mich_bare_alt_semi";
+this addHeadgear "rhsusf_mich_bare_semi_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_semi";
+this addHeadgear "rhsusf_mich_bare_norotos_alt_semi";
+this addHeadgear "rhsusf_mich_bare_norotos_alt_semi_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_semi";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_alt_semi";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_alt_semi_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_semi_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_semi_headset";
+this addHeadgear "rhsusf_mich_bare_tan";
+this addHeadgear "rhsusf_mich_bare_alt_tan";
+this addHeadgear "rhsusf_mich_bare_tan_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_tan";
+this addHeadgear "rhsusf_mich_bare_norotos_alt_tan";
+this addHeadgear "rhsusf_mich_bare_norotos_alt_tan_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_tan";
+this addHeadgear "rhsusf_mich_bare_norotos_arc_alt_tan_headset";
+this addHeadgear "rhsusf_mich_bare_norotos_tan_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatd";
+this addHeadgear "rhsusf_mich_helmet_marpatd_alt";
+this addHeadgear "rhsusf_mich_helmet_marpatd_alt_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatd_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatd_norotos";
+this addHeadgear "rhsusf_mich_helmet_marpatd_norotos_arc";
+this addHeadgear "rhsusf_mich_helmet_marpatd_norotos_arc_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatd_norotos_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatwd";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_alt";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_alt_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_norotos";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_norotos_arc";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_norotos_arc_headset";
+this addHeadgear "rhsusf_mich_helmet_marpatwd_norotos_headset";
+this addHeadgear "rhsusf_protech_helmet";
+this addHeadgear "rhsusf_protech_helmet_ess";
+this addHeadgear "rhsusf_protech_helmet_rhino";
+this addHeadgear "rhsusf_protech_helmet_rhino_ess";
+
+
+//----------------------------------------glasses------------------------------------------------------------------
+this addGoggles "rhs_googles_black";
+this addGoggles "rhs_googles_clear";
+this addGoggles "rhs_googles_orange";
+this addGoggles "rhs_googles_yellow";
+this addGoggles "rhs_ess_black";
+this addGoggles "rhsusf_shemagh_grn";
+this addGoggles "rhsusf_shemagh2_grn";
+this addGoggles "rhsusf_shemagh_od";
+this addGoggles "rhsusf_shemagh2_od";
+this addGoggles "rhsusf_shemagh_tan";
+this addGoggles "rhsusf_shemagh2_tan";
+this addGoggles "rhsusf_shemagh_white";
+this addGoggles "rhsusf_shemagh2_white";
+this addGoggles "rhsusf_shemagh_gogg_grn";
+this addGoggles "rhsusf_shemagh2_gogg_grn";
+this addGoggles "rhsusf_shemagh_gogg_od";
+this addGoggles "rhsusf_shemagh2_gogg_od";
+this addGoggles "rhsusf_shemagh_gogg_tan";
+this addGoggles "rhsusf_shemagh2_gogg_tan";
+this addGoggles "rhsusf_shemagh_gogg_white";
+this addGoggles "rhsusf_shemagh2_gogg_white";
+this addGoggles "rhsusf_oakley_goggles_blk";
+this addGoggles "rhsusf_oakley_goggles_clr";
+this addGoggles "rhsusf_oakley_goggles_ylw";
+
+//----------------------------------------NV-googles------------------------------------------------------------------
+
+
+this linkItem "rhsusf_ANPVS_14";
+this linkItem "rhsusf_ANPVS_15";
+this linkItem "rhsusf_Rhino";
+
+
+//----------------------------------------items------------------------------------------------------------------
+
+this addWeapon "rhsusf_bino_lerca_1200_black";
+this addWeapon "rhsusf_bino_lerca_1200_tan";
+this addWeapon "rhsusf_bino_leopold_mk4";
+this addWeapon "rhsusf_bino_m24";
+this addWeapon "rhsusf_bino_m24_ARD";
+this addWeapon "rhsusf_bino_lrf_Vector21";
+
+this linkItem "rhsusf_radio_anprc152";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
