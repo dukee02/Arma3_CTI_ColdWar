@@ -360,6 +360,8 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
 		_c pushBack format["%1gm_ge_army_luchsa1", _sid];
 		_c pushBack format["%1gm_ge_army_luchsa2", _sid];
+		
+		_c pushBack format["%1gm_ge_army_kat1_463_mlrs", _sid];
 	};
 };
 
@@ -579,6 +581,8 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_ge_army_marder1a2", _sid];	
 		_c pushBack format["%1gm_ge_army_Leopard1a3", _sid];
 		_c pushBack format["%1gm_ge_army_Leopard1a3a1", _sid];
+		
+		_c pushBack format["%1gm_ge_army_m109g", _sid];	
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
@@ -782,6 +786,7 @@ _c = [];
 if(CTI_MAIN_ADDON == 0) then {
 	_c pushBack format["%1gm_ge_army_u1300l_repair", _sid];
 	_c pushBack format["%1gm_ge_army_bpz2a0", _sid];					//repair
+	_c pushBack format["%1gm_ge_army_bibera0", _sid];
 	_c pushBack format["CTI_Salvager_%1", _side];
 };
 if(CTI_BW_ADDON == 1 && CTI_REDD_ADDON == 0) then {
@@ -826,6 +831,8 @@ _c = [];
 if(CTI_MAIN_ADDON == 0) then {
 	_c pushBack format["%1gm_ge_army_kat1_451_reammo", _sid];
 	_c pushBack format["%1gm_ge_army_kat1_451_refuel", _sid];
+	
+	_c pushBack format["%1gm_ge_army_kat1_454_reammo", _sid];
 };
 if(CTI_BW_ADDON == 1 && CTI_REDD_ADDON == 0) then {
 	_c pushBack format["%1BW_LKW_Munition_Tropen", _sid];			//ammotruck

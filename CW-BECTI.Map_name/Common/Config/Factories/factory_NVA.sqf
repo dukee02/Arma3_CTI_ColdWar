@@ -172,6 +172,8 @@ if(CTI_MAIN_ADDON == 0) then {
 	//Level 3
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
 		_c pushBack format["%1gm_gc_army_btr60pb", _sid];//MG + 2cm
+		
+		_c pushBack format["%1gm_gc_army_ural375d_mlrs", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
@@ -202,10 +204,14 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 2) then {
 		_c pushBack format["%1gm_gc_army_t55a", _sid];
 		_c pushBack format["%1gm_gc_army_t55ak", _sid];
+		
+		_c pushBack format["%1gm_gc_army_2s1", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 		_c pushBack format["%1gm_gc_army_t55am2", _sid];
 		_c pushBack format["%1gm_gc_army_t55am2b", _sid];
+		
+		_c pushBack format["%1gm_gc_army_2p16", _sid];
 	};
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_HEAVY];

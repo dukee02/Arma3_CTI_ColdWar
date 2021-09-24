@@ -1984,6 +1984,16 @@ if(CTI_MAIN_ADDON == 0) then {
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_kat1_463_mlrs", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;
 	};
 	
 };
@@ -2954,7 +2964,16 @@ if(CTI_MAIN_ADDON == 0) then {
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 0;
-			
+		
+		_c pushBack format["%1gm_ge_army_m109g", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
 	};
 	//Level 3
 	_tech_level = _tech_level + 1;
@@ -3709,7 +3728,17 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_ge_army_bpz2a0", _sid];							//Repair
 		_p pushBack '';
 		_n pushBack 'Bergepanzer';
-		_o pushBack 2*(CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+2)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_REPAIR;
+		_s pushBack "service-repairtruck";
+		_d pushBack 0;
+		
+		_c pushBack format["%1gm_ge_army_bibera0", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+2)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_REPAIR;
@@ -3880,6 +3909,16 @@ if(CTI_MAIN_ADDON == 0) then {
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_AMMO;
 		_s pushBack "service-fueltruck";
+		_d pushBack 0;	
+		
+		_c pushBack format["%1gm_ge_army_kat1_454_reammo", _sid];					//Ammotruck
+		_p pushBack '';
+		_n pushBack 'Ammo Truck';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_AMMO;
+		_s pushBack "service-ammotruck";
 		_d pushBack 0;	
 	//};
 };
