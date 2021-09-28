@@ -40,10 +40,6 @@ missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], ["Air"]];
 units_infantry = [];
 if((CTI_MAIN_ADDON == 0 && CTI_ECONOMY_LEVEL_INFANTRY >= 3) || CTI_MAIN_ADDON == 1 || CTI_MAIN_ADDON == -1) then {
 	units_infantry = [[format["%1CUP_O_RU_Medic_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_GL_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_GL_VDV", _sid],1],[format["%1CUP_O_RU_Soldier_AT_VDV", _sid],1]];
-	//if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-	//	units_infantry = [[format["%1gm_gc_army_medic_mpiak74n_80_win", _sid],1],[format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid],1],[format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid],1],[format["%1gm_gc_army_demolition_mpiaks74n_80_win", _sid],1],[format["%1gm_gc_army_demolition_mpiaks74n_80_win", _sid],1],[format["%1gm_gc_army_antitank_mpiak74n_rpg7_80_win", _sid],1]];
-	//};
-		
 };
 
 _v pushBack "Infantry";
@@ -56,35 +52,38 @@ _s pushBack [];
 
 //Wheeled setup for the AI groups
 units_wheeled = [];
-units_to_add = [];
+mot_to_add = [];
 
 if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	units_wheeled pushBack [format["%1CUP_O_UAZ_Open_RU", _sid], 1, 50];
+	mot_to_add = [[format["%1CUP_O_UAZ_Open_RU", _sid], 1, 50]];
 };
 if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-	units_wheeled pushBack [format["%1CUP_O_UAZ_SPG9_RU", _sid], 1, 50];			//SPG (AT)
-	units_wheeled pushBack [format["%1CUP_O_UAZ_AGS30_RU", _sid], 1, 50];			//GMG
-	units_wheeled pushBack [format["%1CUP_O_UAZ_MG_RU", _sid], 1, 50];				//MG
-	units_wheeled pushBack [format["%1CUP_O_UAZ_METIS_RU", _sid], 1, 50];			//Metris (ATGM)
-	units_wheeled pushBack [format["%1CUP_O_BRDM2_RUS", _sid], 1, 50];				//MG + 2cm
-	units_wheeled pushBack [format["%1CUP_O_BRDM2_ATGM_RUS", _sid], 1, 50];			//4x ATGM
-	units_wheeled pushBack [format["%1CUP_O_BRDM2_HQ_RUS", _sid], 1, 50];			//MG		
+	mot_to_add = [[format["%1CUP_O_UAZ_SPG9_RU", _sid], 1, 50]];			//SPG (AT)
+	mot_to_add pushBack [format["%1CUP_O_UAZ_AGS30_RU", _sid], 1, 50];			//GMG
+	mot_to_add pushBack [format["%1CUP_O_UAZ_MG_RU", _sid], 1, 50];				//MG
+	mot_to_add pushBack [format["%1CUP_O_UAZ_METIS_RU", _sid], 1, 50];			//Metris (ATGM)
+	mot_to_add pushBack [format["%1CUP_O_BRDM2_RUS", _sid], 1, 50];				//MG + 2cm
+	mot_to_add pushBack [format["%1CUP_O_BRDM2_ATGM_RUS", _sid], 1, 50];			//4x ATGM
+	mot_to_add pushBack [format["%1CUP_O_BRDM2_HQ_RUS", _sid], 1, 50];			//MG		
 };
+units_wheeled append mot_to_add;
+
 if(CTI_RHS_ADDON > 0) then { _adds = 1; } else { _adds = 0; };
 if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {
-	units_wheeled pushBack [format["%1CUP_O_Ural_RU", _sid], 1, 50];
+	mot_to_add = [[format["%1CUP_O_Ural_RU", _sid], 1, 50]];
 };
 if(CTI_ECONOMY_LEVEL_WHEELED >= 2) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-		units_wheeled pushBack [format["%1CUP_O_BTR60_Winter_RU", _sid], 1, 50];	//2cm + MG	
+		mot_to_add = [[format["%1CUP_O_BTR60_Winter_RU", _sid], 1, 50]];	//2cm + MG	
 	};
-	units_wheeled pushBack [format["%1CUP_O_BTR60_RU", _sid], 1, 50];				//2cm + MG
-	units_wheeled pushBack [format["%1CUP_O_BTR60_Green_RU", _sid], 1, 50];			//2cm + MG
-	units_wheeled pushBack [format["%1CUP_O_GAZ_Vodnik_PK_RU", _sid], 1, 50];		//MG front + rear
-	units_wheeled pushBack [format["%1CUP_O_GAZ_Vodnik_AGS_RU", _sid], 1, 50];		//GMG + rear MG
-	units_wheeled pushBack [format["%1CUP_O_GAZ_Vodnik_BPPU_RU", _sid], 1, 50];		//3cm Cannon
-	units_wheeled pushBack [format["%1CUP_O_GAZ_Vodnik_MedEvac_RU", _sid], 1, 50];	//Medic
+	mot_to_add = [[format["%1CUP_O_BTR60_RU", _sid], 1, 50]];				//2cm + MG
+	mot_to_add pushBack [format["%1CUP_O_BTR60_Green_RU", _sid], 1, 50];			//2cm + MG
+	mot_to_add pushBack [format["%1CUP_O_GAZ_Vodnik_PK_RU", _sid], 1, 50];		//MG front + rear
+	mot_to_add pushBack [format["%1CUP_O_GAZ_Vodnik_AGS_RU", _sid], 1, 50];		//GMG + rear MG
+	mot_to_add pushBack [format["%1CUP_O_GAZ_Vodnik_BPPU_RU", _sid], 1, 50];		//3cm Cannon
+	mot_to_add pushBack [format["%1CUP_O_GAZ_Vodnik_MedEvac_RU", _sid], 1, 50];	//Medic
 };
+units_wheeled append mot_to_add;
 if(CTI_ECONOMY_LEVEL_WHEELED >= 4+_adds) then {
 	units_wheeled pushBack [format["%1CUP_O_BTR90_RU", _sid], 1, 50];
 	units_wheeled pushBack [format["%1CUP_O_BTR90_HQ_RU", _sid], 1, 50];
@@ -155,23 +154,25 @@ _s pushBack [];
 
 //Air setup for the AI groups
 units_air = [];
+air_to_add = [];
 
 if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		units_air pushBack [format["%1CUP_O_Mi8_RU", _sid], 1, 50];
+		air_to_add = [[format["%1CUP_O_Mi8_RU", _sid], 1, 50]];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
-		units_air pushBack [format["%1CUP_O_Mi24_P_Dynamic_RU", _sid], 1, 50];
-		units_air pushBack [format["%1CUP_O_Mi24_V_Dynamic_RU", _sid], 1, 50];
-		units_air pushBack [format["%1CUP_O_Su25_Dyn_RU", _sid], 1, 50];
+		air_to_add = [[format["%1CUP_O_Mi24_P_Dynamic_RU", _sid], 1, 50]];
+		air_to_add pushBack [format["%1CUP_O_Mi24_V_Dynamic_RU", _sid], 1, 50];
+		air_to_add pushBack [format["%1CUP_O_Su25_Dyn_RU", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-		units_air pushBack [format["%1CUP_O_Ka50_DL_RU", _sid], 1, 50];
-		units_air pushBack [format["%1CUP_O_SU34_RU", _sid], 1, 50];
+		air_to_add pushBack [format["%1CUP_O_Ka50_DL_RU", _sid], 1, 50];
+		air_to_add pushBack [format["%1CUP_O_SU34_RU", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-		units_air pushBack [format["%1CUP_O_Ka52_RU", _sid], 1, 50];
+		air_to_add pushBack [format["%1CUP_O_Ka52_RU", _sid], 1, 50];
 	};
+	units_air append air_to_add;
 };
 
 _v pushBack "Air";

@@ -31,7 +31,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 
 //check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
 _priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-if ((isNil "_priorUnits" || _ai == -1) && CTI_CUP_ADDON > 0) then { 
+if ((isNil "_priorUnits") && CTI_CUP_ADDON > 0) then { 
 	
 	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_I_GUE_Commander", _sid]];
 	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_I_GUE_Soldier_AKSU", _sid]];
@@ -119,7 +119,7 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_BARRACKS], _c
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 _c = [];
-if(CTI_CUP_ADDON == 1) then {
+if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_c pushBack format["%1CUP_I_TT650_NAPA", _sid];
 		_c pushBack format["%1CUP_I_Datsun_PK", _sid];

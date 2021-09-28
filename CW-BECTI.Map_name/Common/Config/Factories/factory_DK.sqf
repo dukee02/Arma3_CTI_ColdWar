@@ -30,24 +30,24 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 
 //check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
 _priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-if (isNil "_priorUnits" || _ai < 0) then { 
+//if (isNil "_priorUnits" || _ai < 0) then { 
+if (CTI_MAIN_ADDON == 0 || _ai == 2) then {
 	
-	if(CTI_MAIN_ADDON == 0) then {
-		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1gm_dk_army_squadleader_gvm95_p2a1_90_m84", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1gm_dk_army_demolition_gvm95_90_m84", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1gm_dk_army_squadleader_gvm95_p2a1_90_m84", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1gm_dk_army_demolition_gvm95_90_m84", _sid]];
 
-		missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1gm_dk_army_rifleman_gvm95_90_m84", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1gm_dk_army_rifleman_gvm95_90_m84", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1gm_dk_army_crew_84_oli", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1gm_dk_army_crew_84_oli", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1gm_dk_army_crew_84_oli", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1gm_dk_army_rifleman_gvm95_90_m84", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1gm_dk_army_rifleman_gvm95_90_m84", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1gm_dk_army_crew_84_oli", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1gm_dk_army_crew_84_oli", _sid]];
+	missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1gm_dk_army_crew_84_oli", _sid]];
 
-		//Set starting vehicles
-		missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-			[format["%1gm_ge_civ_typ1200", _sid], []], 
-			[format["%1gm_ge_civ_typ1200", _sid], []]
-		]];
-	};
+	//Set starting vehicles
+	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
+		[format["%1gm_ge_civ_typ1200", _sid], []], 
+		[format["%1gm_ge_civ_typ1200", _sid], []]
+	]];
+		
 	if (CTI_Log_Level >= CTI_Log_Debug) then {
 		["VIOC_DEBUG", "FILE: common\config\factories\factory_DK.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
 		["VIOC_DEBUG", "FILE: common\config\factories\factory_DK.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;

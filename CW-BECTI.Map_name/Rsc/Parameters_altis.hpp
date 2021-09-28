@@ -65,8 +65,6 @@ class Params {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
 		values[] = {-1,0,1};
 		texts[] = {"disabled","National Party of Chernarus (NPoC)","Royal Army Corps of Sahrani (RACS)"};
-		//values[] = {0,1,2};
-		//texts[] = {"FFI (Infantry with unarmed cars - difficulty very easy)","Polish Units (Infantry with armed trucks - difficulty easy)","3rd Party (needs one Side on GUER - difficulty normal)"};
 		default = 0;
 	};
 	class CTI_WEST_TOWNS {
@@ -112,19 +110,19 @@ class Params {
 	class CTI_WEST_FLAG {
 		title = "FLAG: Flagtexture of the West-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
-		texts[] = {"Standard Blue","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","Germany (CUP)","Russia (CUP)","NATO","USA","UNO"};
+		texts[] = {"Standard Blue","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)"};
 		default = 0; //0
 	};
 	class CTI_EAST_FLAG {
 		title = "FLAG: Flagtexture of the East-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
-		texts[] = {"Standard Red","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","Germany (CUP)","Russia (CUP)","NATO","USA","UNO"};
+		texts[] = {"Standard Red","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)"};
 		default = 0; //0
 	};
 	class CTI_GUER_FLAG {
 		title = "FLAG: Flagtexture of the Independent-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
-		texts[] = {"Standard Green","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","Germany (CUP)","Russia (CUP)","NATO","USA","UNO"};
+		texts[] = {"Standard Green","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)"};
 		default = 0; //0
 	};
 	class CTI_ECONOMY_LEVEL_GEAR {
@@ -457,6 +455,22 @@ class Params {
 		texts[] = {"",""};
 		default = 0;
 	};
+	class REVIVE_MODE {
+		title = $STR_A3_ReviveMode;
+		isGlobal = 1;
+		values[] = {0,1};
+		texts[] = {$STR_A3_Disabled,$STR_A3_EnabledForAllPlayers};
+		default = 0;
+		function = "bis_fnc_paramReviveMode";
+	};
+	class UNCONSCIOUS_STATE_MODE {
+		title = $STR_A3_IncapacitationMode;
+		isGlobal = 1;
+		values[] = {0,1};
+		texts[] = {$STR_A3_Basic,$STR_A3_Advanced};
+		default = 0;
+		function = "bis_fnc_paramReviveUnconsciousStateMode";
+	};
 	class CTI_RESPAWN_AI {
 		title = "RESPAWN: AI Members";
 		values[] = {0,1};
@@ -700,7 +714,7 @@ class Params {
 		default = 0;
 	};
 	class SEPARATOR_LOG {
-		title = "=========================== LOG ============================";
+		title = "=========================== LOG-DEBUG-AND-TESTING ============================";
 		values[] = {1};
 		texts[] = {""};
 		default = 1;

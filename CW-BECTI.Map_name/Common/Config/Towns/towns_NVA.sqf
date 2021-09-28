@@ -161,8 +161,6 @@ switch (CTI_ECONOMY_LEVEL_AIR) do {
 	default {};
 };
 
-if(count AIR_FIGHTER == 0) then {AIR_FIGHTER = +AIR_BOMBER;};
-
 if (isNil {missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]}) then {
 	missionNamespace setVariable [format["%1AIR_SQ_FIGHTER", _tag], AIR_FIGHTER];
 	missionNamespace setVariable [format["%1AIR_SQ_BOMBER", _tag], AIR_BOMBER];

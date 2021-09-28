@@ -64,76 +64,75 @@ _s pushBack [];
 
 //Wheeled setup for the AI groups
 units_wheeled = [];
-units_to_add = [];
+mot_to_add = [];
 _adds = 0;
 if(CTI_MAIN_ADDON == 0) then {
 	//Level start
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		units_to_add = [format["%1gm_ge_army_iltis_cargo", _sid], 1, 50];
-		units_to_add pushBack [format["%1gm_ge_army_c1300l_cargo", _sid], 1, 50];
+		mot_to_add = [[format["%1gm_ge_army_iltis_cargo", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1gm_ge_army_c1300l_cargo", _sid], 1, 50];
 	};
 	//Level 1
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		units_to_add pushBack [format["%1gm_ge_army_iltis_mg3", _sid], 1, 50];
-		units_to_add pushBack [format["%1gm_ge_army_iltis_milan", _sid], 1, 50];
-		units_to_add pushBack [format["%1gm_ge_army_fuchsa0_command", _sid], 1, 50];
-		units_to_add pushBack [format["%1gm_ge_army_fuchsa0_engineer", _sid], 1, 50];	
+		mot_to_add = [[format["%1gm_ge_army_iltis_mg3", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1gm_ge_army_iltis_milan", _sid], 1, 50];
+		mot_to_add pushBack [format["%1gm_ge_army_fuchsa0_command", _sid], 1, 50];
+		mot_to_add pushBack [format["%1gm_ge_army_fuchsa0_engineer", _sid], 1, 50];	
 	};
 	//Level 2
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 2) then {
-		units_to_add pushBack [format["%1gm_ge_army_fuchsa0_reconnaissance", _sid], 1, 50];
+		mot_to_add pushBack [format["%1gm_ge_army_fuchsa0_reconnaissance", _sid], 1, 50];
 	};
 	//Level 3
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
-		units_to_add pushBack [format["%1gm_ge_army_luchsa1", _sid], 1, 50];
-		units_to_add pushBack [format["%1gm_ge_army_luchsa2", _sid], 1, 50];
+		mot_to_add pushBack [format["%1gm_ge_army_luchsa1", _sid], 1, 50];
+		mot_to_add pushBack [format["%1gm_ge_army_luchsa2", _sid], 1, 50];
 	};
-	units_wheeled pushBack units_to_add;
+	units_wheeled append mot_to_add;
 };
 if(CTI_BW_ADDON > 0) then {
 	//Level start
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		units_to_add = [format["%1bw_unimog_cargo", _sid], 1, 50];
-		units_wheeled pushBack units_to_add;
+		mot_to_add = [[format["%1bw_unimog_cargo", _sid], 1, 50]];
 	};
 	if(CTI_REDD_ADDON == 1) then { _adds = _adds+2; } else {};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0+_adds) then {		//(2 || 4)
-		units_to_add = [format["%1BWA3_Eagle_FLW100_Fleck", _sid], 1, 50];
+		mot_to_add = [[format["%1BWA3_Eagle_FLW100_Fleck", _sid], 1, 50]];
 		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
 		//};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1BWA3_Eagle_FLW100_Tropen", _sid], 1, 50];
+			mot_to_add = [[format["%1BWA3_Eagle_FLW100_Tropen", _sid], 1, 50]];
 		};
-		units_wheeled pushBack units_to_add;
 	};
+	units_wheeled append mot_to_add;
 	_adds = _adds+1;
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0+_adds) then {		//(3 || 5)
-		units_to_add = [format["%1KGB_B_MRAP_03_gmg_F", _sid], 1, 50];
-		units_to_add pushBack [format["%1KGB_B_MRAP_03_hmg_F", _sid], 1, 50];
+		mot_to_add = [[format["%1KGB_B_MRAP_03_gmg_F", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1KGB_B_MRAP_03_hmg_F", _sid], 1, 50];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1KGB_B_MRAP_03_gmg_F_WIN", _sid], 1, 50];
-			units_to_add pushBack [format["%1KGB_B_MRAP_03_hmg_F_WIN", _sid], 1, 50];
+			mot_to_add = [[format["%1KGB_B_MRAP_03_gmg_F_WIN", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1KGB_B_MRAP_03_hmg_F_WIN", _sid], 1, 50];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1KGB_B_MRAP_03_gmg_F_DES", _sid], 1, 50];
-			units_to_add pushBack [format["%1KGB_B_MRAP_03_hmg_F_DES", _sid], 1, 50];
+			mot_to_add = [[format["%1KGB_B_MRAP_03_gmg_F_DES", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1KGB_B_MRAP_03_hmg_F_DES", _sid], 1, 50];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 	if(CTI_MAIN_ADDON == 0) then { _adds = 1; } else { _adds = 0; };
 	if(CTI_REDD_ADDON == 1) then { _adds = _adds+1; }; // else {};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {			//(1 || 2 mit redd 2 || 3)
-		units_to_add = [format["%1BW_Dingo_GL_Wdl", _sid], 1, 50];
-		units_to_add pushBack [format["%1BW_Dingo_Wdl", _sid], 1, 50];
+		mot_to_add = [[format["%1BW_Dingo_GL_Wdl", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1BW_Dingo_Wdl", _sid], 1, 50];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1BW_Dingo_GL_Win", _sid], 1, 50];
-			units_to_add pushBack [format["%1BW_Dingo_Win", _sid], 1, 50];
+			mot_to_add = [[format["%1BW_Dingo_GL_Win", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1BW_Dingo_Win", _sid], 1, 50];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1BW_Dingo_GL_Des", _sid], 1, 50];
-			units_to_add pushBack [format["%1BW_Dingo_Des", _sid], 1, 50];
+			mot_to_add = [[format["%1BW_Dingo_GL_Des", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1BW_Dingo_Des", _sid], 1, 50];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 };
 
@@ -141,65 +140,65 @@ if(CTI_CUP_ADDON == 1) then {
 	if(CTI_MAIN_ADDON == 0) then { _adds = 1; } else { _adds = 0; };
 	if(CTI_REDD_ADDON == 1) then { _adds = _adds+1; }; // else {};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {
-		units_to_add = [format["%1CUP_B_Dingo_GL_GER_Wdl", _sid], 1, 50];
-		units_to_add pushBack [format["%1CUP_B_Dingo_GER_Wdl", _sid], 1, 50];
+		mot_to_add = [[format["%1CUP_B_Dingo_GL_GER_Wdl", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1CUP_B_Dingo_GER_Wdl", _sid], 1, 50];
 		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
 		//};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1CUP_B_Dingo_GL_GER_Des", _sid], 1, 50];
-			units_to_add pushBack [format["%1CUP_B_Dingo_GER_Des", _sid], 1, 50];
+			mot_to_add = [[format["%1CUP_B_Dingo_GL_GER_Des", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1CUP_B_Dingo_GER_Des", _sid], 1, 50];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 };
 if(CTI_REDD_ADDON == 1) then {
 
 	if(CTI_MAIN_ADDON == 0) then { _adds = 2; } else { _adds = 0; };
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0+_adds) then {
-		units_to_add = [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu", _sid], 1, 50];
-		units_to_add pushBack [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FJg", _sid], 1, 50];
+		mot_to_add = [[format["%1Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FJg", _sid], 1, 50];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu", _sid], 1, 50];
-			units_to_add pushBack [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FJg", _sid], 1, 50];
+			mot_to_add = [[format["%1Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FJg", _sid], 1, 50];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FueFu", _sid], 1, 50];
-			units_to_add pushBack [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FJg", _sid], 1, 50];
+			mot_to_add = [[format["%1Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FueFu", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FJg", _sid], 1, 50];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		units_to_add = [format["%1Redd_Tank_Fuchs_1A4_Pi_Flecktarn", _sid], 1, 50];
-		units_to_add pushBack [format["%1Redd_Tank_Fuchs_1A4_Jg_Flecktarn", _sid], 1, 50];	
+		mot_to_add = [[format["%1Redd_Tank_Fuchs_1A4_Pi_Flecktarn", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1Redd_Tank_Fuchs_1A4_Jg_Flecktarn", _sid], 1, 50];	
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1Redd_Tank_Fuchs_1A4_Pi_Wintertarn", _sid], 1, 50];
-			units_to_add pushBack [format["%1Redd_Tank_Fuchs_1A4_Jg_Wintertarn", _sid], 1, 50];
+			mot_to_add = [[format["%1Redd_Tank_Fuchs_1A4_Pi_Wintertarn", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1Redd_Tank_Fuchs_1A4_Jg_Wintertarn", _sid], 1, 50];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1Redd_Tank_Fuchs_1A4_Pi_Tropentarn", _sid], 1, 50];
-			units_to_add pushBack [format["%1Redd_Tank_Fuchs_1A4_Jg_Tropentarn", _sid], 1, 50];
+			mot_to_add = [[format["%1Redd_Tank_Fuchs_1A4_Pi_Tropentarn", _sid], 1, 50]];
+			mot_to_add pushBack [format["%1Redd_Tank_Fuchs_1A4_Jg_Tropentarn", _sid], 1, 50];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 2) then {
-		units_to_add = [format["%1Redd_Tank_Fuchs_1A4_Jg_Milan_Flecktarn", _sid], 1, 50];
+		mot_to_add = [[format["%1Redd_Tank_Fuchs_1A4_Jg_Milan_Flecktarn", _sid], 1, 50]];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1Redd_Tank_Fuchs_1A4_Jg_Milan_Wintertarn", _sid], 1, 50];
+			mot_to_add = [[format["%1Redd_Tank_Fuchs_1A4_Jg_Milan_Wintertarn", _sid], 1, 50]];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1Redd_Tank_Fuchs_1A4_Jg_Milan_Tropentarn", _sid], 1, 50];
+			mot_to_add = [[format["%1Redd_Tank_Fuchs_1A4_Jg_Milan_Tropentarn", _sid], 1, 50]];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
-		units_to_add = [format["%1rnt_sppz_2a2_luchs_flecktarn", _sid], 1, 50];
+		mot_to_add = [[format["%1rnt_sppz_2a2_luchs_flecktarn", _sid], 1, 50]];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1rnt_sppz_2a2_luchs_wintertarn", _sid], 1, 50];
+			mot_to_add = [[format["%1rnt_sppz_2a2_luchs_wintertarn", _sid], 1, 50]];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1rnt_sppz_2a2_luchs_tropentarn", _sid], 1, 50];
+			mot_to_add = [[format["%1rnt_sppz_2a2_luchs_tropentarn", _sid], 1, 50]];
 		};
-		units_wheeled pushBack units_to_add;
+		units_wheeled append mot_to_add;
 	};
 };
 
@@ -215,89 +214,92 @@ _s pushBack [];
 
 //Tracked setup for the AI groups
 units_tracked = [];
+arm_to_add = [];
+
 if(CTI_MAIN_ADDON == 0) then {
 	//Start
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
-		units_tracked pushBack [format["%1gm_ge_army_m113a1g_apc", _sid], 1, 50];
-		units_tracked pushBack [format["%1gm_ge_army_m113a1g_apc_milan", _sid], 1, 50];
+		arm_to_add = [[format["%1gm_ge_army_m113a1g_apc", _sid], 1, 50]];
+		arm_to_add pushBack [format["%1gm_ge_army_m113a1g_apc_milan", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 1) then {
-		units_tracked pushBack [format["%1gm_ge_army_Leopard1a1", _sid], 1, 50];	
-		units_tracked pushBack [format["%1gm_ge_army_Leopard1a1a1", _sid], 1, 50];
-		units_tracked pushBack [format["%1gm_ge_army_Leopard1a1a2", _sid], 1, 50];
+		arm_to_add pushBack [format["%1gm_ge_army_Leopard1a1", _sid], 1, 50];	
+		arm_to_add pushBack [format["%1gm_ge_army_Leopard1a1a1", _sid], 1, 50];
+		arm_to_add pushBack [format["%1gm_ge_army_Leopard1a1a2", _sid], 1, 50];
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 2) then {
-		units_tracked pushBack [format["%1gm_ge_army_Leopard1a3", _sid], 1, 50];
-		units_tracked pushBack [format["%1gm_ge_army_Leopard1a3a1", _sid], 1, 50];
+		arm_to_add pushBack [format["%1gm_ge_army_Leopard1a3", _sid], 1, 50];
+		arm_to_add pushBack [format["%1gm_ge_army_Leopard1a3a1", _sid], 1, 50];
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
-		units_tracked pushBack [format["%1gm_ge_army_Leopard1a5", _sid], 1, 50];
+		arm_to_add pushBack [format["%1gm_ge_army_Leopard1a5", _sid], 1, 50];
 	};
+	units_tracked append arm_to_add;
 };
 
 if(CTI_REDD_ADDON == 1) then {
 
 	if(CTI_MAIN_ADDON == 0) then { _adds=1; } else { _adds = 0; };
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 0+_adds) then {
-		units_to_add = [format["%1Redd_Tank_Gepard_1A2_Flecktarn", _sid], 1, 50];	
+		arm_to_add = [[format["%1Redd_Tank_Gepard_1A2_Flecktarn", _sid], 1, 50]];	
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1Redd_Tank_Gepard_1A2_Wintertarn", _sid], 1, 50];
+			arm_to_add = [[format["%1Redd_Tank_Gepard_1A2_Wintertarn", _sid], 1, 50]];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1Redd_Tank_Gepard_1A2_Tropentarn", _sid], 1, 50];
+			arm_to_add = [[format["%1Redd_Tank_Gepard_1A2_Tropentarn", _sid], 1, 50]];
 		};	
-		units_tracked pushBack units_to_add;
+		units_tracked append arm_to_add;
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 1+_adds) then {
-		units_to_add = [format["%1Redd_Marder_1A5_Flecktarn", _sid], 1, 50];
+		arm_to_add = [[format["%1Redd_Marder_1A5_Flecktarn", _sid], 1, 50]];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1Redd_Marder_1A5_Wintertarn", _sid], 1, 50];
+			arm_to_add = [[format["%1Redd_Marder_1A5_Wintertarn", _sid], 1, 50]];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1Redd_Marder_1A5_Tropentarn", _sid], 1, 50];
+			arm_to_add = [[format["%1Redd_Marder_1A5_Tropentarn", _sid], 1, 50]];
 		};	
-		units_tracked pushBack units_to_add;
+		units_tracked append arm_to_add;
 	};
 	
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 2+_adds) then {
-		units_to_add = [format["%1Redd_Tank_Wiesel_1A2_TOW_Flecktarn", _sid], 1, 50];
-		units_to_add pushBack [format["%1Redd_Tank_Wiesel_1A4_MK20_Flecktarn", _sid], 1, 50];
+		arm_to_add = [[format["%1Redd_Tank_Wiesel_1A2_TOW_Flecktarn", _sid], 1, 50]];
+		arm_to_add pushBack [format["%1Redd_Tank_Wiesel_1A4_MK20_Flecktarn", _sid], 1, 50];
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			units_to_add = [format["%1Redd_Tank_Wiesel_1A2_TOW_Wintertarn", _sid], 1, 50];
-			units_to_add pushBack [format["%1Redd_Tank_Wiesel_1A4_MK20_Wintertarn", _sid], 1, 50];
+			arm_to_add = [[format["%1Redd_Tank_Wiesel_1A2_TOW_Wintertarn", _sid], 1, 50]];
+			arm_to_add pushBack [format["%1Redd_Tank_Wiesel_1A4_MK20_Wintertarn", _sid], 1, 50];
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1Redd_Tank_Wiesel_1A2_TOW_Tropentarn", _sid], 1, 50];
-			units_to_add pushBack [format["%1Redd_Tank_Wiesel_1A4_MK20_Tropentarn", _sid], 1, 50];
+			arm_to_add = [[format["%1Redd_Tank_Wiesel_1A2_TOW_Tropentarn", _sid], 1, 50]];
+			arm_to_add pushBack [format["%1Redd_Tank_Wiesel_1A4_MK20_Tropentarn", _sid], 1, 50];
 		};
-		units_tracked pushBack units_to_add;
+		units_tracked append arm_to_add;
 	};
 };
 
 if(CTI_BW_ADDON > 0) then {
 	if(CTI_MAIN_ADDON == 0) then { _adds = 4; } else { _adds = 0; if(CTI_REDD_ADDON == 1) then { _adds = _adds+3; };};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 0+_adds) then {
-		units_to_add = [format["%1BWA3_Puma_Fleck", _sid], 1, 50];
+		arm_to_add = [[format["%1BWA3_Puma_Fleck", _sid], 1, 50]];
 		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
 		//};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1BWA3_Puma_Tropen", _sid], 1, 50];
+			arm_to_add = [[format["%1BWA3_Puma_Tropen", _sid], 1, 50]];
 		};
-		units_tracked pushBack units_to_add;
+		units_tracked append arm_to_add;
 	};
 	
 	if(CTI_MAIN_ADDON == 0) then { _adds = 5; } else { _adds = 1; if(CTI_REDD_ADDON == 1) then { _adds = _adds+3; };};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 0+_adds) then {
-		units_to_add = [format["%1BWA3_Leopard2_Fleck", _sid], 1, 50];
+		arm_to_add = [[format["%1BWA3_Leopard2_Fleck", _sid], 1, 50]];
 		//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
 		//};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-		units_to_add = [format["%1BWA3_Leopard2_Tropen", _sid], 1, 50];
+		arm_to_add = [[format["%1BWA3_Leopard2_Tropen", _sid], 1, 50]];
 		};
-		units_tracked pushBack units_to_add;
+		units_tracked append arm_to_add;
 	};
 };
 
@@ -349,12 +351,13 @@ _s pushBack [];
 
 //Air setup for the AI groups
 units_air = [];
+air_to_add = [];
 
 if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		units_to_add = [format["%1gm_ge_army_bo105p_pah1", _sid], 1, 50];
-		units_to_add pushBack [format["%1gm_ge_army_bo105p_pah1a1", _sid], 1, 50];
-		units_air pushBack units_to_add;
+		air_to_add = [[format["%1gm_ge_army_bo105p_pah1", _sid], 1, 50]];
+		air_to_add pushBack [format["%1gm_ge_army_bo105p_pah1a1", _sid], 1, 50];
+		units_air append air_to_add;
 	};
 };
 
@@ -363,31 +366,31 @@ if(CTI_BW_ADDON > 0) then {
 		units_air pushBack [format["%1bw_bo105_pah1", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-		units_to_add = [format["%1bw_ec135_fz_raketen", _sid], 1, 50];
-		units_to_add pushBack [format["%1bw_ec135_pars", _sid], 1, 50];
-		units_to_add pushBack [format["%1BWA3_Tiger_Gunpod_FZ", _sid], 1, 50];
-		units_to_add pushBack [format["%1BWA3_Tiger_Gunpod_Heavy", _sid], 1, 50];
-		units_to_add pushBack [format["%1BWA3_Tiger_Gunpod_PARS", _sid], 1, 50];
-		units_air pushBack units_to_add;
+		air_to_add = [[format["%1bw_ec135_fz_raketen", _sid], 1, 50]];
+		air_to_add pushBack [format["%1bw_ec135_pars", _sid], 1, 50];
+		air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_FZ", _sid], 1, 50];
+		air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_Heavy", _sid], 1, 50];
+		air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_PARS", _sid], 1, 50];
+		units_air append air_to_add;
 	};
 
 	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-		units_to_add = [format["%1BWA3_Tiger_RMK_Heavy", _sid], 1, 50];
-		units_to_add pushBack [format["%1BWA3_Tiger_RMK_PARS", _sid], 1, 50];
-		units_to_add pushBack [format["%1BWA3_Tiger_RMK_universal", _sid], 1, 50];
-		units_air pushBack units_to_add;
+		air_to_add = [[format["%1BWA3_Tiger_RMK_Heavy", _sid], 1, 50]];
+		air_to_add pushBack [format["%1BWA3_Tiger_RMK_PARS", _sid], 1, 50];
+		air_to_add pushBack [format["%1BWA3_Tiger_RMK_universal", _sid], 1, 50];
+		units_air append air_to_add;
 	};
 };
 
 if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		units_to_add = [format["%1CUP_B_UH1D_armed_GER_KSK", _sid], 1, 50];
-		units_to_add pushBack [format["%1CUP_B_UH1D_gunship_GER_KSK", _sid], 1, 50];
+		air_to_add = [[format["%1CUP_B_UH1D_armed_GER_KSK", _sid], 1, 50]];
+		air_to_add pushBack [format["%1CUP_B_UH1D_gunship_GER_KSK", _sid], 1, 50];
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			units_to_add = [format["%1CUP_B_UH1D_armed_GER_KSK_Des", _sid], 1, 50];
-			units_to_add pushBack [format["%1CUP_B_UH1D_gunship_GER_KSK_Des", _sid], 1, 50];
+			air_to_add = [[format["%1CUP_B_UH1D_armed_GER_KSK_Des", _sid], 1, 50]];
+			air_to_add pushBack [format["%1CUP_B_UH1D_gunship_GER_KSK_Des", _sid], 1, 50];
 		};	
-		units_air pushBack units_to_add;
+		units_air append air_to_add;
 	};
 };
 if(CTI_EF_TORNADO_ADDON == 1) then {

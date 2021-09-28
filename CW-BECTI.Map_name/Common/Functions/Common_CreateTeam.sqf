@@ -43,6 +43,7 @@ _crews = [];
 		_vehicle_crew = [_vehicle, _crew, _group, _sideID] call CTI_CO_FNC_ManVehicle;
 		_crews = _crews + _vehicle_crew;
 	};
+	
 } forEach _units;
 
 {_group addVehicle _x} forEach _created_vehicles;

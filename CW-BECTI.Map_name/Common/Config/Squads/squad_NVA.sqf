@@ -55,7 +55,6 @@ _s pushBack [];
 
 //Wheeled setup for the AI groups
 units_wheeled = [];
-units_to_add = [];
 
 //Level start
 if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
@@ -151,13 +150,16 @@ if(CTI_LEN_ADDON > 0) then {
 	};
 };
 
-_v pushBack "Air";
-_t pushBack "Air";
-_p pushBack units_air;
-_f pushBack CTI_AIR;
-_m pushBack 1000;
-_c pushBack "Air";
-_s pushBack [];
+
+//if !(isnil "units_air" && count units_air == 0) then {
+	_v pushBack "Air";
+	_t pushBack "Air";
+	_p pushBack units_air;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+//};
 
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\squads\squad_NVA.sqf", format["generated squads: [%1] ", count _v]] call CTI_CO_FNC_Log};

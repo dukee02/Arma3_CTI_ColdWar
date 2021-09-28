@@ -57,32 +57,33 @@ if((CTI_MAIN_ADDON == 0 && CTI_ECONOMY_LEVEL_INFANTRY >= 3) || CTI_MAIN_ADDON ==
 
 //Wheeled setup for the AI groups
 units_wheeled = [];
-units_to_add = [];
+mot_to_add = [];
 
 if(CTI_RHS_ADDON > 0) then {
 	//Level start
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		units_wheeled pushBack [format["%1rhs_uaz_vdv", _sid], 1, 50];
+		mot_to_add = [[format["%1rhs_uaz_vdv", _sid], 1, 50]];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		units_wheeled pushBack [format["%1rhs_gaz66o_vdv", _sid], 1, 50];
-		units_wheeled pushBack [format["%1rhs_zil131_vdv", _sid], 1, 50];
+		mot_to_add = [[format["%1rhs_gaz66o_vdv", _sid], 1, 50]];
+		mot_to_add pushBack [format["%1rhs_zil131_vdv", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 2) then {
-		units_wheeled pushBack [format["%1RHS_Ural_VDV_01", _sid], 1, 50];
-		units_wheeled pushBack [format["%1rhs_btr60_vdv", _sid], 1, 50];
+		mot_to_add pushBack [format["%1RHS_Ural_VDV_01", _sid], 1, 50];
+		mot_to_add pushBack [format["%1rhs_btr60_vdv", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
-		units_wheeled pushBack [format["%1rhs_btr70_vdv", _sid], 1, 50];
+		mot_to_add pushBack [format["%1rhs_btr70_vdv", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 4) then {
-		units_wheeled pushBack [format["%1rhs_btr80_vdv", _sid], 1, 50];
-		units_wheeled pushBack [format["%1rhs_btr80a_vdv", _sid], 1, 50];
+		mot_to_add pushBack [format["%1rhs_btr80_vdv", _sid], 1, 50];
+		mot_to_add pushBack [format["%1rhs_btr80a_vdv", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 5) then {
-		units_wheeled pushBack [format["%1rhs_tigr_sts_vdv", _sid], 1, 50];
-		units_wheeled pushBack [format["%1rhs_tigr_sts_3camo_vdv", _sid], 1, 50];
+		mot_to_add pushBack [format["%1rhs_tigr_sts_vdv", _sid], 1, 50];
+		mot_to_add pushBack [format["%1rhs_tigr_sts_3camo_vdv", _sid], 1, 50];
 	};	
+	units_wheeled append mot_to_add;
 };
 
 _v pushBack "Motorized";
@@ -173,13 +174,13 @@ units_antiair = [];
 
 if(CTI_RHS_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		units_antiair pushBack [format["%1rhs_gaz66_zu23_vdv", _sid], 1, 50];
+		units_antiair pushBack [format["%1rhs_gaz66_zu23_vdv", _sid], 1, 40];
 	};
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
 		units_antiair pushBack [format["%1RHS_Ural_Zu23_VDV_01", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 1) then {
-		units_antiair pushBack [format["%1rhs_zsu234_aa", _sid], 1, 50];
+		units_antiair pushBack [format["%1rhs_zsu234_aa", _sid], 1, 60];
 	};
 };
 
@@ -198,8 +199,8 @@ units_air = [];
 
 if(CTI_RHS_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		units_air pushBack [format["%1RHS_Mi8MTV3_vdv", _sid], 1, 50];
-		units_air pushBack [format["%1RHS_Mi8mtv3_Cargo_vdv", _sid], 1, 50];
+		//units_air pushBack [format["%1RHS_Mi8MTV3_vdv", _sid], 1, 50];
+		//units_air pushBack [format["%1RHS_Mi8mtv3_Cargo_vdv", _sid], 1, 50];
 		units_air pushBack [format["%1RHS_Mi8MTV3_heavy_vdv", _sid], 1, 50];
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {

@@ -545,7 +545,7 @@ if(CTI_CUP_ADDON > 0) then {
 //											Wheeled Vehicles																				  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
-if(CTI_CUP_ADDON == 1) then {
+if(CTI_CUP_ADDON > 0) then {
 	_tech_level = 0;
 	if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
@@ -1249,7 +1249,7 @@ if(CTI_CUP_ADDON == 1) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Heavy Factory.
 //Level 0
-if(CTI_CUP_ADDON == 1) then {
+if(CTI_CUP_ADDON > 0) then {
 	_tech_level = 0;
 	if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));

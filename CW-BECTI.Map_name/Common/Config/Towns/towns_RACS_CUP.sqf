@@ -22,7 +22,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
 //Town infantry setup
-if(CTI_MAIN_ADDON == -1 || CTI_MAIN_ADDON > 0) then {
+//if(CTI_MAIN_ADDON == -1 || CTI_MAIN_ADDON > 0) then {
 	INFANTRY = [];
 	INFANTRY_MG = [];
 	INFANTRY_AT = [];
@@ -87,7 +87,7 @@ if(CTI_MAIN_ADDON == -1 || CTI_MAIN_ADDON > 0) then {
 		["VIOC_DEBUG", "FILE: common\config\Towns_RACS_CUP.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_MG", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_MG", _tag]]] call CTI_CO_FNC_Log;
 		["VIOC_DEBUG", "FILE: common\config\Towns_RACS_CUP.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_AT", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_AT", _tag]]] call CTI_CO_FNC_Log;
 	};
-};
+//};
 
 //Town Wheeled setup
 WHEELED_LIGHT = [];
@@ -135,7 +135,6 @@ switch (CTI_ECONOMY_LEVEL_TRACKED) do {
 		TRACKED_LIGHT = [[format["%1CUP_I_AAV_RACS", _sid],1]];
 		TRACKED_MEDIUM = [[format["%1CUP_I_M113_RACS_URB", _sid],1]];
 		TRACKED_HEAVY = [[format["%1CUP_I_M113_RACS_URB", _sid],1]];
-		};
 	};
 	case 2: {
 		TRACKED_LIGHT = [[format["%1CUP_I_AAV_RACS", _sid],1]];

@@ -45,11 +45,9 @@ if(CTI_NO_UPGRADE_MODE == 1) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Barracks Factory.
 if(CTI_CUP_ADDON > 0) then {
-	//VDV_EMR = green camo - VDV = brown camo
-	//Level 0 (Level 3 with CW)
-	if(CTI_MAIN_ADDON == 0) then { _tech_level = 3; } else { _tech_level = 0; };
 	_time = (5*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; default {_time}};
+	
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_I_GUE_Forester", _sid];
 		_p pushBack '';

@@ -30,8 +30,9 @@ else {
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
 
 //check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-if ((isNil "_priorUnits" || _ai == 5) && CTI_CUP_ADDON > 0) then { 
+//_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
+//if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
+if ((CTI_MAIN_ADDON != 0  || _ai == 4) && CTI_CUP_ADDON > 0) then { 
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
@@ -163,7 +164,7 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_BARRACKS], _c
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 _c = [];
-if(CTI_CUP_ADDON == 1) then {
+if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M1152_DSRT_USMC", _sid];
@@ -271,7 +272,7 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_LIGHT], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Heavy Factory.
 _c = [];
-if(CTI_CUP_ADDON == 1) then {
+if(CTI_CUP_ADDON > 0) then {
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 			_c pushBack format["%1CUP_B_M113_desert_USA", _sid];

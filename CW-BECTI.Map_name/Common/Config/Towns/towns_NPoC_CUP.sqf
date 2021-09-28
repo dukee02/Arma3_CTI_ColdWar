@@ -22,7 +22,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
 //Town infantry setup
-if(CTI_MAIN_ADDON == -1 || CTI_MAIN_ADDON > 0) then {
+//if(CTI_MAIN_ADDON == -1 || CTI_MAIN_ADDON > 0) then {
 	INFANTRY = [];
 	INFANTRY_MG = [];
 	INFANTRY_AT = [];
@@ -59,7 +59,7 @@ if(CTI_MAIN_ADDON == -1 || CTI_MAIN_ADDON > 0) then {
 		["VIOC_DEBUG", "FILE: common\config\Towns_NPoC_CUP.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_MG", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_MG", _tag]]] call CTI_CO_FNC_Log;
 		["VIOC_DEBUG", "FILE: common\config\Towns_NPoC_CUP.sqf", format["Town Squad <%1> with units <%2> ", format["%1INFANTRY_SQ_AT", _tag], missionNamespace getVariable format["%1INFANTRY_SQ_AT", _tag]]] call CTI_CO_FNC_Log;
 	};
-};
+//};
 
 //Town Wheeled setup
 WHEELED_LIGHT = [];
@@ -151,24 +151,12 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 AIR_FIGHTER = [];
 AIR_BOMBER = [];
 
-/*switch (CTI_ECONOMY_LEVEL_AIR) do {
-	case 1: {
-		AIR_BOMBER = [[format["%1CUP_B_AH6J_USA", _sid],1],[format["%1CUP_B_UH1Y_Gunship_Dynamic_USMC", _sid],1]];
-	};
-	default {
-		AIR_BOMBER = [[format["%1CUP_B_UH1Y_UNA_USMC", _sid],1],[format["%1CUP_MH60S_Unarmed_USN", _sid],1]];
-	};
-};*/
-AIR_BOMBER = INFANTRY;
-AIR_FIGHTER = INFANTRY_AT;
-
 if (isNil {missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]}) then {
 	missionNamespace setVariable [format["%1AIR_SQ_FIGHTER", _tag], AIR_FIGHTER];
 	missionNamespace setVariable [format["%1AIR_SQ_BOMBER", _tag], AIR_BOMBER];
 } else {
-	//don't add infantry if we've got some air units ^^
-	//missionNamespace setVariable [format["%1AIR_SQ_FIGHTER", _tag], (missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]) + AIR_FIGHTER];
-	//missionNamespace setVariable [format["%1AIR_SQ_BOMBER", _tag], (missionNamespace getVariable format["%1AIR_SQ_BOMBER", _tag]) + AIR_BOMBER];
+	missionNamespace setVariable [format["%1AIR_SQ_FIGHTER", _tag], (missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]) + AIR_FIGHTER];
+	missionNamespace setVariable [format["%1AIR_SQ_BOMBER", _tag], (missionNamespace getVariable format["%1AIR_SQ_BOMBER", _tag]) + AIR_BOMBER];
 };
 if (CTI_Log_Level >= CTI_Log_Debug) then {
 	["VIOC_DEBUG", "FILE: common\config\Towns_NPoC_CUP.sqf", format["Town Squad <%1> with units <%2> ", format["%1AIR_SQ_FIGHTER", _tag], missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]]] call CTI_CO_FNC_Log;
@@ -193,7 +181,6 @@ switch (CTI_ECONOMY_LEVEL_WHEELED) do {
 		ANTI_AIR = [[format["%1CUP_I_Ural_ZU23_NAPA", _sid],1],[format["%1CUP_I_Datsun_AA_Random", _sid],1],[format["%1CUP_I_Hilux_armored_zu23_NAPA", _sid],1],[format["%1CUP_I_Hilux_igla_NAPA", _sid],1],[format["%1CUP_I_Hilux_armored_igla_NAPA", _sid],1]];
 	};
 	default {
-		ANTI_AIR = INFANTRY;
 	};
 };
 
