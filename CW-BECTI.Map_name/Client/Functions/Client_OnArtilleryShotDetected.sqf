@@ -2,15 +2,14 @@
   # HEADER #
 	Script: 		Client\Functions\Client_OnArtilleryShotDetected.sqf
 	Alias:			CTI_CL_FNC_OnArtilleryShotDetected
-	Description:	Called by the server "Killed" EH whenever a friendly structure is destroyed
-					Note this function is automatically called by the EH but can be called manually
-					It is called from the PVF "CTI_PVF_Client_OnEnemyStructureKilled"
+	Description:	Called by the player firing the artillery and informs the opposite 
+					side with the direction from which the shot was fired. (in relation from the HQ)
+					It is called from the PVF "CTI_PVF_Client_OnArtilleryShotDetected"
 	Author: 		dukee, based on Benny's file
-	Creation Date:	22-03-2021
+	Creation Date:	29-09-2021
 	
   # PARAMETERS #
-    0	[Array]: The position of the destroyed structure
-    1	[String]: The variable used by the structure
+    0	[Number]: The direction HQ -> fired shot
 	
   # RETURNED VALUE #
 	None
@@ -22,14 +21,8 @@
     [_position, _variable] call CTI_CL_FNC_OnEnemyStructureDestroyed
 	  -> display a message
 */
+private ["_direction"];
 
-private ["_position", "_var", "_variable"];
+_direction = _this select 0;
 
-//_position = _this select 0;
-//_variable = _this select 1;
-_variable = _this select 0;
-
-//_var = missionNamespace getVariable _variable;
-
-//["artillery-shooting", [(_var select 0) select 1, mapGridPosition _position]] call CTI_CL_FNC_DisplayMessage;
-["artillery-shooting", [_variable]] call CTI_CL_FNC_DisplayMessage;
+["artillery-shooting", [_direction]] call CTI_CL_FNC_DisplayMessage;
