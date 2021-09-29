@@ -689,17 +689,7 @@ if(CTI_CUP_ADDON == 1) then {
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;
-		
-		_c pushBack format["%1CUP_O_BM21_RU", _sid];					//Artytruck
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "";
-		_d pushBack 0;		
+		_d pushBack 0;	
 		
 		//_u pushBack "CUP_O_Ural_Reammo_RU";			//Ammotruck
 		//_u pushBack "CUP_O_Ural_Refuel_RU";			//Fueltruck
@@ -805,6 +795,16 @@ if(CTI_CUP_ADDON == 1) then {
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;
+		
+		_c pushBack format["%1CUP_O_BM21_RU", _sid];					//Artytruck
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;	
 		
 		//_u pushBack "CUP_O_Kamaz_Reammo_RU";			//Ammotruck
 		//_u pushBack "CUP_O_Kamaz_Refuel_RU";			//Fueltruck

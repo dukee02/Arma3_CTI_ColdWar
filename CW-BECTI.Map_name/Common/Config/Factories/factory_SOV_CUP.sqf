@@ -166,7 +166,6 @@ if(CTI_CUP_ADDON == 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 1+_adds) then {
 		_c pushBack format["%1CUP_O_Ural_Open_RU", _sid];
 		_c pushBack format["%1CUP_O_Ural_ZU23_RU", _sid];			//Flak
-		_c pushBack format["%1CUP_O_BM21_RU", _sid];				//Artytruck
 		_c pushBack format["%1CUP_O_Ural_RU", _sid];
 		_c pushBack format["%1CUP_O_Ural_Empty_RU", _sid];
 		//_u pushBack "CUP_O_Ural_Reammo_RU";			//Ammotruck
@@ -187,6 +186,7 @@ if(CTI_CUP_ADDON == 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
 		_c pushBack format["%1CUP_O_Kamaz_RU", _sid];
 		_c pushBack format["%1CUP_O_Kamaz_Open_RU", _sid];
+		_c pushBack format["%1CUP_O_BM21_RU", _sid];				//Artytruck
 		//_u pushBack "CUP_O_Kamaz_Reammo_RU";			//Ammotruck
 		//_u pushBack "CUP_O_Kamaz_Refuel_RU";			//Fueltruck
 		//_u pushBack "CUP_O_Kamaz_Repair_RU";			//Repairtruck

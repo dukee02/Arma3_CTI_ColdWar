@@ -721,6 +721,16 @@ if(CTI_MAIN_ADDON == 0) then {
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 0;
+		
+		_c pushBack format["%1gm_gc_army_2p16", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+2)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
 	};
 	_tech_level = 2;
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
@@ -776,16 +786,6 @@ if(CTI_MAIN_ADDON == 0) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-		_f pushBack CTI_FACTORY_HEAVY;
-		_s pushBack "";
-		_d pushBack 0;
-		
-		_c pushBack format["%1gm_gc_army_2p16", _sid];
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+2)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_HEAVY;
