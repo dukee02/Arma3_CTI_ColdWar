@@ -14,27 +14,6 @@ _m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Fl
 _b pushBack [1, 2, 4, 8];
 _r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
 
-
-//15:38:32 "[CTI (INFORMATION)] [frameno:149852 | ticktime:2709.21 | fps:116.788] [FILE: init.sqf] Ammo Test: <[[""gm_mlrs_122mm_launcher"",
-//[""gm_40Rnd_mlrs_122mm_he_9m22u"",""gm_40Rnd_mlrs_122mm_icm_9m218"",""gm_40Rnd_mlrs_122mm_mine_9m28k"",""gm_40Rnd_mlrs_122mm_mine_9m22k"",""gm_40Rnd_mlrs_122mm_smoke_9m43""],[0],""bin\config.bin/CfgVehicles/gm_ural375d_mlrs_base/Turrets/MainTurret""]]>"
-//15:38:32 "[CTI (INFORMATION)] [frameno:149853 | ticktime:2709.22 | fps:115.942] [FILE: init.sqf] Ammo Test: <[[""gm_luna_launcher"",[""gm_1Rnd_luna_he_3r9"",""gm_1Rnd_luna_nuc_3r10""],[0],""bin\config.bin/CfgVehicles/gm_2p16_base/Turrets/MainTurret""]]>"
-//15:38:32 "[CTI (INFORMATION)] [frameno:149853 | ticktime:2709.22 | fps:115.942] [FILE: init.sqf] Ammo Test: <[[""gm_mlrs_110mm_launcher"",
-//[""gm_36Rnd_mlrs_110mm_he_dm21"",""gm_36Rnd_mlrs_110mm_icm_dm602"",""gm_36Rnd_mlrs_110mm_mine_dm711"",""gm_36Rnd_mlrs_110mm_smoke_dm15""],[0],""bin\config.bin/CfgVehicles/gm_kat1_463_mlrs_base/Turrets/MainTurret""],[""gm_mg3_MachineGunTurret_01"",[""gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"",""gm_120Rnd_762x51mm_b_t_DM21A1_mg3_grn"",""gm_120Rnd_762x51mm_b_t_DM21A2_mg3_grn""],[1],""bin\config.bin/CfgVehicles/gm_kat1_463_mlrs_base/Turrets/MachineGunTurret_01""]]>"
-
-/*
-15:38:32 "[CTI (INFORMATION)] [frameno:149853 | ticktime:2709.22 | fps:115.942] [FILE: init.sqf] Ammo Test: <[[""gm_122mm_2a18"",
-[""gm_1Rnd_122x447mm_he_of462"",""gm_1Rnd_122x447mm_he_3of56"",""gm_1Rnd_122x447mm_smoke_d462"",""gm_1Rnd_122x447mm_illum_s463"",""gm_1Rnd_122x447mm_heat_bk6m"",""gm_1Rnd_122x447mm_heat_t_bk13"",
-""gm_28Rnd_122x447mm_he_of462"",""gm_28Rnd_122x447mm_he_3of56"",""gm_28Rnd_122x447mm_smoke_d462"",""gm_28Rnd_122x447mm_illum_s463"",""gm_28Rnd_122x447mm_heat_bk6m"",""gm_28Rnd_122x447mm_heat_t_bk13"",
-""gm_9Rnd_122x447mm_he_of462"",""gm_9Rnd_122x447mm_he_3of56"",""gm_9Rnd_122x447mm_smoke_d462"",""gm_9Rnd_122x447mm_illum_s463"",""gm_9Rnd_122x447mm_heat_bk6m"",""gm_9Rnd_122x447mm_heat_t_bk13"",""gm_3Rnd_122x447mm_he_of462"",""gm_3Rnd_122x447mm_he_3of56"",""gm_3Rnd_122x447mm_smoke_d462"",""gm_3Rnd_122x447mm_illum_s463"",""gm_3Rnd_122x447mm_heat_bk6m"",""gm_3Rnd_122x447mm_heat_t_bk13""],[0],""bin\config.bin/CfgVehicles/gm_2s1_base/Turrets/MainTurret""]]>"
-
-15:38:32 "[CTI (INFORMATION)] [frameno:149853 | ticktime:2709.22 | fps:115.942] [FILE: init.sqf] Ammo Test: <[[""gm_155mm_m126g"",
-[""gm_1Rnd_155mm_he_dm21"",""gm_1Rnd_155mm_he_dm111"",""gm_1Rnd_155mm_icm_dm602"",""gm_1Rnd_155mm_smoke_dm105"",""gm_1Rnd_155mm_illum_dm106"",""gm_1Rnd_155mm_he_m107"",""gm_1Rnd_155mm_he_m795"",""gm_1Rnd_155mm_smoke_m116"",
-""gm_1Rnd_155mm_smoke_m110"",""gm_1Rnd_155mm_illum_m485"",
-""gm_10Rnd_155mm_he_dm21"",""gm_10Rnd_155mm_he_dm111"",""gm_10Rnd_155mm_icm_dm602"",""gm_10Rnd_155mm_smoke_dm105"",""gm_10Rnd_155mm_illum_dm106"",""gm_10Rnd_155mm_he_m107"",""gm_10Rnd_155mm_he_m795"",""gm_10Rnd_155mm_smoke_m116"",""gm_10Rnd_155mm_smoke_m110"",
-""gm_10Rnd_155mm_illum_m485"",""gm_20Rnd_155mm_he_dm21"",""gm_20Rnd_155mm_he_dm111"",""gm_20Rnd_155mm_icm_dm602"",""gm_20Rnd_155mm_smoke_dm105"",""gm_20Rnd_155mm_illum_dm106"",""gm_20Rnd_155mm_he_m107"",""gm_20Rnd_155mm_he_m795"",""gm_20Rnd_155mm_smoke_m116"",
-""gm_20Rnd_155mm_smoke_m110"",""gm_20Rnd_155mm_illum_m485"",""gm_4Rnd_155mm_he_dm21"",""gm_4Rnd_155mm
-*/
-
 if(CTI_MAIN_ADDON == 0) then {
 	
 	_c pushBack "gm_ge_army_m109g";

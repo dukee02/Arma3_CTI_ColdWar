@@ -694,6 +694,48 @@ if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	_categories pushBack 	"Defense";
 };
 
+if(_side == west && CTI_AIR_ADDON >= 0) then {
+	if(CTI_BW_ADDON > 0) then {
+		_headers pushBack 		"Radar System";
+		_classes pushBack 		"TBW_MEADS_Radar_Fleck";
+		_prices pushBack 		5000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"SAM System";
+		_classes pushBack 		"TBW_MEADS_Launcher_Fleck";
+		_prices pushBack 		50000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+	} else {
+		_headers pushBack 		"Radar System";
+		_classes pushBack 		"B_Radar_System_01_F";
+		_prices pushBack 		5000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"SAM System";
+		_classes pushBack 		"B_SAM_System_03_F";
+		_prices pushBack 		50000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+	};
+} else {
+	_headers pushBack 		"Radar System";
+	_classes pushBack 		"O_Radar_System_02_F";
+	_prices pushBack 		5000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+	
+	_headers pushBack 		"SAM System";
+	_classes pushBack 		"O_SAM_System_04_F";
+	_prices pushBack 		50000;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Defense";
+};
+
+	
+
 //******************************Ammoboxes*******************************************************************************************************
 /*if(CTI_GER_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	_headers pushBack 		"81mm Ammo HE";
