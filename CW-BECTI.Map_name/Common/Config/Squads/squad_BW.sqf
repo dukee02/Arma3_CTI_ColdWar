@@ -40,18 +40,18 @@ units_infantry = [];
 
 if(CTI_MAIN_ADDON == 0) then {
 	units_infantry = [[format["%1gm_ge_army_medic_g3a3_80_ols", _sid],1],[format["%1gm_ge_army_grenadier_g3a3_80_ols", _sid],1],[format["%1gm_ge_army_grenadier_g3a3_80_ols", _sid],1],[format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid],1],[format["%1gm_ge_army_antitank_g3a3_pzf44_80_ols", _sid],1],[format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid],1]];
+} else {
+	if(CTI_BW_ADDON > 0) then {
+		units_infantry = [[format["%1BWA3_Medic_Fleck", _sid],1],[format["%1BWA3_Rifleman_Fleck", _sid],1],[format["%1BWA3_Rifleman_Fleck", _sid],1],[format["%1BWA3_Grenadier_Fleck", _sid],1],[format["%1BWA3_Grenadier_Fleck", _sid],1],[format["%1BWA3_RiflemanAT_CG_Fleck", _sid],1]];
+		
+		if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
+			units_infantry = [[format["%1PzBrig17_CombatLifeSaver_Snow", _sid],1],[format["%1PzBrig17_Rifleman_Snow", _sid],1],[format["%1PzBrig17_Rifleman_Snow", _sid],1],[format["%1PzBrig17_GrenadierG27_Snow", _sid],1],[format["%1PzBrig17_GrenadierG27_Snow", _sid],1],[format["%1PzBrig17_RiflemanAT_CG_Snow", _sid],1]];
+		};
+		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
+			units_infantry = [[format["%1BWA3_Medic_Tropen", _sid],1],[format["%1BWA3_Rifleman_Tropen", _sid],1],[format["%1BWA3_Rifleman_Tropen", _sid],1],[format["%1BWA3_Grenadier_Tropen", _sid],1],[format["%1BWA3_Grenadier_Tropen", _sid],1],[format["%1BWA3_RiflemanAT_CG_Tropen", _sid],1]];
+		};
+	};	
 };
-if(CTI_BW_ADDON > 0) then {
-	units_infantry = [[format["%1BWA3_Medic_Fleck", _sid],1],[format["%1BWA3_Rifleman_Fleck", _sid],1],[format["%1BWA3_Rifleman_Fleck", _sid],1],[format["%1BWA3_Grenadier_Fleck", _sid],1],[format["%1BWA3_Grenadier_Fleck", _sid],1],[format["%1BWA3_RiflemanAT_CG_Fleck", _sid],1]];
-	
-	if(CTI_CAMO_ACTIVATION == 1) then {		//Winter camo active
-		units_infantry = [[format["%1PzBrig17_CombatLifeSaver_Snow", _sid],1],[format["%1PzBrig17_Rifleman_Snow", _sid],1],[format["%1PzBrig17_Rifleman_Snow", _sid],1],[format["%1PzBrig17_GrenadierG27_Snow", _sid],1],[format["%1PzBrig17_GrenadierG27_Snow", _sid],1],[format["%1PzBrig17_RiflemanAT_CG_Snow", _sid],1]];
-	};
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		units_infantry = [[format["%1BWA3_Medic_Tropen", _sid],1],[format["%1BWA3_Rifleman_Tropen", _sid],1],[format["%1BWA3_Rifleman_Tropen", _sid],1],[format["%1BWA3_Grenadier_Tropen", _sid],1],[format["%1BWA3_Grenadier_Tropen", _sid],1],[format["%1BWA3_RiflemanAT_CG_Tropen", _sid],1]];
-	};
-};
-
 
 _v pushBack "Infantry";
 _t pushBack "Infantry";

@@ -149,7 +149,7 @@ if(CTI_MAIN_ADDON == 0) then {
 			_c pushBack format["%1gm_ge_army_antitank_g3a3_pzf84_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_antitank_assistant_g3a3_pzf84_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_ols", _sid];
-			_c pushBack format["%1gm_ge_army_officer_p1_parka_80_oli", _sid];
+			_c pushBack format["%1gm_ge_army_officer_p1_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_antitank_g3a3_milan_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_grenadier_hk69a1_parka_80_ols", _sid];
 			_c pushBack format["%1gm_ge_army_paratrooper_g3a4_parka_80_oli", _sid];
