@@ -201,13 +201,13 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_gc_army_pt76b", _sid];
 		_c pushBack format["%1gm_gc_army_t55", _sid];
 		
-		_c pushBack format["%1gm_gc_army_2p16", _sid];
+		_c pushBack format["%1gm_gc_army_2s1", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 2) then {
 		_c pushBack format["%1gm_gc_army_t55a", _sid];
 		_c pushBack format["%1gm_gc_army_t55ak", _sid];
 		
-		_c pushBack format["%1gm_gc_army_2s1", _sid];
+		_c pushBack format["%1gm_gc_army_2p16", _sid];
 	};
 	if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
 		_c pushBack format["%1gm_gc_army_t55am2", _sid];
