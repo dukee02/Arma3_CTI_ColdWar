@@ -27,6 +27,45 @@ CTI_EAST_COLOR = "ColorRed";
 CTI_RESISTANCE_COLOR = "ColorGreen";
 CTI_UNKNOWN_COLOR = "ColorBlack";
 
+//--- National IDs
+CTI_US_ID = 0;
+CTI_SOV_ID = 1;
+CTI_BW_ID = 2;
+CTI_NVA_ID = 3;
+CTI_NPOC_ID = 4;
+CTI_RACS_ID = 5;
+
+/*CTI_GER_ID = 0;
+CTI_SOV_ID = 1;
+CTI_UK_ID = 2;
+CTI_US_ID = 3;
+CTI_JPN_ID = 4;
+CTI_CZ_ID = 5;
+CTI_FIN_ID = 6;*/
+
+//--- Mod IDs
+CTI_GM_ID = 0;		//Global Mobilization - Cold War Germany
+CTI_PF_ID = 1;		//Prairie Fire
+CTI_IC_ID = 2;		//CSLA Iron Curtain
+CTI_WS_ID = 3;		//Western Sahara
+CTI_CUP_ID = 4;
+CTI_RHS_ID = 5;
+CTI_CWR3_ID = 5;
+CTI_VME_ID = 5;
+
+
+
+
+/*CTI_IFA_ID = 0;
+CTI_IFA_NEW_ID = 1;
+CTI_FOW_ID = 2;
+CTI_CSA_ID = 3;
+CTI_NF_ID = 4;
+CTI_SABFL_ID = 5;
+CTI_SABNL_ID = 6;
+CTI_SAB_ID = 7;
+CTI_BT_ID = 8;*/
+
 CTI_GEAR_TAB_PRIMARY = 0;
 CTI_GEAR_TAB_SECONDARY = 1;
 CTI_GEAR_TAB_HANDGUN = 2;
@@ -36,14 +75,15 @@ CTI_GEAR_TAB_MISC = 5;
 CTI_GEAR_TAB_EQUIPMENT = 6;
 CTI_GEAR_TAB_TEMPLATES = 7;
 
-CTI_UNIT_LABEL = 0;
-CTI_UNIT_PICTURE = 1;
-CTI_UNIT_PRICE = 2;
-CTI_UNIT_TIME = 3;
-CTI_UNIT_UPGRADE = 4;
-CTI_UNIT_FACTORY = 5;
-CTI_UNIT_TURRETS = 6;
-CTI_UNIT_SCRIPTS = 7;
+CTI_UNIT_LABEL = 0;		//--- Classname.
+CTI_UNIT_PICTURE = 1;	//--- Picture. 
+CTI_UNIT_PRICE = 2;		//--- Price.
+CTI_UNIT_TIME = 3;		//--- Build time.
+CTI_UNIT_UPGRADE = 4;	//--- Upgrade level needed.    0 1 2 3...
+CTI_UNIT_FACTORY = 5;	//--- Built from Factory.
+CTI_UNIT_TURRETS = 6;	//--- Turrets.
+CTI_UNIT_SCRIPTS = 7;	//--- Script.
+CTI_UNIT_DISTANCE = 8;	//--- Extra Distance. (From Factory)
 
 CTI_WEST_ID = 0;
 CTI_EAST_ID = 1;
@@ -123,6 +163,8 @@ with missionNamespace do {
 		Veteran > 0.65 and <= 0.85
 		Expert > 0.85*/
 		CTI_AI_SKILL_BASE = 0.45;
+	} else {
+		CTI_AI_SKILL_BASE = switch (CTI_TOWNS_RESISTANCE) do {case 0: {0.05}; case 1: {0.25}; case 3: {0.65}; case 4: {0.80}; default {0.45}};
 	};
 };
 //-----------------------------------------------------------------------------------------------------------------------//
@@ -236,27 +278,35 @@ CTI_UPGRADE_BARRACKS = 0;
 CTI_UPGRADE_LIGHT = 1;
 CTI_UPGRADE_HEAVY = 2;
 CTI_UPGRADE_AIR = 3;
-CTI_UPGRADE_SATELLITE = 4;
-CTI_UPGRADE_AIR_FFAR = 5;
-CTI_UPGRADE_AIR_AT = 6;
-CTI_UPGRADE_AIR_AA = 7;
-CTI_UPGRADE_AIR_CM = 8;
-CTI_UPGRADE_TOWNS = 9;
-CTI_UPGRADE_SUPPLY = 10;
-CTI_UPGRADE_GEAR = 11;
+CTI_UPGRADE_NAVAL = 4;
+CTI_UPGRADE_SATELLITE = 5;
+CTI_UPGRADE_AIR_FFAR = 6;
+CTI_UPGRADE_AIR_AT = 7;
+CTI_UPGRADE_AIR_AA = 8;
+CTI_UPGRADE_AIR_CM = 9;
+CTI_UPGRADE_TOWNS = 10;
+CTI_UPGRADE_SUPPLY = 11;
+CTI_UPGRADE_GEAR = 12;
 
-/*CTI_UPGRADE_GEAR = 0;
-CTI_UPGRADE_BARRACKS = 1;
-CTI_UPGRADE_LIGHT = 2;
-CTI_UPGRADE_HEAVY = 3;
-CTI_UPGRADE_AIR = 4;
-CTI_UPGRADE_TOWNS = 5;
-CTI_UPGRADE_SUPPLY = 6;
-CTI_UPGRADE_AIR_FFAR = 7;
-CTI_UPGRADE_AIR_AT = 8;
-CTI_UPGRADE_AIR_AA = 9;
-CTI_UPGRADE_AIR_CM = 10;
-CTI_UPGRADE_SATELLITE = 11;*/
+with missionNamespace do {	
+	//Global max levels and multiplicators
+	if (isNil 'CTI_ECONOMY_LEVEL_MULTI') then {CTI_ECONOMY_LEVEL_MULTI = 100};
+	if (isNil 'CTI_ECONOMY_RESEARCH_MULTI') then {CTI_ECONOMY_RESEARCH_MULTI = 100};
+	if (isNil 'CTI_ECONOMY_LEVEL_GEAR') then {CTI_ECONOMY_LEVEL_GEAR = 2};
+	if (isNil 'CTI_ECONOMY_LEVEL_INFANTRY') then {CTI_ECONOMY_LEVEL_INFANTRY = 2};
+	if (isNil 'CTI_ECONOMY_LEVEL_WHEELED') then {CTI_ECONOMY_LEVEL_WHEELED = 4};
+	if (isNil 'CTI_ECONOMY_LEVEL_TRACKED') then {CTI_ECONOMY_LEVEL_TRACKED = 4};
+	if (isNil 'CTI_ECONOMY_LEVEL_AIR') then {CTI_ECONOMY_LEVEL_AIR = 4};
+	if (isNil 'CTI_ECONOMY_LEVEL_NAVAL') then {CTI_ECONOMY_LEVEL_NAVAL = 3};
+	if (isNil 'CTI_ECONOMY_UPGRADE_TIMECAP') then {CTI_ECONOMY_UPGRADE_TIMECAP = 600};
+	if (isNil 'CTI_ECONOMY_TIME_MULTI') then {CTI_ECONOMY_TIME_MULTI = 2};
+	
+	//setup the default values for the tech tree
+	//It gets changed in the factory.sqf and used in Upgrades.sqf
+	missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", west], [0,0,0,0,0,1,1,1,1,1,3,4,0]];
+	missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", east], [0,0,0,0,0,1,1,1,1,1,3,4,0]];
+};
+
 //-----------------------------------------------------------------------------------------------------------------------//
 
 
@@ -376,6 +426,10 @@ CTI_TOWNS_RESISTANCE_SPAWN_RANGE = 300; //--- Determine how far the units may sp
 CTI_TOWNS_RESISTANCE_DETECTION_RANGE_AIR = 50; //--- Determine how high a threat is considered aerial
 CTI_TOWNS_RESISTANCE_INACTIVE_MAX = 300; //--- Determine how long a town may remain active when triggered
 CTI_TOWNS_RESISTANCE_MIN_ACTIVE = 5; //--- When the town is not held by the side and when no enemy is near, at least x enemies need to be alive for the town to be considered active
+	
+//--- Towns: Spawn delay	---		to prevent units to spawn into each other
+CTI_TOWNS_SPAWNDELAY_MIN = 5;		//--- min time in seconds to wait
+CTI_TOWNS_SPAWNDELAY_MAX = 30;		//--- max time in seconds to wait
 	
 //--- Towns: Mortars
 CTI_TOWNS_MORTARS_SCAN = 60; //--- Scan the area around a target for friends and enemies.	
@@ -513,6 +567,15 @@ with missionNamespace do {
  * - Server\Functions\FSM\Functions_FSM_RepairTruck.sqf: Contains the functions related to the Repair Truck FSM
  */
 
+CTI_GC_DELAY = 90;
+CTI_GC_DELAY_AIR = 360;
+CTI_GC_DELAY_CAR = 240;
+CTI_GC_DELAY_MAN = 120;
+CTI_GC_DELAY_TANK = 300;
+CTI_GC_DELAY_SHIP = 60;
+CTI_GC_DELAY_STATIC = 80;
+CTI_GC_DELAY_BUILDING = 30;
+
 //--- Vehicles: Misc
 CTI_VEHICLES_BOUNTY = 0.45; //--- Bounty upon entity killed.
 CTI_VEHICLES_EMPTY_SCAN_PERIOD = 15; //--- Scan for a crew member in a vehicle each x seconds
@@ -556,6 +619,9 @@ with missionNamespace do {
 	if (isNil 'CTI_VEHICLES_EMPTY_TIMEOUT') then {CTI_VEHICLES_EMPTY_TIMEOUT = 900};
 	if (isNil 'CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX') then {CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX = 2}; //--- Maximum amount of Independent Salvage Trucks which may be present per side
 };
+
+
+
 //----------------------------------------------WEATHER-------------------------------------------------------//
 
 CTI_WEATHER_RAIN = 0;				//Rain (Rain Requires Overcast Greater High {-1,0,30,50,75,100} texts = {"Random","Clear","Light","Medium","High","Max"}
@@ -620,7 +686,7 @@ with missionNamespace do {
 
 //-----------------------------------------------------------------------------------------------------------------------//
 
-CTI_ARTILLERY_FILTER = 1; //--- Toggle artillery magazines like mines and AT mines (0: Disabled, 1: Enabled)
+CTI_ARTILLERY_FILTER = 0; //--- Toggle artillery magazines like mines and AT mines (0: Disabled, 1: Enabled)
 
 CTI_ECONOMY_POOL_RESOURCES_PERCENTAGE_MIN = 0; //--- Keep values of 10
 
@@ -673,25 +739,8 @@ CTI_SCORE_SALVAGE_VALUE_PERPOINT = 2000; //--- Unit value / x
 CTI_SCORE_TOWN_VALUE_PERPOINT = 100; //--- Town value / x
 CTI_SCORE_CAMP_VALUE = 2; //--- Camp value
 
-CTI_GC_DELAY = 90;
-CTI_GC_DELAY_AIR = 360;
-CTI_GC_DELAY_CAR = 240;
-CTI_GC_DELAY_MAN = 120;
-CTI_GC_DELAY_TANK = 300;
-CTI_GC_DELAY_SHIP = 60;
-CTI_GC_DELAY_STATIC = 80;
-CTI_GC_DELAY_BUILDING = 30;
 
 with missionNamespace do {
-	
-	if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
-	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
-	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
-	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
-	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
-	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
-	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};
-		
 	if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//Check if CTI_MAIN_ADDON is 0, what means that Global Mobilization DLC is active, if not change the preseted GM-Nations to disabled
 	if (isNil 'CTI_NVA_SIDE' || CTI_MAIN_ADDON > 0) then {if(CTI_MAIN_ADDON > 0) then {CTI_NVA_SIDE = -1} else {CTI_NVA_SIDE = 1};};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
@@ -701,7 +750,7 @@ with missionNamespace do {
 	if (isNil 'CTI_BAF_SIDE') then {CTI_BAF_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_CUP_SIDE') then {CTI_SOV_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_RHS_SIDE') then {CTI_SOV_RHS_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	
+		
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_CAMO_ACTIVATION') then {CTI_CAMO_ACTIVATION = 0};	//--- "Standard", "Winter", "Desert", "All active (Main = Standard)"
@@ -710,13 +759,13 @@ with missionNamespace do {
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission
 	
 	CTI_ECONOMY_INCOME_COEF = 10; //--- Town Multiplicator Coefficient (SV * x)
-	CTI_ECONOMY_SUPPLY_TIME_INCREASE_DELAY = 80; //--- Increase SV delay.
 	//CTI_ECONOMY_INCOME_DIVIDED = 2.75; //--- Prevent commander from being a millionaire, and add the rest to the players pool.
 	//CTI_ECONOMY_INCOME_PERCENT_MAX = 100; //--- Commander may set income up to x%.
 	CTI_ECONOMY_POOL_AWARD_PERCENTAGE_WEST = 0.3;
 	CTI_ECONOMY_POOL_AWARD_PERCENTAGE_EAST = 0.3;
 	CTI_ECONOMY_POOL_RESOURCES_PERCENTAGE_WEST = 0.1;
 	CTI_ECONOMY_POOL_RESOURCES_PERCENTAGE_EAST = 0.1;
+	CTI_ECONOMY_SUPPLY_TIME_INCREASE_DELAY = 80; //--- Increase SV delay.
 
 	if (isNil "CTI_ECONOMY_CURRENCY_SYSTEM") then {CTI_ECONOMY_CURRENCY_SYSTEM = 0}; //--- 0: Funds + Supply, 1: Funds.
 	if (isNil 'CTI_ECONOMY_INCOME_CYCLE') then {CTI_ECONOMY_INCOME_CYCLE = 60}; //--- Income Interval (Delay between each paycheck).
@@ -727,7 +776,7 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_STARTUP_FUNDS_WEST_COMMANDER') then {CTI_ECONOMY_STARTUP_FUNDS_WEST_COMMANDER = 9000};
 	if (isNil 'CTI_ECONOMY_STARTUP_SUPPLY_WEST') then {CTI_ECONOMY_STARTUP_SUPPLY_WEST = 1200};
 	if (isNil 'CTI_ECONOMY_TOWNS_OCCUPATION') then {CTI_ECONOMY_TOWNS_OCCUPATION = 1}; //--- Determine if towns need to be occupied to bring more resources
-	
+		
 	if (isNil 'CTI_ECONOMY_PRIZE_WEAPONS') then {CTI_ECONOMY_PRIZE_WEAPONS = 100};
 	if (isNil 'CTI_ECONOMY_PRIZE_EQUIPMENT') then {CTI_ECONOMY_PRIZE_EQUIPMENT = 100};
 	if (isNil 'CTI_ECONOMY_PRIZE_INFANTRY') then {CTI_ECONOMY_PRIZE_INFANTRY = 300};
@@ -735,20 +784,9 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_PRIZE_TRACKED') then {CTI_ECONOMY_PRIZE_TRACKED = 5000};
 	if (isNil 'CTI_ECONOMY_PRIZE_AIR') then {CTI_ECONOMY_PRIZE_AIR = 10000};
 	if (isNil 'CTI_ECONOMY_PRIZE_NAVAL') then {CTI_ECONOMY_PRIZE_NAVAL = 2000};
-	if (isNil 'CTI_ECONOMY_LEVEL_MULTI') then {CTI_ECONOMY_LEVEL_MULTI = 100};
-	if (isNil 'CTI_ECONOMY_LEVEL_MULTI') then {CTI_ECONOMY_RESEARCH_MULTI = 100};
-	if (isNil 'CTI_ECONOMY_PRIZE_ARMED') then {CTI_ECONOMY_PRIZE_ARMED = 300};
-	if (isNil 'CTI_ECONOMY_LEVEL_GEAR') then {CTI_ECONOMY_LEVEL_GEAR = 2};
-	if (isNil 'CTI_ECONOMY_LEVEL_INFANTRY') then {CTI_ECONOMY_LEVEL_INFANTRY = 2};
-	if (isNil 'CTI_ECONOMY_LEVEL_WHEELED') then {CTI_ECONOMY_LEVEL_WHEELED = 4};
-	if (isNil 'CTI_ECONOMY_LEVEL_TRACKED') then {CTI_ECONOMY_LEVEL_TRACKED = 4};
-	if (isNil 'CTI_ECONOMY_LEVEL_AIR') then {CTI_ECONOMY_LEVEL_AIR = 4};
-	if (isNil 'CTI_ECONOMY_LEVEL_NAVAL') then {CTI_ECONOMY_LEVEL_NAVAL = 3};
-	if (isNil 'CTI_ECONOMY_UPGRADE_TIMECAP') then {CTI_ECONOMY_UPGRADE_TIMECAP = 600};
-	if (isNil 'CTI_ECONOMY_TIME_MULTI') then {CTI_ECONOMY_TIME_MULTI = 2};
 	
 	CTI_VEHICLES_SALVAGER_PRICE = ((CTI_ECONOMY_PRIZE_WHEELED*((CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED)); //--- Determine the cost of the salvage trucks
-	
+		
 	CTI_GAMEPLAY_VOTE_TIME = if (CTI_Debug) then {8} else {60};
 	
 	if (isNil 'CTI_GAMEPLAY_TEAMSTACK_DISABLE') then {CTI_GAMEPLAY_TEAMSTACK_DISABLE = 1}; //--- Teamstacking script. (0: Disabled, 1: +1 Player Advantage, 2: +2 Player Advantage, 3: +3 Player Advantage, 4: +4 Player Advantage, 5: +5 Player Advantage).
@@ -761,6 +799,7 @@ with missionNamespace do {
 	if (isNil "CTI_RESPAWN_CAMPS_MODE") then {CTI_RESPAWN_CAMPS_MODE = 2}; 
 	if (isNil "CTI_RESPAWN_CAMPS_RANGE") then {CTI_RESPAWN_CAMPS_RANGE = 500}; //--- Range at which a unit can spawn at a camp
 	if (isNil "CTI_RESPAWN_CAMPS_RULE_MODE") then {CTI_RESPAWN_CAMPS_RULE_MODE = 2}; //--- Respawn Camps Rule (0: Disabled, 1: West | East, 2: West | East | Resistance).
+		
 	if (isNil 'CTI_RESPAWN_FOB_RANGE') then {CTI_RESPAWN_FOB_RANGE = 1750}; //--- Range at which a unit can spawn at a FOB
 	if (isNil 'CTI_RESPAWN_MOBILE') then {CTI_RESPAWN_MOBILE = 1};
 	if (isNil 'CTI_RESPAWN_TIMER') then {CTI_RESPAWN_TIMER = 30};
@@ -769,7 +808,17 @@ with missionNamespace do {
 	CTI_RESPAWN_CAMPS_SAFE_RADIUS = 50;
 	
 	if (isNil 'CTI_MARKERS_INFANTRY') then {CTI_MARKERS_INFANTRY = 1}; //--- Track infantry on map
+	
 	if (isNil 'CTI_UNITS_FATIGUE') then {CTI_UNITS_FATIGUE = 0};
+	
+	if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
+	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
+	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
+	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
+	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
+	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
+	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};
+	
+	//if (isNil 'CTI_BUILDING_FALLBACK') then {CTI_BUILDING_FALLBACK = 2};	//--- Fallback Buildings. (0: Altis Housing, 1: Altis Military Buildings, 2: Best Mixed).
 	if (isNil 'CTI_NO_UPGRADE_MODE') then {CTI_NO_UPGRADE_MODE = 0};
-		
 };
