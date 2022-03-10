@@ -11,7 +11,6 @@ CUP_I_GUE_Local
 CUP_I_GUE_Farmer
 CUP_I_GUE_Gamekeeper
 CUP_I_GUE_Villager
-
 CUP_I_GUE_Ammobearer
 CUP_I_GUE_Crew
 CUP_I_GUE_Soldier_GL
@@ -47,7 +46,6 @@ CUP_I_Hilux_unarmed_NAPA
 CUP_I_Hilux_AGS30_NAPA
 CUP_I_Hilux_DSHKM_NAPA
 
-CUP_I_Hilux_metis_NAPA
 CUP_I_Hilux_podnos_NAPA
 CUP_I_Hilux_SPG9_NAPA
 CUP_I_Hilux_UB32_NAPA
@@ -56,30 +54,31 @@ CUP_I_Hilux_armored_unarmed_NAPA
 CUP_I_Hilux_armored_DSHKM_NAPA
 CUP_I_Hilux_armored_AGS30_NAPA
 
+CUP_I_Hilux_metis_NAPA
 CUP_I_Hilux_btr60_NAPA
 CUP_I_Hilux_BMP1_NAPA
 CUP_I_Hilux_MLRS_NAPA
 
-CUP_I_Hilux_armored_metis_NAPA
 CUP_I_Hilux_armored_MLRS_NAPA
 CUP_I_Hilux_armored_podnos_NAPA
 CUP_I_Hilux_armored_SPG9_NAPA
 CUP_I_Hilux_armored_UB32_NAPA
 CUP_I_BRDM2_HQ_NAPA
+CUP_I_BRDM2_NAPA
 
+CUP_I_Hilux_armored_metis_NAPA
 CUP_I_Hilux_armored_BMP1_NAPA
 CUP_I_Hilux_armored_BTR60_NAPA
-CUP_I_BRDM2_NAPA
 CUP_I_BRDM2_ATGM_NAPA
 
 //Anti-air
 CUP_I_Ural_ZU23_NAPA
 CUP_I_Hilux_zu23_NAPA
 
-CUP_I_Datsun_AA
-CUP_I_Datsun_AA_Random
 CUP_I_Hilux_armored_zu23_NAPA
 
+CUP_I_Datsun_AA
+CUP_I_Datsun_AA_Random
 CUP_I_Hilux_igla_NAPA
 
 CUP_I_Hilux_armored_igla_NAPA
@@ -87,12 +86,11 @@ CUP_I_Hilux_armored_igla_NAPA
 
 //tracked
 CUP_I_MTLB_pk_NAPA
+CUP_I_BMP_HQ_NAPA
+CUP_I_T34_NAPA
 
 CUP_I_BMP2_NAPA
 CUP_I_BMP2_AMB_NAPA
-CUP_I_BMP_HQ_NAPA
-
-CUP_I_T34_NAPA
 
 CUP_I_T55_NAPA
 

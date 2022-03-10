@@ -2,8 +2,6 @@
 
 
 
-CUP_I_RACS_Soldier_AAT
-CUP_I_RACS_Soldier_MAT
 CUP_I_RACS_Crew
 CUP_I_RACS_Engineer
 CUP_I_RACS_GL
@@ -13,6 +11,8 @@ CUP_I_RACS_Soldier_Light
 CUP_I_RACS_Soldier_LAT
 CUP_I_RACS_Soldier_Unarmed
 
+CUP_I_RACS_Soldier_AAT
+CUP_I_RACS_Soldier_MAT
 CUP_I_RACS_Soldier_AMG
 CUP_I_RACS_AR
 CUP_I_RACS_MMG
@@ -26,8 +26,6 @@ CUP_I_RACS_Sniper
 CUP_I_RACS_SL
 
 
-CUP_I_RACS_Soldier_AAT_wdl
-CUP_I_RACS_Soldier_MAT_wdl
 CUP_I_RACS_Engineer_wdl
 CUP_I_RACS_GL_wdl
 CUP_I_RACS_Medic_wdl
@@ -36,6 +34,8 @@ CUP_I_RACS_Soldier_Light_wdl
 CUP_I_RACS_Soldier_LAT_wdl
 CUP_I_RACS_Soldier_Unarmed_wdl
 
+CUP_I_RACS_Soldier_AAT_wdl
+CUP_I_RACS_Soldier_MAT_wdl
 CUP_I_RACS_Soldier_AMG_wdl
 CUP_I_RACS_AR_wdl
 CUP_I_RACS_MMG_wdl
@@ -48,8 +48,6 @@ CUP_I_RACS_Sniper_wdl
 CUP_I_RACS_SL_wdl
 
 
-CUP_I_RACS_Soldier_AAT_Urban
-CUP_I_RACS_Soldier_MAT_Urban
 CUP_I_RACS_Engineer_Urban
 CUP_I_RACS_GL_Urban
 CUP_I_RACS_Medic_Urban
@@ -58,6 +56,8 @@ CUP_I_RACS_Soldier_Light_Urban
 CUP_I_RACS_Soldier_LAT_Urban
 CUP_I_RACS_Soldier_Unarmed_Urban
 
+CUP_I_RACS_Soldier_AAT_Urban
+CUP_I_RACS_Soldier_MAT_Urban
 CUP_I_RACS_Soldier_AMG_Urban
 CUP_I_RACS_AR_Urban
 CUP_I_RACS_MMG_Urban
@@ -72,37 +72,35 @@ CUP_I_RACS_SL_Urban
 //wheeled
 CUP_I_TowingTractor_RACS
 CUP_I_LR_Transport_RACS
+CUP_I_LR_MG_RACS
 
 CUP_I_LR_Ambulance_RACS
-CUP_I_LR_MG_RACS
 CUP_I_MTVR_RACS
 CUP_I_MTVR_Ammo_RACS
 CUP_I_MTVR_Refuel_RACS
 CUP_I_MTVR_Repair_RACS
 
 CUP_I_LAV25_HQ_RACS
+CUP_I_LR_AA_RACS
 
 CUP_I_LAV25_RACS
 
 CUP_I_LAV25M240_RACS
 
-//anti-air
-CUP_I_LR_AA_RACS
 
 //tracked
 CUP_I_AAV_Unarmed_RACS
 CUP_I_AAV_RACS
 
-CUP_I_M113_Med_RACS
 CUP_I_M113_RACS
 CUP_I_M113_RACS_URB
 
+CUP_I_M113_Med_RACS
 CUP_I_M163_RACS
 
 CUP_I_M60A3_RACS
 
 CUP_I_T72_RACS
-
 CUP_I_M270_DPICM_RACS
 CUP_I_M270_HE_RACS
 
@@ -132,6 +130,7 @@ CUP_I_JAS39_RACS
 //ships
 CUP_I_LCVP_RACS
 CUP_I_LCVP_VIV_RACS
+
 CUP_I_RHIB_RACS
 CUP_I_RHIB2Turret_RACS
 

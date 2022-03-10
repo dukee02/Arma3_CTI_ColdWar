@@ -329,12 +329,12 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_ge_army_iltis_cargo", _sid];
 		_c pushBack format["%1gm_ge_army_u1300l_container", _sid];
 		_c pushBack format["%1gm_ge_army_u1300l_cargo", _sid];
-		_c pushBack format["%1gm_ge_army_u1300l_firefighter", _sid];
+		//_c pushBack format["%1gm_ge_army_u1300l_firefighter", _sid];		//salvager
 		
 		//_c pushBack format["%1gm_ge_civ_typ1200", _sid];
 		//_c pushBack format["%1gm_ge_pol_typ1200", _sid];
 		//_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
-		//_c pushBack format["%1gm_ge_ff_typ1200", _sid];
+		//_c pushBack format["%1gm_ge_ff_typ1200", _sid];		//salvager ind
 		
 		//_c pushBack "gm_ge_army_c1300l_repair";		//repairtruck	
 	};
