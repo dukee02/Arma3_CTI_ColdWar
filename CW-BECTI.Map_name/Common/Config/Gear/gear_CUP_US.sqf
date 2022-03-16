@@ -1,6 +1,9 @@
-private "_faction", "_i", "_p", "_side", "_u", "_tech_level_no_upgrade_inv", "_tech_level";
+private ["_faction", "_i", "_p", "_side", "_u", "_tech_level_no_upgrade_inv", "_tech_level", "_upgrade_levels"];
 
 _side = _this;
+_upgrade_levels = [];
+_tech_level_no_upgrade_inv = 1;
+_tech_level = 0;
 
 if(_side == west) then {
 	_faction = "West";
@@ -14,17 +17,18 @@ else {
 	};
 };
 
-_tech_level_no_upgrade_inv = 1;
-_tech_level = 0;
-
 if(CTI_NO_UPGRADE_MODE == 1) then {	
 	_tech_level_no_upgrade_inv = 0;
+};
+
+_upgrade_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS", _side];
+if (isNil "_upgrade_levels") then { 
+	_upgrade_levels = [CTI_ECONOMY_LEVEL_INFANTRY,CTI_ECONOMY_LEVEL_WHEELED,CTI_ECONOMY_LEVEL_TRACKED,CTI_ECONOMY_LEVEL_AIR,CTI_ECONOMY_LEVEL_NAVAL,1,1,1,1,1,3,4,CTI_ECONOMY_LEVEL_GEAR]; 
 };
 
 _i = [];
 _u = [];
 _p = [];
-//_g = []; //--- Category Filter (UI)
 
 //(CTI_ECONOMY_PRIZE_WEAPONS*_level_start)
 //100*1 -> $100 weapon
@@ -40,18 +44,23 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((rnds*caliber)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 */
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
-//************************C.U.P Stuff************************
-
-//Shields
+//--------------------------------------------------------------------------------------------------------------------------//
+//											C.U.P Special Stuff	Shields														//
+//--------------------------------------------------------------------------------------------------------------------------//
 _i pushBack "CUP_hgun_BallisticShield_Armed";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-//RIFLES
-//M4 Family		Assault rifle 		556		US
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Assault Rifles															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
+//M4 Family		Assault rifle 		556		US
 _i pushBack "CUP_arifle_M4A1";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -113,7 +122,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*1.5);
 
 //MK16 Family		Assault rifle	556
-
 _i pushBack "CUP_arifle_Mk16_STD";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -223,7 +231,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*1.5);
 
 //MK12 Family	Sniper rifle/designated marksman rifle		556
-
 _i pushBack "CUP_srifle_Mk12SPR";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -312,7 +319,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((30*556*45)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);*/
 
 //M16 Family	 	Assault rifle 		556		IND?
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
 
 _i pushBack "CUP_arifle_M16A2";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
@@ -443,7 +449,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((20*762*51)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //Tech level 1
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
 //MK17 Family	Battle rifle	762
 
 _i pushBack "CUP_arifle_Mk17_CQC";
@@ -664,11 +669,7 @@ _i pushBack "CUP_50Rnd_TE1_White_Tracer_762x51_SCAR";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((50*762*51)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
-
 //Mk20 Family		Battle/Sniper rifle		762
-
 _i pushBack "CUP_arifle_Mk20";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -681,10 +682,16 @@ _i pushBack "CUP_arifle_Mk20_woodland";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-//--------------------------------------Machine Guns---------------------------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-//M249 Family	Light Machine Gun	556
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Machine Guns															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
+//M249 Family	Light Machine Gun	556
 _i pushBack "CUP_lmg_M249";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -726,7 +733,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*1.5);
 
 //L110 Family		Light machine gun  556
-
 _i pushBack "CUP_lmg_L110A1";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -769,10 +775,7 @@ _i pushBack "CUP_200Rnd_TE1_Red_Tracer_556x45_M249";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((100*556*45)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
-
 //M60 Family	 	Light Machine Gun		762
-
 _i pushBack "CUP_M60E4_base";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -786,7 +789,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
 //MK48 Family		Light machine gun  		762		US/FR
-
 _i pushBack "CUP_lmg_Mk48";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -798,8 +800,6 @@ _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL
 _i pushBack "CUP_lmg_Mk48_wdl";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=5;} else {_tech_level=2;};
 
 //L7A2 Family	Medium machine gun 	762		BAF
 
@@ -827,12 +827,16 @@ _i pushBack "CUP_lmg_FNMAG_RIS";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));*/
 
-//-------------------------------Sniper Rifles-------------------------------------------------
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Sniper Rifles															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 //L129A1 Family		Sniper rifle	762		BAF
-
 /*_i pushBack "CUP_srifle_L129A1";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -850,7 +854,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((20*762*51)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);*/
 
 //Lee Enfield Family	Army rifle		(.300 = 762x67)
-
 _i pushBack "CUP_srifle_LeeEnfield";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -864,7 +867,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((10*762*70)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //M14 DMR Family	Designated Marksman Rifle 	762			US/FR
-
 _i pushBack "CUP_srifle_M14_DMR";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -874,7 +876,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
 //M14 Family	Battle rifle		762		US
-
 _i pushBack "CUP_srifle_M14";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -910,7 +911,6 @@ _p pushBack round ((20*762*51)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+
 _tech_level = _tech_level + 1;
 
 //MK24 Family		Sniper rifle 		762
-
 _i pushBack "CUP_srifle_M24_des";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -932,14 +932,12 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((5*762*51)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //M40 Family		Sniper rifle 		762
-
 _i pushBack "CUP_srifle_M40A3";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
 
 //M110 Family		Sniper rifle		762		US
-
 _i pushBack "CUP_srifle_M110";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -966,7 +964,6 @@ _p pushBack round ((20*762*51)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+
 
 
 //L115A1 Family		Sniper rifle 		.338  86x70		BAF
-
 /*_i pushBack "CUP_srifle_AWM_des";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -980,7 +977,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((5*860*70)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);*/
 
 //AS50 Family		 Anti-materiel sniper rifle 	12.7x99 	BAF
-
 /*_i pushBack "CUP_srifle_AS50";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -992,7 +988,6 @@ _p pushBack round ((5*1270*99)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+
 _tech_level = _tech_level + 1;
 
 //M107 Family	Anti-materiel sniper rifle 		12.7x99		US
-
 _i pushBack "CUP_srifle_M107_Base";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1001,12 +996,16 @@ _i pushBack "CUP_10Rnd_127x99_m107";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((10*1270*99)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//Shotguns
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-	
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Shotguns																//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;	
 //AA-12 Family
-
 _i pushBack "CUP_sgun_AA12";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1036,10 +1035,16 @@ _i pushBack "CUP_8Rnd_B_Beneli_74Pellets";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 20*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-//Small Machine Guns (SMGs)
-	
-//MP5 Family		Submachine gun 		9x19
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Small Machine Guns (SMGs)															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;	
+//MP5 Family		Submachine gun 		9x19
 _i pushBack "CUP_smg_MP5A5";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1052,10 +1057,16 @@ _i pushBack "CUP_30Rnd_9x19_MP5";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-//Handguns
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Handguns																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 //M1911 Family
-
 _i pushBack "CUP_hgun_Colt1911";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1064,10 +1075,7 @@ _i pushBack "CUP_7Rnd_45ACP_1911";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((7*1200*32)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
 //Glock Family		Semi-automatic pistol
-
 _i pushBack "CUP_hgun_Glock17";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1081,7 +1089,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((17*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //M9 Family		Semi-automatic pistol 
-
 _i pushBack "CUP_hgun_M9";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1091,7 +1098,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((17*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //UZI Family	Submachine gun
-
 _i pushBack "CUP_hgun_MicroUzi";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1100,10 +1106,7 @@ _i pushBack "CUP_30Rnd_9x19_UZI";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((30*900*19)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
 //Taurus Family
-
 _i pushBack "CUP_hgun_TaurusTracker455";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1116,32 +1119,40 @@ _i pushBack "CUP_6Rnd_45ACP_M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((6*1200*32)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-//-------------------------------------Launchers----------------------------------------------------------------------
-	
-//M79 Family				Grenade launcher	1rnd
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Launchers																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;	
+//M79 Family				Grenade launcher	1rnd
 _i pushBack "CUP_glaunch_M79";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
 //MK13 Family				Grenade launcher	1rnd
-
 _i pushBack "CUP_glaunch_Mk13";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
 //M32 Grenade Family		Grenade launcher	6rnd
-
 _i pushBack "CUP_glaunch_M32";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-//--------------------------------------------Anti-air----------------------------------------------------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
-//FIM-92 Stinger Family		Surface-to-air missile launcher Guided
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Anti-air Launchers																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
+//FIM-92 Stinger Family		Surface-to-air missile launcher Guided
 _i pushBack "CUP_launch_FIM92Stinger";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -1150,10 +1161,16 @@ _i pushBack "CUP_Stinger_M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 300*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-//-----------------------------------------------Anti-Tank---------------------------------------------------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-//M136 AT-4 Family		Anti-tank missile launcher Unguided
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//											Anti-Tank																		//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
+//M136 AT-4 Family		Anti-tank missile launcher Unguided
 _i pushBack "CUP_launch_M136";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -1163,7 +1180,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 300*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //M3 MAAWS Family			Multi-role launcher Unguided
-
 _i pushBack "CUP_launch_MAAWS";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -1182,7 +1198,6 @@ _p pushBack round 200*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LE
 
 _tech_level = _tech_level + 1;
 //NLAW Family				Anti-tank missile launcher Guided
-
 _i pushBack "CUP_launch_NLAW";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -1192,7 +1207,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 300*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 //MK153 SMAW Family			Multipurpose missile launcher Unguided
-
 _i pushBack "CUP_launch_Mk153Mod0";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -1236,10 +1250,15 @@ _i pushBack "CUP_Javelin_M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 300*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-//--- Handgrenades
-
+//--------------------------------------------------------------------------------------------------------------------------//
+//											Grenades/mines																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_HandGrenade_M67";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 50*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
@@ -1260,9 +1279,7 @@ _i pushBack "CUP_HandGrenade_RGO";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 50*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-
 //--- Bombs Mines IEDS
-
 _i pushBack "CUP_TimeBomb_M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round 100*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
@@ -1275,10 +1292,15 @@ _p pushBack round 200*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LE
 //_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 //_p pushBack round 50*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-//-------------------------------------------------------------CUP Attachments------------------------------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-//--Holo Optics
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//											Attachments	Optics	 															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_optic_HoloBlack";					//Holographics CQB Weapon Sight
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1307,9 +1329,7 @@ _i pushBack "CUP_optic_Eotech553_Coyote";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
-
 //--CCO Aimpoint Optics
-
 _i pushBack "CUP_optic_CompM2_Black";			//Short-Range Collimator Weapon Sight
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1351,7 +1371,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
 //--Trijicon RedDot Optics
-
 _i pushBack "CUP_optic_TrijiconRx01_black";			//Short-Range Weapon Sight
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1361,7 +1380,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
 //--Schmidt and Bender ShortDot Optics
-
 _i pushBack "CUP_optic_SB_11_4x20_PM";				//Medium to Short range scope typically used on Assault rifles.
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1379,7 +1397,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
 //--Meopta Optics
-
 _i pushBack "CUP_optic_ZDDot";						//Short-Range Red Dot Weapon Sight
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1388,9 +1405,7 @@ _i pushBack "CUP_optic_MRad";						//Short-Range Red Dot Weapon Sight for SMG's
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
-
 //--Trijicon RCO and ACOG Optics
-
 _i pushBack "CUP_optic_RCO";						//Advanced Combat Optical Gunsight
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1649,7 +1664,6 @@ _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVE
 
 _tech_level = _tech_level + 1;
 //--Midrange Optics
-
 _i pushBack "CUP_optic_SUSAT";					//Medium range weapon optic
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1712,7 +1726,6 @@ _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVE
 
 _tech_level = _tech_level + 1;
 //--DMR Sniper Optics
-
 _i pushBack "CUP_optic_SB_3_12x50_PMII";					//Long Range Scope typically mounted on high power sniper rifles like the AS-50
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1750,7 +1763,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
 //--Nightvision TWS Optics
-
 _i pushBack "CUP_optic_AN_PVS_10";					//Night Vision Scope
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1787,10 +1799,7 @@ _i pushBack "CUP_optic_AN_PVS_4_M16";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
 //--Launcher Optics
-
 _i pushBack "CUP_optic_MAAWS_Scope";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1799,11 +1808,15 @@ _i pushBack "CUP_optic_SMAW_Scope";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-//--Muzzle Attachment
-//--Silencer Attachment
-
+//--------------------------------------------------------------------------------------------------------------------------//
+//											Attachments	Muzzle/Silencer														//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_muzzle_snds_AWM";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/3);
@@ -1873,9 +1886,15 @@ _i pushBack "CUP_muzzle_mfsup_SCAR_H";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/3);
 
-//--Side Attachment
-//--Laser Attachment
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//											Attachments	Side/Laser															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_acc_ANPEQ_15";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
@@ -1929,7 +1948,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
 
 //--Flashlight Attachment
-
 _i pushBack "CUP_acc_Flashlight";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
@@ -1958,10 +1976,15 @@ _i pushBack "CUP_acc_Glock17_Flashlight";					//Underbarrel Flashlight
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//---------------------------------------------------------Uniforms----------------------------------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Uniforms																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_B_USMC_Navy_Blue";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -2138,10 +2161,6 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
 ///woodland
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
-
-
 _i pushBack "CUP_U_B_USMC_MCCUU_M81";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -2531,7 +2550,6 @@ _i pushBack "CUP_U_CRYE_V3_Roll";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
 //olive
 _i pushBack "CUP_U_B_BDUv2_OD_US";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
@@ -2602,7 +2620,6 @@ _i pushBack "CUP_U_CRYE_RGR_US_Roll";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
 //desert
 _i pushBack "CUP_U_B_BDUv2_DCU_US";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
@@ -2886,7 +2903,6 @@ _i pushBack "CUP_U_B_USArmy_ACU_UCP";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=4;} else {_tech_level=1;};
 //Frog
 _i pushBack "CUP_U_B_USMC_FROG1_WMARPAT";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
@@ -2920,8 +2936,15 @@ _i pushBack "CUP_U_B_USMC_FROG4_DMARPAT";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-//----------------------------------------------------------Vests----------------------------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Vests																		//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 //Armor Level II
 _i pushBack "CUP_V_B_USArmy_PilotVest";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
@@ -3128,8 +3151,15 @@ _i pushBack "CUP_V_B_Eagle_SPC_TL";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
 
-//--Packs
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Backpacks																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_B_USMC_MOLLE";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
@@ -3233,8 +3263,15 @@ _i pushBack "CUP_B_M2_MiniTripod_Bag";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
 
-//--Head
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Headgear																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_H_NAPA_Fedora";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -3614,8 +3651,15 @@ _i pushBack "CUP_H_USMC_Crew_Helmet";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
-//--Goggles
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Goggles																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 /*_i pushBack "CUP_TK_NeckScarf";
 _u pushBack 0;
 _p pushBack 10;
@@ -3631,15 +3675,11 @@ _u pushBack 0;
 _p pushBack 10;
 _g pushBack "";*/
 
-
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
 _i pushBack "CUP_Vector21Nite";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
 //--Night Vision Goggles
-
 _i pushBack "CUP_NVG_HMNVS";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -3660,14 +3700,21 @@ _i pushBack "CUP_NVG_GPNVG_winter";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
-//--LaserDesignator
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//												Other Items																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
+//--LaserDesignator
 _i pushBack "CUP_SOFLAM";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/1);
 
 //--Other
-
 _i pushBack "CUP_Mxx_camo";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -3676,4 +3723,16 @@ _i pushBack "CUP_Mxx_camo_half";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
-[_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf"; 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
+
+//all units are declared, we update the possible upgrades if this script
+//runns on the server, if on client we setup the gear config.
+if(!isNil 'CTI_Init_Common') then {
+	[_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";
+} else {
+	missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", _side], _upgrade_levels];
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\gear\gear_CUP_US.sqf", format["calculated upgrade levels for %1: [%2] ", _side, _upgrade_levels]] call CTI_CO_FNC_Log};
+};

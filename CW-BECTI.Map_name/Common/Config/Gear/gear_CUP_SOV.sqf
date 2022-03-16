@@ -1,6 +1,9 @@
-private "_faction", "_i", "_p", "_side", "_u", "_tech_level_no_upgrade_inv", "_tech_level";
+private ["_faction", "_i", "_p", "_side", "_u", "_tech_level_no_upgrade_inv", "_tech_level", "_upgrade_levels"];
 
 _side = _this;
+_upgrade_levels = [];
+_tech_level_no_upgrade_inv = 1;
+_tech_level = 0;
 
 if(_side == west) then {
 	_faction = "West";
@@ -14,11 +17,13 @@ else {
 	};
 };
 
-_tech_level_no_upgrade_inv = 1;
-_tech_level = 0;
-
 if(CTI_NO_UPGRADE_MODE == 1) then {	
 	_tech_level_no_upgrade_inv = 0;
+};
+
+_upgrade_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS", _side];
+if (isNil "_upgrade_levels") then { 
+	_upgrade_levels = [CTI_ECONOMY_LEVEL_INFANTRY,CTI_ECONOMY_LEVEL_WHEELED,CTI_ECONOMY_LEVEL_TRACKED,CTI_ECONOMY_LEVEL_AIR,CTI_ECONOMY_LEVEL_NAVAL,1,1,1,1,1,3,4,CTI_ECONOMY_LEVEL_GEAR]; 
 };
 
 _i = [];
@@ -39,9 +44,80 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((rnds*caliber)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 */
 
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Grenade and Mines														//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level=0;
+_i pushBack "CUP_HandGrenade_RGD5";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
-//---Weapons and Ammo---------------
+_i pushBack "CUP_HandGrenade_RGO";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_1Rnd_HE_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_IlumFlareWhite_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_IlumFlareRed_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_IlumFlareGreen_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_FlareWhite_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_FlareGreen_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_FlareRed_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_FlareYellow_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_1Rnd_SMOKE_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_1Rnd_SmokeRed_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_1Rnd_SmokeGreen_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+_i pushBack "CUP_1Rnd_SmokeYellow_GP25_M";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
+
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Assault Rifles															//
+//--------------------------------------------------------------------------------------------------------------------------//
+//AK 47 main weapon, AKM slightly lighter
+//AK 74 better precision
+//AK 101 (90s)
+//AK 105 (2k)
+//AK 107 (2010)
+_tech_level=0;
 _i pushBack "CUP_arifle_SR3M_Vikhr";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -908,10 +984,15 @@ _i pushBack "CUP_5Rnd_127x108_KSVK_M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((5*1270*108)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//---------MG------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
+//--------------------------------------------------------------------------------------------------------------------------//
+//													MG																		//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_arifle_RPK74M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -961,7 +1042,15 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((100*762*54)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 
-//---------AT-Guns------------
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													AT-Guns																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_launch_RPG7V";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -1030,70 +1119,15 @@ _i pushBack "CUP_Strela_2_M";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (200)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//----------------Grenades------------------
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
-_i pushBack "CUP_HandGrenade_RGD5";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_HandGrenade_RGO";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_1Rnd_HE_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (50)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_IlumFlareWhite_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_IlumFlareRed_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_IlumFlareGreen_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_FlareWhite_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_FlareGreen_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_FlareRed_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_FlareYellow_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_1Rnd_SMOKE_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_1Rnd_SmokeRed_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_1Rnd_SmokeGreen_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-_i pushBack "CUP_1Rnd_SmokeYellow_GP25_M";
-_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
-_p pushBack round (10)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
-
-
-//--- Uniforms
-if(CTI_MAIN_ADDON == 0) then {_tech_level=3;} else {_tech_level=0;};
-
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Uniforms																//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_U_O_RUS_Gorka_Green";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
@@ -1274,8 +1308,15 @@ _i pushBack "CUP_U_O_RUS_Ghillie";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//--- Vests
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Vests																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_V_CDF_6B3_1_Green";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
@@ -1492,8 +1533,15 @@ _i pushBack "CUP_V_RUS_6B45_3";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*3);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//--- Backpacks
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Backpacks																//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_B_RUS_Pack_MG";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100)*2);
@@ -1558,12 +1606,26 @@ _i pushBack "CUP_B_SPG9_Tripod_Bag";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2)+((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*4);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//--- Glasses
+//--------------------------------------------------------------------------------------------------------------------------//
+//											Glasses																			//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 
 
-//---Attachments
-//Optics
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Attachments	Optics																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_optic_ekp_8_02";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1632,8 +1694,15 @@ _i pushBack "CUP_optic_PGO7V3";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//Rail Attachments
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Attachments	Rail																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_acc_ANPEQ_15_Black";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
@@ -1722,8 +1791,15 @@ _i pushBack "CUP_acc_Glock17_Flashlight";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/4);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-// Muzzles
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Attachments	Muzzles																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_muzzle_mfsup_Flashhider_762x39_Black";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/3);
@@ -1792,8 +1868,15 @@ _i pushBack "CUP_muzzle_snds_M16_camo";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/3);
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
-//--- Helms
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Attachments	Helms																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 _i pushBack "CUP_H_RUS_6B27";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
@@ -1839,7 +1922,26 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/2);
 
 
-//--- Items
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
 
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Other Items																			//
+//--------------------------------------------------------------------------------------------------------------------------//
+_tech_level = 0;
 
-[_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf"; 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
+	_upgrade_levels set [CTI_UPGRADE_GEAR, _tech_level];
+};
+
+//all units are declared, we update the possible upgrades if this script
+//runns on the server, if on client we setup the gear config.
+if(!isNil 'CTI_Init_Common') then {
+	[_faction, _i, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";
+} else {
+	missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", _side], _upgrade_levels];
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\gear\gear_CUP_SOV.sqf", format["calculated upgrade levels for %1: [%2] ", _side, _upgrade_levels]] call CTI_CO_FNC_Log};
+};

@@ -30,7 +30,7 @@ private ["_array1", "_array2"];
 _array1 = _this select 0;
 _array2 = _this select 1;
 
-//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_MergeMatrixArray.sqf", format["Techmatrix: <%1> <%2>", _array1, _array2]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_MergeMatrixArray.sqf", format["Techmatrix: <%1> <%2>", _array1, _array2]] call CTI_CO_FNC_Log;};
 
 for [{_i = 0}, {_i < count _array2}, {_i = _i + 1}] do {
 	if(count _array1 < count _array2) then {

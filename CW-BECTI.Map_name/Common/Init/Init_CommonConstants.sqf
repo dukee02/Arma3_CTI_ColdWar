@@ -28,20 +28,29 @@ CTI_RESISTANCE_COLOR = "ColorGreen";
 CTI_UNKNOWN_COLOR = "ColorBlack";
 
 //--- National IDs
-CTI_US_ID = 0;
-CTI_SOV_ID = 1;
-CTI_BW_ID = 2;
-CTI_NVA_ID = 3;
-CTI_NPOC_ID = 4;
-CTI_RACS_ID = 5;
-
-/*CTI_GER_ID = 0;
-CTI_SOV_ID = 1;
-CTI_UK_ID = 2;
-CTI_US_ID = 3;
-CTI_JPN_ID = 4;
-CTI_CZ_ID = 5;
-CTI_FIN_ID = 6;*/
+CTI_BW_ID = 0;
+CTI_NVA_ID = 1;
+CTI_DEN_ID = 2;
+CTI_POL_ID = 3;
+CTI_US_ID = 4;
+CTI_SOV_ID = 5;
+CTI_NPOC_ID = 6;
+CTI_RACS_ID = 7;
+CTI_ION_ID = 8;
+CTI_TK_ID = 9;
+CTI_CDF_B_ID = 10;
+CTI_CDF_I_ID = 11;
+CTI_CZ_ID = 12;
+CTI_CHDKZ_ID = 13;
+CTI_SLA_ID = 14;
+CTI_TKA_ID = 15;
+CTI_SAF_ID = 16;
+CTI_SAF_I_ID = 17;
+CTI_HIDF_ID = 18;
+CTI_NAPA_ID = 19;
+CTI_FIA_ID = 20;
+CTI_PLA_ID = 21;
+CTI_UKRAIN_ID = 22;
 
 //--- Mod IDs
 CTI_GM_ID = 0;		//Global Mobilization - Cold War Germany
@@ -50,21 +59,12 @@ CTI_IC_ID = 2;		//CSLA Iron Curtain
 CTI_WS_ID = 3;		//Western Sahara
 CTI_CUP_ID = 4;
 CTI_RHS_ID = 5;
-CTI_CWR3_ID = 5;
-CTI_VME_ID = 5;
-
-
-
-
-/*CTI_IFA_ID = 0;
-CTI_IFA_NEW_ID = 1;
-CTI_FOW_ID = 2;
-CTI_CSA_ID = 3;
-CTI_NF_ID = 4;
-CTI_SABFL_ID = 5;
-CTI_SABNL_ID = 6;
-CTI_SAB_ID = 7;
-CTI_BT_ID = 8;*/
+CTI_CWR3_ID = 6;
+CTI_VME_ID = 7;
+CTI_UKR_ID = 8;
+CTI_BWA3_ID = 9;
+CTI_BWADD_ID = 10;
+CTI_REDD_ID = 11;
 
 CTI_GEAR_TAB_PRIMARY = 0;
 CTI_GEAR_TAB_SECONDARY = 1;
@@ -95,7 +95,7 @@ CTI_SPECIAL_REPAIRTRUCK = 0;
 CTI_SPECIAL_AMMOTRUCK = 1;
 CTI_SPECIAL_MEDICALVEHICLE = 2;
 CTI_SPECIAL_FUELTRUCK = 3;
-// CTI_SPECIAL_ALLPURPOSETRUCK = 3;
+CTI_SPECIAL_ALLPURPOSETRUCK = 4;
 
 CTI_AI_COMMANDER_BUYTO_INFANTRY = 20;
 CTI_AI_COMMANDER_BUYTO_LIGHT = 13;
@@ -746,7 +746,7 @@ CTI_SCORE_CAMP_VALUE = 2; //--- Camp value
 
 
 with missionNamespace do {
-	if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	/*if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//Check if CTI_MAIN_ADDON is 0, what means that Global Mobilization DLC is active, if not change the preseted GM-Nations to disabled
 	if (isNil 'CTI_NVA_SIDE' || CTI_MAIN_ADDON > 0) then {if(CTI_MAIN_ADDON > 0) then {CTI_NVA_SIDE = -1} else {CTI_NVA_SIDE = 1};};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
@@ -755,6 +755,22 @@ with missionNamespace do {
 	if (isNil 'CTI_BAF_SIDE') then {CTI_BAF_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_CUP_SIDE') then {CTI_SOV_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_RHS_SIDE') then {CTI_SOV_RHS_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	*/
+	
+	//if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
+	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
+	/*if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
+	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
+	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
+	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
+	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
+	
+	
+	if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_NPOC_SIDE') then {CTI_NPOC_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	
+	
 		
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
@@ -815,15 +831,7 @@ with missionNamespace do {
 	if (isNil 'CTI_MARKERS_INFANTRY') then {CTI_MARKERS_INFANTRY = 1}; //--- Track infantry on map
 	
 	if (isNil 'CTI_UNITS_FATIGUE') then {CTI_UNITS_FATIGUE = 0};
-	
-	if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
-	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
-	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
-	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
-	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
-	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
-	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};
-	
+		
 	//if (isNil 'CTI_BUILDING_FALLBACK') then {CTI_BUILDING_FALLBACK = 2};	//--- Fallback Buildings. (0: Altis Housing, 1: Altis Military Buildings, 2: Best Mixed).
 	if (isNil 'CTI_NO_UPGRADE_MODE') then {CTI_NO_UPGRADE_MODE = 0};
 };

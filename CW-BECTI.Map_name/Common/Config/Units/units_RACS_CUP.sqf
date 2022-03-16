@@ -2,9 +2,14 @@
 format["%1<vanilla_unitname>", _sid] gets used later 4 the upcomming sidepatch
 format["%1", _sid]; - 4 copy paste
 */
+
+private ["_side", "_faction", "_sid", "_time", "_building_time", "_tech_level", "_upgrade_levels", "_tech_level_no_upgrade_inv", "_cntstart", "_cntend", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
+
 _side = _this;
 _faction = "";
 _sid = "";
+_building_time = 10;
+_tech_level_no_upgrade_inv = 1;
 
 if(_side == west) then {
 	//_sid = "VIOC_B_";
@@ -19,6 +24,16 @@ if(_side == west) then {
 	};
 };
 
+if(CTI_NO_UPGRADE_MODE == 1) then {	
+	_tech_level_no_upgrade_inv = 0;
+};
+
+//We get the upgrade setup at this point, if this is null, something went wrong and we set it to the default.
+_upgrade_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS", _side];
+if (isNil "_upgrade_levels") then { 
+	_upgrade_levels = [0,0,0,0,0,1,1,1,1,1,3,4,0]; 
+};
+
 _c = []; //--- Classname
 _p = []; //--- Picture. 				'' = auto generated.
 _n = []; //--- Name. 					'' = auto generated.
@@ -30,14 +45,6 @@ _s = []; //--- Script
 _d = []; //--- Extra Distance (From Factory)
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_RACS_CUP.sqf", format["starting units declaration: _sid: [%1] | _faction: [%2]", _sid, _faction]] call CTI_CO_FNC_Log};
-
-private _tech_level_no_upgrade_inv = 1;
-private _tech_level = 0;
-private _building_time = 10;
-
-if(CTI_NO_UPGRADE_MODE == 1) then {	
-	_tech_level_no_upgrade_inv = 0;
-};
 
 //*********************************************************************************************************************************************
 //											Infantry units																					  *

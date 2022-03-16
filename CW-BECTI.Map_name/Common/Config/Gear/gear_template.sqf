@@ -17,7 +17,7 @@ _t = [];
 //_t = _t 	+ [[[["arifle_CTAR_blk_F",[],["30Rnd_580x42_Mag_Tracer_F"]]],[["U_O_CombatUniform_ocamo",["Medikit","Medikit"]],["V_BandollierB_cbr", ["HandGrenade","HandGrenade"]],["B_AssaultPack_ocamo", ["30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F"]]],["H_HelmetO_ocamo",""],[[],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
 //};
 
-switch(CTI_MAIN_ADDON) do {
+/*switch(CTI_MAIN_ADDON) do {
 	case 0: {	//Global Mobilization - Cold War
 		if (_side isEqualTo west) then {		//GM West Gear
 			_t = _t 	+ [[[["gm_g3a4_oli",[],["gm_20Rnd_762x51mm_b_t_DM21_g3_blk"]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_gauzeCompress"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","ItemWatch"]]]];
@@ -37,7 +37,7 @@ switch(CTI_MAIN_ADDON) do {
 			};
 		};
 	};
-	default {	//Cold-War (CUP and/or RHS)
+	default {*/	//Cold-War (CUP and/or RHS)
 		if (_side isEqualTo west) then {		//West Gear
 			if(CTI_CUP_ADDON>0) then {
 				_t = _t 	+ [[[["CUP_arifle_M4A1",[],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_BDUv2_dirty_base",["firstaidkit","firstaidkit"]],["CUP_V_B_Interceptor_Rifleman_M81",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_B_USMC_MOLLE",["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]]],["CUP_H_USMC_BOONIE_WDL",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
@@ -51,8 +51,8 @@ switch(CTI_MAIN_ADDON) do {
 				
 			};
 		};
-	};
-};
+	/*};
+};*/
 
 /*
 _t = _t 	+ [

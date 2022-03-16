@@ -1,10 +1,82 @@
 class Params {
-		class SEPARATOR_STARTUP {
-		title = "========================== STARTUP ============================";
+	class SEPARATOR_ADDONS {
+		title = "=========================== ADDONS ============================";
 		values[] = {1};
 		texts[] = {""};
 		default = 1;
 	};
+	class CTI_CUP_ADDON {
+		title = "ADDON: CUP Support - Vehicles west + east";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","set as main"};
+		default = 1;
+	};
+	/*class CTI_MAIN_ADDON {
+		title = "ADDON: Main Cold-War or BW untis (80s or modern)";
+		values[] = {-1,0,1};
+		texts[] = {"Cold-War (CUP and/or RHS)","Global Mobilization - Cold War","BW-Mod & BW add vs. RUS (CUP and/or RHS AFRF)"};
+		default = -1;
+	};
+	class CTI_BW_ADDON {
+		title = "ADDON: BWA3 Support - Vehicles west";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 0;
+	};
+	class CTI_REDD_ADDON {
+		title = "ADDON: Redd-Tank Support - Vehicles west";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 0;
+	};
+	class CTI_RHS_ADDON {
+		title = "ADDON: RHS AFRF Support - Vehicles east";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 0;
+	};
+	class CTI_LEN_ADDON {
+		title = "ADDON: LEN Support - Vehicles west+east";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 0;
+	};
+	class CTI_AIR_ADDON {
+		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
+		values[] = {-1,0,1,2};
+		texts[] = {"ignore loaded plane addons", "ACTIVE: only some skins each plane", "ACTIVE: more skins each plane", "ACTIVE: without restrictions !!can result in a large list in the factory!!"};
+		default = 0;
+	};*/
+	class SEPARATOR_STARTUP {
+		title = "========================== NATIONS ============================";
+		values[] = {1};
+		texts[] = {""};
+		default = 1;
+	};
+	class CTI_US_SIDE {
+		title = "US Side";
+		values[] = {-1,0};
+		texts[] = {"deactivated", "BLUFOR (West)"};
+		//values[] = {-1,0,1,2};
+		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
+		default = 0; //-1
+	};
+	class CTI_SOV_SIDE {
+		title = "Soviet Side";
+		values[] = {-1,1};
+		texts[] = {"deactivated", "OPFOR (East)"};
+		//values[] = {-1,0,1,2};
+		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
+		default = 1; //-1
+	};
+	class CTI_NPOC_SIDE {
+		title = "NPoC Side";
+		values[] = {-1,2};
+		texts[] = {"deactivated", "GUER (Independent)"};
+		//values[] = {-1,0,1,2};
+		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
+		default = 2;
+	};/*
 	class CTI_BW_SIDE {
 		title = "Bundeswehr (West Germany) Side";
 		values[] = {-1,0};
@@ -37,22 +109,6 @@ class Params {
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
 		default = -1;
 	};
-	class CTI_US_CUP_SIDE {
-		title = "US Army/USMC Side (CUP Mod)";
-		values[] = {-1,0};
-		texts[] = {"deactivated", "BLUFOR (West)"};
-		//values[] = {-1,0,1,2};
-		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = 0; //-1
-	};
-	class CTI_SOV_CUP_SIDE {
-		title = "Soviet Side (CUP Mod)";
-		values[] = {-1,1};
-		texts[] = {"deactivated", "OPFOR (East)"};
-		//values[] = {-1,0,1,2};
-		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = 1; //-1
-	};
 	class CTI_SOV_RHS_SIDE {
 		title = "Soviet Side (RHS Mod)";
 		values[] = {-1,1};
@@ -60,49 +116,49 @@ class Params {
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
 		default = -1; //-1
-	};
+	};*/
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
 		values[] = {-1,0,1};
-		texts[] = {"disabled","National Party of Chernarus (NPoC)","Royal Army Corps of Sahrani (RACS)"};
+		texts[] = {"no changes","National Party of Chernarus (NPoC)","Royal Army Corps of Sahrani (RACS)"};
 		default = 0;
 	};
 	class CTI_WEST_TOWNS {
-		title = "BLUFOR (West) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,0,2,4};
-		texts[] = {"no changes","Bundeswehr (West Germany)","Denmark","USA (CUP Mod)"};
+		title = "BLUFOR (West) Town Nation (change the defending Town Units | only if 2 nations at one side and no mixing wanted)";
+		values[] = {-1,4};
+		texts[] = {"no changes","USA"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_EAST_TOWNS {
 		title = "OPFOR (East) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,1,3,5,7};
-		texts[] = {"no changes","NVA (East Germany)", "Polish", "Soviet (CUP Mod)", "Soviet (RHS Mod)"};
+		values[] = {-1,5};
+		texts[] = {"no changes","Soviet"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_WEST_AI {
 		title = "BLUFOR (West) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,0,2,4};
-		texts[] = {"no changes","Bundeswehr (West Germany)","Denmark","USA (CUP Mod)"};
+		values[] = {-1,4};
+		texts[] = {"no changes","USA"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_EAST_AI {
 		title = "OPFOR (East) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,1,3,5,7};
-		texts[] = {"no changes","NVA (East Germany)", "Polish", "Soviet (CUP Mod)", "Soviet (RHS Mod)"};
+		values[] = {-1,5};
+		texts[] = {"no changes","Soviet"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_CAMO_ACTIVATION {
 		title = "Main Camo";
-		values[] = {0,1,2,3};
-		texts[] = {"Standard", "Winter", "Desert", "All active (Main = Standard)"};
+		values[] = {0,1,2,3,4,5,6,7};
+		texts[] = {"Standard", "Winter", "Desert", "Jungle", "Urban", "Maritim", "Special", "All active (Main = Standard)"};
 		//values[] = {0,1,2,3,4};
 		//texts[] = {"Standard", "Winter", "Desert", "Autumn (Brown)", "All active (Main = Standard)"};
 		default = 0;
@@ -127,44 +183,44 @@ class Params {
 	};
 	class CTI_ECONOMY_LEVEL_GEAR {
 		title = "UPGRADE: Max Level Gear";
-		values[] = {-1,0,1,2,3,4,5};
-		texts[] = {"Disable all gear","0","1","2","3","4","5"};
-		default = 2; //2
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
 	};
 	class CTI_ECONOMY_LEVEL_INFANTRY {
 		title = "UPGRADE: Max Level Infantry";
-		values[] = {-1,0,1,2,3,4,5};
-		texts[] = {"Disable all gear","0","1","2","3","4","5"};
-		default = 2; //2
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
 	};
 	class CTI_ECONOMY_LEVEL_WHEELED {
 		title = "UPGRADE: Max Level Wheeled";
-		values[] = {-1,0,1,2,3,4,5};
-		texts[] = {"Disable all gear","0","1","2","3","4","5"};
-		default = 4; //3
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
 	};
 	class CTI_ECONOMY_LEVEL_TRACKED {
 		title = "UPGRADE: Max Level Tracked";
-		values[] = {-1,0,1,2,3,4,5};
-		texts[] = {"Disable all gear","0","1","2","3","4","5"};
-		default = 5; //3
-	};
-	class CTI_ECONOMY_LEVEL_NAVAL {
-		title = "UPGRADE: Max Level Naval";
-		values[] = {-1,0,1};
-		texts[] = {"Disable this units","0","1"};
-		default = 1; //1
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
 	};
 	class CTI_ECONOMY_LEVEL_AIR {
 		title = "UPGRADE: Max Level Air";
-		values[] = {-1,0,1,2,3,4};
-		texts[] = {"Disable this units","0","1","2","3","4"};
-		default = 4; //2
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
+	};
+	class CTI_ECONOMY_LEVEL_NAVAL {
+		title = "UPGRADE: Max Level Naval";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
 	};
 	class CTI_ECONOMY_UPGRADE_TIMECAP {
 		title = "UPGRADE: Max Time needed for upgrades (concerns higher tier upgrades)";
-		values[] = {300,400,500,600,700,800,900,1000,1100,1200};
-		texts[] = {"300s","400s","500s","600s","700s","800s","900s","1000s","1100s","1200s"};
+		values[] = {120,180,240,300,400,500,600,700,800,900,1000,1100,1200};
+		texts[] = {"120","180","240","300s","400s","500s","600s","700s","800s","900s","1000s","1100s","1200s"};
 		default = 600; //600
 	};
 	class CTI_ECONOMY_TIME_MULTI {
@@ -351,7 +407,7 @@ class Params {
 		title = "COST: Wheeled";
 		values[] = {200,500,1000,1500,2000,3000,4000,5000,7500,10000};
 		texts[] = {"$200","$500","$1000","$1500","$2000","$3000","$4000","$5000","$7500","$10000"};
-		default = 500;
+		default = 2000;
 	};
 	class CTI_ECONOMY_PRIZE_TRACKED {
 		title = "COST: Tracked";
@@ -387,7 +443,7 @@ class Params {
 		title = "COST: Additional Prize for armed units (adds prize*level)";
 		values[] = {100,200,300,500,1000,1250,1500,1750,2000,3000,5000,7500,10000};
 		texts[] = {"$100","$200","$300","$500","$1000","$1250","$1500","$1750","$2000","$3000","$5000","$7500","$10000"};
-		default = 5000;
+		default = 2000;
 	};
 	class SEPERATOR_ENVIRONMENT {
 		title = "============ Environment ============";
@@ -664,54 +720,6 @@ class Params {
 		values[] = {1000,1500,2000,2500,3000,3500,4000,4500,5000};
 		texts[] = {"1 KM","1.5 KM","2 KM","2.5 KM","3 KM","3.5 KM","4 KM","4.5 KM","5 KM"};
 		default = 5000;
-	};
-	class SEPARATOR_ADDONS {
-		title = "=========================== ADDONS ============================";
-		values[] = {1};
-		texts[] = {""};
-		default = 1;
-	};
-	class CTI_MAIN_ADDON {
-		title = "ADDON: Main Cold-War or BW untis (80s or modern)";
-		values[] = {-1,0,1};
-		texts[] = {"Cold-War (CUP and/or RHS)","Global Mobilization - Cold War","BW-Mod & BW add vs. RUS (CUP and/or RHS AFRF)"};
-		default = -1;
-	};
-	class CTI_CUP_ADDON {
-		title = "ADDON: CUP Support - Vehicles west + east";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 1;
-	};
-	class CTI_BW_ADDON {
-		title = "ADDON: BWA3 Support - Vehicles west";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 0;
-	};
-	class CTI_REDD_ADDON {
-		title = "ADDON: Redd-Tank Support - Vehicles west";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 0;
-	};
-	class CTI_RHS_ADDON {
-		title = "ADDON: RHS AFRF Support - Vehicles east";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 0;
-	};
-	class CTI_LEN_ADDON {
-		title = "ADDON: LEN Support - Vehicles west+east";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 0;
-	};
-	class CTI_AIR_ADDON {
-		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
-		values[] = {-1,0,1,2};
-		texts[] = {"ignore loaded plane addons", "ACTIVE: only some skins each plane", "ACTIVE: more skins each plane", "ACTIVE: without restrictions !!can result in a large list in the factory!!"};
-		default = 0;
 	};
 	class SEPARATOR_LOG {
 		title = "=========================== LOG-DEBUG-AND-TESTING ============================";

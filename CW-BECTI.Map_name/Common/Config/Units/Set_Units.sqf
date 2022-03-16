@@ -52,7 +52,7 @@ for '_i' from 0 to (count _c)-1 do {
 			missionNamespace setVariable [_var_name, _stored];
 			_cpt = _cpt + 1;
 			
-			if (CTI_Log_Level >= CTI_Log_Debug) then { ["DEBUG", "FILE: Common\Config\Units\Set_Units.sqf", format ["[%1] Set unit [%2] using classname [%3]", _side, _var_name, _classname]] call CTI_CO_FNC_Log };
+			if (CTI_Log_Level >= CTI_Log_Debug) then { ["DEBUG", "FILE: Common\Config\Units\Set_Units.sqf", format ["[%1] Set unit [%2] using classname [%3] stored <%4>", _side, _var_name, _classname, _stored]] call CTI_CO_FNC_Log };
 		} else {
 			if (CTI_Log_Level >= CTI_Log_Warning) then { ["WARNING", "FILE: Common\Config\Units\Set_Units.sqf", format ["[%1] unit [%2] was skipped since it is already defined", _side, _var_name]] call CTI_CO_FNC_Log };
 		};

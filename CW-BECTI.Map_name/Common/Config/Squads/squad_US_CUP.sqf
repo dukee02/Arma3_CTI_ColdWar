@@ -1,5 +1,6 @@
 _side = _this;
 _sid = "";
+_level = 0;
 
 /*if(_side == west) then {
 	_sid = "VIOC_B_";
@@ -36,13 +37,89 @@ missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], ["Motor
 missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], ["AntiAir", "ArmoredMBT"]];
 missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], ["Air"]]; 
 
+//*********************************************************************************************************************************************
+//											Infantry units																					  *
+//*********************************************************************************************************************************************
 //Infantry setup for the AI groups
 units_infantry = [];
-if((CTI_MAIN_ADDON == 0 && CTI_ECONOMY_LEVEL_INFANTRY >= 3) || CTI_MAIN_ADDON == 1 || CTI_MAIN_ADDON == -1) then {
-	units_infantry = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1]];
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		units_infantry = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1]];
+_matrix_full = [_side, CTI_UPGRADE_BARRACKS] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_BARRACKS, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		inf_to_add = [[format["%1CUP_B_USMC_Soldier_des", _sid], 1, 60]];	
+		inf_to_add pushBack [format["%1CUP_B_USMC_SpecOps_SD_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_GL_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_LAT_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Light_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Engineer_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Medic_des", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Crew_des", _sid], 1, 20];
 	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		inf_to_add = [[format["%1CUP_B_USMC_Soldier", _sid], 1, 60]];	
+		inf_to_add pushBack [format["%1CUP_B_USMC_SpecOps_SD", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_GL", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_LAT", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Light", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Engineer", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Medic", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Crew", _sid], 1, 20];
+	};
+	units_infantry append inf_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		inf_to_add = [[format["%1CUP_B_USMC_Soldier_AT_des", _sid], 1, 20]];	
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_AR_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_MG_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_SpecOps_des", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_UAV_des", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Pilot_des", _sid], 1, 20];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
+		inf_to_add = [[format["%1CUP_B_USMC_Soldier_AT", _sid], 1, 20]];	
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_AR", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_SpecOps", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_MG", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Pilot", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_US_Pilot", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_US_Pilot_Light", _sid], 1, 20];
+	};
+	units_infantry append inf_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 6) then {		//Desert camo active
+		inf_to_add = [[format["%1CUP_B_USMC_Soldier_HAT_des", _sid], 1, 60]];	
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Marksman_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_AA_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Officer_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Sniper_M40A3_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Sniper_M107_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Spotter_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_SL_des", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_TL_des", _sid], 1, 20];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
+		inf_to_add = [[format["%1CUP_B_USMC_Soldier_HAT", _sid], 1, 60]];	
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Marksman", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_AA", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Officer", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Sniper_M40A3", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Sniper_M107", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Spotter", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_SL", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_TL", _sid], 1, 20];
+	};
+	units_infantry append inf_to_add;
 };
 
 _v pushBack "Infantry";
@@ -53,76 +130,131 @@ _m pushBack 100;
 _c pushBack "Infantry";
 _s pushBack [];
 
+//*********************************************************************************************************************************************
+//											Wheeled Vehicles																				  *
+//*********************************************************************************************************************************************
 //Wheeled setup for the AI groups
 units_wheeled = [];
 mot_to_add = [];
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	mot_to_add = [[format["%1CUP_B_HMMWV_Unarmed_USA", _sid], 1, 50]];
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		mot_to_add = [[format["%1CUP_B_HMMWV_Unarmed_USMC", _sid], 1, 50]];
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 6) then {		//Desert camo active
+		mot_to_add = [[format["%1CUP_B_HMMWV_Unarmed_USA", _sid], 1, 40]];
 	};
-};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-	mot_to_add = [[format["%1CUP_B_HMMWV_MK19_USMC", _sid], 1, 50]];
-	mot_to_add pushBack [format["%1CUP_B_HMMWV_M2_USMC", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_HMMWV_M1114_USMC", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_M1165_GMV_USMC", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_HMMWV_TOW_USMC", _sid], 1, 50];
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		mot_to_add = [[format["%1CUP_B_HMMWV_MK19_USA", _sid], 1, 50]];
-		mot_to_add pushBack [format["%1CUP_B_HMMWV_Crows_MK19_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_HMMWV_M2_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_HMMWV_Crows_M2_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_HMMWV_SOV_M2_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_M1165_GMV_DSRT_USMC", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_HMMWV_TOW_USA", _sid], 1, 50];
-	};		
-};
-units_wheeled append mot_to_add;
-if(CTI_ECONOMY_LEVEL_WHEELED >= 2) then {
-	mot_to_add = [[format["%1CUP_B_M1151_Mk19_USMC", _sid], 1, 50]];
-	mot_to_add pushBack [format["%1CUP_B_M1151_M2_USMC", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_M1167_USMC", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_LAV25_USMC", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_LAV25M240_USMC", _sid], 1, 50];
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		mot_to_add = [[format["%1CUP_B_M1151_Mk19_DSRT_USMC", _sid], 1, 50]];
-		mot_to_add pushBack [format["%1CUP_B_M1151_M2_DSRT_USMC", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_HMMWV_M2_GPK_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_M1167_DSRT_USMC", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_LAV25_desert_USMC", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_LAV25M240_desert_USMC", _sid], 1, 50];
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		mot_to_add = [[format["%1CUP_B_HMMWV_Unarmed_USMC", _sid], 1, 40]];
 	};
 	units_wheeled append mot_to_add;
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
-	mot_to_add = [[format["%1CUP_B_M1130_CV_M2_Woodland", _sid], 1, 50]];
-	mot_to_add pushBack [format["%1CUP_B_M1126_ICV_M2_Woodland", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_M1126_ICV_MK19_Woodland", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_M1135_ATGMV_Woodland", _sid], 1, 50];
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		mot_to_add = [[format["%1CUP_B_M1130_CV_M2_Desert", _sid], 1, 50]];
-		mot_to_add pushBack [format["%1CUP_B_M1126_ICV_M2_Desert", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_M1126_ICV_MK19_Desert", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_M1135_ATGMV_Desert", _sid], 1, 50];
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		mot_to_add = [[format["%1CUP_B_M1152_DSRT_USMC", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_M1151_DSRT_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_Transport_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_Terminal_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_SOV_M2_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_MTVR_USA", _sid], 1, 40];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		mot_to_add = [[format["%1CUP_B_M1152_USMC", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_MTVR_USMC", _sid], 1, 40];
 	};
 	units_wheeled append mot_to_add;
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 4) then {
-	mot_to_add = [[format["%1CUP_B_RG31_Mk19_USA", _sid], 1, 50]];
-	mot_to_add pushBack [format["%1CUP_B_RG31E_M2_USA", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_RG31_M2_USA", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_RG31_M2_GC_USA", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_M1129_MC_MK19_Woodland", _sid], 1, 50];
-	mot_to_add pushBack [format["%1CUP_B_M1128_MGS_Woodland", _sid], 1, 50];
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		mot_to_add = [[format["%1CUP_B_RG31_Mk19_OD_USA", _sid], 1, 50]];
-		mot_to_add pushBack [format["%1CUP_B_RG31E_M2_OD_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_RG31_M2_OD_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_RG31_M2_OD_GC_USA", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_M1129_MC_MK19_Desert", _sid], 1, 50];
-		mot_to_add pushBack [format["%1CUP_B_M1128_MGS_Desert", _sid], 1, 50];
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	units_wheeled = [];	//delete unarmed vehicles if max tier allow it
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		mot_to_add = [[format["%1CUP_B_HMMWV_MK19_USA", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_Crows_M2_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_Crows_MK19_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_M2_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1165_GMV_DSRT_USMC", _sid], 1, 40];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		mot_to_add = [[format["%1CUP_B_HMMWV_M1114_USMC", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_MK19_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_M2_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1165_GMV_USMC", _sid], 1, 40];
+	};
+	units_wheeled append mot_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		mot_to_add = [[format["%1CUP_B_HMMWV_TOW_USA", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_M2_GPK_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1151_M2_DSRT_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1151_Deploy_DSRT_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1151_Mk19_DSRT_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1167_DSRT_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_LAV25_desert_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_LAV25M240_desert_USMC", _sid], 1, 40];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		mot_to_add = [[format["%1CUP_B_HMMWV_TOW_USMC", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_M1151_M2_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1151_Deploy_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1151_Mk19_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1167_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_LAV25_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_LAV25M240_USMC", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_LAV25M240_green", _sid], 1, 40];
+	};
+	units_wheeled append mot_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		mot_to_add = [[format["%1CUP_B_M1130_CV_M2_Desert", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_M1133_MEV_Desert", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1126_ICV_M2_Desert", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1126_ICV_MK19_Desert", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1135_ATGMV_Desert", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_Avenger_USA", _sid], 1, 40];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		mot_to_add = [[format["%1CUP_B_M1130_CV_M2_Woodland", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_M1133_MEV_Woodland", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1126_ICV_M2_Woodland", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1126_ICV_MK19_Woodland", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1135_ATGMV_Woodland", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_HMMWV_Avenger_USMC", _sid], 1, 40];
+	};
+	units_wheeled append mot_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		mot_to_add = [[format["%1CUP_B_RG31_Mk19_USA", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_RG31E_M2_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_RG31_M2_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_RG31_M2_GC_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1129_MC_MK19_Desert", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1128_MGS_Desert", _sid], 1, 40];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		mot_to_add = [[format["%1CUP_B_RG31_Mk19_OD_USA", _sid], 1, 40]];
+		mot_to_add pushBack [format["%1CUP_B_RG31E_M2_OD_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_RG31_M2_OD_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_RG31_M2_OD_GC_USA", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1129_MC_MK19_Woodland", _sid], 1, 40];
+		mot_to_add pushBack [format["%1CUP_B_M1128_MGS_Woodland", _sid], 1, 40];
 	};
 	units_wheeled append mot_to_add;
 };
@@ -135,54 +267,94 @@ _m pushBack 200;
 _c pushBack "Motorized";
 _s pushBack [];
 
-
-
+//*********************************************************************************************************************************************
+//											Tracked Vehicles																				  *
+//*********************************************************************************************************************************************
 //Tracked setup for the AI groups
 units_tracked = [];
 arm_to_add = [];
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
-if(CTI_CUP_ADDON == 1) then {
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	arm_to_add = [[format["%1CUP_B_AAV_Unarmed_USMC", _sid], 1, 40]];
+	units_tracked append arm_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	units_tracked = [];	//delete unarmed vehicles if max tier allow it
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M113_desert_USA", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		arm_to_add = [[format["%1CUP_B_M113_USA", _sid], 1, 40]];
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			arm_to_add = [[format["%1CUP_B_M113_desert_USA", _sid], 1, 40]];
-		};
-		units_tracked append arm_to_add;
 	};
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 1) then {
-		arm_to_add = [[format["%1CUP_B_AAV_USMC", _sid], 1, 30]];
-		arm_to_add pushBack [format["%1CUP_B_M163_USA", _sid], 1, 40];
-		units_tracked append arm_to_add;
+	arm_to_add pushBack [format["%1CUP_B_AAV_USMC", _sid], 1, 70];
+	units_tracked append arm_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {	
+	arm_to_add = [[format["%1CUP_B_M163_USA", _sid], 1, 40]];
+	units_tracked append arm_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	arm_to_add = [[format["%1CUP_B_M60A3_USMC", _sid], 1, 40]];
+	units_tracked append arm_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M7Bradley_USA_D", _sid], 1, 40]];
+		arm_to_add pushBack [format["%1CUP_B_M1A1_DES_US_Army", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M270_DPICM_USA", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M270_HE_USA", _sid], 1, 40];
 	};
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 2) then {
-		arm_to_add = [[format["%1CUP_B_M60A3_USMC", _sid], 1, 70]];
-		units_tracked append arm_to_add;
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M7Bradley_USA_W", _sid], 1, 40]];
+		arm_to_add pushBack [format["%1CUP_B_M1A1_Woodland_US_Army", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M270_DPICM_USMC", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M270_HE_USMC", _sid], 1, 40];
 	};
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 3) then {
-		arm_to_add = [[format["%1CUP_B_M7Bradley_USA_W", _sid], 1, 50]];
-		arm_to_add pushBack [format["%1CUP_B_M1A1_Woodland_US_Army", _sid], 1, 70];
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			arm_to_add = [[format["%1CUP_B_M7Bradley_USA_D", _sid], 1, 50]];
-			arm_to_add pushBack [format["%1CUP_B_M1A1_DES_US_Army", _sid], 1, 70];
-		};
-		units_tracked append arm_to_add;
+	units_tracked append arm_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M2Bradley_USA_D", _sid], 1, 40]];
+		arm_to_add pushBack [format["%1CUP_B_M6LineBacker_USA_D", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid], 1, 40];
 	};
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 4) then {
-		arm_to_add = [[format["%1CUP_B_M2Bradley_USA_W", _sid], 1, 50]];
-		arm_to_add pushBack [format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid], 1, 60];
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			arm_to_add = [[format["%1CUP_B_M2Bradley_USA_D", _sid], 1, 50]];
-			arm_to_add pushBack [format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid], 1, 60];
-		};
-		units_tracked append arm_to_add;
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M2Bradley_USA_W", _sid], 1, 40]];
+		arm_to_add pushBack [format["%1CUP_B_M6LineBacker_USA_W", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid], 1, 40];
 	};
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 5) then {
-		arm_to_add = [[format["%1CUP_B_M2A3Bradley_USA_W", _sid], 1, 50]];
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			arm_to_add = [[format["%1CUP_B_M2A3Bradley_USA_D", _sid], 1, 50]];
-		};
-		units_tracked append arm_to_add;
+	units_tracked append arm_to_add;
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M2A3Bradley_USA_D", _sid], 1, 40]];
 	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M2A3Bradley_USA_W", _sid], 1, 40]];
+	};
+	units_tracked append arm_to_add;
 };
 
 _v pushBack "ArmoredMBT";
@@ -193,26 +365,40 @@ _m pushBack 500;
 _c pushBack "Armored";
 _s pushBack [];
 
-
+//*********************************************************************************************************************************************
+//											AnitAir Vehicles																				  *
+//*********************************************************************************************************************************************
 //AntiAir setup for the AI groups
 units_antiair = [];
 aa_to_add = [];
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
-if(CTI_CUP_ADDON > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
-		aa_to_add = [[format["%1CUP_B_HMMWV_Avenger_USMC", _sid], 1, 50]];
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			aa_to_add = [[format["%1CUP_B_HMMWV_Avenger_USA", _sid], 1, 50]];
-		};
-		units_antiair append aa_to_add;
+_matrix_cnt = [4, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		aa_to_add = [[format["%1CUP_B_HMMWV_Avenger_USA", _sid], 1, 40]];
 	};
-	if(CTI_ECONOMY_LEVEL_TRACKED >= 4) then {
-		aa_to_add = [[format["%1CUP_B_M6LineBacker_USA_W", _sid], 1, 50]];
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			aa_to_add = [[format["%1CUP_B_M6LineBacker_USA_D", _sid], 1, 50]];
-		};
-		units_antiair append aa_to_add;
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		aa_to_add = [[format["%1CUP_B_HMMWV_Avenger_USMC", _sid], 1, 40]];
 	};
+	units_antiair append aa_to_add;
+};
+
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [5, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		aa_to_add = [[format["%1CUP_B_M6LineBacker_USA_D", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		aa_to_add = [[format["%1CUP_B_M6LineBacker_USA_W", _sid], 1, 40]];
+	};
+	units_antiair append aa_to_add;
 };
 
 _v pushBack "AntiAir";
@@ -223,39 +409,78 @@ _m pushBack 300;
 _c pushBack "AntiAir";
 _s pushBack [];
 
-
+//*********************************************************************************************************************************************
+//											AIR - Choppers and Planes																		  *
+//*********************************************************************************************************************************************
 //Air setup for the AI groups
 units_air = [];
 air_to_add = [];
+_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
-if(CTI_CUP_ADDON > 0) then {
-	if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
-		air_to_add = [[format["%1CUP_B_AC47_Spooky_USA", _sid], 1, 20]];
-	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-		air_to_add = [[format["%1CUP_B_AH6J_USA", _sid], 1, 40]];
-		air_to_add pushBack [format["%1CUP_B_AH6M_USA", _sid], 1, 40];
-		air_to_add pushBack [format["%1CUP_B_UH1Y_Gunship_Dynamic_USMC", _sid], 1, 50];
-	};
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	air_to_add = [[format["%1CUP_B_MH6J_USA", _sid], 1, 40]];
+	air_to_add pushBack [format["%1CUP_B_MH6M_USA", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_AC47_Spooky_USA", _sid], 1, 40];
 	units_air append air_to_add;
-	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
-		air_to_add = [[format["%1CUP_B_AH1Z_Dynamic_USMC", _sid], 1, 60]];
-		air_to_add pushBack [format["%1CUP_B_MH60L_DAP_2x_USN", _sid], 1, 40];
-		air_to_add pushBack [format["%1CUP_B_MH60L_DAP_4x_USN", _sid], 1, 40];
-		air_to_add pushBack [format["%1CUP_B_AV8B_DYN_USMC", _sid], 1, 40];
-		units_air append air_to_add;
-	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-		air_to_add = [[format["%1CUP_B_A10_DYN_USA", _sid], 1, 40]];
-		units_air append air_to_add;
-	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-		air_to_add = [[format["%1CUP_B_AH64_DL_USA", _sid], 1, 50]];
-		air_to_add pushBack [format["%1CUP_B_AH64D_DL_USA", _sid], 1, 50];
-		air_to_add pushBack [format["%1CUP_B_F35B_USMC", _sid], 1, 40];
-		air_to_add pushBack [format["%1CUP_B_F35B_Stealth_USMC", _sid], 1, 30];
-		units_air append air_to_add;
-	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	units_air = []; //delete unarmed vehicles if max tier allow it
+	air_to_add = [[format["%1CUP_B_UH1Y_UNA_USMC", _sid], 1, 50]];
+	air_to_add pushBack [format["%1CUP_B_AH6J_USA", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_AH6M_USA", _sid], 1, 40];
+	units_air append air_to_add;
+};
+	
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	air_to_add = [[format["%1CUP_B_UH1Y_Gunship_Dynamic_USMC", _sid], 1, 40]];
+	units_air append air_to_add;
+};
+	
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	air_to_add = [[format["%1CUP_B_AH1Z_Dynamic_USMC", _sid], 1, 40]];
+	air_to_add pushBack [format["%1CUP_B_MH60L_DAP_2x_USN", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_MH60L_DAP_4x_USN", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_MH60L_DAP_2x_US", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_MH60L_DAP_4x_US", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_AV8B_DYN_USMC", _sid], 1, 40];
+	air_to_add pushBack [format["%1CUP_B_A10_DYN_USA", _sid], 1, 40];
+	units_air append air_to_add;
+};
+
+/*_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; };
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	air_to_add = [[format["%", _sid], 1, 40]];
+	air_to_add pushBack [format["%", _sid], 1, 40];
+		_c pushBack format["%1CUP_B_CH53E_USMC", _sid];
+		_c pushBack format["%1CUP_B_CH53E_VIV_USMC", _sid];
+};*/
+_matrix_cnt = _matrix_cnt + 1;
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	air_to_add = [[format["%1CUP_B_AH64_DL_USA", _sid], 1, 40]];
+	air_to_add pushBack [format["%1CUP_B_AH64D_DL_USA", _sid], 1, 40];
+	units_air append air_to_add;
+};
+	
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	air_to_add = [[format["%1CUP_B_F35B_USMC", _sid], 1, 40]];
+	air_to_add pushBack [format["%1CUP_B_F35B_Stealth_USMC", _sid], 1, 40];
+	units_air append air_to_add;
 };
 
 _v pushBack "Air";

@@ -142,7 +142,7 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_UpgradeMenu.sqf";
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Vanilla_Basic.sqf";
 
-switch(CTI_MAIN_ADDON) do {
+/*switch(CTI_MAIN_ADDON) do {
 	case 0: {	//Global Mobilization - Cold War
 		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
 		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
@@ -158,7 +158,7 @@ switch(CTI_MAIN_ADDON) do {
 		//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
 		//};
 	};
-};
+};*/
 //--- Load GM Gear if DLC is owned
 //if(CTI_MAIN_ADDON == 0 && 1042220 in (getDLCs 1)) then {
 //	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
@@ -170,10 +170,10 @@ switch(CTI_MAIN_ADDON) do {
 	//if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
 //};
 //--- Load RHS Gear
-if (CTI_RHS_ADDON > 0) then { 
+/*if (CTI_RHS_ADDON > 0) then { 
 	//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
 	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_East.sqf"};
-};
+};*/
 //--- Load CUP Gear
 if (CTI_CUP_ADDON > 0) then { 
 	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};

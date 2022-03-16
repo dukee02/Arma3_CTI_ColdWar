@@ -14,7 +14,7 @@ _m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Fl
 _b pushBack [1, 2, 4, 8];
 _r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
 
-if(CTI_MAIN_ADDON == 0) then {
+/*if(CTI_MAIN_ADDON == 0) then {
 	
 	_c pushBack "gm_ge_army_m109g";
 	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
@@ -41,7 +41,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	_b pushBack [1];
 	_r pushBack [[10150,13600], [13500,18100], [17600,23600], [22300,29900]];
 };
-
+*/
 
 
 //no real config for M120 in REDD, only manuel fire atm
@@ -73,12 +73,12 @@ if(CTI_CUP_ADDON > 0) then {
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
 };
-if(CTI_RHS_ADDON > 0) then {
+/*if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_2b14_82mm_vdv";
 	_m pushBack ["rhs_mag_3vo18_10", "rhs_mag_3vs25m_10", "rhs_mag_53_va_832a_10", "rhs_mag_d832du_10"];
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[90,550], [380,2200], [780,4500], [780,4500]];
-};
+};*/
 
 //static Artillery guns:
 if(CTI_CUP_ADDON > 0) then {
@@ -95,22 +95,22 @@ if(CTI_CUP_ADDON > 0) then {
 	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
 };
 
-if(CTI_RHS_ADDON > 0) then {
+/*if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_D30_vdv";
 	_m pushBack ["rhs_mag_of462", "rhs_mag_of462_10", "rhs_mag_3of56", "rhs_mag_3of56_10", "rhs_mag_3of56_5", "rhs_mag_bk6m", "rhs_mag_bk6m_26", "rhs_mag_bk6m_5", "rhs_mag_bk13", "rhs_mag_bk13_26", "rhs_mag_bk13_5", "rhs_mag_d462", "rhs_mag_d462_2", "rhs_mag_s463", "rhs_mag_s463_2", "rhs_mag_3of69m", "rhs_mag_3of69m_2"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[820,2400], [2050,6000], [5300,15400], [5300,15400]];
-};
+};*/
 
 //SPGs
 //_c = _c + ["B_MBT_01_arty_F"];
 //_c = _c + ["O_MBT_02_arty_F"];
-if(CTI_RHS_ADDON > 0) then {
+/*if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_2s3_tv";
 	_m pushBack ["rhs_mag_HE_2a33", "rhs_mag_WP_2a33", "rhs_mag_Atomic_2a33", "rhs_mag_LASER_2a33", "rhs_mag_SMOKE_2a33", "rhs_mag_ILLUM_2a33", "rhs_mag_HE_2a33_26", "rhs_mag_WP_2a33_26", "rhs_mag_Atomic_2a_2633_26", "rhs_mag_LASER_2a33_26", "rhs_mag_SMOKE_2a33_26", "rhs_mag_ILLUM_2a33_26"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[1035,2400], [2570,6000], [6550,15400], [6550,15400]];
-};
+};*/
 
 //Arty Rocket launcher:
 //_c = _c + ["B_MBT_01_mlrs_F"];
@@ -144,11 +144,11 @@ if(CTI_CUP_ADDON > 0) then {
 
 //RHS Arty dosn't have any ammo in there setup, maybe this works
 //round name: M-21OF
-if(CTI_RHS_ADDON > 0) then {
+/*if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "RHS_BM21_VDV_01";
 	_m pushBack ["rhs_mag_m21of_1"];
 	_b pushBack [1, 2, 5, 10, 20, 40];
 	_r pushBack [[5000,6500], [6500,8300], [8300,10000], [13000,16000]];
-};
+};*/
 
 [_c, _m, _b, _r] call compile preprocessFileLineNumbers "Common\Config\Artillery\Set_Artillery.sqf";
