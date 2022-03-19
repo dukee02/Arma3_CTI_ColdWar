@@ -1,0 +1,2422 @@
+
+
+
+
+
+this forceAddUniform "CUP_U_B_CZ_DST_NoKneepads";
+this forceAddUniform "CUP_U_B_CZ_DST_Kneepads";
+this forceAddUniform "CUP_U_B_CZ_DST_Kneepads_Gloves";
+this forceAddUniform "CUP_U_B_CZ_DST_Kneepads_Sleeve";
+this forceAddUniform "CUP_U_B_CZ_DST_TShirt";
+this forceAddUniform "CUP_U_B_CZ_WDL_NoKneepads";
+this forceAddUniform "CUP_U_B_CZ_WDL_Kneepads";
+this forceAddUniform "CUP_U_B_CZ_WDL_Kneepads_Gloves";
+this forceAddUniform "CUP_U_B_CZ_WDL_TShirt";
+this forceAddUniform "CUP_U_B_CZ_WDL_Ghillie";
+this forceAddUniform "CUP_U_B_CZ_Pilot_WDL";
+
+
+this forceAddUniform "CUP_U_O_RUS_Commander";
+this forceAddUniform "CUP_U_O_RUS_Ghillie";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_MSV_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_MSV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_MSV_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_EMR_1";
+this forceAddUniform "CUP_U_O_RUS_EMR_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_EMR_2";
+this forceAddUniform "CUP_U_O_RUS_EMR_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Flora_1";
+this forceAddUniform "CUP_U_O_RUS_Flora_2";
+this forceAddUniform "CUP_U_O_RUS_VSR93_MSV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_MSV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_MSV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_gloves_MSV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_MSV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR98_MSV";
+this forceAddUniform "CUP_U_O_RUS_VSR98_MSV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_MSV";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_gloves_MSV";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_MSV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_VDV";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_VDV_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_BeigeDigital_VDV_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_EMR_1_VDV";
+this forceAddUniform "CUP_U_O_RUS_EMR_VDV_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_EMR_2_VDV";
+this forceAddUniform "CUP_U_O_RUS_EMR_VDV_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_KSOR_VDV";
+this forceAddUniform "CUP_U_O_RUS_KSOR_VDV_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_KSOR_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_KSOR_VDV_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Flora_1_VDV";
+this forceAddUniform "CUP_U_O_RUS_Flora_3";
+this forceAddUniform "CUP_U_O_RUS_Flora_2_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR93_VDV_rolled_up_gloves2";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_gloves_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR93_worn_VDV_rolled_up_gloves2";
+this forceAddUniform "CUP_U_O_RUS_VSR98_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR98_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR98_VDV_rolled_up_gloves2";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_gloves_VDV";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_VSR98_worn_VDV_rolled_up_gloves2";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_MSV_BeigeDigital_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_MSV_BeigeDigital_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_MSV_Pink_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_MSV_Pink_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_VDV_BeigeDigital_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_VDV_BeigeDigital_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_VDV_EMR_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_VDV_EMR_rolled_up_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_gloves_pads";
+this forceAddUniform "CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_rolled_up_gloves_pads";
+
+
+this forceAddUniform "CUP_U_C_AirMedic_orange_01";
+this forceAddUniform "CUP_U_C_AirMedic_red_01";
+this forceAddUniform "CUP_U_C_AirMedic_yellow_01";
+this forceAddUniform "CUP_U_C_Fireman_01";
+this forceAddUniform "CUP_U_C_Rescuer_01";
+
+
+this forceAddUniform "CUP_U_B_BAF_MTP_GHILLIE";
+this forceAddUniform "CUP_U_B_BAF_DDPM_GHILLIE";
+this forceAddUniform "CUP_U_B_BAF_DPM_GHILLIE";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSLONG";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSSEAL";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSLONG_Gloves";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSLONGKNEE";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSLONGKNEE_Gloves";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSROLLED";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSROLLED_Gloves";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSROLLEDKNEE";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSTSHIRT";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSTSHIRT_Gloves";
+this forceAddUniform "CUP_U_B_BAF_MTP_UBACSTSHIRTKNEE";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSLONG";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSSEAL";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSLONG_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSLONGKNEE";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSLONGKNEE_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSROLLED";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSROLLED_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSROLLEDKNEE";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSTSHIRT";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSTSHIRT_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DDPM_UBACSTSHIRTKNEE";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSLONG";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSSEAL";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSLONG_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSLONGKNEE";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSLONGKNEE_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSROLLED";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSROLLED_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSROLLEDKNEE";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSTSHIRT";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSTSHIRT_Gloves";
+this forceAddUniform "CUP_U_B_BAF_DPM_UBACSTSHIRTKNEE";
+
+
+this forceAddUniform "CUP_U_B_BDUv2_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_Alpenflage";
+this forceAddUniform "CUP_U_B_BDUv2_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_CEU";
+this forceAddUniform "CUP_U_B_BDUv2_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_DCU";
+this forceAddUniform "CUP_U_B_BDUv2_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_DDPM";
+this forceAddUniform "CUP_U_B_BDUv2_desert";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_desert";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_desert";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_desert";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_desert";
+this forceAddUniform "CUP_U_B_BDUv2_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_DPM";
+this forceAddUniform "CUP_U_B_BDUv2_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_DPM_OD";
+this forceAddUniform "CUP_U_B_BDUv2_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_ERDL_highland";
+this forceAddUniform "CUP_U_B_BDUv2_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_ERDL_lowland";
+this forceAddUniform "CUP_U_B_BDUv2_M81";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_M81";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_M81";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_M81";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_M81";
+this forceAddUniform "CUP_U_B_BDUv2_M81_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_M81_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_M81_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_M81_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_OD";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_OD";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_OD";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_OD";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_OD";
+this forceAddUniform "CUP_U_B_BDUv2_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_Tpattern";
+this forceAddUniform "CUP_U_B_BDUv2_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_Tigerstripe";
+this forceAddUniform "CUP_U_B_BDUv2_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_Urban";
+this forceAddUniform "CUP_U_B_BDUv2_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_Winter";
+this forceAddUniform "CUP_U_B_BDUv2_Winter_M81";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_Winter_M81";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_Winter_M81";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_Winter_M81";
+
+
+this forceAddUniform "CUP_U_B_CDF_DST_1";
+this forceAddUniform "CUP_U_B_CDF_DST_2";
+this forceAddUniform "CUP_U_B_CDF_FST_1";
+this forceAddUniform "CUP_U_B_CDF_FST_2";
+this forceAddUniform "CUP_U_B_CDF_MNT_1";
+this forceAddUniform "CUP_U_B_CDF_MNT_2";
+this forceAddUniform "CUP_U_B_CDF_SNW_1";
+this forceAddUniform "CUP_U_B_CDF_SNW_2";
+
+
+this forceAddUniform "CUP_U_O_CHDKZ_Bardak";
+this forceAddUniform "CUP_U_O_CHDKZ_Lopotev";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_01";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_03";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_02";
+this forceAddUniform "CUP_U_O_CHDKZ_Commander";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_04";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_08";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_05";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_07";
+this forceAddUniform "CUP_U_O_CHDKZ_Kam_06";
+
+
+this forceAddUniform "CUP_U_C_Citizen_02";
+this forceAddUniform "CUP_U_C_Citizen_01";
+this forceAddUniform "CUP_U_C_Citizen_04";
+this forceAddUniform "CUP_U_C_Citizen_03";
+this forceAddUniform "CUP_U_C_Priest_01";
+this forceAddUniform "CUP_U_C_Policeman_01";
+this forceAddUniform "CUP_U_C_Profiteer_02";
+this forceAddUniform "CUP_U_C_Profiteer_03";
+this forceAddUniform "CUP_U_C_Profiteer_01";
+this forceAddUniform "CUP_U_C_Profiteer_04";
+this forceAddUniform "CUP_U_C_racketeer_01";
+this forceAddUniform "CUP_U_C_racketeer_04";
+this forceAddUniform "CUP_U_C_racketeer_02";
+this forceAddUniform "CUP_U_C_racketeer_03";
+this forceAddUniform "CUP_U_C_Rocker_01";
+this forceAddUniform "CUP_U_C_Rocker_03";
+this forceAddUniform "CUP_U_C_Rocker_02";
+this forceAddUniform "CUP_U_C_Rocker_04";
+this forceAddUniform "CUP_U_C_Suit_01";
+this forceAddUniform "CUP_U_C_Suit_02";
+this forceAddUniform "CUP_U_C_Suit_03";
+this forceAddUniform "CUP_U_C_Functionary_jacket_02";
+this forceAddUniform "CUP_U_C_Functionary_jacket_01";
+this forceAddUniform "CUP_U_C_Functionary_jacket_03";
+this forceAddUniform "CUP_U_C_Tracksuit_02";
+this forceAddUniform "CUP_U_C_Tracksuit_01";
+this forceAddUniform "CUP_U_C_Tracksuit_04";
+this forceAddUniform "CUP_U_C_Tracksuit_03";
+
+
+
+this forceAddUniform "CUP_U_CRYE_ATACSAU_Full";
+this forceAddUniform "CUP_U_CRYE_ATACSAU_Roll";
+this forceAddUniform "CUP_U_CRYE_ATACSFG_Full";
+this forceAddUniform "CUP_U_CRYE_ATACSFG_Roll";
+this forceAddUniform "CUP_U_CRYE_BLK_Full";
+this forceAddUniform "CUP_U_CRYE_BLK_Roll";
+this forceAddUniform "CUP_U_CRYE_BLK_RUS_Full";
+this forceAddUniform "CUP_U_CRYE_BLK_RUS_Roll";
+this forceAddUniform "CUP_U_CRYEG3_V1";
+this forceAddUniform "CUP_U_CRYEG3_V2";
+this forceAddUniform "CUP_U_CRYE_G3C_AOR1";
+this forceAddUniform "CUP_U_CRYE_G3C_AOR2";
+this forceAddUniform "CUP_U_CRYE_G3C_ATACSAU";
+this forceAddUniform "CUP_U_CRYE_G3C_ATACSFG";
+this forceAddUniform "CUP_U_CRYE_G3C_BLK";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_US";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_US_V2";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_US_V3";
+this forceAddUniform "CUP_U_CRYE_G3C_M81";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_RGR_US";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_RGR";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_Tan_US";
+this forceAddUniform "CUP_U_CRYE_G3C_M81_Tan";
+this forceAddUniform "CUP_U_CRYE_G3C_MC_US";
+this forceAddUniform "CUP_U_CRYE_G3C_MC_V2";
+this forceAddUniform "CUP_U_CRYE_G3C_MC_V3";
+this forceAddUniform "CUP_U_CRYE_G3C_MC";
+this forceAddUniform "CUP_U_CRYE_G3C_RGR";
+this forceAddUniform "CUP_U_CRYE_G3C_RGR_MC_US";
+this forceAddUniform "CUP_U_CRYE_G3C_Tan_MC_US";
+this forceAddUniform "CUP_U_CRYE_G3C_MC_US_V2";
+this forceAddUniform "CUP_U_CRYE_MCAM_NP_Full";
+this forceAddUniform "CUP_U_CRYE_MCAM_NP_Roll";
+this forceAddUniform "CUP_U_CRYE_MCAM_RUS_Full";
+this forceAddUniform "CUP_U_CRYE_MCAM_RUS_Roll";
+this forceAddUniform "CUP_U_CRYE_MCAM_NP2_Full";
+this forceAddUniform "CUP_U_CRYE_MCAM_NP2_Roll";
+this forceAddUniform "CUP_U_CRYE_MCAM_RUS2_Full";
+this forceAddUniform "CUP_U_CRYE_MCAM_RUS2_Roll";
+this forceAddUniform "CUP_U_CRYE_V1_Full";
+this forceAddUniform "CUP_U_CRYE_V2_Full";
+this forceAddUniform "CUP_U_CRYE_V3_Full";
+this forceAddUniform "CUP_U_CRYE_V1_Roll";
+this forceAddUniform "CUP_U_CRYE_V2_Roll";
+this forceAddUniform "CUP_U_CRYE_V3_Roll";
+this forceAddUniform "CUP_U_CRYE_RGR_Full";
+this forceAddUniform "CUP_U_CRYE_RGR_Roll";
+this forceAddUniform "CUP_U_CRYE_RGR_US_Full";
+this forceAddUniform "CUP_U_CRYE_RGR_US_Roll";
+this forceAddUniform "CUP_U_CRYE_TAN_Full";
+this forceAddUniform "CUP_U_CRYE_TAN_Roll";
+this forceAddUniform "CUP_U_CRYE_TAN_US_Full";
+this forceAddUniform "CUP_U_CRYE_TAN_US_Roll";
+
+
+
+this forceAddUniform "CUP_U_B_GER_Fleck_Crye";
+this forceAddUniform "CUP_U_B_GER_Fleck_Crye2";
+this forceAddUniform "CUP_U_B_GER_Crye";
+this forceAddUniform "CUP_U_B_GER_Crye2";
+this forceAddUniform "CUP_U_B_GER_Fleck_Overalls_Pilot";
+this forceAddUniform "CUP_U_B_GER_Fleck_Overalls_Tank";
+this forceAddUniform "CUP_U_B_GER_Overalls_Tank";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_1";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_2";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_3";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_5";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_6";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_7";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_8";
+this forceAddUniform "CUP_U_B_GER_Flecktarn_4";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_1";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_2";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_3";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_5";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_6";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_7";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_8";
+this forceAddUniform "CUP_U_B_GER_Tropentarn_4";
+
+
+this forceAddUniform "CUP_U_B_CZ_DST_Ghillie";
+this forceAddUniform "CUP_U_O_TK_Ghillie_Top";
+
+
+this forceAddUniform "CUP_U_O_RUS_Gorka_Green";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Green_gloves2";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Green_gloves_kneepads";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Partizan_A";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Partizan_A_gloves2";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Partizan_A_gloves_kneepads";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Partizan";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Partizan_gloves2";
+this forceAddUniform "CUP_U_O_RUS_Gorka_Partizan_gloves_kneepads";
+
+
+this forceAddUniform "CUP_U_B_HIL_ACU_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Gloves_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Gloves_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_Gloves_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_Gloves_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_Rolled_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_Rolled_Gloves_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_Rolled_Gloves_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_Rolled_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_Kneepad_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_Rolled_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Rolled_Gloves_CCE";
+this forceAddUniform "CUP_U_B_HIL_ACU_Rolled_Gloves_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_Rolled_TTS";
+this forceAddUniform "CUP_U_B_HIL_ACU_TTS";
+
+
+this forceAddUniform "CUP_O_TKI_Khet_Jeans_04";
+this forceAddUniform "CUP_O_TKI_Khet_Jeans_02";
+this forceAddUniform "CUP_O_TKI_Khet_Jeans_01";
+this forceAddUniform "CUP_O_TKI_Khet_Jeans_03";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_04";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_02";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_01";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_07";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_08";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_05";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_06";
+this forceAddUniform "CUP_O_TKI_Khet_Partug_03";
+this forceAddUniform "CUP_U_C_Labcoat_02";
+this forceAddUniform "CUP_U_C_Labcoat_03";
+this forceAddUniform "CUP_U_C_Labcoat_01";
+this forceAddUniform "CUP_U_C_Mechanic_02";
+this forceAddUniform "CUP_U_C_Mechanic_03";
+this forceAddUniform "CUP_U_C_Mechanic_01";
+
+
+this forceAddUniform "CUP_U_O_RUS_Ratnik_Autumn";
+this forceAddUniform "CUP_U_O_RUS_Ratnik_BeigeDigital";
+this forceAddUniform "CUP_U_O_RUS_Ratnik_Desert";
+this forceAddUniform "CUP_U_O_RUS_Ratnik_Pink";
+this forceAddUniform "CUP_U_O_RUS_Ratnik_Summer";
+this forceAddUniform "CUP_U_O_RUS_Ratnik_Winter";
+
+
+this forceAddUniform "CUP_U_I_GUE_Anorak_01";
+this forceAddUniform "CUP_U_I_GUE_Anorak_03";
+this forceAddUniform "CUP_U_I_GUE_Anorak_02";
+this forceAddUniform "CUP_U_I_GUE_WorkU_01";
+this forceAddUniform "CUP_U_I_GUE_WorkU_02";
+this forceAddUniform "CUP_U_I_Ghillie_Top";
+this forceAddUniform "CUP_U_I_GUE_Flecktarn2";
+this forceAddUniform "CUP_U_I_GUE_Flecktarn3";
+this forceAddUniform "CUP_U_I_GUE_Flecktarn";
+this forceAddUniform "CUP_U_I_GUE_Flecktarn4";
+this forceAddUniform "CUP_U_I_GUE_Woodland1";
+
+
+this forceAddUniform "CUP_U_USNavy_LHD_crew_Blue";
+this forceAddUniform "CUP_U_USNavy_LHD_crew_Brown";
+this forceAddUniform "CUP_U_USNavy_LHD_crew_Green";
+this forceAddUniform "CUP_U_USNavy_LHD_crew_Red";
+this forceAddUniform "CUP_U_USNavy_LHD_crew_Violet";
+this forceAddUniform "CUP_U_USNavy_LHD_crew_White";
+this forceAddUniform "CUP_U_USNavy_LHD_crew_Yellow";
+
+
+this forceAddUniform "CUP_U_B_USArmy_PilotOverall";
+this forceAddUniform "CUP_U_B_USMC_PilotOverall";
+
+
+
+this forceAddUniform "CUP_U_O_ODKB_KSOR_VDV";
+this forceAddUniform "CUP_U_O_ODKB_KSOR_VDV_gloves_pads";
+this forceAddUniform "CUP_U_O_ODKB_KSOR_VDV_rolled_up";
+this forceAddUniform "CUP_U_O_ODKB_KSOR_VDV_rolled_up_gloves_pads";
+
+
+
+this forceAddUniform "CUP_I_B_PARA_Unit_5";
+this forceAddUniform "CUP_I_B_PARA_Unit_11";
+this forceAddUniform "CUP_I_B_PARA_Unit_13";
+this forceAddUniform "CUP_I_B_PARA_Unit_12";
+this forceAddUniform "CUP_I_B_PARA_Unit_14";
+this forceAddUniform "CUP_I_B_PARA_Unit_8";				//no pic
+this forceAddUniform "CUP_I_B_PARA_Unit_7";
+this forceAddUniform "CUP_I_B_PARA_Unit_6";
+this forceAddUniform "CUP_I_B_PARA_Unit_10";
+this forceAddUniform "CUP_I_B_PARA_Unit_2";
+this forceAddUniform "CUP_I_B_PARA_Unit_9";
+this forceAddUniform "CUP_I_B_PARA_Unit_4";
+this forceAddUniform "CUP_I_B_PARA_Unit_1";
+this forceAddUniform "CUP_I_B_PARA_Unit_3";
+
+
+this forceAddUniform "CUP_U_O_Partisan_TTsKO";
+this forceAddUniform "CUP_U_O_Partisan_TTsKO_Mixed";
+this forceAddUniform "CUP_U_O_Partisan_VSR_Mixed1";
+this forceAddUniform "CUP_U_O_Partisan_VSR_Mixed2";
+
+
+this forceAddUniform "CUP_U_C_Pilot_01";
+
+
+this forceAddUniform "CUP_I_B_PMC_Unit_20";
+this forceAddUniform "CUP_I_B_PMC_Unit_22";
+this forceAddUniform "CUP_I_B_PMC_Unit_21";
+this forceAddUniform "CUP_I_B_PMC_Unit_19";
+this forceAddUniform "CUP_I_B_PMC_Unit_17";
+this forceAddUniform "CUP_I_B_PMC_Unit_13";
+this forceAddUniform "CUP_I_B_PMC_Unit_14";
+this forceAddUniform "CUP_I_B_PMC_Unit_16";
+this forceAddUniform "CUP_I_B_PMC_Unit_15";
+this forceAddUniform "CUP_I_B_PMC_Unit_3";
+this forceAddUniform "CUP_I_B_PMC_Unit_2";
+this forceAddUniform "CUP_I_B_PMC_Unit_1";
+this forceAddUniform "CUP_I_B_PMC_Unit_4";
+this forceAddUniform "CUP_I_B_PMC_Unit_7";
+this forceAddUniform "CUP_I_B_PMC_Unit_6";
+this forceAddUniform "CUP_I_B_PMC_Unit_5";
+this forceAddUniform "CUP_I_B_PMC_Unit_8";
+this forceAddUniform "CUP_I_B_PMC_Unit_11";
+this forceAddUniform "CUP_I_B_PMC_Unit_10";
+this forceAddUniform "CUP_I_B_PMC_Unit_9";
+this forceAddUniform "CUP_I_B_PMC_Unit_12";
+this forceAddUniform "CUP_I_B_PMC_Unit_42";
+this forceAddUniform "CUP_I_B_PMC_Unit_41";
+this forceAddUniform "CUP_I_B_PMC_Unit_43";
+this forceAddUniform "CUP_I_B_PMC_Unit_40";
+this forceAddUniform "CUP_I_B_PMC_Unit_39";
+this forceAddUniform "CUP_I_B_PMC_Unit_36";
+this forceAddUniform "CUP_I_B_PMC_Unit_38";
+this forceAddUniform "CUP_I_B_PMC_Unit_37";
+this forceAddUniform "CUP_I_B_PMC_Unit_28";
+this forceAddUniform "CUP_I_B_PMC_Unit_24";
+this forceAddUniform "CUP_I_B_PMC_Unit_23";
+this forceAddUniform "CUP_I_B_PMC_Unit_35";
+this forceAddUniform "CUP_I_B_PMC_Unit_31";
+this forceAddUniform "CUP_I_B_PMC_Unit_32";
+this forceAddUniform "CUP_I_B_PMC_Unit_29";
+this forceAddUniform "CUP_I_B_PMC_Unit_26";
+this forceAddUniform "CUP_I_B_PMC_Unit_30";
+this forceAddUniform "CUP_I_B_PMC_Unit_27";
+this forceAddUniform "CUP_I_B_PMC_Unit_25";
+this forceAddUniform "CUP_I_B_PMC_Unit_34";
+this forceAddUniform "CUP_I_B_PMC_Unit_18";
+this forceAddUniform "CUP_I_B_PMC_Unit_33";
+
+
+this forceAddUniform "CUP_U_I_RACS_PilotOverall";
+this forceAddUniform "CUP_U_I_RACS_Desert_1";
+this forceAddUniform "CUP_U_I_RACS_Desert_2";
+this forceAddUniform "CUP_U_I_RACS_mech_1";
+this forceAddUniform "CUP_U_I_RACS_mech_2";
+this forceAddUniform "CUP_U_I_RACS_Desert_3";
+this forceAddUniform "CUP_U_I_RACS_Urban_1";
+this forceAddUniform "CUP_U_I_RACS_Urban_2";
+this forceAddUniform "CUP_U_I_RACS_WDL_1";
+this forceAddUniform "CUP_U_I_RACS_WDL_2";
+
+
+
+this forceAddUniform "CUP_U_O_SLA_Officer_Suit";
+this forceAddUniform "CUP_U_O_SLA_Overalls_Pilot";
+this forceAddUniform "CUP_U_O_SLA_Overalls_Tank";
+this forceAddUniform "CUP_U_O_SLA_MixedCamo";
+this forceAddUniform "CUP_U_O_SLA_Desert";
+this forceAddUniform "CUP_U_O_SLA_Green";
+this forceAddUniform "CUP_U_O_SLA_Urban";
+
+
+
+this forceAddUniform "CUP_U_O_TK_Officer";
+this forceAddUniform "CUP_U_O_TK_Green";
+this forceAddUniform "CUP_U_O_TK_MixedCamo";
+
+
+this forceAddUniform "CUP_U_O_RUS_M88_MSV";
+this forceAddUniform "CUP_U_O_RUS_M88_MSV_rolled_up";
+this forceAddUniform "CUP_U_O_RUS_M88_VDV";
+this forceAddUniform "CUP_U_O_RUS_M88_VDV_rolled_up";
+
+
+
+this forceAddUniform "CUP_U_B_USArmy_TwoKnee";
+this forceAddUniform "CUP_U_B_USArmy_Base";
+this forceAddUniform "CUP_U_B_USArmy_Soft";
+this forceAddUniform "CUP_U_B_USArmy_UBACS";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Gloves_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Gloves_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Gloves_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Gloves_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Gloves_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Gloves_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Rolled_Gloves_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Rolled_Gloves_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Rolled_Gloves_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Rolled_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Rolled_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_Rolled_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Kneepad_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Rolled_Gloves_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Rolled_Gloves_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Rolled_Gloves_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Rolled_OCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Rolled_OEFCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Rolled_UCP";
+this forceAddUniform "CUP_U_B_USArmy_ACU_UCP";
+this forceAddUniform "CUP_U_B_BDUv2_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_DCU_US";
+this forceAddUniform "CUP_U_B_BDUv2_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_desert_US";
+this forceAddUniform "CUP_U_B_BDUv2_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_M81_US";
+this forceAddUniform "CUP_U_B_BDUv2_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_dirty_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_dirty_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_dirty_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll2_gloves_dirty_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_dirty_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_OD_US";
+this forceAddUniform "CUP_U_B_BDUv2_roll_gloves_dirty_OD_US";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_2";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_2_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_2_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_2_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_roll_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_FROG1_DMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG1_WMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG2_DMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG2_WMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG3_DMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG3_WMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG4_DMARPAT";
+this forceAddUniform "CUP_U_B_USMC_FROG4_WMARPAT";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_2";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_2_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_2_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_2_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des_roll_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_des";
+this forceAddUniform "CUP_U_B_USMC_MCCUU";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_2";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_2_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_2_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_2_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_pads_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_gloves";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_pads";
+this forceAddUniform "CUP_U_B_USMC_MCCUU_roll_pads_gloves";
+
+
+this forceAddUniform "CUP_U_C_Villager_01";
+this forceAddUniform "CUP_U_C_Villager_04";
+this forceAddUniform "CUP_U_C_Villager_02";
+this forceAddUniform "CUP_U_C_Villager_03";
+this forceAddUniform "CUP_U_C_Woodlander_01";
+this forceAddUniform "CUP_U_C_Woodlander_02";
+this forceAddUniform "CUP_U_C_Woodlander_03";
+this forceAddUniform "CUP_U_C_Woodlander_04";
+this forceAddUniform "CUP_U_C_Worker_03";
+this forceAddUniform "CUP_U_C_Worker_04";
+this forceAddUniform "CUP_U_C_Worker_02";
+this forceAddUniform "CUP_U_C_Worker_01";
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//													Vests
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+this addVest "CUP_V_O_SLA_6B3_1_DES";
+this addVest "CUP_V_O_SLA_6B3_1_URB";
+this addVest "CUP_V_O_SLA_6B3_1_WDL";
+this addVest "CUP_V_RUS_6B3_1";
+this addVest "CUP_V_RUS_6B3_Flora_1";
+this addVest "CUP_V_RUS_6B3_2";
+this addVest "CUP_V_RUS_6B3_Flora_2";
+this addVest "CUP_V_RUS_6B3_4";
+this addVest "CUP_V_RUS_6B3_Flora_4";
+this addVest "CUP_V_O_SLA_Flak_Vest03";
+this addVest "CUP_V_O_SLA_Flak_Vest01";
+this addVest "CUP_V_O_SLA_Flak_Vest02";
+this addVest "CUP_V_O_SLA_6B3_4_URB";
+this addVest "CUP_V_O_SLA_6B3_4_DES";
+this addVest "CUP_V_O_SLA_6B3_4_WDL";
+this addVest "CUP_V_O_SLA_6B3_3_DES";
+this addVest "CUP_V_O_SLA_6B3_3_URB";
+this addVest "CUP_V_O_SLA_6B3_3_WDL";
+this addVest "CUP_V_RUS_6B3_3";
+this addVest "CUP_V_RUS_6B3_Flora_3";
+this addVest "CUP_V_O_SLA_6B3_5_DES";
+this addVest "CUP_V_O_SLA_6B3_5_URB";
+this addVest "CUP_V_O_SLA_6B3_5_WDL";
+this addVest "CUP_V_O_SLA_6B3_2_DES";
+this addVest "CUP_V_O_SLA_6B3_2_URB";
+this addVest "CUP_V_O_SLA_6B3_2_WDL";
+this addVest "CUP_V_RUS_6B45_1_BeigeDigital";
+this addVest "CUP_V_RUS_6B45_2_BeigeDigital";
+this addVest "CUP_V_RUS_6B45_3_BeigeDigital";
+this addVest "CUP_V_RUS_6B45_4_BeigeDigital";
+this addVest "CUP_V_RUS_6B45_1";
+this addVest "CUP_V_RUS_6B45_2";
+this addVest "CUP_V_RUS_6B45_3";
+this addVest "CUP_V_RUS_6B45_4";
+this addVest "CUP_Vest_RUS_6B45_Sh117_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Nut_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Full_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Nut_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_Nut_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Full_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Nut_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Full_BeigeDigital";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Nut_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Full_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Nut_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_Nut_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Full_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Nut_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Nut_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Full_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Nut_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_Nut_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Full_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Nut_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Full_Desert";
+this addVest "CUP_Vest_RUS_6B45_Sh117";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Nut";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut";
+this addVest "CUP_Vest_RUS_6B45_Sh117_PKP_Full";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Nut";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Del_Nut";
+this addVest "CUP_Vest_RUS_6B45_Sh117_Full";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Nut";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut";
+this addVest "CUP_Vest_RUS_6B45_Sh117_VOG_full";
+
+
+
+this addVest "CUP_V_CZ_vest02";
+this addVest "CUP_V_CZ_vest01";
+this addVest "CUP_V_CZ_vest16";
+this addVest "CUP_V_CZ_vest15";
+this addVest "CUP_V_CZ_vest19";
+this addVest "CUP_V_CZ_vest18";
+this addVest "CUP_V_CZ_vest06";
+this addVest "CUP_V_CZ_vest05";
+this addVest "CUP_V_CZ_vest12";
+this addVest "CUP_V_CZ_vest11";
+this addVest "CUP_V_CZ_vest10";
+this addVest "CUP_V_CZ_vest09";
+this addVest "CUP_V_CZ_vest13";
+this addVest "CUP_V_CZ_vest17";
+this addVest "CUP_V_CZ_vest14";
+this addVest "CUP_V_CZ_vest04";
+this addVest "CUP_V_CZ_vest03";
+this addVest "CUP_V_CZ_vest08";
+this addVest "CUP_V_CZ_vest07";
+this addVest "CUP_V_CZ_NPP2006_nk_black";
+this addVest "CUP_V_CZ_NPP2006_vz95_black";
+this addVest "CUP_V_CZ_NPP2006_ok_black";
+this addVest "CUP_V_CZ_NPP2006_des";
+this addVest "CUP_V_CZ_NPP2006_nk_des";
+this addVest "CUP_V_CZ_NPP2006_ok_des";
+this addVest "CUP_V_CZ_NPP2006_nk_vz95";
+this addVest "CUP_V_CZ_NPP2006_vz95";
+this addVest "CUP_V_CZ_NPP2006_light_vz95";
+this addVest "CUP_V_CZ_NPP2006_ok_vz95";
+this addVest "CUP_V_CZ_NPP2006_co_black";
+this addVest "CUP_V_CZ_NPP2006_co_des";
+this addVest "CUP_V_CZ_NPP2006_co_vz95";
+this addVest "CUP_V_CZ_vest20";
+
+
+this addVest "Aircrew_vest_2_NH";
+
+this addVest "CUP_V_B_ALICE";
+
+
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Empty";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Empty";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_AutomaticRifleman";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_AutomaticRifleman";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Crewman";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Crewman";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Engineer";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Engineer";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Grenadier";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Grenadier";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Medic";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Medic";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Officer";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Officer";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Pilot";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Pilot";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Rifleman";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Rifleman";
+this addVest "CUP_V_B_BAF_DDPM_Osprey_Mk3_Scout";
+this addVest "CUP_V_B_BAF_DPM_Osprey_Mk3_Scout";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Empty";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_AutomaticRifleman";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Belt";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Crewman";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Engineer";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Grenadier";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Medic";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Officer";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Rifleman";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Scout";
+this addVest "CUP_V_B_BAF_MTP_Osprey_Mk4_Webbing";
+
+
+
+this addVest "CUP_V_I_RACS_Carrier_Vest_wdl_2";
+this addVest "CUP_V_I_RACS_Carrier_Vest_2";
+this addVest "CUP_V_I_RACS_Carrier_Vest_3";
+this addVest "CUP_V_I_RACS_Carrier_Vest";
+this addVest "CUP_V_I_RACS_Carrier_Vest_wdl_3";
+this addVest "CUP_V_I_RACS_Carrier_Vest_wdl";
+
+
+this addVest "CUP_V_CDF_6B3_1_Green";
+this addVest "CUP_V_CDF_6B3_2_Green";
+this addVest "CUP_V_CDF_6B3_1_DST";
+this addVest "CUP_V_CDF_6B3_2_DST";
+this addVest "CUP_V_CDF_6B3_1_FST";
+this addVest "CUP_V_CDF_6B3_2_FST";
+this addVest "CUP_V_CDF_6B3_1_MNT";
+this addVest "CUP_V_CDF_6B3_2_MNT";
+this addVest "CUP_V_CDF_6B3_1_SNW";
+this addVest "CUP_V_CDF_6B3_2_SNW";
+this addVest "CUP_V_CDF_6B3_4_Green";
+this addVest "CUP_V_CDF_6B3_4_DST";
+this addVest "CUP_V_CDF_6B3_4_FST";
+this addVest "CUP_V_CDF_6B3_4_MNT";
+this addVest "CUP_V_CDF_6B3_4_SNW";
+this addVest "CUP_V_CDF_6B3_3_Green";
+this addVest "CUP_V_CDF_6B3_3_DST";
+this addVest "CUP_V_CDF_6B3_3_FST";
+this addVest "CUP_V_CDF_6B3_3_MNT";
+this addVest "CUP_V_CDF_6B3_3_SNW";
+this addVest "CUP_V_CDF_6B3_5_Green";
+this addVest "CUP_V_CDF_6B3_5_DST";
+this addVest "CUP_V_CDF_6B3_5_FST";
+this addVest "CUP_V_CDF_6B3_5_MNT";
+this addVest "CUP_V_CDF_6B3_5_SNW";
+
+
+this addVest "CUP_V_CDF_OfficerBelt2";
+this addVest "CUP_V_CDF_OfficerBelt";
+this addVest "CUP_V_CDF_CrewBelt";
+this addVest "CUP_V_O_Ins_Carrier_Rig";
+
+
+this addVest "CUP_V_B_Ciras_Black";
+this addVest "CUP_V_B_Ciras_Black2";
+this addVest "CUP_V_B_Ciras_Black3";
+this addVest "CUP_V_B_Ciras_Black4";
+this addVest "CUP_V_B_Ciras_Coyote";
+this addVest "CUP_V_B_Ciras_Coyote2";
+this addVest "CUP_V_B_Ciras_Coyote3";
+this addVest "CUP_V_B_Ciras_Coyote4";
+this addVest "CUP_V_B_Ciras_Coyote_USSF";
+this addVest "CUP_V_B_Ciras_Khaki";
+this addVest "CUP_V_B_Ciras_Khaki2";
+this addVest "CUP_V_B_Ciras_Khaki3";
+this addVest "CUP_V_B_Ciras_Khaki4";
+this addVest "CUP_V_B_Ciras_MCam";
+this addVest "CUP_V_B_Ciras_MCam2";
+this addVest "CUP_V_B_Ciras_Mcam3";
+this addVest "CUP_V_B_Ciras_Mcam4";
+this addVest "CUP_V_B_Ciras_Olive";
+this addVest "CUP_V_B_Ciras_Olive2";
+this addVest "CUP_V_B_Ciras_Olive3";
+this addVest "CUP_V_B_Ciras_Olive4";
+this addVest "CUP_V_B_Ciras_Olive_USSF";
+
+this addVest "CUP_V_PMC_CIRAS_Coyote_Patrol_Marsoc1";
+this addVest "CUP_V_PMC_CIRAS_Khaki_Patrol_Marsoc1";
+this addVest "CUP_V_PMC_CIRAS_Coyote_Patrol_Marsoc2";
+this addVest "CUP_V_PMC_CIRAS_Khaki_Patrol";
+this addVest "CUP_V_PMC_CIRAS_OD_Patrol_Marsoc1";
+this addVest "CUP_V_PMC_CIRAS_OD_Patrol";
+this addVest "CUP_V_PMC_CIRAS_Black_Veh";
+this addVest "CUP_V_PMC_CIRAS_Coyote_Veh";
+this addVest "CUP_V_PMC_CIRAS_Khaki_Veh";
+this addVest "CUP_V_PMC_CIRAS_OD_Veh";
+this addVest "CUP_V_PMC_CIRAS_Winter_Veh";
+this addVest "CUP_V_PMC_CIRAS_Black_Empty";
+this addVest "CUP_V_PMC_CIRAS_Coyote_Empty";
+this addVest "CUP_V_PMC_CIRAS_Khaki_Empty";
+this addVest "CUP_V_PMC_CIRAS_OD_Empty";
+this addVest "CUP_V_PMC_CIRAS_Winter_Empty";
+this addVest "CUP_V_PMC_CIRAS_Black_Grenadier";
+this addVest "CUP_V_PMC_CIRAS_Coyote_Grenadier";
+this addVest "CUP_V_PMC_CIRAS_Khaki_Grenadier";
+this addVest "CUP_V_PMC_CIRAS_OD_Grenadier";
+this addVest "CUP_V_PMC_CIRAS_Winter_Grenadier";
+this addVest "CUP_V_PMC_CIRAS_Black_Patrol";
+this addVest "CUP_V_PMC_CIRAS_Coyote_Patrol";
+this addVest "CUP_V_PMC_CIRAS_Winter_Patrol";
+this addVest "CUP_V_PMC_CIRAS_Black_TL";
+this addVest "CUP_V_PMC_CIRAS_Coyote_TL";
+this addVest "CUP_V_PMC_CIRAS_Khaki_TL";
+this addVest "CUP_V_PMC_CIRAS_OD_TL";
+this addVest "CUP_V_PMC_CIRAS_Winter_TL";
+
+
+this addVest "CUP_V_CPC_communications_coy";
+this addVest "CUP_V_CPC_Fast_coy";
+this addVest "CUP_V_CPC_light_coy";
+this addVest "CUP_V_CPC_medical_coy";
+this addVest "CUP_V_CPC_tl_coy";
+this addVest "CUP_V_CPC_weapons_coy";
+this addVest "CUP_V_CPC_communicationsbelt_coy";
+this addVest "CUP_V_CPC_Fastbelt_coy";
+this addVest "CUP_V_CPC_lightbelt_coy";
+this addVest "CUP_V_CPC_medicalbelt_coy";
+this addVest "CUP_V_CPC_tlbelt_coy";
+this addVest "CUP_V_CPC_weaponsbelt_coy";
+this addVest "CUP_V_CPC_communications_mc";
+this addVest "CUP_V_CPC_Fast_mc";
+this addVest "CUP_V_CPC_light_mc";
+this addVest "CUP_V_CPC_medical_mc";
+this addVest "CUP_V_CPC_tl_mc";
+this addVest "CUP_V_CPC_weapons_mc";
+this addVest "CUP_V_CPC_communicationsbelt_mc";
+this addVest "CUP_V_CPC_Fastbelt_mc";
+this addVest "CUP_V_CPC_lightbelt_mc";
+this addVest "CUP_V_CPC_medicalbelt_mc";
+this addVest "CUP_V_CPC_tlbelt_mc";
+this addVest "CUP_V_CPC_weaponsbelt_mc";
+this addVest "CUP_V_CPC_communications_rngr";
+this addVest "CUP_V_CPC_Fast_rngr";
+this addVest "CUP_V_CPC_light_rngr";
+this addVest "CUP_V_CPC_medical_rngr";
+this addVest "CUP_V_CPC_tl_rngr";
+this addVest "CUP_V_CPC_weapons_rngr";
+this addVest "CUP_V_CPC_communicationsbelt_rngr";
+this addVest "CUP_V_CPC_Fastbelt_rngr";
+this addVest "CUP_V_CPC_lightbelt_rngr";
+this addVest "CUP_V_CPC_medicalbelt_rngr";
+this addVest "CUP_V_CPC_tlbelt_rngr";
+this addVest "CUP_V_CPC_weaponsbelt_rngr";
+
+
+
+this addVest "CUP_V_B_Armatus_Black";
+this addVest "CUP_V_B_Armatus_BB_Black";
+this addVest "CUP_V_B_Armatus_Coyote";
+this addVest "CUP_V_B_Armatus_BB_Coyote";
+this addVest "CUP_V_B_GER_Armatus_Fleck";
+this addVest "CUP_V_B_GER_Armatus_BB_Fleck";
+this addVest "CUP_V_B_Armatus_OD";
+this addVest "CUP_V_B_Armatus_BB_OD";
+this addVest "CUP_V_B_GER_Armatus_Trop";
+this addVest "CUP_V_B_GER_Armatus_BB_Trop";
+this addVest "CUP_V_B_GER_Vest_1";
+this addVest "CUP_V_B_GER_Vest_2";
+this addVest "CUP_V_B_GER_Carrier_Vest_3";
+this addVest "CUP_V_B_JPC_Fleck_Light";
+this addVest "CUP_V_B_JPC_Trop_Light";
+this addVest "CUP_V_B_LBT_LBV_Black";
+this addVest "CUP_V_B_LBT_LBV_Coyote";
+this addVest "CUP_V_B_GER_Carrier_Vest";
+this addVest "CUP_V_B_LBT_LBV_GRN";
+this addVest "CUP_V_B_LBT_LBV_MCam";
+this addVest "CUP_V_B_LBT_LBV_OD";
+this addVest "CUP_V_B_GER_Carrier_Vest_2";
+this addVest "CUP_V_B_GER_Carrier_Rig_2_Brown";
+this addVest "CUP_V_B_GER_Carrier_Rig_3_Brown";
+this addVest "CUP_V_B_GER_Carrier_Rig_2";
+this addVest "CUP_V_B_GER_Carrier_Rig";
+this addVest "CUP_V_B_GER_PVest_Fleck_Gren";
+this addVest "CUP_V_B_GER_PVest_Fleck_Gren_LT";
+this addVest "CUP_V_B_GER_PVest_Trop_Gren";
+this addVest "CUP_V_B_GER_PVest_Trop_Gren_LT";
+this addVest "CUP_V_B_GER_PVest_Fleck_MG";
+this addVest "CUP_V_B_GER_PVest_Fleck_MG_LT";
+this addVest "CUP_V_B_GER_PVest_Trop_MG";
+this addVest "CUP_V_B_GER_PVest_Trop_MG_LT";
+this addVest "CUP_V_B_GER_PVest_Fleck_Med";
+this addVest "CUP_V_B_GER_PVest_Fleck_Med_LT";
+this addVest "CUP_V_B_GER_PVest_Trop_Med";
+this addVest "CUP_V_B_GER_PVest_Trop_Med_LT";
+this addVest "CUP_V_B_GER_PVest_Fleck_OFC";
+this addVest "CUP_V_B_GER_PVest_Trop_OFC";
+this addVest "CUP_V_B_GER_PVest_Fleck_RFL";
+this addVest "CUP_V_B_GER_PVest_Fleck_RFL_LT";
+this addVest "CUP_V_B_GER_PVest_Trop_RFL";
+this addVest "CUP_V_B_GER_PVest_Trop_RFL_LT";
+this addVest "CUP_V_B_GER_PVest_Fleck_TL";
+this addVest "CUP_V_B_GER_PVest_Fleck_TL_LT";
+this addVest "CUP_V_B_GER_PVest_Trop_TL";
+this addVest "CUP_V_B_GER_PVest_Trop_TL_LT";
+this addVest "CUP_V_B_GER_Tactical_Fleck";
+this addVest "CUP_V_B_GER_Tactical_Trop";
+
+
+this addVest "CUP_V_B_Interceptor_Base_Coyote";
+this addVest "CUP_V_B_Interceptor_Grenadier_Coyote";
+this addVest "CUP_V_B_Interceptor_Rifleman_Coyote";
+this addVest "CUP_V_B_Interceptor_Base_DCU";
+this addVest "CUP_V_B_Interceptor_Grenadier_DCU";
+this addVest "CUP_V_B_Interceptor_Rifleman_DCU";
+this addVest "CUP_V_B_Interceptor_Base_Grey";
+this addVest "CUP_V_B_Interceptor_Grenadier_Grey";
+this addVest "CUP_V_B_Interceptor_Rifleman_Grey";
+this addVest "CUP_V_B_Interceptor_Base_M81";
+this addVest "CUP_V_B_Interceptor_Grenadier_M81";
+this addVest "CUP_V_B_Interceptor_Rifleman_M81";
+this addVest "CUP_V_B_Interceptor_Base_Olive";
+this addVest "CUP_V_B_Interceptor_Grenadier_Olive";
+this addVest "CUP_V_B_Interceptor_Rifleman_Olive";
+this addVest "CUP_V_B_Interceptor_Rifleman";
+
+
+
+this addVest "CUP_V_B_IOTV_OCP_Empty_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_Empty_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_Empty_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_Grenadier_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_Grenadier_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_Grenadier_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_MG_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_MG_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_MG_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_Medic_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_Medic_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_Medic_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_Rifleman_Deltoid_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_Rifleman_Deltoid_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_Rifleman_Deltoid_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_Rifleman_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_Rifleman_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_Rifleman_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_SAW_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_SAW_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_SAW_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_SL_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_SL_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_SL_USArmy";
+this addVest "CUP_V_B_IOTV_OCP_TL_USArmy";
+this addVest "CUP_V_B_IOTV_OEFCP_TL_USArmy";
+this addVest "CUP_V_B_IOTV_UCP_TL_USArmy";
+this addVest "CUP_V_PMC_IOTV_Black_AR";
+this addVest "CUP_V_PMC_IOTV_Coyote_AR";
+this addVest "CUP_V_PMC_IOTV_Black_Empty";
+this addVest "CUP_V_PMC_IOTV_Coyote_Empty";
+this addVest "CUP_V_PMC_IOTV_Black_Gren";
+this addVest "CUP_V_PMC_IOTV_Coyote_Gren";
+this addVest "CUP_V_PMC_IOTV_Black_Patrol";
+this addVest "CUP_V_PMC_IOTV_Coyote_Patrol";
+this addVest "CUP_V_PMC_IOTV_Black_TL";
+this addVest "CUP_V_PMC_IOTV_Coyote_TL";
+
+
+
+this addVest "CUP_V_B_JPC_Black_Light";
+this addVest "CUP_V_JPC_communications_coy";
+this addVest "CUP_V_JPC_Fast_coy";
+this addVest "CUP_V_B_JPC_Tan_Light";
+this addVest "CUP_V_JPC_medical_coy";
+this addVest "CUP_V_JPC_tl_coy";
+this addVest "CUP_V_JPC_weapons_coy";
+this addVest "CUP_V_JPC_communicationsbelt_coy";
+this addVest "CUP_V_JPC_Fastbelt_coy";
+this addVest "CUP_V_JPC_lightbelt_coy";
+this addVest "CUP_V_JPC_medicalbelt_coy";
+this addVest "CUP_V_JPC_tlbelt_coy";
+this addVest "CUP_V_JPC_weaponsbelt_coy";
+this addVest "CUP_V_B_JPC_MCam_Light";
+this addVest "CUP_V_JPC_communications_mc";
+this addVest "CUP_V_JPC_Fast_mc";
+this addVest "CUP_V_JPC_medical_mc";
+this addVest "CUP_V_JPC_tl_mc";
+this addVest "CUP_V_JPC_weapons_mc";
+this addVest "CUP_V_JPC_communicationsbelt_mc";
+this addVest "CUP_V_JPC_Fastbelt_mc";
+this addVest "CUP_V_JPC_lightbelt_mc";
+this addVest "CUP_V_JPC_medicalbelt_mc";
+this addVest "CUP_V_JPC_tlbelt_mc";
+this addVest "CUP_V_JPC_weaponsbelt_mc";
+this addVest "CUP_V_JPC_communications_rngr";
+this addVest "CUP_V_JPC_Fast_rngr";
+this addVest "CUP_V_B_JPC_OD_Light";
+this addVest "CUP_V_JPC_medical_rngr";
+this addVest "CUP_V_JPC_tl_rngr";
+this addVest "CUP_V_JPC_weapons_rngr";
+this addVest "CUP_V_JPC_communicationsbelt_rngr";
+this addVest "CUP_V_JPC_Fastbelt_rngr";
+this addVest "CUP_V_JPC_lightbelt_rngr";
+this addVest "CUP_V_JPC_medicalbelt_rngr";
+this addVest "CUP_V_JPC_tlbelt_rngr";
+this addVest "CUP_V_JPC_weaponsbelt_rngr";
+
+
+
+this addVest "CUP_V_O_SLA_M23_1_BRN";
+this addVest "CUP_V_O_SLA_M23_1_OD";
+this addVest "CUP_V_O_TK_Vest_2";
+this addVest "CUP_V_O_TK_Vest_1";
+
+this addVest "CUP_V_IDF_Vest";
+
+
+
+this addVest "CUP_V_B_RRV_DA2_CB";
+this addVest "CUP_V_B_RRV_DA1_CB";
+this addVest "CUP_V_B_RRV_DA2";
+this addVest "CUP_V_B_RRV_DA1";
+this addVest "CUP_V_MBSS_PACA_Black";
+this addVest "CUP_V_MBSS_PACA2_Black";
+this addVest "CUP_V_MBSS_PACA_CB";
+this addVest "CUP_V_MBSS_PACA2_CB";
+this addVest "CUP_V_MBSS_PACA_Green";
+this addVest "CUP_V_MBSS_PACA2_Green";
+this addVest "CUP_V_MBSS_PACA_RGR";
+this addVest "CUP_V_MBSS_PACA2_RGR";
+this addVest "CUP_V_MBSS_PACA_Tan";
+this addVest "CUP_V_MBSS_PACA2_Tan";
+
+
+this addVest "CUP_V_I_RACS_Carrier_Rig_2";
+this addVest "CUP_V_I_RACS_Carrier_Rig_3";
+this addVest "CUP_V_I_RACS_Carrier_Rig_wdl_2";
+this addVest "CUP_V_I_RACS_Carrier_Rig_wdl_3";
+
+
+this addVest "CUP_V_B_MTV_Pouches";
+this addVest "CUP_V_B_MTV_PistolBlack";
+this addVest "CUP_V_B_MTV";
+this addVest "CUP_V_B_MTV_Mine";
+this addVest "CUP_V_B_MTV_LegPouch";
+this addVest "CUP_V_B_MTV_Marksman";
+this addVest "CUP_V_B_MTV_MG";
+this addVest "CUP_V_B_MTV_Patrol";
+this addVest "CUP_V_B_MTV_noCB";
+this addVest "CUP_V_B_MTV_TL";
+
+
+this addVest "CUP_V_I_Guerilla_Jacket";
+this addVest "CUP_V_I_Carrier_Belt";
+
+
+this addVest "CUP_V_B_LHDVest_Blue";
+this addVest "CUP_V_B_LHDVest_Brown";
+this addVest "CUP_V_B_LHDVest_Green";
+this addVest "CUP_V_B_LHDVest_Red";
+this addVest "CUP_V_B_LHDVest_Violet";
+this addVest "CUP_V_B_LHDVest_White";
+this addVest "CUP_V_B_LHDVest_Yellow";
+
+
+this addVest "CUP_V_B_PASGT_CCE";
+this addVest "CUP_V_B_PASGT_desert";
+this addVest "CUP_V_B_PASGT";
+this addVest "CUP_V_B_PASGT_OD";
+this addVest "CUP_V_B_PASGT_winter";
+this addVest "CUP_V_B_PASGT_no_bags_CCE";
+this addVest "CUP_V_B_PASGT_no_bags_desert";
+this addVest "CUP_V_B_PASGT_no_bags";
+this addVest "CUP_V_B_PASGT_no_bags_OD";
+this addVest "CUP_V_B_PASGT_no_bags_winter";
+
+
+this addVest "CUP_V_B_USArmy_PilotVest";
+this addVest "CUP_V_B_PilotVest";
+
+this addVest "CUP_V_C_Police_Holster";
+
+
+this addVest "CUP_V_B_RRV_Light_CB";
+this addVest "CUP_V_B_RRV_MG";
+this addVest "CUP_V_B_RRV_Medic_CB";
+this addVest "CUP_V_B_RRV_Officer_CB";
+this addVest "CUP_V_B_RRV_Scout_CB";
+this addVest "CUP_V_B_RRV_Scout2_CB";
+this addVest "CUP_V_B_RRV_Scout3";
+this addVest "CUP_V_B_RRV_TL_CB";
+this addVest "CUP_V_B_RRV_Light";
+this addVest "CUP_V_B_RRV_MG_GRN";
+this addVest "CUP_V_B_RRV_Medic";
+this addVest "CUP_V_B_RRV_Officer";
+this addVest "CUP_V_B_RRV_Scout";
+this addVest "CUP_V_B_RRV_Scout2";
+this addVest "CUP_V_B_RRV_Scout3_GRN";
+this addVest "CUP_V_B_RRV_TL";
+
+
+this addVest "CUP_V_RUS_Smersh_New_Full";
+this addVest "CUP_V_RUS_Smersh_New_Buttpack";
+this addVest "CUP_V_RUS_Smersh_New_Buttpack_Spectre";
+this addVest "CUP_V_RUS_Smersh_New_Light";
+this addVest "CUP_V_RUS_Smersh_New_Light_Spectre";
+this addVest "CUP_V_RUS_Smersh_New_Radio";
+this addVest "CUP_V_RUS_Smersh_New_Radio_Spectre";
+this addVest "CUP_V_RUS_Smersh_New_Full_Spectre";
+
+
+this addVest "CUP_V_B_Eagle_SPC_AT";
+this addVest "CUP_V_B_Eagle_SPC_AR";
+this addVest "CUP_V_B_Eagle_SPC_Corpsman";
+this addVest "CUP_V_B_Eagle_SPC_Crew";
+this addVest "CUP_V_B_Eagle_SPC_Empty";
+this addVest "CUP_V_B_Eagle_SPC_GL";
+this addVest "CUP_V_B_Eagle_SPC_MG";
+this addVest "CUP_V_B_Eagle_SPC_DMR";
+this addVest "CUP_V_B_Eagle_SPC_Officer";
+this addVest "CUP_V_B_Eagle_SPC_Patrol";
+this addVest "CUP_V_B_Eagle_SPC_RTO";
+this addVest "CUP_V_B_Eagle_SPC_Rifleman";
+this addVest "CUP_V_B_Eagle_SPC_Scout";
+this addVest "CUP_V_B_Eagle_SPC_SL";
+this addVest "CUP_V_B_Eagle_SPC_TL";
+
+
+
+this addVest "CUP_V_O_TK_CrewBelt";
+this addVest "CUP_V_OI_TKI_Jacket1_04";
+this addVest "CUP_V_OI_TKI_Jacket1_06";
+this addVest "CUP_V_OI_TKI_Jacket1_01";
+this addVest "CUP_V_OI_TKI_Jacket1_05";
+this addVest "CUP_V_OI_TKI_Jacket1_02";
+this addVest "CUP_V_OI_TKI_Jacket1_03";
+this addVest "CUP_V_OI_TKI_Jacket4_04";
+this addVest "CUP_V_OI_TKI_Jacket4_05";
+this addVest "CUP_V_OI_TKI_Jacket4_02";
+this addVest "CUP_V_OI_TKI_Jacket4_06";
+this addVest "CUP_V_OI_TKI_Jacket4_03";
+this addVest "CUP_V_OI_TKI_Jacket4_01";
+this addVest "CUP_V_OI_TKI_Jacket5_04";
+this addVest "CUP_V_OI_TKI_Jacket5_05";
+this addVest "CUP_V_OI_TKI_Jacket5_02";
+this addVest "CUP_V_OI_TKI_Jacket5_06";
+this addVest "CUP_V_OI_TKI_Jacket5_03";
+this addVest "CUP_V_OI_TKI_Jacket5_01";
+this addVest "CUP_V_O_TK_OfficerBelt2";
+this addVest "CUP_V_O_TK_OfficerBelt";
+this addVest "CUP_V_OI_TKI_Jacket3_04";
+this addVest "CUP_V_OI_TKI_Jacket3_02";
+this addVest "CUP_V_OI_TKI_Jacket3_03";
+this addVest "CUP_V_OI_TKI_Jacket3_05";
+this addVest "CUP_V_OI_TKI_Jacket3_06";
+this addVest "CUP_V_OI_TKI_Jacket3_01";
+this addVest "CUP_V_OI_TKI_Jacket6_04";
+this addVest "CUP_V_OI_TKI_Jacket6_05";
+this addVest "CUP_V_OI_TKI_Jacket6_02";
+this addVest "CUP_V_OI_TKI_Jacket6_06";
+this addVest "CUP_V_OI_TKI_Jacket6_03";
+this addVest "CUP_V_OI_TKI_Jacket6_01";
+this addVest "CUP_V_OI_TKI_Jacket2_04";
+this addVest "CUP_V_OI_TKI_Jacket2_06";
+this addVest "CUP_V_OI_TKI_Jacket2_03";
+this addVest "CUP_V_OI_TKI_Jacket2_02";
+this addVest "CUP_V_OI_TKI_Jacket2_05";
+this addVest "CUP_V_OI_TKI_Jacket2_01";
+
+
+this addVest "CUP_V_O_SLA_Carrier_Belt";
+this addVest "CUP_V_O_SLA_Carrier_Belt03";
+this addVest "CUP_V_O_SLA_Carrier_Belt02";
+
+
+this addVest "CUP_V_B_Armatus_US_MCam";
+this addVest "CUP_V_B_Armatus_BB_US_MCam";
+this addVest "CUP_V_B_Armatus_MCam";
+this addVest "CUP_V_B_Armatus_BB_MCam";
+
+
+this addVest "CUP_V_B_Delta_1";
+this addVest "CUP_V_B_Delta_2";
+this addVest "CUP_V_B_LBT_LBV_US_MCam";
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//													Backpacks/statics
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+this addBackpack "CUP_B_AGS30_Gun_Bag";
+this addBackpack "CUP_B_AGS30_Tripod_Bag";
+this addBackpack "CUP_B_AlicePack_Bedroll";
+this addBackpack "CUP_B_AlicePack_Khaki";
+this addBackpack "CUP_B_AlicePack_OD";
+this addBackpack "CUP_B_IDF_Backpack";
+this addBackpack "CUP_B_Bergen_BAF";
+this addBackpack "CUP_B_CivPack_WDL";
+this addBackpack "CUP_B_ACRPara_dpm";
+this addBackpack "CUP_B_ACRPara_m95";
+this addBackpack "CUP_B_ACRScout_m95";
+this addBackpack "CUP_B_DShkM_Gun_Bag";
+this addBackpack "CUP_B_DShkM_TripodHigh_Bag";
+this addBackpack "CUP_B_DShkM_TripodLow_Bag";
+this addBackpack "CUP_B_US_Assault_OCP";
+this addBackpack "CUP_B_US_Assault_OEFCP";
+this addBackpack "CUP_B_US_Assault_UCP";
+this addBackpack "CUP_B_HikingPack_Civ";
+this addBackpack "CUP_B_Kombat_Olive";
+this addBackpack "CUP_B_Kombat_Radio_Olive";
+this addBackpack "CUP_B_Kord_Gun_Bag";
+this addBackpack "CUP_B_Kord_Tripod_Bag";
+this addBackpack "CUP_B_Kord_TripodHigh_Bag";
+this addBackpack "CUP_B_Kornet_Gun_Bag";
+this addBackpack "CUP_B_Kornet_Tripod_Bag";
+this addBackpack "CUP_B_GER_Pack_Flecktarn";
+this addBackpack "CUP_B_GER_Pack_Tropentarn";
+this addBackpack "CUP_B_L111A1_Gun_Bag";
+this addBackpack "CUP_B_L111A1_MiniTripod_Bag";
+this addBackpack "CUP_B_L111A1_Tripod_Bag";
+this addBackpack "CUP_B_L134A1_Gun_Bag";
+this addBackpack "CUP_B_L134A1_Tripod_Bag";
+this addBackpack "CUP_B_L16A2_Bipod_Bag";
+this addBackpack "CUP_B_L16A2_Gun_Bag";
+this addBackpack "CUP_B_M2_Gun_Bag";
+this addBackpack "CUP_B_M2_MiniTripod_Bag";
+this addBackpack "CUP_B_M2_Tripod_Bag";
+this addBackpack "CUP_B_M252_Bipod_Bag";
+this addBackpack "CUP_B_M252_Gun_Bag";
+this addBackpack "CUP_B_GER_Medic_Desert";
+this addBackpack "CUP_B_GER_Medic_Flecktarn";
+this addBackpack "CUP_B_SLA_Medicbag";
+this addBackpack "CUP_B_TK_Medic_Desert";
+this addBackpack "CUP_B_GER_Medic_Tropentarn";
+this addBackpack "CUP_B_Metis_Gun_Bag";
+this addBackpack "CUP_B_Metis_Tripod_Bag";
+this addBackpack "CUP_B_Mk19_Gun_Bag";
+this addBackpack "CUP_B_Mk19_Tripod_Bag";
+this addBackpack "CUP_B_Motherlode_MTP";
+this addBackpack "CUP_B_Motherlode_Radio_MTP";
+this addBackpack "CUP_O_RUS_Patrol_bag_BeigeDigital";
+this addBackpack "CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel";
+this addBackpack "CUP_O_RUS_Patrol_bag_Green";
+this addBackpack "CUP_O_RUS_Patrol_bag_Green_Shovel";
+this addBackpack "CUP_O_RUS_Patrol_bag_Desert";
+this addBackpack "CUP_O_RUS_Patrol_bag_Desert_Shovel";
+this addBackpack "CUP_O_RUS_Patrol_bag_Summer";
+this addBackpack "CUP_O_RUS_Patrol_bag_Summer_Shovel";
+this addBackpack "CUP_O_RUS_Patrol_bag_Winter";
+this addBackpack "CUP_B_Podnos_Gun_Bag";
+this addBackpack "CUP_B_Podnos_Bipod_Bag";
+this addBackpack "CUP_B_Predator_MTP";
+this addBackpack "CUP_B_Predator_Radio_MTP";
+this addBackpack "CUP_B_RPGPack_Khaki";
+this addBackpack "CUP_B_SearchLight_Gun_Bag";
+this addBackpack "CUP_B_SearchLight_Tripod_Bag";
+this addBackpack "CUP_B_RUS_Backpack";
+this addBackpack "CUP_B_SPG9_Gun_Bag";
+this addBackpack "CUP_B_SPG9_Tripod_Bag";
+this addBackpack "CUP_B_TacticalPack_CCE";
+this addBackpack "CUP_B_TacticalPack_TTS";
+this addBackpack "CUP_B_TOW2_Tripod_Bag";
+this addBackpack "CUP_B_Tow_Gun_Bag";
+this addBackpack "CUP_B_TOW_Tripod_Bag";
+this addBackpack "CUP_B_UAVTerminal_Black";
+this addBackpack "CUP_B_AssaultPack_ACU";
+this addBackpack "CUP_B_AssaultPack_Black";
+this addBackpack "CUP_B_AssaultPack_Coyote";
+this addBackpack "CUP_B_MedicPack_ACU";
+this addBackpack "CUP_B_USPack_Black";
+this addBackpack "CUP_B_USPack_Coyote";
+this addBackpack "CUP_B_US_IIID_OCP";
+this addBackpack "CUP_B_US_IIID_OEFCP";
+this addBackpack "CUP_B_US_IIID_UCP";
+this addBackpack "CUP_B_USMC_AssaultPack";
+this addBackpack "CUP_B_USMC_MOLLE";
+this addBackpack "CUP_B_USMC_MOLLE_WDL";
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//													Headgear
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+
+this addHeadgear "CUP_H_RUS_6B27_cover_BeigeDigital";
+this addHeadgear "CUP_H_RUS_6B27_cover_BeigeDigital_goggles";
+this addHeadgear "CUP_H_RUS_6B27_cover_BeigeDigital_headset_goggles";
+this addHeadgear "CUP_H_RUS_6B27_cover_BeigeDigital_headset";
+this addHeadgear "CUP_H_RUS_6B27_cover";
+this addHeadgear "CUP_H_RUS_6B46";
+this addHeadgear "CUP_H_RUS_6B27_cover_headset_goggles";
+this addHeadgear "CUP_H_RUS_6B27_cover_headset";
+this addHeadgear "CUP_H_RUS_6B27_olive";
+this addHeadgear "CUP_H_RUS_6B27_NVG_olive";
+this addHeadgear "CUP_H_RUS_6B27";
+this addHeadgear "CUP_H_RUS_6B27_goggles";
+this addHeadgear "CUP_H_RUS_6B27_headset_goggles";
+this addHeadgear "CUP_H_RUS_6B27_headset";
+this addHeadgear "CUP_H_RUS_6B27_NVG";
+this addHeadgear "CUP_H_RUS_6B47_v2_BeigeDigital";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesClosed_BeigeDigital";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesDown_BeigeDigital";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital";
+this addHeadgear "CUP_H_RUS_6B47_v2_Desert";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesClosed_Desert";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesDown_Desert";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesUp_Desert";
+this addHeadgear "CUP_H_RUS_6B47_v2_Summer";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesClosed_Summer";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesDown_Summer";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesUp_Summer";
+this addHeadgear "CUP_H_RUS_6B47_v2_Winter";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesClosed_Winter";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesDown_Winter";
+this addHeadgear "CUP_H_RUS_6B47_v2_GogglesUp_Winter";
+this addHeadgear "CUP_H_RUS_6B47_desert";
+this addHeadgear "CUP_H_RUS_6B47_goggles_desert";
+this addHeadgear "CUP_H_RUS_6B47_headset_goggles_desert";
+this addHeadgear "CUP_H_RUS_6B47_headset_desert";
+this addHeadgear "CUP_H_RUS_6B47";
+this addHeadgear "CUP_H_RUS_6B47_headset_goggles";
+this addHeadgear "CUP_H_RUS_6B47_headset";
+this addHeadgear "CUP_H_RUS_6B47_SF_headset_goggles_black";
+this addHeadgear "CUP_H_RUS_6B47_SF_headset_black";
+this addHeadgear "CUP_H_RUS_6B47_SF_headset_goggles_desert";
+this addHeadgear "CUP_H_RUS_6B47_SF_headset_desert";
+this addHeadgear "CUP_H_RUS_6B47_SF";
+this addHeadgear "CUP_H_RUS_6B47_SF_headset";
+
+
+
+this addHeadgear "CUP_H_HIL_HelmetACH_CCE";
+this addHeadgear "CUP_H_HIL_HelmetACH_GCovered_Headset_CCE";
+this addHeadgear "CUP_H_HIL_HelmetACH_GCovered_CCE";
+this addHeadgear "CUP_H_HIL_HelmetACH_ESS_CCE";
+this addHeadgear "CUP_H_HIL_HelmetACH_ESS_Headset_CCE";
+this addHeadgear "CUP_H_HIL_HelmetACH_Headset_CCE";
+this addHeadgear "CUP_H_HIL_HelmetACH_TTS";
+this addHeadgear "CUP_H_HIL_HelmetACH_GCovered_TTS";
+this addHeadgear "CUP_H_HIL_HelmetACH_GCovered_Headset_TTS";
+this addHeadgear "CUP_H_HIL_HelmetACH_ESS_TTS";
+this addHeadgear "CUP_H_HIL_HelmetACH_ESS_Headset_TTS";
+this addHeadgear "CUP_H_HIL_HelmetACH_Headset_TTS";
+
+this addHeadgear "CUP_H_USArmy_HelmetACH_OCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_GCOVERED_OCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_OCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_Headset_OCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_Headset_OCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_OEFCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_GCOVERED_OEFCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OEFCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_OEFCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_Headset_OEFCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_Headset_OEFCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_UCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_GCOVERED_UCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_UCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_UCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_Headset_UCP";
+this addHeadgear "CUP_H_USArmy_HelmetACH_Headset_UCP";
+
+this addHeadgear "CUP_H_C_Pilot_AirMedic_Helmet_01";
+
+
+this addHeadgear "CUP_H_RUS_Altyn_black";
+this addHeadgear "CUP_H_RUS_Altyn_Goggles_black";
+this addHeadgear "CUP_H_RUS_Altyn_Shield_Down_black";
+this addHeadgear "CUP_H_RUS_Altyn_Shield_Up_black";
+this addHeadgear "CUP_H_RUS_Altyn";
+this addHeadgear "CUP_H_RUS_Altyn_Goggles";
+this addHeadgear "CUP_H_RUS_Altyn_Shield_Down";
+this addHeadgear "CUP_H_RUS_Altyn_Shield_Up";
+this addHeadgear "CUP_H_RUS_Altyn_khaki";
+this addHeadgear "CUP_H_RUS_Altyn_Goggles_khaki";
+this addHeadgear "CUP_H_RUS_Altyn_Shield_Down_khaki";
+this addHeadgear "CUP_H_RUS_Altyn_Shield_Up_khaki";
+
+
+
+this addHeadgear "CUP_H_RUS_Balaclava_Ratnik_Headphones";
+this addHeadgear "CUP_H_RUS_Balaclava_Ratnik_Headphones_v2";
+this addHeadgear "CUP_H_RUS_Balaclava_Ratnik_Headphones_winter";
+this addHeadgear "CUP_H_RUS_Balaclava_Ratnik_Headphones_winter_v2";
+this addHeadgear "CUP_H_FR_BandanaGreen";
+this addHeadgear "CUP_H_RUS_Bandana_GSSh_Headphones";
+this addHeadgear "CUP_H_FR_BandanaWdl";
+this addHeadgear "CUP_H_RUS_Bandana_HS";
+this addHeadgear "CUP_H_FR_Bandana_Headset";
+this addHeadgear "CUP_H_C_Beanie_01";
+this addHeadgear "CUP_H_C_Beanie_02";
+this addHeadgear "CUP_H_C_Beanie_03";
+this addHeadgear "CUP_H_C_Beanie_04";
+this addHeadgear "CUP_H_SLA_BeanieGreen";
+this addHeadgear "CUP_H_ChDKZ_Beanie";
+this addHeadgear "CUP_H_FR_BeanieGreen";
+this addHeadgear "CUP_H_PMC_Beanie_Black";
+this addHeadgear "CUP_H_PMC_Beanie_Headphones_Black";
+this addHeadgear "CUP_H_PMC_Beanie_Khaki";
+this addHeadgear "CUP_H_PMC_Beanie_Headphones_Khaki";
+this addHeadgear "CUP_H_PMC_Beanie_Winter";
+this addHeadgear "CUP_H_PMC_Beanie_Headphones_Winter";
+
+
+this addHeadgear "CUP_H_Ger_Beret_TankCommander_Blk";
+this addHeadgear "CUP_H_C_Beret_04";
+this addHeadgear "CUP_H_C_Beret_01";
+this addHeadgear "CUP_H_Ger_Beret_ARM_Blk";
+this addHeadgear "CUP_H_Ger_Beret_ARM_Grn";
+this addHeadgear "CUP_H_Ger_Beret_INF_Grn";
+this addHeadgear "CUP_H_Ger_Beret_TankCommander_Grn";
+this addHeadgear "CUP_H_Beret_HIL";
+this addHeadgear "CUP_H_C_Beret_02";
+this addHeadgear "CUP_H_C_Beret_03";
+this addHeadgear "CUP_H_Ger_Beret_KSK_Red";
+this addHeadgear "CUP_H_SLA_Beret";
+this addHeadgear "CUP_H_RUS_Beret_Spetsnaz";
+this addHeadgear "CUP_H_TK_Beret";
+this addHeadgear "CUP_H_RUS_Beret_VDV";
+this addHeadgear "CUP_H_CZ_Hat01";
+this addHeadgear "CUP_H_BAF_PARA_BERET";
+this addHeadgear "CUP_H_CDF_Beret_UN";
+this addHeadgear "CUP_H_ChDKZ_Beret";
+this addHeadgear "CUP_H_BAF_PARA_PRROVER_BERET";
+this addHeadgear "CUP_H_BAF_PARA_PRRUNDER_BERET";
+this addHeadgear "CUP_H_RACS_Beret_Blue";
+this addHeadgear "CUP_H_SLA_BeretRed";
+
+
+
+this addHeadgear "CUP_H_US_BOONIE_Alpenflage";
+this addHeadgear "CUP_H_USA_Boonie_wdl";
+this addHeadgear "CUP_H_USMC_BOONIE_2_DES";
+this addHeadgear "CUP_H_USMC_BOONIE_WDL";
+this addHeadgear "CUP_H_CZ_Hat02";
+this addHeadgear "CUP_H_CZ_Booniehat_vz95_des";
+this addHeadgear "CUP_H_CZ_Booniehat_fold_des";
+this addHeadgear "CUP_H_CZ_Hat03";
+this addHeadgear "CUP_H_Ger_Boonie2_Flecktarn";
+this addHeadgear "CUP_H_Ger_Boonie_Flecktarn";
+this addHeadgear "CUP_H_Ger_Boonie2_desert";
+this addHeadgear "CUP_H_Ger_Boonie_desert";
+this addHeadgear "CUP_H_FR_Boonie_DES";
+this addHeadgear "CUP_H_FR_BoonieMARPAT";
+this addHeadgear "CUP_H_FR_BoonieWDL";
+this addHeadgear "CUP_H_USMC_BOONIE_PRR_DES";
+this addHeadgear "CUP_H_USMC_BOONIE_PRR_WDL";
+this addHeadgear "CUP_H_FR_PRR_BoonieWDL";
+this addHeadgear "CUP_H_Booniehat_CCE";
+this addHeadgear "CUP_H_USArmy_Boonie_hs_OCP";
+this addHeadgear "CUP_H_USArmy_Boonie_hs_OEFCP";
+this addHeadgear "CUP_H_USArmy_Boonie_hs_UCP";
+this addHeadgear "CUP_H_USArmy_Boonie_OCP";
+this addHeadgear "CUP_H_USArmy_Boonie_OEFCP";
+this addHeadgear "CUP_H_SLA_Boonie_DES";
+this addHeadgear "CUP_H_SLA_Boonie_URB";
+this addHeadgear "CUP_H_SLA_Boonie";
+this addHeadgear "CUP_H_Booniehat_TTS";
+this addHeadgear "CUP_H_USArmy_Boonie_UCP";
+
+
+this addHeadgear "CUP_H_RUS_Cap_ATACSAU";
+this addHeadgear "CUP_H_RUS_Cap_ATACSFG";
+this addHeadgear "CUP_H_RUS_Cap_EMR";
+this addHeadgear "CUP_H_USA_Cap_M81";
+this addHeadgear "CUP_H_C_MAGA_01";
+this addHeadgear "CUP_H_USA_Cap_MCAM";
+this addHeadgear "CUP_H_USMC_Officer_Cap";
+this addHeadgear "CUP_H_C_Policecap_01";
+this addHeadgear "CUP_H_PMC_Cap_Tan";
+this addHeadgear "CUP_H_C_TrackIR_01";
+this addHeadgear "CUP_H_CZ_Cap_khk";
+this addHeadgear "CUP_H_CZ_Cap_Headphones_des";
+this addHeadgear "CUP_H_CZ_Cap_flag";
+this addHeadgear "CUP_H_CZ_Cap_Headphones";
+this addHeadgear "CUP_H_CZ_Cap_rgr";
+this addHeadgear "CUP_H_CZ_Hat04";
+this addHeadgear "CUP_H_Ger_Cap_EP_Grn2";
+this addHeadgear "CUP_H_Ger_Cap_EP_Grn1";
+this addHeadgear "CUP_H_Ger_Cap_Grn2";
+this addHeadgear "CUP_H_Ger_Cap_Grn1";
+this addHeadgear "CUP_H_Ger_Cap_EP_Tan2";
+this addHeadgear "CUP_H_Ger_Cap_EP_Tan1";
+this addHeadgear "CUP_H_Ger_Cap_Tan2";
+this addHeadgear "CUP_H_Ger_Cap_Tan1";
+this addHeadgear "CUP_H_USA_Cap_AU_DEF";
+this addHeadgear "CUP_H_USA_Cap_TREAD_DEF";
+this addHeadgear "CUP_H_USA_Cap_MARSOC_DEF";
+this addHeadgear "CUP_H_USA_Cap_NY_DEF";
+this addHeadgear "CUP_H_USA_Cap_PUNISHER_DEF";
+this addHeadgear "CUP_H_USA_Cap_UT_DEF";
+this addHeadgear "CUP_H_USA_Cap_Mcam_DEF";
+this addHeadgear "CUP_H_FR_Cap_Headset_Green";
+this addHeadgear "CUP_H_FR_Cap_Officer_Headset";
+this addHeadgear "CUP_H_PMC_Cap_Burberry";
+this addHeadgear "CUP_H_PMC_Cap_Back_Burberry";
+this addHeadgear "CUP_H_PMC_Cap_Back_PRR_Burberry";
+this addHeadgear "CUP_H_PMC_Cap_PRR_Burberry";
+this addHeadgear "CUP_H_PMC_Cap_Grey";
+this addHeadgear "CUP_H_PMC_Cap_Back_Grey";
+this addHeadgear "CUP_H_PMC_Cap_Back_EP_Grey";
+this addHeadgear "CUP_H_PMC_Cap_Back_PRR_Grey";
+this addHeadgear "CUP_H_PMC_Cap_EP_Grey";
+this addHeadgear "CUP_H_PMC_Cap_PRR_Grey";
+this addHeadgear "CUP_H_PMC_Cap_Back_Tan";
+this addHeadgear "CUP_H_PMC_Cap_Back_EP_Tan";
+this addHeadgear "CUP_H_PMC_Cap_Back_PRR_Tan";
+this addHeadgear "CUP_H_PMC_Cap_EP_Tan";
+this addHeadgear "CUP_H_PMC_Cap_PRR_Tan";
+
+
+
+this addHeadgear "CUP_H_CZ_Helmet01";
+this addHeadgear "CUP_H_CZ_Helmet02";
+this addHeadgear "CUP_H_CZ_Helmet03";
+this addHeadgear "CUP_H_CZ_Helmet04";
+
+
+this addHeadgear "CUP_H_CVC";
+this addHeadgear "CUP_H_CVCH_des";
+this addHeadgear "CUP_H_PMC_EP_Headset";
+
+
+
+this addHeadgear "CUP_H_USArmy_Helmet_ECH2_Black";
+this addHeadgear "CUP_H_USArmy_Helmet_ECH1_Black";
+this addHeadgear "CUP_H_USArmy_Helmet_ECH2_GREEN";
+this addHeadgear "CUP_H_USArmy_Helmet_ECH1_Green";
+this addHeadgear "CUP_H_USArmy_ECH_MARPAT_des";
+this addHeadgear "CUP_H_USArmy_ECH_GCOVEREDMARPAT_des";
+this addHeadgear "CUP_H_USArmy_ECH_GCOVERED_Headset_MARPAT_des";
+this addHeadgear "CUP_H_USArmy_ECH_ESS_MARPAT_des";
+this addHeadgear "CUP_H_USArmy_ECH_ESS_Headset_MARPAT_des";
+this addHeadgear "CUP_H_USArmy_ECH_Headset_MARPAT_des";
+this addHeadgear "CUP_H_USArmy_ECH_MARPAT";
+this addHeadgear "CUP_H_USArmy_ECH_GCOVERED_MARPAT";
+this addHeadgear "CUP_H_USArmy_ECH_GCOVERED_Headset_MARPAT";
+this addHeadgear "CUP_H_USArmy_ECH_ESS_MARPAT";
+this addHeadgear "CUP_H_USArmy_ECH_ESS_Headset_MARPAT";
+this addHeadgear "CUP_H_USArmy_ECH_Headset_MARPAT";
+this addHeadgear "CUP_H_USArmy_Helmet_ECH2_Sand";
+this addHeadgear "CUP_H_FR_ECH";
+this addHeadgear "CUP_H_USArmy_Helmet_ECH1_Sand";
+
+
+this addHeadgear "CUP_H_NAPA_Fedora";
+this addHeadgear "CUP_H_C_Fireman_Helmet_01";
+
+
+this addHeadgear "CUP_H_RUS_GSSh01_Headphones_black";
+this addHeadgear "CUP_H_RUS_GSSh01_Headphones_brown";
+this addHeadgear "CUP_H_RUS_GSSh01_Headphones_green";
+this addHeadgear "CUP_H_RUS_GSSh01_Headphones_grey";
+this addHeadgear "CUP_H_FR_Headband_Headset";
+this addHeadgear "CUP_H_FR_Headset";
+
+
+this addHeadgear "CUP_H_RUS_K6_3_black";
+this addHeadgear "CUP_H_RUS_K6_3_Goggles_black";
+this addHeadgear "CUP_H_RUS_K6_3_Shield_Down_black";
+this addHeadgear "CUP_H_RUS_K6_3_Shield_Up_black";
+this addHeadgear "CUP_H_RUS_K6_3";
+this addHeadgear "CUP_H_RUS_K6_3_Goggles";
+this addHeadgear "CUP_H_RUS_K6_3_Shield_Down";
+this addHeadgear "CUP_H_RUS_K6_3_Shield_Up";
+this addHeadgear "CUP_H_RUS_K6_3_khaki";
+this addHeadgear "CUP_H_RUS_K6_3_Goggles_khaki";
+this addHeadgear "CUP_H_RUS_K6_3_Shield_Down_khaki";
+this addHeadgear "CUP_H_RUS_K6_3_Shield_Up_khaki";
+
+
+
+this addHeadgear "CUP_H_LWHv2_brown";
+this addHeadgear "CUP_H_LWHv2_brown_ess_comms";
+this addHeadgear "CUP_H_LWHv2_brown_comms";
+this addHeadgear "CUP_H_LWHv2_desert";
+this addHeadgear "CUP_H_LWHv2_desert_comms";
+this addHeadgear "CUP_H_LWHv2_desert_ess_comms";
+this addHeadgear "CUP_H_LWHv2_ERDL_lowland";
+this addHeadgear "CUP_H_LWHv2_ERDL_lowland_ess_comms";
+this addHeadgear "CUP_H_LWHv2_ERDL_lowland_comms";
+this addHeadgear "CUP_H_LWHv2_MARPAT_des";
+this addHeadgear "CUP_H_LWHv2_MARPAT_des_comms";
+this addHeadgear "CUP_H_LWHv2_MARPAT_des_NVG_gog_cov2";
+this addHeadgear "CUP_H_LWHv2_MARPAT_des_NVG_gog2_cov2";
+this addHeadgear "CUP_H_LWHv2_MARPAT_des_cov_fr";
+this addHeadgear "CUP_H_LWHv2_MARPAT_des_comms_cov_fr";
+this addHeadgear "CUP_H_LWHv2_MARPAT";
+this addHeadgear "CUP_H_LWHv2_MARPAT_comms";
+this addHeadgear "CUP_H_LWHv2_MARPAT_NVG_gog_cov2";
+this addHeadgear "CUP_H_LWHv2_MARPAT_NVG_gog2_cov2";
+this addHeadgear "CUP_H_LWHv2_MARPAT_cov_fr";
+this addHeadgear "CUP_H_LWHv2_MARPAT_comms_cov_fr";
+this addHeadgear "CUP_H_LWHv2_OD";
+this addHeadgear "CUP_H_LWHv2_OD_comms";
+this addHeadgear "CUP_H_LWHv2_OD_ess_comms";
+this addHeadgear "CUP_H_LWHv2_Tpat";
+this addHeadgear "CUP_H_LWHv2_Tpat_comms";
+this addHeadgear "CUP_H_LWHv2_Tpat_ess_comms";
+this addHeadgear "CUP_H_LWHv2_tigerstripe";
+this addHeadgear "CUP_H_LWHv2_tigerstripe_comms";
+this addHeadgear "CUP_H_LWHv2_tigerstripe_ess_comms";
+
+
+this addHeadgear "CUP_H_USArmy_Helmet_M1_btp";
+this addHeadgear "CUP_H_USArmy_Helmet_M1_Vine";
+this addHeadgear "CUP_H_USArmy_Helmet_M1_Olive";
+this addHeadgear "CUP_H_USArmy_Helmet_M1_m81";
+this addHeadgear "CUP_H_USArmy_Helmet_M1_plain_Olive";
+this addHeadgear "CUP_H_USArmy_Helmet_M1_plain_Vine";
+this addHeadgear "CUP_H_USArmy_Helmet_M1_plain_M81";
+
+
+
+
+this addHeadgear "CUP_H_Ger_M92_Black";
+this addHeadgear "CUP_H_Ger_M92_Black_GG";
+this addHeadgear "CUP_H_Ger_M92_Black_GG_CB";
+this addHeadgear "CUP_H_Ger_M92_Black_GG_CF";
+this addHeadgear "CUP_H_Ger_M92_Cover";
+this addHeadgear "CUP_H_Ger_M92_Cover_GG_CB";
+this addHeadgear "CUP_H_Ger_M92_Cover_GG_CF";
+this addHeadgear "CUP_H_Ger_M92_Cover_GG";
+this addHeadgear "CUP_H_Ger_M92";
+this addHeadgear "CUP_H_Ger_M92_GG";
+this addHeadgear "CUP_H_Ger_M92_GG_CB";
+this addHeadgear "CUP_H_Ger_M92_GG_CF";
+this addHeadgear "CUP_H_Ger_M92_RGR";
+this addHeadgear "CUP_H_Ger_M92_RGR_GG";
+this addHeadgear "CUP_H_Ger_M92_RGR_GG_CB";
+this addHeadgear "CUP_H_Ger_M92_RGR_GG_CF";
+this addHeadgear "CUP_H_Ger_M92_Tan";
+this addHeadgear "CUP_H_Ger_M92_Tan_GG";
+this addHeadgear "CUP_H_Ger_M92_Tan_GG_CB";
+this addHeadgear "CUP_H_Ger_M92_Tan_GG_CF";
+this addHeadgear "CUP_H_Ger_M92_Cover_Trop";
+this addHeadgear "CUP_H_Ger_M92_Cover_Trop_GG_CB";
+this addHeadgear "CUP_H_Ger_M92_Cover_Trop_GG_CF";
+this addHeadgear "CUP_H_Ger_M92_Cover_Trop_GG";
+
+
+
+this addHeadgear "CUP_H_USArmy_MICH_M81";
+this addHeadgear "CUP_H_USArmy_MICH_GCOVERED_M81";
+this addHeadgear "CUP_H_USArmy_MICH_GCOVERED_Headset_M81";
+this addHeadgear "CUP_H_USArmy_MICH_ESS_M81";
+this addHeadgear "CUP_H_USArmy_MICH_ESS_Headset_M81";
+this addHeadgear "CUP_H_USArmy_MICH_Headset_M81";
+this addHeadgear "CUP_H_USArmy_MICH_UCP";
+this addHeadgear "CUP_H_USArmy_MICH_GCOVERED_UCP";
+this addHeadgear "CUP_H_USArmy_MICH_GCOVERED_Headset_UCP";
+this addHeadgear "CUP_H_USArmy_MICH_ESS_UCP";
+this addHeadgear "CUP_H_USArmy_MICH_ESS_Headset_UCP";
+this addHeadgear "CUP_H_USArmy_MICH_Headset_UCP";
+this addHeadgear "CUP_H_CZ_Helmet07";
+this addHeadgear "CUP_H_CZ_Helmet08";
+this addHeadgear "CUP_H_CZ_Helmet10";
+this addHeadgear "CUP_H_CZ_Helmet09";
+
+
+
+this addHeadgear "CUP_H_BAF_DDPM_Mk6_EMPTY";
+this addHeadgear "CUP_H_BAF_DDPM_Mk6_EMPTY_PRR";
+this addHeadgear "CUP_H_BAF_DDPM_Mk6_CREW_PRR";
+this addHeadgear "CUP_H_BAF_DDPM_Mk6_GLASS_PRR";
+this addHeadgear "CUP_H_BAF_DDPM_Mk6_GOGGLES_PRR";
+this addHeadgear "CUP_H_BAF_DDPM_Mk6_NETTING_PRR";
+this addHeadgear "CUP_H_BAF_DPM_Mk6_EMPTY";
+this addHeadgear "CUP_H_BAF_DPM_Mk6_EMPTY_PRR";
+this addHeadgear "CUP_H_BAF_DPM_Mk6_CREW_PRR";
+this addHeadgear "CUP_H_BAF_DPM_Mk6_GLASS_PRR";
+this addHeadgear "CUP_H_BAF_DPM_Mk6_GOGGLES_PRR";
+this addHeadgear "CUP_H_BAF_DPM_Mk6_NETTING_PRR";
+this addHeadgear "CUP_H_BAF_MTP_Mk7";
+this addHeadgear "CUP_H_BAF_MTP_Mk6_EMPTY";
+this addHeadgear "CUP_H_BAF_MTP_Mk6_CREW_PRR";
+this addHeadgear "CUP_H_BAF_MTP_Mk7_PRR_SCRIM_A";
+this addHeadgear "CUP_H_BAF_MTP_Mk7_PRR_SCRIM_B";
+this addHeadgear "CUP_H_BAF_MTP_Mk6_EMPTY_PRR";
+this addHeadgear "CUP_H_BAF_MTP_Mk7_PRR";
+this addHeadgear "CUP_H_BAF_MTP_Mk6_GLASS_PRR";
+this addHeadgear "CUP_H_BAF_MTP_Mk6_GOGGLES_PRR";
+this addHeadgear "CUP_H_BAF_MTP_Mk6_NETTING_PRR";
+
+
+
+this addHeadgear "CUP_H_Navy_CrewHelmet_Blue";
+this addHeadgear "CUP_H_Navy_CrewHelmet_Brown";
+this addHeadgear "CUP_H_Navy_CrewHelmet_Green";
+this addHeadgear "CUP_H_Navy_CrewHelmet_Red";
+this addHeadgear "CUP_H_Navy_CrewHelmet_Violet";
+this addHeadgear "CUP_H_Navy_CrewHelmet_White";
+this addHeadgear "CUP_H_Navy_CrewHelmet_Yellow";
+
+
+this addHeadgear "CUP_H_USMC_CAP_DES";
+this addHeadgear "CUP_H_USMC_CAP_WDL";
+this addHeadgear "CUP_H_SLA_SLCap";
+this addHeadgear "CUP_H_SLA_OfficerCap";
+this addHeadgear "CUP_H_CDF_OfficerCap_DST";
+this addHeadgear "CUP_H_CDF_OfficerCap_FST";
+this addHeadgear "CUP_H_CDF_OfficerCap_MNT";
+this addHeadgear "CUP_H_CDF_OfficerCap_SNW";
+this addHeadgear "CUP_H_CDF_OfficerCap_UN";
+this addHeadgear "CUP_H_ChDKZ_Cap";
+this addHeadgear "CUP_H_USMC_CAP_PRR_DES";
+this addHeadgear "CUP_H_USMC_CAP_PRR_WDL";
+
+
+
+
+this addHeadgear "CUP_H_OpsCore_Covered_AAF";
+this addHeadgear "CUP_H_OpsCore_Covered_AAF_NoHS";
+this addHeadgear "CUP_H_OpsCore_Black";
+this addHeadgear "CUP_H_OpsCore_Black_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_Fleck";
+this addHeadgear "CUP_H_OpsCore_Covered_Fleck_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_Tropen";
+this addHeadgear "CUP_H_OpsCore_Covered_Tropen_NoHS";
+this addHeadgear "CUP_H_OpsCore_Green";
+this addHeadgear "CUP_H_OpsCore_Green_NoHS";
+this addHeadgear "CUP_H_OpsCore_Grey";
+this addHeadgear "CUP_H_OpsCore_Grey_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_MTP";
+this addHeadgear "CUP_H_OpsCore_Covered_MTP_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_MCAM_US";
+this addHeadgear "CUP_H_OpsCore_Covered_MCAM";
+this addHeadgear "CUP_H_OpsCore_Covered_MCAM_NoHS";
+this addHeadgear "CUP_H_OpsCore_Spray_US";
+this addHeadgear "CUP_H_OpsCore_Spray";
+this addHeadgear "CUP_H_OpsCore_Spray_NoHS";
+this addHeadgear "CUP_H_OpsCore_Tan";
+this addHeadgear "CUP_H_OpsCore_Tan_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_Tigerstripe";
+this addHeadgear "CUP_H_OpsCore_Covered_Tigerstripe_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_UCP";
+this addHeadgear "CUP_H_OpsCore_Covered_UCP_NoHS";
+this addHeadgear "CUP_H_OpsCore_Covered_AAF_SF";
+this addHeadgear "CUP_H_OpsCore_Black_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_Fleck_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_Tropen_SF";
+this addHeadgear "CUP_H_OpsCore_Green_SF";
+this addHeadgear "CUP_H_OpsCore_Grey_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_MTP_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_MCAM_US_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_MCAM_SF";
+this addHeadgear "CUP_H_OpsCore_Spray_US_SF";
+this addHeadgear "CUP_H_OpsCore_Spray_SF";
+this addHeadgear "CUP_H_OpsCore_Tan_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_Tigerstripe_SF";
+this addHeadgear "CUP_H_OpsCore_Covered_UCP_SF";
+
+
+
+this addHeadgear "CUP_H_CZ_Pakol_headset_f_brown";
+this addHeadgear "CUP_H_CZ_Pakol_headset_b_grey";
+
+
+this addHeadgear "CUP_H_CDF_H_PASGT_DST";
+this addHeadgear "CUP_H_CDF_H_PASGT_FST";
+this addHeadgear "CUP_H_CDF_H_PASGT_MNT";
+this addHeadgear "CUP_H_CDF_H_PASGT_SNW";
+this addHeadgear "CUP_H_CDF_H_PASGT_UN";
+this addHeadgear "CUP_H_PASGTv2_DCU";
+this addHeadgear "CUP_H_PASGTv2_desert";
+this addHeadgear "CUP_H_PASGTv2_ERDL_highland";
+this addHeadgear "CUP_H_PASGTv2_ERDL_lowland";
+this addHeadgear "CUP_H_PASGTv2_WDL_CF";
+this addHeadgear "CUP_H_PASGTv2_WDL_GG";
+this addHeadgear "CUP_H_PASGTv2_WDL";
+this addHeadgear "CUP_H_PASGTv2_NVG_WDL_CF";
+this addHeadgear "CUP_H_PASGTv2_NVG_WDL_GG_CB";
+this addHeadgear "CUP_H_PASGTv2_NVG_WDL_GG";
+this addHeadgear "CUP_H_PASGTv2_NVG_DCU";
+this addHeadgear "CUP_H_PASGTv2_NVG_desert";
+this addHeadgear "CUP_H_PASGTv2_NVG_ERDL_highland";
+this addHeadgear "CUP_H_PASGTv2_NVG_ERDL_lowland";
+this addHeadgear "CUP_H_PASGTv2_NVG_WDL";
+this addHeadgear "CUP_H_PASGTv2_NVG_OD";
+this addHeadgear "CUP_H_PASGTv2_NVG_TPattern";
+this addHeadgear "CUP_H_PASGTv2_NVG_tigerstripe";
+this addHeadgear "CUP_H_PASGTv2_NVG_Urban";
+this addHeadgear "CUP_H_PASGTv2_NVG_winter";
+this addHeadgear "CUP_H_PASGTv2_OD";
+this addHeadgear "CUP_H_PASGTv2_TPattern";
+this addHeadgear "CUP_H_PASGTv2_tigerstripe";
+this addHeadgear "CUP_H_PASGTv2_Urban";
+this addHeadgear "CUP_H_PASGTv2_winter";
+
+
+
+
+this addHeadgear "CUP_H_US_patrol_cap_alpenflage";
+this addHeadgear "CUP_H_US_patrol_cap_DCU";
+this addHeadgear "CUP_H_US_patrol_cap_desert";
+this addHeadgear "CUP_H_US_patrol_cap_ERDL_highland";
+this addHeadgear "CUP_H_US_patrol_cap_ERDL";
+this addHeadgear "CUP_H_US_patrol_cap_WDL";
+this addHeadgear "CUP_H_US_patrol_cap_OCP";
+this addHeadgear "CUP_H_US_patrol_cap_OEFCP";
+this addHeadgear "CUP_H_US_patrol_cap_OD";
+this addHeadgear "CUP_H_US_patrol_cap_Tpattern";
+this addHeadgear "CUP_H_US_patrol_cap_tigerstripe";
+this addHeadgear "CUP_H_US_patrol_cap_UCP";
+this addHeadgear "CUP_H_US_patrol_cap_urban";
+this addHeadgear "CUP_H_US_patrol_cap_winter";
+this addHeadgear "CUP_H_CZ_Patrol_Cap";
+
+
+
+this addHeadgear "CUP_H_USArmy_Helmet_Protec";
+this addHeadgear "CUP_H_USArmy_Helmet_Protec_Gog";
+this addHeadgear "CUP_H_USArmy_Helmet_Protec_Gog_Strb";
+this addHeadgear "CUP_H_USArmy_Helmet_Protec_NVG";
+
+this addHeadgear "CUP_H_PMC_PRR_Headset";
+
+
+this addHeadgear "CUP_H_SPH4_green";
+this addHeadgear "CUP_H_SPH4_green_visor";
+this addHeadgear "CUP_H_SPH4_grey";
+this addHeadgear "CUP_H_SPH4_grey_visor";
+this addHeadgear "CUP_H_SPH4_khaki";
+this addHeadgear "CUP_H_SPH4_khaki_visor";
+this addHeadgear "CUP_H_SPH4";
+this addHeadgear "CUP_H_SPH4_visor";
+
+
+
+this addHeadgear "CUP_H_SLA_Helmet_BLK";
+this addHeadgear "CUP_H_SLA_Helmet_BLK_worn";
+this addHeadgear "CUP_H_TK_Helmet";
+this addHeadgear "CUP_H_SLA_Helmet_DES";
+this addHeadgear "CUP_H_SLA_Helmet_DES_worn";
+this addHeadgear "CUP_H_SLA_Helmet_URB";
+this addHeadgear "CUP_H_SLA_Helmet_URB_worn";
+this addHeadgear "CUP_H_SLA_Helmet";
+this addHeadgear "CUP_H_SLA_Helmet_OD_worn";
+this addHeadgear "CUP_H_RUS_SSH68_cover_berezka";
+this addHeadgear "CUP_H_RUS_SSH68_green";
+this addHeadgear "CUP_H_RUS_SSH68_olive";
+this addHeadgear "CUP_H_RUS_SSH68_cover_vsr84_dubok";
+this addHeadgear "CUP_H_RUS_SSH68_cover_vsr93";
+this addHeadgear "CUP_H_RUS_SSH68_cover_vsr98";
+
+
+this addHeadgear "CUP_H_TK_Lungee";
+this addHeadgear "CUP_H_TKI_Lungee_Open_01";
+this addHeadgear "CUP_H_TKI_Lungee_Open_02";
+this addHeadgear "CUP_H_TKI_Lungee_Open_03";
+this addHeadgear "CUP_H_TKI_Lungee_Open_04";
+this addHeadgear "CUP_H_TKI_Lungee_Open_05";
+this addHeadgear "CUP_H_TKI_Lungee_Open_06";
+this addHeadgear "CUP_H_TKI_Lungee_01";
+this addHeadgear "CUP_H_TKI_Lungee_02";
+this addHeadgear "CUP_H_TKI_Lungee_03";
+this addHeadgear "CUP_H_TKI_Lungee_04";
+this addHeadgear "CUP_H_TKI_Lungee_05";
+this addHeadgear "CUP_H_TKI_Lungee_06";
+this addHeadgear "CUP_H_TKI_Pakol_1_01";
+this addHeadgear "CUP_H_TKI_Pakol_2_04";
+this addHeadgear "CUP_H_TKI_Pakol_2_05";
+this addHeadgear "CUP_H_TKI_Pakol_2_06";
+this addHeadgear "CUP_H_TKI_Pakol_1_02";
+this addHeadgear "CUP_H_TKI_Pakol_1_03";
+this addHeadgear "CUP_H_TKI_Pakol_1_04";
+this addHeadgear "CUP_H_TKI_Pakol_1_05";
+this addHeadgear "CUP_H_TKI_Pakol_1_06";
+this addHeadgear "CUP_H_TKI_Pakol_2_01";
+this addHeadgear "CUP_H_TKI_Pakol_2_02";
+this addHeadgear "CUP_H_TKI_Pakol_2_03";
+this addHeadgear "CUP_H_TKI_SkullCap_01";
+this addHeadgear "CUP_H_TKI_SkullCap_02";
+this addHeadgear "CUP_H_TKI_SkullCap_03";
+this addHeadgear "CUP_H_TKI_SkullCap_04";
+this addHeadgear "CUP_H_TKI_SkullCap_05";
+this addHeadgear "CUP_H_TKI_SkullCap_06";
+
+
+
+
+this addHeadgear "CUP_H_SLA_TankerHelmet";
+this addHeadgear "CUP_H_RUS_TSH_4_Brown";
+this addHeadgear "CUP_H_TK_TankerHelmet";
+this addHeadgear "CUP_H_C_Ushanka_03";
+this addHeadgear "CUP_H_C_Ushanka_02";
+this addHeadgear "CUP_H_C_Ushanka_01";
+this addHeadgear "CUP_H_C_Ushanka_04";
+this addHeadgear "CUP_H_WZ67";
+this addHeadgear "CUP_H_WZ67_EAGLE";
+this addHeadgear "CUP_H_RUS_ZSH_1";
+this addHeadgear "CUP_H_RUS_ZSH_1_Goggles";
+this addHeadgear "CUP_H_RUS_ZSH_Shield_Up";
+this addHeadgear "CUP_H_RUS_ZSH_Shield_Down";
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//													Facewear
+//-----------------------------------------------------------------------------------------------------------------------------
+
+this addGoggles "CUP_RUS_Balaclava_blk";
+this addGoggles "CUP_RUS_Balaclava_emr";
+this addGoggles "CUP_RUS_Balaclava_grn";
+this addGoggles "CUP_RUS_Balaclava_rgr";
+this addGoggles "CUP_G_RUS_Balaclava_Ratnik";
+this addGoggles "CUP_G_RUS_Balaclava_Ratnik_v2";
+this addGoggles "CUP_G_RUS_Balaclava_Ratnik_winter";
+this addGoggles "CUP_G_RUS_Balaclava_Ratnik_winter_v2";
+this addGoggles "CUP_RUS_Balaclava_tan";
+
+
+this addGoggles "CUP_Beard_Black";
+this addGoggles "CUP_Beard_Blonde";
+this addGoggles "CUP_Beard_Brown";
+
+
+this addGoggles "CUP_G_ESS_BLK_Dark";
+this addGoggles "CUP_G_ESS_BLK_Ember";
+this addGoggles "CUP_G_ESS_BLK";
+this addGoggles "CUP_G_ESS_CBR_Dark";
+this addGoggles "CUP_G_ESS_CBR_Ember";
+this addGoggles "CUP_G_ESS_CBR";
+this addGoggles "CUP_G_ESS_RGR_Dark";
+this addGoggles "CUP_G_ESS_RGR_Ember";
+this addGoggles "CUP_G_ESS_RGR";
+this addGoggles "CUP_G_ESS_KHK_Dark";
+this addGoggles "CUP_G_ESS_KHK_Ember";
+this addGoggles "CUP_G_ESS_KHK";
+this addGoggles "CUP_G_ESS_BLK_Facewrap_Black";
+this addGoggles "CUP_G_ESS_RGR_Facewrap_Ranger";
+this addGoggles "CUP_G_ESS_CBR_Facewrap_Red";
+this addGoggles "CUP_G_ESS_RGR_Facewrap_Skull";
+this addGoggles "CUP_G_ESS_KHK_Facewrap_Tan";
+this addGoggles "CUP_G_ESS_RGR_Facewrap_Tropical";
+this addGoggles "CUP_G_ESS_KHK_Facewrap_White";
+this addGoggles "CUP_G_ESS_BLK_Facewrap_Black_GPS";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Blk";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Grn";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Red";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Tan";
+this addGoggles "CUP_G_ESS_BLK_Scarf_White";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Face_Blk";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Face_Grn";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Face_Red";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Face_Tan";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Face_White";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Blk_Beard_Blonde";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Blk_Beard";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Grn_Beard";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Grn_Beard_Blonde";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Red_Beard_Blonde";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Red_Beard";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Tan_Beard_Blonde";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Tan_Beard";
+this addGoggles "CUP_G_ESS_BLK_Scarf_White_Beard";
+this addGoggles "CUP_G_ESS_BLK_Scarf_White_Beard_Blonde";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Grn_GPS";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Tan_GPS";
+this addGoggles "CUP_G_ESS_BLK_Scarf_White_GPS";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Face_Grn_GPS";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Face_Tan_GPS";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Face_White_GPS";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Grn_GPS_Beard_Blonde";
+this addGoggles "CUP_G_ESS_BLK_Scarf_Grn_GPS_Beard";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Tan_GPS_Beard";
+this addGoggles "CUP_G_ESS_KHK_Scarf_Tan_GPS_Beard_Blonde";
+this addGoggles "CUP_G_ESS_BLK_Scarf_White_GPS_Beard";
+this addGoggles "CUP_G_ESS_BLK_Scarf_White_GPS_Beard_Blonde";
+this addGoggles "CUP_PMC_Facewrap_Black";
+this addGoggles "CUP_G_PMC_Facewrap_Black_Glasses_Dark_Headset";
+this addGoggles "CUP_G_PMC_Facewrap_Black_Glasses_Dark";
+this addGoggles "CUP_G_PMC_Facewrap_Black_Glasses_Ember";
+this addGoggles "CUP_PMC_Facewrap_Ranger";
+this addGoggles "CUP_PMC_Facewrap_Red";
+this addGoggles "CUP_PMC_Facewrap_Skull";
+this addGoggles "CUP_PMC_Facewrap_Smilie";
+this addGoggles "CUP_PMC_Facewrap_Tan";
+this addGoggles "CUP_G_PMC_Facewrap_Tan_Glasses_Dark_Headset";
+this addGoggles "CUP_G_PMC_Facewrap_Tan_Glasses_Dark";
+this addGoggles "CUP_G_PMC_Facewrap_Tan_Glasses_Ember";
+this addGoggles "CUP_PMC_Facewrap_Tropical";
+this addGoggles "CUP_G_PMC_Facewrap_Tropical_Glasses_Dark_Headset";
+this addGoggles "CUP_G_PMC_Facewrap_Tropical_Glasses_Dark";
+this addGoggles "CUP_G_PMC_Facewrap_Tropical_Glasses_Ember";
+this addGoggles "CUP_PMC_Facewrap_Winter";
+this addGoggles "CUP_G_PMC_Facewrap_Winter_Glasses_Dark_Headset";
+this addGoggles "CUP_G_PMC_Facewrap_Winter_Glasses_Dark";
+this addGoggles "CUP_G_PMC_Facewrap_Winter_Glasses_Ember";
+this addGoggles "CUP_G_GPS";
+this addGoggles "CUP_G_Grn_Scarf_Shades_GPS";
+this addGoggles "CUP_G_Tan_Scarf_Shades_GPS";
+this addGoggles "CUP_G_White_Scarf_Shades_GPS";
+this addGoggles "CUP_G_Grn_Scarf_Shades_GPS_Beard_Blonde";
+this addGoggles "CUP_G_Grn_Scarf_Shades_GPS_Beard";
+this addGoggles "CUP_G_Tan_Scarf_Shades_GPS_Beard";
+this addGoggles "CUP_G_Tan_Scarf_Shades_GPS_Beard_Blonde";
+this addGoggles "CUP_G_White_Scarf_Shades_GPS_Beard";
+this addGoggles "CUP_G_White_Scarf_Shades_GPS_Beard_Blonde";
+this addGoggles "CUP_G_PMC_RadioHeadset";
+this addGoggles "CUP_G_PMC_RadioHeadset_Glasses";
+this addGoggles "CUP_G_PMC_RadioHeadset_Glasses_Dark";
+this addGoggles "CUP_G_PMC_RadioHeadset_Glasses_Ember";
+this addGoggles "CUP_TK_NeckScarf";
+this addGoggles "CUP_G_Scarf_Face_Blk";
+this addGoggles "CUP_G_Scarf_Face_Grn";
+this addGoggles "CUP_G_Scarf_Face_Red";
+this addGoggles "CUP_G_Scarf_Face_Tan";
+this addGoggles "CUP_G_Scarf_Face_White";
+this addGoggles "CUP_G_Oakleys_Clr";
+this addGoggles "CUP_G_Oakleys_Drk";
+this addGoggles "CUP_G_Oakleys_Embr";
+this addGoggles "CUP_G_TK_RoundGlasses";
+this addGoggles "CUP_G_TK_RoundGlasses_blk";
+this addGoggles "CUP_G_TK_RoundGlasses_gold";
+this addGoggles "CUP_G_Grn_Scarf_Shades";
+this addGoggles "CUP_G_Tan_Scarf_Shades";
+this addGoggles "CUP_G_White_Scarf_Shades";
+this addGoggles "CUP_G_Grn_Scarf_Shades_Beard";
+this addGoggles "CUP_G_Grn_Scarf_Shades_Beard_Blonde";
+this addGoggles "CUP_G_Tan_Scarf_Shades_Beard_Blonde";
+this addGoggles "CUP_G_Tan_Scarf_Shades_Beard";
+this addGoggles "CUP_G_White_Scarf_Shades_Beard_Blonde";
+this addGoggles "CUP_G_White_Scarf_Shades_Beard";
+this addGoggles "CUP_G_Beard_Shades_Black";
+this addGoggles "CUP_G_Beard_Shades_Blonde";
+this addGoggles "CUP_FR_NeckScarf3";
+this addGoggles "CUP_FR_NeckScarf";
+this addGoggles "CUP_FR_NeckScarf2";
+this addGoggles "CUP_FR_NeckScarf5";
+this addGoggles "CUP_FR_NeckScarf4";
+this addGoggles "CUP_G_WatchGPSCombo";
+this addGoggles "CUP_G_Grn_Scarf_GPS";
+this addGoggles "CUP_G_Tan_Scarf_GPS";
+this addGoggles "CUP_G_White_Scarf_GPS";
+this addGoggles "CUP_G_Grn_Scarf_GPS_Beard_Blonde";
+this addGoggles "CUP_G_Grn_Scarf_GPS_Beard";
+this addGoggles "CUP_G_Tan_Scarf_GPS_Beard";
+this addGoggles "CUP_G_Tan_Scarf_GPS_Beard_Blonde";
+this addGoggles "CUP_G_White_Scarf_GPS_Beard";
+this addGoggles "CUP_G_White_Scarf_GPS_Beard_Blonde";
+this addGoggles "CUP_G_Grn_Scarf_Shades_GPSCombo";
+this addGoggles "CUP_G_Tan_Scarf_Shades_GPSCombo";
+this addGoggles "CUP_G_White_Scarf_Shades_GPSCombo";
+this addGoggles "CUP_G_Grn_Scarf_Shades_GPSCombo_Beard";
+this addGoggles "CUP_G_Grn_Scarf_Shades_GPSCombo_Beard_Blonde";
+this addGoggles "CUP_G_Tan_Scarf_Shades_GPSCombo_Beard";
+this addGoggles "CUP_G_Tan_Scarf_Shades_GPSCombo_Beard_Blonde";
+this addGoggles "CUP_G_White_Scarf_Shades_GPSCombo_Beard";
+this addGoggles "CUP_G_White_Scarf_Shades_GPSCombo_Beard_Blonde";
+this addGoggles "CUP_PMC_G_thug";
+this addGoggles "CUP_G_WristWatch";
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//													Facewear
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+this linkItem "CUP_NVG_1PN138";
+this linkItem "CUP_NVG_1PN138_Hide";
+this linkItem "CUP_NVG_PVS15_black";
+this linkItem "CUP_NVG_PVS15_green";
+this linkItem "CUP_NVG_PVS15_Hide";
+this linkItem "CUP_NVG_PVS15_tan";
+this linkItem "CUP_NVG_PVS15_winter";
+this linkItem "CUP_NVG_PVS7";
+this linkItem "CUP_NVG_PVS7_Hide";
+this linkItem "CUP_NVG_PVS14";
+this linkItem "CUP_NVG_PVS14_Hide";
+this linkItem "CUP_NVG_GPNVG_black";
+this linkItem "CUP_NVG_GPNVG_green";
+this linkItem "CUP_NVG_GPNVG_Hide";
+this linkItem "CUP_NVG_GPNVG_tan";
+this linkItem "CUP_NVG_GPNVG_winter";
+this linkItem "CUP_NVG_HMNVS";
+this linkItem "CUP_NVG_HMNVS_Hide";
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//													Bino
+//-----------------------------------------------------------------------------------------------------------------------------
+
+this addMagazine "Laserbatteries";
+this addWeapon "CUP_SOFLAM";
+
+this addMagazine "Laserbatteries";
+this addWeapon "CUP_LRTV";
+
+
+this addWeapon "CUP_Vector21Nite";
+
+
+
+
+
+
+
+//-----------------------------------------------------------------------------------------------------------------------------
+//											CFG helper
+//-----------------------------------------------------------------------------------------------------------------------------
+
+
+//uniforms
+configfile >> "CfgWeapons" >> "CUP_U_B_FR_Scout3" >> "ItemInfo" >> "containerClass"
+configfile >> "CfgWeapons" >> "CUP_U_B_FR_Scout3" >> "ItemInfo" >> "mass"
+_classnames = [
+"CUP_U_B_GER_Fleck_Overalls_Tank",
+"CUP_U_B_GER_Overalls_Tank",
+"CUP_U_B_GER_Flecktarn_1"
+];
+
+for '_i' from 0 to (count _classnames)-1 do {
+	_containerClass = getText(configFile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "containerClass");
+	_mass = getNumber (configfile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "mass");
+	diag_log format["Uniform: %1 --------: %2  -  %3", _classnames select _i, _containerClass, _mass];
+};
+
+
+//vests
+configfile >> "CfgWeapons" >> "CUP_V_OI_TKI_Jacket6_06" >> "ItemInfo" >> "armor"
+configfile >> "CfgWeapons" >> "CUP_V_PMC_CIRAS_Black_Grenadier" >> "ItemInfo"
+configfile >> "CfgWeapons" >> "CUP_V_B_LBT_LBV_GRN" >> "ItemInfo" >> "armor"
+armor = "5*0";
+configfile >> "CfgWeapons" >> "CUP_V_B_LBT_LBV_GRN" >> "ItemInfo" >> "containerClass"
+containerClass = "Supply120";
+configfile >> "CfgWeapons" >> "CUP_V_B_LBT_LBV_GRN" >> "ItemInfo" >> "mass"
+mass = 50;
+
+_classnames = [
+"CUP_V_OI_TKI_Jacket6_06",
+"CUP_V_PMC_CIRAS_Black_Grenadier",
+"CUP_V_B_LBT_LBV_GRN"
+];
+
+for '_i' from 0 to (count _classnames)-1 do {
+	_containerClass = getText(configFile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "containerClass");
+	_mass = getNumber (configfile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "mass");
+	_armor = getNumber (configfile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "armor");
+	diag_log format["Vest: %1 --------: %2  - %3  - %4", _classnames select _i, _containerClass, _mass, _armor];
+};
+
+
+//Helmets
+configfile >> "CfgWeapons" >> "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP"
+configfile >> "CfgWeapons" >> "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP" >> "ItemInfo" >> "armor"
+configfile >> "CfgWeapons" >> "CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP" >> "ItemInfo" >> "mass"
+descriptionShort = "Armor Level II";
+_classnames = [
+"CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP",
+"CUP_H_USArmy_Helmet_ECH2_Sand"
+];
+
+for '_i' from 0 to (count _classnames)-1 do {
+	_mass = getNumber (configfile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "mass");
+	_armor = getNumber (configfile >> "CfgWeapons" >> _classnames select _i >> "ItemInfo" >> "armor");
+	_descr = getText (configfile >> "CfgWeapons" >> _classnames select _i >> "descriptionShort");
+	diag_log format["Vest: %1 --------: %2  - %3  - %4", _classnames select _i, _mass, _armor, _descr];
+};
+

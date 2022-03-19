@@ -448,6 +448,22 @@ this addPrimaryWeaponItem "CUP_optic_ZeissZPoint";
 this addPrimaryWeaponItem "CUP_optic_ZeissZPoint_desert";
 this addPrimaryWeaponItem "CUP_optic_ZeissZPoint_hex";
 this addPrimaryWeaponItem "CUP_optic_ZeissZPoint_wood";
+
+
+_classnames = [
+"CUP_optic_HensoldtZO_RDS_od",
+"optic_KHS_blk",
+"CUP_optic_LeupoldMk4"
+];
+
+for '_i' from 0 to (count _classnames)-1 do {
+	diag_log format["OPTIC: %1 descr: %2", _classnames select _i, getText(configFile >> "CfgWeapons" >> _classnames select _i >> "descriptionShort")];
+};
+
+
+
+
+
 //laser/flashlights
 this addPrimaryWeaponItem "CUP_acc_ANPEQ_15_Black";
 this addPrimaryWeaponItem "CUP_acc_ANPEQ_15_OD";
@@ -513,6 +529,28 @@ this addPrimaryWeaponItem "CUP_muzzle_snds_68SPC";
 
 
 this addWeapon "CUP_arifle_AK47_Early";
+this addWeapon "CUP_arifle_AK47_GL_Early";
+this addWeapon "CUP_arifle_AKM_Early";
+this addWeapon "CUP_arifle_AKM_GL_Early";
+this addWeapon "CUP_arifle_AKM";
+this addWeapon "CUP_arifle_AKM_top_rail";
+this addWeapon "CUP_arifle_AKMN_railed";
+this addWeapon "CUP_arifle_AKMN_railed_afg";
+this addWeapon "CUP_arifle_AKMN_railed_afg_desert";
+this addWeapon "CUP_arifle_AKMN_railed_desert";
+this addWeapon "CUP_arifle_AKM_GL";
+this addWeapon "CUP_arifle_AKM_GL_top_rail";
+this addWeapon "CUP_arifle_AKMS_Early";
+this addWeapon "CUP_arifle_AKMS_GL_Early";
+this addWeapon "CUP_arifle_AKMS";
+this addWeapon "CUP_arifle_AKMS_top_rail";
+this addWeapon "CUP_arifle_AKMS_GL";
+this addWeapon "CUP_arifle_AKMS_GL_top_rail";
+this addWeapon "CUP_arifle_AK47";
+this addWeapon "CUP_arifle_AK47_top_rail";
+this addWeapon "CUP_arifle_AK47_GL";
+this addWeapon "CUP_arifle_AK47_GL_top_rail";
+this addWeapon "CUP_arifle_AKS";
 this addWeapon "CUP_arifle_AK103";
 this addWeapon "CUP_arifle_AK103_top_rail";
 this addWeapon "CUP_arifle_AK103_railed";
@@ -665,10 +703,99 @@ this addItemToBackpack "CUP_30Rnd_556x45_AK";
 this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_AK";
 this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_AK";
 this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_AK";
+this addWeapon "CUP_arifle_AK19_AFG_arid";
+this addWeapon "CUP_arifle_AK19_AFG_black";
+this addWeapon "CUP_arifle_AK19_AFG_lush";
+this addWeapon "CUP_arifle_AK19_AFG_tan";
+this addWeapon "CUP_arifle_AK19_AFG_snowtiger";
+this addWeapon "CUP_arifle_AK19_AFG_tiger";
+this addWeapon "CUP_arifle_AK19_AFG_bicolor";
+this addWeapon "CUP_arifle_AK19_AFG_winter";
+this addWeapon "CUP_arifle_AK19_AFG_wood";
+this addWeapon "CUP_arifle_AK19_arid";
+this addWeapon "CUP_arifle_AK19_black";
+this addWeapon "CUP_arifle_AK19_VG_arid";
+this addWeapon "CUP_arifle_AK19_VG_black";
+this addWeapon "CUP_arifle_AK19_VG_lush";
+this addWeapon "CUP_arifle_AK19_VG_tan";
+this addWeapon "CUP_arifle_AK19_VG_snowtiger";
+this addWeapon "CUP_arifle_AK19_VG_tiger";
+this addWeapon "CUP_arifle_AK19_VG_bicolor";
+this addWeapon "CUP_arifle_AK19_VG_winter";
+this addWeapon "CUP_arifle_AK19_VG_wood";
+this addWeapon "CUP_arifle_AK19_GP34_arid";
+this addWeapon "CUP_arifle_AK19_GP34_black";
+this addWeapon "CUP_arifle_AK19_GP34_lush";
+this addWeapon "CUP_arifle_AK19_GP34_tan";
+this addWeapon "CUP_arifle_AK19_GP34_snowtiger";
+this addWeapon "CUP_arifle_AK19_GP34_tiger";
+this addWeapon "CUP_arifle_AK19_GP34_bicolor";
+this addWeapon "CUP_arifle_AK19_GP34_winter";
+this addWeapon "CUP_arifle_AK19_GP34_wood";
+this addWeapon "CUP_arifle_AK19_lush";
+this addWeapon "CUP_arifle_AK19_tan";
+this addWeapon "CUP_arifle_AK19_snowtiger";
+this addWeapon "CUP_arifle_AK19_tiger";
+this addWeapon "CUP_arifle_AK19_bicolor";
+this addWeapon "CUP_arifle_AK19_winter";
+this addWeapon "CUP_arifle_AK19_wood";
+this addItemToBackpack "16Rnd_9x21_Mag";
+this addItemToBackpack "16Rnd_9x21_red_Mag";
+this addItemToBackpack "16Rnd_9x21_green_Mag";
+this addItemToBackpack "16Rnd_9x21_yellow_Mag";
+this addItemToBackpack "30Rnd_9x21_Mag";
+this addItemToBackpack "30Rnd_9x21_Red_Mag";
+this addItemToBackpack "30Rnd_9x21_Yellow_Mag";
+this addItemToBackpack "30Rnd_9x21_Green_Mag";
+this addItemToBackpack "CUP_30Rnd_556x45_AK19_Tan_M";
+this addItemToBackpack "CUP_30Rnd_556x45_AK19_M";
+this addItemToBackpack "CUP_30Rnd_556x45_Tracer_Red_AK19_M";
+this addItemToBackpack "CUP_30Rnd_556x45_AK19_Green_M";
+this addItemToBackpack "CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Green_M";
+this addItemToBackpack "CUP_30Rnd_556x45_AK19_Grey_M";
+this addItemToBackpack "CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Grey_M";
+this addItemToBackpack "CUP_30Rnd_556x45_TE1_Tracer_Green_AK19_Tan_M";
 
 
 
 
+this addWeapon "CUP_arifle_AK74_Early";
+this addWeapon "CUP_arifle_AK74_GL_Early";
+this addWeapon "CUP_arifle_AK74M";
+this addWeapon "CUP_arifle_AK74M_desert";
+this addWeapon "CUP_arifle_AK74M_top_rail";
+this addWeapon "CUP_arifle_AK74M_top_rail_desert";
+this addWeapon "CUP_arifle_AK74M_top_rail_camo";
+this addWeapon "CUP_arifle_AK74M_camo";
+this addWeapon "CUP_arifle_AK74M_railed";
+this addWeapon "CUP_arifle_AK74M_railed_afg";
+this addWeapon "CUP_arifle_AK74M_railed_afg_desert";
+this addWeapon "CUP_arifle_AK74M_railed_afg_camo";
+this addWeapon "CUP_arifle_AK74M_railed_desert";
+this addWeapon "CUP_arifle_AK74M_railed_camo";
+this addWeapon "CUP_arifle_AK74M_GL";
+this addWeapon "CUP_arifle_AK74M_GL_desert";
+this addWeapon "CUP_arifle_AK74M_GL_top_rail";
+this addWeapon "CUP_arifle_AK74M_GL_top_rail_desert";
+this addWeapon "CUP_arifle_AK74M_GL_top_rail_camo";
+this addWeapon "CUP_arifle_AK74M_GL_camo";
+this addWeapon "CUP_arifle_AK74M_GL_railed";
+this addWeapon "CUP_arifle_AK74M_GL_railed_desert";
+this addWeapon "CUP_arifle_AK74M_GL_railed_camo";
+this addWeapon "CUP_arifle_AK74";
+this addWeapon "CUP_arifle_AK74_top_rail";
+this addWeapon "CUP_arifle_AK74_GL";
+this addWeapon "CUP_arifle_AK74_GL_top_rail";
+this addWeapon "CUP_arifle_AKS74_Early";
+this addWeapon "CUP_arifle_AKS74_GL_Early";
+this addWeapon "CUP_arifle_AKS74";
+this addWeapon "CUP_arifle_AKS74_top_rail";
+this addWeapon "CUP_arifle_AKS74_GL";
+this addWeapon "CUP_arifle_AKS74_GL_top_rail";
+this addWeapon "CUP_arifle_AKS74U";
+this addWeapon "CUP_arifle_AKS74U_top_rail";
+this addWeapon "CUP_arifle_AKS_Gold";
+this addWeapon "CUP_arifle_AKS_top_rail";
 this addWeapon "CUP_arifle_AK105";
 this addWeapon "CUP_arifle_AK105_top_rail";
 this addWeapon "CUP_arifle_AK105_railed";
@@ -777,32 +904,2148 @@ this addPrimaryWeaponItem "CUP_muzzle_TGPA_woodland";
 
 
 
+this addWeapon "CUP_arifle_AS_VAL";
+this addWeapon "CUP_arifle_AS_VAL_flash";
+this addWeapon "CUP_arifle_AS_VAL_VFG";
+this addWeapon "CUP_arifle_AS_VAL_top_rail";
+this addWeapon "CUP_arifle_AS_VAL_flash_top";
+this addWeapon "CUP_arifle_AS_VAL_VFG_top_rail";
+this addItemToBackpack "CUP_20Rnd_9x39_SP5_VSS_M";
+this addItemToBackpack "CUP_10Rnd_9x39_SP5_VSS_M";
+this addItemToBackpack "CUP_30Rnd_9x39_SP5_VIKHR_M";
+
+
+
+this addWeapon "CUP_srifle_AS50";
+this addItemToBackpack "CUP_5Rnd_127x99_as50_M";
+
+
+
+this addWeapon "CUP_arifle_AUG_A1";
+this addItemToBackpack "CUP_30Rnd_556x45_AUG";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_AUG";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_AUG";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_AUG";
+
+
+
+
+this addWeapon "CUP_hgun_BallisticShield_Armed_M9";
+this addWeapon "CUP_smg_BallisticShield_MP7";
+this addWeapon "CUP_hgun_BallisticShield_PMM";
+this addWeapon "CUP_smg_BallisticShield_PP19";
+this addWeapon "CUP_smg_BallisticShield_Sa61";
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_srifle_CZ550";
+this addWeapon "CUP_srifle_CZ550_rail";
+this addItemToBackpack "CUP_5x_22_LR_17_HMR_M";
+
+
+this addWeapon "CUP_sgun_CZ584";
+this addWeapon "CUP_sgun_CZ584_RIS";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No00_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No0_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No1_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No2_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No3_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No4_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Slug";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No4_Bird";
+this addItemToBackpack "CUP_1Rnd_12Gauge_HE";
+this addItemToBackpack "CUP_1Rnd_762x51_CZ584";
+
+
+this addWeapon "CUP_srifle_CZ750";
+this addItemToBackpack "CUP_10Rnd_762x51_CZ750";
+this addItemToBackpack "CUP_10Rnd_762x51_CZ750_Tracer";
+
+
+this addWeapon "CUP_arifle_CZ805_A1";
+this addWeapon "CUP_arifle_CZ805_A1_blk";
+this addWeapon "CUP_arifle_CZ805_A1_coyote";
+this addWeapon "CUP_arifle_CZ805_GL";
+this addWeapon "CUP_arifle_CZ805_GL_blk";
+this addWeapon "CUP_arifle_CZ805_GL_coyote";
+this addWeapon "CUP_arifle_CZ805_A2";
+this addWeapon "CUP_arifle_CZ805_A2_blk";
+this addWeapon "CUP_arifle_CZ805_A2_coyote";
+this addWeapon "CUP_CZ_BREN2_556_11";
+this addWeapon "CUP_CZ_BREN2_556_11_Grn";
+this addWeapon "CUP_CZ_BREN2_556_11_Tan";
+this addWeapon "CUP_CZ_BREN2_556_11_GL";
+this addWeapon "CUP_CZ_BREN2_556_11_GL_Grn";
+this addWeapon "CUP_CZ_BREN2_556_11_GL_Tan";
+this addWeapon "CUP_CZ_BREN2_556_14";
+this addWeapon "CUP_CZ_BREN2_556_14_Grn";
+this addWeapon "CUP_CZ_BREN2_556_14_Tan";
+this addWeapon "CUP_CZ_BREN2_556_14_GL";
+this addWeapon "CUP_CZ_BREN2_556_14_GL_Grn";
+this addWeapon "CUP_CZ_BREN2_556_14_GL_Tan";
+this addWeapon "CUP_CZ_BREN2_556_8";
+this addWeapon "CUP_CZ_BREN2_556_8_Grn";
+this addWeapon "CUP_CZ_BREN2_556_8_Tan";
+this addItemToBackpack "CUP_30Rnd_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_hex";
+
+
+
+this addWeapon "CUP_CZ_BREN2_762_14";
+this addWeapon "CUP_CZ_BREN2_762_14_Grn";
+this addWeapon "CUP_CZ_BREN2_762_14_Tan";
+this addWeapon "CUP_CZ_BREN2_762_14_GL";
+this addWeapon "CUP_CZ_BREN2_762_14_GL_Grn";
+this addWeapon "CUP_CZ_BREN2_762_14_GL_Tan";
+this addWeapon "CUP_CZ_BREN2_762_8";
+this addWeapon "CUP_CZ_BREN2_762_8_Grn";
+this addWeapon "CUP_CZ_BREN2_762_8_Tan";
+this addItemToBackpack "CUP_30Rnd_762x39_CZ807";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x39_CZ807";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x39_CZ807";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_CZ807";
+
+
+this addWeapon "CUP_smg_EVO";
+this addItemToBackpack "CUP_30Rnd_9x19_EVO";
+this addItemToBackpack "30Rnd_9x21_Mag";
+this addItemToBackpack "30Rnd_9x21_Green_Mag";
+this addItemToBackpack "30Rnd_9x21_Red_Mag";
+this addItemToBackpack "30Rnd_9x21_Yellow_Mag";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02_Tracer_Green";
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_arifle_FNFAL5060";
+this addWeapon "CUP_arifle_FNFAL5060_rhodesian";
+this addWeapon "CUP_arifle_FNFAL5060_railed";
+this addWeapon "CUP_arifle_FNFAL5060_desert";
+this addWeapon "CUP_arifle_FNFAL5060_railed_desert";
+this addWeapon "CUP_arifle_FNFAL5060_railed_sand";
+this addWeapon "CUP_arifle_FNFAL5060_railed_woodland";
+this addWeapon "CUP_arifle_FNFAL5060_sand";
+this addWeapon "CUP_arifle_FNFAL5060_woodland";
+this addWeapon "CUP_arifle_FNFAL5061";
+this addWeapon "CUP_arifle_FNFAL5061_rhodesian";
+this addWeapon "CUP_arifle_FNFAL5061_railed";
+this addWeapon "CUP_arifle_FNFAL5062";
+this addWeapon "CUP_arifle_FNFAL5062_railed";
+this addWeapon "CUP_arifle_FNFAL";
+this addWeapon "CUP_arifle_FNFAL_desert";
+this addWeapon "CUP_arifle_FNFAL_railed";
+this addWeapon "CUP_arifle_FNFAL_railed_desert";
+this addWeapon "CUP_arifle_FNFAL_railed_sand";
+this addWeapon "CUP_arifle_FNFAL_railed_woodland";
+this addWeapon "CUP_arifle_FNFAL_sand";
+this addWeapon "CUP_arifle_FNFAL_woodland";
+this addWeapon "CUP_arifle_FNFAL5061_wooden";
+this addWeapon "CUP_arifle_FNFAL5061_wooden_railed";
+this addWeapon "CUP_arifle_FNFAL_OSW";
+this addWeapon "CUP_arifle_FNFAL_OSW_railed";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_10Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+
+
+this addWeapon "CUP_Famas_F1";
+this addWeapon "CUP_Famas_F1_Arid";
+this addWeapon "CUP_Famas_F1_Rail";
+this addWeapon "CUP_Famas_F1_Rail_Arid";
+this addWeapon "CUP_Famas_F1_Rail_Wood";
+this addWeapon "CUP_Famas_F1_Wood";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Tracer_Red";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Tracer_Green";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Tracer_Yellow";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Wood";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Wood_Tracer_Red";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Wood_Tracer_Green";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Wood_Tracer_Yellow";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Arid";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Arid_Tracer_Red";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Arid_Tracer_Green";
+this addItemToBackpack "CUP_25Rnd_556x45_Famas_Arid_Tracer_Yellow";
+this addPrimaryWeaponItem "CUP_muzzle_snds_FAMAS_Arid";
+this addPrimaryWeaponItem "CUP_muzzle_snds_FAMAS";
+this addPrimaryWeaponItem "CUP_muzzle_snds_FAMAS_Wood";
+
+
+
+this addWeapon "CUP_arifle_Fort221";
+this addWeapon "CUP_arifle_Fort222";
+this addWeapon "CUP_arifle_Fort224";
+this addWeapon "CUP_arifle_Fort224_Grippod";
+this addItemToBackpack "CUP_30Rnd_545x39_Fort224_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_545x39_Fort224_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_545x39_Fort224_M";
+this addItemToBackpack "CUP_30Rnd_TE1_White_Tracer_545x39_Fort224_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_545x39_Fort224_M";
+this addItemToBackpack "CUP_30Rnd_Subsonic_545x39_Fort224_M";
+
+
+//------------------------------------------------------------------------------------------------
+
+
+
+this addWeapon "CUP_arifle_Gewehr1";
+this addWeapon "CUP_arifle_Gewehr1_railed";
+this addWeapon "CUP_arifle_G3A3_ris";
+this addWeapon "CUP_arifle_G3A3_ris_black";
+this addWeapon "CUP_arifle_G3A3_ris_vfg";
+this addWeapon "CUP_arifle_G3A3_ris_vfg_black";
+this addWeapon "CUP_arifle_G3A3_modern_ris";
+this addWeapon "CUP_arifle_G3A3_modern_ris_black";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_10Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+
+
+this addWeapon "CUP_srifle_G22_wdl";
+this addWeapon "CUP_srifle_G22_blk";
+this addWeapon "CUP_srifle_G22_des";
+this addItemToBackpack "CUP_5Rnd_762x67_G22";
+
+
+
+
+this addWeapon "CUP_arifle_G36A";
+this addWeapon "CUP_arifle_G36A_camo";
+this addWeapon "CUP_arifle_G36A_RIS";
+this addWeapon "CUP_arifle_G36A_RIS_camo";
+this addWeapon "CUP_arifle_G36A_RIS_wdl";
+this addWeapon "CUP_arifle_G36A_wdl";
+this addWeapon "CUP_arifle_AG36";
+this addWeapon "CUP_arifle_AG36_camo";
+this addWeapon "CUP_arifle_G36A_AG36_RIS";
+this addWeapon "CUP_arifle_G36A_AG36_RIS_camo";
+this addWeapon "CUP_arifle_G36A_AG36_RIS_wdl";
+this addWeapon "CUP_arifle_AG36_wdl";
+this addWeapon "CUP_arifle_G36A3";
+this addWeapon "CUP_arifle_G36A3_camo";
+this addWeapon "CUP_arifle_G36A3_grip";
+this addWeapon "CUP_arifle_G36A3_grip_camo";
+this addWeapon "CUP_arifle_G36A3_grip_hex";
+this addWeapon "CUP_arifle_G36A3_grip_wdl";
+this addWeapon "CUP_arifle_G36A3_hex";
+this addWeapon "CUP_arifle_G36A3_wdl";
+this addWeapon "CUP_arifle_G36A3_AG36";
+this addWeapon "CUP_arifle_G36A3_AG36_camo";
+this addWeapon "CUP_arifle_G36A3_AG36_hex";
+this addWeapon "CUP_arifle_G36A3_AG36_wdl";
+this addWeapon "CUP_arifle_G36C";
+this addWeapon "CUP_arifle_G36C_VFG_Carry";
+this addWeapon "CUP_arifle_G36C_camo";
+this addWeapon "CUP_arifle_G36C_VFG";
+this addWeapon "CUP_arifle_G36C_VFG_camo";
+this addWeapon "CUP_arifle_G36C_VFG_hex";
+this addWeapon "CUP_arifle_G36C_VFG_wdl";
+this addWeapon "CUP_arifle_G36C_hex";
+this addWeapon "CUP_arifle_G36C_wdl";
+this addWeapon "CUP_arifle_G36CA3";
+this addWeapon "CUP_arifle_G36CA3_afg";
+this addWeapon "CUP_arifle_G36CA3_afg_camo";
+this addWeapon "CUP_arifle_G36CA3_afg_hex";
+this addWeapon "CUP_arifle_G36CA3_afg_wdl";
+this addWeapon "CUP_arifle_G36CA3_camo";
+this addWeapon "CUP_arifle_G36CA3_grip";
+this addWeapon "CUP_arifle_G36CA3_grip_camo";
+this addWeapon "CUP_arifle_G36CA3_grip_hex";
+this addWeapon "CUP_arifle_G36CA3_grip_wdl";
+this addWeapon "CUP_arifle_G36CA3_hex";
+this addWeapon "CUP_arifle_G36CA3_wdl";
+this addWeapon "CUP_arifle_G36E";
+this addWeapon "CUP_arifle_G36E_camo";
+this addWeapon "CUP_arifle_G36E_wdl";
+this addWeapon "CUP_arifle_G36K";
+this addWeapon "CUP_arifle_G36K_KSK";
+this addWeapon "CUP_arifle_G36K_KSK_AFG";
+this addWeapon "CUP_arifle_G36K_KSK_AFG_camo";
+this addWeapon "CUP_arifle_G36K_KSK_AFG_hex";
+this addWeapon "CUP_arifle_G36K_KSK_camo";
+this addWeapon "CUP_arifle_G36K_KSK_VFG";
+this addWeapon "CUP_arifle_G36K_KSK_VFG_camo";
+this addWeapon "CUP_arifle_G36K_KSK_VFG_hex";
+this addWeapon "CUP_arifle_G36K_KSK_hex";
+this addWeapon "CUP_arifle_G36K_camo";
+this addWeapon "CUP_arifle_G36K_VFG";
+this addWeapon "CUP_arifle_G36K_VFG_camo";
+this addWeapon "CUP_arifle_G36K_VFG_wdl";
+this addWeapon "CUP_arifle_G36K_RIS";
+this addWeapon "CUP_arifle_G36K_RIS_camo";
+this addWeapon "CUP_arifle_G36K_RIS_hex";
+this addWeapon "CUP_arifle_G36K_RIS_wdl";
+this addWeapon "CUP_arifle_G36K_wdl";
+this addWeapon "CUP_arifle_G36K_AG36";
+this addWeapon "CUP_arifle_G36K_AG36_camo";
+this addWeapon "CUP_arifle_G36K_RIS_AG36";
+this addWeapon "CUP_arifle_G36K_RIS_AG36_camo";
+this addWeapon "CUP_arifle_G36K_RIS_AG36_hex";
+this addWeapon "CUP_arifle_G36K_RIS_AG36_wdl";
+this addWeapon "CUP_arifle_G36K_AG36_wdl";
+this addWeapon "CUP_arifle_G36KA3";
+this addWeapon "CUP_arifle_G36KA3_afg";
+this addWeapon "CUP_arifle_G36KA3_afg_camo";
+this addWeapon "CUP_arifle_G36KA3_afg_hex";
+this addWeapon "CUP_arifle_G36KA3_afg_wdl";
+this addWeapon "CUP_arifle_G36KA3_camo";
+this addWeapon "CUP_arifle_G36KA3_grip";
+this addWeapon "CUP_arifle_G36KA3_grip_camo";
+this addWeapon "CUP_arifle_G36KA3_grip_hex";
+this addWeapon "CUP_arifle_G36KA3_grip_wdl";
+this addWeapon "CUP_arifle_G36KA3_hex";
+this addWeapon "CUP_arifle_G36KA3_wdl";
+this addItemToBackpack "CUP_30Rnd_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_hex";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_30Rnd_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_CZ805";
+//G36 Optics
+this addPrimaryWeaponItem "CUP_optic_G36Optics15x";
+this addPrimaryWeaponItem "CUP_optic_G36Optics15x_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics15x_desert";
+this addPrimaryWeaponItem "CUP_optic_G36Optics15x_desert_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics15x_wood";
+this addPrimaryWeaponItem "CUP_optic_G36Optics15x_wood_3D";
+this addPrimaryWeaponItem "CUP_optic_G36DualOptics";
+this addPrimaryWeaponItem "CUP_optic_G36DualOptics_3D";
+this addPrimaryWeaponItem "CUP_optic_G36DualOptics_desert";
+this addPrimaryWeaponItem "CUP_optic_G36DualOptics_desert_3D";
+this addPrimaryWeaponItem "CUP_optic_G36DualOptics_wood";
+this addPrimaryWeaponItem "CUP_optic_G36DualOptics_wood_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_desert";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_desert_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_wood";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_wood_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_Holo";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_Holo_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_Holo_desert";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_Holo_desert_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_Holo_wood";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_Holo_wood_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_RDS";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_RDS_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_RDS_desert";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_RDS_desert_3D";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_RDS_wood";
+this addPrimaryWeaponItem "CUP_optic_G36Optics_RDS_wood_3D";
+
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_arifle_Galil_556_black";
+this addWeapon "CUP_arifle_Galil_SAR_black";
+this addItemToBackpack "CUP_35Rnd_556x45_Galil_Mag";
+this addItemToBackpack "CUP_35Rnd_556x45_Red_Tracer_Galil_Mag";
+this addItemToBackpack "CUP_35Rnd_556x45_Green_Tracer_Galil_Mag";
+this addItemToBackpack "CUP_50Rnd_556x45_Galil_Mag";
+this addItemToBackpack "CUP_50Rnd_556x45_Red_Tracer_Galil_Mag";
+this addItemToBackpack "CUP_50Rnd_556x45_Green_Tracer_Galil_Mag";
+
+this addWeapon "CUP_arifle_Galil_black";
+this addItemToBackpack "CUP_25Rnd_762x51_Galil_Mag";
+this addItemToBackpack "CUP_25Rnd_762x51_Red_Tracers_Galil_Mag";
+this addItemToBackpack "CUP_25Rnd_762x51_Green_Tracers_Galil_Mag";
+
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_arifle_HK416_Black";
+this addWeapon "CUP_arifle_HK416_Desert";
+this addWeapon "CUP_arifle_HK416_Wood";
+this addWeapon "CUP_arifle_HK416_CQB_Black";
+this addWeapon "CUP_arifle_HK416_CQB_Desert";
+this addWeapon "CUP_arifle_HK416_CQB_Wood";
+this addWeapon "CUP_arifle_HK416_CQB_M203_Black";
+this addWeapon "CUP_arifle_HK416_CQB_M203_Desert";
+this addWeapon "CUP_arifle_HK416_CQB_M203_Wood";
+this addWeapon "CUP_arifle_HK416_CQB_AG36";
+this addWeapon "CUP_arifle_HK416_CQB_AG36_Desert";
+this addWeapon "CUP_arifle_HK416_CQB_AG36_Wood";
+this addWeapon "CUP_arifle_HK416_M203_Black";
+this addWeapon "CUP_arifle_HK416_M203_Desert";
+this addWeapon "CUP_arifle_HK416_M203_Wood";
+this addWeapon "CUP_arifle_HK416_AGL_Black";
+this addWeapon "CUP_arifle_HK416_AGL_Desert";
+this addWeapon "CUP_arifle_HK416_AGL_Wood";
+this addWeapon "CUP_arifle_HK417_12";
+this addWeapon "CUP_arifle_HK417_12_Desert";
+this addWeapon "CUP_arifle_HK417_12_Wood";
+this addWeapon "CUP_arifle_HK417_12_M203";
+this addWeapon "CUP_arifle_HK417_12_M203_Desert";
+this addWeapon "CUP_arifle_HK417_12_M203_Wood";
+this addWeapon "CUP_arifle_HK417_12_AG36";
+this addWeapon "CUP_arifle_HK417_12_AG36_Desert";
+this addWeapon "CUP_arifle_HK417_12_AG36_Wood";
+this addWeapon "CUP_arifle_HK417_20";
+this addWeapon "CUP_arifle_HK417_20_Desert";
+this addWeapon "CUP_arifle_HK417_20_Wood";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag";
+this addItemToBackpack "CUP_30Rnd_556x45_EMAG_Olive";
+this addItemToBackpack "CUP_30Rnd_556x45_EMAG_Tan";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag";
+this addItemToBackpack "30Rnd_556x45_Stanag";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "30Rnd_556x45_Stanag_red";
+this addItemToBackpack "30Rnd_556x45_Stanag_green";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_ar15";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_ar15";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_ar15";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_X95";
+this addItemToBackpack "CUP_30Rnd_556x45_X95_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_X95_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_X95_Tracer_Yellow";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL_Tracer_Yellow";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Red";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Green";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Yellow";
+this addItemToBackpack "150Rnd_556x45_Drum_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Mag_Tracer_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Sand_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Sand_Mag_Tracer_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Green_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Green_Mag_Tracer_F";
+//scopes etc. - nato
+//Bipods
+this addPrimaryWeaponItem "bipod_02_F_arid";
+this addPrimaryWeaponItem "bipod_03_F_blk";
+this addPrimaryWeaponItem "bipod_02_F_blk";
+this addPrimaryWeaponItem "bipod_01_F_blk";
+this addPrimaryWeaponItem "bipod_02_F_hex";
+this addPrimaryWeaponItem "bipod_01_F_khk";
+this addPrimaryWeaponItem "bipod_02_F_lush";
+this addPrimaryWeaponItem "bipod_01_F_mtp";
+this addPrimaryWeaponItem "bipod_03_F_oli";
+this addPrimaryWeaponItem "bipod_01_F_snd";
+this addPrimaryWeaponItem "bipod_02_F_tan";
+this addPrimaryWeaponItem "CUP_bipod_Harris_1A2_L_BLK";
+this addPrimaryWeaponItem "CUP_bipod_Harris_1A2_L";
+this addPrimaryWeaponItem "CUP_bipod_VLTOR_Modpod_black";
+this addPrimaryWeaponItem "CUP_bipod_VLTOR_Modpod_od";
+this addPrimaryWeaponItem "CUP_bipod_VLTOR_Modpod";
+
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_arifle_Sa58_Klec";
+this addWeapon "CUP_arifle_Sa58_Klec_rearris";
+this addWeapon "CUP_arifle_Sa58_Klec_frontris";
+this addWeapon "CUP_arifle_Sa58_Klec_ris";
+this addItemToBackpack "CUP_45Rnd_Sa58_M";
+this addItemToBackpack "CUP_45Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_45Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_45Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_30Rnd_Sa58_M";
+this addItemToBackpack "CUP_30Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_30Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_30Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M_TracerG";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M_TracerR";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M_TracerY";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M_TracerG";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M_TracerR";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M_TracerY";
+this addItemToBackpack "CUP_20Rnd_Sa58_M";
+this addItemToBackpack "CUP_20Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_20Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_20Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_15Rnd_Sa58_M";
+this addItemToBackpack "CUP_15Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_15Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_15Rnd_Sa58_M_TracerY";
+//bipods
+this addPrimaryWeaponItem "CUP_bipod_Sa58";
+
+
+
+//------------------------------------------------------------------------------------------------
+
+this addWeapon "CUP_srifle_ksvk";
+this addItemToBackpack "CUP_5Rnd_127x108_KSVK_M";
+
+//------------------------------------------------------------------------------------------------
+
+this addWeapon "CUP_lmg_L110A1";
+this addItemToBackpack "CUP_200Rnd_TE4_Green_Tracer_556x45_L110A1";
+this addItemToBackpack "CUP_200Rnd_TE4_Red_Tracer_556x45_L110A1";
+this addItemToBackpack "CUP_200Rnd_TE4_Yellow_Tracer_556x45_L110A1";
+this addItemToBackpack "CUP_200Rnd_TE4_Red_Tracer_556x45_M249";
+this addItemToBackpack "CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249";
+this addItemToBackpack "CUP_200Rnd_TE4_Green_Tracer_556x45_M249";
+this addItemToBackpack "CUP_200Rnd_TE1_Red_Tracer_556x45_M249";
+this addItemToBackpack "CUP_100Rnd_TE4_Green_Tracer_556x45_M249";
+this addItemToBackpack "CUP_100Rnd_TE4_Red_Tracer_556x45_M249";
+this addItemToBackpack "CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag";
+this addItemToBackpack "30Rnd_556x45_Stanag";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "30Rnd_556x45_Stanag_red";
+this addItemToBackpack "30Rnd_556x45_Stanag_green";
+this addItemToBackpack "200Rnd_556x45_Box_F";
+this addItemToBackpack "200Rnd_556x45_Box_Red_F";
+this addItemToBackpack "200Rnd_556x45_Box_Tracer_F";
+this addItemToBackpack "200Rnd_556x45_Box_Tracer_Red_F";
+this addItemToBackpack "CUP_200Rnd_TE4_Green_Tracer_556x45_M249_Pouch";
+this addItemToBackpack "CUP_200Rnd_TE4_Red_Tracer_556x45_M249_Pouch";
+this addItemToBackpack "CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249_Pouch";
+this addItemToBackpack "CUP_200Rnd_TE1_Red_Tracer_556x45_M249_Pouch";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Red";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Green";
+this addItemToBackpack "30Rnd_556x45_Stanag_Sand_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Emag_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_EMAG_Olive";
+this addItemToBackpack "CUP_30Rnd_556x45_EMAG_Tan";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_black_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_Mk16_woodland_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_Stanag_L85_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_X95";
+this addItemToBackpack "CUP_30Rnd_556x45_X95_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_X95_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_X95_Tracer_Yellow";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag_Tracer_Red";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag_Tracer_Green";
+this addItemToBackpack "CUP_20Rnd_556x45_Stanag_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_PULL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_PULL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_PULL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_BLACK_RPL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_COYOTE_RPL_Tracer_Yellow";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL_Tracer_Red";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL_Tracer_Green";
+this addItemToBackpack "CUP_30Rnd_556x45_PMAG_OD_RPL_Tracer_Yellow";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Red";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Green";
+this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Yellow";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_ar15";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_ar15";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_ar15";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_ar15";
+this addItemToBackpack "150Rnd_556x45_Drum_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Mag_Tracer_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Sand_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Sand_Mag_Tracer_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Green_Mag_F";
+this addItemToBackpack "150Rnd_556x45_Drum_Green_Mag_Tracer_F";
+
+
+this addWeapon "CUP_srifle_AWM_wdl";
+this addWeapon "CUP_srifle_AWM_blk";
+this addWeapon "CUP_srifle_AWM_des";
+this addItemToBackpack "CUP_5Rnd_86x70_L115A1";
+//muzzle
+this addPrimaryWeaponItem "CUP_muzzle_snds_AWM";
+
+
+
+this addWeapon "CUP_srifle_L129A1";
+this addWeapon "CUP_srifle_L129A1_ctrg";
+this addWeapon "CUP_srifle_L129A1_ctrgt";
+this addWeapon "CUP_srifle_L129A1_d";
+this addWeapon "CUP_srifle_L129A1_HG_ctrg";
+this addWeapon "CUP_srifle_L129A1_HG_ctrgt";
+this addWeapon "CUP_srifle_L129A1_HG_d";
+this addWeapon "CUP_srifle_L129A1_HG_w";
+this addWeapon "CUP_srifle_L129A1_w";
+this addWeapon "CUP_srifle_L129A1_HG";
+this addItemToBackpack "CUP_20Rnd_762x51_L129_M";
+this addItemToBackpack "20Rnd_762x51_Mag";
+this addItemToBackpack "CUP_20Rnd_762x51_B_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_M110";
+//muzzle
+this addPrimaryWeaponItem "muzzle_snds_B_khk_F";
+this addPrimaryWeaponItem "muzzle_snds_B_snd_F";
+this addPrimaryWeaponItem "muzzle_snds_B";
+
+
+
+this addWeapon "CUP_lmg_L7A2_Flat";
+this addWeapon "CUP_lmg_L7A2";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M";
+this addItemToBackpack "150Rnd_762x51_Box";
+this addItemToBackpack "150Rnd_762x51_Box_Tracer";
+
+
+
+this addWeapon "CUP_arifle_L85A2";
+this addWeapon "CUP_arifle_L85A2_NG";
+this addWeapon "CUP_arifle_L85A2_G";
+this addWeapon "CUP_arifle_L85A2_GL";
+this addWeapon "CUP_arifle_L86A2";
+//ammo - 556 NATO
+//muzzles
+this addPrimaryWeaponItem "CUP_acc_bfa";
+this addPrimaryWeaponItem "CUP_muzzle_snds_L85";
+this addPrimaryWeaponItem "CUP_acc_sffh";
+
+
+//------------------------------------------------------------------------------------------------
+
+this addWeapon "CUP_sgun_M1014";
+this addWeapon "CUP_sgun_M1014_vfg";
+this addWeapon "CUP_sgun_M1014_solidstock";
+this addWeapon "CUP_sgun_M1014_Entry";
+this addWeapon "CUP_sgun_M1014_Entry_vfg";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No00_Buck";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No0_Buck";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No1_Buck";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No2_Buck";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No3_Buck";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No4_Buck";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Pellets_No4_Bird";
+this addItemToBackpack "CUP_8Rnd_12Gauge_Slug";
+this addItemToBackpack "CUP_8Rnd_12Gauge_HE";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No00_Buck";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No0_Buck";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No1_Buck";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No2_Buck";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No3_Buck";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No4_Buck";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Pellets_No4_Bird";
+this addItemToBackpack "CUP_6Rnd_12Gauge_Slug";
+this addItemToBackpack "CUP_6Rnd_12Gauge_HE";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No00_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No0_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No1_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No2_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No3_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No4_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No4_Bird";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Slug";
+this addItemToBackpack "CUP_1Rnd_12Gauge_HE";
+
+
+
+this addWeapon "CUP_srifle_M107_Base";
+this addWeapon "CUP_srifle_M107_Pristine";
+this addWeapon "CUP_srifle_M107_Desert";
+this addWeapon "CUP_srifle_M107_Snow";
+this addWeapon "CUP_srifle_M107_Woodland";
+this addItemToBackpack "CUP_10Rnd_127x99_M107";
+//muzzles
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Suppressor_M107_Black";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Suppressor_M107_Desert";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Suppressor_M107_Grey";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Suppressor_M107_Snow";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Suppressor_M107_Woodland";
+
+
+this addWeapon "CUP_srifle_m110_kac_black";
+this addWeapon "CUP_srifle_M110_black";
+this addWeapon "CUP_srifle_M110";
+this addWeapon "CUP_srifle_M110_woodland";
+this addWeapon "CUP_srifle_m110_kac";
+this addWeapon "CUP_srifle_m110_kac_woodland";
+this addItemToBackpack "CUP_20Rnd_762x51_B_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_762x51_L129_M";
+//muzzles
+this addPrimaryWeaponItem "CUP_muzzle_snds_M110_black";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M110";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M110_woodland";
+
+
+this addWeapon "CUP_srifle_M14";
+this addWeapon "CUP_srifle_M14_DMR";
+this addItemToBackpack "CUP_20Rnd_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_DMR";
+this addItemToBackpack "20Rnd_762x51_Mag";
+this addItemToBackpack "10Rnd_Mk14_762x51_Mag";
+//muzzles
+this addPrimaryWeaponItem "CUP_muzzle_snds_M14";
+
+
+
+this addWeapon "CUP_arifle_M16A1";
+this addWeapon "CUP_arifle_M16A1GL";
+this addWeapon "CUP_arifle_M16A1GL_FS";
+this addWeapon "CUP_arifle_M16A1GL_USA";
+this addWeapon "CUP_arifle_M16A1E1";
+this addWeapon "CUP_arifle_M16A1E1GL";
+this addWeapon "CUP_arifle_M16A2";
+this addWeapon "CUP_arifle_Colt727";
+this addWeapon "CUP_arifle_Colt727_M203";
+this addWeapon "CUP_arifle_M16A2_GL";
+this addWeapon "CUP_arifle_M16A4_Base";
+this addWeapon "CUP_arifle_M16A4_Grip";
+this addWeapon "CUP_arifle_M16A4_GL";
+
+
+
+
+this addWeapon "CUP_srifle_Mosin_Nagant";
+this addItemToBackpack "CUP_5Rnd_762x54_Mosin_M";
+this addPrimaryWeaponItem "CUP_optic_PEM";
+
+
+
+this addWeapon "CUP_srifle_M2010_blk";
+this addWeapon "CUP_srifle_M2010_ctrgt";
+this addWeapon "CUP_srifle_M2010_ctrg";
+this addWeapon "CUP_srifle_M2010_dsrt";
+this addWeapon "CUP_srifle_M2010_hex";
+this addWeapon "CUP_srifle_M2010_winter";
+this addWeapon "CUP_srifle_M2010_wdl";
+this addItemToBackpack "CUP_5Rnd_762x67_M2010_M";
+this addItemToBackpack "CUP_5Rnd_TE1_Red_Tracer_762x67_M2010_M";
+
+
+
+
+this addWeapon "CUP_srifle_M21";
+this addWeapon "CUP_srifle_M21_ris";
+this addItemToBackpack "CUP_20Rnd_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_DMR";
+this addItemToBackpack "20Rnd_762x51_Mag";
+this addItemToBackpack "10Rnd_Mk14_762x51_Mag";
+this addPrimaryWeaponItem "CUP_optic_artel_m14";
+
+
+
+this addWeapon "CUP_srifle_M24_wdl";
+this addWeapon "CUP_srifle_M24_blk";
+this addWeapon "CUP_srifle_M24_des";
+this addItemToBackpack "CUP_5Rnd_762x51_M24";
+this addItemToBackpack "CUP_1Rnd_762x51_CZ584";
+this addPrimaryWeaponItem "CUP_Mxx_camo";
+this addPrimaryWeaponItem "CUP_Mxx_camo_half";
+
+
+
+
+this addWeapon "CUP_lmg_M240_norail";
+this addWeapon "CUP_lmg_M240_B";
+this addWeapon "CUP_lmg_M240";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M";
+this addItemToBackpack "150Rnd_762x51_Box";
+this addItemToBackpack "150Rnd_762x51_Box_Tracer";
+
+
+
+this addWeapon "CUP_lmg_m249_SQuantoon";
+this addWeapon "CUP_lmg_m249_pip1";
+this addWeapon "CUP_lmg_m249_pip3";
+this addWeapon "CUP_lmg_m249_pip4";
+this addWeapon "CUP_lmg_M249_E1";
+this addWeapon "CUP_lmg_M249_E2";
+this addWeapon "CUP_lmg_m249_pip2";
+this addWeapon "CUP_lmg_m249_para";
+this addWeapon "CUP_lmg_m249_para_gl";
+//556 NATO MG AMMO
+
+
+
+this addWeapon "CUP_arifle_HK_M27";
+this addWeapon "CUP_arifle_HK_M27_VFG";
+this addWeapon "CUP_arifle_HK_M27_AG36";
+//556 NATO MG AMMO etc.
+
+
+
+this addWeapon "CUP_glaunch_M32";
+//CUP + van grenades
+
+
+this addWeapon "CUP_smg_M3A1_blk";
+this addWeapon "CUP_smg_M3A1_grn";
+this addWeapon "CUP_smg_M3A1";
+this addWeapon "CUP_smg_M3A1_snd";
+this addItemToBackpack "CUP_30Rnd_45ACP_M3A1_BLK_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_M3A1_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Green_Tracer_M3A1_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Yellow_Tracer_M3A1_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Red_Tracer_M3A1_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Green_Tracer_M3A1_BLK_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Yellow_Tracer_M3A1_BLK_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Red_Tracer_M3A1_BLK_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_M3A1_GRN_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Green_Tracer_M3A1_GRN_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Yellow_Tracer_M3A1_GRN_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Red_Tracer_M3A1_GRN_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_M3A1_SND_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Green_Tracer_M3A1_SND_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Yellow_Tracer_M3A1_SND_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Red_Tracer_M3A1_SND_M";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M3A1_blk";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M3A1_grn";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M3A1";
+this addPrimaryWeaponItem "CUP_muzzle_snds_M3A1_snd";
+
+
+
+this addWeapon "CUP_arifle_M4_MOE_BW";
+this addItemToBackpack "CUP_10Rnd_50BW_Mag_M4_M";
+
+
+this addWeapon "CUP_arifle_SBR_od";
+this addWeapon "CUP_arifle_SBR_black";
+//556 NATO MG AMMO etc.
+
+
+
+this addWeapon "CUP_srifle_M40A3";
+this addItemToBackpack "CUP_5Rnd_762x51_M24";
+this addItemToBackpack "CUP_1Rnd_762x51_CZ584";
+//M24 camos
+
+
+this addWeapon "CUP_arifle_M4A1_black";
+this addWeapon "CUP_arifle_M4A1_MOE_short_black";
+this addWeapon "CUP_arifle_M4A1_MOE_short_desert";
+this addWeapon "CUP_arifle_M4A1_MOE_short_winter";
+this addWeapon "CUP_arifle_M4A1_MOE_short_wdl";
+this addWeapon "CUP_arifle_M4A1_standard_short_black";
+this addWeapon "CUP_arifle_M4A1_standard_short_dsrt";
+this addWeapon "CUP_arifle_M4A1_standard_short_winter";
+this addWeapon "CUP_arifle_M4A1_standard_short_wdl";
+this addWeapon "CUP_arifle_M4A1_MOE_black";
+this addWeapon "CUP_arifle_M4A1_MOE_desert";
+this addWeapon "CUP_arifle_M4A1_MOE_winter";
+this addWeapon "CUP_arifle_M4A1_MOE_wdl";
+this addWeapon "CUP_arifle_M4A1_standard_black";
+this addWeapon "CUP_arifle_M4A1_standard_dsrt";
+this addWeapon "CUP_arifle_M4A1_standard_winter";
+this addWeapon "CUP_arifle_M4A1_standard_wdl";
+this addWeapon "CUP_arifle_M4A1";
+this addWeapon "CUP_arifle_M4A1_desert_carryhandle";
+this addWeapon "CUP_arifle_M4A1_camo_carryhandle";
+this addWeapon "CUP_arifle_M4A1_desert";
+this addWeapon "CUP_arifle_M4A3_black";
+this addWeapon "CUP_arifle_M4A3_desert";
+this addWeapon "CUP_arifle_M4A3_camo";
+this addWeapon "CUP_arifle_M4A1_camo";
+this addWeapon "CUP_arifle_M4A1_BUIS_GL";
+this addWeapon "CUP_arifle_M4A1_GL_carryhandle";
+this addWeapon "CUP_arifle_M4A1_GL_carryhandle_desert";
+this addWeapon "CUP_arifle_M4A1_GL_carryhandle_camo";
+this addWeapon "CUP_arifle_M4A1_BUIS_desert_GL";
+this addWeapon "CUP_arifle_M4A1_BUIS_camo_GL";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_black";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_ctrgt";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_ctrg";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_tan";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_hex";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_snow";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_green";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_black";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_ctrgt";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_ctrg";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_tan";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_hex";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_snow";
+this addWeapon "CUP_arifle_M4A1_SOMMOD_Grip_green";
+
+
+this addWeapon "CUP_lmg_M60";
+this addWeapon "CUP_lmg_M60E4_norail";
+this addWeapon "CUP_lmg_M60E4_norail_desert";
+this addWeapon "CUP_lmg_M60E4_norail_jungle";
+this addWeapon "CUP_lmg_M60E4_jungle";
+this addWeapon "CUP_lmg_M60E4";
+this addWeapon "CUP_lmg_M60E4_desert";
+this addWeapon "CUP_lmg_M60E4_wood";
+this addWeapon "CUP_lmg_M60E4_norail_wood";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M";
+this addItemToBackpack "150Rnd_762x51_Box";
+this addItemToBackpack "150Rnd_762x51_Box_Tracer";
+
+
+
+this addWeapon "CUP_glaunch_M79";
+//normal grenades
+
+
+
+this addWeapon "CUP_smg_Mac10";
+this addWeapon "CUP_smg_Mac10_rail";
+this addItemToBackpack "CUP_30Rnd_45ACP_MAC10_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Yellow_Tracer_MAC10_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Suppressor_Mac10";
+this addPrimaryWeaponItem "muzzle_snds_acp";
+
+
+
+this addWeapon "CUP_lmg_FNMAG";
+this addWeapon "CUP_lmg_FNMAG_RIS";
+this addWeapon "CUP_lmg_FNMAG_RIS_modern";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M";
+this addItemToBackpack "150Rnd_762x51_Box";
+this addItemToBackpack "150Rnd_762x51_Box_Tracer";
+
+
+
+this addWeapon "CUP_lmg_MG3";
+this addWeapon "CUP_lmg_MG3_rail";
+this addItemToBackpack "CUP_120Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_120Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_120Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_120Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M";
+
+
+this addWeapon "CUP_arifle_MG36";
+this addWeapon "CUP_arifle_MG36_camo";
+this addWeapon "CUP_arifle_MG36_hex";
+this addWeapon "CUP_arifle_MG36_wdl";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_30Rnd_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_camo";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_wdl";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_G36_hex";
+this addItemToBackpack "CUP_30Rnd_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_XM8";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_camo";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_wdl";
+this addItemToBackpack "CUP_100Rnd_TE1_Red_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Green_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_100Rnd_TE1_Yellow_Tracer_556x45_BetaCMag_hex";
+this addItemToBackpack "CUP_30Rnd_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_556x45_CZ805";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_556x45_CZ805";
+
+
+
+this addWeapon "CUP_lmg_minimi";
+this addWeapon "CUP_lmg_minimi_railed";
+this addWeapon "CUP_lmg_minimipara";
+this addPrimaryWeaponItem "CUP_200Rnd_TE4_Red_Tracer_556x45_M249";
+//all other nato mg ammo
+
+
+
+this addWeapon "CUP_srifle_Mk12SPR";
+this addPrimaryWeaponItem "CUP_20Rnd_556x45_Stanag";
+//all other nato ammo
+
+
+
+this addWeapon "CUP_glaunch_Mk13";
+this addPrimaryWeaponItem "CUP_1Rnd_HE_M203";
+//all other nato GL ammo
+
+
+
+this addWeapon "CUP_arifle_Mk16_CQC";
+this addWeapon "CUP_arifle_Mk16_CQC_AFG";
+this addWeapon "CUP_arifle_Mk16_CQC_AFG_black";
+this addWeapon "CUP_arifle_Mk16_CQC_AFG_woodland";
+this addWeapon "CUP_arifle_Mk16_CQC_black";
+this addWeapon "CUP_arifle_Mk16_CQC_FG";
+this addWeapon "CUP_arifle_Mk16_CQC_FG_black";
+this addWeapon "CUP_arifle_Mk16_CQC_FG_woodland";
+this addWeapon "CUP_arifle_Mk16_CQC_SFG";
+this addWeapon "CUP_arifle_Mk16_CQC_SFG_woodland";
+this addWeapon "CUP_arifle_Mk16_CQC_woodland";
+this addWeapon "CUP_arifle_Mk16_CQC_EGLM";
+this addWeapon "CUP_arifle_Mk16_CQC_EGLM_black";
+this addWeapon "CUP_arifle_Mk16_CQC_EGLM_woodland";
+this addWeapon "CUP_arifle_Mk16_STD";
+this addWeapon "CUP_arifle_Mk16_STD_AFG";
+this addWeapon "CUP_arifle_Mk16_STD_AFG_black";
+this addWeapon "CUP_arifle_Mk16_STD_AFG_woodland";
+this addWeapon "CUP_arifle_Mk16_STD_black";
+this addWeapon "CUP_arifle_Mk16_STD_FG";
+this addWeapon "CUP_arifle_Mk16_STD_FG_black";
+this addWeapon "CUP_arifle_Mk16_STD_FG_woodland";
+this addWeapon "CUP_arifle_Mk16_STD_SFG";
+this addWeapon "CUP_arifle_Mk16_STD_SFG_black";
+this addWeapon "CUP_arifle_Mk16_STD_SFG_woodland";
+this addWeapon "CUP_arifle_Mk16_STD_woodland";
+this addWeapon "CUP_arifle_Mk16_STD_EGLM";
+this addWeapon "CUP_arifle_Mk16_STD_EGLM_black";
+this addWeapon "CUP_arifle_Mk16_STD_EGLM_woodland";
+this addWeapon "CUP_arifle_Mk16_SV";
+this addWeapon "CUP_arifle_Mk16_SV_black";
+this addWeapon "CUP_arifle_Mk16_SV_woodland";
+this addWeapon "CUP_arifle_mk18_black";
+this addWeapon "CUP_arifle_mk18_m203_black";
+this addPrimaryWeaponItem "CUP_30Rnd_556x45_Stanag_Mk16";
+//all other nato ammo
+
+
+
+
+this addWeapon "CUP_arifle_Mk17_CQC";
+this addWeapon "CUP_arifle_Mk17_CQC_AFG";
+this addWeapon "CUP_arifle_Mk17_CQC_AFG_black";
+this addWeapon "CUP_arifle_Mk17_CQC_AFG_woodland";
+this addWeapon "CUP_arifle_Mk17_CQC_Black";
+this addWeapon "CUP_arifle_Mk17_CQC_FG";
+this addWeapon "CUP_arifle_Mk17_CQC_FG_black";
+this addWeapon "CUP_arifle_Mk17_CQC_FG_woodland";
+this addWeapon "CUP_arifle_Mk17_CQC_SFG";
+this addWeapon "CUP_arifle_Mk17_CQC_SFG_black";
+this addWeapon "CUP_arifle_Mk17_CQC_SFG_woodland";
+this addWeapon "CUP_arifle_Mk17_CQC_woodland";
+this addWeapon "CUP_arifle_Mk17_CQC_EGLM";
+this addWeapon "CUP_arifle_Mk17_CQC_EGLM_black";
+this addWeapon "CUP_arifle_Mk17_CQC_EGLM_woodland";
+this addWeapon "CUP_arifle_Mk17_STD";
+this addWeapon "CUP_arifle_Mk17_STD_AFG";
+this addWeapon "CUP_arifle_Mk17_STD_AFG_black";
+this addWeapon "CUP_arifle_Mk17_STD_AFG_woodland";
+this addWeapon "CUP_arifle_Mk17_STD_woodland";
+this addWeapon "CUP_arifle_Mk17_STD_black";
+this addWeapon "CUP_arifle_Mk17_STD_FG";
+this addWeapon "CUP_arifle_Mk17_STD_FG_black";
+this addWeapon "CUP_arifle_Mk17_STD_FG_woodland";
+this addWeapon "CUP_arifle_Mk17_STD_SFG";
+this addWeapon "CUP_arifle_Mk17_STD_SFG_black";
+this addWeapon "CUP_arifle_Mk17_STD_SFG_woodland";
+this addWeapon "CUP_arifle_Mk17_STD_EGLM";
+this addWeapon "CUP_arifle_Mk17_STD_EGLM_black";
+this addWeapon "CUP_arifle_Mk17_STD_EGLM_woodland";
+this addWeapon "CUP_arifle_Mk20";
+this addWeapon "CUP_arifle_Mk20_black";
+this addWeapon "CUP_arifle_Mk20_woodland";
+this addItemToBackpack "CUP_20Rnd_762x51_B_SCAR";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_20Rnd_762x51_B_SCAR_bkl";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR_bkl";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_bkl";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR_bkl";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_SCAR_bkl";
+this addItemToBackpack "CUP_20Rnd_762x51_B_SCAR_wdl";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_SCAR_wdl";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_SCAR_wdl";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_SCAR_wdl";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_SCAR_wdl";
+this addItemToBackpack "CUP_30Rnd_762x51_1_B_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x51_1_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x51_1_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x51_1_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_White_Tracer_762x51_1_SCAR";
+this addItemToBackpack "CUP_30Rnd_762x51_2_B_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x51_2_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x51_2_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x51_2_SCAR";
+this addItemToBackpack "CUP_30Rnd_TE1_White_Tracer_762x51_2_SCAR";
+this addItemToBackpack "CUP_50Rnd_762x51_B_SCAR";
+this addItemToBackpack "CUP_50Rnd_TE1_Yellow_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_50Rnd_TE1_Red_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_50Rnd_TE1_Green_Tracer_762x51_SCAR";
+this addItemToBackpack "CUP_50Rnd_TE1_White_Tracer_762x51_SCAR";
+
+
+this addWeapon "CUP_lmg_Mk48";
+this addWeapon "CUP_lmg_Mk48_des";
+this addWeapon "CUP_lmg_Mk48_od";
+this addWeapon "CUP_lmg_Mk48_tan";
+this addWeapon "CUP_lmg_Mk48_nohg";
+this addWeapon "CUP_lmg_Mk48_nohg_des";
+this addWeapon "CUP_lmg_Mk48_nohg_od";
+this addWeapon "CUP_lmg_Mk48_nohg_tan";
+this addWeapon "CUP_lmg_Mk48_nohg_wdl";
+this addWeapon "CUP_lmg_Mk48_wdl";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M";
+this addItemToBackpack "150Rnd_762x51_Box";
+this addItemToBackpack "150Rnd_762x51_Box_Tracer";
+this addPrimaryWeaponItem "muzzle_snds_H_MG_blk_F";
+this addPrimaryWeaponItem "muzzle_snds_H_MG";
+this addPrimaryWeaponItem "muzzle_snds_H_MG_khk_F";
+
+
+
+this addWeapon "CUP_srifle_Mk18_blk";
+this addWeapon "CUP_srifle_Mk18_des";
+this addWeapon "CUP_srifle_Mk18_wdl";
+this addItemToBackpack "20Rnd_762x51_Mag";
+this addItemToBackpack "10Rnd_Mk14_762x51_Mag";
+this addItemToBackpack "CUP_20Rnd_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_DMR";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_DMR";
+
+
+
+this addWeapon "CUP_smg_MP5A5";
+this addWeapon "CUP_smg_MP5A5_Rail";
+this addWeapon "CUP_smg_MP5A5_Rail_AFG";
+this addWeapon "CUP_smg_MP5A5_Rail_VFG";
+this addWeapon "CUP_smg_MP5SD6";
+this addItemToBackpack "CUP_30Rnd_9x19_MP5";
+this addItemToBackpack "CUP_30Rnd_Green_Tracer_9x19_MP5";
+this addItemToBackpack "CUP_30Rnd_Red_Tracer_9x19_MP5";
+this addItemToBackpack "CUP_30Rnd_Yellow_Tracer_9x19_MP5";
+this addItemToBackpack "CUP_30Rnd_Subsonic_9x19_MP5";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02_Tracer_Red";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02_Tracer_Yellow";
+this addItemToBackpack "30Rnd_9x21_Mag_SMG_02_Tracer_Green";
+this addPrimaryWeaponItem "CUP_muzzle_snds_MP5";
+this addPrimaryWeaponItem "CUP_muzzle_fh_MP5";
+this addPrimaryWeaponItem "muzzle_snds_L";
+
+
+
+this addWeapon "CUP_smg_MP7";
+this addWeapon "CUP_smg_MP7_desert";
+this addWeapon "CUP_smg_MP7_woodland";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7";
+this addItemToBackpack "CUP_20Rnd_46x30_MP7";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7_Red_Tracer";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7_Green_Tracer";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7_Yellow_Tracer";
+this addPrimaryWeaponItem "CUP_muzzle_snds_MP7";
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_srifle_LeeEnfield";
+this addWeapon "CUP_srifle_LeeEnfield_rail";
+this addItemToBackpack "CUP_10x_303_M";
+this addPrimaryWeaponItem "CUP_optic_no23mk2";
+
+
+//------------------------------------------------------------------------------------------------
+
+
+
+this addWeapon "CUP_arifle_OTS14_GROZA_762_Grip";
+this addWeapon "CUP_arifle_OTS14_GROZA_762";
+this addWeapon "CUP_arifle_OTS14_GROZA_762_GL";
+this addItemToBackpack "CUP_30Rnd_762x39_AK47_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK47_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK103_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK47_TK_M";
+this addItemToBackpack "CUP_20Rnd_762x39_AMD63_M";
+this addItemToBackpack "CUP_10Rnd_762x39_SaigaMk03_M";
+this addItemToBackpack "CUP_40Rnd_TE4_LRT4_Green_Tracer_762x39_RPK_M";
+this addItemToBackpack "30Rnd_762x39_Mag_F";
+this addItemToBackpack "30Rnd_762x39_Mag_Green_F";
+this addItemToBackpack "30Rnd_762x39_Mag_Tracer_F";
+this addItemToBackpack "30Rnd_762x39_Mag_Tracer_Green_F";
+this addItemToBackpack "CUP_30Rnd_762x39_AKM_bakelite_desert_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x39_bakelite_AK47_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AK103_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x39_AK103_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x39_bakelite_AK103_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AKM_bakelite_desert_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x39_AKM_bakelite_desert_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x39_AKM_bakelite_desert_M";
+this addItemToBackpack "CUP_30Rnd_Subsonic_762x39_AK47_M";
+this addItemToBackpack "CUP_20Rnd_Subsonic_762x39_AMD63_M";
+this addItemToBackpack "CUP_30Rnd_Subsonic_762x39_AK47_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_Subsonic_762x39_AK103_bakelite_M";
+this addItemToBackpack "CUP_30Rnd_Subsonic_762x39_AKM_bakelite_desert_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK15_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AK15_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK15_Desert_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK15_Tan_M";
+this addItemToBackpack "CUP_30Rnd_762x39_AK15_OD_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AK15_Desert_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x39_AK15_Tan_M";
+this addPrimaryWeaponItem "CUP_optic_GrozaScope";
+
+
+this addWeapon "CUP_arifle_OTS14_GROZA_Grip";
+this addWeapon "CUP_arifle_OTS14_GROZA";
+this addWeapon "CUP_arifle_OTS14_GROZA_GL";
+this addItemToBackpack "CUP_20Rnd_9x39_SP5_GROZA_M";
+this addPrimaryWeaponItem "CUP_optic_GrozaScope";
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_smg_p90_black";
+this addWeapon "CUP_smg_p90_olive";
+this addItemToBackpack "50Rnd_570x28_SMG_03";
+this addItemToBackpack "CUP_50Rnd_570x28_Red_Tracer_P90_M";
+this addItemToBackpack "CUP_50Rnd_570x28_Green_Tracer_P90_M";
+this addItemToBackpack "CUP_50Rnd_570x28_Yellow_Tracer_P90_M";
+this addPrimaryWeaponItem "muzzle_snds_570";
+
+
+
+this addWeapon "CUP_lmg_PKM";
+this addWeapon "CUP_lmg_PKM_B50_vfg";
+this addWeapon "CUP_lmg_PKM_front_rail_B50_vfg";
+this addWeapon "CUP_lmg_PKM_top_rail";
+this addWeapon "CUP_lmg_PKM_top_rail_B50_vfg";
+this addWeapon "CUP_lmg_PKMN";
+this addWeapon "CUP_lmg_Pecheneg";
+this addWeapon "CUP_lmg_Pecheneg_B50_vfg";
+this addWeapon "CUP_lmg_Pecheneg_desert";
+this addWeapon "CUP_lmg_Pecheneg_top_rail";
+this addWeapon "CUP_lmg_Pecheneg_top_rail_B50_vfg";
+this addWeapon "CUP_lmg_Pecheneg_woodland";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M";
+this addItemToBackpack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M";
+this addItemToBackpack "150Rnd_762x54_Box";
+this addItemToBackpack "150Rnd_762x54_Box_Tracer";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_PK_Black";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_PK_OD";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_PK_Tan";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_PK";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_PK_desert";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_PK_woodland";
+
+
+this addWeapon "CUP_smg_vityaz";
+this addWeapon "CUP_smg_vityaz_top_rail";
+this addWeapon "CUP_smg_vityaz_vfg_top_rail";
+this addWeapon "CUP_smg_vityaz_vfg";
+this addWeapon "CUP_smg_vityaz_vfg_front_rail";
+this addItemToBackpack "CUP_30Rnd_9x19AP_Vityaz";
+this addItemToBackpack "CUP_30Rnd_9x19_Vityaz";
+this addItemToBackpack "CUP_10Rnd_9x19_Saiga9";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x39_Black";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x39_OD";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x39_Tan";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK762";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK762_desert";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK762_woodland";
+this addPrimaryWeaponItem "CUP_muzzle_Bizon";
+this addPrimaryWeaponItem "CUP_muzzle_snds_socom762rc";
+
+
+this addWeapon "CUP_smg_bizon";
+this addItemToBackpack "CUP_64Rnd_9x19_Bizon_M";
+this addItemToBackpack "CUP_64Rnd_Green_Tracer_9x19_Bizon_M";
+this addItemToBackpack "CUP_64Rnd_Red_Tracer_9x19_Bizon_M";
+this addItemToBackpack "CUP_64Rnd_White_Tracer_9x19_Bizon_M";
+this addItemToBackpack "CUP_64Rnd_Yellow_Tracer_9x19_Bizon_M";
+
+
+
+
+this addWeapon "CUP_smg_PS90_olive";
+this addItemToBackpack "50Rnd_570x28_SMG_03";
+this addItemToBackpack "CUP_50Rnd_570x28_Red_Tracer_P90_M";
+this addItemToBackpack "CUP_50Rnd_570x28_Green_Tracer_P90_M";
+this addItemToBackpack "CUP_50Rnd_570x28_Yellow_Tracer_P90_M";
+this addPrimaryWeaponItem "muzzle_snds_570";
+
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_srifle_RSASS_Black";
+this addWeapon "CUP_srifle_RSASS_Dazzle";
+this addWeapon "CUP_srifle_RSASS_Jungle";
+this addWeapon "CUP_srifle_RSASS_Sand";
+this addWeapon "CUP_srifle_RSASS_Winter";
+this addWeapon "CUP_srifle_RSASS_WDLNet";
+this addWeapon "CUP_srifle_RSASS_WDL";
+this addItemToBackpack "CUP_20Rnd_762x51_B_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_TE1_White_Tracer_762x51_M110";
+this addItemToBackpack "CUP_20Rnd_762x51_L129_M";
+
+
+this addWeapon "CUP_srifle_Remington700";
+this addItemToBackpack "CUP_6Rnd_762x51_R700";
+this addItemToBackpack "CUP_1Rnd_762x51_CZ584";
+this addPrimaryWeaponItem "CUP_optic_Remington";
+
+
+
+this addWeapon "CUP_arifle_IMI_Romat";
+this addWeapon "CUP_arifle_IMI_Romat_railed";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Desert_M";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_Woodland_M";
+this addItemToBackpack "CUP_10Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_10Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_30Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+
+
+
+this addWeapon "CUP_arifle_RPK74";
+this addWeapon "CUP_arifle_RPK74_top_rail";
+//AK mun
+
+
+this addWeapon "CUP_arifle_RPK74_45";
+this addWeapon "CUP_arifle_RPK74_45_top_rail";
+this addWeapon "CUP_arifle_RPK74M";
+this addWeapon "CUP_arifle_RPK74M_top_rail";
+this addWeapon "CUP_arifle_RPK74M_railed";
+//ak 45 mun
+
+
+
+
+//------------------------------------------------------------------------------------------------
+
+
+this addWeapon "CUP_arifle_Sa58_Carbine_RIS_AFG";
+this addWeapon "CUP_arfile_Sa58_Carbine_RIS_AFG_desert";
+this addWeapon "CUP_arfile_Sa58_Carbine_RIS_AFG_woodland";
+this addWeapon "CUP_arifle_Sa58_Carbine_RIS_VFG";
+this addWeapon "CUP_arifle_Sa58_Carbine_RIS_VFG_desert";
+this addWeapon "CUP_arifle_Sa58_Carbine_RIS_VFG_woodland";
+this addWeapon "CUP_arifle_Sa58_sporter_compact";
+this addWeapon "CUP_arifle_Sa58_sporter_compact_rearris";
+this addWeapon "CUP_arifle_Sa58P";
+this addWeapon "CUP_arifle_Sa58P_des";
+this addWeapon "CUP_arifle_Sa58P_rearris";
+this addWeapon "CUP_arifle_Sa58P_frontris";
+this addWeapon "CUP_arifle_Sa58P_frontris_desert";
+this addWeapon "CUP_arifle_Sa58P_frontris_woodland";
+this addWeapon "CUP_arifle_Sa58P_RIS1";
+this addWeapon "CUP_arifle_Sa58P_wood";
+this addWeapon "CUP_arifle_Sa58P_woodland";
+this addWeapon "CUP_arifle_Sa58Pi";
+this addWeapon "CUP_arifle_Sa58s";
+this addWeapon "CUP_arifle_Sa58s_rearris";
+this addWeapon "CUP_arifle_Sa58V";
+this addWeapon "CUP_arifle_Sa58V_camo";
+this addWeapon "CUP_arifle_Sa58V_rearris";
+this addWeapon "CUP_arifle_Sa58V_frontris";
+this addWeapon "CUP_arifle_Sa58RIS1";
+this addWeapon "CUP_arifle_Sa58RIS1_des";
+this addWeapon "CUP_arifle_Sa58RIS1_woodland";
+this addWeapon "CUP_arifle_Sa58V_wood";
+this addWeapon "CUP_arifle_Sa58V_woodland";
+this addWeapon "CUP_arifle_Sa58RIS2";
+this addWeapon "CUP_arifle_Sa58RIS2_camo";
+this addWeapon "CUP_arifle_Sa58RIS2_woodland";
+this addWeapon "CUP_arifle_Sa58RIS2_gl";
+this addWeapon "CUP_arifle_Sa58RIS2_gl_desert";
+this addWeapon "CUP_arifle_Sa58RIS2_gl_woodland";
+this addItemToBackpack "CUP_30Rnd_Sa58_M";
+this addItemToBackpack "CUP_30Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_30Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_30Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_45Rnd_Sa58_M";
+this addItemToBackpack "CUP_45Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_20Rnd_Sa58_M";
+this addItemToBackpack "CUP_45Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_45Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_20Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_20Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_20Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_15Rnd_Sa58_M";
+this addItemToBackpack "CUP_15Rnd_Sa58_M_TracerG";
+this addItemToBackpack "CUP_15Rnd_Sa58_M_TracerR";
+this addItemToBackpack "CUP_15Rnd_Sa58_M_TracerY";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M_TracerG";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M_TracerR";
+this addItemToBackpack "CUP_30Rnd_Sa58_desert_M_TracerY";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M_TracerG";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M_TracerR";
+this addItemToBackpack "CUP_30Rnd_Sa58_woodland_M_TracerY";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_CSA";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_CSA_desert";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_CSA_woodland";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x39_Black";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x39_OD";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x39_Tan";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_flashhider_Sa58";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK762";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK762_desert";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK762_woodland";
+this addPrimaryWeaponItem "CUP_muzzle_snds_SCAR_H";
+this addPrimaryWeaponItem "CUP_muzzle_Bizon";
+this addPrimaryWeaponItem "CUP_muzzle_snds_socom762rc";
+this addPrimaryWeaponItem "muzzle_snds_B";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Zendl";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Zendl_desert";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Zendl_woodland";
+
+
+
+this addWeapon "CUP_smg_SA61";
+this addWeapon "CUP_smg_SA61_RIS";
+this addItemToBackpack "CUP_20Rnd_B_765x17_Ball_M";
+this addItemToBackpack "CUP_10Rnd_B_765x17_Ball_M";
+this addItemToBackpack "CUP_50Rnd_B_765x17_Ball_M";
+this addPrimaryWeaponItem "CUP_muzzle_snds_SA61";
+
+
+
+this addWeapon "CUP_arifle_DSA_SA58";
+this addWeapon "CUP_arifle_DSA_SA58_DMR";
+this addWeapon "CUP_arifle_DSA_SA58_OSW";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_Desert";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_VFG";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_VFG_Desert";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_VFG_Sand";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_VFG_Woodland";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_Sand";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_Woodland";
+this addWeapon "CUP_arifle_DSA_SA58_OSW_M203";
+this addPrimaryWeaponItem "CUP_20Rnd_762x51_FNFAL_M";
+//all other FAL mags
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x51_Black";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x51_OD";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_Flashhider_762x51_Tan";
+this addPrimaryWeaponItem "CUP_muzzle_mfsup_SCAR_H";
+this addPrimaryWeaponItem "CUP_muzzle_snds_SCAR_H";
+this addPrimaryWeaponItem "CUP_muzzle_snds_socom762rc";
+
+
+this addWeapon "CUP_smg_saiga9";
+this addItemToBackpack "CUP_10Rnd_9x19_Saiga9";
+this addItemToBackpack "CUP_30Rnd_9x19_Vityaz";
+this addItemToBackpack "CUP_30Rnd_9x19AP_Vityaz";
+
+
+
+this addWeapon "CUP_sgun_Saiga12K";
+this addWeapon "CUP_sgun_Saiga12K_top_rail";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Slug";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Buck_00";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Buck_0";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Buck_1";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Buck_2";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Buck_3";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_Buck_4";
+this addItemToBackpack "CUP_5Rnd_B_Saiga12_HE";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Slug";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Buck_00";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Buck_0";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Buck_1";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Buck_2";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Buck_3";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_Buck_4";
+this addItemToBackpack "CUP_12Rnd_B_Saiga12_HE";
+
+
+
+this addWeapon "CUP_arifle_SAIGA_MK03";
+this addWeapon "CUP_arifle_SAIGA_MK03_top_rail";
+this addWeapon "CUP_arifle_SAIGA_MK03_Wood";
+this addWeapon "CUP_arifle_SIAGE_MK03_Wood_top_rail";
+this addItemToBackpack "CUP_10Rnd_762x39_SaigaMk03_M";
+
+
+
+this addWeapon "CUP_SKS";
+this addWeapon "CUP_SKS_rail";
+this addItemToBackpack "CUP_10Rnd_762x39_SKS_M";
+
+
+this addWeapon "CUP_sgun_slamfire";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No00_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No0_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No1_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No2_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No3_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No4_Buck";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Pellets_No4_Bird";
+this addItemToBackpack "CUP_1Rnd_12Gauge_HE";
+this addItemToBackpack "CUP_1Rnd_12Gauge_Slug";
+
+
+
+this addWeapon "CUP_sgun_SPAS12";
+this addPrimaryWeaponItem "CUP_8Rnd_12Gauge_Pellets_No00_Buck";
+//and other 8/6/1 12Gauges
+
+
+
+this addWeapon "CUP_arifle_SR3M_Vikhr";
+this addWeapon "CUP_arifle_SR3M_Vikhr_VFG";
+this addWeapon "CUP_arifle_SR3M_Vikhr_top_rail";
+this addWeapon "CUP_arifle_SR3M_Vikhr_VFG_top_rail";
+this addItemToBackpack "CUP_30Rnd_9x39_SP5_VIKHR_M";
+this addItemToBackpack "CUP_20Rnd_9x39_SP5_VSS_M";
+this addItemToBackpack "CUP_10Rnd_9x39_SP5_VSS_M";
+this addPrimaryWeaponItem "CUP_muzzle_snds_SR3M";
+
+
+this addWeapon "CUP_arifle_Steyr_Stg58";
+this addWeapon "CUP_arifle_Steyr_Stg58_railed";
+this addPrimaryWeaponItem "CUP_20Rnd_762x51_FNFAL_M";
+//other FLA ammo
+this addPrimaryWeaponItem "CUP_bipod_FNFAL";
+
+
+
+this addWeapon "CUP_srifle_SVD";
+this addWeapon "CUP_srifle_SVD_des";
+this addWeapon "CUP_srifle_SVD_des_top_rail";
+this addWeapon "CUP_srifle_SVD_top_rail";
+this addWeapon "CUP_srifle_SVD_wdl";
+this addWeapon "CUP_srifle_SVD_wdl_top_rail";
+this addItemToBackpack "CUP_10Rnd_762x54_SVD_M";
+this addItemToBackpack "10Rnd_762x54_Mag";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_SVD";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_SVD_desert";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_SVD_woodland";
+this addPrimaryWeaponItem "CUP_SVD_camo_d";
+this addPrimaryWeaponItem "CUP_SVD_camo_g";
+this addPrimaryWeaponItem "CUP_SVD_camo_d_half";
+this addPrimaryWeaponItem "CUP_SVD_camo_g_half";
+
+
+
+this addWeapon "CUP_arifle_TYPE_56_2_Early";
+this addWeapon "CUP_arifle_TYPE_56_2";
+this addWeapon "CUP_arifle_TYPE_56_2_top_rail";
+this addPrimaryWeaponItem "CUP_30Rnd_762x39_AK47_bakelite_M";
+//other 7.62 AK mun
+
+
+this addWeapon "CUP_lmg_UK59";
+this addPrimaryWeaponItem "CUP_50Rnd_UK59_762x54R_Tracer";
+
+
+this addWeapon "CUP_smg_UZI";
+this addItemToBackpack "CUP_32Rnd_9x19_UZI_M";
+this addItemToBackpack "CUP_72Rnd_9x19_UZI_M";
+this addItemToBackpack "CUP_30Rnd_9x19_UZI";
+this addPrimaryWeaponItem "CUP_muzzle_snds_UZI";
+
+
+this addWeapon "CUP_srifle_VSSVintorez";
+this addWeapon "CUP_srifle_VSSVintorez_flash";
+this addWeapon "CUP_srifle_VSSVintorez_VFG";
+this addWeapon "CUP_srifle_VSSVintorez_top_rail";
+this addWeapon "CUP_srifle_VSSVintorez_flash_top";
+this addWeapon "CUP_srifle_VSSVintorez_VFG_top_rail";
+this addItemToBackpack "CUP_10Rnd_9x39_SP5_VSS_M";
+this addItemToBackpack "CUP_20Rnd_9x39_SP5_VSS_M";
+this addItemToBackpack "CUP_30Rnd_9x39_SP5_VIKHR_M";
+
+
+
+this addWeapon "CUP_arifle_X95";
+this addWeapon "CUP_arifle_X95_Grippod";
+this addPrimaryWeaponItem "CUP_30Rnd_556x45_X95";
+//556 NATO
+
+
+this addWeapon "CUP_arifle_XM16E1";
+
+
+
+this addWeapon "CUP_arifle_XM8_Carbine";
+this addWeapon "CUP_arifle_XM8_Carbine_FG";
+this addWeapon "CUP_arifle_XM8_Railed";
+this addWeapon "CUP_arifle_XM8_Carbine_GL";
+this addWeapon "CUP_arifle_XM8_Compact";
+this addWeapon "CUP_arifle_XM8_Compact_Rail";
+this addWeapon "CUP_arifle_xm8_SAW";
+this addWeapon "CUP_arifle_xm8_sharpshooter";
+
+
+
+//------------------------------------------------------------------------------------------------
+//							LAUNCHERS
+
+
+this addWeapon "CUP_launch_APILAS";
+
+
+this addWeapon "CUP_launch_BF3";
+
+
+this addWeapon "CUP_launch_Javelin";
+this addSecondaryWeaponItem "CUP_Javelin_M";
+
+
+this addWeapon "CUP_launch_FIM92Stinger";
+
+
+this addWeapon "CUP_launch_Igla";
+
+
+this addWeapon "CUP_launch_M136";
+
+
+this addWeapon "CUP_launch_M47";
+this addSecondaryWeaponItem "CUP_Dragon_EP1_M";
+
+
+this addWeapon "CUP_launch_M72A6";
+this addWeapon "CUP_launch_M72A6_Special";
+
+
+this addWeapon "CUP_launch_MAAWS";
+this addSecondaryWeaponItem "CUP_optic_MAAWS_Scope";
+this addItemToBackpack "CUP_MAAWS_HEAT_M";
+this addItemToBackpack "CUP_MAAWS_HEDP_M";
+this addItemToBackpack "MRAWS_HEAT55_F";
+this addItemToBackpack "MRAWS_HE_F";
+this addItemToBackpack "MRAWS_HEAT_F";
+
+
+
+this addWeapon "CUP_launch_Metis";
+this addItemToBackpack "CUP_AT13_M";
+this addItemToBackpack "Vorona_HEAT";
+this addItemToBackpack "Vorona_HE";
+
+
+
+this addWeapon "CUP_launch_Mk153Mod0";
+this addWeapon "CUP_launch_Mk153Mod0_blk";
+this addItemToBackpack "CUP_SMAW_HEAA_M";
+this addItemToBackpack "CUP_SMAW_HEDP_M";
+this addItemToBackpack "CUP_SMAW_NE_M";
+this addItemToBackpack "CUP_SMAW_Spotting";
+
+
+
+this addWeapon "CUP_launch_NLAW";
+
+
+this addWeapon "CUP_launch_HCPF3";
+
+this addWeapon "CUP_launch_PzF3";
+
+this addWeapon "CUP_launch_RPG26";
+
+
+this addWeapon "CUP_launch_RPG7V";
+this addItemToBackpack "CUP_PG7V_M";
+this addItemToBackpack "CUP_PG7VM_M";
+this addItemToBackpack "CUP_PG7VL_M";
+this addItemToBackpack "CUP_PG7VR_M";
+this addItemToBackpack "CUP_OG7_M";
+this addItemToBackpack "CUP_TBG7V_M";
+this addItemToBackpack "RPG7_F";
+this addSecondaryWeaponItem "CUP_optic_NSPU_RPG";
+this addSecondaryWeaponItem "CUP_optic_PGO7V";
+this addSecondaryWeaponItem "CUP_optic_PGO7V2";
+this addSecondaryWeaponItem "CUP_optic_PGO7V3";
+
+
+
+this addWeapon "CUP_launch_RPG18";
+
+
+this addWeapon "CUP_launch_RShG2";
+
+
+this addWeapon "CUP_launch_9K32Strela";
+
+
+
+//------------------------------------------------------------------------------------------------
+//							SIEDEARMS
+
+this addWeapon "CUP_hgun_Browning_HP";
+this addHandgunItem "CUP_13Rnd_9x19_Browning_HP";
+this addHandgunItem "CUP_muzzle_snds_M9";
+this addHandgunItem "muzzle_snds_L";
+
+this addWeapon "CUP_hgun_CZ75";
+this addHandgunItem "CUP_16Rnd_9x19_cz75";
+
+
+this addWeapon "CUP_hgun_Compact";
+this addItemToBackpack "CUP_10Rnd_9x19_Compact";
+this addItemToBackpack "CUP_18Rnd_9x19_Phantom";
+this addHandgunItem "muzzle_snds_L";
+
+
+this addWeapon "CUP_hgun_Duty";
+this addHandgunItem "muzzle_snds_L";
+this addItemToBackpack "16Rnd_9x21_Mag";
+this addItemToBackpack "16Rnd_9x21_green_Mag";
+this addItemToBackpack "16Rnd_9x21_red_Mag";
+this addItemToBackpack "16Rnd_9x21_yellow_Mag";
+
+
+
+this addWeapon "CUP_hgun_Phantom";
+this addHandgunItem "muzzle_snds_L";
+this addHandgunItem "CUP_18Rnd_9x19_Phantom";
+
+
+this addWeapon "CUP_hgun_Deagle";
+this addHandgunItem "CUP_7Rnd_50AE_Deagle";
+
+
+this addWeapon "CUP_hgun_FlareGun";
+this addItemToBackpack "CUP_FlareWhite_265_M";
+this addItemToBackpack "CUP_FlareRed_265_M";
+this addItemToBackpack "CUP_FlareGreen_265_M";
+this addItemToBackpack "CUP_FlareYellow_265_M";
+this addItemToBackpack "CUP_IllumFlareWhite_265_M";
+this addItemToBackpack "CUP_IllumFlareRed_265_M";
+this addItemToBackpack "CUP_IllumFlareGreen_265_M";
+this addItemToBackpack "CUP_IllumFlareYellow_265_M";
+this addItemToBackpack "CUP_StarClusterWhite_265_M";
+this addItemToBackpack "CUP_StarClusterRed_265_M";
+this addItemToBackpack "CUP_StarClusterGreen_265_M";
+this addItemToBackpack "CUP_StarClusterYellow_265_M";
+
+
+
+this addWeapon "CUP_hgun_Glock17";
+this addWeapon "CUP_hgun_Glock17_blk";
+this addWeapon "CUP_hgun_Glock17_tan";
+this addHandgunItem "CUP_muzzle_snds_M9";
+this addHandgunItem "muzzle_snds_L";
+this addHandgunItem "optic_MRD";
+this addHandgunItem "optic_MRD_black";
+this addHandgunItem "CUP_17Rnd_9x19_glock17";
+
+
+
+this addWeapon "CUP_hgun_M17_Black";
+this addWeapon "CUP_hgun_M17_Coyote";
+this addWeapon "CUP_hgun_M17_Green";
+this addHandgunItem "CUP_muzzle_snds_M9";
+this addHandgunItem "muzzle_snds_L";
+this addHandgunItem "optic_MRD";
+this addHandgunItem "optic_MRD_black";
+this addItemToBackpack "CUP_21Rnd_9x19_M17_Black";
+this addItemToBackpack "CUP_17Rnd_9x19_M17_Black";
+this addItemToBackpack "CUP_21Rnd_9x19_M17_Coyote";
+this addItemToBackpack "CUP_17Rnd_9x19_M17_Coyote";
+this addItemToBackpack "CUP_21Rnd_9x19_M17_Green";
+this addItemToBackpack "CUP_17Rnd_9x19_M17_Green";
+
+
+this addWeapon "CUP_hgun_Colt1911";
+this addHandgunItem "muzzle_snds_acp";
+this addItemToBackpack "CUP_7Rnd_45ACP_1911";
+this addItemToBackpack "9Rnd_45ACP_Mag";
+
+
+this addWeapon "CUP_hgun_M9";
+this addWeapon "CUP_hgun_M9A1";
+this addHandgunItem "CUP_15Rnd_9x19_M9";
+this addHandgunItem "CUP_muzzle_snds_M9";
+this addHandgunItem "muzzle_snds_L";
+
+
+this addWeapon "CUP_hgun_Mac10";
+this addHandgunItem "CUP_muzzle_mfsup_Suppressor_Mac10";
+this addHandgunItem "muzzle_snds_acp";
+this addItemToBackpack "CUP_30Rnd_45ACP_MAC10_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Yellow_Tracer_MAC10_M";
+this addItemToBackpack "CUP_30Rnd_45ACP_Green_Tracer_MAC10_M";
+
+
+
+this addWeapon "CUP_hgun_Makarov";
+this addItemToBackpack "CUP_8Rnd_9x18_Makarov_M";
+this addItemToBackpack "CUP_8Rnd_9x18_MakarovSD_M";
+this addHandgunItem "CUP_acc_LCU_PM_Laser";
+
+
+this addWeapon "CUP_hgun_MicroUzi";
+this addItemToBackpack "CUP_30Rnd_9x19_UZI";
+this addItemToBackpack "CUP_72Rnd_9x19_UZI_M";
+this addItemToBackpack "CUP_32Rnd_9x19_UZI_M";
+this addHandgunItem "CUP_muzzle_snds_MicroUzi";
+
+
+this addWeapon "CUP_hgun_Mk23";
+this addHandgunItem "CUP_muzzle_snds_mk23";
+this addHandgunItem "CUP_12Rnd_45ACP_mk23";
+
+
+this addWeapon "CUP_hgun_MP7";
+this addWeapon "CUP_hgun_MP7_desert";
+this addWeapon "CUP_hgun_MP7_woodland";
+this addItemToBackpack "CUP_20Rnd_46x30_MP7";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7_Red_Tracer";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7_Green_Tracer";
+this addItemToBackpack "CUP_40Rnd_46x30_MP7_Yellow_Tracer";
+this addHandgunItem "CUP_muzzle_snds_MP7";
+
+
+this addWeapon "CUP_hgun_PB6P9";
+this addItemToBackpack "CUP_8Rnd_9x18_Makarov_M";
+this addItemToBackpack "CUP_8Rnd_9x18_MakarovSD_M";
+this addHandgunItem "CUP_muzzle_PB6P9";
+
+
+
+this addWeapon "CUP_hgun_PMM";
+this addHandgunItem "CUP_acc_LCU_PM_Laser";
+this addHandgunItem "CUP_12Rnd_9x18_PMM_M";
+
+
+this addWeapon "CUP_hgun_SA61";
+this addWeapon "CUP_hgun_SA61_RIS";
+this addItemToBackpack "CUP_10Rnd_B_765x17_Ball_M";
+this addItemToBackpack "CUP_20Rnd_B_765x17_Ball_M";
+this addItemToBackpack "CUP_50Rnd_B_765x17_Ball_M";
+this addHandgunItem "CUP_muzzle_snds_SA61";
+
+
+
+this addWeapon "CUP_hgun_TaurusTracker455";
+this addWeapon "CUP_hgun_TaurusTracker455_gold";
+this addHandgunItem "CUP_6Rnd_45ACP_M";
+
+
+
+this addWeapon "CUP_hgun_TEC9";
+this addWeapon "CUP_hgun_TEC9_FA";
+this addHandgunItem "CUP_32Rnd_9x19_TEC9";
+this addHandgunItem "CUP_muzzle_snds_M9";
+this addHandgunItem "muzzle_snds_L";
+
+
+this addWeapon "CUP_hgun_TT";
+this addHandgunItem "CUP_8Rnd_762x25_TT";
+
+
+
+this addWeapon "CUP_hgun_UZI";
+this addItemToBackpack "CUP_32Rnd_9x19_UZI_M";
+this addItemToBackpack "CUP_30Rnd_9x19_UZI";
+this addItemToBackpack "CUP_72Rnd_9x19_UZI_M";
+this addHandgunItem "CUP_muzzle_snds_UZI";
 
 
 
 
 
+//------------------------------------------------------------------------------------------------
+//							Mines/explovies
 
 
+this addItemToBackpack "CUP_Mine_M";
+this addItemToBackpack "CUP_IED_V4_M";
+this addItemToBackpack "CUP_IED_V2_M";
+this addItemToBackpack "CUP_PipeBomb_M";
+this addItemToBackpack "CUP_IED_V3_M";
+this addItemToBackpack "CUP_IED_V1_M";
+this addItemToBackpack "CUP_TimeBomb_M";
+this addItemToBackpack "CUP_MineE_M";
 
 
+//------------------------------------------------------------------------------------------------
+//							Handgrenades/throwables
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+this addItemToBackpack "CUP_HandGrenade_L109A1_HE";
+this addItemToBackpack "CUP_HandGrenade_L109A2_HE";
+this addItemToBackpack "CUP_HandGrenade_M67";
+this addItemToBackpack "CUP_HandGrenade_RGD5";
+this addItemToBackpack "CUP_HandGrenade_RGO";
 
 
 
