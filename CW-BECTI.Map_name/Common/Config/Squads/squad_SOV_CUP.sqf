@@ -258,15 +258,15 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	//	_c pushBack format["%1", _sid];
 	//};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-		inf_to_add = [[format["%1CUP_O_RU_Soldier_TL_Ratnik_BeigeDigital", _sid], 1, 10]];
-		inf_to_add pushBack [format["%1CUP_O_RU_Recon_TL_Ratnik_BeigeDigital", _sid], 1, 20];
-		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_AHAT_Ratnik_BeigeDigital", _sid], 1, 20];
+		inf_to_add = [[format["%1CUP_O_RU_Soldier_AHAT_Ratnik_BeigeDigital", _sid], 1, 20]];
+		inf_to_add pushBack [format["%1CUP_O_RU_Recon_TL_Ratnik_BeigeDigital", _sid], 1, 10];
+		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_TL_Ratnik_BeigeDigital", _sid], 1, 10];
 		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_HAT_Ratnik_BeigeDigital", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_AA_Ratnik_BeigeDigital", _sid], 1, 20];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
 		inf_to_add = [[format["%1CUP_O_RU_Recon_TL_Ratnik_Summer", _sid], 1, 10]];
-		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_TL_Ratnik_Summer", _sid], 1, 20];
+		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_TL_Ratnik_Summer", _sid], 1, 10];
 		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_AHAT_Ratnik_Summer", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_HAT_Ratnik_Summer", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_O_RU_Soldier_AA_Ratnik_Summer", _sid], 1, 20];

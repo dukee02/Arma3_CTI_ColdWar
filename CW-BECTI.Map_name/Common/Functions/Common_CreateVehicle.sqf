@@ -60,6 +60,7 @@ if (typeName _side == "SIDE") then {_side = (_side) call CTI_CO_FNC_GetSideID};
 
 _vehicle = createVehicle [_type, _position, [], 7, _special];
 _vehicle setDir _direction;
+VIOC_ZEUS addCuratorEditableObjects [[_vehicle], true];
 
 clearMagazineCargo _vehicle;
 clearWeaponCargo _vehicle;

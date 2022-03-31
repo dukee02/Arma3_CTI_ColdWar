@@ -601,16 +601,16 @@ _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1CUP_O_Ural_Repair_RU", _sid];				//Repairtruck
 };
 //if(CTI_MAIN_ADDON == 1 ) then {
 	_c pushBack format["CTI_Salvager_%1", _side];
 //};
 
-_matrix_cnt = [6, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+_matrix_cnt = [5, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1CUP_O_Kamaz_Repair_RU", _sid];			//Repairtruck
 };
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_REPAIR];
@@ -632,14 +632,14 @@ _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1CUP_O_Ural_Reammo_RU", _sid];				//Ammotruck
 	_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
 };
 
-_matrix_cnt = [6, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+_matrix_cnt = [5, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1CUP_O_Kamaz_Reammo_RU", _sid];			//Ammotruck
 	_c pushBack format["%1CUP_O_Kamaz_Refuel_RU", _sid];			//Fueltruck
 };
@@ -657,29 +657,48 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
-//if(CTI_MAIN_ADDON == 0) then {
-	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-		if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-			//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-			//};
-			//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-			//};
-			_c pushBack format["%1CUP_O_RU_Soldier_VDV", _sid];
-			_c pushBack format["%1CUP_O_RU_Medic_VDV_EMR", _sid];
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 1: {//winter camo active
+				_c pushBack format["%1CUP_O_RU_Soldier_Ratnik_Winter", _sid];
+				_c pushBack format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid];
+			};
+			case 2: {//desert camo active
+				_c pushBack format["%1CUP_O_RU_Soldier_Ratnik_BeigeDigital", _sid];
+				_c pushBack format["%1CUP_O_RU_Soldier_Medic_Ratnik_BeigeDigital", _sid];
+			};
+			case 3: {//jungle camo active
+				_c pushBack format["%1CUP_O_RU_Soldier_Lite_M_EMR_V2", _sid];
+				_c pushBack format["%1CUP_O_RU_Soldier_Medic_M_EMR_V2", _sid];
+			};
+			case 4: {//urban camo active
+				_c pushBack format["%1CUP_O_RU_Soldier_Ratnik_Autumn", _sid];
+				_c pushBack format["%1CUP_O_RU_Soldier_Medic_Ratnik_Autumn", _sid];
+			};
+			case 6: {//special camo active
+				_c pushBack format["%1CUP_O_RU_Soldier_Ratnik_Desert", _sid];
+				_c pushBack format["%1CUP_O_RU_Soldier_Medic_Ratnik_Desert", _sid];
+			};
+			default {//main camo active
+				_c pushBack format["%1CUP_O_RU_Soldier_Ratnik_Summer", _sid];
+				_c pushBack format["%1CUP_O_RU_Soldier_Medic_Ratnik_Summer", _sid];
+			};	
 		};
 	};
+};
+if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+	_c pushBack format["%1CUP_O_UAZ_Open_RU", _sid];	
+	_c pushBack format["%1CUP_O_UAZ_Unarmed_RU", _sid];
+};	
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		_c pushBack format["%1CUP_O_UAZ_Open_RU", _sid];	
-		_c pushBack format["%1CUP_O_UAZ_Unarmed_RU", _sid];
-	};	
-	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-		if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-			_c pushBack format["%1CUP_O_Ural_Repair_RU", _sid];				//repairtruck
-			_c pushBack format["%1CUP_O_Ural_Reammo_RU", _sid];				//ammotruck
-			_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
-		};
+		_c pushBack format["%1CUP_O_Ural_Repair_RU", _sid];				//repairtruck
+		_c pushBack format["%1CUP_O_Ural_Reammo_RU", _sid];				//ammotruck
+		_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
 	};
-//};
+};
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 

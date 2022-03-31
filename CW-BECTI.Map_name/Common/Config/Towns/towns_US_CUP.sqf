@@ -17,23 +17,40 @@ else {
 		_tag = "GUER_";
 	};
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {
-	["VIOC_DEBUG", "FILE: common\config\Towns_US_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;
-};
+//if(CTI_VIO_ADDON == 0) then {_sid = "";};
+
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_US_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
+
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
 //needed for townvehicles if nation on IND side
 if(_tag == "GUER_") then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
+		//case 1: {//winter camo active};
 		case 2: {//desert camo active
 			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
 			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
 			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_USMC_Pilot_des", _sid]];
 		};
-		default {//main camo active
+		case 3: {//jungle camo active
 			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
 			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
 			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Pilot", _sid]];
+		};
+		case 4: {//urban camo active
+			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_US_Crew_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
+		};
+		case 6: {//special camo active
+			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_US_Crew_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
+		};
+		default {//main camo active
+			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_US_Crew_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
 		};	
 	};
 };
@@ -51,16 +68,33 @@ _matrix_nation = [_side, CTI_UPGRADE_BARRACKS, CTI_US_ID, CTI_CUP_ID] call CTI_C
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
+		//case 1: {//winter camo};
 		case 2: {//desert camo active
 			INFANTRY = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Engineer_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Light_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Light_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Light_des", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1]];
 		};
-		default {//main camo active
+		case 3: {//Jungle
 			INFANTRY = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Engineer", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_Light", _sid],1],[format["%1CUP_B_USMC_Soldier_Light", _sid],1],[format["%1CUP_B_USMC_Soldier_Light", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1]];
+		};
+		case 4: {//Urban US
+			INFANTRY = [[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_UCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_UCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_UCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_UCP", _sid],1]];
+		};
+		//case 5: {};
+		case 6: {//multi light
+			INFANTRY = [[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_OCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OCP", _sid],1]];
+		};
+		default {//multi dark
+			INFANTRY = [[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Light_OEFCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid],1]];
 		};
 	};
 };
@@ -68,16 +102,32 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
 		case 2: {//desert camo active
 			INFANTRY = [[format["%1CUP_B_USMC_Soldier_SL_des", _sid],1],[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Engineer_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_B_USMC_Soldier_SL_des", _sid],1],[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_AR_des", _sid],1],[format["%1CUP_B_USMC_Soldier_MG_des", _sid],1],[format["%1CUP_B_USMC_Soldier_MG_des", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Soldier_SL_des", _sid],1],[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_AT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1]];
 		};
-		default {//main camo active
+		case 3: {//Jungle
 			INFANTRY = [[format["%1CUP_B_USMC_Soldier_SL", _sid],1],[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Engineer", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_B_USMC_Soldier_SL", _sid],1],[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_AR", _sid],1],[format["%1CUP_B_USMC_Soldier_MG", _sid],1],[format["%1CUP_B_USMC_Soldier_MG", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Soldier_SL", _sid],1],[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1],[format["%1CUP_B_USMC_Soldier_AT", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1]];
+		};
+		case 4: {//Urban US
+			INFANTRY = [[format["%1CUP_B_US_Soldier_SL_UCP", _sid],1],[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Soldier_SL_UCP", _sid],1],[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_AR_UCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_UCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_UCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Soldier_SL_UCP", _sid],1],[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_UCP", _sid],1],[format["%1CUP_B_US_Soldier_AT_UCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_UCP", _sid],1]];
+		};
+		//case 5: {};
+		case 6: {//multi light
+			INFANTRY = [[format["%1CUP_B_US_Soldier_SL_OCP", _sid],1],[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Soldier_SL_OCP", _sid],1],[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_AR_OCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Soldier_SL_OCP", _sid],1],[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OCP", _sid],1],[format["%1CUP_B_US_Soldier_AT_OCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OCP", _sid],1]];
+		};
+		default {//multi dark
+			INFANTRY = [[format["%1CUP_B_US_Soldier_SL_OEFCP", _sid],1],[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Soldier_SL_OEFCP", _sid],1],[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_AR_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OEFCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Soldier_SL_OEFCP", _sid],1],[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_AT_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid],1]];
 		};
 	};
 };
@@ -85,16 +135,32 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
 		case 2: {//desert camo active
 			INFANTRY = [[format["%1CUP_B_USMC_Soldier_SL_des", _sid],1],[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Engineer_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Marksman_des", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_B_USMC_Soldier_SL_des", _sid],1],[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_AR_des", _sid],1],[format["%1CUP_B_USMC_Soldier_MG_des", _sid],1],[format["%1CUP_B_USMC_Soldier_MG_des", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Soldier_SL_des", _sid],1],[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_HAT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_AT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1]];
 		};
-		default {//main camo active
+		case 3: {//Jungle
 			INFANTRY = [[format["%1CUP_B_USMC_Soldier_SL", _sid],1],[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Engineer", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_Marksman", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_B_USMC_Soldier_SL", _sid],1],[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_AR", _sid],1],[format["%1CUP_B_USMC_Soldier_MG", _sid],1],[format["%1CUP_B_USMC_Soldier_MG", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Soldier_SL", _sid],1],[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_HAT", _sid],1],[format["%1CUP_B_USMC_Soldier_AT", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1]];
+		};
+		case 4: {//Urban US
+			INFANTRY = [[format["%1CUP_B_US_Soldier_SL_UCP", _sid],1],[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_UCP", _sid],1],[format["%1CUP_B_US_Soldier_UCP", _sid],1],[format["%1CUP_B_US_Soldier_Marksman_UCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Soldier_SL_UCP", _sid],1],[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_AR_UCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_UCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_UCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Soldier_SL_UCP", _sid],1],[format["%1CUP_B_US_Medic_UCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_UCP", _sid],1],[format["%1CUP_B_US_Soldier_HAT_UCP", _sid],1],[format["%1CUP_B_US_Soldier_AT_UCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_UCP", _sid],1]];
+		};
+		//case 5: {};
+		case 6: {//multi light
+			INFANTRY = [[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_Marksman_OCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_AR_OCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Medic_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OCP", _sid],1],[format["%1CUP_B_US_Soldier_HAT_OCP", _sid],1],[format["%1CUP_B_US_Soldier_AT_OCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OCP", _sid],1]];
+		};
+		default {//multi dark
+			INFANTRY = [[format["%1CUP_B_US_Soldier_SL_OEFCP", _sid],1],[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Engineer_OCP", _sid],1],[format["%1CUP_B_US_Soldier_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_Marksman_OEFCP", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_US_Soldier_SL_OEFCP", _sid],1],[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_AR_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_MG_OEFCP", _sid],1]];
+			INFANTRY_AT = [[format["%1CUP_B_US_Soldier_SL_OEFCP", _sid],1],[format["%1CUP_B_US_Medic_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_GL_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_HAT_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_AT_OEFCP", _sid],1],[format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid],1]];
 		};
 	};
 };

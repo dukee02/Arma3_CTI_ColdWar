@@ -97,13 +97,13 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	_c pushBack format["%1CUP_I_GUE_Soldier_MG", _sid];
 	_c pushBack format["%1CUP_I_GUE_Pilot", _sid];
 	_c pushBack format["%1CUP_I_GUE_Soldier_AT", _sid];
+	_c pushBack format["%1CUP_I_GUE_Officer", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	_c pushBack format["%1CUP_I_GUE_Soldier_AA", _sid];
-	_c pushBack format["%1CUP_I_GUE_Officer", _sid];
 	_c pushBack format["%1CUP_I_GUE_Sniper", _sid];
 	_c pushBack format["%1CUP_I_GUE_Soldier_AA2", _sid];
 	_c pushBack format["%1CUP_I_GUE_Soldier_Scout", _sid];

@@ -769,12 +769,27 @@ with missionNamespace do {
 	if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_NPOC_SIDE') then {CTI_NPOC_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_RACS_SIDE') then {CTI_RACS_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	
 	
 		
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
-	if (isNil 'CTI_CAMO_ACTIVATION') then {CTI_CAMO_ACTIVATION = 0};	//--- "Standard", "Winter", "Desert", "All active (Main = Standard)"
+	
+	
+	if (isNil 'CTI_CAMO_ACTIVATION') then {CTI_CAMO_ACTIVATION = 0}	//--- "Standard", "Winter", "Desert", "All active (Main = Standard)"
+	else {
+		//check the camo setup if fixed or auto, on auto check map and set camo
+		if(CTI_CAMO_ACTIVATION == -1) then {
+			CTI_CAMO_ACTIVATION = 0;
+			if(worldName in ["Altis","WL_Rosche"]) then {CTI_CAMO_ACTIVATION = 2};
+			//if(worldName in ["gm_weferlingen_summer"]) then {CTI_CAMO_ACTIVATION = 0};
+			if(worldName in ["gm_weferlingen_winter"]) then {CTI_CAMO_ACTIVATION = 1};
+			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = 4};
+		} else {
+			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = CTI_CAMO_ACTIVATION};
+		};
+	};
 	
 	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 0}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, 0: Short, 1: Medium, 2: Long, 3: Far)
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission

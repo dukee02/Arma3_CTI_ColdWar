@@ -196,6 +196,9 @@ CUP_O_RU_Soldier_AA_Ratnik_Winter
 
 
 
+
+
+
 CUP_O_TowingTractor_RU
 
 CUP_O_UAZ_Unarmed_RU
@@ -311,5 +314,447 @@ CUP_O_Metis_RU
 CUP_O_2b14_82mm_RU
 CUP_O_SearchLight_static_RU
 CUP_O_ZU23_RU
+
+
+
+//-----------------------------------------------------------------------------------------------------------------
+
+
+//weapons used by soldiers above
+//0
+"hgun_Rook40_F"		//vanilla
+
+"CUP_arifle_AK12_AFG_arid",
+"CUP_arifle_AK12_AFG_black",
+"CUP_arifle_AK12_AFG_lush",
+"CUP_arifle_AK12_AFG_tan",
+"CUP_arifle_AK12_AFG_snowtiger",
+"CUP_arifle_AK12_AFG_tiger",
+"CUP_arifle_AK12_AFG_bicolor",
+"CUP_arifle_AK12_AFG_winter",
+"CUP_arifle_AK12_AFG_wood",
+"CUP_arifle_AK12_arid",
+"CUP_arifle_AK12_black",
+"CUP_arifle_AK12_VG_arid",
+"CUP_arifle_AK12_VG_black",
+"CUP_arifle_AK12_VG_lush",
+"CUP_arifle_AK12_VG_tan",
+"CUP_arifle_AK12_VG_snowtiger",
+"CUP_arifle_AK12_VG_tiger",
+"CUP_arifle_AK12_VG_bicolor",
+"CUP_arifle_AK12_VG_winter",
+"CUP_arifle_AK12_VG_wood",
+"CUP_arifle_AK12_GP34_arid",
+"CUP_arifle_AK12_GP34_black",
+"CUP_arifle_AK12_GP34_lush",
+"CUP_arifle_AK12_GP34_tan",
+"CUP_arifle_AK12_GP34_snowtiger",
+"CUP_arifle_AK12_GP34_tiger",
+"CUP_arifle_AK12_GP34_bicolor",
+"CUP_arifle_AK12_GP34_winter",
+"CUP_arifle_AK12_GP34_wood",
+"CUP_arifle_AK12_lush",
+"CUP_arifle_AK12_tan",
+"CUP_arifle_AK12_snowtiger",
+"CUP_arifle_AK12_tiger",
+"CUP_arifle_AK12_bicolor",
+"CUP_arifle_AK12_winter",
+"CUP_arifle_AK12_wood",
+"CUP_30Rnd_545x39_AK12_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_M",
+"CUP_30Rnd_545x39_AK12_Grey_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_Grey_M",
+"CUP_30Rnd_545x39_AK12_Green_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_Green_M",
+"CUP_30Rnd_545x39_AK12_Tan_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK12_Tan_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_TE1_White_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_545x39_AK74_plum_M",
+"CUP_30Rnd_Subsonic_545x39_AK74_plum_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK74_plum_M",
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK74_plum_M",
+"CUP_30Rnd_TE1_White_Tracer_545x39_AK74_plum_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74_plum_M",
+"CUP_30Rnd_545x39_AK_M",
+"CUP_30Rnd_Subsonic_545x39_AK_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK_M",
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK_M",
+"CUP_30Rnd_TE1_White_Tracer_545x39_AK_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK_M",
+"CUP_30Rnd_545x39_AK74M_camo_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK_camo_M",
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK_camo_M",
+"CUP_30Rnd_TE1_White_Tracer_545x39_AK_camo_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK_camo_M",
+"CUP_30Rnd_545x39_AK74M_desert_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK_desert_M",
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK_desert_M",
+"CUP_30Rnd_TE1_White_Tracer_545x39_AK_desert_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK_desert_M",
+
+"CUP_optic_1P87_RIS",
+"CUP_optic_OKP_7_rail",
+
+"CUP_launch_RPG7V";
+"CUP_PG7V_M",				//Monoblock-Hohlladung		R=300	P=280
+"CUP_PG7VM_M",				//Monoblock-Hohlladung		R=500	P=300–330
+"CUP_PG7VL_M",				//Monoblock-Hohlladung		R=300	P=500–550
+"CUP_PG7VR_M",				//Tandemhohlladung			R=200	P=600–700
+"CUP_OG7_M",				//Splitter					R=1000	P= -
+"CUP_TBG7V_M",				//Thermobar					R=300	P= -
+"RPG7_F",					//?
+
+"CUP_optic_PGO7V",
+"CUP_optic_PGO7V2",
+"CUP_optic_PGO7V3",
+//1
+"CUP_arifle_RPK74_45",
+"CUP_arifle_RPK74_45_top_rail",
+"CUP_arifle_RPK74M",
+"CUP_arifle_RPK74M_top_rail",
+"CUP_arifle_RPK74M_railed",
+"CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK_M",
+"CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M",
+
+"CUP_optic_1P87_1P90_BLK",
+"CUP_optic_PechenegScope",
+"CUP_optic_PSO_1",
+"CUP_optic_PSO_1_1_open",
+"CUP_optic_PSO_1_1",
+"CUP_optic_NSPU_RPG",
+
+"CUP_srifle_SVD",
+"CUP_srifle_SVD_des",
+"CUP_srifle_SVD_des_top_rail",
+"CUP_srifle_SVD_top_rail",
+"CUP_srifle_SVD_wdl",
+"CUP_srifle_SVD_wdl_top_rail",
+"CUP_10Rnd_762x54_SVD_M",
+"10Rnd_762x54_Mag",
+"CUP_muzzle_snds_KZRZP_SVD",
+"CUP_muzzle_snds_KZRZP_SVD_desert",
+"CUP_muzzle_snds_KZRZP_SVD_woodland",
+"CUP_SVD_camo_d",
+"CUP_SVD_camo_g",
+"CUP_SVD_camo_d_half",
+"CUP_SVD_camo_g_half",
+
+"CUP_lmg_Pecheneg",
+"CUP_lmg_Pecheneg_B50_vfg",
+"CUP_lmg_Pecheneg_desert",
+"CUP_lmg_Pecheneg_top_rail",
+"CUP_lmg_Pecheneg_top_rail_B50_vfg",
+"CUP_lmg_Pecheneg_woodland",
+"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M",
+"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M",
+"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M",
+"150Rnd_762x54_Box",
+"150Rnd_762x54_Box_Tracer",
+"CUP_muzzle_mfsup_Flashhider_PK_Black",
+"CUP_muzzle_mfsup_Flashhider_PK_OD",
+"CUP_muzzle_mfsup_Flashhider_PK_Tan",
+"CUP_muzzle_snds_KZRZP_PK",
+"CUP_muzzle_snds_KZRZP_PK_desert",
+"CUP_muzzle_snds_KZRZP_PK_woodland",
+
+"CUP_launch_RPG26";
+//2
+"CUP_hgun_PB6P9",
+"CUP_8Rnd_9x18_Makarov_M",
+"CUP_8Rnd_9x18_MakarovSD_M",
+"CUP_muzzle_PB6P9",
+
+"CUP_arifle_AS_VAL",
+"CUP_arifle_AS_VAL_flash",
+"CUP_arifle_AS_VAL_VFG",
+"CUP_arifle_AS_VAL_top_rail",
+"CUP_arifle_AS_VAL_flash_top",
+"CUP_arifle_AS_VAL_VFG_top_rail",
+"CUP_20Rnd_9x39_SP5_VSS_M",
+"CUP_10Rnd_9x39_SP5_VSS_M",
+"CUP_30Rnd_9x39_SP5_VIKHR_M",
+
+"CUP_launch_Igla",
+
+"CUP_launch_Metis",
+"CUP_AT13_M",
+"Vorona_HEAT",
+"Vorona_HE",
+
+
+
+
+//uniforms used
+CUP_U_O_RUS_Ratnik_Autumn --------: 										Supply40  -  20"
+CUP_U_O_RUS_Ratnik_BeigeDigital --------: 									Supply40  -  20"
+CUP_U_O_RUS_Ratnik_Desert --------: 										Supply40  -  20"
+CUP_U_O_RUS_Ratnik_Pink --------: 											Supply40  -  20"
+CUP_U_O_RUS_Ratnik_Summer --------: 										Supply40  -  20"
+CUP_U_O_RUS_Ratnik_Winter --------: 										Supply40  -  20"
+CUP_U_O_RUS_Soldier_VKPO_MSV_BeigeDigital_gloves_pads --------: 			Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_MSV_BeigeDigital_rolled_up_gloves_pads --------: 	Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads --------: 						Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_rolled_up_gloves_pads --------: 			Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_MSV_Pink_gloves_pads --------: 					Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_MSV_Pink_rolled_up_gloves_pads --------: 			Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_VDV_BeigeDigital_gloves_pads --------: 			Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_VDV_BeigeDigital_rolled_up_gloves_pads --------: 	Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_VDV_EMR_gloves_pads --------: 						Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_VDV_EMR_rolled_up_gloves_pads --------: 			Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_gloves_pads --------: 					Supply60  -  25"
+CUP_U_O_RUS_Soldier_VKPO_VDV_Pink_rolled_up_gloves_pads --------: 			Supply60  -  25"
+//other uniforms
+CUP_U_O_RUS_Commander --------: 											Supply60  -  20"
+CUP_U_O_RUS_Ghillie --------: 												Supply40  -  20"
+CUP_U_O_RUS_BeigeDigital_MSV_gloves_pads --------: 							Supply60  -  25"
+CUP_U_O_RUS_BeigeDigital_MSV_rolled_up --------: 							Supply60  -  20"
+CUP_U_O_RUS_BeigeDigital_MSV_rolled_up_gloves_pads --------: 				Supply60  -  25"
+CUP_U_O_RUS_EMR_1 --------: 												Supply60  -  20"
+CUP_U_O_RUS_EMR_gloves_pads --------: 										Supply60  -  25"
+CUP_U_O_RUS_EMR_2 --------: 												Supply60  -  20"
+CUP_U_O_RUS_EMR_rolled_up_gloves_pads --------: 							Supply60  -  25"
+CUP_U_O_RUS_Flora_1 --------: 												Supply60  -  20"
+CUP_U_O_RUS_Flora_2 --------: 												Supply60  -  20"
+CUP_U_O_RUS_VSR93_MSV --------: 											Supply60  -  20"
+CUP_U_O_RUS_VSR93_MSV_rolled_up --------: 									Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_MSV --------: 										Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_gloves_MSV --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_MSV_rolled_up --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR98_MSV --------: 											Supply60  -  20"
+CUP_U_O_RUS_VSR98_MSV_rolled_up --------: 									Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_MSV --------: 										Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_gloves_MSV --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_MSV_rolled_up --------: 								Supply60  -  20"
+CUP_U_O_RUS_BeigeDigital_VDV --------: 										Supply60  -  20"
+CUP_U_O_RUS_BeigeDigital_VDV_gloves_pads --------: 							Supply60  -  25"
+CUP_U_O_RUS_BeigeDigital_VDV_rolled_up --------: 							Supply60  -  20"
+CUP_U_O_RUS_BeigeDigital_VDV_rolled_up_gloves_pads --------: 				Supply60  -  25"
+CUP_U_O_RUS_EMR_1_VDV --------: 											Supply60  -  20"
+CUP_U_O_RUS_EMR_VDV_gloves_pads --------: 									Supply60  -  25"
+CUP_U_O_RUS_EMR_2_VDV --------: 											Supply60  -  20"
+CUP_U_O_RUS_EMR_VDV_rolled_up_gloves_pads --------: 						Supply60  -  25"
+CUP_U_O_RUS_KSOR_VDV --------: 												Supply60  -  20"
+CUP_U_O_RUS_KSOR_VDV_gloves_pads --------: 									Supply60  -  25"
+CUP_U_O_RUS_KSOR_VDV_rolled_up --------: 									Supply60  -  20"
+CUP_U_O_RUS_KSOR_VDV_rolled_up_gloves_pads --------: 						Supply60  -  25"
+CUP_U_O_RUS_Flora_1_VDV --------: 											Supply60  -  20"
+CUP_U_O_RUS_Flora_3 --------: 												Supply60  -  20"
+CUP_U_O_RUS_Flora_2_VDV --------:											Supply60  -  20"
+CUP_U_O_RUS_VSR93_VDV --------: 											Supply60  -  20"
+CUP_U_O_RUS_VSR93_VDV_rolled_up --------: 									Supply60  -  20"
+CUP_U_O_RUS_VSR93_VDV_rolled_up_gloves2 --------: 							Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_VDV --------: 										Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_gloves_VDV --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_VDV_rolled_up --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR93_worn_VDV_rolled_up_gloves2 --------: 						Supply60  -  20"
+CUP_U_O_RUS_VSR98_VDV --------: 											Supply60  -  20"
+CUP_U_O_RUS_VSR98_VDV_rolled_up --------: 									Supply60  -  20"
+CUP_U_O_RUS_VSR98_VDV_rolled_up_gloves2 --------:							Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_VDV --------: 										Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_gloves_VDV --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_VDV_rolled_up --------: 								Supply60  -  20"
+CUP_U_O_RUS_VSR98_worn_VDV_rolled_up_gloves2 --------: 						Supply60  -  20"
+
+//helmets
+"CUP_H_RUS_6B47_v2_BeigeDigital --------: 				22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesClosed_BeigeDigital --------: 22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesDown_BeigeDigital --------: 	22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital --------: 	22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_Desert --------:						22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesClosed_Desert --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesDown_Desert --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesUp_Desert --------: 			22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_Summer --------: 					22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesClosed_Summer --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesDown_Summer --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesUp_Summer --------: 			22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_Winter --------: 					22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesClosed_Winter --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesDown_Winter --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_v2_GogglesUp_Winter --------: 			22  - 0  - Armor Level II"
+//others
+"CUP_H_RUS_6B27_cover_BeigeDigital --------: 			22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_cover_BeigeDigital_goggles --------: 	22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_cover_BeigeDigital_headset_goggles 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_cover_BeigeDigital_headset --------: 	22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_cover --------: 						22  - 0  - Armor Level II"
+"CUP_H_RUS_6B46 --------: 								22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_cover_headset_goggles --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_cover_headset --------: 				22  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_olive --------: 						28  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_NVG_olive --------: 					28  - 0  - Armor Level II"
+"CUP_H_RUS_6B27 --------: 								28  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_goggles --------: 						28  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_headset_goggles --------: 				28  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_headset --------: 						28  - 0  - Armor Level II"
+"CUP_H_RUS_6B27_NVG --------: 							28  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_desert --------: 						22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_goggles_desert --------: 				22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_headset_goggles_desert --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_headset_desert --------: 				22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47 --------: 								22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_headset_goggles --------: 				22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_headset --------: 						22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_SF_headset_goggles_black --------: 		22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_SF_headset_black --------: 				22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_SF_headset_goggles_desert --------: 	22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_SF_headset_desert --------: 			22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_SF --------: 							22  - 0  - Armor Level II"
+"CUP_H_RUS_6B47_SF_headset --------: 					22  - 0  - Armor Level II"
+
+//vests
+"CUP_Vest_RUS_6B45_Sh117_BeigeDigital --------: 			Supply140  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_BeigeDigital --------: 		Supply160  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_BeigeDigital --------: 	Supply160  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Nut_BeigeDigital --------: 	Supply160  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut_BeigeDigital --------: Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Full_BeigeDigital --------: 	Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_BeigeDigital --------: 		Supply140  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Nut_BeigeDigital --------: 		Supply140  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_Nut_BeigeDigital --------: 	Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Full_BeigeDigital --------: 		Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_BeigeDigital --------: 		Supply150  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_BeigeDigital --------: 	Supply150  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Nut_BeigeDigital --------: 	Supply150  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_BeigeDigital --------: Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Full_BeigeDigital --------: 	Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Green --------: 					Supply140  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Green --------: 				Supply160  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_Green --------: 			Supply160  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Nut_Green --------: 			Supply160  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut_Green --------: 		Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Full_Green --------: 			Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_Green --------: 				Supply140  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Nut_Green --------: 				Supply140  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_Nut_Green --------: 			Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Full_Green --------: 				Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Green --------: 				Supply150  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_Green --------: 			Supply150  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Nut_Green --------: 			Supply150  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_Green --------: 		Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Full_Green --------: 			Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Desert --------: 					Supply140  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Desert --------: 				Supply160  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_Desert --------: 			Supply160  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Nut_Desert --------: 			Supply160  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut_Desert --------: 		Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Full_Desert --------: 			Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_Desert --------: 				Supply140  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Nut_Desert --------: 				Supply140  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_Nut_Desert --------: 			Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Full_Desert --------: 				Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Desert --------: 				Supply150  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_Desert --------: 			Supply150  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Nut_Desert --------: 			Supply150  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut_Desert --------: 		Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Full_Desert --------: 			Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117 --------: 							Supply140  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP --------: 						Supply160  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del --------: 					Supply160  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Nut --------: 					Supply160  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Del_Nut --------: 				Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_PKP_Full --------: 				Supply160  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del --------: 						Supply140  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Nut --------: 						Supply140  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Del_Nut --------: 					Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_Full --------: 					Supply140  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG --------: 						Supply150  - 70  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del --------: 					Supply150  - 75  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Nut --------: 					Supply150  - 73  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_Del_Nut --------: 				Supply150  - 80  - 20"
+"CUP_Vest_RUS_6B45_Sh117_VOG_full --------: 				Supply150  - 80  - 20"
+"CUP_V_O_SLA_6B3_1_DES --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_1_URB --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_1_WDL --------: 							Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_1 --------: 									Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_Flora_1 --------: 							Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_2 --------: 									Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_Flora_2 --------:							Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_4 --------: 									Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_Flora_4 --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_Flak_Vest03 --------: 							Supply90  - 55  - 20"
+"CUP_V_O_SLA_Flak_Vest01 --------: 							Supply90  - 55  - 20"
+"CUP_V_O_SLA_Flak_Vest02 --------: 							Supply90  - 55  - 20"
+"CUP_V_O_SLA_6B3_4_URB --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_4_DES --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_4_WDL --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_3_DES --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_3_URB --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_3_WDL --------: 							Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_3 --------: 									Supply140  - 100  - 20"
+"CUP_V_RUS_6B3_Flora_3 --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_5_DES --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_5_URB --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_5_WDL --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_2_DES --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_2_URB --------: 							Supply140  - 100  - 20"
+"CUP_V_O_SLA_6B3_2_WDL --------: 							Supply140  - 100  - 20"
+"CUP_V_RUS_6B45_1_BeigeDigital --------: 					Supply140  - 70  - 20"
+"CUP_V_RUS_6B45_2_BeigeDigital --------: 					Supply140  - 75  - 20"
+"CUP_V_RUS_6B45_3_BeigeDigital --------: 					Supply140  - 73  - 20"
+"CUP_V_RUS_6B45_4_BeigeDigital --------: 					Supply140  - 80  - 20"
+"CUP_V_RUS_6B45_1 --------: 								Supply140  - 70  - 20"
+"CUP_V_RUS_6B45_2 --------: 								Supply140  - 75  - 20"
+"CUP_V_RUS_6B45_3 --------: 								Supply140  - 73  - 20"
+"CUP_V_RUS_6B45_4 --------: 								Supply140  - 80  - 20"
+
+//backpack
+//used
+"CUP_O_RUS_Patrol_bag_BeigeDigital --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Green --------: 						280  - 50"
+"CUP_O_RUS_Patrol_bag_Green_Shovel --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert --------: 						280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer --------: 						280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter --------: 						280  - 50"
+//other
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Ammo --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_AT --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Medic --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_AAR --------: 	280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_AT --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_Engineer  		280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_Exp --------: 	280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_HAT --------: 	280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_ReconExp  		280  - 50"
+"CUP_O_RUS_Patrol_bag_BeigeDigital_Shovel_Repair --------: 	280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Ammo --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_AT --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Medic --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_AAR --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_AT --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_Engineer --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_Exp --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_HAT --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_ReconExp --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Desert_Shovel_Repair --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Ammo --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_AT --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Medic --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_AAR --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_AT --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_Engineer --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_Exp --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_HAT --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_ReconExp --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Summer_Shovel_Repair --------: 		280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_AAR --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_AAT --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_Ammo --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_AT --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_Engineer --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_Exp --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_HAT --------: 					280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_Medic --------: 				280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_ReconExp --------: 			280  - 50"
+"CUP_O_RUS_Patrol_bag_Winter_Repair --------: 				280  - 50"
+
+
+
 
 

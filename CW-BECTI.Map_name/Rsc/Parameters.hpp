@@ -69,10 +69,18 @@ class Params {
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
 		default = 1; //-1
 	};
-	class CTI_NPOC_SIDE {
+	/*class CTI_NPOC_SIDE {
 		title = "NPoC Side";
+		values[] = {2};
+		texts[] = {"GUER (Independent)"};
+		//values[] = {-1,0,1,2};
+		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
+		default = 2;
+	};*/
+	class CTI_RACS_SIDE {
+		title = "RACS Side";
 		values[] = {-1,2};
-		texts[] = {"deactivated", "GUER (Independent)"};
+		texts[] = {"deactivated","GUER (Independent)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
 		default = 2;
@@ -119,9 +127,9 @@ class Params {
 	};*/
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
-		values[] = {-1,0,1};
-		texts[] = {"no changes","National Party of Chernarus (NPoC)","Royal Army Corps of Sahrani (RACS)"};
-		default = 0;
+		values[] = {-1,0};
+		texts[] = {"no changes","National Party of Chernarus (NPoC)"};
+		default = -1;
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only if 2 nations at one side and no mixing wanted)";
@@ -157,11 +165,11 @@ class Params {
 	};
 	class CTI_CAMO_ACTIVATION {
 		title = "Main Camo";
-		values[] = {0,1,2,3,4,5,6,7};
-		texts[] = {"Standard", "Winter", "Desert", "Jungle", "Urban", "Maritim", "Special", "All active (Main = Standard)"};
+		values[] = {-1,0,1,2,3,4,5,6,7};
+		texts[] = {"auto","Standard", "Winter", "Desert", "Jungle", "Urban", "Maritim", "Special", "All active (Main = Standard)"};
 		//values[] = {0,1,2,3,4};
 		//texts[] = {"Standard", "Winter", "Desert", "Autumn (Brown)", "All active (Main = Standard)"};
-		default = 0;
+		default = -1;
 	};
 	class CTI_WEST_FLAG {
 		title = "FLAG: Flagtexture of the West-Side";
@@ -485,7 +493,7 @@ class Params {
 		title = "ARTILLERY: Setup";
 		values[] = {-2,-1,0,1,2,3};
 		texts[] = {"Disabled","Ballistic Computer","Short","Medium","Long","Extreme"};
-		default = -1;
+		default = 1;
 	};
 	class CTI_ARTILLERY_TIMEOUT {
 		title = "ARTILLERY: Delay between each fire mission";
@@ -497,7 +505,7 @@ class Params {
 		title = "GAMEPLAY: Kick Team Stackers";
 		values[] = {0,1,2,3,4,5};
 		texts[] = {"Disabled","+1 Player Advantage","+2 Player Advantage","+3 Player Advantage","+4 Player Advantage","+5 Player Advantage"};
-		default = 2;
+		default = 1;
 	};
 	class CTI_GAMEPLAY_TEAMSWAP_DISABLE {
 		title = "GAMEPLAY: Kick Team Swappers";

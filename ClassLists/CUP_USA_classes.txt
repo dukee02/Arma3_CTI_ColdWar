@@ -1,9 +1,112 @@
 // Export of 'CUP_UA.Altis' by dukee on v0.9
 
+//multi camo
+CUP_B_US_Crew_OCP
+CUP_B_US_Soldier_Engineer_OCP
+CUP_B_US_Soldier_Engineer_EOD_OCP
+CUP_B_US_Soldier_GL_OCP
+CUP_B_US_Medic_OCP
+CUP_B_US_Soldier_OCP
+CUP_B_US_Soldier_ACOG_OCP
+CUP_B_US_Soldier_LAT_OCP
+CUP_B_US_Soldier_Light_OCP
+CUP_B_US_Soldier_Backpack_OCP
+CUP_B_US_Soldier_Engineer_Sapper_OCP
+
+CUP_B_US_Soldier_AAT_OCP
+CUP_B_US_Soldier_AT_OCP
+CUP_B_US_Soldier_AAR_OCP
+CUP_B_US_Soldier_AR_OCP
+CUP_B_US_Soldier_AMG_OCP
+CUP_B_US_Soldier_MG_OCP
+CUP_B_US_Soldier_Marksman_EBR_OCP
+CUP_B_US_Officer_OCP
+CUP_B_US_Soldier_SL_OCP
+
+CUP_B_US_Soldier_AA_OCP
+CUP_B_US_Soldier_AHAT_OCP
+CUP_B_US_Soldier_HAT_OCP
+CUP_B_US_Soldier_Marksman_OCP
+CUP_B_US_Sniper_OCP
+CUP_B_US_Soldier_TL_OCP
+CUP_B_US_Soldier_UAV_OCP
+
+CUP_B_US_Sniper_M107_OCP
+CUP_B_US_Sniper_M110_TWS_OCP
+CUP_B_US_Spotter_OCP
 
 
+//multi camo a bit darker
+CUP_B_US_Crew_OEFCP
+CUP_B_US_Soldier_Engineer_OEFCP
+CUP_B_US_Soldier_Engineer_EOD_OEFCP
+CUP_B_US_Soldier_GL_OEFCP
+CUP_B_US_Medic_OEFCP
+CUP_B_US_Soldier_OEFCP
+CUP_B_US_Soldier_ACOG_OEFCP
+CUP_B_US_Soldier_LAT_OEFCP
+CUP_B_US_Soldier_Light_OEFCP
+CUP_B_US_Soldier_Backpack_OEFCP
+CUP_B_US_Soldier_Engineer_Sapper_OEFCP
 
+CUP_B_US_Soldier_AAT_OEFCP
+CUP_B_US_Soldier_AAR_OEFCP
+CUP_B_US_Soldier_AT_OEFCP
+CUP_B_US_Soldier_AR_OEFCP
+CUP_B_US_Soldier_AMG_OEFCP
+CUP_B_US_Soldier_MG_OEFCP
+CUP_B_US_Soldier_Marksman_EBR_OEFCP
+CUP_B_US_Officer_OEFCP
+CUP_B_US_Soldier_SL_OEFCP
 
+CUP_B_US_Soldier_AA_OEFCP
+CUP_B_US_Soldier_AHAT_OEFCP
+CUP_B_US_Soldier_HAT_OEFCP
+CUP_B_US_Soldier_Marksman_OEFCP
+CUP_B_US_Sniper_OEFCP
+CUP_B_US_Soldier_TL_OEFCP
+CUP_B_US_Soldier_UAV_OEFCP
+
+CUP_B_US_Sniper_M107_OEFCP
+CUP_B_US_Sniper_M110_TWS_OEFCP
+CUP_B_US_Spotter_OEFCP
+
+//urban
+CUP_B_US_Crew_UCP
+CUP_B_US_Soldier_Engineer_UCP
+CUP_B_US_Soldier_Engineer_EOD_UCP
+CUP_B_US_Soldier_GL_UCP
+CUP_B_US_Medic_UCP
+CUP_B_US_Soldier_UCP
+CUP_B_US_Soldier_ACOG_UCP
+CUP_B_US_Soldier_LAT_UCP
+CUP_B_US_Soldier_Light_UCP
+CUP_B_US_Soldier_Backpack_UCP
+CUP_B_US_Soldier_Engineer_Sapper_UCP
+
+CUP_B_US_Soldier_AAT_UCP
+CUP_B_US_Soldier_AT_UCP
+CUP_B_US_Soldier_AAR_UCP
+CUP_B_US_Soldier_AR_UCP
+CUP_B_US_Soldier_AMG_UCP
+CUP_B_US_Soldier_MG_UCP
+CUP_B_US_Soldier_Marksman_EBR_UCP
+CUP_B_US_Officer_UCP
+CUP_B_US_Soldier_SL_UCP
+
+CUP_B_US_Soldier_AA_UCP
+CUP_B_US_Soldier_AHAT_UCP
+CUP_B_US_Soldier_HAT_UCP
+CUP_B_US_Soldier_Marksman_UCP
+CUP_B_US_Sniper_UCP
+CUP_B_US_Soldier_TL_UCP
+CUP_B_US_Soldier_UAV_UCP
+
+CUP_B_US_Sniper_M107_UCP
+CUP_B_US_Sniper_M110_TWS_UCP
+CUP_B_US_Spotter_UCP
+
+//desert camo
 CUP_B_USMC_Crew_des
 CUP_B_USMC_Engineer_des
 CUP_B_USMC_Soldier_GL_des
@@ -30,7 +133,7 @@ CUP_B_USMC_Spotter_des
 CUP_B_USMC_Soldier_SL_des
 CUP_B_USMC_Soldier_TL_des
 
-
+//dark green good for jungle
 CUP_B_USMC_Crew
 CUP_B_USMC_Engineer
 CUP_B_USMC_Soldier_GL
@@ -57,9 +160,6 @@ CUP_B_USMC_Sniper_M107
 CUP_B_USMC_Spotter
 CUP_B_USMC_Soldier_SL
 CUP_B_USMC_Soldier_TL
-
-
-
 
 
 //-----------Light
@@ -263,4 +363,426 @@ CUP_B_Zodiac_USMC
 CUP_B_USMC_DYN_MQ9
 CUP_B_Seafox_USV_USMC
 CUP_B_AH6X_USA
+
+
+
+//-----------------------------------------------------------------------------------------------------------------
+//weapons used by soldiers
+//0
+
+"CUP_hgun_M9",
+"CUP_hgun_M9A1",
+"CUP_15Rnd_9x19_M9",
+"CUP_muzzle_snds_M9",
+
+"CUP_sgun_M1014",
+"CUP_sgun_M1014_vfg",
+"CUP_sgun_M1014_solidstock",
+"CUP_sgun_M1014_Entry",
+"CUP_sgun_M1014_Entry_vfg",
+"CUP_8Rnd_12Gauge_Pellets_No00_Buck",
+"CUP_8Rnd_12Gauge_Pellets_No0_Buck",
+"CUP_8Rnd_12Gauge_Pellets_No1_Buck",
+"CUP_8Rnd_12Gauge_Pellets_No2_Buck",
+"CUP_8Rnd_12Gauge_Pellets_No3_Buck",
+"CUP_8Rnd_12Gauge_Pellets_No4_Buck",
+"CUP_8Rnd_12Gauge_Pellets_No4_Bird",
+"CUP_8Rnd_12Gauge_Slug",
+"CUP_8Rnd_12Gauge_HE",
+"CUP_6Rnd_12Gauge_Pellets_No00_Buck",
+"CUP_6Rnd_12Gauge_Pellets_No0_Buck",
+"CUP_6Rnd_12Gauge_Pellets_No1_Buck",
+"CUP_6Rnd_12Gauge_Pellets_No2_Buck",
+"CUP_6Rnd_12Gauge_Pellets_No3_Buck",
+"CUP_6Rnd_12Gauge_Pellets_No4_Buck",
+"CUP_6Rnd_12Gauge_Pellets_No4_Bird",
+"CUP_6Rnd_12Gauge_Slug",
+"CUP_6Rnd_12Gauge_HE",
+"CUP_1Rnd_12Gauge_Pellets_No00_Buck",
+"CUP_1Rnd_12Gauge_Pellets_No0_Buck",
+"CUP_1Rnd_12Gauge_Pellets_No1_Buck",
+"CUP_1Rnd_12Gauge_Pellets_No2_Buck",
+"CUP_1Rnd_12Gauge_Pellets_No3_Buck",
+"CUP_1Rnd_12Gauge_Pellets_No4_Buck",
+"CUP_1Rnd_12Gauge_Pellets_No4_Bird",
+"CUP_1Rnd_12Gauge_Slug",
+"CUP_1Rnd_12Gauge_HE",
+
+"CUP_smg_MP5A5",
+"CUP_smg_MP5A5_Rail",
+"CUP_smg_MP5A5_Rail_AFG",
+"CUP_smg_MP5A5_Rail_VFG",
+"CUP_smg_MP5SD6",
+"CUP_30Rnd_9x19_MP5",
+"CUP_30Rnd_Green_Tracer_9x19_MP5",
+"CUP_30Rnd_Red_Tracer_9x19_MP5",
+"CUP_30Rnd_Yellow_Tracer_9x19_MP5",
+"CUP_30Rnd_Subsonic_9x19_MP5",
+"30Rnd_9x21_Mag_SMG_02",
+"30Rnd_9x21_Mag_SMG_02_Tracer_Red",
+"30Rnd_9x21_Mag_SMG_02_Tracer_Yellow",
+"30Rnd_9x21_Mag_SMG_02_Tracer_Green",
+"CUP_muzzle_snds_MP5",
+"CUP_muzzle_fh_MP5",
+"muzzle_snds_L",
+
+"CUP_arifle_M4A1_black",
+"CUP_arifle_M4A1_MOE_short_black",
+"CUP_arifle_M4A1_MOE_short_desert",
+"CUP_arifle_M4A1_MOE_short_winter",
+"CUP_arifle_M4A1_MOE_short_wdl",
+"CUP_arifle_M4A1_standard_short_black",
+"CUP_arifle_M4A1_standard_short_dsrt",
+"CUP_arifle_M4A1_standard_short_winter",
+"CUP_arifle_M4A1_standard_short_wdl",
+"CUP_arifle_M4A1_MOE_black",
+"CUP_arifle_M4A1_MOE_desert",
+"CUP_arifle_M4A1_MOE_winter",
+"CUP_arifle_M4A1_MOE_wdl",
+"CUP_arifle_M4A1_standard_black",
+"CUP_arifle_M4A1_standard_dsrt",
+"CUP_arifle_M4A1_standard_winter",
+"CUP_arifle_M4A1_standard_wdl",
+"CUP_arifle_M4A1",
+"CUP_arifle_M4A1_desert_carryhandle",
+"CUP_arifle_M4A1_camo_carryhandle",
+"CUP_arifle_M4A1_desert",
+"CUP_arifle_M4A3_black",
+"CUP_arifle_M4A3_desert",
+"CUP_arifle_M4A3_camo",
+"CUP_arifle_M4A1_camo",
+"CUP_arifle_M4A1_BUIS_GL",
+"CUP_arifle_M4A1_GL_carryhandle",
+"CUP_arifle_M4A1_GL_carryhandle_desert",
+"CUP_arifle_M4A1_GL_carryhandle_camo",
+"CUP_arifle_M4A1_BUIS_desert_GL",
+"CUP_arifle_M4A1_BUIS_camo_GL",
+"CUP_arifle_M4A1_SOMMOD_black",
+"CUP_arifle_M4A1_SOMMOD_ctrgt",
+"CUP_arifle_M4A1_SOMMOD_ctrg",
+"CUP_arifle_M4A1_SOMMOD_tan",
+"CUP_arifle_M4A1_SOMMOD_hex",
+"CUP_arifle_M4A1_SOMMOD_snow",
+"CUP_arifle_M4A1_SOMMOD_green",
+"CUP_arifle_M4A1_SOMMOD_Grip_black",
+"CUP_arifle_M4A1_SOMMOD_Grip_ctrgt",
+"CUP_arifle_M4A1_SOMMOD_Grip_ctrg",
+"CUP_arifle_M4A1_SOMMOD_Grip_tan",
+"CUP_arifle_M4A1_SOMMOD_Grip_hex",
+"CUP_arifle_M4A1_SOMMOD_Grip_snow",
+"CUP_arifle_M4A1_SOMMOD_Grip_green",
+"CUP_arifle_M16A1",
+"CUP_arifle_M16A1GL",
+"CUP_arifle_M16A1GL_FS",
+"CUP_arifle_M16A1GL_USA",
+"CUP_arifle_M16A1E1",
+"CUP_arifle_M16A1E1GL",
+"CUP_arifle_M16A2",
+"CUP_arifle_Colt727",
+"CUP_arifle_Colt727_M203",
+"CUP_arifle_M16A2_GL",
+"CUP_arifle_M16A4_Base",
+"CUP_arifle_M16A4_Grip",
+"CUP_arifle_M16A4_GL",
+"CUP_30Rnd_556x45_Stanag"
+"CUP_acc_ANPEQ_2_Black_Top",
+"CUP_optic_CompM2_low",
+"CUP_optic_ACOG2",
+
+"CUP_launch_M136",
+//1
+"CUP_lmg_m249_SQuantoon",
+"CUP_lmg_m249_pip1",
+"CUP_lmg_m249_pip3",
+"CUP_lmg_m249_pip4",
+"CUP_lmg_M249_E1",
+"CUP_lmg_M249_E2",
+"CUP_lmg_m249_pip2",
+"CUP_lmg_m249_para",
+"CUP_lmg_m249_para_gl",
+"CUP_200Rnd_TE4_Red_Tracer_556x45_M249",
+"CUP_200Rnd_TE4_Yellow_Tracer_556x45_M249",
+"CUP_200Rnd_TE4_Green_Tracer_556x45_M249",
+"CUP_200Rnd_TE1_Red_Tracer_556x45_M249",
+"CUP_100Rnd_TE4_Green_Tracer_556x45_M249",
+"CUP_100Rnd_TE4_Red_Tracer_556x45_M249",
+"CUP_100Rnd_TE4_Yellow_Tracer_556x45_M249",
+
+"CUP_lmg_M240_norail",
+"CUP_lmg_M240_B",
+"CUP_lmg_M240",
+"CUP_100Rnd_TE4_LRT4_White_Tracer_762x51_Belt_M",
+"CUP_100Rnd_TE4_LRT4_Red_Tracer_762x51_Belt_M",
+"CUP_100Rnd_TE4_LRT4_Green_Tracer_762x51_Belt_M",
+"CUP_100Rnd_TE4_LRT4_Yellow_Tracer_762x51_Belt_M",
+"150Rnd_762x51_Box",
+"150Rnd_762x51_Box_Tracer",
+
+"CUP_srifle_M14",
+"CUP_srifle_M14_DMR",
+"CUP_20Rnd_762x51_DMR",
+"CUP_20Rnd_TE1_Yellow_Tracer_762x51_DMR",
+"CUP_20Rnd_TE1_Red_Tracer_762x51_DMR",
+"CUP_20Rnd_TE1_Green_Tracer_762x51_DMR",
+"CUP_20Rnd_TE1_White_Tracer_762x51_DMR",
+"20Rnd_762x51_Mag",
+"10Rnd_Mk14_762x51_Mag",
+
+"CUP_launch_Mk153Mod0",
+"CUP_launch_Mk153Mod0_blk",
+"CUP_SMAW_HEAA_M",
+"CUP_SMAW_HEDP_M",
+"CUP_SMAW_NE_M",
+"CUP_SMAW_Spotting",
+
+"CUP_launch_MAAWS",
+"CUP_optic_MAAWS_Scope",
+"CUP_MAAWS_HEAT_M",
+"CUP_MAAWS_HEDP_M",
+"MRAWS_HEAT55_F",
+"MRAWS_HE_F",
+"MRAWS_HEAT_F",
+
+"CUP_acc_ANPEQ_2_grey",
+"CUP_muzzle_snds_M14",
+"CUP_optic_ElcanM145",
+"CUP_optic_LeupoldMk4",
+"CUP_bipod_Harris_1A2_L_BLK",
+//2
+"CUP_srifle_M40A3",
+"CUP_5Rnd_762x51_M24",
+"CUP_1Rnd_762x51_CZ584",
+"CUP_Mxx_camo",
+"CUP_Mxx_camo_half",
+
+"CUP_srifle_m110_kac_black",
+"CUP_srifle_M110_black",
+"CUP_srifle_M110",
+"CUP_srifle_M110_woodland",
+"CUP_srifle_m110_kac",
+"CUP_srifle_m110_kac_woodland",
+"CUP_20Rnd_762x51_B_M110",
+"CUP_20Rnd_TE1_Yellow_Tracer_762x51_M110",
+"CUP_20Rnd_TE1_Red_Tracer_762x51_M110",
+"CUP_20Rnd_TE1_Green_Tracer_762x51_M110",
+"CUP_20Rnd_TE1_White_Tracer_762x51_M110",
+"CUP_20Rnd_762x51_L129_M",
+"CUP_muzzle_snds_M110_black",
+"CUP_muzzle_snds_M110",
+"CUP_muzzle_snds_M110_woodland",
+"CUP_optic_AN_PVS_10",
+"CUP_bipod_VLTOR_Modpod",
+
+
+"CUP_launch_Javelin",
+"CUP_Javelin_M",
+
+"CUP_launch_FIM92Stinger",
+//3?
+"CUP_srifle_M107_Base",
+"CUP_srifle_M107_Pristine",
+"CUP_srifle_M107_Desert",
+"CUP_srifle_M107_Snow",
+"CUP_srifle_M107_Woodland",
+"CUP_10Rnd_127x99_M107",
+"CUP_muzzle_mfsup_Suppressor_M107_Black",
+"CUP_muzzle_mfsup_Suppressor_M107_Desert",
+"CUP_muzzle_mfsup_Suppressor_M107_Grey",
+"CUP_muzzle_mfsup_Suppressor_M107_Snow",
+"CUP_muzzle_mfsup_Suppressor_M107_Woodland",
+"CUP_optic_LeupoldMk4_25x50_LRT",
+"CUP_optic_AN_PAS_13c2",
+"CUP_acc_ANPEQ_2",
+"CUP_optic_AN_PAS_13c1",
+
+//uniforms used
+15:18:31 "Uniform: CUP_U_B_USArmy_TwoKnee --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_Base --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_Soft --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_UBACS --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Gloves_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Gloves_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Gloves_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Gloves_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Gloves_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Gloves_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Rolled_Gloves_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Rolled_Gloves_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Rolled_Gloves_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Rolled_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Rolled_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_Rolled_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Kneepad_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Rolled_Gloves_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Rolled_Gloves_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Rolled_Gloves_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Rolled_OCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Rolled_OEFCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_Rolled_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USArmy_ACU_UCP --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_2 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_2_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_2_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_2_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_roll_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_2_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_M81_MARPAT_roll_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_2_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_MARPAT_M81_roll_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG1_DMARPAT --------: 					Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG1_WMARPAT --------: 					Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG2_DMARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG2_WMARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG3_DMARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG3_WMARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG4_DMARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_FROG4_WMARPAT --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_2 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_2_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_2_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_2_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des_roll_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_des --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_2 --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_2_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_2_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_2_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_pads_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_gloves --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_pads --------: Supply40  -  20"
+15:18:31 "Uniform: CUP_U_B_USMC_MCCUU_roll_pads_gloves --------: Supply40  -  20"
+
+//helmets
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_des --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_des_comms --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_des_NVG_gog_cov2 --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_des_NVG_gog2_cov2 --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_des_cov_fr --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_des_comms_cov_fr --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_comms --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_NVG_gog_cov2 --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_NVG_gog2_cov2 --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_cov_fr --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_LWHv2_MARPAT_comms_cov_fr --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_OCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_GCOVERED_OCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_ESS_OCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_ESS_Headset_OCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_Headset_OCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_OEFCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_GCOVERED_OEFCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_GCOVERED_Headset_OEFCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_ESS_OEFCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_ESS_Headset_OEFCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_Headset_OEFCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_UCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_GCOVERED_UCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_GCOVERED_Headset_UCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_ESS_UCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_ESS_Headset_UCP --------: 40  - 3  - Armor Level II"
+15:19:56 "Helmets: CUP_H_USArmy_HelmetACH_Headset_UCP --------: 40  - 3  - Armor Level II"
+
+//vests
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_AT --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_AR --------: Supply140  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Corpsman --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Crew --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Empty --------: Supply80  - 60  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_GL --------: Supply140  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_MG --------: Supply140  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_DMR --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Officer --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Patrol --------: Supply140  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_RTO --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Rifleman --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_Scout --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_SL --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_Eagle_SPC_TL --------: Supply120  - 80  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_Empty_USArmy --------: Supply60  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_Empty_USArmy --------: Supply60  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_Empty_USArmy --------: Supply60  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_Grenadier_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_Grenadier_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_Grenadier_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_MG_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_MG_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_MG_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_Medic_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_Medic_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_Medic_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_Rifleman_Deltoid_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_Rifleman_Deltoid_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_Rifleman_Deltoid_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_Rifleman_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_Rifleman_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_Rifleman_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_SAW_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_SAW_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_SAW_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_SL_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_SL_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_SL_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OCP_TL_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_OEFCP_TL_USArmy --------: Supply120  - 70  - 20"
+15:20:44 "Vest: CUP_V_B_IOTV_UCP_TL_USArmy --------: Supply120  - 70  - 20"
+
+//backpack
+15:21:41 "Backpacks: CUP_B_USMC_AssaultPack --------: 200  - 40"
+15:21:41 "Backpacks: CUP_B_US_Assault_OCP --------: 200  - 30"
+15:21:41 "Backpacks: CUP_B_US_Assault_OEFCP --------: 200  - 30"
+15:21:41 "Backpacks: CUP_B_US_Assault_UCP --------: 200  - 30"
+15:21:41 "Backpacks: CUP_B_USPack_AT_OEFCP --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_USPack_AT_OCP --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_USMC_AssaultPack_SMAW --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_USArmy_Engineer_UCP --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_USPack_Black --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_USPack_Coyote --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_US_IIID_OCP --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_US_IIID_OEFCP --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_US_IIID_UCP --------: 280  - 50"
+15:21:41 "Backpacks: CUP_B_USMC_MOLLE --------: 300  - 40"
+15:21:41 "Backpacks: CUP_B_USMC_MOLLE_WDL --------: 300  - 40"
 

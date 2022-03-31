@@ -1,10 +1,5 @@
 // Export of 'CUP_NPoC.Altis' by dukee on v0.9
 
-
-
-
-
-
 CUP_I_GUE_Forester
 CUP_I_GUE_Woodman
 CUP_I_GUE_Local
@@ -33,7 +28,6 @@ CUP_I_GUE_Sniper
 CUP_I_GUE_Soldier_AA2
 CUP_I_GUE_Soldier_Scout
 CUP_I_GUE_Commander
-
 
 
 
@@ -103,3 +97,166 @@ CUP_I_2b14_82mm_NAPA
 CUP_I_SearchLight_static_NAPA
 CUP_I_SPG9_NAPA
 CUP_I_ZU23_NAPA
+
+
+
+
+
+//weapons T0
+"CUP_arifle_AKS",
+"30Rnd_762x39_Mag_F",
+"30Rnd_762x39_Mag_Green_F",
+"30Rnd_762x39_Mag_Tracer_F",
+"30Rnd_762x39_Mag_Tracer_Green_F",
+
+"CUP_srifle_CZ550",
+"CUP_srifle_CZ550_rail",
+"CUP_5x_22_LR_17_HMR_M",
+
+//T1
+//also used by RUS
+"CUP_arifle_AKS74_GL",
+"CUP_arifle_AKS74_GL_top_rail",
+"CUP_arifle_AKS74U",
+"CUP_arifle_AKS74U_top_rail",
+"CUP_30Rnd_545x39_AK74M_M",
+"CUP_30Rnd_Subsonic_545x39_AK74M_M",
+"CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_TE1_Red_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_TE1_White_Tracer_545x39_AK74M_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_545x39_AK74M_M",
+
+"CUP_arifle_AKM_Early",
+"CUP_arifle_AKM",
+"CUP_arifle_AKM_top_rail",
+"CUP_arifle_AKM_GL_Early",
+"CUP_arifle_AKM_GL",
+"CUP_arifle_AKM_GL_top_rail",
+"CUP_30Rnd_762x39_AK47_M",
+"CUP_30Rnd_762x39_AK47_TK_M",
+"CUP_30Rnd_TE1_Green_Tracer_762x39_AK47_M",
+"CUP_30Rnd_TE1_Red_Tracer_762x39_AK47_M",
+"CUP_30Rnd_TE1_Yellow_Tracer_762x39_AK47_M",
+//2
+"CUP_arifle_RPK74",
+"CUP_arifle_RPK74_top_rail",
+
+"CUP_lmg_PKM",
+"CUP_lmg_PKM_B50_vfg",
+"CUP_lmg_PKM_front_rail_B50_vfg",
+"CUP_lmg_PKM_top_rail",
+"CUP_lmg_PKM_top_rail_B50_vfg",
+"CUP_lmg_PKMN",
+"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M",
+"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Red_M",
+"CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Yellow_M",
+"150Rnd_762x54_Box",
+"150Rnd_762x54_Box_Tracer",
+"CUP_muzzle_mfsup_Flashhider_PK_Black",
+"CUP_muzzle_mfsup_Flashhider_PK_OD",
+"CUP_muzzle_mfsup_Flashhider_PK_Tan",
+"CUP_muzzle_snds_KZRZP_PK",
+"CUP_muzzle_snds_KZRZP_PK_desert",
+"CUP_muzzle_snds_KZRZP_PK_woodland",
+
+//also used by RUS
+"CUP_launch_RPG7V";
+"CUP_PG7V_M",				//Monoblock-Hohlladung		R=300	P=280
+"CUP_PG7VM_M",				//Monoblock-Hohlladung		R=500	P=300–330
+"CUP_PG7VL_M",				//Monoblock-Hohlladung		R=300	P=500–550
+"CUP_PG7VR_M",				//Tandemhohlladung			R=200	P=600–700
+"CUP_OG7_M",				//Splitter					R=1000	P= -
+"CUP_TBG7V_M",				//Thermobar					R=300	P= -
+"RPG7_F",					//?
+"CUP_optic_NSPU_RPG",
+"CUP_optic_PGO7V",
+"CUP_optic_PGO7V2",
+"CUP_optic_PGO7V3",
+//3
+"CUP_srifle_SVD",
+"CUP_srifle_SVD_des",
+"CUP_srifle_SVD_des_top_rail",
+"CUP_srifle_SVD_top_rail",
+"CUP_srifle_SVD_wdl",
+"CUP_srifle_SVD_wdl_top_rail",
+"CUP_10Rnd_762x54_SVD_M",
+"10Rnd_762x54_Mag",
+"CUP_muzzle_snds_KZRZP_SVD",
+"CUP_muzzle_snds_KZRZP_SVD_desert",
+"CUP_muzzle_snds_KZRZP_SVD_woodland",
+"CUP_SVD_camo_d",
+"CUP_SVD_camo_g",
+"CUP_SVD_camo_d_half",
+"CUP_SVD_camo_g_half",
+
+"CUP_launch_9K32Strela",
+//4
+//also used by US
+"CUP_launch_FIM92Stinger",
+
+
+
+//uniform
+"CUP_U_I_GUE_Woodland1",
+"CUP_U_I_GUE_Anorak_01",
+"CUP_U_I_GUE_Anorak_03",
+"CUP_U_I_GUE_Anorak_02",
+"CUP_U_I_GUE_WorkU_01",
+"CUP_U_I_GUE_WorkU_02",
+//t1
+"CUP_U_I_GUE_Flecktarn2",
+"CUP_U_I_GUE_Flecktarn3",
+"CUP_U_I_GUE_Flecktarn",
+"CUP_U_I_GUE_Flecktarn4",
+//t2
+"CUP_U_I_Ghillie_Top",
+
+//vest T1
+"CUP_V_O_TK_CrewBelt",
+"CUP_V_OI_TKI_Jacket1_04",
+"CUP_V_OI_TKI_Jacket1_06",
+"CUP_V_OI_TKI_Jacket1_01",
+"CUP_V_OI_TKI_Jacket1_05",
+"CUP_V_OI_TKI_Jacket1_02",
+"CUP_V_OI_TKI_Jacket1_03",
+"CUP_V_OI_TKI_Jacket4_04",
+"CUP_V_OI_TKI_Jacket4_05",
+"CUP_V_OI_TKI_Jacket4_02",
+"CUP_V_OI_TKI_Jacket4_06",
+"CUP_V_OI_TKI_Jacket4_03",
+"CUP_V_OI_TKI_Jacket4_01",
+"CUP_V_OI_TKI_Jacket5_04",
+"CUP_V_OI_TKI_Jacket5_05",
+"CUP_V_OI_TKI_Jacket5_02",
+"CUP_V_OI_TKI_Jacket5_06",
+"CUP_V_OI_TKI_Jacket5_03",
+"CUP_V_OI_TKI_Jacket5_01",
+"CUP_V_O_TK_OfficerBelt2",
+"CUP_V_O_TK_OfficerBelt",
+"CUP_V_OI_TKI_Jacket3_04",
+"CUP_V_OI_TKI_Jacket3_02",
+"CUP_V_OI_TKI_Jacket3_03",
+"CUP_V_OI_TKI_Jacket3_05",
+"CUP_V_OI_TKI_Jacket3_06",
+"CUP_V_OI_TKI_Jacket3_01",
+"CUP_V_OI_TKI_Jacket6_04",
+"CUP_V_OI_TKI_Jacket6_05",
+"CUP_V_OI_TKI_Jacket6_02",
+"CUP_V_OI_TKI_Jacket6_06",
+"CUP_V_OI_TKI_Jacket6_03",
+"CUP_V_OI_TKI_Jacket6_01",
+"CUP_V_OI_TKI_Jacket2_04",
+"CUP_V_OI_TKI_Jacket2_06",
+"CUP_V_OI_TKI_Jacket2_03",
+"CUP_V_OI_TKI_Jacket2_02",
+"CUP_V_OI_TKI_Jacket2_05",
+"CUP_V_OI_TKI_Jacket2_01",
+"CUP_V_O_SLA_M23_1_BRN",
+"CUP_V_O_SLA_M23_1_OD",
+"V_I_G_resistanceLeader_F",
+
+//backpack T1
+this addBackpack "CUP_I_HikingPack_Ammo";
+
+
+

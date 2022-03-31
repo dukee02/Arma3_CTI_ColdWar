@@ -1,0 +1,13 @@
+Check if we need Zeta anymore, because with rappling/towing etc. maybe its obsolete
+
+in dialogs.hpp
+class CTI_RscHookMenu
+
+Client actions action_hookmenu
+client events events_ui_hookmenu
+client functions client_kookvehicle
+init client CTI_CL_FNC_HookVehicle def
+init common constants CTI_VEHICLES_HOOKERS, CTI_VEHICLES_HOOKABLE, CTI_VEHICLES_HOOKERS_EX
+
+and the folder:
+CW-BECTI.Map_name\Client\Module\ZetaCargo

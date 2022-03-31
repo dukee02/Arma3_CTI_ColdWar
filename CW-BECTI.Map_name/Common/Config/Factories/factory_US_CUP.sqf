@@ -33,17 +33,57 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 //if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
 //Check if the based mod is set as main, or the nation is explicit set.
 if ((CTI_CUP_ADDON > 0) || _ai == CTI_US_ID) then {
+	switch(CTI_CAMO_ACTIVATION) do {
+		case 2: {//desert camo active
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light_des", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
+		};
+		case 3: {//jungle camo active
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew", _sid]];
+		};
+		case 4: {//urban camo active
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_US_Soldier_TL_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_US_Soldier_Light_UCP", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_US_Crew_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_US_Crew_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
+		};
+		case 6: {//special camo active
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_US_Soldier_TL_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_US_Soldier_Light_OCP", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_US_Crew_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_US_Crew_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
+		};
+		default {//main camo active
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_US_Soldier_TL_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_US_Soldier_Light_OEFCP", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_US_Crew_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_US_Crew_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+		};	
+	};
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light_des", _sid]];
-
-		missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot_des", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
-
 		//Set starting vehicles
 		missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
 			[format["%1CUP_B_HMMWV_Unarmed_USA", _sid], []], 
@@ -51,21 +91,13 @@ if ((CTI_CUP_ADDON > 0) || _ai == CTI_US_ID) then {
 		]];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
-		missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light", _sid]];
-
-		missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot", _sid]];
-		missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew", _sid]];
-
 		//Set starting vehicles
 		missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
 			[format["%1CUP_B_HMMWV_Unarmed_USMC", _sid], []], 
 			[format["%1CUP_B_HMMWV_Unarmed_USMC", _sid], []]
 		]];
 	};
+	
 	if (CTI_Log_Level >= CTI_Log_Debug) then {
 		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
 		["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CUP.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;
@@ -89,7 +121,7 @@ _matrix_nation = [_side, CTI_UPGRADE_BARRACKS, CTI_US_ID, CTI_CUP_ID] call CTI_C
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
 		_c pushBack format["%1CUP_B_USMC_Crew_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Engineer_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_GL_des", _sid];
@@ -99,7 +131,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		_c pushBack format["%1CUP_B_USMC_Soldier_Light_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Medic_des", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1CUP_B_USMC_Crew", _sid];
 		_c pushBack format["%1CUP_B_USMC_Engineer", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_GL", _sid];
@@ -109,21 +141,59 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		_c pushBack format["%1CUP_B_USMC_Soldier_Light", _sid];
 		_c pushBack format["%1CUP_B_USMC_Medic", _sid];
 	};
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+		_c pushBack format["%1CUP_B_US_Crew_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_EOD_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_GL_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Medic_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_ACOG_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_LAT_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Light_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Backpack_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_Sapper_UCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1CUP_B_US_Crew_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_EOD_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_GL_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Medic_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_ACOG_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_LAT_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Light_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Backpack_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_Sapper_OCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
+		_c pushBack format["%1CUP_B_US_Crew_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_EOD_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_GL_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Medic_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_ACOG_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_LAT_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Light_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Backpack_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Engineer_Sapper_OEFCP", _sid];
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
 		_c pushBack format["%1CUP_B_USMC_Soldier_AT_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_AR_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_MG_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Pilot_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_SpecOps_des", _sid];
-		_c pushBack format["%1CUP_B_USMC_Soldier_UAV_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_SL_des", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1CUP_B_USMC_Soldier_AT", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_AR", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_MG", _sid];
@@ -133,30 +203,115 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		_c pushBack format["%1CUP_B_US_Pilot_Light", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_SL", _sid];
 	};
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+		_c pushBack format["%1CUP_B_US_Soldier_AAT_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AT_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AAR_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AR_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AMG_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_MG_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Marksman_EBR_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Officer_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_SL_UCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1CUP_B_US_Soldier_AAT_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AT_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AAR_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AR_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AMG_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_MG_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Marksman_EBR_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Officer_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_SL_OCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
+		_c pushBack format["%1CUP_B_US_Soldier_AAT_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AAR_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AT_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AR_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AMG_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_MG_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Marksman_EBR_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Officer_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_SL_OEFCP", _sid];
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 6) then {		//Desert camo active
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
 		_c pushBack format["%1CUP_B_USMC_Soldier_HAT_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_Marksman_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_AA_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Officer_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Sniper_M40A3_des", _sid];
-		_c pushBack format["%1CUP_B_USMC_Sniper_M107_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Spotter_des", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_TL_des", _sid];
+		_c pushBack format["%1CUP_B_USMC_Soldier_UAV_des", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1CUP_B_USMC_Soldier_HAT", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_Marksman", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_AA", _sid];
 		_c pushBack format["%1CUP_B_USMC_Officer", _sid];
 		_c pushBack format["%1CUP_B_USMC_Sniper_M40A3", _sid];
-		_c pushBack format["%1CUP_B_USMC_Sniper_M107", _sid];
 		_c pushBack format["%1CUP_B_USMC_Spotter", _sid];
 		_c pushBack format["%1CUP_B_USMC_Soldier_TL", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+		_c pushBack format["%1CUP_B_US_Soldier_AA_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AHAT_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_HAT_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Marksman_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Sniper_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_TL_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_UAV_UCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1CUP_B_US_Soldier_AA_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AHAT_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_HAT_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Marksman_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Sniper_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_TL_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_UAV_OCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
+		_c pushBack format["%1CUP_B_US_Soldier_AA_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_AHAT_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_HAT_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_Marksman_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Sniper_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_TL_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Soldier_UAV_OEFCP", _sid];
+	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
+		_c pushBack format["%1CUP_B_USMC_Sniper_M107_des", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_USMC_Sniper_M107", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+		_c pushBack format["%1CUP_B_US_Sniper_M107_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Sniper_M110_TWS_UCP", _sid];
+		_c pushBack format["%1CUP_B_US_Spotter_UCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1CUP_B_US_Sniper_M107_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Sniper_M110_TWS_OCP", _sid];
+		_c pushBack format["%1CUP_B_US_Spotter_OCP", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
+		_c pushBack format["%1CUP_B_US_Sniper_M107_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Sniper_M110_TWS_OEFCP", _sid];
+		_c pushBack format["%1CUP_B_US_Spotter_OEFCP", _sid];
 	};
 };
 
@@ -181,12 +336,10 @@ _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_F
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 6) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
-	};
+	//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 6) then {		//Desert camo active
+	//};
+	//if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+	//};
 	_c pushBack format["%1CUP_B_M1030_USMC", _sid];
 	_c pushBack format["%1CUP_B_TowingTractor_USMC", _sid];
 };
@@ -201,6 +354,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1CUP_B_HMMWV_Terminal_USA", _sid];
 		_c pushBack format["%1CUP_B_HMMWV_SOV_M2_USA", _sid];
 		_c pushBack format["%1CUP_B_MTVR_USA", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
 		//_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
 		//_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
 		//_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
@@ -208,6 +362,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1CUP_B_M1152_USMC", _sid];
 		_c pushBack format["%1CUP_B_MTVR_USMC", _sid];
+		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
 		//_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
 		//_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
 		//_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
@@ -549,43 +704,59 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
-if(CTI_CUP_ADDON > 0) then {
-	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-		if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-				_c pushBack format["%1CUP_B_USMC_Soldier_Light_des", _sid];
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		
+		
+		
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 2: {//desert camo active
+				_c pushBack format["%1CUP_B_USMC_Soldier_des", _sid];
 				_c pushBack format["%1CUP_B_USMC_Medic_des", _sid];
 			};
-			if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-				_c pushBack format["%1CUP_B_USMC_Soldier_Light", _sid];
+			case 3: {//jungle camo active
+				_c pushBack format["%1CUP_B_USMC_Soldier", _sid];
 				_c pushBack format["%1CUP_B_USMC_Medic", _sid];
 			};
-		};
-	};
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-			_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
-		};
-		if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-			_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
-		};
-		_c pushBack format["%1CUP_B_M1030_USMC", _sid];
-	};	
-	if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-		if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-				_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
-				_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
-				_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+			case 4: {//urban camo active
+				_c pushBack format["%1CUP_B_US_Soldier_UCP", _sid];
+				_c pushBack format["%1CUP_B_US_Medic_UCP", _sid];
 			};
-			if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-				_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
-				_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
-				_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
+			case 6: {//special camo active
+				_c pushBack format["%1CUP_B_US_Soldier_OCP", _sid];
+				_c pushBack format["%1CUP_B_US_Medic_OCP", _sid];
 			};
+			default {//main camo active
+				_c pushBack format["%1CUP_B_US_Soldier_OEFCP", _sid];
+				_c pushBack format["%1CUP_B_US_Medic_OEFCP", _sid];
+			};	
 		};
 	};
 };
+if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
+	};
+	_c pushBack format["%1CUP_B_M1030_USMC", _sid];
+};	
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+		};
+		if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
+		};
+	};
+};
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 

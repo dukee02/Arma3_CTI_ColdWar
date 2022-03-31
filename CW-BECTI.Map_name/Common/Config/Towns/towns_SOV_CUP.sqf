@@ -25,7 +25,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\To
 
 //needed for townvehicles if nation on IND side
 if(_tag == "GUER_") then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
 		case 1: {//winter camo active
 			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_O_RU_Soldier_Ratnik_Winter", _sid]];
 			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid]];
@@ -72,7 +72,7 @@ _matrix_nation = [_side, CTI_UPGRADE_BARRACKS, CTI_SOV_ID, CTI_CUP_ID] call CTI_
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
 		case 1: {//winter camo active
 			INFANTRY = [[format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_GL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Engineer_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_GL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_A_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_A_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_A_Ratnik_Winter", _sid],1]];
@@ -109,7 +109,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
 		case 1: {//winter camo active
 			INFANTRY = [[format["%1CUP_O_RU_Soldier_SL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_GL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Engineer_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Marksman_Ratnik_Winter", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_O_RU_Soldier_SL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_GL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_A_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_MG_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_MG_Ratnik_Winter", _sid],1]];
@@ -146,7 +146,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
-	switch(CTI_CAMO_ACTIVATION) do {
+	switch(CTI_TOWN_CAMO) do {
 		case 1: {//winter camo active
 			INFANTRY = [[format["%1CUP_O_RU_Soldier_SL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_GL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Engineer_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Marksman_Ratnik_Winter", _sid],1]];
 			INFANTRY_MG = [[format["%1CUP_O_RU_Soldier_SL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_Medic_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_GL_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_A_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_MG_Ratnik_Winter", _sid],1],[format["%1CUP_O_RU_Soldier_MG_Ratnik_Winter", _sid],1]];

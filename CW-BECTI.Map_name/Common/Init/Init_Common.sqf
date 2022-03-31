@@ -110,13 +110,13 @@ if(CTI_US_SIDE >= 0) then {
 		if((CTI_US_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_US_SIDE == 1 && CTI_EAST_AI < 0)) then {
 			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_CUP.sqf";
 		};
-		if((CTI_US_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_US_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_US_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+		if((CTI_US_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_US_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_US_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
 			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_CUP.sqf";
 		};
 		((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf";
 	};
 };
-//CTI_SOV_CUP_SIDE declaration
+//CTI_SOV_SIDE declaration
 if(CTI_SOV_SIDE >= 0) then {
 	if(CTI_CUP_ADDON >= 0) then {
 		((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_SOV_CUP.sqf";
@@ -124,10 +124,38 @@ if(CTI_SOV_SIDE >= 0) then {
 		if((CTI_SOV_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_SOV_SIDE == 1 && CTI_EAST_AI < 0)) then {
 			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
 		};
-		if((CTI_SOV_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_SOV_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_SOV_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+		if((CTI_SOV_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_SOV_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_SOV_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
 			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
 		};
 		((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_SOV.sqf";
+	};
+};
+//CTI_NPOC_SIDE declaration	--- not a complete nation atm
+/*if(CTI_NPOC_SIDE >= 0) then {
+	if(CTI_CUP_ADDON >= 0) then {
+		((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NPOC_CUP.sqf";
+		((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NPOC_CUP.sqf";
+		if((CTI_NPOC_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NPOC_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NPOC_CUP.sqf";
+		};
+		if((CTI_NPOC_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NPOC_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NPOC_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
+			((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPOC_CUP.sqf";
+		};
+		((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_NPOC.sqf";
+	};
+};*/
+//CTI_RACS_SIDE declaration
+if(CTI_RACS_SIDE >= 0) then {
+	if(CTI_CUP_ADDON >= 0) then {
+		((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_RACS_CUP.sqf";
+		((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_RACS_CUP.sqf";
+		if((CTI_RACS_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_RACS_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_RACS_CUP.sqf";
+		};
+		if((CTI_RACS_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_RACS_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_RACS_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
+			((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_RACS_CUP.sqf";
+		};
+		//((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_RACS.sqf";
 	};
 };
 //CTI_DK_SIDE declaration
@@ -192,11 +220,11 @@ switch(CTI_GUER_TOWNS) do {
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NPoC_CUP.sqf";
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPoC_CUP.sqf";
 	};
-	case 1: {
+	/*case 1: {
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\units_RACS_CUP.sqf";
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_RACS_CUP.sqf";
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_RACS_CUP.sqf";
-	};
+	};*/
 	default {};
 };
 
@@ -374,20 +402,116 @@ if ((missionNamespace getVariable "CTI_ECONOMY_CURRENCY_SYSTEM") == 1) then {
 //--- AI/Players Loadouts, to prevent any bisteries, DO NOT give them a pistol.
 
 if(CTI_CUP_ADDON >= 0) then {
-	missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
-		[["CUP_arifle_M4A1",["","","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[]],
-		["",["","","",""],[""]]],
-		[["CUP_U_B_BDUv2_dirty_base",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-		["CUP_V_B_Interceptor_Rifleman_M81",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-		["CUP_B_USMC_MOLLE",[]]],
-		["CUP_H_USMC_BOONIE_WDL",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
-	missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
-		[["CUP_arifle_AK74_Early",["","","",""],["CUP_30Rnd_556x45_AK"]],["",["","","",""],[]],
-		["",["","","",""],[""]]],
-		[["CUP_U_O_RUS_EMR_1",["firstaidkit","CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK"]],
-		["CUP_V_O_SLA_6B3_1_WDL",["CUP_HandGrenade_RGO","CUP_HandGrenade_RGO","CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK"]],
-		["CUP_B_RUS_Backpack",[]]],
-		["CUP_H_RUS_6B27",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+	//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+	switch(CTI_CAMO_ACTIVATION) do {
+		//case 1: {};
+		case 2: {//Desert
+			missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
+				[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_B_USMC_MCCUU_des_gloves",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["CUP_V_B_Eagle_SPC_Patrol",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["",[]]],
+				["CUP_H_LWHv2_MARPAT_des_cov_fr",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		case 3: {//Jungle
+			missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
+				[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_B_USMC_MCCUU_gloves",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["CUP_V_B_Eagle_SPC_Patrol",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["",[]]],
+				["CUP_H_LWHv2_MARPAT_cov_fr",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		case 4: {//Urban US
+			missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
+				[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_B_USArmy_ACU_Kneepad_Gloves_UCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["CUP_V_B_IOTV_UCP_Rifleman_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["",[]]],
+				["CUP_H_USArmy_HelmetACH_UCP",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		//case 5: {};
+		case 6: {//multi light
+			missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
+				[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_B_USArmy_ACU_Gloves_OCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["CUP_V_B_IOTV_OCP_Rifleman_Deltoid_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["",[]]],
+				["CUP_H_USArmy_HelmetACH_OCP",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		default {//multi dark
+			missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
+				[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_B_USArmy_ACU_Kneepad_Gloves_OEFCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["CUP_V_B_IOTV_OEFCP_Rifleman_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
+				["",[]]],
+				["CUP_H_USArmy_HelmetACH_OEFCP",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+	};
+	
+	//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+	switch(CTI_CAMO_ACTIVATION) do {
+		case 1: {
+			missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
+				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_O_RUS_Ratnik_Winter",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_Vest_RUS_6B45_Sh117",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["",[]]],
+				["CUP_H_RUS_6B47_v2_GogglesUp_Winter",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		case 2: {
+			missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
+				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_O_RUS_Ratnik_Desert",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_Vest_RUS_6B45_Sh117_Desert",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["",[]]],
+				["CUP_H_RUS_6B47_v2_GogglesUp_Desert",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		case 3: {
+			missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
+				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_Vest_RUS_6B45_Sh117_Nut",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["",[]]],
+				["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		case 4: {
+			missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
+				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_O_RUS_Ratnik_Autumn",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_Vest_RUS_6B45_Sh117",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["",[]]],
+				["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		//case 5: {};
+		case 6: {
+			missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
+				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_O_RUS_Ratnik_BeigeDigital",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_Vest_RUS_6B45_Sh117_BeigeDigital",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["",[]]],
+				["CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+		default {
+			missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
+				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
+				["",["","","",""],[""]]],
+				[["CUP_U_O_RUS_Ratnik_Summer",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_Vest_RUS_6B45_Sh117",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["",[]]],
+				["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+		};
+	};
+	
 };
 /*
 switch(CTI_MAIN_ADDON) do {
