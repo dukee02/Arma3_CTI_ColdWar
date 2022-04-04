@@ -43,10 +43,22 @@ _var = missionNamespace getVariable _varname;
 _fob = false;
 {if (_x select 0 == "FOB") exitWith {_fob = true}} forEach (_var select 5);
 
+_side = (_sideID) call CTI_CO_FNC_GetSideFromID;
+_logic = (_side) call CTI_CO_FNC_GetSideLogic;
+
 if (_fob) then { //--- Erase this FOB upon destruction
-	_side = (_sideID) call CTI_CO_FNC_GetSideFromID;
-	_logic = (_side) call CTI_CO_FNC_GetSideLogic;
 	_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") - [objNull, _killed], true];
+} else {
+	//_logic setVariable ["cti_defences", (_logic getVariable "cti_defences") - [objNull, _killed], true];
+	_arraypos = 0;
+	_sideDefences = _logic getVariable "cti_defences";
+	{
+		if(_x isEqualTo [_killed] || _x select 0 isEqualTo objNull) then {
+			_sideDefences deleteAt _arraypos;
+		};
+		_arraypos = _arraypos + 1;
+	} forEach (_logic getVariable "cti_defences");
+	_logic setVariable ["cti_defences", _sideDefences];
 };
 
 sleep 5;

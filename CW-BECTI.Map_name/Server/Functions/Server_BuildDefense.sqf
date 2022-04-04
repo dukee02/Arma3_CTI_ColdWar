@@ -32,18 +32,20 @@
     _defense = [_variable, CTI_P_SideJoined, [_pos select 0, _pos select 1], _dir, CTI_P_WallsAutoAlign, CTI_P_DefensesAutoManning] call CTI_SE_FNC_BuildDefense;
 */
 
-private ["_autoalign", "_defense", "_direction", "_direction_structure", "_fob", "_limit", "_logic", "_manned", "_origin", "_position", "_ruins", "_side", "_stronger", "_var", "_varname"];
+private ["_autoalign", "_defense", "_direction", "_direction_structure", "_fob", "_limit", "_logic", "_manned", "_position", "_ruins", "_side", "_stronger", "_var", "_varname"];
 
 _varname = _this select 0;
 _var = missionNamespace getVariable _varname;
 _side = _this select 1;
 _position = _this select 2;
 _direction = _this select 3;
-_origin = _this select 4;
-_autoalign = _this select 5;
-_manned = if (count _this > 6) then {_this select 6} else {false};
+_autoalign = _this select 4;
+_manned = if (count _this > 5) then {_this select 5} else {false};
+//_origin = if (count _this > 6) then {_this select 6} else {0};
 
 _logic = (_side) call CTI_CO_FNC_GetSideLogic;
+
+if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_BuildDefense.sqf", format["Can't build defense! side: %1 - classname: <%2> manned: %3", _side, _varname, _manned]] call CTI_CO_FNC_Log;};
 
 if(isNIL "_var") then {
 	if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_BuildDefense.sqf", format["Can't build defense! side: %1 - classname: <%2> ", _side, _varname]] call CTI_CO_FNC_Log;};
@@ -73,10 +75,21 @@ if(isNIL "_var") then {
 			};
 		};
 	};
-
+	
 	if (_fob) then {
 		[["CLIENT", _side], "Client_OnSpecialConstructed", [_defense, "FOB"]] call CTI_CO_FNC_NetSend;
 		_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") + [_defense], true];
+	} else {
+		//Save the defense an the classname for easy save/load
+		_defense setVariable ["savename", _varname];
+		//_logic setVariable ["cti_defences", (_logic getVariable "cti_defences") + [_defense], true];
+		_sideDefences = _logic getVariable "cti_defences";
+		if (isNil "_sideDefences") then { 
+			_sideDefences = [[_defense]];
+		} else {
+			_sideDefences pushBack [_defense];
+		};
+		_logic setVariable ["cti_defences", _sideDefences];
 	};
 
 	_defense setDir _direction;
@@ -121,11 +134,6 @@ if(isNIL "_var") then {
 		//--- The defense is eligible for auto manning
 		if (_manned && CTI_BASE_DEFENSES_AUTO_LIMIT > 0) then {_defense setVariable ["cti_aman_enabled", true]};
 	};
-
-	// _defense addEventHandler ["killed", {}];
-
-		// _defense addEVentHandler ["hit", {player sidechat format["%1",getDammage (_this select 0)];}];
-	// _defense setDammage 1;
 
 	_defense
 };

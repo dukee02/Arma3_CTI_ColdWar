@@ -746,6 +746,10 @@ CTI_SCORE_CAMP_VALUE = 2; //--- Camp value
 
 
 with missionNamespace do {
+	
+	if (isNil 'CTI_PERSISTANT') then {CTI_PERSISTANT = 1};
+	if (isNil 'CTI_SAVE_PERIODE') then {CTI_SAVE_PERIODE = 900};		//900
+	
 	/*if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//Check if CTI_MAIN_ADDON is 0, what means that Global Mobilization DLC is active, if not change the preseted GM-Nations to disabled
 	if (isNil 'CTI_NVA_SIDE' || CTI_MAIN_ADDON > 0) then {if(CTI_MAIN_ADDON > 0) then {CTI_NVA_SIDE = -1} else {CTI_NVA_SIDE = 1};};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"

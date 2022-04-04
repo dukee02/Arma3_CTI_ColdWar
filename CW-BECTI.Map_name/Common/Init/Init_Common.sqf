@@ -90,6 +90,7 @@ CTI_CO_FNC_SetCommanderVotes = compileFinal preprocessFileLineNumbers "Common\Fu
 CTI_CO_FNC_GetTechmatrix = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetTechmatrix.sqf";
 CTI_CO_FNC_MergeMatrixArray = compileFinal preprocessFileLineNumbers "Common\Functions\Common_MergeMatrixArray.sqf";
 CTI_CO_FNC_CheckCountUp = compileFinal preprocessFileLineNumbers "Common\Functions\Common_CheckCountUp.sqf";
+CTI_CO_FNC_GetSideDefenses = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideDefenses.sqf";
 
 CTI_CO_CustomIterator = 0;
 

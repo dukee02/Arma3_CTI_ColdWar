@@ -91,8 +91,12 @@ CTI_Init_Common = true;
 //--- Server execution
 if (CTI_IsServer) then {
 	if (CTI_Log_Level >= CTI_Log_Information) then { ["INFORMATION", "FILE: init.sqf", "Running server initialization"] call CTI_CO_FNC_Log	};
+	CTI_Server_Loaded = false;
+	publicVariable "CTI_Server_Loaded";
 	execVM "Server\Init\Init_Server.sqf";
 };
+
+waitUntil {CTI_Server_Loaded};
 
 //--- Pure client execution
 if (CTI_IsClient && !CTI_IsHeadless) then {	
