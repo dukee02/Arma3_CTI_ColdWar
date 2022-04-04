@@ -171,8 +171,12 @@ _pool = _pool call CTI_CO_FNC_ArrayShuffle;
 //--- Compose the pools.
 _teams = [];
 for '_i' from 1 to _totalGroups do {
-	//_units = [GUER_SOLDIER_SQUADLEADER];
-	_units = [CTI_GUER_SOLDIER];
+	_units = [];
+	if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
+		_units = [missionNamespace getVariable "CTI_GUER_TownLeader"];
+	} else {
+		_units = [missionNamespace getVariable "CTI_GUER_Soldier"];
+	};
 	// _pool_group_size_current = _pool_group_size;
 	_pool_group_size_current = _pool_group_size-1;
 	while {_pool_group_size_current > 0} do {

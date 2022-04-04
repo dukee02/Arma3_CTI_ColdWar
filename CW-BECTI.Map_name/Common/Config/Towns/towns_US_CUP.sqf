@@ -28,31 +28,37 @@ if(_tag == "GUER_") then {
 	switch(CTI_TOWN_CAMO) do {
 		//case 1: {//winter camo active};
 		case 2: {//desert camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_USMC_Pilot_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_USMC_Soldier_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_USMC_Crew_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_USMC_Pilot_des", _sid]];
 		};
 		case 3: {//jungle camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Pilot", _sid]];
+			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_USMC_Soldier", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_USMC_Crew", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Pilot", _sid]];
 		};
 		case 4: {//urban camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_US_Crew_UCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_US_Soldier_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_US_Crew_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Soldier_UCP", _sid]];
 		};
 		case 6: {//special camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_US_Crew_OCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_US_Soldier_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_US_Crew_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Soldier_OCP", _sid]];
 		};
 		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_US_Crew_OEFCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_US_Crew_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
 		};	
 	};
+};
+//needed for Tonw units if the camo differs
+if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
+	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1CUP_B_US_Soldier_SL_UCP", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_B_US_Soldier_UCP", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_B_US_Crew_UCP", _sid]];
 };
 
 //***************************************************************************************************************************************

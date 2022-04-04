@@ -25,10 +25,16 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 //needed for townvehicles if nation on IND side
 if(_tag == "GUER_") then {
 	switch(CTI_CAMO_ACTIVATION) do {
-		missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
-		missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
-		missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_B_US_Pilot", _sid]];
+		missionNamespace setVariable [format["CTI_%1Soldier", _side], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
+		missionNamespace setVariable [format["CTI_%1Crew", _side], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
+		missionNamespace setVariable [format["CTI_%1Pilot", _side], format["%1CUP_I_GUE_Commander", _sid]];
 	};
+};
+//needed for Tonw units if the camo differs
+if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
+	missionNamespace setVariable [format["CTI_%1_TownLeader", _side], format["%1CUP_I_GUE_Commander", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownSoldier", _side], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownCrew", _side], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
 };
 
 //***************************************************************************************************************************************

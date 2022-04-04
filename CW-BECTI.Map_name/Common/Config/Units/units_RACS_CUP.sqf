@@ -66,7 +66,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_I_RACS_Soldier_LAT", _sid];
 		_c pushBack format["%1CUP_I_RACS_Soldier_Unarmed", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1CUP_I_RACS_Soldier_Urban", _sid];
 		_c pushBack format["%1CUP_I_RACS_Engineer_Urban", _sid];
 		_c pushBack format["%1CUP_I_RACS_GL_Urban", _sid];
@@ -115,7 +115,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_I_RACS_M", _sid];
 		_c pushBack format["%1CUP_I_RACS_SL", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1CUP_I_RACS_Soldier_AAT_Urban", _sid];
 		_c pushBack format["%1CUP_I_RACS_Soldier_MAT_Urban", _sid];
 		_c pushBack format["%1CUP_I_RACS_Soldier_AMG_Urban", _sid];
@@ -156,7 +156,7 @@ _building_time = switch(true) do {case (_time<5): {5}; case (_time>50): {50}; de
 if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
 	_c pushBack format["%1CUP_I_RACS_Officer", _sid];
 };
-if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 	_c pushBack format["%1CUP_I_RACS_Officer_Urban", _sid];
 };
 if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
@@ -168,7 +168,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_I_RACS_Soldier_HAT", _sid];
 		_c pushBack format["%1CUP_I_RACS_Sniper", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1CUP_I_RACS_Soldier_AA_Urban", _sid];
 		_c pushBack format["%1CUP_I_RACS_Soldier_HAT_Urban", _sid];
 		_c pushBack format["%1CUP_I_RACS_Sniper_Urban", _sid];
@@ -359,7 +359,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
 	_d pushBack 0;
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1CUP_I_M113_RACS_URB", _sid];
 		_p pushBack '';
 		_n pushBack '';
