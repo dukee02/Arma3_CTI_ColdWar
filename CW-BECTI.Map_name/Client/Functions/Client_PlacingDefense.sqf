@@ -106,6 +106,7 @@ hintSilent  "";
 (findDisplay 46) displayRemoveEventHandler ["KeyUp", _dehKeyUp];
 (findDisplay 46) displayRemoveEventHandler ["MouseButtonDown", _dehMouse];
 
+//--- If there's no problems then we place it.
 if !(CTI_VAR_StructureCanceled) then {
 	if (call _condition) then {
 		_funds = call CTI_CL_FNC_GetPlayerFunds;

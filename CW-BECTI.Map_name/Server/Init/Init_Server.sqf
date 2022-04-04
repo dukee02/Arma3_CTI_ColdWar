@@ -44,6 +44,9 @@ CTI_SE_FNC_StartUpgrade = compileFinal preprocessFileLineNumbers "Server\Functio
 CTI_SE_FNC_TrashObject = compileFinal preprocessFileLineNumbers "Server\Functions\Server_TrashObject.sqf";
 CTI_SE_FNC_VoteForCommander = compileFinal preprocessFileLineNumbers "Server\Functions\Server_VoteForCommander.sqf";
 
+CTI_SE_FNC_SAVE = compileFinal preprocessFileLineNumbers "Server\Functions\Server_SaveToProfile.sqf";
+CTI_SE_FNC_LOAD = compileFinal preprocessFileLineNumbers "Server\Functions\Server_LoadFromProfile.sqf";
+
 call compile preprocessFileLineNumbers "Server\Init\Init_PublicVariables.sqf";
 call compile preprocessFileLineNumbers "Server\Functions\FSM\Functions_FSM_RepairTruck.sqf";
 call compile preprocessFileLineNumbers "Server\Functions\FSM\Functions_FSM_UpdateAI.sqf";
@@ -319,6 +322,37 @@ if ((missionNamespace getVariable "CTI_TOWNS_STARTING_MODE") >= 0 || (missionNam
 		(missionNamespace getVariable Format ["CTI_%1_DefenseTeam", _x]) setVariable ["cti_gc_noremove", true];
 	} forEach [west,east,resistance];
 
+};
+
+//Check if Persistence is active
+if (missionNamespace getvariable "CTI_PERSISTANT" > 0) then {
+	//load the data or start from new
+	if(missionNamespace getvariable "CTI_PERSISTANT" > 1)  then {
+		waitUntil {!isNil 'CTI_InitTowns'};
+		sleep 10; // prenvent loading without all town FSM stable
+		0 call CTI_SE_FNC_LOAD;
+	};
+	CTI_Server_Loaded = true;
+	publicVariable "CTI_Server_Loaded";
+	/*if (profileNamespace getvariable ["CTI_SAVE_ENABLED",false]) then {
+		0 call CTI_SE_LOAD;
+	} else {
+		CTI_Init_Server=True;
+		{
+		    _side=_x;
+		    _logic= (_side) call CTI_CO_FNC_GetSideLogic;
+		    _logic setVariable ["CTI_LOAD_COMPLETED",true,true];
+		} forEach [east,west];
+	};*/
+	0 spawn {
+		while {!CTi_GameOver} do {
+			sleep CTI_SAVE_PERIODE;
+			0 call CTI_SE_FNC_SAVE;
+		};
+	};
+} else {
+	CTI_Server_Loaded = true;
+	publicVariable "CTI_Server_Loaded";
 };
 
 if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Init\Init_Server.sqf", Format ["Server initialization ended at [%1]", time]] Call CTI_CO_FNC_Log};

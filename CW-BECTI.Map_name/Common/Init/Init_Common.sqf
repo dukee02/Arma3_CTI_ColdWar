@@ -90,6 +90,7 @@ CTI_CO_FNC_SetCommanderVotes = compileFinal preprocessFileLineNumbers "Common\Fu
 CTI_CO_FNC_GetTechmatrix = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetTechmatrix.sqf";
 CTI_CO_FNC_MergeMatrixArray = compileFinal preprocessFileLineNumbers "Common\Functions\Common_MergeMatrixArray.sqf";
 CTI_CO_FNC_CheckCountUp = compileFinal preprocessFileLineNumbers "Common\Functions\Common_CheckCountUp.sqf";
+CTI_CO_FNC_GetSideDefenses = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetSideDefenses.sqf";
 
 CTI_CO_CustomIterator = 0;
 
@@ -460,7 +461,7 @@ if(CTI_CUP_ADDON >= 0) then {
 				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
 				["",["","","",""],[""]]],
 				[["CUP_U_O_RUS_Ratnik_Winter",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-				["CUP_Vest_RUS_6B45_Sh117",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
 				["",[]]],
 				["CUP_H_RUS_6B47_v2_GogglesUp_Winter",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 		};
@@ -469,7 +470,7 @@ if(CTI_CUP_ADDON >= 0) then {
 				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
 				["",["","","",""],[""]]],
 				[["CUP_U_O_RUS_Ratnik_Desert",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-				["CUP_Vest_RUS_6B45_Sh117_Desert",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
 				["",[]]],
 				["CUP_H_RUS_6B47_v2_GogglesUp_Desert",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 		};
@@ -478,7 +479,7 @@ if(CTI_CUP_ADDON >= 0) then {
 				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
 				["",["","","",""],[""]]],
 				[["CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-				["CUP_Vest_RUS_6B45_Sh117_Nut",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
 				["",[]]],
 				["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 		};
@@ -487,7 +488,7 @@ if(CTI_CUP_ADDON >= 0) then {
 				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
 				["",["","","",""],[""]]],
 				[["CUP_U_O_RUS_Ratnik_Autumn",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-				["CUP_Vest_RUS_6B45_Sh117",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
 				["",[]]],
 				["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 		};
@@ -497,7 +498,7 @@ if(CTI_CUP_ADDON >= 0) then {
 				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
 				["",["","","",""],[""]]],
 				[["CUP_U_O_RUS_Ratnik_BeigeDigital",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-				["CUP_Vest_RUS_6B45_Sh117_BeigeDigital",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
 				["",[]]],
 				["CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 		};
@@ -506,7 +507,7 @@ if(CTI_CUP_ADDON >= 0) then {
 				[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[]],
 				["",["","","",""],[""]]],
 				[["CUP_U_O_RUS_Ratnik_Summer",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-				["CUP_Vest_RUS_6B45_Sh117",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
+				["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
 				["",[]]],
 				["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 		};

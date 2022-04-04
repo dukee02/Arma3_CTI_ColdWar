@@ -1,4 +1,22 @@
 class Params {
+	class SEPARATOR_PERSISTENCE {
+		title = "=========================== Persistence ============================";
+		values[] = {1};
+		texts[] = {""};
+		default = 1;
+	};
+	class CTI_PERSISTANT {
+		title = "PERSIST: Mode";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Reset","Enabled"};
+		default = 0;
+	};
+	class CTI_SAVE_PERIODE {
+		title = "PERSIST: Save periode in seconds";
+		values[] = {300,600,900,1200,1500,1800,2700,3600};
+		texts[] = {"5min","10 min","15 min","20 min","25 min","30 min","45 min","60 min"};
+		default = 900;
+	};
 	class SEPARATOR_ADDONS {
 		title = "=========================== ADDONS ============================";
 		values[] = {1};
