@@ -268,7 +268,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if (CTI_CUP_ADDON >= 0) then {
 		_headers pushBack 		"Static SearchLight";
 		_classes pushBack 		"CUP_B_CUP_SearchLight_static_US";
-		_prices pushBack 		1500;
+		_prices pushBack 		500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 
@@ -326,6 +326,12 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CUP_ADDON >= 0) then {
+		_headers pushBack 		"Static SearchLight";
+		_classes pushBack 		"CUP_O_SearchLight_static_RU";
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
 		_headers pushBack 		"Static MG (KORD)";
 		_classes pushBack 		"CUP_O_KORD_high_RU";
 		_prices pushBack 		1500;
@@ -368,11 +374,24 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
+		_headers pushBack 		"AT Defense (Kornet)";
+		_classes pushBack 		"CUP_O_Kornet_RU";
+		_prices pushBack 		8000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
 		_headers pushBack 		"AA Defense (ZU23)";
 		_classes pushBack 		"CUP_O_ZU23_RU";
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"AA Defense (Igla)";
+		_classes pushBack 		"CUP_O_Igla_AA_pod_RU";
+		_prices pushBack 		12000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
 	};
 	/*if(CTI_RHS_ADDON >= 0) then {
 		_headers pushBack 		"Static MG (KORD)";
