@@ -1189,11 +1189,18 @@ if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 	_s pushBack "service-repairtruck";
 	_d pushBack 0;
 };
-
-//if(CTI_MAIN_ADDON != 0) then {
 	
-
-if(CTI_SALVAGE_SPECIAL == 1 ) then {
+if(CTI_ADDON_CHARLIECO == 1 ) then {
+	/*_c pushBack format["CTI_Salvager_%1", _side];
+	_p pushBack '';
+	_n pushBack 'Salvager Truck';
+	_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+	_t pushBack _building_time;
+	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_f pushBack CTI_FACTORY_REPAIR;
+	_s pushBack [format["%1ccfm_mercedes", _sid],"salvager"];
+	_d pushBack 0;*/
+	
 	_c pushBack format["CTI_Salvager_%1", _side];
 	_p pushBack '';
 	_n pushBack 'Salvager Truck';
@@ -1201,7 +1208,7 @@ if(CTI_SALVAGE_SPECIAL == 1 ) then {
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager"];
+	_s pushBack [format["%1EPA", _sid],"salvager"];
 	_d pushBack 0;
 		
 	_c pushBack format["CTI_Salvager_Independent_%1", _faction];
@@ -1211,18 +1218,18 @@ if(CTI_SALVAGE_SPECIAL == 1 ) then {
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
+	_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
 	_d pushBack 0;
 } else {
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		_c pushBack format["CTI_Salvager_%1", _faction];
+	if(CTI_SALVAGE_SPECIAL == 1 ) then {
+		_c pushBack format["CTI_Salvager_%1", _side];
 		_p pushBack '';
 		_n pushBack 'Salvager Truck';
 		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_no_upgrade_multiplier);
 		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1CUP_B_MTVR_USA", _sid],"salvager"];
+		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager"];
 		_d pushBack 0;
 			
 		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
@@ -1232,29 +1239,51 @@ if(CTI_SALVAGE_SPECIAL == 1 ) then {
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_no_upgrade_multiplier);
 		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1CUP_B_MTVR_USA", _sid],"salvager-independent"];
+		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
 		_d pushBack 0;
 	} else {
-		_c pushBack format["CTI_Salvager_%1", _faction];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager"];
-		_d pushBack 0;
-			
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager-independent"];
-		_d pushBack 0;
-	};
+		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
+			_c pushBack format["CTI_Salvager_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_no_upgrade_multiplier);
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1CUP_B_MTVR_USA", _sid],"salvager"];
+			_d pushBack 0;
+				
+			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_no_upgrade_multiplier);
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1CUP_B_MTVR_USA", _sid],"salvager-independent"];
+			_d pushBack 0;
+		} else {
+			_c pushBack format["CTI_Salvager_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_no_upgrade_multiplier);
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager"];
+			_d pushBack 0;
+				
+			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack (_tech_level*_no_upgrade_multiplier);
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager-independent"];
+			_d pushBack 0;
+		};
+	};	
 };
 	
 //*********************************************************************************************************************************************

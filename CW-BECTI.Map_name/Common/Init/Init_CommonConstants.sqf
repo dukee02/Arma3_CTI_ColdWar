@@ -616,6 +616,12 @@ CTI_SALVAGE_SPECIAL_ACTIONON = [[['lights_em_hide',1],[objNull,'CustomSoundContr
 //--- Vehicles: Parameter
 with missionNamespace do {
 	if (isNil 'CTI_SALVAGE_SPECIAL') then {CTI_SALVAGE_SPECIAL = 1}; //--- Use special salvagers, then the normal one (0: Disabled, 1: Enabled)
+	if (isClass(configFile >> "CfgVehicles" >> "chps5g") && isClass(configFile >> "CfgVehicles" >> "FPT_MAN")) then {
+		//Charlieco'smod pack is active (civil vehicles only) so we have firetrucks
+		CTI_SALVAGE_SPECIAL = 1;
+		CTI_ADDON_CHARLIECO = 1;
+	};
+	
 	if (isNil 'CTI_VEHICLES_AIR_FFAR') then {CTI_VEHICLES_AIR_FFAR = 2}; //--- FFAR Rockets availability (0: Disabled, 1: Enabled on Upgrade, 2: Enabled)
 	if (isNil 'CTI_VEHICLES_AIR_AA') then {CTI_VEHICLES_AIR_AA = 2}; //--- AA Missiles availability (0: Disabled, 1: Enabled on Upgrade, 2: Enabled)
 	if (isNil 'CTI_VEHICLES_AIR_AT') then {CTI_VEHICLES_AIR_AT = 2}; //--- AT Missiles availability (0: Disabled, 1: Enabled on Upgrade, 2: Enabled)
