@@ -83,8 +83,8 @@ while {!CTI_VAR_StructurePlaced && !CTI_VAR_StructureCanceled && alive player} d
 	_local setDir _dir;	
 	
 	//_pos set [2, 0];
-	_local setPos _pos;
-	//_local setVehiclePosition [_pos, [], 0, "CAN_COLLIDE"];
+	//_local setPos _pos;			//destroys other placed defences
+	_local setVehiclePosition [_pos, [], 0, "CAN_COLLIDE"];
 	
 	_canCollide = if (CTI_P_PreBuilding_SafePlace) then {"<t color='#7bef15'>No</t>"} else {"<t color='#ff0000'>Yes</t>"};
 	_inRange = if (_center distance _local <= _center_distance) then {"<t color='#7bef15'>Yes</t>"} else {"<t color='#ff0000'>No</t>"};
