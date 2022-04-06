@@ -54,7 +54,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_GL_des", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_B_USMC_SpecOps_SD_des", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_LAT_des", _sid], 1, 20];
-		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Light_des", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Light_des", _sid], 1, 20];			//unarmed ^^
 		inf_to_add pushBack [format["%1CUP_B_USMC_Medic_des", _sid], 1, 20];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
@@ -63,7 +63,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_GL", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_B_USMC_SpecOps_SD", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_LAT", _sid], 1, 20];
-		inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Light", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1CUP_B_USMC_Soldier_Light", _sid], 1, 20];
 		inf_to_add pushBack [format["%1CUP_B_USMC_Medic", _sid], 1, 20];
 	};
 	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active

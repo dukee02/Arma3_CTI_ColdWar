@@ -78,12 +78,12 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		//case 1: {//winter camo};
 		case 2: {//desert camo active
 			INFANTRY = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Engineer_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1]];
-			INFANTRY_MG = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Light_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Light_des", _sid],1],[format["%1CUP_B_USMC_Soldier_Light_des", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Medic_des", _sid],1],[format["%1CUP_B_USMC_Soldier_des", _sid],1],[format["%1CUP_B_USMC_Soldier_GL_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT_des", _sid],1]];
 		};
 		case 3: {//Jungle
 			INFANTRY = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Engineer", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1]];
-			INFANTRY_MG = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_Light", _sid],1],[format["%1CUP_B_USMC_Soldier_Light", _sid],1],[format["%1CUP_B_USMC_Soldier_Light", _sid],1]];
+			INFANTRY_MG = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1]];
 			INFANTRY_AT = [[format["%1CUP_B_USMC_Medic", _sid],1],[format["%1CUP_B_USMC_Soldier", _sid],1],[format["%1CUP_B_USMC_Soldier_GL", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1],[format["%1CUP_B_USMC_Soldier_LAT", _sid],1]];
 		};
 		case 4: {//Urban US
