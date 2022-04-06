@@ -916,6 +916,8 @@ _matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_MH6J_USA", _sid];
 	_c pushBack format["%1CUP_B_MH6J_OBS_USA", _sid];
 	_c pushBack format["%1CUP_B_MH6M_USA", _sid];
@@ -954,6 +956,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_UH1Y_UNA_USMC", _sid];
 	_c pushBack format["%1CUP_B_AH6J_USA", _sid];
 	_c pushBack format["%1CUP_B_AH6M_USA", _sid];
@@ -975,6 +979,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_UH1Y_MEV_USMC", _sid];
 	_p pushBack '';
 	_n pushBack 'UH1Y Mobile Respawn';
@@ -1029,6 +1035,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_UH60M_Unarmed_FFV_MEV_US", _sid];
 	_p pushBack '';
 	_n pushBack 'UH60M Mobile Respawn';
@@ -1080,6 +1088,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_CH53E_USMC", _sid];
 	_c pushBack format["%1CUP_B_CH53E_VIV_USMC", _sid];
 	//set all other vars in a slope
@@ -1100,6 +1110,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_MV22_USMC", _sid];
 	_c pushBack format["%1CUP_B_MV22_USMC_RAMPGUN", _sid];
 	_c pushBack format["%1CUP_B_MV22_VIV_USMC", _sid];
@@ -1137,6 +1149,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
 	_c pushBack format["%1CUP_B_F35B_USMC", _sid];
 	_c pushBack format["%1CUP_B_F35B_Stealth_USMC", _sid];
 	//set all other vars in a slope
