@@ -19,7 +19,7 @@
 	[Object]: The constructed defense
 	
   # SYNTAX #
-	[DEFENSE VARIABLE, SIDE, POSITION, DIRECTION, AUTOALIGN, MANNED] call CTI_SE_FNC_BuildDefense
+	[DEFENSE VARIABLE, SIDE, POSITION, DIRECTION, ORIGIN, AUTOALIGN, MANNED] call CTI_SE_FNC_BuildDefense
 	
   # DEPENDENCIES #
 	Common Function: CTI_CO_FNC_GetSideID
@@ -29,7 +29,7 @@
 	Server Function: funcCalcAlignPosDir
 	
   # EXAMPLE #
-    _defense = [_variable, CTI_P_SideJoined, [_pos select 0, _pos select 1], _dir, CTI_P_WallsAutoAlign, CTI_P_DefensesAutoManning] call CTI_SE_FNC_BuildDefense;
+    _defense = [_variable, CTI_P_SideJoined, [_pos select 0, _pos select 1], _dir, _origin, CTI_P_WallsAutoAlign, CTI_P_DefensesAutoManning] call CTI_SE_FNC_BuildDefense;
 */
 
 private ["_autoalign", "_defense", "_direction", "_direction_structure", "_fob", "_limit", "_logic", "_manned", "_position", "_ruins", "_side", "_stronger", "_var", "_varname"];
@@ -39,13 +39,11 @@ _var = missionNamespace getVariable _varname;
 _side = _this select 1;
 _position = _this select 2;
 _direction = _this select 3;
-_autoalign = _this select 4;
-_manned = if (count _this > 5) then {_this select 5} else {false};
-//_origin = if (count _this > 6) then {_this select 6} else {0};
+_origin = _this select 4;
+_autoalign = _this select 5;
+_manned = if (count _this > 6) then {_this select 6} else {false};
 
 _logic = (_side) call CTI_CO_FNC_GetSideLogic;
-
-if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_BuildDefense.sqf", format["Can't build defense! side: %1 - classname: <%2> manned: %3", _side, _varname, _manned]] call CTI_CO_FNC_Log;};
 
 if(isNIL "_var") then {
 	if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_BuildDefense.sqf", format["Can't build defense! side: %1 - classname: <%2> ", _side, _varname]] call CTI_CO_FNC_Log;};
@@ -77,12 +75,22 @@ if(isNIL "_var") then {
 	};
 	
 	if (_fob) then {
-		[["CLIENT", _side], "Client_OnSpecialConstructed", [_defense, "FOB"]] call CTI_CO_FNC_NetSend;
-		_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") + [_defense], true];
+		if !(_origin isKindOf VIOC_ZEUS) then {
+			[["CLIENT", _side], "Client_OnSpecialConstructed", [_defense, "FOB"]] call CTI_CO_FNC_NetSend;
+		};
+		_defense setVariable ["savename", _varname];
+		_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") + [_defense], true];				//don't know why this don't works anymore
+		/*_sideFOBs = _logic getVariable "cti_fobs";
+		if (isNil "cti_fobs") then { 
+			_sideFOBs = [[_defense]];
+		} else {
+			_sideFOBs pushBack [_defense];
+		};
+		_logic setVariable ["cti_fobs", _sideFOBs];*/
 	} else {
 		//Save the defense an the classname for easy save/load
 		_defense setVariable ["savename", _varname];
-		//_logic setVariable ["cti_defences", (_logic getVariable "cti_defences") + [_defense], true];
+		//_logic setVariable ["cti_defences", (_logic getVariable "cti_defences") + [_defense], true];				//don't know why this don't works anymore
 		_sideDefences = _logic getVariable "cti_defences";
 		if (isNil "_sideDefences") then { 
 			_sideDefences = [[_defense]];

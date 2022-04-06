@@ -22,14 +22,14 @@
 
 //get the informations about all towns and save them to the profileNamespace
 //worldName and/or missionName for the prefix
-if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Start loading :<SAVE_%1>", missionName]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Start loading :<SAVE_%1>", missionName]] call CTI_CO_FNC_Log;};
 
 //Load the stored towns and set them via CTI_SE_FNC_OnTownCaptured
 _towns = profileNamespace getVariable [Format ["SAVE_%1_TOWNS", missionName],[]];
 
 //check if a save is there, if not, skip the loading
 if(count _towns <= 0) then {
-	if (CTI_Log_Level >= CTI_Log_Information) then {["Information", "FILE: Server\Functions\Server_LoadFromProfile.sqf", "No save found"] call CTI_CO_FNC_Log;};
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", "No save found"] call CTI_CO_FNC_Log;};
 } else {
 	if (count _towns != count CTI_TOWNS) exitWith {
 		if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_ERROR", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["ERROR on loading the towns, town count: <%1>", count _towns]] call CTI_CO_FNC_Log;};
@@ -71,7 +71,7 @@ if(count _towns <= 0) then {
 		//Load the fabrics and other main base buildings
 		_fabrics_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_FABRICS", missionName, _side],[]];
 		if!(count _fabrics_stored > 0) then {
-			if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_ERROR", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["ERROR on loading the Base buildings, vars: <%1>", _fabrics_stored]] call CTI_CO_FNC_Log;};
+			if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Base buildings found, vars: <%1>", _fabrics_stored]] call CTI_CO_FNC_Log;};
 		} else {
 			{
 			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Building loaded from profile:<SAVE_%1_FABRICS> Building: <%2><%3,%4-%5>", missionName, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
@@ -115,19 +115,30 @@ if(count _towns <= 0) then {
 		//Load the Base Areas (what counts as the real bases)
 		_areas_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_AREAS", missionName, _side],[]];
 		if!(count _areas_stored > 0) then {
-			if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_ERROR", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["ERROR on loading the Base areas, vars: <%1>", _areas_stored]] call CTI_CO_FNC_Log;};
+			if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Base areas found, vars: <%1>", _areas_stored]] call CTI_CO_FNC_Log;};
 		} else {
 			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Base Areas loaded from profile:<SAVE_%1_AREAS> Areas: <%2>", missionName, _areas_stored]] call CTI_CO_FNC_Log;};
 			_logic setVariable ["cti_structures_areas", _areas_stored, true];
 		};
 		
-		//Load all defenses the placed
+		//Load all FOBs they placed
+		_fobs_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_FOBS", missionName, _side],[]];
+		if!(count _fobs_stored > 0) then {
+			if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No FOBs found, vars: <%1>", _fobs_stored]] call CTI_CO_FNC_Log;};
+		} else {
+			{	
+				[_x select 0, _side, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, VIOC_ZEUS, false] call CTI_SE_FNC_BuildDefense;				
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Defences loaded from profile:<SAVE_%1_DEFENSES> Defenses: <%2,%3,%4,%5>", missionName, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
+			} forEach _fobs_stored;
+		};
+		
+		//Load all defenses they placed
 		_defences_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_DEFENSES", missionName, _side],[]];
 		if!(count _defences_stored > 0) then {
-			if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_ERROR", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["ERROR on loading the defences, vars: <%1>", _defences_stored]] call CTI_CO_FNC_Log;};
+			if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No defences found, vars: <%1>", _defences_stored]] call CTI_CO_FNC_Log;};
 		} else {
-			{
-				[_x select 0, _side, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, false, _x select 3] call CTI_SE_FNC_BuildDefense;				
+			{	
+				[_x select 0, _side, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, VIOC_ZEUS, false,  _x select 3] call CTI_SE_FNC_BuildDefense;				
 				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Defences loaded from profile:<SAVE_%1_DEFENSES> Defenses: <%2,%3,%4,%5>", missionName, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
 			} forEach _defences_stored;
 		};
@@ -151,7 +162,8 @@ if(count _towns <= 0) then {
 		};
 		
 		//load the funds of all groups
-		_groups = (_side) call CTI_CO_FNC_GetSideGroups;
+		//_groups = (_side) call CTI_CO_FNC_GetSideGroups;			//only active players
+		_groups = _logic getVariable "cti_teams";
 		{
 			_groupnamefull = format ["%1", _x];
 			_groupnamecut = _groupnamefull splitString " ";
@@ -159,7 +171,8 @@ if(count _towns <= 0) then {
 			_teamfunds_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_FUNDS_%3", missionName, _side, _groupname],0];
 			
 			if(_teamfunds_stored <= 0) then {
-				if (CTI_Log_Level >= CTI_Log_Error) then {["VIOC_ERROR", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["ERROR on loading the Team funds, value: <%1>", _teamfunds_stored]] call CTI_CO_FNC_Log;};
+				_default_funds = missionNamespace getVariable [Format ["CTI_ECONOMY_STARTUP_FUNDS_%1", _side],0];
+				if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Team funds found, set to default: <%1>", _default_funds]] call CTI_CO_FNC_Log;};
 			} else {
 				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveTpProfile.sqf", format["Team funds loaded from profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", missionName, _groupname, (_x) call CTI_CO_FNC_GetFundsTeam]] call CTI_CO_FNC_Log;};
 				[_x, _teamfunds_stored] call CTI_CO_FNC_ChangeFundsTeam;
@@ -168,3 +181,5 @@ if(count _towns <= 0) then {
 
 	} forEach [east,west];
 };
+
+if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Loading finished:<SAVE_%1>", missionName]] call CTI_CO_FNC_Log;};
