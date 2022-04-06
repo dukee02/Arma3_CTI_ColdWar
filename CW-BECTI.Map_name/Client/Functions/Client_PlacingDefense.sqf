@@ -50,7 +50,9 @@ _local = _classname createVehicleLocal getPos player;
 _direction_structure = (_var select 4) select 0;
 _distance_structure = (_var select 4) select 1;
 
-// {_local disableCollisionWith _x} forEach (_center nearEntities (_center_distance+500));
+//[_veh1, _veh2] remoteExecCall ["disableCollisionWith", 0, _veh1];
+//nearestObject position
+//{_local disableCollisionWith _x} forEach (_center nearEntities (_center_distance+500));
 
 _last_collision_update = -600;
 _condition = {true};
@@ -61,6 +63,7 @@ _pos = [];
 
 while {!CTI_VAR_StructurePlaced && !CTI_VAR_StructureCanceled && alive player} do {
 	_pos = screenToWorld [0.5,0.5];
+	//[_local, nearestObject _pos] remoteExecCall ["disableCollisionWith", 0, _local];
 	
 	if (!alive _center) exitWith {CTI_VAR_StructureCanceled = true};
 	
@@ -83,8 +86,8 @@ while {!CTI_VAR_StructurePlaced && !CTI_VAR_StructureCanceled && alive player} d
 	_local setDir _dir;	
 	
 	//_pos set [2, 0];
-	//_local setPos _pos;			//destroys other placed defences
-	_local setVehiclePosition [_pos, [], 0, "CAN_COLLIDE"];
+	_local setPos _pos;			//destroys other placed defences
+	//_local setVehiclePosition [_pos, [], 0, "CAN_COLLIDE"];
 	
 	_canCollide = if (CTI_P_PreBuilding_SafePlace) then {"<t color='#7bef15'>No</t>"} else {"<t color='#ff0000'>Yes</t>"};
 	_inRange = if (_center distance _local <= _center_distance) then {"<t color='#7bef15'>Yes</t>"} else {"<t color='#ff0000'>No</t>"};

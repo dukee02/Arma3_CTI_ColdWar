@@ -719,4 +719,55 @@ _placements pushBack 	[0, 15];
 _categories pushBack 	"Camo";*/
 
 
+//--------------------------------------------------------------------------------------------------------
+//										Mines
+//--------------------------------------------------------------------------------------------------------
+_headers pushBack 		"Training Mine";
+_classes pushBack 		"TrainingMine_01_F";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"APERS Bounding Mine";
+_classes pushBack 		"APERSBoundingMine";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"APERS Mine";
+_classes pushBack 		"APERSMine";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"APERS Trip Mine";
+_classes pushBack 		"APERSTripMine";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"M6 SLAM Mine";
+_classes pushBack 		"SLAMDirectionalMine";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"AT Mine";
+_classes pushBack 		"ATMine";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"AT-15 Mine";
+_classes pushBack 		"CUP_Mine";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
+_headers pushBack 		"TM46 AT Mine";
+_classes pushBack 		"CUP_MineE";
+_prices pushBack 		500;
+_placements pushBack 	[0, 0];
+_categories pushBack 	"Mine";
+
 [_side, _headers, _classes, _prices, _placements, _categories] call compile preprocessFileLineNumbers "Common\Config\Base\Set_Defenses.sqf";

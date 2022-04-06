@@ -73,7 +73,10 @@ if(isNIL "_var") then {
 			};
 		};
 	};
-	
+	/*
+	for the mine placing part we need to check:
+	https://community.bistudio.com/wiki/createMine
+	*/
 	if (_fob) then {
 		if !(_origin isKindOf VIOC_ZEUS) then {
 			[["CLIENT", _side], "Client_OnSpecialConstructed", [_defense, "FOB"]] call CTI_CO_FNC_NetSend;
@@ -107,7 +110,13 @@ if(isNIL "_var") then {
 		// _defense setVectorUp [0,0,0];
 		//if !(isNull _origin) then {[["CLIENT", _origin], "Client_ReceiveDefense", _defense] call CTI_CO_FNC_NetSend};
 	};
-
+	
+	if (_var select 3 == "Mine") exitwith {
+		//_mine = createMine ["APERSMine", position player, [], 0];
+		createMine [(_var select 1), _position, [], 0];
+		deleteVehicle _defense;
+	};
+	
 	//--- It it a set of runway lights?
 	if (_var select 3 == "Light_Strip") exitwith {
 		Private ["_c","_h","_light","_light_type","_toWorld"];

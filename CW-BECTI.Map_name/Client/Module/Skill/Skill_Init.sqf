@@ -64,5 +64,10 @@ player setFatigue 2.75; 				// Menge an Ausdauer
 [player, A1, L1] call BIS_fnc_addSupportLink;	// Arty
 [player, A1, L3] call BIS_fnc_addSupportLink;	// Airstrike
 [player, A1, L4] call BIS_fnc_addSupportLink;	// Helistrike
+
+VIOC_ZEUS addCuratorEditableObjects [[this], false]; 
+this setUnitTrait ["UAVHacker",true];
+this setUnitTrait ["explosiveSpecialist",true];
+
 */
 //see: https://community.bistudio.com/wiki/setUnitTrait
