@@ -164,8 +164,54 @@ switch (missionNamespace getVariable "CTI_TOWNS_STARTING_MODE") do {
 		} forEach _camps;
 		
 	};
+	//--- Coop at East side, "Distance of precaptured Towns" affects starting border, rest gets divided 50:50 to others
+	case 5;
+	case 6: {
+		_near = [_eastLocation,CTI_Towns] Call CTI_CO_FNC_SortByDistance;
+		_total = count CTI_Towns;
+		
+		for '_z' from 0 to _total-1 do {
+			_town = _near select 0;
+			_eastDistance = _eastLocation distance2D _town;
+			if (_eastDistance < CTI_TOWNS_CAPTURED_DISTANCE) then {
+				_town setVariable ['cti_town_sideID',CTI_EAST_ID,true];
+				_camps = _town getVariable "cti_town_camps";
+				{
+					_x setVariable ['cti_camp_sideID',CTI_EAST_ID,true]
+				} forEach _camps;
+				_near = _near - [_town];
+			} else {
+				_z = _total;
+			};
+		};
+		
+		if(missionNamespace getVariable "CTI_TOWNS_STARTING_MODE" == 6) then {
+			//--- Shuffle!
+			_near = _near call CTI_CO_FNC_ArrayShuffle;
+		};
+		
+		_half = round(count _near)/2;
+		_current = 0;
+		{
+			if(_current < _half) then {
+				_x setVariable ['cti_town_sideID',CTI_RESISTANCE_ID,true];
+				_camps = _x getVariable "cti_town_camps";
+				{
+					_x setVariable ['cti_camp_sideID',CTI_RESISTANCE_ID,true];
+					_x setVariable ["cti_camp_lastSideID", CTI_RESISTANCE_ID, true];
+				} forEach _camps;				
+				_current = _current + 1;
+			} else {
+				_x setVariable ['cti_town_sideID',CTI_WEST_ID,true];
+				_camps = _x getVariable "cti_town_camps";
+				{
+					_x setVariable ['cti_camp_sideID',CTI_WEST_ID,true];
+				} forEach _camps;	
+			};
+		} forEach _near;
+	};
 	//--- Coop at West side, "Distance of precaptured Towns" affects starting border
-	case 5: {
+	case 7: {
 		//_towns = CTI_Towns;
 		{
 			_westDistance = _westLocation distance _x;
@@ -192,6 +238,52 @@ switch (missionNamespace getVariable "CTI_TOWNS_STARTING_MODE") do {
 		{
 			_x setVariable ['cti_camp_sideID',CTI_WEST_ID,true];
 		} forEach _camps;
+	};
+	//--- Coop at West side, "Distance of precaptured Towns" affects starting border, rest gets divided 50:50 to others
+	case 8;
+	case 9: {
+		_near = [_westLocation,CTI_Towns] Call CTI_CO_FNC_SortByDistance;
+		_total = count CTI_Towns;
+		
+		for '_z' from 0 to _total-1 do {
+			_town = _near select 0;
+			_westDistance = _westLocation distance2D _town;
+			if (_westDistance < CTI_TOWNS_CAPTURED_DISTANCE) then {
+				_town setVariable ['cti_town_sideID',CTI_WEST_ID,true];
+				_camps = _town getVariable "cti_town_camps";
+				{
+					_x setVariable ['cti_camp_sideID',CTI_WEST_ID,true]
+				} forEach _camps;
+				_near = _near - [_town];
+			} else {
+				_z = _total;
+			};
+		};
+		
+		if(missionNamespace getVariable "CTI_TOWNS_STARTING_MODE" == 9) then {
+			//--- Shuffle!
+			_near = _near call CTI_CO_FNC_ArrayShuffle;
+		};
+		
+		_half = round(count _near)/2;
+		_current = 0;
+		{
+			if(_current < _half) then {
+				_x setVariable ['cti_town_sideID',CTI_RESISTANCE_ID,true];
+				_camps = _x getVariable "cti_town_camps";
+				{
+					_x setVariable ['cti_camp_sideID',CTI_RESISTANCE_ID,true];
+					_x setVariable ["cti_camp_lastSideID", CTI_RESISTANCE_ID, true];
+				} forEach _camps;				
+				_current = _current + 1;
+			} else {
+				_x setVariable ['cti_town_sideID',CTI_EAST_ID,true];
+				_camps = _x getVariable "cti_town_camps";
+				{
+					_x setVariable ['cti_camp_sideID',CTI_EAST_ID,true];
+				} forEach _camps;	
+			};
+		} forEach _near;
 	};
 };
 

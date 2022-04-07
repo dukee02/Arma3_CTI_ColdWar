@@ -656,18 +656,16 @@ class Params {
 		default = 1;
 	};
 	class CTI_TOWNS_CAPTURED_DISTANCE {
-		title = "TOWNS: Distance of precaptured Towns";
+		title = "TOWNS: Distance of precaptured Towns (applies on Startingmodes with [Border] tag)";
 		values[] = {0,1000,2000,3000,4000,5000,6000,7000,8000,9000,10000,12000,15000};
-		texts[] = {"only the next town","1000","2000","3000","4000","5000","6000","7000","8000","9000","10000","12000","15000"};
+		texts[] = {"0 or if needed, the next town","1000","2000","3000","4000","5000","6000","7000","8000","9000","10000","12000","15000"};
 		default = 2000;
 	};
 	class CTI_TOWNS_STARTING_MODE {
 		title = "TOWNS: Starting Mode";
-		values[] = {-1,0,1,2,3,4,5};
-		texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
-		//values[] = {-1,1,4,5};
-		//texts[] = {"pre defined","50% East, 50% West", "Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"};
-		default = -1;
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9};
+		texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side [Border]","Coop at East side, rest 50:50 [Border]","Coop at East side, rest 50:50 shuffled [Border]","Coop at West side [Border]","Coop at West side, rest 50:50 [Border]","Coop at West side, rest 50:50 shuffled [Border]"};
+		default = 0;
 	};
 	class CTI_TOWNS_VEHICLES_LOCK {
 		title = "TOWNS: Vehicle Lock";

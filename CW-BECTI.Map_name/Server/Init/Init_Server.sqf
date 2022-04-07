@@ -236,10 +236,10 @@ if (_attempts >= 300) then {
 				
 				//if coop is enabled, th AI only for enemy side!
 				_ai_teams_enabled = true;
-				if(CTI_TOWNS_STARTING_MODE == 4 && _side == east) then {
+				if((CTI_TOWNS_STARTING_MODE >= 4 && CTI_TOWNS_STARTING_MODE <= 6) && _side == east) then {
 					_ai_teams_enabled = false;
 				};
-				if(CTI_TOWNS_STARTING_MODE == 5 && _side == west) then {
+				if((CTI_TOWNS_STARTING_MODE >= 7 && CTI_TOWNS_STARTING_MODE <= 9) && _side == west) then {
 					_ai_teams_enabled = false;
 				};
 				
