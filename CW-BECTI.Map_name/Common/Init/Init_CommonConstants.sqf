@@ -796,7 +796,7 @@ with missionNamespace do {
 		//check the camo setup if fixed or auto, on auto check map and set camo
 		if(CTI_CAMO_ACTIVATION == -1) then {
 			CTI_CAMO_ACTIVATION = 0;
-			if(worldName in ["Altis","WL_Rosche"]) then {CTI_CAMO_ACTIVATION = 2};
+			if(worldName in ["Altis"]) then {CTI_CAMO_ACTIVATION = 2};
 			//if(worldName in ["gm_weferlingen_summer"]) then {CTI_CAMO_ACTIVATION = 0};
 			if(worldName in ["gm_weferlingen_winter"]) then {CTI_CAMO_ACTIVATION = 1};
 			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = 4};

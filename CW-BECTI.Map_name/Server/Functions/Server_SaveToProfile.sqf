@@ -75,7 +75,6 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions
 	//save all FOBs they placed
 	_fobs_prepaired = [];
 	{
-		_x = _x select 0;
 		_fob_name = _x getVariable "savename";
 		_fobs_prepaired pushback [_x getVariable "savename", getPosATL _x, getDir _x];
 		if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Defences saved to profile:<SAVE_%1_DEFENSES> Defenses: <%2><%3,%4,%5>", missionName, _fob_name, getposATL _x, getDir _x]] call CTI_CO_FNC_Log;};

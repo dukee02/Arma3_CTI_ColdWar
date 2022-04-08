@@ -78,18 +78,18 @@ if(isNIL "_var") then {
 	https://community.bistudio.com/wiki/createMine
 	*/
 	if (_fob) then {
-		if !(_origin == VIOC_ZEUS) then {
-			[["CLIENT", _side], "Client_OnSpecialConstructed", [_defense, "FOB"]] call CTI_CO_FNC_NetSend;
-		};
+		[["CLIENT", _side], "Client_OnSpecialConstructed", [_defense, "FOB"]] call CTI_CO_FNC_NetSend;
 		_defense setVariable ["savename", _varname];
-		//_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") + [_defense], true];				//don't know why this don't works anymore
-		_sideFOBs = _logic getVariable "cti_fobs";
+		//["VIOC_DEBUG", "FILE: Server\Functions\Server_BuildDefense.sqf", format["build defense - fobs: <%1> ", _logic getVariable "cti_fobs"]] call CTI_CO_FNC_Log;
+		_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") + [_defense], true];				//don't know why this don't works anymore
+		//["VIOC_DEBUG", "FILE: Server\Functions\Server_BuildDefense.sqf", format["build defense - fobs: <%1> ", _logic getVariable "cti_fobs"]] call CTI_CO_FNC_Log;
+		/*_sideFOBs = _logic getVariable "cti_fobs";
 		if (isNil "cti_fobs") then { 
 			_sideFOBs = [_defense];
 		} else {
 			_sideFOBs pushBack _defense;
 		};
-		_logic setVariable ["cti_fobs", _sideFOBs];
+		_logic setVariable ["cti_fobs", _sideFOBs];*/
 	} else {
 		//Save the defense an the classname for easy save/load
 		_defense setVariable ["savename", _varname];

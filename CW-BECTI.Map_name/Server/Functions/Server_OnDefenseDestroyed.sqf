@@ -47,8 +47,8 @@ _side = (_sideID) call CTI_CO_FNC_GetSideFromID;
 _logic = (_side) call CTI_CO_FNC_GetSideLogic;
 
 if (_fob) then { //--- Erase this FOB upon destruction
-	//_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") - [objNull, _killed], true];				//don't know why this don't works anymore
-	_arraypos = 0;
+	_logic setVariable ["cti_fobs", (_logic getVariable "cti_fobs") - [objNull, _killed], true];				//don't know why this don't works anymore
+	/*_arraypos = 0;
 	_sideFOBs = _logic getVariable "cti_fobs";
 	{
 		if(_x isEqualTo _killed || _x isEqualTo objNull) then {
@@ -56,7 +56,7 @@ if (_fob) then { //--- Erase this FOB upon destruction
 		};
 		_arraypos = _arraypos + 1;
 	} forEach (_logic getVariable "cti_fobs");
-	_logic setVariable ["cti_fobs", _sideFOBs];
+	_logic setVariable ["cti_fobs", _sideFOBs];*/
 } else {
 	//_logic setVariable ["cti_defences", (_logic getVariable "cti_defences") - [objNull, _killed], true];				//don't know why this don't works anymore
 	_arraypos = 0;
