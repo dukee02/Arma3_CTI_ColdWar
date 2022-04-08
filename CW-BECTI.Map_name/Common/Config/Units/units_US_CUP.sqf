@@ -687,15 +687,30 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A1_HQ_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A1_HQ_olive_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A1_HQ_USA", _sid];
+	};
 	_c pushBack format["%1CUP_B_AAV_Unarmed_USMC", _sid];
-	_p pushBack '';
-	_n pushBack '';
-	_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
-	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
-	_f pushBack CTI_FACTORY_HEAVY;
-	_s pushBack "";
-	_d pushBack 0;
+	
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;	
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -703,19 +718,25 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_M113_desert_USA", _sid];
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
-		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
-		_f pushBack CTI_FACTORY_HEAVY;
-		_s pushBack "";
-		_d pushBack 0;
+		_c pushBack format["%1CUP_B_M113A1_desert_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_HQ_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_HQ_olive_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_olive_USA", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		_c pushBack format["%1CUP_B_M113_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_HQ_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_USA", _sid];
+	};
+	_c pushBack format["%1CUP_B_AAV_USMC", _sid];
+	
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
@@ -723,17 +744,31 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack (_tech_level*_no_upgrade_multiplier);
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
+		_d pushBack 0;	
+	};
+	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A1_Med_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A1_Med_olive_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A1_Med_USA", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack 'M113A1 Mobile Respawn';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
 		_d pushBack 0;
 	};
-	_c pushBack format["%1CUP_B_AAV_USMC", _sid];
-	_p pushBack '';
-	_n pushBack '';
-	_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
-	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
-	_f pushBack CTI_FACTORY_HEAVY;
-	_s pushBack "";
-	_d pushBack 0;
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -741,23 +776,74 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {	
 	_time = (20*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A3_desert_USA", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
+		_c pushBack format["%1CUP_B_M113A3_Med_desert_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Mobile Respawn';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_olive_USA", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
+		_c pushBack format["%1CUP_B_M113A3_Med_olive_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Mobile Respawn';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A3_USA", _sid];
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;
+		_c pushBack format["%1CUP_B_M113A3_Med_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Mobile Respawn';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;
+	};
 	_c pushBack format["%1CUP_B_M163_USA", _sid];
 	_p pushBack '';
 	_n pushBack '';
-	_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
+	_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
-	_d pushBack 0;
-	_c pushBack format["%1CUP_B_M113_Med_USA", _sid];
-	_p pushBack '';
-	_n pushBack 'M113 Mobile Respawn';
-	_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
-	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
-	_f pushBack CTI_FACTORY_LIGHT;
-	_s pushBack "service-medic";
 	_d pushBack 0;	
 };
 
@@ -809,7 +895,10 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%CUP_B_M1A1FEP_OD_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
 	};
 	//set all other vars in a slope
@@ -857,7 +946,10 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%CUP_B_M1A1EP_TUSK_OD_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid];
 	};
 	//set all other vars in a slope
@@ -893,6 +985,30 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;	
+	};
+	
+	_building_time = switch(true) do {case (_time<20): {20}; case (_time>600): {600}; default {_time}};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_no_upgrade_multiplier);
 		_f pushBack CTI_FACTORY_HEAVY;
@@ -1178,9 +1294,13 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _tech_level = 0;
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 _time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 _building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
-
 if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 	_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
 	_p pushBack '';
@@ -1205,16 +1325,6 @@ if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 };
 	
 if(CTI_ADDON_CHARLIECO == 1 ) then {
-	/*_c pushBack format["CTI_Salvager_%1", _side];
-	_p pushBack '';
-	_n pushBack 'Salvager Truck';
-	_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
-	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1ccfm_mercedes", _sid],"salvager"];
-	_d pushBack 0;*/
-	
 	_c pushBack format["CTI_Salvager_%1", _side];
 	_p pushBack '';
 	_n pushBack 'Salvager Truck';
@@ -1299,12 +1409,57 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 		};
 	};	
 };
+
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A3_Repair_desert_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Repair';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_REPAIR;
+		_s pushBack "service-repairtruck";
+		_d pushBack 0;
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_Repair_olive_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Repair';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_REPAIR;
+		_s pushBack "service-repairtruck";
+		_d pushBack 0;
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A3_Repair_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Repair';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_REPAIR;
+		_s pushBack "service-repairtruck";
+		_d pushBack 0;
+	};
+};
 	
 //*********************************************************************************************************************************************
 //											 Ammo Factory units																			  	  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
-_tech_level = 0;
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 _time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 _building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 
@@ -1322,7 +1477,7 @@ if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo a
 	_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
 	_p pushBack '';
 	_n pushBack 'Fuel Truck';
-	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+	_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_AMMO;
@@ -1343,12 +1498,53 @@ if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Fueltruck
 	_p pushBack '';
 	_n pushBack 'Fuel Truck';
-	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+	_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
 	_d pushBack 0;	
+};
+
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A3_Reammo_desert_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Ammo';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_AMMO;
+		_s pushBack "service-ammotruck";
+		_d pushBack 0;	
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_Reammo_olive_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Ammo';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_AMMO;
+		_s pushBack "service-ammotruck";
+		_d pushBack 0;	
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A3_Reammo_USA", _sid];
+		_p pushBack '';
+		_n pushBack 'M113A3 Ammo';
+		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		_t pushBack _building_time;
+		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_f pushBack CTI_FACTORY_AMMO;
+		_s pushBack "service-ammotruck";
+		_d pushBack 0;	
+	};
 };
 
 //*********************************************************************************************************************************************

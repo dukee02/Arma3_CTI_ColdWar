@@ -479,6 +479,15 @@ _matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_F
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A1_HQ_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A1_HQ_olive_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A1_HQ_USA", _sid];
+	};
 	_c pushBack format["%1CUP_B_AAV_Unarmed_USMC", _sid];
 };
 
@@ -486,10 +495,19 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_M113_desert_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_desert_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_Med_desert_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_HQ_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_HQ_olive_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_olive_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_Med_olive_USA", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		_c pushBack format["%1CUP_B_M113_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_HQ_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A1_Med_USA", _sid];
 	};
 	_c pushBack format["%1CUP_B_AAV_USMC", _sid];
 };
@@ -497,8 +515,19 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A3_desert_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_Med_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_olive_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_Med_olive_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A3_USA", _sid];
+		_c pushBack format["%1CUP_B_M113A3_Med_USA", _sid];
+	};
 	_c pushBack format["%1CUP_B_M163_USA", _sid];
-	_c pushBack format["%1CUP_B_M113_Med_USA", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -512,15 +541,23 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_M7Bradley_USA_D", _sid];
-		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
 		_c pushBack format["%1CUP_B_M270_DPICM_USA", _sid];
 		_c pushBack format["%1CUP_B_M270_HE_USA", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1CUP_B_M7Bradley_USA_W", _sid];
-		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
 		_c pushBack format["%1CUP_B_M270_DPICM_USMC", _sid];
 		_c pushBack format["%1CUP_B_M270_HE_USMC", _sid];
+	};
+	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%CUP_B_M1A1FEP_OD_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
 	};
 };
 
@@ -530,11 +567,19 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_M2Bradley_USA_D", _sid];
 		_c pushBack format["%1CUP_B_M6LineBacker_USA_D", _sid];
-		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1CUP_B_M2Bradley_USA_W", _sid];
 		_c pushBack format["%1CUP_B_M6LineBacker_USA_W", _sid];
+	};
+	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%CUP_B_M1A1EP_TUSK_OD_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
 		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid];
 	};
 };
@@ -547,6 +592,16 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1CUP_B_M2A3Bradley_USA_W", _sid];
+	};
+	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid];
 	};
 };
 
@@ -658,15 +713,36 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 	_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
 };
 if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Repairtruck
 };
-//if(CTI_MAIN_ADDON == 1 ) then {
+
 _c pushBack format["CTI_Salvager_%1", _side];
-//};
+
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A3_Repair_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_Repair_olive_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A3_Repair_USA", _sid];
+	};
+};
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_REPAIR];
 if (isNil "_priorUnits") then { 
@@ -682,6 +758,11 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
 _c = [];
+_matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 	_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];			//Ammotruck
 	_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];		//Fueltruck
@@ -690,6 +771,24 @@ if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 	_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Ammotruck
 	_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Fueltruck
 };
+
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M113A3_Reammo_desert_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M113A3_Reammo_olive_USA", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M113A3_Reammo_USA", _sid];
+	};
+};
+
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AMMO];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 

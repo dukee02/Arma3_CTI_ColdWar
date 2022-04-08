@@ -835,7 +835,7 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_PRIZE_AIR') then {CTI_ECONOMY_PRIZE_AIR = 10000};
 	if (isNil 'CTI_ECONOMY_PRIZE_NAVAL') then {CTI_ECONOMY_PRIZE_NAVAL = 2000};
 	
-	CTI_VEHICLES_SALVAGER_PRICE = ((CTI_ECONOMY_PRIZE_WHEELED*((CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED)); //--- Determine the cost of the salvage trucks
+	CTI_VEHICLES_SALVAGER_PRICE = (CTI_ECONOMY_PRIZE_WHEELED*((CTI_ECONOMY_LEVEL_MULTI)/100)); //--- Determine the cost of the salvage trucks
 		
 	CTI_GAMEPLAY_VOTE_TIME = if (CTI_Debug) then {8} else {60};
 	

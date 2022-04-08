@@ -289,14 +289,12 @@ if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 
 };
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_Ratnik_Winter", _sid];
 		_c pushBack format["%1CUP_O_RU_Recon_TL_Ratnik_Winter", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_Ratnik_Winter", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_Ratnik_Winter", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AA_Ratnik_Winter", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_Ratnik_Desert", _sid];
 		_c pushBack format["%1CUP_O_RU_Recon_TL_Ratnik_Desert", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_Ratnik_Desert", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_Ratnik_Desert", _sid];
@@ -306,7 +304,6 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_O_RU_Spotter_M_EMR", _sid];
 		_c pushBack format["%1CUP_O_RU_Sniper_M_EMR", _sid];
 		_c pushBack format["%1CUP_O_RU_Sniper_KSVK_M_EMR", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_M_EMR_V2", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_M_EMR_V2", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_M_EMR_V2", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AA_M_EMR_V2", _sid];
@@ -315,7 +312,6 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Recon_TL_Ratnik_Autumn", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AA_Ratnik_Autumn", _sid];
 	};
 	//if(CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION == 7) then {		//maritim camo active
@@ -323,14 +319,12 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 	//};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
 		_c pushBack format["%1CUP_O_RU_Recon_TL_Ratnik_BeigeDigital", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_Ratnik_BeigeDigital", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_Ratnik_BeigeDigital", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_Ratnik_BeigeDigital", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AA_Ratnik_BeigeDigital", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION > 6) then {		//main camo active
 		_c pushBack format["%1CUP_O_RU_Recon_TL_Ratnik_Summer", _sid];
-		_c pushBack format["%1CUP_O_RU_Soldier_TL_Ratnik_Summer", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_Ratnik_Summer", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_Ratnik_Summer", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AA_Ratnik_Summer", _sid];
@@ -980,7 +974,7 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
-_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 _time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 _building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
@@ -997,16 +991,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >=_tech_level) then {
 };
 
 if(CTI_ADDON_CHARLIECO == 1 ) then {
-	/*_c pushBack format["CTI_Salvager_%1", _side];
-	_p pushBack '';
-	_n pushBack 'Salvager Truck';
-	_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
-	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1CCRM_MAN", _sid],"salvager"];
-	_d pushBack 0;*/
-		
 	_c pushBack format["CTI_Salvager_%1", _side];
 	_p pushBack '';
 	_n pushBack 'Salvager Truck';
@@ -1072,9 +1056,11 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 
 _matrix_cnt = [5, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+	if(_tech_level > 3) then {_tech_level = 3};					//lower the prise a bit
+	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+	
 	_c pushBack format["%1CUP_O_Kamaz_Repair_RU", _sid];			//Repairtruck
 	_p pushBack '';
 	_n pushBack 'Repair Truck';
@@ -1093,7 +1079,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
-_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 _time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
 _building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
@@ -1110,7 +1096,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
 	_p pushBack '';
 	_n pushBack 'Fuel Truck';
-	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+	_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_AMMO;
@@ -1120,13 +1106,15 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 
 _matrix_cnt = [5, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
-_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+	if(_tech_level > 3) then {_tech_level = 3};					//lower the prise a bit
+	_time = (10*CTI_ECONOMY_TIME_MULTI*(_tech_level+1));
+	_building_time = switch(true) do {case (_time<10): {10}; case (_time>300): {300}; default {_time};};
+	
 	_c pushBack format["%1CUP_O_Kamaz_Reammo_RU", _sid];			//Ammotruck
 	_p pushBack '';
 	_n pushBack 'Ammo Truck';
-	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))*2);
+	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_AMMO;
@@ -1135,7 +1123,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_c pushBack format["%1CUP_O_Kamaz_Refuel_RU", _sid];			//Fueltruck
 	_p pushBack '';
 	_n pushBack 'Fuel Truck';
-	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100))*2);
+	_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
 	_t pushBack _building_time;
 	_u pushBack (_tech_level*_no_upgrade_multiplier);
 	_f pushBack CTI_FACTORY_AMMO;
@@ -1153,7 +1141,7 @@ _matrix_nation = [_side, CTI_UPGRADE_NAVAL, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
-	_u pushBack format["%1CUP_O_PBX_RU", _sid];
+	_c pushBack format["%1CUP_O_PBX_RU", _sid];
 	_p pushBack '';
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_NAVAL*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
@@ -1167,7 +1155,7 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
-	_u pushBack format["%1CUP_O_ZUBR_RU", _sid];
+	_c pushBack format["%1CUP_O_ZUBR_RU", _sid];
 	_p pushBack '';
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_NAVAL*(((_tech_level+1)*CTI_ECONOMY_level_MULTI)/100));
