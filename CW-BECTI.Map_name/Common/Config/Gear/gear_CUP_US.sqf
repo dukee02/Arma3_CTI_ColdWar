@@ -126,6 +126,10 @@ _c pushBack "Rangefinder";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*1.5);
 
+_c pushBack "cup_vector21nite";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*1.5);
+
 _c pushBack "Laserdesignator_02";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))*2);
@@ -161,6 +165,10 @@ _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LE
 _c pushBack "itemwatch";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/10);
+
+_c pushBack "g_goggles_vr";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((CTI_ECONOMY_PRIZE_EQUIPMENT*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))/5);
 
 _c pushBack "FirstAidKit";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
@@ -426,6 +434,10 @@ _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL
 _c pushBack "CUP_arifle_M16A4_GL";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _p pushBack round (CTI_ECONOMY_PRIZE_WEAPONS*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
+
+_c pushBack "cup_30rnd_556x45_stanag";
+_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
+_p pushBack round ((30*556*45)/100000)*((CTI_ECONOMY_PRIZE_WEAPONS*(_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/10000);
 
 _c pushBack "30Rnd_556x45_Stanag";
 _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
