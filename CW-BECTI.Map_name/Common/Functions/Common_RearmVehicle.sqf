@@ -39,11 +39,21 @@ _vehicle setVehicleAmmo 1;
 _config = configFile >> "CfgVehicles" >> _type >> "CUP_Shell_Default";
 _array = getArray(_config);
 if(count _array > 0) then {
-	_ammotype = _array select 1;
-	_rounds =  _array select 0;
-	_vehicle addMagazines [_ammotype,_rounds-1];
+	_ammotype = [];
+	_rounds = [];
+	{
+		if(typeName (_array select _x) == "STRING") then {
+			_ammotype pushBack _x;
+		} else {
+			_rounds  pushBack _x;
+		};
+	} forEach _array;
+	{
+		if(_rounds select _foreachindex > 0) then {
+			_vehicle addMagazines [_x,(_rounds select _foreachindex)-1];
+		};
+	} forEach _ammotype;
 };
-
 
 //--- Driver
 {
