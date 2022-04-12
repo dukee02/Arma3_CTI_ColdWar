@@ -7,8 +7,8 @@ class Params {
 	};
 	class CTI_PERSISTANT {
 		title = "PERSIST: Mode";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Reset","Enabled"};
+		values[] = {-3,-2,-1,0,1,2,3};
+		texts[] = {"Reset (1 Save for each mission)","Reset (1 Save for each era VIO-BECTI-CW)","Reset (1 Save for all VIO-BECTIs)","Disabled","Enabled (1 Save for all VIO-BECTIs)","Enabled (1 Save for each era VIO-BECTI-CW)","Enabled (1 Save for each mission)"};
 		default = 0;
 	};
 	class CTI_SAVE_PERIODE {
