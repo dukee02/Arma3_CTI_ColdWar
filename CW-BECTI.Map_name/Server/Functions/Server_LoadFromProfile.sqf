@@ -57,13 +57,13 @@ switch(_part) do {
 		};
 		{
 			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Town loaded from :<SAVE_%1> Town: <%2>", _savename, _foreachindex, _x]] call CTI_CO_FNC_Log;};
-			_x setVariable ["cti_town_lastSideID", (_towns select _foreachindex) select 0, true];
-			_x setVariable ['cti_town_sideID',(_towns select _foreachindex) select 1,true];
-			//[_x, ((_towns select _foreachindex) select 1) call CTI_CO_FNC_GetSideFromID] call CTI_SE_FNC_OnTownCaptured;
+			_sideID = (_towns select _foreachindex) select 1;
+			_x setVariable ["cti_town_lastSideID",_sideID, true];
+			_x setVariable ['cti_town_sideID',_sideID,true];
 			_camps = _x getVariable "cti_town_camps";
 			{
-				_x setVariable ['cti_camp_sideID',CTI_RESISTANCE_ID,true];
-				_x setVariable ["cti_camp_lastSideID", CTI_RESISTANCE_ID, true];
+				_x setVariable ["cti_camp_lastSideID",_sideID, true];
+				_x setVariable ['cti_camp_sideID',_sideID,true];
 			} forEach _camps;
 		} foreach (CTI_TOWNS);
 	};
@@ -95,7 +95,7 @@ switch(_part) do {
 			};
 		} forEach [east,west];
 	};
-	case "hq_east": {
+	case "hq_EAST": {
 		//Load the HQ for the side
 		_hq_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_HQ", _savename, east],[]];
 		if!(count _hq_stored > 0) then {
@@ -110,7 +110,7 @@ switch(_part) do {
 			if !(_hq_stored select 2) then {_hq setDamage 1};
 		};
 	};
-	case "hq_west": {
+	case "hq_WEST": {
 		//Load the HQ for the side
 		_hq_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_HQ", _savename, west],[]];
 		if!(count _hq_stored > 0) then {
