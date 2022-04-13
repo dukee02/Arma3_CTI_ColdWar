@@ -17,42 +17,54 @@ _t = [];
 //_t = _t 	+ [[[["arifle_CTAR_blk_F",[],["30Rnd_580x42_Mag_Tracer_F"]]],[["U_O_CombatUniform_ocamo",["Medikit","Medikit"]],["V_BandollierB_cbr", ["HandGrenade","HandGrenade"]],["B_AssaultPack_ocamo", ["30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F"]]],["H_HelmetO_ocamo",""],[[],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
 //};
 
-/*switch(CTI_MAIN_ADDON) do {
-	case 0: {	//Global Mobilization - Cold War
-		if (_side isEqualTo west) then {		//GM West Gear
-			_t = _t 	+ [[[["gm_g3a4_oli",[],["gm_20Rnd_762x51mm_b_t_DM21_g3_blk"]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_gauzeCompress"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk","gm_20Rnd_762x51mm_b_t_DM21_g3_blk"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","ItemWatch"]]]];
-			_t = _t 	+ [[[["gm_mg3_blk",[],["gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"]]],[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_gauzeCompress"]],["gm_ge_army_vest_80_demolition",["gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],["gm_ge_army_backpack_80_oli",["gm_120Rnd_762x51mm_b_t_DM21_mg3_grn","gm_120Rnd_762x51mm_b_t_DM21_mg3_grn"]]],["gm_ge_headgear_m62_net",""],[["", "gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","ItemWatch"]]]];
-		} else {								//GM East Gear
-			_t = _t 	+ [[[["gm_mpiak74n_brn",[],["gm_45Rnd_545x39mm_b_7N6_ak74_org"]]],[["gm_gc_army_uniform_soldier_80_str",["gm_gc_army_gauzeBandage","gm_gc_army_medkit"]],["gm_gc_army_vest_80_rifleman_str", ["gm_handgrenade_frag_rgd5","gm_handgrenade_frag_rgd5"]],["gm_gc_army_backpack_80_assaultpack_str", ["gm_45Rnd_545x39mm_b_7N6_ak74_org","gm_45Rnd_545x39mm_b_7N6_ak74_org","gm_45Rnd_545x39mm_b_7N6_ak74_org","gm_45Rnd_545x39mm_b_7N6_ak74_org"]]],["gm_gc_army_headgear_m56_net",""],[["", "gm_df7x40_grn"],["itemmap","","itemradio","gm_gc_compass_f73","gm_watch_kosei_80"]]]];
-			_t = _t 	+ [[[["gm_hmgpkm_prp",[],["gm_100Rnd_762x54mm_b_t_t46_pk_grn"]]],[["gm_gc_army_uniform_soldier_80_str",["gm_gc_army_gauzeBandage","gm_gc_army_medkit"]],["gm_gc_army_vest_80_rifleman_str", ["gm_handgrenade_frag_rgd5","gm_handgrenade_frag_rgd5"]],["gm_gc_army_backpack_80_assaultpack_str", ["gm_100Rnd_762x54mm_b_t_t46_pk_grn","gm_100Rnd_762x54mm_b_t_t46_pk_grn"]]],["gm_gc_army_headgear_m56_net",""],[["", "gm_df7x40_grn"],["itemmap","","itemradio","gm_gc_compass_f73","gm_watch_kosei_80"]]]];
+if(CTI_CUP_ADDON>0) then {
+	if (_side isEqualTo west) then {		//West Gear
+		//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+		switch(CTI_CAMO_ACTIVATION) do {
+			//case 1: {};
+			case 2: {//Desert
+				_t = _t 	+ [[[["CUP_arifle_M4A3_black",["","CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top",""],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_USMC_MCCUU_des_gloves",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_V_B_Eagle_SPC_Patrol",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["",[]]],["CUP_H_LWHv2_MARPAT_des_cov_fr",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			case 3: {//Jungle
+				_t = _t 	+ [[[["CUP_arifle_M4A3_black",["","CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top",""],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_USMC_MCCUU_gloves",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_V_B_Eagle_SPC_Patrol",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["",[]]],["CUP_H_LWHv2_MARPAT_cov_fr",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			case 4: {//Urban US
+				_t = _t 	+ [[[["CUP_arifle_M4A3_black",["","CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top",""],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_USArmy_ACU_Kneepad_Gloves_UCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_V_B_IOTV_UCP_Rifleman_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["",[]]],["CUP_H_USArmy_HelmetACH_UCP",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			//case 5: {};
+			case 6: {//multi light
+				_t = _t 	+ [[[["CUP_arifle_M4A3_black",["","CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top",""],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_USArmy_ACU_Gloves_OCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_V_B_IOTV_OCP_Rifleman_Deltoid_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["",[]]],["CUP_H_USArmy_HelmetACH_OCP",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			default {//multi dark
+				_t = _t 	+ [[[["CUP_arifle_M4A3_black",["","CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top",""],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_USArmy_ACU_Kneepad_Gloves_OEFCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_V_B_IOTV_OEFCP_Rifleman_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["",[]]],["CUP_H_USArmy_HelmetACH_OEFCP",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
 		};
-	};
-	case 1: {	//BW-Mod & BW add vs. RUS (CUP and/or RHS)
-		if (_side isEqualTo west) then {		//West Gear BW-Mod + BWadd
-		} else {								//East Gear RUS (CUP and/or RHS)
-			if(CTI_CUP_ADDON>0) then {
-				
-			} else {
-				
+	} else {								//East Gear
+		//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 1: {
+				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_Winter",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Winter",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			case 2: {
+				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_Desert",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Desert",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			case 3: {
+				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			case 4: {
+				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_Autumn",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			//case 5: {};
+			case 6: {
+				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_BeigeDigital",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			default {
+				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_Summer",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 			};
 		};
 	};
-	default {*/	//Cold-War (CUP and/or RHS)
-		if (_side isEqualTo west) then {		//West Gear
-			if(CTI_CUP_ADDON>0) then {
-				_t = _t 	+ [[[["CUP_arifle_M4A1",[],["CUP_30Rnd_556x45_Stanag"]]],[["CUP_U_B_BDUv2_dirty_base",["firstaidkit","firstaidkit"]],["CUP_V_B_Interceptor_Rifleman_M81",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["CUP_B_USMC_MOLLE",["CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]]],["CUP_H_USMC_BOONIE_WDL",""],[["", "CUP_Vector21Nite"],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
-			} else {
-				
-			};
-		} else {								//East Gear
-			if(CTI_CUP_ADDON>0) then {
-				_t = _t 	+ [[[["CUP_arifle_AK74_Early",[],["CUP_30Rnd_556x45_AK"]]],[["CUP_U_O_RUS_EMR_1",["firstaidkit","firstaidkit"]],["CUP_V_O_SLA_6B3_1_WDL",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK"]],["CUP_B_RUS_Backpack",["CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK","CUP_30Rnd_556x45_AK"]]],["CUP_H_RUS_6B27",""],[["", "binocular"],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
-			} else {
-				
-			};
-		};
-	/*};
-};*/
+};
+
 
 /*
 _t = _t 	+ [
