@@ -31,7 +31,7 @@ _part = _this select 0;
 _savemode = CTI_PERSISTANT;
 _savename = "";
 
-if(_savemode < 0) then {_savemode = _savemode * -1};
+if(_savemode < 0) then {_savemode = (_savemode*-1)};
 switch(_savemode) do {
 	case 2: {_savename = format["%1", missionName]};
 	case 3: {_savename = format["%1_%2", missionName,worldName]};
@@ -39,7 +39,7 @@ switch(_savemode) do {
 };
 
 if(_savemode > 0) then {
-	if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Start saving :<SAVE_%1> Part: %2", _savename, _part]] call CTI_CO_FNC_Log;};
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Start saving :<SAVE_%1> mode(%2) Part: %3", _savename, _savemode, _part]] call CTI_CO_FNC_Log;};
 	switch(_part) do {
 		case "towns": {
 			_towns=[];
