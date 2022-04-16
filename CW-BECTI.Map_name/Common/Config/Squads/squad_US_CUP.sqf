@@ -389,7 +389,17 @@ _matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_F
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M113A1_HQ_desert_USA", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		arm_to_add = [[format["%1CUP_B_M113A1_HQ_olive_USA", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M113A1_HQ_USA", _sid], 1, 40]];
+	};	
 	arm_to_add = [[format["%1CUP_B_AAV_Unarmed_USMC", _sid], 1, 40]];
+	
 	units_tracked append arm_to_add;
 };
 
@@ -398,19 +408,33 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	units_tracked = [];	//delete unarmed vehicles if max tier allow it
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		arm_to_add = [[format["%1CUP_B_M113_desert_USA", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M113A1_desert_USA", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		arm_to_add = [[format["%1CUP_B_M113A1_olive_USA", _sid], 1, 40]];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		arm_to_add = [[format["%1CUP_B_M113_USA", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M113A1_USA", _sid], 1, 40]];
 	};
 	arm_to_add pushBack [format["%1CUP_B_AAV_USMC", _sid], 1, 70];
+	
 	units_tracked append arm_to_add;
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M113A3_desert_USA", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		arm_to_add = [[format["%1CUP_B_M113A3_olive_USA", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M113A3_USA", _sid], 1, 40]];
+	};
 	arm_to_add = [[format["%1CUP_B_M163_USA", _sid], 1, 40]];
+	
 	units_tracked append arm_to_add;
 };
 

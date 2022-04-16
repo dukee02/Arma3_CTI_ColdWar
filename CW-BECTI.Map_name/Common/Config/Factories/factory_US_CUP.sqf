@@ -32,7 +32,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 //_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
 //if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
 //Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CUP_ADDON > 0) || _ai == CTI_US_ID) then {
+if ((CTI_CUP_ADDON > 1) || _ai == CTI_US_ID) then {
 	switch(CTI_CAMO_ACTIVATION) do {
 		case 2: {//desert camo active
 			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
