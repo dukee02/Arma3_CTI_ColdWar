@@ -133,6 +133,24 @@
 "CUP_acc_ANPEQ_2_Black_Top",
 "CUP_optic_CompM2_low",
 "CUP_optic_ACOG2",
+//GL
+this addItemToBackpack "CUP_1Rnd_HE_M203";
+this addItemToBackpack "CUP_1Rnd_HEDP_M203";
+this addItemToBackpack "CUP_1Rnd_StarCluster_White_M203";
+this addItemToBackpack "CUP_1Rnd_StarCluster_Red_M203";
+this addItemToBackpack "CUP_1Rnd_StarCluster_Green_M203";
+this addItemToBackpack "CUP_1Rnd_StarFlare_White_M203";
+this addItemToBackpack "CUP_1Rnd_StarFlare_Red_M203";
+this addItemToBackpack "CUP_1Rnd_StarFlare_Green_M203";
+this addItemToBackpack "CUP_FlareWhite_M203";
+this addItemToBackpack "CUP_FlareGreen_M203";
+this addItemToBackpack "CUP_FlareRed_M203";
+this addItemToBackpack "CUP_FlareYellow_M203";
+this addItemToBackpack "CUP_1Rnd_Smoke_M203";
+this addItemToBackpack "CUP_1Rnd_SmokeRed_M203";
+this addItemToBackpack "CUP_1Rnd_SmokeGreen_M203";
+this addItemToBackpack "CUP_1Rnd_SmokeYellow_M203";
+
 
 "CUP_launch_M136",
 
@@ -700,22 +718,6 @@ this addItemToBackpack "CUP_60Rnd_556x45_SureFire_Tracer_Yellow";
 this addItemToBackpack "150Rnd_556x45_Drum_Mag_F";
 this addItemToBackpack "150Rnd_556x45_Drum_Mag_Tracer_F";
 //grenades for underbarrel launchers
-this addItemToBackpack "CUP_1Rnd_HE_M203";
-this addItemToBackpack "CUP_1Rnd_HEDP_M203";
-this addItemToBackpack "CUP_1Rnd_StarCluster_White_M203";
-this addItemToBackpack "CUP_1Rnd_StarCluster_Red_M203";
-this addItemToBackpack "CUP_1Rnd_StarCluster_Green_M203";
-this addItemToBackpack "CUP_1Rnd_StarFlare_White_M203";
-this addItemToBackpack "CUP_1Rnd_StarFlare_Red_M203";
-this addItemToBackpack "CUP_1Rnd_StarFlare_Green_M203";
-this addItemToBackpack "CUP_FlareWhite_M203";
-this addItemToBackpack "CUP_FlareGreen_M203";
-this addItemToBackpack "CUP_FlareRed_M203";
-this addItemToBackpack "CUP_FlareYellow_M203";
-this addItemToBackpack "CUP_1Rnd_Smoke_M203";
-this addItemToBackpack "CUP_1Rnd_SmokeRed_M203";
-this addItemToBackpack "CUP_1Rnd_SmokeGreen_M203";
-this addItemToBackpack "CUP_1Rnd_SmokeYellow_M203";
 this addItemToBackpack "1Rnd_HE_Grenade_shell";
 this addItemToBackpack "UGL_FlareWhite_F";
 this addItemToBackpack "UGL_FlareGreen_F";

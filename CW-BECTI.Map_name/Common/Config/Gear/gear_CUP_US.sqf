@@ -54,51 +54,67 @@ _c pushBack "CUP_HandGrenade_M67";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,50] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_1Rnd_HE_GP25_M";
+_c pushBack "CUP_1Rnd_HE_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,50] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_IlumFlareWhite_GP25_M";
+_c pushBack "CUP_1Rnd_HEDP_M203";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,50] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_1Rnd_StarCluster_White_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_IlumFlareRed_GP25_M";
+_c pushBack "CUP_1Rnd_StarCluster_Red_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_IlumFlareGreen_GP25_M";
+_c pushBack "CUP_1Rnd_StarCluster_Green_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_FlareWhite_GP25_M";
+_c pushBack "CUP_1Rnd_StarFlare_White_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_FlareGreen_GP25_M";
+_c pushBack "CUP_1Rnd_StarFlare_Red_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_FlareRed_GP25_M";
+_c pushBack "CUP_1Rnd_StarFlare_Green_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_FlareYellow_GP25_M";
+_c pushBack "CUP_FlareWhite_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_1Rnd_SMOKE_GP25_M";
+_c pushBack "CUP_FlareGreen_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_1Rnd_SmokeRed_GP25_M";
+_c pushBack "CUP_FlareRed_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_1Rnd_SmokeGreen_GP25_M";
+_c pushBack "CUP_FlareYellow_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "CUP_1Rnd_SmokeYellow_GP25_M";
+_c pushBack "CUP_1Rnd_Smoke_M203";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_1Rnd_SmokeRed_M203";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_1Rnd_SmokeGreen_M203";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_1Rnd_SmokeYellow_M203";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10] call CTI_CO_FNC_GetCalculatedItemPrize);
 
