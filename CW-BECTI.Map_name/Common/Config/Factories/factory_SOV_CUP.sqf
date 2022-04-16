@@ -32,7 +32,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 //_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
 //if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
 //Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CUP_ADDON > 0) || _ai == CTI_SOV_ID) then {
+if ((CTI_CUP_ADDON > 1) || _ai == CTI_SOV_ID) then {
 	switch(CTI_CAMO_ACTIVATION) do {
 		case 1: {//winter camo active
 			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_Ratnik_Winter", _sid]];
@@ -550,12 +550,12 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1CUP_O_Mi8_RU", _sid];
 	_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];//Medic
+	_c pushBack format["%1CUP_O_Mi24_P_Dynamic_RU", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	_c pushBack format["%1CUP_O_Mi24_P_Dynamic_RU", _sid];
 	_c pushBack format["%1CUP_O_Mi24_V_Dynamic_RU", _sid];
 	_c pushBack format["%1CUP_O_MI6A_RU", _sid];
 	_c pushBack format["%1CUP_O_MI6T_RU", _sid];

@@ -465,7 +465,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 _matrix_cnt = [3, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	units_antiair = [[format["%1CUP_O_UAZ_AA_RU", _sid], 1, 40]];
+	units_antiair pushBack [format["%1CUP_O_UAZ_AA_RU", _sid], 1, 40];
 };
 
 _matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
@@ -474,8 +474,8 @@ _matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_
 _matrix_cnt = [3, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	units_tracked pushBack [format["%1CUP_O_2S6_RU", _sid], 1, 20];
-	units_tracked pushBack [format["%1CUP_O_2S6M_RU", _sid], 1, 20];
+	units_antiair pushBack [format["%1CUP_O_2S6_RU", _sid], 1, 40];
+	units_antiair pushBack [format["%1CUP_O_2S6M_RU", _sid], 1, 40];
 };
 
 _v pushBack "AntiAir";
