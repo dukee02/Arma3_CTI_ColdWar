@@ -82,6 +82,8 @@ if ((CTI_CUP_ADDON > 1) || _ai == CTI_US_ID) then {
 			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
 		};	
 	};
+	//1 pilot for all camos
+	missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_US_Pilot", _sid]];
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		//Set starting vehicles
