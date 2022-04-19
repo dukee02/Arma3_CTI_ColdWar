@@ -438,8 +438,6 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 	
-	_c pushBack format["%1CUP_O_UAZ_METIS_RU", _sid];			//Metris (ATGM)
-	_c pushBack format["%1CUP_O_BRDM2_RUS", _sid];				//MG + 2cm
 	_c pushBack format["%1CUP_O_BRDM2_HQ_RUS", _sid];			//MG	
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -448,6 +446,22 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 0;	
+	};
+	
+	_c pushBack format["%1CUP_O_UAZ_METIS_RU", _sid];			//Metris (ATGM)
+	_c pushBack format["%1CUP_O_BRDM2_RUS", _sid];				//MG + 2cm
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -486,8 +500,12 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1CUP_O_BTR60_Winter_RU", _sid];	//2cm + MG	
 	};
-	_c pushBack format["%1CUP_O_BTR60_RU", _sid];				//2cm + MG
-	_c pushBack format["%1CUP_O_BTR60_Green_RU", _sid];			//2cm + MG
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_O_BTR60_Green_RU", _sid];			//2cm + MG
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_BTR60_RU", _sid];				//2cm + MG
+	};
 	_c pushBack format["%1CUP_O_BM21_RU", _sid];				//Artytruck
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -543,11 +561,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_c pushBack format["%1CUP_O_BTR80_DESERT_RU", _sid];
 		_c pushBack format["%1CUP_O_BTR80A_DESERT_RU", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
-		_c pushBack format["%1CUP_O_BTR80_CAMO_RU", _sid];
-		_c pushBack format["%1CUP_O_BTR80A_CAMO_RU", _sid];
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1CUP_O_BTR80_GREEN_RU", _sid];
 		_c pushBack format["%1CUP_O_BTR80A_GREEN_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_BTR80_CAMO_RU", _sid];
+		_c pushBack format["%1CUP_O_BTR80A_CAMO_RU", _sid];
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;

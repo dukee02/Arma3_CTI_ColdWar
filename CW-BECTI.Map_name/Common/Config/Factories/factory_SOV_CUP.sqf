@@ -409,8 +409,12 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1CUP_O_BTR60_Winter_RU", _sid];	//2cm + MG	
 	};
-	_c pushBack format["%1CUP_O_BTR60_RU", _sid];				//2cm + MG
-	_c pushBack format["%1CUP_O_BTR60_Green_RU", _sid];			//2cm + MG
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_O_BTR60_Green_RU", _sid];			//2cm + MG
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_BTR60_RU", _sid];				//2cm + MG
+	};
 	_c pushBack format["%1CUP_O_BM21_RU", _sid];				//Artytruck
 };
 
@@ -435,11 +439,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1CUP_O_BTR80_DESERT_RU", _sid];
 		_c pushBack format["%1CUP_O_BTR80A_DESERT_RU", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//main camo active
-		_c pushBack format["%1CUP_O_BTR80_CAMO_RU", _sid];
-		_c pushBack format["%1CUP_O_BTR80A_CAMO_RU", _sid];
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1CUP_O_BTR80_GREEN_RU", _sid];
 		_c pushBack format["%1CUP_O_BTR80A_GREEN_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_BTR80_CAMO_RU", _sid];
+		_c pushBack format["%1CUP_O_BTR80A_CAMO_RU", _sid];
 	};
 };
 
