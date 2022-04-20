@@ -79,9 +79,15 @@ _westLocation = getMarkerPos "cti-spawn0";
 _eastLocation = getMarkerPos "cti-spawn0";
 
 while {_eastLocation distance _westLocation < _range &&_attempts <= 300} do {
-	_westLocation = _startup_locations_west select floor(random _total_west);
-	_eastLocation = _startup_locations_east select floor(random _total_east);
+	
+	_westLocation = selectRandom _startup_locations_west;	
+	_eastLocation = selectRandom _startup_locations_east;	
+	
+	//_westLocation = _startup_locations_west select floor(random _total_west);
+	//_eastLocation = _startup_locations_east select floor(random _total_east);
 	_attempts = _attempts + 1;
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Init\Init_Server.sqf", format["Initializing Startlocations: <%1 West:%2> / <%3 East:%4> attempts: %5", _total_west, _westLocation, _total_east, _eastLocation, _attempts]] call CTI_CO_FNC_Log;};
+
 };
 if (_attempts >= 300) then {
 	_westLocation = getMarkerPos "cti-spawn0";//W
@@ -127,8 +133,10 @@ if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\In
 	_logic setVariable ["cti_votetime", missionNamespace getVariable "CTI_GAMEPLAY_VOTE_TIME", true];
 	
 	//Set the loaded HQ positions if loading is active
-	[format["hq_%1", _side]] call CTI_SE_FNC_LOAD;
-	_startPos = (getposATL ((_side) call CTI_CO_FNC_GetSideHQ));
+	if (missionNamespace getvariable "CTI_PERSISTANT" > 0) then {
+		["hq", _side] call CTI_SE_FNC_LOAD;
+		_startPos = (getposATL ((_side) call CTI_CO_FNC_GetSideHQ));
+	};
 	
 	//--- Parameters specific.
 	if ((missionNamespace getVariable "CTI_ECONOMY_CURRENCY_SYSTEM") == 0) then {_logic setVariable ["cti_supply", missionNamespace getVariable Format ["CTI_ECONOMY_STARTUP_SUPPLY_%1", _side], true]};
@@ -298,7 +306,7 @@ if !(missionNamespace getvariable "CTI_PERSISTANT" == 0) then {
 		sleep 10; // prenvent loading without all town FSM stable
 		["upgrades"] call CTI_SE_FNC_LOAD;
 		["buildings"] call CTI_SE_FNC_LOAD;
-		//["funds"] call CTI_SE_FNC_LOAD;
+		["funds"] call CTI_SE_FNC_LOAD;
 	};
 	missionNamespace setVariable ["CTI_Server_Loaded", true, true];
 	0 spawn {

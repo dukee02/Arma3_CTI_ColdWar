@@ -15,19 +15,27 @@
 			["upgrades"]	load the saved upgrades
 			["buildings"]	load all buildings
 			["funds"]		load all funds
+	1	[Side]: (Optional) The Side which will be loaded
+	2	[Group]: (Optional) The group to be loaded
 	
   # RETURNED VALUE #
 	-
 	
   # SYNTAX #
 	[String] call CTI_SE_FNC_SAVE
+	[String,Side] call CTI_SE_FNC_SAVE
+	[String,Side,Group] call CTI_SE_FNC_SAVE
 	
   # EXAMPLE #
     ["towns"] call CTI_SE_FNC_SAVE
+	["hq",east] call CTI_SE_FNC_SAVE
+	["funds_group",east,group player] call CTI_SE_FNC_SAVE
 */
 private ["_part", "_savemode", "_savename"];
 
 _part = _this select 0;
+_side = if (count _this > 1) then {_this select 1} else {sideEmpty};
+_group = if (count _this > 2) then {_this select 2} else {grpNull};
 _savemode = CTI_PERSISTANT;
 _savename = "";
 
@@ -67,21 +75,21 @@ if(_savemode > 0) then {
 		case "buildings": {
 			{
 				//save Base Areas (what counts as the real bases)
-				_side = _x;			//only for a better readability
-				_logic= (_side) call CTI_CO_FNC_GetSideLogic;
-				profileNamespace setVariable [Format ["SAVE_%1_%2_AREAS", _savename, _side], (_logic getVariable "cti_structures_areas")];
+				_side_building = _x;			//only for a better readability
+				_logic= (_side_building) call CTI_CO_FNC_GetSideLogic;
+				profileNamespace setVariable [Format ["SAVE_%1_%2_AREAS", _savename, _side_building], (_logic getVariable "cti_structures_areas")];
 				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Base Areas saved to profile:<SAVE_%1_AREAS> Areas: <%2>", _savename, _logic getVariable "cti_structures_areas"]] call CTI_CO_FNC_Log;};
 				
 				//save the fabrics and other main base buildings
 				_structures_prepaired = [];
-				_structures=(_side) call CTI_CO_FNC_GetSideStructures;
+				_structures=(_side_building) call CTI_CO_FNC_GetSideStructures;
 				{
 					_structure_type = if (isNil{_x getVariable "cti_structure_type"}) then {""} else {_x getVariable "cti_structure_type"};
-					//profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICS", _savename, _side], [_structure_type, getPosATL _x, getDir _x, getDammage _x]];
+					//profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICS", _savename, _side_building], [_structure_type, getPosATL _x, getDir _x, getDammage _x]];
 					_structures_prepaired pushback [_structure_type, getPosATL _x, getDir _x, getDammage _x];
 					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Building saved to profile:<SAVE_%1_FABRICS> Building: <%2><%3,%4-%5>", _savename, _structure_type, getposATL _x, getDir _x, getDammage _x]] call CTI_CO_FNC_Log;};
 				} forEach _structures;
-				//profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICS", _savename, _side], _structures_prepaired];		//not needed
+				//profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICS", _savename, _side_building], _structures_prepaired];		//not needed
 				
 				//maybe we will save the WIP structures too ^^
 				//_structures_prepaired = [];																					//not needed
@@ -90,8 +98,8 @@ if(_savemode > 0) then {
 					_structures_prepaired pushback [_structure_type, getPosATL _x, getDir _x, getDammage _x];
 					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["WIP saved to profile:<SAVE_%1_FABRICSWIP> WIP: <%2><%3,%4-%5>", _savename, _structure_type, getposATL _x, getDir _x, getDammage _x]] call CTI_CO_FNC_Log;};
 				} forEach (_logic getVariable "cti_structures_wip");
-				//profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICSWIP", _savename, _side], _structures_prepaired];
-				profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICS", _savename, _side], _structures_prepaired];
+				//profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICSWIP", _savename, _side_building], _structures_prepaired];
+				profileNamespace setVariable [Format ["SAVE_%1_%2_FABRICS", _savename, _side_building], _structures_prepaired];
 				
 				//save all FOBs they placed
 				_fobs_prepaired = [];
@@ -100,7 +108,7 @@ if(_savemode > 0) then {
 					_fobs_prepaired pushback [_x getVariable "savename", getPosATL _x, getDir _x];
 					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Defences saved to profile:<SAVE_%1_DEFENSES> Defenses: <%2><%3,%4,%5>", _savename, _fob_name, getposATL _x, getDir _x]] call CTI_CO_FNC_Log;};
 				} forEach (_logic getVariable "cti_fobs");
-				profileNamespace setVariable [Format ["SAVE_%1_%2_FOBS", _savename, _side], _fobs_prepaired];
+				profileNamespace setVariable [Format ["SAVE_%1_%2_FOBS", _savename, _side_building], _fobs_prepaired];
 				
 				//save all defenses they placed
 				_defences_prepaired = [];
@@ -111,34 +119,40 @@ if(_savemode > 0) then {
 					_defences_prepaired pushback [_x getVariable "savename", getPosATL _x, getDir _x, _x getVariable "cti_aman_enabled"];
 					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Defences saved to profile:<SAVE_%1_DEFENSES> Defenses: <%2><%3,%4,%5>", _savename, _defense_name, getposATL _x, getDir _x, _defense_manned]] call CTI_CO_FNC_Log;};
 				} forEach (_logic getVariable "cti_defences");
-				profileNamespace setVariable [Format ["SAVE_%1_%2_DEFENSES", _savename, _side], _defences_prepaired];
+				profileNamespace setVariable [Format ["SAVE_%1_%2_DEFENSES", _savename, _side_building], _defences_prepaired];
 			} forEach [east,west];
 		};
 		case "funds": {
 			{
-				//profileNamespace setVariable [Format ["SAVE_%1_%2_", _savename, _side],_towns];
-				_side = _x;			//only for a better readability
-				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Side get saved to profile: <%1>", _side]] call CTI_CO_FNC_Log;};
+				//profileNamespace setVariable [Format ["SAVE_%1_%2_", _savename, _side_funds],_towns];
+				_side_funds = _x;			//only for a better readability
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Side get saved to profile: <%1>", _side_funds]] call CTI_CO_FNC_Log;};
 				
 				//save the supply value of the side
-				profileNamespace setVariable [Format ["SAVE_%1_%2_SUPPLY", _savename, _side], (_side) call CTI_CO_FNC_GetSideSupply];
-				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Side supply saved to profile:<SAVE_%1_SUPPLY> Supply: <%2>", _savename, (_side) call CTI_CO_FNC_GetSideSupply]] call CTI_CO_FNC_Log;};
+				profileNamespace setVariable [Format ["SAVE_%1_%2_SUPPLY", _savename, _side_funds], (_side_funds) call CTI_CO_FNC_GetSideSupply];
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Side supply saved to profile:<SAVE_%1_SUPPLY> Supply: <%2>", _savename, (_side_funds) call CTI_CO_FNC_GetSideSupply]] call CTI_CO_FNC_Log;};
 				
 				//save the funds of all teams and the commanders
-				profileNamespace setVariable [Format ["SAVE_%1_%2_FUNDSCOM", _savename, _side], (_side)call CTI_CO_FNC_GetFundsCommander];
-				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Commander funds saved to profile:<SAVE_%1_FUNDSCOM> Funds Com: <%2>", _savename, (_side)call CTI_CO_FNC_GetFundsCommander]] call CTI_CO_FNC_Log;};
+				profileNamespace setVariable [Format ["SAVE_%1_%2_FUNDSCOM", _savename, _side_funds], (_side_funds)call CTI_CO_FNC_GetFundsCommander];
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Commander funds saved to profile:<SAVE_%1_FUNDSCOM> Funds Com: <%2>", _savename, (_side_funds)call CTI_CO_FNC_GetFundsCommander]] call CTI_CO_FNC_Log;};
 				
-				//_groups = (_side) call CTI_CO_FNC_GetSideGroups;			//only active players
-				_logic= (_side) call CTI_CO_FNC_GetSideLogic;
+				//_groups = (_side_funds) call CTI_CO_FNC_GetSideGroups;			//only active players
+				_logic= (_side_funds) call CTI_CO_FNC_GetSideLogic;
 				_groups = _logic getVariable "cti_teams";
 				{
 					_groupnamefull = format ["%1", _x];
 					_groupnamecut = _groupnamefull splitString " ";
 					_groupname = _groupnamecut select 1;
-					profileNamespace setVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _side, _groupname], (_x) call CTI_CO_FNC_GetFundsTeam];
+					profileNamespace setVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _side_funds, _groupname], (_x) call CTI_CO_FNC_GetFundsTeam];
 					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SaveToProfile.sqf", format["Team funds saved to profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", _savename, _groupname, (_x) call CTI_CO_FNC_GetFundsTeam]] call CTI_CO_FNC_Log;};
 				} forEach (_groups);
 			} forEach [east,west];
+		};
+		case "funds_group": {
+			_groupnamefull = format ["%1", _group];
+			_groupnamecut = _groupnamefull splitString " ";
+			_groupname = _groupnamecut select 1;
+			profileNamespace setVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _side, _groupname], (_group) call CTI_CO_FNC_GetFundsTeam, true];
 		};
 		case "delete": {
 			profileNamespace setVariable [Format ["SAVE_%1_TOWNS", _savename], nil, true];
