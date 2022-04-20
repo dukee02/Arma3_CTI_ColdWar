@@ -17,7 +17,22 @@ _t = [];
 //_t = _t 	+ [[[["arifle_CTAR_blk_F",[],["30Rnd_580x42_Mag_Tracer_F"]]],[["U_O_CombatUniform_ocamo",["Medikit","Medikit"]],["V_BandollierB_cbr", ["HandGrenade","HandGrenade"]],["B_AssaultPack_ocamo", ["30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F","30Rnd_580x42_Mag_Tracer_F"]]],["H_HelmetO_ocamo",""],[[],["itemmap","","itemradio","ItemCompass","ItemWatch"]]]];
 //};
 
-if(CTI_CUP_ADDON>0) then {
+if(CTI_CWR3_ADDON >= 0) then {
+	if (_side isEqualTo west) then {		//West Gear
+		_t = _t 	+ [[[["CUP_arifle_M16A1",["","","",""],["CUP_30Rnd_556x45_Stanag"]]],[["cwr3_b_uniform_m81_woodland_early",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["cwr3_b_vest_alice_etool",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],["",[]]],["cwr3_b_headgear_m1_woodland_army_early",""],[["", ""],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+	} else {								//East Gear
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 2;
+			case 4: {//desert/urban camo active
+				_t = _t 	+ [[[["CUP_arifle_AK74",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK_M"]],["",[],[""]],["",[],[""]]],[["cwr3_o_uniform_m1969",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["",[]]],["cwr3_o_headgear_ssh68",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+			default {//main camo active
+				_t = _t 	+ [[[["CUP_arifle_AK74",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK_M"]],["",[],[""]],["",[],[""]]],[["cwr3_o_uniform_klmk_1957_birch_v1",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["",[]]],["cwr3_o_headgear_ssh68",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+			};
+		};
+	};
+};
+if(CTI_CUP_ADDON > 0) then {
 	if (_side isEqualTo west) then {		//West Gear
 		//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 		switch(CTI_CAMO_ACTIVATION) do {
@@ -43,8 +58,7 @@ if(CTI_CUP_ADDON>0) then {
 		//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 1: {
-				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_Winter",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Winter",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
-			};
+				};
 			case 2: {
 				_t = _t 	+ [[[["CUP_arifle_AK12_black",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK12_M"]],["",[],[""]],["",[],[""]]],[["CUP_U_O_RUS_Ratnik_Desert",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],["",[]]],["CUP_H_RUS_6B47_v2_GogglesUp_Desert",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 			};

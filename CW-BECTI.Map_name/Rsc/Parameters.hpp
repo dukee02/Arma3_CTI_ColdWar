@@ -29,6 +29,12 @@ class Params {
 		texts[] = {"Disabled","Enabled","set as main"};
 		default = 1;
 	};
+	class CTI_CWR3_ADDON {
+		title = "ADDON: Cold War Rearmed III Support - Vehicles west + east";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","set as main"};
+		default = 1;
+	};
 	/*class CTI_MAIN_ADDON {
 		title = "ADDON: Main Cold-War or BW untis (80s or modern)";
 		values[] = {-1,0,1};
@@ -145,8 +151,8 @@ class Params {
 	};*/
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
-		values[] = {-1,0};
-		texts[] = {"no changes","National Party of Chernarus (NPoC)"};
+		values[] = {-1,0,1};
+		texts[] = {"no changes","National Party of Chernarus (NPoC)","FIA"};
 		default = -1;
 	};
 	class CTI_WEST_TOWNS {

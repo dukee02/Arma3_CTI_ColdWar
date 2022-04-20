@@ -5,8 +5,6 @@
 
 cwr3_i_soldier_at_rpg7
 cwr3_i_soldier_aat_rpg7
-cwr3_i_soldier_aar
-cwr3_i_soldier_ar
 cwr3_i_soldier_hg
 cwr3_i_soldier_crew
 cwr3_i_soldier_driver
@@ -22,11 +20,12 @@ cwr3_i_soldier_vz58
 cwr3_i_soldier_captive
 cwr3_i_soldier_light
 
+cwr3_i_soldier_aar
+cwr3_i_soldier_ar
 cwr3_i_soldier_aa_strela
 cwr3_i_soldier_aaa_strela
 cwr3_i_soldier_at_rpg75
 cwr3_i_soldier_marksman
-cwr3_i_soldier_scout
 cwr3_i_soldier_amg
 cwr3_i_soldier_mg
 cwr3_i_soldier_gl
@@ -38,6 +37,7 @@ cwr3_i_soldier_pilot_jet
 cwr3_i_soldier_pilot_light
 cwr3_i_soldier_sl
 
+cwr3_i_soldier_scout
 cwr3_i_soldier_at_at4
 cwr3_i_soldier_aat_at4
 cwr3_i_soldier_sniper

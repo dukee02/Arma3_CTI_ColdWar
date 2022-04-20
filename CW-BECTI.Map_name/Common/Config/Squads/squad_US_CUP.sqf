@@ -23,19 +23,35 @@ _c = [];
 _s = [];
 _adds = 0;
 
-//--- Commander will assign those orders based on the force and the probability [type, strenght, {probability}, {Max per side}]
-missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_INFANTRY", _side], [["Infantry", 2, 40]]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_LIGHT", _side], [["Motorized", 2, 60]]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_HEAVY", _side], [["AntiAir", 1, 20], ["ArmoredMBT", 2, 80]]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_AIR", _side], [["Air", 1, 40]]];
+if(CTI_UPGRADE_MODE < 1) then {
+	//--- Commander will assign those orders based on the force and the probability [type, strenght, {probability}, {Max per side}]
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_INFANTRY", _side], [["InfantryCUP", 2, 40]]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_LIGHT", _side], [["MotorizedCUP", 2, 60]]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_HEAVY", _side], [["AntiAirCUP", 1, 20], ["ArmoredMBTCUP", 2, 80]]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_AIR", _side], [["AirCUP", 1, 40]]];
 
-missionNamespace setVariable [format["CTI_SQUADS_%1_TOWN_DEFENSE", _side], ["Infantry", "Motorized"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_TOWN_DEFENSE", _side], ["InfantryCUP", "MotorizedCUP", "ArmoredMBTCUP"]];
 
-//--- Those are used by the commander to determine the kind of unit an AI team has
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_INFANTRY", _side], ["Infantry"]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], ["Motorized"]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], ["AntiAir", "ArmoredMBT"]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], ["Air"]]; 
+	//--- Those are used by the commander to determine the kind of unit an AI team has
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_INFANTRY", _side], ["InfantryCUP"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], ["MotorizedCUP"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], ["AntiAirCUP", "ArmoredMBTCUP"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], ["AirCUP"]];
+} else {
+	//--- Commander will assign those orders based on the force and the probability [type, strenght, {probability}, {Max per side}]	
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_INFANTRY", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_CATEGORY_INFANTRY", _side]) + [["InfantryCUP", 2, 40]]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_LIGHT", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_CATEGORY_LIGHT", _side]) + [["MotorizedCUP", 2, 60]]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_HEAVY", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_CATEGORY_HEAVY", _side]) + [["AntiAirCUP", 1, 20], ["ArmoredMBTCUP", 2, 80]]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_AIR", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_CATEGORY_AIR", _side]) + [["AirCUP", 1, 40]]];
+
+	missionNamespace setVariable [format["CTI_SQUADS_%1_TOWN_DEFENSE", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_TOWN_DEFENSE", _side]) + ["InfantryCUP", "MotorizedCUP", "ArmoredMBTCUP"]];
+
+	//--- Those are used by the commander to determine the kind of unit an AI team has
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_INFANTRY", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_KIND_INFANTRY", _side]) + ["InfantryCUP"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_KIND_LIGHT", _side]) + ["MotorizedCUP"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_KIND_HEAVY", _side]) + ["AntiAirCUP", "ArmoredMBTCUP"]];
+	missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], (missionNamespace getVariable format["CTI_SQUADS_%1_KIND_AIR", _side]) + ["AirCUP"]];
+};   
 
 //*********************************************************************************************************************************************
 //											Infantry units																					  *
@@ -232,8 +248,8 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	units_infantry append inf_to_add;
 };
 
-_v pushBack "Infantry";
-_t pushBack "Infantry";
+_v pushBack "InfantryCUP";
+_t pushBack "[CUP] Infantry";
 _p pushBack units_infantry;
 _f pushBack CTI_BARRACKS;
 _m pushBack 100;
@@ -369,8 +385,8 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	units_wheeled append mot_to_add;
 };
 
-_v pushBack "Motorized";
-_t pushBack "Motorized";
+_v pushBack "MotorizedCUP";
+_t pushBack "[CUP] Motorized";
 _p pushBack units_wheeled;
 _f pushBack CTI_LIGHT;
 _m pushBack 200;
@@ -491,8 +507,8 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	units_tracked append arm_to_add;
 };
 
-_v pushBack "ArmoredMBT";
-_t pushBack "Tanks";
+_v pushBack "ArmoredMBTCUP";
+_t pushBack "[CUP] Tanks";
 _p pushBack units_tracked;
 _f pushBack CTI_HEAVY;
 _m pushBack 500;
@@ -535,8 +551,8 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	units_antiair append aa_to_add;
 };
 
-_v pushBack "AntiAir";
-_t pushBack "AntiAir";
+_v pushBack "AntiAirCUP";
+_t pushBack "[CUP] AntiAir";
 _p pushBack units_antiair;
 _f pushBack CTI_LIGHT;
 _m pushBack 300;
@@ -617,8 +633,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	units_air append air_to_add;
 };
 
-_v pushBack "Air";
-_t pushBack "Air";
+_v pushBack "AirCUP";
+_t pushBack "[CUP] Air";
 _p pushBack units_air;
 _f pushBack CTI_AIR;
 _m pushBack 1000;

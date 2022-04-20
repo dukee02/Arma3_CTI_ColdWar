@@ -59,7 +59,11 @@ rearmObjects[] = {
 	"rhs_gaz66_ammo_vdv",
 	"CUP_I_MTVR_Ammo_RACS",
 	"CUP_B_MTVR_Ammo_USA",
-	"CUP_B_MTVR_Ammo_USMC"
+	"CUP_B_MTVR_Ammo_USMC",
+	"CUP_B_M113A3_Reammo_USA",
+	"CUP_O_Kamaz_Reammo_RU",
+	//"cwr3_b_m939",
+	"cwr3_o_ural_reammo"
 	};
 
 //Distance needed from rearmObjects[]

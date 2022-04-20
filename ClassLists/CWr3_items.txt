@@ -1,0 +1,587 @@
+//---------------US------------------------------------------------------
+
+
+this addWeapon "cwr3_glaunch_mm1";
+this addPrimaryWeaponItem "cwr3_12rnd_mm1_m";
+this addItemToBackpack "CUP_1Rnd_HE_M203";
+
+
+this addWeapon "cwr3_arifle_xms";
+this addWeapon "cwr3_arifle_xms_m203";
+this addPrimaryWeaponItem "cwr3_optic_xms_dot";
+this addPrimaryWeaponItem "cwr3_optic_xms_cross";
+this addPrimaryWeaponItem "CUP_30Rnd_556x45_Stanag";
+this addPrimaryWeaponItem "CUP_1Rnd_HE_M203";
+
+
+this addWeapon "cwr3_launch_m72a3";
+
+this addWeapon "cwr3_launch_m67_rcl";
+this addSecondaryWeaponItem "cwr3_m67_rcl_heat_m";
+
+this addWeapon "cwr3_launch_carlgustaf";
+this addSecondaryWeaponItem "CUP_optic_MAAWS_Scope";
+this addItemToBackpack "cwr3_carlgustaf_heat_m";
+this addItemToBackpack "cwr3_carlgustaf_hedp_m";
+this addItemToBackpack "CUP_MAAWS_HEAT_M";
+this addItemToBackpack "CUP_MAAWS_HEDP_M";
+this addItemToBackpack "MRAWS_HEAT55_F";
+this addItemToBackpack "MRAWS_HE_F";
+this addItemToBackpack "MRAWS_HEAT_F";
+
+this addWeapon "cwr3_launch_redeye";
+
+
+
+this forceAddUniform "cwr3_b_uniform_dcu";
+this forceAddUniform "cwr3_b_uniform_dcu_rolled";
+this forceAddUniform "cwr3_b_uniform_dcu_tee";
+this forceAddUniform "cwr3_b_uniform_desert_6color";
+this forceAddUniform "cwr3_b_uniform_desert_6color_rolled";
+this forceAddUniform "cwr3_b_uniform_desert_6color_tee";
+this forceAddUniform "cwr3_b_uniform_black_gloves";
+this forceAddUniform "cwr3_b_uniform_black_gloves_noflag";
+this forceAddUniform "cwr3_b_uniform_black_rolled_gloves";
+this forceAddUniform "cwr3_b_uniform_ERDL";
+this forceAddUniform "cwr3_b_uniform_ERDL_rolled";
+this forceAddUniform "cwr3_b_uniform_ERDL_tee";
+this forceAddUniform "cwr3_b_uniform_m81_woodland";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_early";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_gloves_early";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_gloves_sf_early";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_gloves";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_rolled";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_rolled_gloves";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_rolled_gloves_sf";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_tee";
+this forceAddUniform "cwr3_b_uniform_m81_woodland_gloves_sf";
+this forceAddUniform "cwr3_b_uniform_og107";
+this forceAddUniform "cwr3_b_uniform_og107_noflag";
+this forceAddUniform "cwr3_b_uniform_og107_rolled";
+this forceAddUniform "cwr3_b_uniform_og107_rolled_gloves";
+this forceAddUniform "cwr3_b_uniform_og107_tee";
+this forceAddUniform "cwr3_b_uniform_winter";
+this forceAddUniform "cwr3_b_uniform_tanksuit";
+this forceAddUniform "cwr3_b_uniform_pilot_black";
+this forceAddUniform "cwr3_b_uniform_pilot_sf";
+this forceAddUniform "cwr3_b_uniform_pilot";
+this forceAddUniform "cwr3_b_uniform_pilot_jet";
+
+this forceAddUniform "cwr3_b_vest_ghillie_des";
+this forceAddUniform "cwr3_b_camel_pilot_uniform";
+
+
+
+this addHeadgear "cwr3_b_headgear_boonie_dcu";
+this addHeadgear "cwr3_b_headgear_boonie_desert_6color";
+this addHeadgear "cwr3_b_headgear_boonie_m81_woodland";
+this addHeadgear "cwr3_b_headgear_boonie_m81_woodland_early";
+this addHeadgear "cwr3_b_headgear_boonie_m81_sf_woodland_early";
+this addHeadgear "cwr3_b_headgear_boonie_m81_sf_woodland";
+this addHeadgear "cwr3_b_headgear_boonie_og107";
+this addHeadgear "cwr3_b_headgear_cap_dcu";
+this addHeadgear "cwr3_b_headgear_cap_desert_6color";
+this addHeadgear "cwr3_b_headgear_cap_m81_woodland";
+this addHeadgear "cwr3_b_headgear_cap_m81_woodland_2lt";
+this addHeadgear "cwr3_b_headgear_cap_m81_woodland_early";
+this addHeadgear "cwr3_b_headgear_cap_m81_woodland_early_2lt";
+this addHeadgear "cwr3_b_headgear_cap_m81_woodland_early_majgen";
+this addHeadgear "cwr3_b_headgear_cap_m81_sf_woodland_early";
+this addHeadgear "cwr3_b_headgear_cap_m81_woodland_majgen";
+this addHeadgear "cwr3_b_headgear_cap_m81_sf_woodland";
+this addHeadgear "cwr3_b_headgear_cap_og107";
+this addHeadgear "cwr3_b_headgear_cvc";
+this addHeadgear "cwr3_b_headgear_cvc_goggles";
+this addHeadgear "cwr3_b_headgear_m1_desert_6color";
+this addHeadgear "cwr3_b_headgear_m1_cover_net";
+this addHeadgear "cwr3_b_headgear_m1_erdl";
+this addHeadgear "cwr3_b_headgear_m1_goggles_erdl";
+this addHeadgear "cwr3_b_headgear_m1_woodland_army_1985";
+this addHeadgear "cwr3_b_headgear_m1_woodland_army_early";
+this addHeadgear "cwr3_b_headgear_m1_goggles_woodland_army_early";
+this addHeadgear "cwr3_b_headgear_m1_goggles_woodland_army_1985";
+this addHeadgear "cwr3_b_headgear_m1_mitchell";
+this addHeadgear "cwr3_b_headgear_m1_goggles_mitchell";
+this addHeadgear "cwr3_b_headgear_m1_olive";
+this addHeadgear "cwr3_b_headgear_pasgt_dcu";
+this addHeadgear "cwr3_b_headgear_pasgt_dcu_goggles";
+this addHeadgear "cwr3_b_headgear_pasgt_dcu_rhino";
+this addHeadgear "cwr3_b_headgear_pasgt_dcu_rhino_goggles";
+this addHeadgear "cwr3_b_headgear_pasgt_desert_6color";
+this addHeadgear "cwr3_b_headgear_pasgt_desert_6color_goggles";
+this addHeadgear "cwr3_b_headgear_pasgt_desert_6color_rhino";
+this addHeadgear "cwr3_b_headgear_pasgt_desert_6color_rhino_goggles";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_2lt";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_camonet";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_early";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_goggles";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_goggles_early";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_majgen";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_net";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_rhino";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_rhino_goggles";
+this addHeadgear "cwr3_b_headgear_pasgt_m81_woodland_scrim";
+this addHeadgear "cwr3_b_headgear_pasgt_winter";
+this addHeadgear "cwr3_b_headgear_pasgt_winter_goggles";
+this addHeadgear "cwr3_b_headgear_protec_full";
+this addHeadgear "cwr3_b_headgear_protec_full_goggles";
+this addHeadgear "cwr3_b_headgear_protec_full_plain";
+this addHeadgear "cwr3_b_headgear_protec_half";
+this addHeadgear "cwr3_b_headgear_protec_half_goggles";
+this addHeadgear "cwr3_b_headgear_protec_half_headset";
+this addHeadgear "cwr3_b_headgear_protec_half_headset_goggles";
+this addHeadgear "cwr3_b_headgear_protec_half_plain";
+this addHeadgear "cwr3_i_headgear_cap_woodland";
+this addHeadgear "cwr3_i_headgear_cap_og107";
+this addHeadgear "cwr3_b_headgear_pilot";
+this addHeadgear "cwr3_b_headgear_pilot_visor_white";
+
+
+this addVest "cwr3_b_vest_beltkit_officer";
+this addVest "cwr3_b_vest_alice_ar";
+this addVest "cwr3_b_vest_alice_crew";
+this addVest "cwr3_b_vest_alice_etool";
+this addVest "cwr3_b_vest_alice_gl";
+this addVest "cwr3_b_vest_alice_light";
+this addVest "cwr3_b_vest_alice_mg";
+this addVest "cwr3_b_vest_alice_officer";
+this addVest "cwr3_b_vest_alice";
+this addVest "cwr3_b_vest_anite";
+this addVest "cwr3_b_vest_lbv";
+this addVest "cwr3_b_vest_lbv_alice";
+this addVest "cwr3_b_vest_pilot";
+
+this addVest "cwr3_b_vest_pasgt_6color_desert";
+this addVest "cwr3_b_vest_pasgt_woodland";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert_ar";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert_etool";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert_gl";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert_light";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert_mg";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert_officer";
+this addVest "cwr3_b_vest_pasgt_alice_6color_desert";
+this addVest "cwr3_b_vest_pasgt_alice_black";
+this addVest "cwr3_b_vest_pasgt_alice_woodland_ar";
+this addVest "cwr3_b_vest_pasgt_alice_woodland_etool";
+this addVest "cwr3_b_vest_pasgt_alice_woodland_gl";
+this addVest "cwr3_b_vest_pasgt_alice_woodland_light";
+this addVest "cwr3_b_vest_pasgt_alice_woodland_mg";
+this addVest "cwr3_b_vest_pasgt_alice_woodland_officer";
+this addVest "cwr3_b_vest_pasgt_alice_woodland";
+this addVest "cwr3_b_vest_pasgt_alice_od_crew";
+this addVest "cwr3_b_vest_pasgt_alice_anite_black";
+this addVest "cwr3_b_vest_pasgt_alice_anite_m81";
+this addVest "cwr3_b_vest_pasgt_alice_anite_od";
+this addVest "cwr3_b_vest_pasgt_lbv_black";
+this addVest "cwr3_b_vest_pasgt_lbv_woodland";
+this addVest "cwr3_b_vest_pasgt_lbv_olive";
+this addVest "cwr3_b_vest_pasgt_lbv_alice_black";
+this addVest "cwr3_b_vest_pasgt_lbv_alice_woodland";
+this addVest "cwr3_b_vest_pasgt_lbv_alice_olive";
+
+this addVest "cwr3_b_vest_tgfaust_black";
+this addVest "cwr3_b_vest_tgfaust_od";
+this addVest "cwr3_b_vest_tgfaust_alice_black";
+this addVest "cwr3_b_vest_tgfaust_alice_od";
+this addVest "cwr3_b_vest_tgfaust_anite_black";
+this addVest "cwr3_b_vest_tgfaust_anite_od";
+
+
+this addBackpack "cwr3_b_backpack_alice_black";
+this addBackpack "cwr3_b_backpack_alice";
+this addBackpack "cwr3_b_backpack_alice_medic_empty";
+this addBackpack "cwr3_b_backpack_radio";
+
+
+
+//-----------------------------------------------------RUSSIA------------------------------------------------------------------------------------------------------
+
+
+this addWeapon "cwr3_launch_at4";
+this addSecondaryWeaponItem "cwr3_at4_heat_m";
+this addItemToBackpack "cwr3_at4_thermobaric_m";
+
+
+
+this forceAddUniform "cwr3_o_camel_pilot_uniform";
+
+this forceAddUniform "cwr3_o_uniform_klmk_1954_birch_v3";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_birch_v3";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_birch_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_birch_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_branches_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_branches_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_desert_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_leaves_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_leaves_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_palm_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_palm_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_splats_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_splats_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_birch_v1";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_birch_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_splats_v2";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_splats_v1";
+this forceAddUniform "cwr3_o_uniform_kzs_v2";
+this forceAddUniform "cwr3_o_uniform_kzs_v1";
+this forceAddUniform "cwr3_o_uniform_klaksa_coverall";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_birch_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_splats_night_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_palm_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1954_splats_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_birch_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_birch_night_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_reddawn_spn";
+this forceAddUniform "cwr3_o_uniform_klmk_1957_splats_spn";
+this forceAddUniform "cwr3_o_uniform_kzs_spn";
+this forceAddUniform "cwr3_o_uniform_pilot";
+this forceAddUniform "cwr3_o_uniform_pilot_ttsko";
+this forceAddUniform "cwr3_o_uniform_pilot_jet";
+
+this forceAddUniform "cwr3_o_vest_ghillie";
+
+this forceAddUniform "cwr3_o_uniform_m1969";
+this forceAddUniform "cwr3_o_uniform_m1969_collar";
+this forceAddUniform "cwr3_o_uniform_m1969_rolled";
+this forceAddUniform "cwr3_o_uniform_m1982_lacers";
+this forceAddUniform "cwr3_o_uniform_m1982_lacers_rolled_officer";
+this forceAddUniform "cwr3_o_uniform_m1982_lacers_rolled";
+this forceAddUniform "cwr3_o_uniform_m1982";
+this forceAddUniform "cwr3_o_uniform_m1982_rolled_officer";
+this forceAddUniform "cwr3_o_uniform_m1982_rolled";
+this forceAddUniform "cwr3_o_uniform_m1983_ttsko";
+this forceAddUniform "cwr3_o_uniform_m1983_rolled_ttsko";
+this forceAddUniform "cwr3_o_uniform_m1983_rolled_ttsko_officer";
+this forceAddUniform "cwr3_o_uniform_m1983_coverall_kzs";
+this forceAddUniform "cwr3_o_uniform_m1972_apc";
+this forceAddUniform "cwr3_o_uniform_m1982_apc";
+this forceAddUniform "cwr3_o_uniform_m1972_tanker";
+this forceAddUniform "cwr3_o_uniform_m1982_tanker";
+
+
+this addHeadgear "cwr3_o_bandanna_klmk";
+this addHeadgear "cwr3_o_bandanna_od";
+this addHeadgear "cwr3_o_beret_tank";
+this addHeadgear "cwr3_o_headgear_officer_cap";
+this addHeadgear "cwr3_o_headgear_officer_cap_field";
+this addHeadgear "cwr3_o_headgear_sidecap_m1973";
+this addHeadgear "cwr3_o_headgear_sidecap_m1973_field";
+this addHeadgear "cwr3_o_headgear_fieldcap_m1982_v2";
+this addHeadgear "cwr3_o_headgear_fieldcap_m1982";
+cwr3_o_headgear_fieldcap_ttsko
+cwr3_o_headgear_fieldcap_ttsko_v2
+this addHeadgear "cwr3_o_headgear_ssh68";
+this addHeadgear "cwr3_o_headgear_ssh68_camo";
+this addHeadgear "cwr3_o_headgear_ssh68_cover_klmk";
+this addHeadgear "cwr3_o_headgear_ssh68_cover";
+this addHeadgear "cwr3_o_headgear_ssh68_net";
+this addHeadgear "cwr3_o_headgear_ssh68_winter";
+this addHeadgear "cwr3_o_headgear_tsh3";
+this addHeadgear "cwr3_o_headgear_tsh4";
+this addHeadgear "cwr3_o_headgear_tsh4_tan";
+this addHeadgear "cwr3_o_ushanka";
+this addHeadgear "cwr3_o_headgear_zsh5";
+this addHeadgear "cwr3_o_headgear_zsh5_visor";
+
+
+this addVest "cwr3_o_vest_6b2";
+this addVest "cwr3_o_vest_6b2_ak74";
+this addVest "cwr3_o_vest_6b2_chicom_ak74";
+this addVest "cwr3_o_vest_6b2_chicom_light_ak74";
+this addVest "cwr3_o_vest_6b2_mg";
+this addVest "cwr3_o_vest_6b2_svd";
+this addVest "cwr3_o_vest_6b2_medic";
+this addVest "cwr3_o_vest_6b2_officer";
+this addVest "cwr3_o_vest_6b2_sapper";
+this addVest "cwr3_o_vest_6b2_gl";
+this addVest "cwr3_o_vest_beltkit_officer";
+this addVest "cwr3_o_vest_beltkit_officer_bino";
+this addVest "cwr3_o_vest_beltkit_ak74";
+this addVest "cwr3_o_vest_chicom_ak74";
+this addVest "cwr3_o_vest_chicom_beltkit_ak74";
+this addVest "cwr3_o_vest_chicom_beltkit_light_ak74";
+this addVest "cwr3_o_vest_chicom_beltkit_mg";
+this addVest "cwr3_o_vest_chicom_beltkit_medic";
+this addVest "cwr3_o_vest_chicom_beltkit_sapper";
+this addVest "cwr3_o_vest_chicom_beltkit_gl";
+this addVest "cwr3_o_vest_harness_ak74";
+this addVest "cwr3_o_vest_harness_mg";
+this addVest "cwr3_o_vest_harness_svd";
+this addVest "cwr3_o_vest_harness_medic";
+this addVest "cwr3_o_vest_harness_officer";
+this addVest "cwr3_o_vest_harness_sapper";
+this addVest "cwr3_o_vest_harness_gl";
+
+
+
+this addBackpack "cwr3_o_backpack_harness_roll";
+this addBackpack "cwr3_o_backpack_rd54";
+this addBackpack "cwr3_o_backpack_rd54_medic_empty";
+this addBackpack "cwr3_o_backpack_rd54_r148";
+this addBackpack "cwr3_o_backpack_rpg7";
+this addBackpack "cwr3_o_backpack_gasmask";
+this addBackpack "cwr3_o_backpack_veshmeshok";
+this addBackpack "cwr3_o_backpack_veshmeshok_medic_empty";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+this addWeapon "cwr3_hgun_aps";
+this addHandgunItem "cwr3_20rnd_9x18_aps_m";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+this addWeapon "cwr3_arifle_akm";
+this addItemToBackpack "30Rnd_762x39_Mag_F";
+this addItemToBackpack "30Rnd_762x39_Mag_Green_F";
+this addItemToBackpack "30Rnd_762x39_Mag_Tracer_F";
+this addItemToBackpack "30Rnd_762x39_Mag_Tracer_Green_F";
+
+
+
+
+this addWeapon "cwr3_arifle_fnfal_hlag";
+this addWeapon "cwr3_arifle_fnfalo";
+this addPrimaryWeaponItem "cwr3_optic_krr";
+this addItemToBackpack "CUP_20Rnd_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Yellow_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Red_Tracer_762x51_FNFAL_M";
+this addItemToBackpack "CUP_20Rnd_TE1_Green_Tracer_762x51_FNFAL_M";
+
+
+
+
+this addWeapon "cwr3_arifle_l1a1";
+this addWeapon "cwr3_arifle_l1a1_wood";
+this addPrimaryWeaponItem "cwr3_optic_suit";
+this addPrimaryWeaponItem "cwr3_optic_iws";
+this addPrimaryWeaponItem "CUP_20Rnd_762x51_FNFAL_M";
+
+
+
+
+this addWeapon "cwr3_smg_sterling";
+this addWeapon "cwr3_smg_sterling_sd";
+this addPrimaryWeaponItem "cwr3_30rnd_sterling_m";
+
+
+
+this addWeapon "cwr3_srifle_l42a1";
+this addPrimaryWeaponItem "CUP_optic_no23mk2";
+this addItemToBackpack "CUP_1Rnd_762x51_CZ584";
+this addItemToBackpack "CUP_5Rnd_762x51_M24";
+
+
+
+this addWeapon "cwr3_lmg_bren";
+this addPrimaryWeaponItem "cwr3_30rnd_762x51_bren_m";
+
+
+
+
+
+
+
+
+this addWeapon "cwr3_smg_uzi";
+this addItemToBackpack "CUP_32Rnd_9x19_UZI_M";
+this addItemToBackpack "CUP_72Rnd_9x19_UZI_M";
+this addItemToBackpack "CUP_30Rnd_9x19_UZI";
+
+
+
+this addWeapon "cwr3_arifle_xm177e2";
+this addWeapon "cwr3_arifle_xm177e2_m203";
+this addPrimaryWeaponItem "CUP_1Rnd_HE_M203";
+this addPrimaryWeaponItem "CUP_30Rnd_556x45_Stanag";
+
+
+
+
+
+
+
+this addWeapon "cwr3_arifle_xr47";
+this addWeapon "cwr3_arifle_xr74";
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
+this addWeapon "cwr3_launch_rpg75";
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//uniforms
+
+this forceAddUniform "cwr3_c_camel_pilot_uniform";
+this forceAddUniform "cwr3_i_camel_pilot_uniform";
+
+
+
+this forceAddUniform "cwr3_i_uniform_alpenflage";
+this forceAddUniform "cwr3_i_uniform_alpenflage_flecktarn";
+this forceAddUniform "cwr3_i_uniform_alpenflage_gloves";
+this forceAddUniform "cwr3_i_uniform_alpenflage_og107";
+this forceAddUniform "cwr3_i_uniform_alpenflage_rolled";
+this forceAddUniform "cwr3_i_uniform_black_fleckerlteppich";
+this forceAddUniform "cwr3_i_uniform_blumentarn";
+this forceAddUniform "cwr3_i_uniform_dpm_flecktarn";
+this forceAddUniform "cwr3_i_uniform_dpm_gloves";
+this forceAddUniform "cwr3_i_uniform_dpm_og107_gloves";
+this forceAddUniform "cwr3_i_uniform_dpm_woodland";
+this forceAddUniform "cwr3_i_uniform_fleckerlteppich";
+this forceAddUniform "cwr3_i_uniform_fleckerlteppich_steingrau";
+this forceAddUniform "cwr3_i_uniform_fleckerlteppich_winter_gloves";
+this forceAddUniform "cwr3_i_uniform_flecktarn";
+this forceAddUniform "cwr3_i_uniform_flecktarn_p60";
+this forceAddUniform "cwr3_i_uniform_jigsaw_rolled";
+this forceAddUniform "cwr3_i_uniform_kzmp_flecktarn";
+this forceAddUniform "cwr3_i_uniform_M62";
+this forceAddUniform "cwr3_i_uniform_M62_KZMP";
+this forceAddUniform "cwr3_i_uniform_mol_m62";
+this forceAddUniform "cwr3_i_uniform_mol_p60";
+this forceAddUniform "cwr3_i_uniform_p60_kzmp";
+this forceAddUniform "cwr3_i_uniform_og107";
+this forceAddUniform "cwr3_i_uniform_og107_woodland";
+this forceAddUniform "cwr3_i_uniform_splitter_weathered";
+this forceAddUniform "cwr3_i_uniform_splitter_blumentarn_gloves";
+this forceAddUniform "cwr3_i_uniform_splitter_og107";
+this forceAddUniform "cwr3_i_uniform_steingrau_mol";
+this forceAddUniform "cwr3_i_uniform_winter_gloves";
+this forceAddUniform "cwr3_i_uniform_winter_splitter_gloves";
+this forceAddUniform "cwr3_i_uniform_winter_woodland_gloves";
+this forceAddUniform "cwr3_i_uniform_woodland_alpenflage";
+this forceAddUniform "cwr3_i_uniform_coverall";
+this forceAddUniform "cwr3_i_uniform_coverall_grey";
+
+
+
+this forceAddUniform "cwr3_c_pilot_uniform";
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//vests
+
+
+
+
+this addVest "cwr3_i_vest_58webbing";
+this addVest "cwr3_i_vest_anite_blk";
+this addVest "cwr3_i_vest_anite_khk";
+this addVest "cwr3_i_vest_chicom";
+this addVest "cwr3_i_vest_lbv";
+this addVest "cwr3_i_vest_lbv_mg";
+this addVest "cwr3_i_vest_lbv_mg_olive";
+this addVest "cwr3_i_vest_lbv_officer";
+this addVest "cwr3_i_vest_lbv_olive";
+
+
+
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//backpacks
+
+
+this addBackpack "cwr3_i_backpack";
+this addBackpack "cwr3_i_backpack_medic_empty";
+this addBackpack "cwr3_i_bergen_backpack_dpm";
+this addBackpack "cwr3_i_bergen_backpack_khaki";
+this addBackpack "cwr3_i_bergen_backpack_od";
+
+this addBackpack "cwr3_b_backpack_m5_medic_empty";
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//headgear
+
+
+this addHeadgear "cwr3_c_headgear_camelpilot_hat";
+this addHeadgear "cwr3_nogova_policecap_01";
+
+
+
+this addHeadgear "cwr3_i_headgear_beanie_black";
+this addHeadgear "cwr3_i_headgear_beanie_khaki";
+this addHeadgear "cwr3_i_headgear_beanie_od";
+this addHeadgear "cwr3_i_headgear_beret_02_black_fia";
+this addHeadgear "cwr3_i_headgear_beret_01_blue_fia";
+this addHeadgear "cwr3_i_headgear_beret_01_brown_fia";
+this addHeadgear "cwr3_i_headgear_beret_02_green_fia";
+this addHeadgear "cwr3_i_headgear_beret_02_km";
+this addHeadgear "cwr3_i_headgear_beret_04_olive_fia";
+this addHeadgear "cwr3_i_headgear_beret_02_headset_black_fia";
+this addHeadgear "cwr3_i_headgear_beret_02_headset_green_fia";
+this addHeadgear "cwr3_i_headgear_boonie_alpenflage";
+this addHeadgear "cwr3_i_headgear_boonie_erdl";
+this addHeadgear "cwr3_i_headgear_boonie_flecktarn";
+this addHeadgear "cwr3_i_headgear_boonie_splitter";
+this addHeadgear "cwr3_i_headgear_boonie_woodland";
+this addHeadgear "cwr3_i_headgear_boonie_rolled_alpenflage";
+this addHeadgear "cwr3_i_headgear_boonie_rolled_fleckerlteppich";
+this addHeadgear "cwr3_i_headgear_boonie_rolled_flecktarn";
+this addHeadgear "cwr3_i_headgear_boonie_rolled_og107";
+this addHeadgear "cwr3_i_headgear_boonie_rolled_p60";
+this addHeadgear "cwr3_b_headgear_headband_woodland";
+this addHeadgear "cwr3_b_headgear_headband_od";
+this addHeadgear "cwr3_i_headgear_leather_hat";
+this addHeadgear "cwr3_i_headgear_cap_alpenflage";
+this addHeadgear "cwr3_i_headgear_cap_fleckerlteppich";
+this addHeadgear "cwr3_i_headgear_cap_flecktarn";
+this addHeadgear "cwr3_i_headgear_cap_khaki";
+this addHeadgear "cwr3_i_headgear_cap_p60";
+this addHeadgear "cwr3_i_headgear_cap_steingrau";
+
+
+
+
+
+//----------------------------------------------------------------------------------------------------------------------------------------------------------------
+//others
+
+
+this addGoggles "cwr3_b_facewear_balaclava_black";
+this addGoggles "cwr3_b_facewear_balaclava_khaki";
+this addGoggles "cwr3_b_facewear_balaclava_olive";
+this addGoggles "cwr3_b_facewear_scrimnet_scarf_olive";
+this addGoggles "cwr3_b_facewear_goggles";
+
+
+this linkItem "cwr3_o_nvg_pnv57";
+this linkItem "cwr3_o_nvg_pnv57_tsh3";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

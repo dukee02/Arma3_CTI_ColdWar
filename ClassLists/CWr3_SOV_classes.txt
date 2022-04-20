@@ -5,8 +5,6 @@
 cwr3_o_soldier82_at_rpg7
 cwr3_o_soldier82_aat_rpg7
 cwr3_o_soldier82_hg
-cwr3_o_soldier82_ar
-cwr3_o_soldier82_amgs
 cwr3_o_soldier82_driver
 cwr3_o_soldier82_sapper
 cwr3_o_soldier82_engineer
@@ -17,6 +15,8 @@ cwr3_o_soldier82_backpack
 cwr3_o_soldier82_captive
 cwr3_o_soldier82_light
 
+cwr3_o_soldier82_ar
+cwr3_o_soldier82_amgs
 cwr3_o_soldier82_at_rpg18
 cwr3_o_soldier82_aaa_strela
 cwr3_o_soldier82_aa_strela
@@ -24,6 +24,7 @@ cwr3_o_soldier82_gl
 cwr3_o_soldier82_marksman
 cwr3_o_soldier82_mg
 cwr3_o_soldier82_sl
+cwr3_o_camel_pilot
 
 cwr3_o_soldier82_at_at4
 cwr3_o_soldier82_aat_at4
@@ -36,7 +37,7 @@ cwr3_o_officer82
 cwr3_o_officer82_night
 
 
-
+//modern white green camo 90s?
 cwr3_o_soldier_aa_igla
 cwr3_o_soldier_aa_strela
 cwr3_o_soldier_aaa_igla
@@ -47,7 +48,6 @@ cwr3_o_soldier_amg
 cwr3_o_soldier_at_at4
 cwr3_o_soldier_at_rpg7
 cwr3_o_soldier_ar
-cwr3_o_camel_pilot
 cwr3_o_soldier_crew
 cwr3_o_soldier_driver
 cwr3_o_soldier_sapper

@@ -23,34 +23,55 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\To
 
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
-//needed for townvehicles if nation on IND side
-if(_tag == "GUER_") then {
+//needed for townvehicles if nation on IND side or if the units gets upgraded
+if(_tag == "GUER_" || CTI_UPGRADE_MODE > 0) then {
 	switch(CTI_TOWN_CAMO) do {
-		//case 1: {//winter camo active};
 		case 2: {//desert camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_USMC_Soldier_des", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_USMC_Crew_des", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_USMC_Pilot_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light_des", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot_des", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew_des", _sid]];
 		};
 		case 3: {//jungle camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_USMC_Soldier", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_USMC_Crew", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Pilot", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_USMC_Soldier_Light", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_USMC_Soldier", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_USMC_Soldier", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_USMC_Crew", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_B_USMC_Pilot", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_USMC_Crew", _sid]];
 		};
 		case 4: {//urban camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_US_Soldier_UCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_US_Crew_UCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Soldier_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_US_Soldier_TL_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_US_Soldier_Light_UCP", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_US_Crew_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_US_Crew_UCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_UCP", _sid]];
 		};
 		case 6: {//special camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_US_Soldier_OCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_US_Crew_OCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Soldier_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_US_Soldier_TL_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_US_Soldier_Light_OCP", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_US_Crew_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_US_Crew_OCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_OCP", _sid]];
 		};
 		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_B_US_Crew_OEFCP", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_US_Soldier_TL_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_B_US_Soldier_Light_OEFCP", _sid]];
+
+			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_B_US_Crew_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_B_US_Crew_OEFCP", _sid]];
+			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_B_US_Soldier_OEFCP", _sid]];
 		};	
 	};
 };
@@ -171,7 +192,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	};
 };
 
-if (isNil {missionNamespace getVariable format["%1INFANTRY_SQ_LIGHT", _tag]}) then {
+if (isNil {missionNamespace getVariable format["%1INFANTRY_SQ_LIGHT", _tag]} || CTI_UPGRADE_MODE > 0) then {
 	missionNamespace setVariable [format["%1INFANTRY_SQ_LIGHT", _tag], INFANTRY];
 	missionNamespace setVariable [format["%1INFANTRY_SQ_MG", _tag], INFANTRY_MG];
 	missionNamespace setVariable [format["%1INFANTRY_SQ_AT", _tag], INFANTRY_AT];
@@ -308,7 +329,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	};
 };
 
-if (isNil {missionNamespace getVariable format["%1WHEELED_SQ_LIGHT", _tag]}) then {
+if (isNil {missionNamespace getVariable format["%1WHEELED_SQ_LIGHT", _tag]} || CTI_UPGRADE_MODE > 0) then {
 	missionNamespace setVariable [format["%1WHEELED_SQ_LIGHT", _tag], WHEELED_LIGHT];
 	missionNamespace setVariable [format["%1WHEELED_SQ_HEAVY", _tag], WHEELED_HEAVY];
 } else {
@@ -413,7 +434,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	};
 };
 
-if (isNil {missionNamespace getVariable format["%1TRACKED_SQ_LIGHT", _tag]}) then {
+if (isNil {missionNamespace getVariable format["%1TRACKED_SQ_LIGHT", _tag]} || CTI_UPGRADE_MODE > 0) then {
 	missionNamespace setVariable [format["%1TRACKED_SQ_LIGHT", _tag], TRACKED_LIGHT];
 	missionNamespace setVariable [format["%1TRACKED_SQ_MEDIUM", _tag], TRACKED_MEDIUM];
 	missionNamespace setVariable [format["%1TRACKED_SQ_HEAVY", _tag], TRACKED_HEAVY];
@@ -488,7 +509,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 };
 if(count AIR_FIGHTER == 0) then {AIR_FIGHTER = AIR_BOMBER;};
 
-if (isNil {missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]}) then {
+if (isNil {missionNamespace getVariable format["%1AIR_SQ_FIGHTER", _tag]} || CTI_UPGRADE_MODE > 0) then {
 	missionNamespace setVariable [format["%1AIR_SQ_FIGHTER", _tag], AIR_FIGHTER];
 	missionNamespace setVariable [format["%1AIR_SQ_BOMBER", _tag], AIR_BOMBER];
 } else {
@@ -531,7 +552,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	};
 };
 
-if (isNil {missionNamespace getVariable format["%1SQ_ANTI_AIR", _tag]}) then {
+if (isNil {missionNamespace getVariable format["%1SQ_ANTI_AIR", _tag]} || CTI_UPGRADE_MODE > 0) then {
 	missionNamespace setVariable [format["%1SQ_ANTI_AIR", _tag], ANTI_AIR];
 } else {
 	missionNamespace setVariable [format["%1SQ_ANTI_AIR", _tag], (missionNamespace getVariable format["%1SQ_ANTI_AIR", _tag]) + ANTI_AIR];

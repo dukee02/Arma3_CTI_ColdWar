@@ -2,13 +2,23 @@ _side = _this;
 _sid = "";
 
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_O_BTR60_RU"];
+	if(CTI_CUP_ADDON > 0) then {
+		missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_O_BTR60_RU"];
+	};
+	if(CTI_CWR3_ADDON > 0) then {
+		missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_o_btr60"];
+	};
 };
 if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_desert_USMC"];
-	} else {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_USMC"];
+	if(CTI_CUP_ADDON > 0) then {
+		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_desert_USMC"];
+		} else {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_USMC"];
+		};
+	};
+	if(CTI_CWR3_ADDON > 0) then {
+		missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_b_m577_hq"];
 	};
 };
 /*if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
@@ -265,132 +275,236 @@ _categories pushBack 		"Fortification";
  ********************************************************************************************************************************/
 if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if (CTI_CUP_ADDON >= 0) then {
-		_headers pushBack 		"Static SearchLight";
+		_headers pushBack 		"[CUP] Static SearchLight";
 		_classes pushBack 		"CUP_B_CUP_SearchLight_static_US";
 		_prices pushBack 		500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 
-		_headers pushBack 		"Static MG (M2)";
+		_headers pushBack 		"[CUP] Static MG (M2)";
 		_classes pushBack 		"CUP_B_M2StaticMG_US";
 		_prices pushBack 		1500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Static MG low (M2)";
+		_headers pushBack 		"[CUP] Static MG low (M2)";
 		_classes pushBack 		"CUP_B_M2StaticMG_MiniTripod_US";
 		_prices pushBack 		1000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 
-		_headers pushBack 		"Static GW (MK19)";
+		_headers pushBack 		"[CUP] Static GW (MK19)";
 		_classes pushBack 		"CUP_B_MK19_TriPod_US";
 		_prices pushBack 		3000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 
-		_headers pushBack 		"M119";
+		_headers pushBack 		"[CUP] M119";
 		_classes pushBack 		"CUP_B_M119_US";
 		_prices pushBack 		6000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Mortar";
+		_headers pushBack 		"[CUP] Mortar";
 		_classes pushBack 		"CUP_B_M252_US";
 		_prices pushBack 		5000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 
-		_headers pushBack 		"AT Defense (TOW)";
+		_headers pushBack 		"[CUP] AT Defense (TOW)";
 		_classes pushBack 		"CUP_B_TOW_TriPod_US";
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"AT Defense (TOW2)";
+		_headers pushBack 		"[CUP] AT Defense (TOW2)";
 		_classes pushBack 		"CUP_B_TOW2_TriPod_US";
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"AA Defense (Stinger)";
+		_headers pushBack 		"[CUP] AA Defense (Stinger)";
 		_classes pushBack 		"CUP_B_CUP_Stinger_AA_pod_US";
 		_prices pushBack 		12000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_headers pushBack 		"[CWr3] Static SearchLight";
+		_classes pushBack 		"cwr3_b_searchlight";
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+
+		_headers pushBack 		"[CWr3] Static MG (M2 high)";
+		_classes pushBack 		"cwr3_b_m2hb_high";
+		_prices pushBack 		1500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+
+		_headers pushBack 		"[CWr3] Static MG (M2 low)";
+		_classes pushBack 		"cwr3_b_m2hb_low";
+		_prices pushBack 		1500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+
+		_headers pushBack 		"[CWr3] Static GW (MK19)";
+		_classes pushBack 		"cwr3_b_mk19";
+		_prices pushBack 		3000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+
+		_headers pushBack 		"[CWr3] AT Defense (TOW)";
+		_classes pushBack 		"cwr3_b_tow";
+		_prices pushBack 		8000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] Mortar M252";
+		_classes pushBack 		"cwr3_b_m252";
+		_prices pushBack 		5000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+
+		_headers pushBack 		"[CWr3] M119";
+		_classes pushBack 		"cwr3_b_m119";
+		_prices pushBack 		6000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+	};	
 };
 /********************************************************************************************************************************
  *											Russia																				*
  ********************************************************************************************************************************/
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CUP_ADDON >= 0) then {
-		_headers pushBack 		"Static SearchLight";
+		_headers pushBack 		"[CUP] Static SearchLight";
 		_classes pushBack 		"CUP_O_SearchLight_static_RU";
 		_prices pushBack 		500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Static MG (KORD)";
+		_headers pushBack 		"[CUP] Static MG (KORD)";
 		_classes pushBack 		"CUP_O_KORD_high_RU";
 		_prices pushBack 		1500;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Static MG low (KORD)";
+		_headers pushBack 		"[CUP] Static MG low (KORD)";
 		_classes pushBack 		"CUP_O_KORD_RU";
 		_prices pushBack 		1000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Static GW (AGS)";
+		_headers pushBack 		"[CUP] Static GW (AGS)";
 		_classes pushBack 		"CUP_O_AGS_RU";
 		_prices pushBack 		3000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"D30 Arty";
+		_headers pushBack 		"[CUP] D30 Arty";
 		_classes pushBack 		"CUP_O_D30_RU";
 		_prices pushBack 		6000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"D30 AT";
+		_headers pushBack 		"[CUP] D30 AT";
 		_classes pushBack 		"CUP_O_D30_AT_RU";
 		_prices pushBack 		6000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"Mortar";
+		_headers pushBack 		"[CUP] Mortar";
 		_classes pushBack 		"CUP_O_2b14_82mm_RU";
 		_prices pushBack 		5000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"AT Defense (Metis)";
+		_headers pushBack 		"[CUP] AT Defense (Metis)";
 		_classes pushBack 		"CUP_O_Metis_RU";
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"AT Defense (Kornet)";
+		_headers pushBack 		"[CUP] AT Defense (Kornet)";
 		_classes pushBack 		"CUP_O_Kornet_RU";
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"AA Defense (ZU23)";
+		_headers pushBack 		"[CUP] AA Defense (ZU23)";
 		_classes pushBack 		"CUP_O_ZU23_RU";
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
-		_headers pushBack 		"AA Defense (Igla)";
+		_headers pushBack 		"[CUP] AA Defense (Igla)";
 		_classes pushBack 		"CUP_O_Igla_AA_pod_RU";
 		_prices pushBack 		12000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_headers pushBack 		"[CWr3] Static SearchLight";
+		_classes pushBack 		"cwr3_o_searchlight";
+		_prices pushBack 		500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] Static MG (NSV)";
+		_classes pushBack 		"cwr3_o_nsv_high";
+		_prices pushBack 		1500;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] Static MG low (NSV)";
+		_classes pushBack 		"cwr3_o_nsv_low";
+		_prices pushBack 		1000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] Static GW (AGS)";
+		_classes pushBack 		"cwr3_o_ags30";
+		_prices pushBack 		3000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] D30 Arty";
+		_classes pushBack 		"cwr3_o_d30";
+		_prices pushBack 		6000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] D30 AT";
+		_classes pushBack 		"cwr3_o_d30_at";
+		_prices pushBack 		6000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] AT Defense (Spg9)";
+		_classes pushBack 		"cwr3_o_spg9";
+		_prices pushBack 		6000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] AT Defense (Konkurs)";
+		_classes pushBack 		"cwr3_o_konkurs_tripod";
+		_prices pushBack 		8000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] Mortar 2b14";
+		_classes pushBack 		"cwr3_o_2b14";
+		_prices pushBack 		5000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		
+		_headers pushBack 		"[CWr3] AA Defense (ZU23)";
+		_classes pushBack 		"cwr3_o_zu23";
+		_prices pushBack 		8000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
 	};
 	/*if(CTI_RHS_ADDON >= 0) then {
 		_headers pushBack 		"Static MG (KORD)";

@@ -22,19 +22,35 @@ _categories_town = [];
  ********************************************************************************************************************************/
 if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CUP_ADDON >= 0) then {
-		_classes_town pushBack 		format["%1CUP_O_KORD_high_RU", _sid];
+		_classes_town pushBack 		format["%1CUP_B_M2StaticMG_US", _sid];
 		_categories_town pushBack 	"MG";
 		
-		_classes_town pushBack 		format["%1CUP_O_2b14_82mm_RU", _sid];
+		_classes_town pushBack 		format["%1CUP_B_M252_US", _sid];
 		_categories_town pushBack 	"Mortar";
 		
-		_classes_town pushBack 		format["%1CUP_O_ZU23_RU", _sid];
+		_classes_town pushBack 		format["%1CUP_B_CUP_Stinger_AA_pod_US", _sid];
 		_categories_town pushBack 	"AA";
 		
-		_classes_town pushBack 		format["%1CUP_O_Metis_RU", _sid];
+		_classes_town pushBack 		format["%1CUP_B_TOW_TriPod_US", _sid];
 		_categories_town pushBack 	"AT";
 		
-		_classes_town pushBack 		format["%1CUP_O_D30_RU", _sid];
+		_classes_town pushBack 		format["%1CUP_B_M119_US", _sid];
+		_categories_town pushBack 	"Artillery";
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_classes_town pushBack 		format["%1cwr3_b_m2hb_high", _sid];
+		_categories_town pushBack 	"MG";
+		
+		_classes_town pushBack 		format["%1cwr3_b_m252", _sid];
+		_categories_town pushBack 	"Mortar";
+		
+		_classes_town pushBack 		format["%1cwr3_b_m2hb_high", _sid];
+		_categories_town pushBack 	"AA";
+		
+		_classes_town pushBack 		format["%1cwr3_b_tow", _sid];
+		_categories_town pushBack 	"AT";
+		
+		_classes_town pushBack 		format["%1cwr3_b_m119", _sid];
 		_categories_town pushBack 	"Artillery";
 	};
 	/*if(CTI_RHS_ADDON) then {
@@ -73,6 +89,22 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_categories_town pushBack 	"AT";
 		
 		_classes_town pushBack 		format["%1CUP_O_D30_RU", _sid];
+		_categories_town pushBack 	"Artillery";
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_classes_town pushBack 		format["%1cwr3_o_nsv_high", _sid];
+		_categories_town pushBack 	"MG";
+		
+		_classes_town pushBack 		format["%1cwr3_o_2b14", _sid];
+		_categories_town pushBack 	"Mortar";
+		
+		_classes_town pushBack 		format["%1cwr3_o_zu23", _sid];
+		_categories_town pushBack 	"AA";
+		
+		_classes_town pushBack 		format["%1cwr3_o_konkurs_tripod", _sid];
+		_categories_town pushBack 	"AT";
+		
+		_classes_town pushBack 		format["%1cwr3_o_d30_at", _sid];
 		_categories_town pushBack 	"Artillery";
 	};
 	/*if(CTI_RHS_ADDON) then {

@@ -73,6 +73,18 @@ if(CTI_CUP_ADDON > 0) then {
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
 };
+if(CTI_CWR3_ADDON > 0) then {
+	_c pushBack "cwr3_b_m252";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[83,499], [333,1998], [680,4078], [680,4078]];
+	
+	_c pushBack "cwr3_o_2b14";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[86,499], [347,1998], [708,4078], [708,4078]];
+};
+
 /*if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_2b14_82mm_vdv";
 	_m pushBack ["rhs_mag_3vo18_10", "rhs_mag_3vs25m_10", "rhs_mag_53_va_832a_10", "rhs_mag_d832du_10"];
@@ -93,6 +105,17 @@ if(CTI_CUP_ADDON > 0) then {
 	_m pushBack ["CUP_30Rnd_122mmHE_D30_M", "CUP_30Rnd_122mmWP_D30_M", "CUP_30Rnd_122mmLASER_D30_M", "CUP_30Rnd_122mmSMOKE_D30_M", "CUP_30Rnd_122mmILLUM_D30_M"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+};
+if(CTI_CWR3_ADDON > 0) then {
+	_c pushBack "cwr3_b_m119";
+	_m pushBack ["CUP_30Rnd_105mmHE_M119_M", "CUP_30Rnd_105mmWP_M119_M", "CUP_30Rnd_105mmLASER_M119_M", "CUP_30Rnd_105mmSMOKE_M119_M", "CUP_30Rnd_105mmILLUM_M119_M"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[826,2415], [2059,6021], [5272,15414], [5272,15414]];
+	
+	_c pushBack "cwr3_o_d30";
+	_m pushBack ["CUP_30Rnd_122mmHE_D30_M", "CUP_30Rnd_122mmWP_D30_M", "CUP_30Rnd_122mmLASER_D30_M", "CUP_30Rnd_122mmSMOKE_D30_M", "CUP_30Rnd_122mmILLUM_D30_M"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[826,2415], [2059,6021], [5272,15414], [5272,15414]];
 };
 
 /*if(CTI_RHS_ADDON > 0) then {
@@ -134,12 +157,40 @@ if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_B_M270_HE_USA";
 	_m pushBack ["CUP_12Rnd_MLRS_HE"];
 	_b pushBack [1, 2, 3, 6, 12];
-	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	//_r pushBack [[233,1342], [299,1724], [391,2256], [511,2946], [665,3829], [871,5018], [1151,6630], [1487,8566], [1925,11091], [2476,14263], [3134,18052], [4012,23104], [5223,30083], [7005,40344], [9070,52232], [11790,67898]];
+	//_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
 	
 	_c pushBack "CUP_B_M270_DPICM_USA";
 	_m pushBack ["CUP_12Rnd_MLRS_DPICM"];
 	_b pushBack [1, 2, 3, 6, 12];
-	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	//_r pushBack [[233,1342], [299,1724], [391,2256], [511,2946], [665,3829], [871,5018], [1151,6630], [1487,8566], [1925,11091], [2476,14263], [3134,18052], [4012,23104], [5223,30083], [7005,40344], [9070,52232], [11790,67898]];
+	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
+	
+};
+if(CTI_CWR3_ADDON > 0) then {
+	//Scud only lauches the missile, no real Arty :(
+	//_c pushBack "cwr3_o_scud";
+	//_m pushBack ["cwr3_1rnd_scud_m"];
+	//_b pushBack [1];
+	//_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	
+	_c pushBack "cwr3_o_bm21";
+	_m pushBack ["CUP_40Rnd_GRAD_HE"];
+	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[1487,8564], [1707,9831], [2107,12137], [2738,15773]];
+	
+	_c pushBack "cwr3_b_m270_he";
+	_m pushBack ["CUP_12Rnd_MLRS_HE"];
+	_b pushBack [1, 2, 3, 6, 12];
+	//_r pushBack [[233,1342], [299,1724], [391,2256], [511,2946], [665,3829], [871,5018], [1151,6630], [1487,8566], [1925,11091], [2476,14263], [3134,18052], [4012,23104], [5223,30083], [7005,40344], [9070,52232], [11790,67898]];
+	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
+	
+	_c pushBack "cwr3_b_m270_dpicm";
+	_m pushBack ["CUP_12Rnd_MLRS_DPICM"];
+	_b pushBack [1, 2, 3, 6, 12];
+	//_r pushBack [[233,1342], [299,1724], [391,2256], [511,2946], [665,3829], [871,5018], [1151,6630], [1487,8566], [1925,11091], [2476,14263], [3134,18052], [4012,23104], [5223,30083], [7005,40344], [9070,52232], [11790,67898]];
+	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
 };
 
 //RHS Arty dosn't have any ammo in there setup, maybe this works

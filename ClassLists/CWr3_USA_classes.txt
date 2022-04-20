@@ -1,33 +1,37 @@
 // Export of 'CWr3_units_US.Altis' by dukee on v0.9
 
+cwr3_b_soldier82
 cwr3_b_soldier82_driver
 cwr3_b_soldier82_sapper
 cwr3_b_soldier82_engineer
 cwr3_b_soldier82_medic
 cwr3_b_soldier82_radio
-cwr3_b_soldier82
 cwr3_b_soldier82_backpack
 cwr3_b_soldier82_captive
 cwr3_b_soldier82_light
 cwr3_b_soldier82_at_m67
 cwr3_b_soldier82_aat_m67
 cwr3_b_soldier82_hg
+cwr3_b_soldier82_m14
+cwr3_b_soldier82_at_law
+cwr3_b_soldier82_gl
+
 cwr3_b_soldier82_aar_m16
 cwr3_b_soldier82_ar_m16
 cwr3_b_soldier82_aar
 cwr3_b_soldier82_ar
-cwr3_b_soldier82_m14
-cwr3_b_soldier82_at_law
-
 cwr3_b_soldier82_aa_redeye
 cwr3_b_soldier82_aaa_redeye
 cwr3_b_soldier82_at_carlgustaf
 cwr3_b_soldier82_aat_carlgustaf
-cwr3_b_soldier82_gl
 cwr3_b_soldier82_amg
 cwr3_b_soldier82_mg
 cwr3_b_soldier82_marksman
 cwr3_b_soldier82_sl
+cwr3_b_camel_pilot
+cwr3_b_soldier_pilot
+cwr3_b_soldier_pilot_jet
+cwr3_b_soldier_pilot_light
 
 cwr3_b_soldier82_aa_stinger
 cwr3_b_soldier82_at_m47
@@ -54,7 +58,6 @@ cwr3_b_soldier_at_m47
 cwr3_b_soldier_at_m67
 cwr3_b_soldier_ar_m16
 cwr3_b_soldier_ar
-cwr3_b_camel_pilot
 cwr3_b_soldier_crew
 cwr3_b_soldier_driver
 cwr3_b_soldier_sapper
@@ -66,9 +69,6 @@ cwr3_b_soldier_marksman
 cwr3_b_soldier_medic
 cwr3_b_officer
 cwr3_b_officer_night
-cwr3_b_soldier_pilot
-cwr3_b_soldier_pilot_jet
-cwr3_b_soldier_pilot_light
 cwr3_b_soldier_radio
 cwr3_b_soldier
 cwr3_b_soldier_backpack

@@ -36,7 +36,7 @@ CTI_US_ID = 4;
 CTI_SOV_ID = 5;
 CTI_NPOC_ID = 6;
 CTI_RACS_ID = 7;
-CTI_ION_ID = 8;
+CTI_FIA_ID = 8;
 CTI_TK_ID = 9;
 CTI_CDF_B_ID = 10;
 CTI_CDF_I_ID = 11;
@@ -48,7 +48,7 @@ CTI_SAF_ID = 16;
 CTI_SAF_I_ID = 17;
 CTI_HIDF_ID = 18;
 CTI_NAPA_ID = 19;
-CTI_FIA_ID = 20;
+CTI_ION_ID = 20;
 CTI_PLA_ID = 21;
 CTI_UKRAIN_ID = 22;
 
@@ -300,6 +300,8 @@ with missionNamespace do {
 	if (isNil 'CTI_ECONOMY_LEVEL_NAVAL') then {CTI_ECONOMY_LEVEL_NAVAL = 3};
 	if (isNil 'CTI_ECONOMY_UPGRADE_TIMECAP') then {CTI_ECONOMY_UPGRADE_TIMECAP = 600};
 	if (isNil 'CTI_ECONOMY_TIME_MULTI') then {CTI_ECONOMY_TIME_MULTI = 2};
+	
+	if (isNil 'CTI_UPGRADE_MODE') then {CTI_UPGRADE_MODE = 1};					//--- 0 mix units		1 replace after research over half max tech_level
 	
 	//setup the default values for the tech tree
 	//It gets changed in the factory.sqf and used in Upgrades.sqf
@@ -773,6 +775,7 @@ with missionNamespace do {
 	
 	//if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
+	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
 	/*if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
 	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
 	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
@@ -784,6 +787,7 @@ with missionNamespace do {
 	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_NPOC_SIDE') then {CTI_NPOC_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_RACS_SIDE') then {CTI_RACS_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_FIA_SIDE') then {CTI_FIA_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	
 	
 		
