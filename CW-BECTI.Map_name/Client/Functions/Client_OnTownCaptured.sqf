@@ -62,7 +62,9 @@ if (_side_new == CTI_P_SideJoined) then { //--- The player's side has captured i
 	
 	_town setVariable ["cti_town_lastcap", time];
 } else { //--- The player's side has lost it
-	["town-lost", [_town]] call CTI_CL_FNC_DisplayMessage;
+	if !(_sideID_old == 2) then {		//2 = independent (resistance)
+		["town-lost", [_town]] call CTI_CL_FNC_DisplayMessage;
+	};
 };
 
 //--- Paint it
