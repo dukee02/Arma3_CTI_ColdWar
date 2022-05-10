@@ -256,18 +256,19 @@ switch(_part) do {
 			if!(count _groups > 0) then {
 				if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Team funds found: ", _groups]] call CTI_CO_FNC_Log;};
 			} else {
+				_sideGroup = _x;
 				{
 					_groupnamefull = format ["%1", _x];
 					_groupnamecut = _groupnamefull splitString " ";
 					_groupname = _groupnamecut select 1;
-					_teamfunds_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _x, _groupname],0];
+					_teamfunds_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _sideGroup, _groupname],0];
 					
 					if(_teamfunds_stored <= 0) then {
-						_default_funds = missionNamespace getVariable [Format ["CTI_ECONOMY_STARTUP_FUNDS_%1", _x],0];
-						if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Team funds found, set to default: <%1>", _default_funds]] call CTI_CO_FNC_Log;};
+						_default_funds = missionNamespace getVariable [Format ["CTI_ECONOMY_STARTUP_FUNDS_%1", _sideGroup],0];
+						if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", Format ["SAVE_%1_%2_FUNDS_%3 not found, set to default", _savename, _sideGroup, _groupname]] call CTI_CO_FNC_Log;};
 					} else {
-						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Team funds loaded from profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", _savename, _groupname, (_x) call CTI_CO_FNC_GetFundsTeam]] call CTI_CO_FNC_Log;};
-						[_x, _teamfunds_stored] call CTI_CO_FNC_ChangeFundsTeam;
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Team funds loaded from profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", _savename, _groupname, _teamfunds_stored]] call CTI_CO_FNC_Log;};
+						_x setVariable ["cti_funds", _teamfunds_stored, true];
 					};
 				} forEach (_groups);
 			};
@@ -299,8 +300,8 @@ switch(_part) do {
 					_default_funds = missionNamespace getVariable [Format ["CTI_ECONOMY_STARTUP_FUNDS_%1", _side],0];
 					if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Team funds found, set to default: <%1>", _default_funds]] call CTI_CO_FNC_Log;};
 				} else {
-					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Team funds loaded from profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", _savename, _groupname, (_group) call CTI_CO_FNC_GetFundsTeam]] call CTI_CO_FNC_Log;};
-					[_group, _teamfunds_stored] call CTI_CO_FNC_ChangeFundsTeam;
+					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Team funds loaded from profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", _savename, _groupname, _teamfunds_stored]] call CTI_CO_FNC_Log;};
+					_group setVariable ["cti_funds", _teamfunds_stored, true];
 				};
 			};
 		};
