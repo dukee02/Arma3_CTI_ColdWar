@@ -37,6 +37,7 @@ _menuType =_this select 3;
 CTI_VAR_StructureCanceled = false;
 CTI_VAR_StructureProhibit = false;
 CTI_P_StructureRotate = 0;
+CTI_P_StructureElevation = 0;
 CTI_P_StructureRotateMulti = 1;
 CTI_P_PreBuilding = true;
 
@@ -59,11 +60,12 @@ _condition = {true};
 {if (_x select 0 == "Condition") exitWith {_condition = _x select 1}} forEach (_var select 5);
 
 _dir = 0;
+_height = 0;
 _pos = [];
 
 while {!CTI_VAR_StructurePlaced && !CTI_VAR_StructureCanceled && alive player} do {
-	_pos = screenToWorld [0.5,0.5];
 	//[_local, nearestObject _pos] remoteExecCall ["disableCollisionWith", 0, _local];
+	_pos = screenToWorld [0.5,0.5];
 	
 	if (!alive _center) exitWith {CTI_VAR_StructureCanceled = true};
 	
@@ -72,7 +74,8 @@ while {!CTI_VAR_StructurePlaced && !CTI_VAR_StructureCanceled && alive player} d
 	} forEach (player nearObjects 150);
 	
 	//CTI_P_PreBuilding_SafePlace = if (!surfaceIsWater _pos && !(count((position _local) nearEntities [['Man','Car','Motorcycle','Tank','Air','Ship'], 10]) > 0)) then {true} else {false};
-	CTI_P_PreBuilding_SafePlace = if (!(count((position _local) nearEntities [['Man','Car','Motorcycle','Tank','Air','Ship'], 10]) > 0)) then {true} else {false};
+	CTI_P_PreBuilding_SafePlace = if (!(count(((position _local) nearObjects ["Building", 15]) - [_local]) > 0) && !(count((position _local) nearEntities [['Man','Car','Motorcycle','Tank','Air','Ship'], 10]) > 0)) then {true} else {false};
+	
 
 	if (_center distance _local > _center_distance || !CTI_P_PreBuilding_SafePlace || !alive _center) then {
 		_local hideObject true;
@@ -84,16 +87,18 @@ while {!CTI_VAR_StructurePlaced && !CTI_VAR_StructureCanceled && alive player} d
 	
 	_dir = _dir + (CTI_P_StructureRotate * CTI_P_StructureRotateMulti);
 	_local setDir _dir;	
-	
+	_height = _height + (CTI_P_StructureElevation * CTI_P_StructureRotateMulti);
+	_local setPos [_pos select 0, _pos select 1, _height];
 	//_pos set [2, 0];
-	_local setPos _pos;			//destroys other placed defences
+	//_local setPos _pos;			//destroys other placed defences
 	//_local setVehiclePosition [_pos, [], 0, "CAN_COLLIDE"];
 	
 	_canCollide = if (CTI_P_PreBuilding_SafePlace) then {"<t color='#7bef15'>No</t>"} else {"<t color='#ff0000'>Yes</t>"};
 	_inRange = if (_center distance _local <= _center_distance) then {"<t color='#7bef15'>Yes</t>"} else {"<t color='#ff0000'>No</t>"};
 	
 	if (profileNamespace getVariable "CTI_PERSISTENT_HINTS") then {
-		hintSilent parseText format ["<t size='1.3' color='#2394ef'>Information</t> <br /><br /><t align='justify'>Is this your first time in the <t color='#74bbf2'>Construction Preview Mode</t>? <br /><br />The dummy unit shows where the units which may be purchased from that structure will spawn at. <br /><br />Some of these controls may help you during the placement: <br /><br />- Left click: <t color='#9CF863'>Place</t> defense. <br />- Right click: <t color='#F86363'>Cancel</t> defense. <br />- Left Ctrl: <t color='#f4cb38'>Rotate</t> clockwise. <br />- Left Alt: <t color='#f4cb38'>Rotate</t> anti-clockwise. <br />- Left Shift: <t color='#f4cb38'>Rotate</t> faster <br /> <br /><br />The defense must be placed in the area boundary and cannot be placed if colliding with another object. Use these warnings to help: <br /><br />Defense colliding: %1 <br />Defense in range: %2 <br /></t>", _canCollide, _inRange];
+		//hintSilent parseText format ["<t size='1.3' color='#2394ef'>Information</t> <br /><br /><t align='justify'>Is this your first time in the <t color='#74bbf2'>Construction Preview Mode</t>? <br /><br />The dummy unit shows where the units which may be purchased from that structure will spawn at. <br /><br />Some of these controls may help you during the placement: <br /><br />- Left click: <t color='#9CF863'>Place</t> defense. <br />- Right click: <t color='#F86363'>Cancel</t> defense. <br />- Left Ctrl: <t color='#f4cb38'>Rotate</t> clockwise. <br />- Left Alt: <t color='#f4cb38'>Rotate</t> anti-clockwise. <br />- Left Shift: <t color='#f4cb38'>Rotate</t> faster <br /> <br /><br />The defense must be placed in the area boundary and cannot be placed if colliding with another object. Use these warnings to help: <br /><br />Defense colliding: %1 <br />Defense in range: %2 <br /></t>", _canCollide, _inRange];
+		hintSilent parseText format ["<t size='1.3' color='#2394ef'>Information</t> <br /><br /><t align='justify'>Is this your first time in the <t color='#74bbf2'>Construction Preview Mode</t>? <br /><br />The dummy unit shows where the units which may be purchased from that structure will spawn at. <br /><br />Some of these controls may help you during the placement: <br /><br />- Left click: <t color='#9CF863'>Place</t> defense. <br />- Right click: <t color='#F86363'>Cancel</t> defense. <br />- Left Ctrl: <t color='#f4cb38'>Rotate</t> clockwise. <br />- Left Alt: <t color='#f4cb38'>Rotate</t> anti-clockwise. <br />- Left Shift: <t color='#f4cb38'>Rot./Elev.</t> faster. <br />- Right Ctrl: <t color='#f4cb38'>Elevation</t> up. <br />- Right Shift: <t color='#f4cb38'>Elevation</t> down. <br /> <br /><br />The defense must be placed in the area boundary and cannot be placed if colliding with another object. Use these warnings to help: <br /><br />Defense colliding: %1 <br />Defense in range: %2 <br /></t>", _canCollide, _inRange];
 	} else {
 		hintSilent parseText format ["<t size='1.3' color='#2394ef'>Information</t> <br /><br /><t align='justify'>Defense colliding: %1 <br />Defense in range: %2 <br /></t>", _canCollide, _inRange];
 	};
