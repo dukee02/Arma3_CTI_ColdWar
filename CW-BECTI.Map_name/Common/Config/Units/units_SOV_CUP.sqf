@@ -1014,7 +1014,7 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1chepa_MAN", _sid],"salvager"];
+	_s pushBack [format["%1chEPA_RenaultM", _sid],"salvager"];
 	_d pushBack 0;
 		
 	_c pushBack format["CTI_Salvager_Independent_%1", _faction];
@@ -1024,7 +1024,7 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1chps5g", _sid],"salvager-independent"];
+	_s pushBack [format["%1ccfm_mercedes", _sid],"salvager-independent"];
 	_d pushBack 0;
 } else {
 	if(CTI_SALVAGE_SPECIAL == 1 ) then {
