@@ -1,0 +1,287 @@
+
+
+
+
+
+this addWeapon "rhs_weap_minimi_para_railed";
+this addItemToBackpack "rhsusf_200Rnd_556x45_box";
+this addItemToBackpack "rhsusf_200rnd_556x45_mixed_box";
+this addItemToBackpack "rhsusf_200rnd_556x45_M855_box";
+this addItemToBackpack "rhsusf_200rnd_556x45_M855_mixed_box";
+
+this addPrimaryWeaponItem "rhsusf_acc_saw_bipod";
+
+
+this addWeapon "rhs_weap_g36c";
+this addWeapon "rhs_weap_g36kv";
+this addWeapon "rhs_weap_g36kv_ag36";
+this addItemToBackpack "rhssaf_30rnd_556x45_EPR_G36";
+this addItemToBackpack "rhssaf_30rnd_556x45_SOST_G36";
+this addItemToBackpack "rhssaf_100rnd_556x45_EPR_G36";
+this addItemToBackpack "rhssaf_30rnd_556x45_SPR_G36";
+this addItemToBackpack "rhssaf_30rnd_556x45_Tracers_G36";
+this addItemToBackpack "rhssaf_30rnd_556x45_MDIM_G36";
+this addItemToBackpack "rhssaf_30rnd_556x45_TDIM_G36";
+this addPrimaryWeaponItem "rhs_mag_M441_HE";
+
+
+this addWeapon "rhs_weap_m21a_pbg40";
+this addWeapon "rhs_weap_m21a_pr_pbg40";
+this addItemToBackpack "rhsgref_30rnd_556x45_m21";
+this addItemToBackpack "rhsgref_30rnd_556x45_m21_t";
+this addItemToBackpack "rhs_VOG25";
+this addItemToBackpack "rhs_VOG25P";
+this addItemToBackpack "rhs_VG40TB";
+this addItemToBackpack "rhs_VG40SZ";
+this addItemToBackpack "rhs_VG40OP_white";
+this addItemToBackpack "rhs_VG40OP_green";
+this addItemToBackpack "rhs_VG40OP_red";
+this addItemToBackpack "rhs_GRD40_White";
+this addItemToBackpack "rhs_GRD40_Green";
+this addItemToBackpack "rhs_GRD40_Red";
+this addItemToBackpack "rhs_GDM40";
+this addItemToBackpack "rhs_VG40MD";
+
+
+this addWeapon "rhs_weap_m70b1n";
+this addWeapon "rhs_weap_m70b3n";
+this addWeapon "rhs_weap_m70b3n_pbg40";
+this addItemToBackpack "rhssaf_30Rnd_762x39mm_M67";
+this addItemToBackpack "rhssaf_30Rnd_762x39mm_M78_tracer";
+this addItemToBackpack "rhssaf_30Rnd_762x39_M82_api";
+
+
+this addWeapon "rhs_weap_m82a1";
+this addItemToBackpack "rhsusf_mag_10Rnd_STD_50BMG_M33";
+this addItemToBackpack "rhsusf_mag_10Rnd_STD_50BMG_mk211";
+
+
+this addWeapon "rhs_weap_m84";
+this addItemToBackpack "rhs_100Rnd_762x54mmR";
+this addItemToBackpack "rhs_100Rnd_762x54mmR_green";
+this addItemToBackpack "rhssaf_250Rnd_762x54R";
+this addItemToBackpack "rhs_100Rnd_762x54mmR_7N13";
+this addItemToBackpack "rhs_100Rnd_762x54mmR_7N26";
+this addItemToBackpack "rhs_100Rnd_762x54mmR_7BZ3";
+
+
+this addWeapon "rhs_weap_scorpion";
+this addItemToBackpack "rhsgref_20rnd_765x17_vz61";
+this addItemToBackpack "rhsgref_10rnd_765x17_vz61";
+
+
+this addWeapon "rhs_weap_SCARH_FDE_CQC";
+this addWeapon "rhs_weap_SCARH_CQC";
+this addWeapon "rhs_weap_SCARH_LB";
+this addWeapon "rhs_weap_SCARH_FDE_LB";
+this addWeapon "rhs_weap_SCARH_FDE_STD";
+this addWeapon "rhs_weap_SCARH_STD";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m80_ball_bk";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m61_ap_bk";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m62_tracer_bk";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr_bk";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m118_special_bk";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m61_ap";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m62_tracer";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m80_ball";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m80a1_epr";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_m118_special";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_mk316_special";
+this addItemToBackpack "rhs_mag_20Rnd_SCAR_762x51_mk316_special_bk";
+
+
+
+this addWeapon "rhs_weap_m80";
+
+
+
+this addWeapon "rhs_weap_cz99";
+this addWeapon "rhs_weap_cz99_etched";
+this addItemToBackpack "rhssaf_mag_15Rnd_9x19_FMJ";
+this addItemToBackpack "rhssaf_mag_15Rnd_9x19_JHP";
+
+
+
+this forceAddUniform "rhssaf_uniform_mig29_pilot";
+this forceAddUniform "rhssaf_uniform_m10_digital";
+this forceAddUniform "rhssaf_uniform_m10_digital_desert";
+this forceAddUniform "rhssaf_uniform_m10_digital_summer";
+this forceAddUniform "rhssaf_uniform_m10_digital_tan_boots";
+this forceAddUniform "rhssaf_uniform_m93_oakleaf";
+this forceAddUniform "rhssaf_uniform_m93_oakleaf_summer";
+this forceAddUniform "rhssaf_uniform_heli_pilot";
+
+
+this addVest "rhssaf_vest_otv_md2camo";
+this addVest "rhssaf_vest_md99_digital";
+this addVest "rhssaf_vest_md99_digital_radio";
+this addVest "rhssaf_vest_md99_digital_rifleman";
+this addVest "rhssaf_vest_md99_digital_rifleman_radio";
+this addVest "rhssaf_vest_md99_md2camo";
+this addVest "rhssaf_vest_md99_md2camo_radio";
+this addVest "rhssaf_vest_md99_md2camo_rifleman";
+this addVest "rhssaf_vest_md99_md2camo_rifleman_radio";
+this addVest "rhssaf_vest_md99_woodland";
+this addVest "rhssaf_vest_md99_woodland_radio";
+this addVest "rhssaf_vest_md99_woodland_rifleman";
+this addVest "rhssaf_vest_md99_woodland_rifleman_radio";
+this addVest "rhssaf_vest_md12_digital";
+this addVest "rhssaf_vest_md12_digital_desert";
+this addVest "rhssaf_vest_md12_m70_rifleman";
+this addVest "rhssaf_vest_md98_digital";
+this addVest "rhssaf_vest_md98_md2camo";
+this addVest "rhssaf_vest_md98_woodland";
+this addVest "rhssaf_vest_md98_rifleman";
+
+
+this addBackpack "rhssaf_alice_md2camo";
+this addBackpack "rhssaf_alice_smb";
+this addBackpack "rhssaf_kitbag_digital";
+this addBackpack "rhssaf_kitbag_md2camo";
+this addBackpack "rhssaf_kitbag_smb";
+
+
+this addHeadgear "rhssaf_bandana_digital";
+this addHeadgear "rhssaf_bandana_digital_desert";
+this addHeadgear "rhssaf_bandana_md2camo";
+this addHeadgear "rhssaf_bandana_oakleaf";
+this addHeadgear "rhssaf_bandana_smb";
+this addHeadgear "rhssaf_beret_para";
+this addHeadgear "rhssaf_beret_green";
+this addHeadgear "rhssaf_beret_black";
+this addHeadgear "rhssaf_beret_red";
+this addHeadgear "rhssaf_beret_blue_un";
+this addHeadgear "rhssaf_booniehat_digital";
+this addHeadgear "rhssaf_booniehat_md2camo";
+this addHeadgear "rhssaf_booniehat_woodland";
+this addHeadgear "rhssaf_helmet_m59_85_nocamo";
+this addHeadgear "rhssaf_helmet_m59_85_oakleaf";
+this addHeadgear "rhssaf_helmet_m97_black_nocamo";
+this addHeadgear "rhssaf_helmet_m97_black_nocamo_black_ess";
+this addHeadgear "rhssaf_helmet_m97_black_nocamo_black_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_nostrap_blue";
+this addHeadgear "rhssaf_helmet_m97_nostrap_blue_tan_ess";
+this addHeadgear "rhssaf_helmet_m97_nostrap_blue_tan_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_digital";
+this addHeadgear "rhssaf_helmet_m97_digital_black_ess";
+this addHeadgear "rhssaf_helmet_m97_digital_black_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_veil_digital";
+this addHeadgear "rhssaf_helmet_m97_md2camo";
+this addHeadgear "rhssaf_helmet_m97_md2camo_black_ess";
+this addHeadgear "rhssaf_helmet_m97_md2camo_black_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_veil_md2camo";
+this addHeadgear "rhssaf_helmet_m97_oakleaf";
+this addHeadgear "rhssaf_helmet_m97_oakleaf_black_ess";
+this addHeadgear "rhssaf_helmet_m97_oakleaf_black_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_veil_oakleaf";
+this addHeadgear "rhssaf_helmet_m97_olive_nocamo";
+this addHeadgear "rhssaf_helmet_m97_olive_nocamo_black_ess";
+this addHeadgear "rhssaf_helmet_m97_olive_nocamo_black_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_woodland";
+this addHeadgear "rhssaf_helmet_m97_woodland_black_ess";
+this addHeadgear "rhssaf_helmet_m97_woodland_black_ess_bare";
+this addHeadgear "rhssaf_helmet_m97_veil_woodland";
+
+
+
+this addGoggles "rhssaf_veil_Green";
+
+
+this addWeapon "rhssaf_zrak_rd7j";
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
