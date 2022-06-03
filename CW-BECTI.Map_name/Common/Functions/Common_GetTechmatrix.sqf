@@ -871,11 +871,11 @@ _tech_matrix =
 			//CTI_WS_ID
 			[false,false,false,false,false,false,false],
 			//CTI_CUP_ID
-			[true,true,true,true,false,false,false],
+			[false,false,false,true,true,true,true],
 			//CTI_RHS_ID
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
-			[false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false],
 			//CTI_VME_ID
 			[false,false,false,false,false,false,false],
 			//CTI_UKR_ID
@@ -898,11 +898,11 @@ _tech_matrix =
 			//CTI_WS_ID
 			[false,false,false,false,false,false,false],
 			//CTI_CUP_ID
-			[true,true,true,false,false,false,false],
+			[false,false,false,true,true,true,false],
 			//CTI_RHS_ID
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
-			[false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false],
 			//CTI_VME_ID
 			[false,false,false,false,false,false,false],
 			//CTI_UKR_ID
@@ -1074,7 +1074,7 @@ if(_mod >= 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _nation_cnt select CTI_REDD_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
 			};	
-		} forEach [CTI_US_SIDE, CTI_SOV_SIDE, CTI_NPOC_SIDE, CTI_RACS_SIDE,CTI_FIA_SIDE];
+		} forEach [CTI_US_SIDE, CTI_SOV_SIDE, CTI_NPOC_SIDE, CTI_RACS_SIDE, CTI_FIA_SIDE];
 	};
 };
 
