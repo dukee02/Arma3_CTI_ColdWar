@@ -50,7 +50,7 @@ _matrix_nation = [_side, CTI_UPGRADE_GEAR, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_F
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_HandGrenade_RGD5";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,50] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -116,7 +116,7 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
 //--------------------------------------------------------------------------------------------------------------------------//
 //										Other Items																			//
 //--------------------------------------------------------------------------------------------------------------------------//
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_NVG_1PN138_hide";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -244,7 +244,7 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(545*39)] call CTI_CO
 //--------------------------------------------------------------------------------------------------------------------------//
 //													AA+AT-Guns																//
 //--------------------------------------------------------------------------------------------------------------------------//
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_launch_RPG7V";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -1256,7 +1256,7 @@ _c pushBack "CUP_arifle_AK12_GP34_winter";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_30Rnd_545x39_AK_M";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(545*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -1323,7 +1323,7 @@ _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(545*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_arifle_RPK74_45";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -1509,7 +1509,7 @@ _c pushBack "CUP_lmg_Pecheneg_woodland";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,100,(762*54)] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -1747,7 +1747,7 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(900*39)] call CTI_CO
 //--------------------------------------------------------------------------------------------------------------------------//
 //													AA+AT-Guns																//
 //--------------------------------------------------------------------------------------------------------------------------//
-if(CTI_CWR3_ADDON > 0) then {				//already defined in CWr3 mod
+if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_launch_Igla";
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);

@@ -32,7 +32,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 //_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
 //if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
 //Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CUP_ADDON > 1) || _ai == CTI_US_ID) then {
+if ((CTI_CUP_ADDON > 1 || _ai == CTI_US_ID) || (CTI_CWR3_ADDON > 0 && CTI_CUP_ADDON > 0) || (CTI_CWR3_ADDON < 1 && CTI_CUP_ADDON > 0)) then {
 	switch(CTI_CAMO_ACTIVATION) do {
 		case 2: {//desert camo active
 			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_B_USMC_Soldier_TL_des", _sid]];
@@ -715,6 +715,8 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
+_c pushBack format["CTI_Salvager_%1", _side];
+
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
@@ -726,8 +728,6 @@ if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo a
 if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 	_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Repairtruck
 };
-
-_c pushBack format["CTI_Salvager_%1", _side];
 
 _matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
