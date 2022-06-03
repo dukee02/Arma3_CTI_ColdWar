@@ -156,6 +156,7 @@ with missionNamespace do {
 	if (isNil 'CTI_AI_TEAMS_JIP_PRESERVE') then {CTI_AI_TEAMS_JIP_PRESERVE = 0}; //--- Keep the AI Teams units on JIP
 	if (isNil 'CTI_AI_TEAMS_ENABLED') then {CTI_AI_TEAMS_ENABLED = 0}; //--- Determine whether AI Teams are enabled or not
 	if (isNil 'CTI_AI_COMMANDER_ENABLED') then {CTI_AI_COMMANDER_ENABLED = 1}; //--- Determine whether AI Commander is enabled or not
+	if (isNil 'CTI_AI_VEHICLE_LOCK') then {CTI_AI_VEHICLE_LOCKED = true;} else {if(CTI_AI_VEHICLE_LOCK == 1) then {CTI_AI_VEHICLE_LOCKED = true}else{CTI_AI_VEHICLE_LOCKED = false};}; //--- AI Teams lock the vehicles
 	if (isNil 'CTI_AI_SKILL_BASE') then {
 		/*Novice < 0.25
 		Rookie >= 0.25 and <= 0.45
