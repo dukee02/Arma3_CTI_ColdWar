@@ -42,10 +42,11 @@ if(count _array > 0) then {
 	_ammotype = [];
 	_rounds = [];
 	{
-		if(typeName (_array select _x) == "STRING") then {
+		if(_x isEqualType 0) then {
+			_rounds pushBack _x;
+		};
+		if(_x isEqualType "") then {
 			_ammotype pushBack _x;
-		} else {
-			_rounds  pushBack _x;
 		};
 	} forEach _array;
 	{
