@@ -178,8 +178,12 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_UpgradeMenu.sqf";
 //--- Load CUP Gear
 if (CTI_CUP_ADDON > 0) then { 
 	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
-	//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_West.sqf"};
 	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_CUP_SOV.sqf"};
+};
+//--- Load CWR3 Gear
+if (CTI_CWR3_ADDON > 0) then { 
+	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_CWr3.sqf"};
+	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV_CWr3.sqf"};
 };
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template.sqf";
