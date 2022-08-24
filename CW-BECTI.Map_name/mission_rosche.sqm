@@ -1,4 +1,4 @@
-version=53;
+version=54;
 class EditorData
 {
 	moveGridStep=2.1999998;
@@ -8,7 +8,7 @@ class EditorData
 	toggles=513;
 	class ItemIDProvider
 	{
-		nextID=2041;
+		nextID=2044;
 	};
 	class MarkerIDProvider
 	{
@@ -16,29 +16,31 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=4097;
+		nextID=4475;
 	};
 	class Camera
 	{
-		pos[]={15204.086,78.29113,149.99226};
+		pos[]={15182.655,103.12673,158.68407};
 		dir[]={0.71874654,-0.55663908,-0.41673547};
 		up[]={0.4815973,0.83070421,-0.27923524};
 		aside[]={-0.50161433,2.348097e-007,-0.86514401};
 	};
 };
 binarizationWanted=0;
+sourceName="VIO-BECTI-CW";
 addons[]=
 {
 	"A3_Characters_F",
 	"A3_Ui_F",
 	"A3_Modules_F",
-	"A3_Structures_F_Mil_Fortification"
+	"A3_Structures_F_Mil_Fortification",
+	"A3_Modules_F_Curator_Curator"
 };
 class AddonsMetaData
 {
 	class List
 	{
-		items=4;
+		items=5;
 		class Item0
 		{
 			className="A3_Characters_F";
@@ -67,14 +69,22 @@ class AddonsMetaData
 			author="Bohemia Interactive";
 			url="https://www.arma3.com";
 		};
+		class Item4
+		{
+			className="A3_Modules_F_Curator";
+			name="Arma 3 Zeus Update - Scripted Modules";
+			author="Bohemia Interactive";
+			url="https://www.arma3.com";
+		};
 	};
 };
 randomSeed=7728140;
 class ScenarioData
 {
 	author="Benny,dukee";
-	overviewText="Cold-War CTI - Global Mobilization";
-	onLoadMission="Cold-War CTI - Global Mobilization";
+	overviewText="VIO-BECTI-CW V2.0";
+	overviewTextLocked="VIO-BECTI-CW V2.0";
+	onLoadMission="VIO-BECTI-CW V2.0";
 	respawnDialog=0;
 	respawn=3;
 	class Header
@@ -85,9 +95,10 @@ class ScenarioData
 	};
 	wreckManagerMode=1;
 	wreckLimit=20;
-	wreckRemovalMaxTime=3600;
+	wreckRemovalMaxTime=1800;
 	corpseManagerMode=1;
-	corpseLimit=10;
+	corpseLimit=50;
+	corpseRemovalMaxTime=1200;
 };
 class CustomAttributes
 {
@@ -143,8 +154,8 @@ class Mission
 {
 	class Intel
 	{
-		briefingName="Cold-War CTI - Global Mobilization";
-		overviewText="Cold-War CTI - Global Mobilization";
+		briefingName="VIO-BECTI-CW V2.0";
+		overviewText="VIO-BECTI-CW V2.0";
 		resistanceWest=0;
 		timeOfChanges=1800.0002;
 		startWeather=0.30000001;
@@ -166,7 +177,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=59;
+		items=62;
 		class Item0
 		{
 			dataType="Group";
@@ -187,6 +198,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="CAPTAIN";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Alpha, Team Leader";
 						isPlayable=1;
 					};
@@ -263,6 +275,7 @@ class Mission
 					class Attributes
 					{
 						rank="CAPTAIN";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Alpha, Team Leader";
 						isPlayer=1;
 						isPlayable=1;
@@ -341,6 +354,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Bravo, Team Leader";
 						isPlayable=1;
 					};
@@ -418,6 +432,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Charlie, Team Leader";
 						isPlayable=1;
 					};
@@ -495,6 +510,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Delta, Team Leader";
 						isPlayable=1;
 					};
@@ -572,6 +588,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Echo, Team Leader";
 						isPlayable=1;
 					};
@@ -647,6 +664,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Foxtrot, Team Leader";
 						isPlayable=1;
 					};
@@ -722,6 +740,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Golf, Team Leader";
 						isPlayable=1;
 					};
@@ -797,6 +816,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Hotel, Team Leader";
 						isPlayable=1;
 					};
@@ -871,6 +891,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Bravo, Team Leader";
 						isPlayable=1;
 					};
@@ -948,6 +969,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Charlie, Team Leader";
 						isPlayable=1;
 					};
@@ -1025,6 +1047,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Delta, Team Leader";
 						isPlayable=1;
 					};
@@ -1100,6 +1123,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Echo, Team Leader";
 						isPlayable=1;
 					};
@@ -1175,6 +1199,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Foxtrot, Team Leader";
 						isPlayable=1;
 					};
@@ -1250,6 +1275,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Golf, Team Leader";
 						isPlayable=1;
 					};
@@ -1325,6 +1351,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Hotel, Team Leader";
 						isPlayable=1;
 					};
@@ -2162,14 +2189,13 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={6820.9399,27.483999,3715.6721};
+								position[]={6820.9399,26.65,3715.6721};
 								angles[]={0,3.2075837,0};
 							};
 							name="Town20";
 							init="call{nullReturn = [this, ""Hanstedt"", resistance, 20, 120, 1200] execVM ""Common\Init\Init_Location.sqf""}";
 							id=1127;
 							type="LocationArea_F";
-							atlOffset=0.83399963;
 						};
 						class Item2
 						{
@@ -2231,7 +2257,7 @@ class Mission
 						};
 					};
 					id=340;
-					atlOffset=-3.16745;
+					atlOffset=-3.180481;
 				};
 				class Item8
 				{
@@ -3349,14 +3375,13 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={2079.75,6.724,11753.435};
+								position[]={2079.75,5.8899999,11753.435};
 								angles[]={0,4.7264214,0};
 							};
 							name="Town5";
 							init="call{nullReturn = [this, ""Heitbrack"", resistance, 20, 60, 600] execVM ""Common\Init\Init_Location.sqf""}";
 							id=1067;
 							type="LocationArea_F";
-							atlOffset=0.83400011;
 						};
 						class Item2
 						{
@@ -3433,7 +3458,7 @@ class Mission
 						};
 					};
 					id=402;
-					atlOffset=1.730473;
+					atlOffset=1.7239575;
 				};
 				class Item22
 				{
@@ -4314,14 +4339,13 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={827.45697,15.964,4689.2598};
+								position[]={827.45697,15.13,4689.2598};
 								angles[]={0,2.3987629,0};
 							};
 							name="Town11";
 							init="call{nullReturn = [this, ""Flughafen"", resistance, 20, 120, 1200] execVM ""Common\Init\Init_Location.sqf""}";
 							id=1091;
 							type="LocationArea_F";
-							atlOffset=0.83399963;
 						};
 						class Item2
 						{
@@ -4384,7 +4408,7 @@ class Mission
 						};
 					};
 					id=625;
-					atlOffset=0.012742043;
+					atlOffset=-0.00028896332;
 				};
 				class Item33
 				{
@@ -5391,14 +5415,13 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={3154.2219,8.5357819,6883.063};
+								position[]={3154.2219,7.7027822,6883.063};
 								angles[]={0,6.266221,0};
 							};
 							name="Town44";
 							init="call{nullReturn = [this, ""Woltersburg"", resistance, 20, 60, 600] execVM ""Common\Init\Init_Location.sqf""}";
 							id=1232;
 							type="LocationArea_F";
-							atlOffset=0.83299971;
 						};
 						class Item3
 						{
@@ -5450,7 +5473,7 @@ class Mission
 						};
 					};
 					id=1218;
-					atlOffset=0.51329851;
+					atlOffset=0.48726702;
 				};
 				class Item44
 				{
@@ -6047,18 +6070,21 @@ class Mission
 				};
 			};
 			id=308;
-			atlOffset=-11.758984;
+			atlOffset=-11.759033;
 		};
 		class Item18
 		{
 			dataType="Logic";
 			class PositionInfo
 			{
-				position[]={34.349602,7.2983685,36.134033};
-				angles[]={6.2818484,0,0.025327841};
+				position[]={34.349998,7.298378,36.133999};
+				angles[]={6.2818413,0,0.025324726};
 			};
+			name="HC_1";
+			isPlayable=1;
 			id=409;
 			type="HeadlessClient_F";
+			atlOffset=-4.7683716e-007;
 		};
 		class Item19
 		{
@@ -6080,6 +6106,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="India, Team Leader";
 						isPlayable=1;
 					};
@@ -6156,6 +6183,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Juilett, Team Leader";
 						isPlayable=1;
 					};
@@ -6233,6 +6261,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Kilo, Team Leader";
 						isPlayable=1;
 					};
@@ -6310,6 +6339,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Lima, Team Leader";
 						isPlayable=1;
 					};
@@ -6385,6 +6415,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Mike, Team Leader";
 						isPlayable=1;
 					};
@@ -6460,6 +6491,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="November, Team Leader";
 						isPlayable=1;
 					};
@@ -6535,6 +6567,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Oscar, Team Leader";
 						isPlayable=1;
 					};
@@ -6629,6 +6662,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Papa, Team Leader";
 						isPlayable=1;
 					};
@@ -6704,6 +6738,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="India, Team Leader";
 						isPlayable=1;
 					};
@@ -6781,6 +6816,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Juliett, Team Leader";
 						isPlayable=1;
 					};
@@ -6856,6 +6892,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Kilo, Team Leader";
 						isPlayable=1;
 					};
@@ -6931,6 +6968,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Lima, Team Leader";
 						isPlayable=1;
 					};
@@ -7006,6 +7044,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Mike, Team Leader";
 						isPlayable=1;
 					};
@@ -7081,6 +7120,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="November, Team Leader";
 						isPlayable=1;
 					};
@@ -7156,6 +7196,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Oscar, Team Leader";
 						isPlayable=1;
 					};
@@ -7231,6 +7272,7 @@ class Mission
 					{
 						skill=0.60000002;
 						rank="LIEUTENANT";
+						init="VIOC_ZEUS addCuratorEditableObjects [[this], false]; " \n "this setUnitTrait [""UAVHacker"",true]; " \n "this setUnitTrait [""explosiveSpecialist"",true];";
 						description="Papa, Team Leader";
 						isPlayable=1;
 					};
@@ -7668,6 +7710,125 @@ class Mission
 			};
 			id=1971;
 			type="Land_HBarrierWall6_F";
+		};
+		class Item59
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={-707.57501,20.787127,310.29901};
+			};
+			name="VIOC_ZEUS";
+			id=2041;
+			type="ModuleCurator_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="ModuleCurator_F_Owner";
+					expression="_this setVariable ['Owner',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="#adminLogged";
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="ModuleCurator_F_Forced";
+					expression="_this setVariable ['Forced',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=0;
+						};
+					};
+				};
+				class Attribute2
+				{
+					property="ModuleCurator_F_Name";
+					expression="_this setVariable ['Name',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"STRING"
+								};
+							};
+							value="";
+						};
+					};
+				};
+				class Attribute3
+				{
+					property="ModuleCurator_F_Addons";
+					expression="_this setVariable ['Addons',_value,true];";
+					class Value
+					{
+						class data
+						{
+							class type
+							{
+								type[]=
+								{
+									"SCALAR"
+								};
+							};
+							value=2;
+						};
+					};
+				};
+				nAttributes=4;
+			};
+		};
+		class Item60
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={34.194347,7.2860694,29.859924};
+				angles[]={6.2818413,0,0.025324726};
+			};
+			name="HC_2";
+			isPlayable=1;
+			id=2042;
+			type="HeadlessClient_F";
+			atlOffset=-4.7683716e-007;
+		};
+		class Item61
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={34.194347,7.2753935,23.829346};
+				angles[]={6.2818413,0,0.025324726};
+			};
+			name="HC_3";
+			isPlayable=1;
+			id=2043;
+			type="HeadlessClient_F";
+			atlOffset=-4.7683716e-007;
 		};
 	};
 	class Connections
