@@ -33,7 +33,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 //_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
 //if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
 //Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CWR3_ADDON > 1 || _ai == CTI_US_ID) || (CTI_CUP_ADDON > 0 && CTI_CWR3_ADDON > 0) || (CTI_CUP_ADDON < 1 && CTI_CWR3_ADDON > 0)) then {
+if ((CTI_CWR3_ADDON > 1 || _ai == CTI_US_ID) || (CTI_CUP_ADDON > 0 && CTI_CWR3_ADDON > 0 && CTI_GM_DLC < 2) || (CTI_CUP_ADDON < 1 && CTI_CWR3_ADDON > 0)) then {
 	
 	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1cwr3_b_soldier82_tl", _sid]];
 	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1cwr3_b_soldier82_light", _sid]];

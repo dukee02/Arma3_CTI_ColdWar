@@ -21,18 +21,42 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_b_m577_hq"];
 	};
 };
-/*if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhs_gaz66_r142_vdv"];
-};
 if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_MAIN_ADDON == 0) then {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_m113a1g_command"];
-	} else {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "BW_LKW_Geraet_Fleck"];
+	if(CTI_GM_DLC > 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_win"];
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_des"];
+		};
+		if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_trp"];
+		};
+		if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_wdl"];	
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command"];
+		};
 	};
+	// else {		missionNamespace setVariable [format["CTI_%1_HQ", _side], "BW_LKW_Geraet_Fleck"];	}
 };
 if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12"];
+	if(CTI_GM_DLC > 0) then {
+		
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12_win"];
+		};
+		if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12_wdl"];
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12"];	
+		};
+	};
+};
+/*if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhs_gaz66_r142_vdv"];
 };*/
 
 if (CTI_Log_Level >= CTI_Log_Debug) then { ["VIOC_DEBUG", "FILE: Common\Config\Base\Base.sqf", format ["Set HQ Vehicle [%1] for side [%2]", missionNamespace getVariable format["CTI_%1_HQ", _side], _side]] call CTI_CO_FNC_Log };
@@ -579,13 +603,13 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 /********************************************************************************************************************************
  *											Bundeswehr (West Germany)															*
  ********************************************************************************************************************************/
-/*if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
 	//};
 	//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
 	//};
 	
-	if(CTI_MAIN_ADDON == 0) then {
+	if(CTI_GM_DLC == 0) then {
 		_headers pushBack 		"MG3 AA (GM)";
 		_classes pushBack 		"gm_ge_army_mg3_aatripod";
 		_prices pushBack 		1500;
@@ -599,7 +623,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_categories pushBack 	"Defense";
 	};
 	
-	if (CTI_REDD_ADDON > 0) then {
+	/*if (CTI_REDD_ADDON > 0) then {
 		_headers pushBack 		"Static MG (MG3)";
 		_classes pushBack 		"rnt_mg3_static";
 		_prices pushBack 		1000;
@@ -629,19 +653,21 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_prices pushBack 		8000;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
-	};
+	};*/
 };
-*/
+
 /********************************************************************************************************************************
  *											NVA (East Germany)																	*
  ********************************************************************************************************************************/
-/*if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	_headers pushBack 		"AT Fagot (GM)";
-	_classes pushBack 		"gm_gc_army_fagot_launcher_tripod";
-	_prices pushBack 		7000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-};*/
+if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_GM_DLC == 0) then {
+		_headers pushBack 		"AT Fagot (GM)";
+		_classes pushBack 		"gm_gc_army_fagot_launcher_tripod";
+		_prices pushBack 		7000;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+	};
+};
 
 /********************************************************************************************************************************
  *											Others																				*

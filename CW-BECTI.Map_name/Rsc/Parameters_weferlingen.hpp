@@ -18,9 +18,15 @@ class Params {
 		default = 900;
 	};
 	class SEPARATOR_ADDONS {
-		title = "=========================== ADDONS ============================";
+		title = "=========================== ADDONS/DLCs ============================";
 		values[] = {1};
 		texts[] = {""};
+		default = 1;
+	};
+	class CTI_GM_DLC {
+		title = "DLC: Global Mobilization Support - Vehicles west + east";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","set as main"};
 		default = 1;
 	};
 	class CTI_CUP_ADDON {
@@ -104,11 +110,11 @@ class Params {
 	class CTI_RACS_SIDE {
 		title = "RACS Side";
 		values[] = {-1,2};
-		texts[] = {"deactivated","GUER (Independent)"};
+		texts[] = {"deactivated","GUER (Independent) [CUP needed]"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
 		default = 2;
-	};/*
+	};
 	class CTI_BW_SIDE {
 		title = "Bundeswehr (West Germany) Side";
 		values[] = {-1,0};
@@ -125,7 +131,7 @@ class Params {
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
 		default = -1;
 	};
-	class CTI_DK_SIDE {
+	/*class CTI_DK_SIDE {
 		title = "Denmark Side";
 		values[] = {-1,0};
 		texts[] = {"deactivated","BLUFOR (West)"};
@@ -152,37 +158,37 @@ class Params {
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
 		values[] = {-1,0,1};
-		texts[] = {"no changes","National Party of Chernarus (NPoC)","FIA"};
+		texts[] = {"no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"};
 		default = -1;
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only if 2 nations at one side and no mixing wanted)";
-		values[] = {-1,4};
-		texts[] = {"no changes","USA"};
+		values[] = {-1,1,4};
+		texts[] = {"no changes","Bundeswehr (West Germany)","USA"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_EAST_TOWNS {
 		title = "OPFOR (East) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,5};
-		texts[] = {"no changes","Soviet"};
+		values[] = {-1,2,5};
+		texts[] = {"no changes","NVA (East Germany)","Soviet"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_WEST_AI {
 		title = "BLUFOR (West) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,4};
-		texts[] = {"no changes","USA"};
+		values[] = {-1,1,4};
+		texts[] = {"no changes","Bundeswehr (West Germany)","USA"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
 	class CTI_EAST_AI {
 		title = "OPFOR (East) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,5};
-		texts[] = {"no changes","Soviet"};
+		values[] = {-1,2,5};
+		texts[] = {"no changes","NVA (East Germany)","Soviet"};
 		//values[] = {-1,0,1,2,3,4,5,6,7};
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;

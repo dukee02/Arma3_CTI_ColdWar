@@ -45,9 +45,19 @@ if(CTI_ADDON_CHARLIECO <= 0) then {
 			};
 			_beacon = _action_handlings select 0;
 			_siren = _action_handlings select 1;
-			_siren set [0, _salvager];
-			_salvager animateSource _beacon; 
-			_siren remoteExec ['BIS_fnc_setCustomSoundController'];
+			if(CTI_GM_DLC > 0 && CTI_SALVAGE_SPECIAL == 1) then {
+				_siren set [0, _salvager];
+				_beacon set [0, _salvager];
+				_beacon call gm_core_vehicles_fnc_beaconSwitch;
+				_siren remoteExec ['BIS_fnc_setCustomSoundController'];
+			} else {
+				_siren set [0, _salvager];
+				_salvager animateSource _beacon; 
+				_siren remoteExec ['BIS_fnc_setCustomSoundController'];
+			};
+			if (CTI_Log_Level >= CTI_Log_Debug) then {
+				["VIOC_DEBUG", "FILE: Server\Functions\Server_HandleSalvagerSpecial.sqf", format["Fire units: <%1> <%2> <%3> ", _x, _beacon, _siren]] call CTI_CO_FNC_Log;
+			};
 		};
 	} forEach CTI_SALVAGE_SPECIALUNITS;
 } else {

@@ -48,19 +48,19 @@ switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 		if(CTI_CUP_ADDON > 0) then {_texture = "CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_unionjack_co";};		//UK
 	};
 	case 11: {
-		if(CTI_MAIN_ADDON == 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_GE_co.paa";};
+		if(CTI_GM_DLC > 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_GE_co.paa";};
 	};
 	case 12: {
-		if(CTI_MAIN_ADDON == 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_GC_co.paa";};
+		if(CTI_GM_DLC > 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_GC_co.paa";};
 	};
 	case 13: {
-		if(CTI_MAIN_ADDON == 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_DK_co.paa";};
+		if(CTI_GM_DLC > 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_DK_co.paa";};
 	};
 	case 14: {
-		if(CTI_MAIN_ADDON == 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_PL_co.paa";};
+		if(CTI_GM_DLC > 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_PL_co.paa";};
 	};
 	case 15: {
-		if(CTI_MAIN_ADDON == 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_UR_co.paa";};
+		if(CTI_GM_DLC > 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_UR_co.paa";};
 	};
 	case 16: {
 		if(CTI_BW_ADDON > 0) then {_texture = "\bw_flags\data\flagge_bund_CO.paa";};	//GER BUND

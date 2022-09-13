@@ -331,7 +331,7 @@ CTI_REQUEST_FOB_DISMANTLE = 1;
 //--- Requests: Parameters
 CTI_REQUESTS_TIMEOUT = 300; //---160 A request will vanish after x seconds if left unattended
 with missionNamespace do {
-	if (isNil 'CTI_FOB_BUILD_EVERYONE') then {CTI_FOB_BUILD_EVERYONE = 0};
+	if (isNil 'CTI_FOB_BUILD_EVERYONE') then {CTI_FOB_BUILD_EVERYONE = 1};
 };
 //-----------------------------------------------------------------------------------------------------------------------//
 
@@ -579,6 +579,8 @@ CTI_GC_DELAY_TANK = 300;
 CTI_GC_DELAY_SHIP = 60;
 CTI_GC_DELAY_STATIC = 80;
 CTI_GC_DELAY_BUILDING = 30;
+CTI_GC_TOWN_OBJECTS = ["TREE", "SMALL TREE", "BUSH"];		//Garbaged these objects if destroyed
+CTI_GC_RANGE_TOWN = 600;									//Range around the main bunker, where objects gets garbaged
 
 //--- Vehicles: Misc
 CTI_VEHICLES_BOUNTY = 0.45; //--- Bounty upon entity killed.
@@ -624,6 +626,8 @@ with missionNamespace do {
 		//Charlieco'smod pack is active (civil vehicles only) so we have firetrucks
 		CTI_SALVAGE_SPECIAL = 1;
 		CTI_ADDON_CHARLIECO = 1;
+	} else {
+		CTI_ADDON_CHARLIECO = 0;
 	};
 	
 	if (isNil 'CTI_VEHICLES_AIR_FFAR') then {CTI_VEHICLES_AIR_FFAR = 2}; //--- FFAR Rockets availability (0: Disabled, 1: Enabled on Upgrade, 2: Enabled)
@@ -777,6 +781,7 @@ with missionNamespace do {
 	*/
 	
 	//if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
+	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
 	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
 	/*if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
@@ -784,7 +789,12 @@ with missionNamespace do {
 	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
-	
+
+	if(CTI_GM_DLC > 0 && CTI_SALVAGE_SPECIAL == 1) then {
+		CTI_SALVAGE_SPECIALUNITS = ["gm_gc_ff_p601","gm_ge_ff_typ1200","gm_ge_ff_u1300l_firefighter"];		//unitswith lights and sirens
+		CTI_SALVAGE_SPECIAL_ACTIONOFF = [[[objNull,'gm_beacons_blu',false],[objNull,'CustomSoundController1',0,0.4]],[[objNull,'gm_beacons_blu',false],[objNull,'CustomSoundController1',0,0.4]],[[objNull,'gm_beacons_blu',false],[objNull,'CustomSoundController1',0,0.4]]];		//handle for turning lights and sirens off
+		CTI_SALVAGE_SPECIAL_ACTIONON = [[[objNull,'gm_beacons_blu',true],[objNull,'CustomSoundController1',1,0.2]],[[objNull,'gm_beacons_blu',true],[objNull,'CustomSoundController1',1,0.2]],[[objNull,'gm_beacons_blu',true],[objNull,'CustomSoundController1',1,0.2]]];		//handle for turning lights and sirens on
+	};
 	
 	if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"

@@ -95,14 +95,16 @@ if(CTI_UPGRADE_MODE > 0) then {
 	};
 		
 	if(_evolve) then {
-		if(_side == west) then {
-			(_side) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_CUP.sqf";
-			(_side) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_CUP.sqf";
-		} else {
-			(_side) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
-			(_side) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
+		if(CTI_CUP_ADDON > 0) then {
+			if(_side == west) then {
+				(_side) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_CUP.sqf";
+				(_side) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_CUP.sqf";
+			} else {
+				(_side) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
+				(_side) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
+			};
+			//TODO: sent clients info
+			//[["CLIENT", _side], "Client_OnMessageReceived", ["upgrade-ended", [_upgrade, _level+1]]] call CTI_CO_FNC_NetSend;
 		};
-		//TODO: sent clients info
-		//[["CLIENT", _side], "Client_OnMessageReceived", ["upgrade-ended", [_upgrade, _level+1]]] call CTI_CO_FNC_NetSend;
 	};
 };

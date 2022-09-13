@@ -679,7 +679,10 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-if(CTI_ADDON_CHARLIECO == 1 ) then {
+
+switch true do
+{
+	case (CTI_ADDON_CHARLIECO == 1): {
 	_c pushBack format["CTI_Salvager_%1", _side];
 	_p pushBack '';
 	_n pushBack 'Salvager Truck';
@@ -699,8 +702,8 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
 	_d pushBack 0;
-} else {
-	if(CTI_SALVAGE_SPECIAL == 1 ) then {
+};
+	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC < 1): {
 		_c pushBack format["CTI_Salvager_%1", _side];
 		_p pushBack '';
 		_n pushBack 'Salvager Truck';
@@ -720,7 +723,9 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
 		_d pushBack 0;
-	} else {
+	};
+	case (CTI_GM_DLC > 1): {};
+	default  {
 		_c pushBack format["CTI_Salvager_%1", _faction];
 		_p pushBack '';
 		_n pushBack 'Salvager Truck';
@@ -740,7 +745,7 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1cwr3_b_m939_empty", _sid],"salvager-independent"];
 		_d pushBack 0;
-	};	
+	};
 };
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;

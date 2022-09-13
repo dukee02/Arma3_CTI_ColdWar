@@ -1286,28 +1286,31 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-if(CTI_ADDON_CHARLIECO == 1 ) then {
-	_c pushBack format["CTI_Salvager_%1", _side];
-	_p pushBack '';
-	_n pushBack 'Salvager Truck';
-	_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-	_t pushBack _building_time;
-	_u pushBack _tech_level;
-	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1EPA", _sid],"salvager"];
-	_d pushBack 0;
-		
-	_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-	_p pushBack '';
-	_n pushBack 'Salvager Truck';
-	_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-	_t pushBack _building_time;
-	_u pushBack _tech_level;
-	_f pushBack CTI_FACTORY_REPAIR;
-	_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
-	_d pushBack 0;
-} else {
-	if(CTI_SALVAGE_SPECIAL == 1 ) then {
+
+switch true do
+{
+	case (CTI_ADDON_CHARLIECO == 1): {
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_p pushBack '';
+		_n pushBack 'Salvager Truck';
+		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_REPAIR;
+		_s pushBack [format["%1EPA", _sid],"salvager"];
+		_d pushBack 0;
+			
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_p pushBack '';
+		_n pushBack 'Salvager Truck';
+		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_REPAIR;
+		_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
+		_d pushBack 0;
+	};
+	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC < 1): {
 		_c pushBack format["CTI_Salvager_%1", _side];
 		_p pushBack '';
 		_n pushBack 'Salvager Truck';
@@ -1327,7 +1330,9 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
 		_d pushBack 0;
-	} else {
+	};
+	case (CTI_GM_DLC > 1): {};
+	default  {
 		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
 			_c pushBack format["CTI_Salvager_%1", _faction];
 			_p pushBack '';
@@ -1369,7 +1374,7 @@ if(CTI_ADDON_CHARLIECO == 1 ) then {
 			_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager-independent"];
 			_d pushBack 0;
 		};
-	};	
+	};
 };
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;

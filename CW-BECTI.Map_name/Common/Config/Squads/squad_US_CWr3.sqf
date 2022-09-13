@@ -123,7 +123,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	mot_to_add = [[format["%1cwr3_b_hmmwv_m2", _sid], 1, 40]];
-	mot_to_add = [[format["%1cwr3_b_hmmwv_mk19", _sid], 1, 40]];
+	inf_to_add pushBack [format["%1cwr3_b_hmmwv_mk19", _sid], 1, 40];
 	
 	units_wheeled append mot_to_add;
 };
@@ -177,7 +177,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {	
 	arm_to_add = [[format["%1cwr3_b_m113a3", _sid], 1, 40]];
-	arm_to_add = [[format["%1cwr3_b_m163", _sid], 1, 40]];
+	inf_to_add pushBack [format["%1cwr3_b_m163", _sid], 1, 40];
 	
 	units_tracked append arm_to_add;
 };
@@ -186,7 +186,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	arm_to_add = [[format["%1cwr3_b_m60a3", _sid], 1, 40]];
-	arm_to_add = [[format["%1cwr3_b_m60a3_tts", _sid], 1, 40]];
+	inf_to_add pushBack [format["%1cwr3_b_m60a3_tts", _sid], 1, 40];
 	
 	units_tracked append arm_to_add;
 };
@@ -195,7 +195,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	arm_to_add = [[format["%1cwr3_b_m1", _sid], 1, 40]];
-	arm_to_add = [[format["%1cwr3_b_m1a1", _sid], 1, 40]];
+	inf_to_add pushBack [format["%1cwr3_b_m1a1", _sid], 1, 40];
 	
 	units_tracked append arm_to_add;
 };
