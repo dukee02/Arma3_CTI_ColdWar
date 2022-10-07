@@ -459,6 +459,10 @@ with missionNamespace do {
 	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "FFI (Infantry with unarmed cars - difficulty very easy)","Polish Units (Infantry with armed trucks - difficulty easy)","3rd Party (needs one Side on GUER - difficulty normal)"
 	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_TOWNS') then {CTI_EAST_TOWNS = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
+	if !(isNil 'CTI_TOWNS_ACTIVE_TIME') then {
+		CTI_TOWNS_OCCUPATION_INACTIVE_MAX = CTI_TOWNS_ACTIVE_TIME;
+		CTI_TOWNS_RESISTANCE_INACTIVE_MAX = CTI_TOWNS_ACTIVE_TIME;
+	};
 };
 
 //--- Towns: Misc.
@@ -784,8 +788,8 @@ with missionNamespace do {
 	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
 	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
-	/*if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
-	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
+	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
+	/*if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
 	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
