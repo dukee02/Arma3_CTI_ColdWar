@@ -788,9 +788,10 @@ with missionNamespace do {
 	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
 	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
-	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
-	/*if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
-	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
+	if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 1} else {CTI_BW_ADDON = 0};
+	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0};
+	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0};
+	/*if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
 
@@ -804,10 +805,10 @@ with missionNamespace do {
 	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_NPOC_SIDE') then {CTI_NPOC_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_RACS_SIDE') then {CTI_RACS_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_FIA_SIDE') then {CTI_FIA_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_FIA_SIDE') then {CTI_FIA_SIDE = 2};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_NVA_SIDE') then {CTI_NVA_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	
-	
-		
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	

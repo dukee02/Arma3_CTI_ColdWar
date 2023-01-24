@@ -71,9 +71,9 @@ _tech_matrix =
 			//CTI_UKR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,true,false],
 			//CTI_BWADD_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,true,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false]
 		],
@@ -281,11 +281,11 @@ _tech_matrix =
 			//CTI_UKR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
-			[false,false,false,false,false,false,false,false,false,false],
+			[false,false,true,true,false,false,false,false,false,false],
 			//CTI_BWADD_ID
-			[false,false,false,false,false,false,false,false,false,false],
+			[false,true,false,true,false,true,true,false,false,false],
 			//CTI_REDD_ID
-			[false,false,false,false,false,false,false,false,false,false]
+			[false,true,true,true,true,false,false,false,false,false]
 		],
 		//CTI_NVA_ID
 		[
@@ -491,11 +491,11 @@ _tech_matrix =
 			//CTI_UKR_ID
 			[false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
-			[false,false,false,false,false,false,false,false],
+			[false,false,false,false,false,true,true,true],
 			//CTI_BWADD_ID
 			[false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
-			[false,false,false,false,false,false,false,false]
+			[false,false,false,false,true,true,true,false]
 		],
 		//CTI_NVA_ID
 		[
@@ -701,9 +701,9 @@ _tech_matrix =
 			//CTI_UKR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
-			[false,false,false,false,false,false,false,false,false],
+			[false,false,false,false,true,true,false,false,false],
 			//CTI_BWADD_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,false,true,true,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false]
 		],
@@ -1113,7 +1113,7 @@ _tech_matrix =
 			//CTI_WS_ID
 			[false,false,false,false,false,false,false],
 			//CTI_CUP_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,false,false],
 			//CTI_RHS_ID
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
@@ -1123,11 +1123,11 @@ _tech_matrix =
 			//CTI_UKR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,false,false],
 			//CTI_BWADD_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,false,false],
 			//CTI_REDD_ID
-			[false,false,false,false,false,false,false]
+			[false,false,false,true,true,false,false]
 		],
 		//CTI_NVA_ID
 		[

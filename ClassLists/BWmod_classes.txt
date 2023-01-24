@@ -148,6 +148,7 @@ BWA3_Sniper_G82_Tropen
 BWA3_Spotter_Tropen
 
 
+TBW_RTW_BW
 
 bw_unimog_cargo
 bw_unimog_cargo_covered
@@ -160,8 +161,8 @@ BWA3_Dingo2_FLW200_M2_Fleck
 BWA3_Dingo2_FLW200_M2_Tropen
 BW_Dingo_GL_Wdl
 BW_Dingo_GL_Win
-BW_Dingo_GL_Win
 BW_Dingo_GL_Des
+BW_Dingo_Win
 BW_Dingo_Wdl
 BW_Dingo_Des
 TBW_Offroad_Feldjaeger

@@ -116,7 +116,7 @@ class Params {
 		default = 2;
 	};
 	class CTI_BW_SIDE {
-		title = "Bundeswehr (West Germany) Side";
+		title = "Bundeswehr (West Germany) Side [GM cDLC or BWA3-Mod needed]";
 		values[] = {-1,0};
 		texts[] = {"deactivated","BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
@@ -124,7 +124,7 @@ class Params {
 		default = -1; //0
 	};
 	class CTI_NVA_SIDE {
-		title = "NVA (East Germany) Side";
+		title = "NVA (East Germany) Side [GM cDLC neede]";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
 		//values[] = {-1,0,1,2};

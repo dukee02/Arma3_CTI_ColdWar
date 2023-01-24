@@ -27,7 +27,7 @@
 	[west, CTI_BW_ID, CTI_GM_ID] call compile preprocessFileLineNumbers "Common\Config\Gear\gear_start_config.sqf";
 */
 
-private ["_side", "_nationID", "_modID"];
+private ["_side", "_nationID", "_modID", "_weapon", "_weapon_ammo", "_weapon_att_light", "_weapon_att_optic", "_uniform", "_vest", "_backpack", "_helmet", "_grenades", "_healing", "_bino", "_item_map", "_item_radio", "_item_compass", "_item_watch"];
 
 _side = _this select 0;
 _nationID = _this select 1;
@@ -37,6 +37,22 @@ _defaultGearVar = "CTI_AI_WEST_DEFAULT_GEAR";
 if(_side == east) then {
 	_defaultGearVar = "CTI_AI_EAST_DEFAULT_GEAR";
 };
+
+_weapon = "";
+_weapon_ammo = "";
+_weapon_att_optic = "";
+_weapon_att_light = "";
+_uniform = "";
+_vest = "";
+_backpack = "";
+_helmet = "";
+_grenades = "";
+_healing = "firstaidkit";
+_bino = "binocular";
+_item_map = "itemmap";
+_item_radio = "itemradio";
+_item_compass = "itemcompass";
+_item_watch = "itemwatch";
 
 /*
 //--- National IDs
@@ -83,15 +99,18 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Config\Ge
 
 switch(_nationID) do {
 	case CTI_BW_ID: {
-		switch _modID do	{
+		switch (_modID) do {
 			case CTI_GM_ID: {
-				missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
-					[["gm_m16a1_blk",["","","",""],["gm_30Rnd_556x45mm_B_T_M856_stanag_gry"]],["",["","","",""],[""]],
-					["",["","","",""],[""]]],
-					[["gm_ge_army_uniform_soldier_80_ols",["gm_ge_army_gauzeBandage","gm_ge_army_burnBandage","gm_handgrenade_frag_dm51a1","gm_handgrenade_frag_dm51a1"]],
-					["gm_ge_army_vest_80_demolition",["gm_30Rnd_556x45mm_B_T_M856_stanag_gry","gm_30Rnd_556x45mm_B_T_M856_stanag_gry","gm_30Rnd_556x45mm_B_T_M856_stanag_gry","gm_30Rnd_556x45mm_B_T_M856_stanag_gry"]],
-					["gm_ge_army_backpack_80_oli",[]]],
-					["gm_ge_headgear_m62_net",""],[["","gm_ferod16_des"],["itemmap","","itemradio","gm_ge_army_conat2","itemwatch"]]]];
+				_weapon = "gm_m16a1_blk";
+				_weapon_ammo = "gm_30Rnd_556x45mm_B_T_M856_stanag_gry";
+				_uniform = "gm_ge_army_uniform_soldier_80_ols";
+				_vest = "gm_ge_army_vest_80_demolition";
+				_backpack = "gm_ge_army_backpack_80_oli";
+				_helmet = "gm_ge_headgear_m62_net";
+				_grenades = "gm_handgrenade_frag_dm51a1";
+				_healing = "gm_ge_army_gauzeBandage";
+				_bino = "gm_ferod16_des";
+				_item_compass = "gm_ge_army_conat2";
 			};
 			//case CTI_PF_ID: {};
 			//case CTI_IC_ID: {};
@@ -99,8 +118,40 @@ switch(_nationID) do {
 			//case CTI_CUP_ID: {};
 			//case CTI_VME_ID: {};
 			//case CTI_UKR_ID: {};
-			//case CTI_BWA3_ID: {};
-			//case CTI_BWADD_ID: {};
+			case CTI_BWA3_ID: {
+				_weapon = "BWA3_G36A3";
+				_weapon_ammo = "BWA3_30Rnd_556x45_G36";
+				_weapon_att_optic = "BWA3_optic_ZO4x30_RSAS_brown_pip";
+				_weapon_att_light = "BWA3_acc_VarioRay_irlaser";
+				_grenades = "BWA3_DM25";
+				switch(CTI_CAMO_ACTIVATION) do {
+					case 2: {//Desert
+						_uniform = "BWA3_Uniform_Tropen";
+						_vest = "BWA3_Vest_Rifleman_Tropen";
+						_helmet = "BWA3_OpsCore_FastMT_Tropen";
+					};
+					case 3: {//Jungle
+						_uniform = "BWA3_Uniform_Fleck";
+						_vest = "BWA3_Vest_Rifleman_Fleck";
+						_helmet = "BWA3_OpsCore_FastMT_Fleck";
+					};
+					default {//multi dark
+						_uniform = "BWA3_Uniform_Multi";
+						_vest = "BWA3_Vest_Rifleman_Multi";
+						_helmet = "BWA3_OpsCore_FastMT_Multi";
+					};
+				};
+			};
+			case CTI_BWADD_ID: {
+				_weapon = "BWAdd_G36";
+				_weapon_ammo = "BWA3_30Rnd_556x45_G36";
+				_weapon_att_optic = "BWA3_optic_ZO4x30_RSAS_pip";
+				_weapon_att_light = "BWA3_acc_VarioRay_irlaser";
+				_uniform = "PzBrig17_Uniform_idz_Snow";
+				_vest = "BWA3_Vest_Rifleman_Fleck";
+				_helmet = "PzBrig17_M92_Snow";
+				_grenades = "BWA3_DM25";
+			};
 			//case CTI_REDD_ID: {};
 			//default: {};
 		};
@@ -108,13 +159,17 @@ switch(_nationID) do {
 	case CTI_NVA_ID: {
 		switch _modID do	{
 			case CTI_GM_ID: {
-				missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
-					[["gm_mpiak74n_brn",["","","",""],["gm_30Rnd_545x39mm_B_7N6_ak74_org"]],["",["","","",""],[""]],
-					["",["","","",""],[""]]],
-					[["gm_gc_army_uniform_soldier_80_str",["gm_gc_army_gauzeBandage","gm_gc_army_medkit","gm_handgrenade_frag_rgd5","gm_handgrenade_frag_rgd5"]],
-					["gm_gc_army_vest_80_rifleman_str",["gm_30Rnd_545x39mm_B_7N6_ak74_org","gm_30Rnd_545x39mm_B_7N6_ak74_org","gm_30Rnd_545x39mm_B_7N6_ak74_org","gm_30Rnd_545x39mm_B_7N6_ak74_org"]],
-					["gm_gc_army_backpack_80_at_str",[]]],
-					["gm_gc_army_headgear_m56_net",""],[["","gm_df7x40_grn"],["itemmap","","itemradio","gm_gc_compass_f73","gm_watch_kosei_80"]]]];	
+				_weapon = "gm_mpiak74n_brn";
+				_weapon_ammo = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
+				_uniform = "gm_gc_army_uniform_soldier_80_str";
+				_vest = "gm_gc_army_vest_80_rifleman_str";
+				_backpack = "gm_gc_army_backpack_80_at_str";
+				_helmet = "gm_gc_army_headgear_m56_net";
+				_grenades = "gm_handgrenade_frag_rgd5";
+				_healing = "gm_gc_army_gauzeBandage";
+				_bino = "gm_df7x40_grn";
+				_item_compass = "gm_gc_compass_f73";
+				_item_watch = "gm_watch_kosei_80";
 			};
 			//case CTI_PF_ID: {};
 			//case CTI_IC_ID: {};
@@ -137,66 +192,51 @@ switch(_nationID) do {
 			//case CTI_IC_ID: {};
 			//case CTI_WS_ID: {};
 			case CTI_CUP_ID: {
+				_weapon = "CUP_arifle_M4A3_black";
+				_weapon_ammo = "CUP_30Rnd_556x45_Stanag";
+				_weapon_att_optic = "CUP_optic_CompM2_low";
+				_weapon_att_light = "CUP_acc_ANPEQ_2_Black_Top";
+				_grenades = "CUP_HandGrenade_M67";
+				_bino = "CUP_Vector21Nite";
 				//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 				switch(CTI_CAMO_ACTIVATION) do {
 					//case 1: {};
 					case 2: {//Desert
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_B_USMC_MCCUU_des_gloves",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["CUP_V_B_Eagle_SPC_Patrol",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["",[]]],
-							["CUP_H_LWHv2_MARPAT_des_cov_fr",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_B_USMC_MCCUU_des_gloves";
+						_vest = "CUP_V_B_Eagle_SPC_Patrol";
+						_helmet = "CUP_H_LWHv2_MARPAT_des_cov_fr";
 					};
 					case 3: {//Jungle
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_B_USMC_MCCUU_gloves",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["CUP_V_B_Eagle_SPC_Patrol",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["",[]]],
-							["CUP_H_LWHv2_MARPAT_cov_fr",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_B_USMC_MCCUU_gloves";
+						_vest = "CUP_V_B_Eagle_SPC_Patrol";
+						_helmet = "CUP_H_LWHv2_MARPAT_cov_fr";
 					};
 					case 4: {//Urban US
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_B_USArmy_ACU_Kneepad_Gloves_UCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["CUP_V_B_IOTV_UCP_Rifleman_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["",[]]],
-							["CUP_H_USArmy_HelmetACH_UCP",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_B_USArmy_ACU_Kneepad_Gloves_UCP";
+						_vest = "CUP_V_B_IOTV_UCP_Rifleman_USArmy";
+						_helmet = "CUP_H_USArmy_HelmetACH_UCP";
 					};
 					//case 5: {};
 					case 6: {//multi light
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_B_USArmy_ACU_Gloves_OCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["CUP_V_B_IOTV_OCP_Rifleman_Deltoid_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["",[]]],
-							["CUP_H_USArmy_HelmetACH_OCP",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_B_USArmy_ACU_Gloves_OCP";
+						_vest = "CUP_V_B_IOTV_OCP_Rifleman_Deltoid_USArmy";
+						_helmet = "CUP_H_USArmy_HelmetACH_OCP";
 					};
 					default {//multi dark
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_M4A3_black",["CUP_optic_CompM2_low","CUP_acc_ANPEQ_2_Black_Top","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_B_USArmy_ACU_Kneepad_Gloves_OEFCP",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["CUP_V_B_IOTV_OEFCP_Rifleman_USArmy",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-							["",[]]],
-							["CUP_H_USArmy_HelmetACH_OEFCP",""],[["","CUP_Vector21Nite"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_B_USArmy_ACU_Kneepad_Gloves_OEFCP";
+						_vest = "CUP_V_B_IOTV_OEFCP_Rifleman_USArmy";
+						_helmet = "CUP_H_USArmy_HelmetACH_OEFCP";
 					};
 				};
 			};
 			//case CTI_RHS_ID: {};
 			case CTI_CWR3_ID: {
-				missionNamespace setVariable ["CTI_AI_WEST_DEFAULT_GEAR", [
-					[["CUP_arifle_M16A1",["","","",""],["CUP_30Rnd_556x45_Stanag"]],["",["","","",""],[""]],
-					["",["","","",""],[""]]],
-					[["cwr3_b_uniform_m81_woodland_early",["firstaidkit","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-					["cwr3_b_vest_alice_etool",["CUP_HandGrenade_M67","CUP_HandGrenade_M67","CUP_30Rnd_556x45_Stanag","CUP_30Rnd_556x45_Stanag"]],
-					["",[]]],
-					["cwr3_b_headgear_m1_woodland_army_early",""],[["",""],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+				_weapon = "CUP_arifle_M16A1";
+				_weapon_ammo = "CUP_30Rnd_556x45_Stanag";
+				_uniform = "cwr3_b_uniform_m81_woodland_early";
+				_vest = "cwr3_b_vest_alice_etool";
+				_helmet = "cwr3_b_headgear_m1_woodland_army_early";
+				_grenades = "CUP_HandGrenade_M67";
 			};
 			//case CTI_VME_ID: {};
 			//case CTI_UKR_ID: {};
@@ -213,62 +253,42 @@ switch(_nationID) do {
 			//case CTI_IC_ID: {};
 			//case CTI_WS_ID: {};
 			case CTI_CUP_ID: {
+				_weapon = "CUP_arifle_AK12_black";
+				_weapon_ammo = "CUP_30Rnd_545x39_AK12_M";
+				_weapon_att_optic = "CUP_optic_1P87_RIS";
+				_grenades = "CUP_HandGrenade_RGD5";
 				//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 1: {
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_O_RUS_Ratnik_Winter",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["",[]]],
-							["CUP_H_RUS_6B47_v2_GogglesUp_Winter",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_O_RUS_Ratnik_Winter";
+						_vest = "CUP_V_O_SLA_Flak_Vest01";
+						_helmet = "CUP_H_RUS_6B47_v2_GogglesUp_Winter";
 					};
 					case 2: {
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_O_RUS_Ratnik_Desert",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["",[]]],
-							["CUP_H_RUS_6B47_v2_GogglesUp_Desert",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_O_RUS_Ratnik_Desert";
+						_vest = "CUP_V_O_SLA_Flak_Vest01";
+						_helmet = "CUP_H_RUS_6B47_v2_GogglesUp_Desert";
 					};
 					case 3: {
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["",[]]],
-							["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_O_RUS_Soldier_VKPO_MSV_EMR_gloves_pads";
+						_vest = "CUP_V_O_SLA_Flak_Vest01";
+						_helmet = "CUP_H_RUS_6B47_v2_GogglesUp_Summer";
 					};
 					case 4: {
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_O_RUS_Ratnik_Autumn",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["",[]]],
-							["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_O_RUS_Ratnik_Autumn";
+						_vest = "CUP_V_O_SLA_Flak_Vest01";
+						_helmet = "CUP_H_RUS_6B47_v2_GogglesUp_Summer";
 					};
 					//case 5: {};
 					case 6: {
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_O_RUS_Ratnik_BeigeDigital",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["",[]]],
-							["CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_O_RUS_Ratnik_BeigeDigital";
+						_vest = "CUP_V_O_SLA_Flak_Vest01";
+						_helmet = "CUP_H_RUS_6B47_v2_GogglesUp_BeigeDigital";
 					};
 					default {
-						missionNamespace setVariable [_defaultGearVar, [
-							[["CUP_arifle_AK12_black",["CUP_optic_1P87_RIS","","",""],["CUP_30Rnd_545x39_AK12_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["CUP_U_O_RUS_Ratnik_Summer",["firstaidkit","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["CUP_V_O_SLA_Flak_Vest01",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK12_M","CUP_30Rnd_545x39_AK12_M"]],
-							["",[]]],
-							["CUP_H_RUS_6B47_v2_GogglesUp_Summer",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_uniform = "CUP_U_O_RUS_Ratnik_Summer";
+						_vest = "CUP_V_O_SLA_Flak_Vest01";
+						_helmet = "CUP_H_RUS_6B47_v2_GogglesUp_Summer";
 					};
 				};
 			};
@@ -277,22 +297,20 @@ switch(_nationID) do {
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 2;
 					case 4: {//desert/urban camo active
-						missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
-							[["CUP_arifle_AK74",["","","",""],["CUP_30Rnd_545x39_AK_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["cwr3_o_uniform_m1969",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],
-							["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],
-							["",[]]],
-							["cwr3_o_headgear_ssh68",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_weapon = "CUP_arifle_AK74";
+						_weapon_ammo = "CUP_30Rnd_545x39_AK_M";
+						_uniform = "cwr3_o_uniform_m1969";
+						_vest = "cwr3_o_vest_beltkit_ak74";
+						_helmet = "cwr3_o_headgear_ssh68";
+						_grenades = "CUP_HandGrenade_RGD5";
 					};
 					default {//main camo active
-						missionNamespace setVariable ["CTI_AI_EAST_DEFAULT_GEAR", [
-							[["CUP_arifle_AK74",["","","",""],["CUP_30Rnd_545x39_AK_M"]],["",["","","",""],[""]],
-							["",["","","",""],[""]]],
-							[["cwr3_o_uniform_klmk_1957_birch_v1",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],
-							["cwr3_o_vest_6b2_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],
-							["",[]]],
-							["cwr3_o_headgear_ssh68",""],[["","binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+						_weapon = "CUP_arifle_AK74";
+						_weapon_ammo = "CUP_30Rnd_545x39_AK_M";
+						_uniform = "cwr3_o_uniform_klmk_1957_birch_v1";
+						_vest = "cwr3_o_vest_6b2_ak74";
+						_helmet = "cwr3_o_headgear_ssh68";
+						_grenades = "CUP_HandGrenade_RGD5";
 					};
 				};
 			};
@@ -323,3 +341,11 @@ switch(_nationID) do {
 	//case CTI_UKRAIN_ID: {};
 	default {};
 };
+
+missionNamespace setVariable [_defaultGearVar, [
+	[[_weapon,[_weapon_att_optic,_weapon_att_light,"",""],[_weapon_ammo]],["",["","","",""],[""]],
+	["",["","","",""],[""]]],
+	[[_uniform,[_healing,_healing,_weapon_ammo,_weapon_ammo,_weapon_ammo]],
+	[_vest,[_grenades,_grenades,_weapon_ammo,_weapon_ammo]],
+	["",[]]],
+	[_helmet,""],[["",_bino],[_item_map,"",_item_radio,_item_compass,_item_watch]]]];

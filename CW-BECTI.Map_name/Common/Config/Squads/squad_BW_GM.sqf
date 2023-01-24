@@ -545,7 +545,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 		aa_to_add = [[format["%1gm_ge_army_gepard1a1", _sid], 1, 40]];
 	};
 
-	units_tracked append aa_to_add;
+	units_antiair append aa_to_add;
 };
 
 _v pushBack "AntiAir";
@@ -592,6 +592,6 @@ _m pushBack 1000;
 _c pushBack "Air";
 _s pushBack [];
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\squads\squad_US_CUP.sqf", format["generated squads: [%1] ", count _v]] call CTI_CO_FNC_Log};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\squads\squad_BW_GM.sqf", format["generated squads: [%1] ", count _v]] call CTI_CO_FNC_Log};
 
 [_side, _v, _t, _p, _f, _m, _c, _s] call compile preprocessFileLineNumbers "Common\Config\Squads\Squads_Set.sqf";
