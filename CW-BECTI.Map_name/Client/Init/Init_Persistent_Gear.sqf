@@ -1,13 +1,8 @@
-//_templates = profileNamespace getVariable format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined];
 _templates = profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined];
-if (CTI_Log_Level >= CTI_Log_Debug) then {
-	{
-		// Current result is saved in variable _x
-		["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Client loaded templates List: <%1>", _x]] call CTI_CO_FNC_Log;
-	} forEach _templates;
-};
+
 _side_gear = missionNamespace getVariable "cti_gear_all";
 
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Client stored templates: <%1>", _templates]] call CTI_CO_FNC_Log;};
 //--- Attempt to load the "proper" templates
 _list = [];
 if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
@@ -21,6 +16,7 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 					
 					//--- #1 Now the party begin! first we check the weapons (primary/secondary/handgun)
 					_gear_sub = _gear select 0;
+					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["weapons (primary/secondary/handgun): <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 					if (typeName _gear_sub == "ARRAY") then { //--- The weapons items are stored in an array >> [["arifle_mxc_f",["","acc_pointer_ir","optic_Aco",""],["30rnd_65x39_caseless_mag"]],["launch_nlaw_f",[],["nlaw_f"]],["",[],[]]]
 						{
 							//--- Check that the weapon... is a weapon! >> ["arifle_mxc_f",["","acc_pointer_ir","optic_Aco",""],["30rnd_65x39_caseless_mag"]]
@@ -32,69 +28,57 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 									
 									if (typeName _weapon == "STRING" && typeName _accessories == "ARRAY" && typeName _magazine == "ARRAY") then { //--- The data format is valid
 										//if ((!isClass (configFile >> "CfgWeapons" >> _weapon) || !(_weapon in _side_gear)) && _weapon != "") exitWith {_flag_load = false}; //--- Abort if: the weapon is invalid or if it's not within the side's owned templates
-										if ((!isClass (configFile >> "CfgWeapons" >> _weapon)) && _weapon != "") exitWith {
-											_flag_load = false;
-											if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid weapon class: <%1>", _weapon]] call CTI_CO_FNC_Log;};
-										}; //--- Abort if: the weapon is invalid
-										if (!(getNumber(configFile >> "CfgWeapons" >> _weapon >> "type") in [CTI_TYPE_RIFLE,CTI_TYPE_PISTOL,CTI_TYPE_LAUNCHER,CTI_TYPE_RIFLE2H]) && _weapon != "") exitWith {
-											_flag_load = false;
-											if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid weapon: <%1>", _weapon]] call CTI_CO_FNC_Log;};
-										}; //--- Make sure that the weapon is a weapon
+										if ((!isClass (configFile >> "CfgWeapons" >> _weapon)) && _weapon != "") exitWith {_flag_load = false}; //--- Abort if: the weapon is invalid
+										if (!(getNumber(configFile >> "CfgWeapons" >> _weapon >> "type") in [CTI_TYPE_RIFLE,CTI_TYPE_PISTOL,CTI_TYPE_LAUNCHER,CTI_TYPE_RIFLE2H]) && _weapon != "") exitWith {_flag_load = false}; //--- Make sure that the weapon is a weapon
 										
-										if !(count _accessories in [0,4]) exitWith {_flag_load = false}; //--- The data format is invalid for the accesories
+										//if !(count _accessories in [0,4]) exitWith {_flag_load = false}; //--- The data format is invalid for the accesories
+										if !(count _accessories == 4) then {_accessories = ["","","",""];};
 										{
 											if (typeName _x == "STRING") then { //--- The accessory is a string
 												if (_x != "") then { //--- Empty accessories are skipped
 													//if (!isClass (configFile >> "CfgWeapons" >> _x) || !(_x in _side_gear)) exitWith {_flag_load = false}; //--- The accessory ain't valid or it's not within the side's gear
-													if (!isClass (configFile >> "CfgWeapons" >> _x)) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid accesories class: <%1>", _x]] call CTI_CO_FNC_Log;};
-													}; //--- The accessory ain't valid
-													if (getNumber(configFile >> "CfgWeapons" >> _x >> "type") != CTI_TYPE_ITEM) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid accesories: <%1>", _x]] call CTI_CO_FNC_Log;};
-													}; //--- The accessory is not a valid base class!
-													if !(getNumber(configFile >> "CfgWeapons" >> _x >> "ItemInfo" >> "type") in [CTI_SUBTYPE_ACC_MUZZLE,CTI_SUBTYPE_ACC_OPTIC,CTI_SUBTYPE_ACC_SIDE,CTI_SUBTYPE_ACC_BIPOD]) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid accesories type: <%1>", _x]] call CTI_CO_FNC_Log;};
-													}; //--- The accessory is not a valid base class (we don't care bout the order)!
+													if (!isClass (configFile >> "CfgWeapons" >> _x)) exitWith {_flag_load = false}; //--- The accessory ain't valid
+													if (getNumber(configFile >> "CfgWeapons" >> _x >> "type") != CTI_TYPE_ITEM) exitWith {_flag_load = false}; //--- The accessory is not a valid base class!
+													if !(getNumber(configFile >> "CfgWeapons" >> _x >> "ItemInfo" >> "type") in [CTI_SUBTYPE_ACC_MUZZLE,CTI_SUBTYPE_ACC_OPTIC,CTI_SUBTYPE_ACC_SIDE,CTI_SUBTYPE_ACC_BIPOD]) exitWith {_flag_load = false}; //--- The accessory is not a valid base class (we don't care bout the order)!
 												};
 											};
 											if !(_flag_load) exitWith {};
 										} forEach _accessories;
 										if !(_flag_load) exitWith {}; //--- Something went wrong with the accessories
-										
 										if !(count _magazine in [0,1]) exitWith {_flag_load = false};
 										if (count _magazine == 1) then { //--- Make sure that the magazine is valid
 											_magazine = _magazine select 0;
-											//if (!isClass (configFile >> "CfgMagazines" >> _magazine) || !(_magazine in _side_gear)) exitWith {_flag_load = false}; //--- The magazine ain't valid or it's not within the side's gear
-											if (!isClass (configFile >> "CfgMagazines" >> _magazine)) exitWith {_flag_load = false}; //--- The magazine ain't valid
+											if (_magazine != "") then { //--- Empty magazines are skipped
+												//if (!isClass (configFile >> "CfgMagazines" >> _magazine) || !(_magazine in _side_gear)) exitWith {_flag_load = false}; //--- The magazine ain't valid or it's not within the side's gear
+												if (!isClass (configFile >> "CfgMagazines" >> _magazine)) exitWith {_flag_load = false;}; //--- The magazine ain't valid
+											};
 										};
 										if !(_flag_load) exitWith {}; //--- Something went wrong with the magazine
 									} else {
 										_flag_load = false;
-										if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["wrong typename: <%1> <%2> <%3>", _weapon, _accessories, _magazine]] call CTI_CO_FNC_Log;};
+										if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["The data format is NOT valid: <%1> <%2> <%3>", typeName _weapon, typeName _accessories, typeName _magazine]] call CTI_CO_FNC_Log;};
 									};
 								} else {
 									_flag_load = false;
-									if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["count _x == 3: <%1>", count _x]] call CTI_CO_FNC_Log;};
+									if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["we didn't have the weapon/accessories/current magazine: <%1>", _x]] call CTI_CO_FNC_Log;};
 								};
 							} else {
 								_flag_load = false;
-								if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["typeName _x == ARRAY: <%1>", typeName _x]] call CTI_CO_FNC_Log;};
+								if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["not an ARRAY: <%1>", _x]] call CTI_CO_FNC_Log;};
 							};
-							if !(_flag_load) exitWith {
-								if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["ups weapon in template not working: <%1> <%2>", _flag_load, _x]] call CTI_CO_FNC_Log;};
-							}; //--- Something went wrong with the process
+							
+							if !(_flag_load) exitWith {}; //--- Something went wrong with the process
 						} forEach _gear_sub;
 					} else {
 						_flag_load = false;
-						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["typeName _gear_sub == ARRAY: <%1>", typeName _gear_sub]] call CTI_CO_FNC_Log;};
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Error in weapon config: <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 					};
-					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["loading template: <%1> ", _flag_load]] call CTI_CO_FNC_Log;};
+					
 					if (_flag_load) then {
 						//--- #2 then we check the containers (uniform/vest/backpack)
 						_gear_sub = _gear select 1;
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["containers (uniform/vest/backpack): <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
+						
 						if (typeName _gear_sub == "ARRAY") then { //--- The weapons items are stored in an array >> [["u_b_combatuniform_mcam",[]],["v_platecarrier1_rgr",[]],["b_assaultpack_mcamo",["firstaidkit","firstaidkit","handgr...
 							if (count _gear_sub == 3) then { //--- Make sure that we have the sections (uniform/vest/backpack)
 								{
@@ -108,29 +92,14 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 													switch (true) do {
 														case (_forEachIndex in [0,1]): { //--- Uniform & vest
 															//if (!isClass (configFile >> "CfgWeapons" >> _container) || !(_container in _side_gear)) exitWith {_flag_load = false}; //--- Abort if: the container is invalid or if it's not within the side's owned templates
-															if (!isClass (configFile >> "CfgWeapons" >> _container)) exitWith {
-																_flag_load = false;
-																if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid container class: <%1>", _container]] call CTI_CO_FNC_Log;};
-															}; //--- Abort if: the container is invalid
-															if (getNumber(configFile >> "CfgWeapons" >> _container >> "type") != CTI_TYPE_ITEM) exitWith {
-																_flag_load = false;
-																if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid container: <%1>", _container]] call CTI_CO_FNC_Log;};
-															}; //--- The container is not a valid base class!
-															if !(getNumber(configFile >> "CfgWeapons" >> _container >> "ItemInfo" >> "type") in [CTI_SUBTYPE_UNIFORM,CTI_SUBTYPE_VEST]) exitWith {
-																_flag_load = false;
-																if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid container type: <%1>", _container]] call CTI_CO_FNC_Log;};
-															}; //--- The container is not a valid uniform/vest
+															if (!isClass (configFile >> "CfgWeapons" >> _container)) exitWith {_flag_load = false}; //--- Abort if: the container is invalid
+															if (getNumber(configFile >> "CfgWeapons" >> _container >> "type") != CTI_TYPE_ITEM) exitWith {_flag_load = false}; //--- The container is not a valid base class!
+															if !(getNumber(configFile >> "CfgWeapons" >> _container >> "ItemInfo" >> "type") in [CTI_SUBTYPE_UNIFORM,CTI_SUBTYPE_VEST]) exitWith {_flag_load = false}; //--- The container is not a valid uniform/vest
 														};
 														case (_forEachIndex == 2): { //--- Backpack
 															//if (!isClass (configFile >> "CfgVehicles" >> _container) || !(_container in _side_gear)) exitWith {_flag_load = false}; //--- Abort if: the container is invalid or if it's not within the side's owned templates
-															if (!isClass (configFile >> "CfgVehicles" >> _container)) exitWith {
-																_flag_load = false;
-																if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid Backpack class: <%1>", _container]] call CTI_CO_FNC_Log;};
-															}; //--- Abort if: the container is invalid
-															if (getNumber(configFile >> "CfgVehicles" >> _container >> "isbackpack") != 1) exitWith {
-																_flag_load = false;
-																if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid Backpack: <%1>", _container]] call CTI_CO_FNC_Log;};
-															}; //--- The container is not a valid backpack
+															if (!isClass (configFile >> "CfgVehicles" >> _container)) exitWith {_flag_load = false}; //--- Abort if: the container is invalid
+															if (getNumber(configFile >> "CfgVehicles" >> _container >> "isbackpack") != 1) exitWith {_flag_load = false}; //--- The container is not a valid backpack
 														};
 													};
 													
@@ -151,9 +120,7 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 													} forEach _items;
 												};
 												
-												if !(_flag_load) exitWith {
-													if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["ups weapon in template not working: <%1> <%2>", _flag_load, _x]] call CTI_CO_FNC_Log;};
-												};
+												if !(_flag_load) exitWith {};
 											} else {
 												_flag_load = false;
 											};
@@ -169,12 +136,14 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 							};
 						}  else {
 							_flag_load = false;
+							if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Error in container (uniform/vest/backpack) config: <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 						};
 					};
 					
 					if (_flag_load) then {
 						//--- #3 next we check the head equipment (helm/goggles)
 						_gear_sub = _gear select 2;
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["head equipment (helm/goggles): <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 						
 						if (typeName _gear_sub == "ARRAY") then {
 							if (count _gear_sub == 2) then {
@@ -183,36 +152,27 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 								
 								if (_helm != "") then {
 									//if (!isClass (configFile >> "CfgWeapons" >> _helm) || !(_helm in _side_gear)) exitWith {_flag_load = false}; //--- The helm ain't valid or it's not within the side's gear
-									if (!isClass (configFile >> "CfgWeapons" >> _helm)) exitWith {
-										_flag_load = false,
-										if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid helm class: <%1>", _helm]] call CTI_CO_FNC_Log;};
-									}; //--- The helm ain't valid or it's not within the side's gear
-									if (getNumber(configFile >> "CfgWeapons" >> _helm >> "type") != CTI_TYPE_ITEM) exitWith {
-										_flag_load = false,
-										if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid helm: <%1>", _helm]] call CTI_CO_FNC_Log;};
-									}; //--- The helm do not have a valid base class!
-									if (getNumber(configFile >> "CfgWeapons" >> _helm >> "ItemInfo" >> "type") != CTI_SUBTYPE_HEADGEAR) exitWith {
-										_flag_load = false;
-										if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid helm type: <%1>", _helm]] call CTI_CO_FNC_Log;};
-									}; //--- The helm is not a valid headgear
+									if (!isClass (configFile >> "CfgWeapons" >> _helm)) exitWith {_flag_load = false}; //--- The helm ain't valid or it's not within the side's gear
+									if (getNumber(configFile >> "CfgWeapons" >> _helm >> "type") != CTI_TYPE_ITEM) exitWith {_flag_load = false}; //--- The helm do not have a valid base class!
+									if (getNumber(configFile >> "CfgWeapons" >> _helm >> "ItemInfo" >> "type") != CTI_SUBTYPE_HEADGEAR) exitWith {_flag_load = false}; //--- The helm is not a valid headgear
 								};
 								
 								if !(_flag_load) exitWith {};
-								//if ((!isClass (configFile >> "CfgGlasses" >> _goggles) || !(_goggles in _side_gear)) && _goggles != "") exitWith {
-								if ((!isClass (configFile >> "CfgGlasses" >> _goggles)) && _goggles != "") exitWith {
-									_flag_load = false;
-									if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid goggles: <%1>", _goggles]] call CTI_CO_FNC_Log;};
-								}; //--- The googles ain't valid or it's not within the side's gear
+								//if ((!isClass (configFile >> "CfgGlasses" >> _goggles) || !(_goggles in _side_gear)) && _goggles != "") exitWith {_flag_load = false}; //--- The googles ain't valid or it's not within the side's gear
+								if (!isClass (configFile >> "CfgGlasses" >> _goggles) && _goggles != "") exitWith {_flag_load = false}; //--- The googles ain't valid
 							} else {
 								_flag_load = false;
+								if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["head equipment ARRAY to small: <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 							};
 						} else {
 							_flag_load = false;
+							if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Error in head equipment (helm/goggles) config: <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 						};
 						
 						if (_flag_load) then {
 							//--- #4 next we check the items (binoc, nvg, items like gps)
 							_gear_sub = _gear select 3;
+							if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["items (binoc, nvg, items like gps): <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 							
 							if (typeName _gear_sub == "ARRAY") then {
 								if (count _gear_sub == 2) then {
@@ -223,18 +183,13 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 												if (typeName _x != "STRING") exitWith {_flag_load = false};
 												if (_x != "") then {
 													//if (!isClass (configFile >> "CfgWeapons" >> _x) || !(_x in _side_gear)) exitWith {_flag_load = false}; //--- The item ain't valid or it's not within the side's gear
-													if (!isClass (configFile >> "CfgWeapons" >> _x)) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid nvg/bino class: <%1>", _x]] call CTI_CO_FNC_Log;};
-														}; //--- The item ain't valid
-													if (getNumber(configFile >> "CfgWeapons" >> _x >> "type") != CTI_TYPE_EQUIPMENT) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid nvg/bino: <%1>", _x]] call CTI_CO_FNC_Log;};
-													}; //--- The item do not have a valid base class!
+													if (!isClass (configFile >> "CfgWeapons" >> _x)) exitWith {_flag_load = false}; //--- The item ain't valid
+													if (getNumber(configFile >> "CfgWeapons" >> _x >> "type") != CTI_TYPE_EQUIPMENT) exitWith {_flag_load = false}; //--- The item do not have a valid base class!
 												};
 											} forEach (_gear_sub select 0);
 										} else {
 											_flag_load = false;
+											if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["nvg/binocs ARRAY to short: <%1>", _gear_sub select 0]] call CTI_CO_FNC_Log;};
 										};
 									};
 									
@@ -248,18 +203,13 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 												if (_x != "") then {
 													//if (!isClass (configFile >> "CfgWeapons" >> _x) || !(_x in _side_gear)) exitWith {_flag_load = false}; //--- The item ain't valid or it's not within the side's gear
 													if (!isClass (configFile >> "CfgWeapons" >> _x) ) exitWith {_flag_load = false}; //--- The item ain't valid
-													if (getNumber(configFile >> "CfgWeapons" >> _x >> "type") != CTI_TYPE_ITEM) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid item class: <%1>", _x]] call CTI_CO_FNC_Log;};
-													}; //--- The item do not have a valid base class!
-													if (getNumber(configFile >> "CfgWeapons" >> _x >> "ItemInfo" >> "type") != CTI_SUBTYPE_ITEM) exitWith {
-														_flag_load = false;
-														if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["invalid item: <%1>", _x]] call CTI_CO_FNC_Log;};
-													}; //--- The item is not a valid item
+													if (getNumber(configFile >> "CfgWeapons" >> _x >> "type") != CTI_TYPE_ITEM) exitWith {_flag_load = false}; //--- The item do not have a valid base class!
+													if (getNumber(configFile >> "CfgWeapons" >> _x >> "ItemInfo" >> "type") != CTI_SUBTYPE_ITEM) exitWith {_flag_load = false}; //--- The item is not a valid item
 												};
 											} forEach (_gear_sub select 1);
 										} else {
 											_flag_load = false;
+											if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["items ARRAY to short: <%1>", _gear_sub select 1]] call CTI_CO_FNC_Log;};
 										};
 									};
 								};
@@ -271,17 +221,16 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 								_has_nil = false;
 								
 								{
-									if(_x == "binocular") then {} else {				//bino workaround, not set correct yet
+									if !(_x == "binocular" || _x == "") then {		//we skip empty items and binoculars
 										_var = missionNamespace getVariable _x;
 										if !(isNil '_var') then {
 											_cost = _cost + ((_var select 0) select 1);
 											if (((_var select 0) select 0) > _upgrade) then {_upgrade = (_var select 0) select 0};
 										} else {
 											_has_nil = true;
-											if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["nil item: <%1>", _x]] call CTI_CO_FNC_Log;};
+											if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["has nil items: <%1>", _x]] call CTI_CO_FNC_Log;};
 										};
 									};
-									
 								} forEach ((_x select 3) call CTI_CO_FNC_ConvertGearToFlat);
 								
 								//--- Make sure that our template is sane
@@ -291,10 +240,10 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 									
 									_list pushBack _x;
 								} else {
-									if (CTI_Log_Level >= CTI_Log_Debug) then {
-										["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Loaded template has nil items: <%1>", _x]] call CTI_CO_FNC_Log;
-									};
+									if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Client NOT loaded templates: <%1>", _x]] call CTI_CO_FNC_Log;};
 								};
+							} else {
+								if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Error in items (binoc, nvg, items like gps) config: <%1>", _gear_sub]] call CTI_CO_FNC_Log;};
 							};
 						};
 					};
@@ -304,9 +253,7 @@ if (typeName _templates == "ARRAY") then { //--- The variable itself is an array
 	} forEach _templates;
 };
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {
-	["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Client loaded templates List: <%1>", _list]] call CTI_CO_FNC_Log;
-};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC-DEBUG", "File: Client\Init\Init_Persistent_Gear.sqf", format["Client loaded templates List: <%1>", _list]] call CTI_CO_FNC_Log;};
 if (count _list > 0) then { //--- If we have more than one template then we overwrite the existing one
 	missionNamespace setVariable ["cti_gear_list_templates", _list];
 };

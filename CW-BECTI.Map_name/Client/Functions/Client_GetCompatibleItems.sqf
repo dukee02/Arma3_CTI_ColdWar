@@ -46,14 +46,4 @@ if (isArray _uiCfgItems) then {  // original way, it's an array, just return it
 		_uiCompatibleItems = (configProperties [_uiCfgItems, "isNumber _x && {(getNumber _x) > 0}"]) apply {configName _x};
 	};
 };
-
-if(count _uiCompatibleItems < 1) then{
-	switch(_slotName) do {
-		case "muzzle": {_uiCompatibleItems = [_weapon, 101] call BIS_fnc_compatibleItems};		// Arma3 ID: 101
-		case "optic": {_uiCompatibleItems = [_weapon, 201] call BIS_fnc_compatibleItems};			// Arma3 ID: 201
-		case "pointer": {_uiCompatibleItems = [_weapon, 301] call BIS_fnc_compatibleItems};		// Arma3 ID: 301
-		case "bipod": {_uiCompatibleItems = [_weapon, 302] call BIS_fnc_compatibleItems};	// Arma3 ID: 302
-	};
-};
-
 _uiCompatibleItems;

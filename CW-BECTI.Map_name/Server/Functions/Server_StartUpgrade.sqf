@@ -7,7 +7,7 @@
 	Author: 		Benny
 	Creation Date:	23-09-2013
 	Revision Date:	22-04-2014 (Sari)
-	Revision Date:	20-04-2022 dukee
+	Revision Date:	13-12-2022 (dukee)
 	
   # PARAMETERS #
     0	[Side]: The side which requested the upgrade
@@ -38,73 +38,37 @@ _level = _this select 2;
 
 if (CTI_DEBUG) then {_upgrade_time = 1} else {_upgrade_time = ((missionNamespace getVariable Format["CTI_%1_UPGRADES_TIMES", _side]) select _upgrade) select _level};
 
+_logic = (_side) call CTI_CO_FNC_GetSideLogic;
+_logic setVariable ["cti_upgrade_time", round (serverTime + _upgrade_time), true];
+
 sleep _upgrade_time;
 
-_logic = (_side) call CTI_CO_FNC_GetSideLogic;
 _upgrades = (_side) call CTI_CO_FNC_GetSideUpgrades;
 _upgrades set [_upgrade, (_upgrades select _upgrade) + 1];
+
+//town untis;
+//_x = ["GUER_INFANTRY_SQ_LIGHT", 4, 20];
+//_unit = _x select 0;
+//if !(isNil {missionNamespace getVariable format["%1_%2",_side, _unit]}) then {
+switch (_upgrade) do {
+	case CTI_UPGRADE_BARRACKS: {[_side, _upgrade, "Infantry"] spawn CTI_SE_FNC_UpgradeSquads;};
+	case CTI_UPGRADE_LIGHT: {[_side, _upgrade, "Motorized"] spawn CTI_SE_FNC_UpgradeSquads;};
+	case CTI_UPGRADE_HEAVY: {[_side, _upgrade, "Armored"] spawn CTI_SE_FNC_UpgradeSquads;};
+	case CTI_UPGRADE_AIR: {[_side, _upgrade, "Air"] spawn CTI_SE_FNC_UpgradeSquads;};
+	/*case CTI_UPGRADE_NAVAL: { };
+	case CTI_UPGRADE_SATELLITE: { };
+	case CTI_UPGRADE_AIR_FFAR: { };
+	case CTI_UPGRADE_AIR_AT: { };
+	case CTI_UPGRADE_AIR_AA: { };
+	case CTI_UPGRADE_AIR_CM: { };
+	case CTI_UPGRADE_TOWNS: { };
+	case CTI_UPGRADE_SUPPLY: { };
+	case CTI_UPGRADE_GEAR: { };
+	case CTI_UPGRADE_DEFENSE: { };*/
+	default { };
+};
 
 _logic setVariable ["cti_upgrades", _upgrades, true];
 _logic setVariable ["cti_upgrade", -1, true];
 
 [["CLIENT", _side], "Client_OnMessageReceived", ["upgrade-ended", [_upgrade, _level+1]]] call CTI_CO_FNC_NetSend;
-
-if(CTI_UPGRADE_MODE > 0) then {
-	_evolve = false;
-	_upgrade_max_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS", _side];
-		
-	switch(_upgrade) do {
-		case CTI_UPGRADE_BARRACKS: {
-			//floor or ceil
-			if((_upgrades select CTI_UPGRADE_BARRACKS) == ceil((_upgrade_max_levels select CTI_UPGRADE_BARRACKS) / 2)) then {
-				if((_upgrades select CTI_UPGRADE_HEAVY) >= ceil((_upgrade_max_levels select CTI_UPGRADE_HEAVY) / 2) &&
-					(_upgrades select CTI_UPGRADE_LIGHT) >= ceil((_upgrade_max_levels select CTI_UPGRADE_LIGHT) / 2) &&
-					(_upgrades select CTI_UPGRADE_GEAR) >= ceil((_upgrade_max_levels select CTI_UPGRADE_GEAR) / 2)) then {
-					_evolve = true;
-				};
-			};
-		};
-		case CTI_UPGRADE_HEAVY: {
-			if((_upgrades select CTI_UPGRADE_HEAVY) == ceil((_upgrade_max_levels select CTI_UPGRADE_HEAVY) / 2)) then {
-				if((_upgrades select CTI_UPGRADE_BARRACKS) >= ceil((_upgrade_max_levels select CTI_UPGRADE_BARRACKS) / 2) &&
-					(_upgrades select CTI_UPGRADE_LIGHT) >= ceil((_upgrade_max_levels select CTI_UPGRADE_LIGHT) / 2) &&
-					(_upgrades select CTI_UPGRADE_GEAR) >= ceil((_upgrade_max_levels select CTI_UPGRADE_GEAR) / 2)) then {
-					_evolve = true;
-				};
-			};
-		};
-		case CTI_UPGRADE_LIGHT: {
-			if((_upgrades select CTI_UPGRADE_LIGHT) == ceil((_upgrade_max_levels select CTI_UPGRADE_LIGHT) / 2)) then {
-				if((_upgrades select CTI_UPGRADE_HEAVY) >= ceil((_upgrade_max_levels select CTI_UPGRADE_HEAVY) / 2) &&
-					(_upgrades select CTI_UPGRADE_BARRACKS) >= ceil((_upgrade_max_levels select CTI_UPGRADE_BARRACKS) / 2) &&
-					(_upgrades select CTI_UPGRADE_GEAR) >= ceil((_upgrade_max_levels select CTI_UPGRADE_GEAR) / 2)) then {
-					_evolve = true;
-				};
-			};
-		};
-		case CTI_UPGRADE_GEAR: {
-			if((_upgrades select CTI_UPGRADE_GEAR) == ceil((_upgrade_max_levels select CTI_UPGRADE_GEAR) / 2)) then {
-				if((_upgrades select CTI_UPGRADE_HEAVY) >= ceil((_upgrade_max_levels select CTI_UPGRADE_HEAVY) / 2) &&
-					(_upgrades select CTI_UPGRADE_LIGHT) >= ceil((_upgrade_max_levels select CTI_UPGRADE_LIGHT) / 2) &&
-					(_upgrades select CTI_UPGRADE_BARRACKS) >= ceil((_upgrade_max_levels select CTI_UPGRADE_BARRACKS) / 2)) then {
-					_evolve = true;
-				};
-			};
-		};
-		default {};
-	};
-		
-	if(_evolve) then {
-		if(CTI_CUP_ADDON > 0) then {
-			if(_side == west) then {
-				(_side) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_CUP.sqf";
-				(_side) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_CUP.sqf";
-			} else {
-				(_side) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
-				(_side) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
-			};
-			//TODO: sent clients info
-			//[["CLIENT", _side], "Client_OnMessageReceived", ["upgrade-ended", [_upgrade, _level+1]]] call CTI_CO_FNC_NetSend;
-		};
-	};
-};

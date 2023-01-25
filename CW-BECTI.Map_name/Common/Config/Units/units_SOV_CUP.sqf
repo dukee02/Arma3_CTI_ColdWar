@@ -1,32 +1,20 @@
-/*
-format["%1<vanilla_unitname>", _sid] gets used later 4 the upcomming sidepatch
-format["%1", _sid]; - 4 copy paste
-*/
-private ["_side", "_faction", "_sid", "_time", "_building_time", "_tech_level", "_upgrade_levels", "_no_upgrade_multiplier", "_cntstart", "_cntend", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
+private ["_side", "_faction", "_sid", "_building_time", "_tech_level", "_upgrade_levels", "_cntstart", "_cntend", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
 
 _side = _this;
-_faction = "";
 _sid = "";
 _building_time = 10;
-_no_upgrade_multiplier = 1;
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_faction = "West";
-} else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_faction = "East";
-	} else {
-		//_sid = "VIOC_I_";
-		_faction = "Resistance";
-	};
+switch (_side) do {
+	case "west": {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case "east": {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case "resistance": {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	default {_sid = "";_faction = "";};
 };
 
 //We get the upgrade setup at this point, if this is null, something went wrong and we set it to the default.
 _upgrade_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS", _side];
 if (isNil "_upgrade_levels") then { 
-	_upgrade_levels = [0,0,0,0,0,1,1,1,1,1,3,4,0]; 
+	_upgrade_levels = [0,0,0,0,0,1,-1,-1,-1,1,3,4,0,-1]; 
 };
 
 _c = []; //--- Classname
@@ -968,14 +956,14 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 	
 	_c pushBack format["%1CUP_O_SU34_RU", _sid];
-		_p pushBack '';
-		_n pushBack '';
+	_p pushBack '';
+	_n pushBack '';
 	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true,2.0] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_AIR;
-		_s pushBack "";
-		_d pushBack 0;	
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_AIR;
+	_s pushBack "";
+	_d pushBack 0;	
 };
 
 //Update the calculatetd max upgrade level

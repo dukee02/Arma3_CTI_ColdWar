@@ -93,7 +93,6 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 	_c pushBack format["%1cwr3_b_soldier82_aar_m16", _sid];
-	_c pushBack format["%1cwr3_b_soldier82_ar_m16", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_aar", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_ar", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_aa_redeye", _sid];

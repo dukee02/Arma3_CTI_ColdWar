@@ -36,8 +36,10 @@ ReviveBleedOutDelay = 120;              //unconscious state duration (in secs)
 
 enableDebugConsole = 1;
 
+loadScreen = "VIO_BECTI.jpg";
+
 //Config for Pylon Manager
-class CfgPylonManager
+/*class CfgPylonManager
 {
 //Blacklisted Magazines
 //blacklistedMagazines[] = {"PylonMissile_Missile_AMRAAM_D_INT_x1","PylonRack_Bomb_SDB_x4"};		//cwr3_PylonMissile_1Rnd_RN28
@@ -69,4 +71,4 @@ rearmObjects[] = {
 
 //Distance needed from rearmObjects[]
 rearmRange = 50;
-};
+};*/

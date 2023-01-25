@@ -94,7 +94,6 @@ CTI_CO_FNC_GetSideDefenses = compileFinal preprocessFileLineNumbers "Common\Func
 CTI_CO_FNC_GetCalculatedUnitsPrize = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetCalculatedUnitsPrize.sqf";
 CTI_CO_FNC_GetCalculatedBuildtime = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetCalculatedBuildtime.sqf";
 CTI_CO_FNC_GetCalculatedItemPrize = compileFinal preprocessFileLineNumbers "Common\Functions\Common_GetCalculatedItemPrize.sqf";
-CTI_CO_FNC_SetFOBheader = compileFinal preprocessFileLineNumbers "Common\Functions\Common_SetFOBheader.sqf";
 
 CTI_CO_CustomIterator = 0;
 
@@ -464,6 +463,8 @@ if(CTI_EAST_AI >= 0) then {
 		default {};
 	};
 };
+
+call compile preprocessFileLineNumbers "Common\Config\Pylons\pylons.sqf";
 
 (west) call compile preprocessFileLineNumbers "Common\Config\Upgrades\Upgrades.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Upgrades\Upgrades.sqf";

@@ -35,27 +35,6 @@ _type = typeOf _vehicle;
 //_vehicle setVehicleAmmoDef 1;
 _vehicle setVehicleAmmo 1;
 
-//Workaround for the new CUP Tanks setVehicleAmmo only adds 1 round for maingun
-_config = configFile >> "CfgVehicles" >> _type >> "CUP_Shell_Default";
-_array = getArray(_config);
-if(count _array > 0) then {
-	_ammotype = [];
-	_rounds = [];
-	{
-		if(_x isEqualType 0) then {
-			_rounds pushBack _x;
-		};
-		if(_x isEqualType "") then {
-			_ammotype pushBack _x;
-		};
-	} forEach _array;
-	{
-		if(_rounds select _foreachindex > 0) then {
-			_vehicle addMagazines [_x,(_rounds select _foreachindex)-1];
-		};
-	} forEach _ammotype;
-};
-
 //--- Driver
 {
 	_vehicle removeMagazineTurret [_x, [-1]];
@@ -87,7 +66,7 @@ for '_i' from 0 to (count _config)-1 do {
 };
 
 //--- Authorize the air loadout depending on the parameters set
-//if (_vehicle isKindOf "Air") then {[_vehicle, _side] call CTI_CO_FNC_SanitizeAircraft};
+if (_vehicle isKindOf "Air") then {[_vehicle, _side] call CTI_CO_FNC_SanitizeAircraft};
 
 //--- Sanitize the artillery loadout, mines may lag the server for instance
-//if (CTI_ARTILLERY_FILTER == 1) then {if (typeOf _vehicle in (missionNamespace getVariable ["CTI_ARTILLERY", []])) then {(_vehicle) call CTI_CO_FNC_SanitizeArtillery}};
+if (CTI_ARTILLERY_FILTER == 1) then {if (typeOf _vehicle in (missionNamespace getVariable ["CTI_ARTILLERY", []])) then {(_vehicle) call CTI_CO_FNC_SanitizeArtillery}};

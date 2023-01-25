@@ -140,6 +140,8 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_SatelliteCamera.sq
 call compile preprocessFile "Client\Functions\UI\Functions_UI_ServiceMenu.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_UnitsCamera.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_UpgradeMenu.sqf";
+call compile preprocessFile "Client\Functions\UI\Functions_UI_BuildMenu.sqf";
+call compile preprocessFile "Client\Functions\UI\Functions_UI_PylonMenu.sqf";
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Vanilla_Basic.sqf";
 
@@ -305,11 +307,9 @@ if ((CTI_P_SideLogic getVariable "cti_votetime") > 0) then {createDialog "CTI_Rs
 {uiNamespace setVariable [_x, displayNull]} forEach ["CTI_Title_Capture"];
 
 //--- Gear templates (persitent)
-//if (isNil {profileNamespace getVariable format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {call CTI_UI_Gear_InitializeProfileTemplates};
 if (isNil {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {call CTI_UI_Gear_InitializeProfileTemplates};
 // profileNamespace setVariable [format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], nil];
 // saveProfileNamespace;
-//if !(isNil {profileNamespace getVariable format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {execVM "Client\Init\Init_Persistent_Gear.sqf"};
 if !(isNil {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {execVM "Client\Init\Init_Persistent_Gear.sqf"};
 
 //--- Graphics/video thread (persistent)
@@ -374,7 +374,15 @@ if (profileNamespace getVariable "CTI_PERSISTENT_HINTS") then {
 };
 
 if (CTI_BASE_NOOBPROTECTION == 1) then {player addEventHandler ["fired", {_this spawn CTI_CL_FNC_OnPlayerFired}]}; //--- Trust me, you want that
-if ((missionNamespace getVariable "CTI_UNITS_FATIGUE") == 0) then {player enableFatigue false}; //--- Disable the unit's fatigue
+if ((missionNamespace getVariable "CTI_UNITS_FATIGUE") >= 1) then {			
+	player enableFatigue false;													//--- Disable the unit's fatigue
+	if ((missionNamespace getVariable "CTI_UNITS_FATIGUE") >= 2) then {		
+		player enableStamina false;												//--- Disable the unit's stamina system and weapons sway
+	};
+	if ((missionNamespace getVariable "CTI_UNITS_FATIGUE") >= 3) then {		
+		player enableAimPrecision false;										//--- Disable the animation's aim precision affects weapon sway 
+	};
+}; 
 
 if (CTI_DEBUG) then {
 	hint "DEBUG MODE IS ENABLED! DON'T FORGET TO TURN IT OFF!";

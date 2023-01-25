@@ -255,17 +255,59 @@ class Params {
 		texts[] = {"Disabled","0","1","2","3","4","5","6","7","8","9","full"};
 		default = 10;
 	};
+	class CTI_VEHICLES_AIR_FFAR {
+		title = "UNITS_UPGRADE: Aircraft Basic equipment";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"No basic Rockets/Bombs","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
+	};
+	class CTI_VEHICLES_AIR_AA {
+		title = "UNITS_UPGRADE: Aircraft AA Missiles";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"No AA Missiles","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
+	};
+	class CTI_VEHICLES_AIR_AT {
+		title = "UNITS_UPGRADE: Aircraft advanced AT Missiles";
+		values[] = {-1,0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"No advanced AT Missiles","0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
+	};
+	/*class CTI_VEHICLES_AIR_CM {
+		title = "UNITS: Aircraft Countermeasures";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled with Upgrade","Enabled"};
+		default = 2;
+	};*/
+	class CTI_ECONOMY_LEVEL_DEFENSE {
+		title = "UPGRADE: Max Level Defense";
+		values[] = {0,1,2,3,4,5,6,7,8,9,10};
+		texts[] = {"0","1","2","3","4","5","6","7","8","9","full"};
+		default = 10;
+	};
+	class CTI_FACTORY_LEVEL_PRESET {
+		title = "UPGRADE: Pre researched Factory level (Barracks,Wheeled,Tracked,Air,Naval,Gear)";
+		values[] = {0,1,2,3,4,5,6,7,8,9};
+		texts[] = {"start with 0","start with level 1 (or max)","start with level 2 (or max)","start with level 3 (or max)","start with level 4 (or max)","start with level 5 (or max)","start with level 6 (or max)","start with level 7 (or max)","start with level 8 (or max)","start with level 9 (or max)"};
+		default = 0;
+	};
+	class CTI_ECONOMY_LEVEL_PRESET {
+		title = "UPGRADE: Pre researched level (Air FFAR,Air AT,Air AA,Towns,Supply,Defense)";
+		values[] = {0,1,2,3,4,5,6,7,8,9,100000};
+		texts[] = {"start with no bombs/rockets","start with level 1 (or max)","start with level 2 (or max)","start with level 3 (or max)","start with level 4 (or max)","start with level 5 (or max)","start with level 6 (or max)","start with level 7 (or max)","start with level 8 (or max)","start with level 9 (or max)","Basic Air ammo researched"};
+		default = 100000;
+	};
 	class CTI_ECONOMY_UPGRADE_TIMECAP {
 		title = "UPGRADE: Max Time needed for upgrades (concerns higher tier upgrades)";
-		values[] = {120,180,240,300,400,500,600,700,800,900,1000,1100,1200};
-		texts[] = {"120","180","240","300s","400s","500s","600s","700s","800s","900s","1000s","1100s","1200s"};
-		default = 600; //600
+		values[] = {300,400,500,600,700,800,900,1000,1100,1200};
+		texts[] = {"300s","400s","500s","600s","700s","800s","900s","1000s","1100s","1200s"};
+		default = 600;
 	};
 	class CTI_ECONOMY_TIME_MULTI {
-		title = "BASE: Buildtime multiplier (times capped[min,max]: Inf:[5s,50s]|Light,Ship:[10s,300s]|Heavy,Air:[20s,600s])";
+		title = "UPGRADE: Buildtime multiplier min = base/2 | max = base*20 (times base = Inf:[2s]|Wheeled,Ship:[5s]|Tracked,Air:[10s])";
 		values[] = {1,2,3,4,5,6,8,10};
 		texts[] = {"1","2","3","4","5","6","8","10"};
-		default = 2; //5
+		default = 4;
 	};
 	class SEPERATOR_AI {
 		title = "============ AI ============";
@@ -386,6 +428,12 @@ class Params {
 		values[] = {0,1};
 		texts[] = {"Money and Supply","only Money"};
 		default = 0;
+	};
+	class CTI_VEHICLES_BOUNTY {
+		title = "INCOME: Bounty upon entity killed";
+		values[] = {0,10,20,30,40,50,60};
+		texts[] = {"0% disabled","10%","20%","30%","40%","50%","60%"};
+		default = 40;
 	};
 	class CTI_ECONOMY_STARTUP_FUNDS_EAST_COMMANDER {
 		title = "INCOME: Starting Funds (East Commander)";
@@ -608,9 +656,9 @@ class Params {
 		default = 2;
 	};
 	class CTI_RESPAWN_FOB_RANGE {
-		title = "RESPAWN: FOB Range";
-		values[] = {500,750,1000,1250,1500,1750,2000,4000};
-		texts[] = {"0.50 KM","0.75 KM","1 KM","1.25 KM","1.5 KM","1.75 KM","2 KM","4 KM"};
+		title = "RESPAWN: Structure Range (FOB/Town camps)";
+		values[] = {500,750,1000,1500,2000,2500,3000,4000};
+		texts[] = {"0.50 KM","0.75 KM","1 KM","1.5 KM","2 KM","2.5 KM","3 KM","4 KM"};
 		default = 1000;
 	};
 	class CTI_RESPAWN_MOBILE {
@@ -619,11 +667,11 @@ class Params {
 		texts[] = {"Disabled","Enabled"};
 		default = 1;
 	};
-	class CTI_RESPAWN_CAMPS_RANGE {
-		title = "RESPAWN: Towns Range";
-		values[] = {50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000,1500,2000,2500,3000,3500,4000};
-		texts[] = {"50m","100m","150m","200m","250m","300m","350m","400m","450m","500m","550m","600m","650m","700m","750m","800m","850m","900m","950m","1000m","1500m","2000m","2500m","3000m","3500m","4000m"};
-		default = 1000;
+	class CTI_RESPAWN_MOBILE_RANGE {
+		title = "RESPAWN: Mobile Range (AI/Medical vehicles)";
+		values[] = {50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950,1000,1500,2000};
+		texts[] = {"50m","100m","150m","200m","250m","300m","350m","400m","450m","500m","550m","600m","650m","700m","750m","800m","850m","900m","950m","1000m","1500m","2000m"};
+		default = 600;
 	};
 	class SEPERATOR_TOWNS {
 		title = "============ Towns ============";
@@ -703,36 +751,6 @@ class Params {
 		texts[] = {"Unlocked","Locked (Resistance)","Locked (Occupation)","Locked (Resistance and Occupation)"};
 		default = 0;
 	};
-	/*class SEPERATOR_VEHICLES {
-		title = "============ Vehicles ============";
-		values[] = {0,1};
-		texts[] = {"",""};
-		default = 0;
-	};
-	class CTI_VEHICLES_AIR_FFAR {
-		title = "UNITS: Aircraft FFAR Rockets";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled with Upgrade","Enabled"};
-		default = 0;
-	};
-	class CTI_VEHICLES_AIR_AA {
-		title = "UNITS: Aircraft AA Missiles";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled with Upgrade","Enabled"};
-		default = 0;
-	};
-	class CTI_VEHICLES_AIR_AT {
-		title = "UNITS: Aircraft AT Missiles";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled with Upgrade","Enabled"};
-		default = 0;
-	};
-	class CTI_VEHICLES_AIR_CM {
-		title = "UNITS: Aircraft Countermeasures";
-		values[] = {0,1,2};
-		texts[] = {"Disabled","Enabled with Upgrade","Enabled"};
-		default = 2;
-	};*/
 	class SEPERATOR_OTHER {
 		title = "============ Other ============";
 		values[] = {0,1};
@@ -746,9 +764,9 @@ class Params {
 		default = 0;
 	};
 	class CTI_UNITS_FATIGUE {
-		title = "UNITS: Fatigue";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
+		title = "UNITS: Stamina Systems";
+		values[] = {0,1,2,3};
+		texts[] = {"Enabled","Disabled Fatigue","+ disable stamina (weapon sway)","+ disabled -AimPrecision- coefficient"};
 		default = 0;
 	};
 	class CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX {
@@ -792,6 +810,12 @@ class Params {
 		values[] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,35,40,45,50,60,70,80,90,100};
 		texts[] = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","35","40","45","50","60","70","80","90","100"};
 		default = 10;
+	};
+	class CTI_SALVAGE_SPECIAL {
+		title = "SPECIAL: Enable Rescue Vehicle as Salvager";
+		values[] = {0,1};
+		texts[] = {"Disabled","Enabled"};
+		default = 1;
 	};
 	class CTI_Log_Level {
 		title = "LOG: Set level of Logging";
