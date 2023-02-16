@@ -503,70 +503,41 @@ _c = [];
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		switch(CTI_CAMO_ACTIVATION) do {
-			case 1: {//desert camo active
-				_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid];
-				_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_win", _sid];
+			case 2: {//desert camo active
+				_c pushBack format["%1BWA3_Rifleman_Tropen", _sid];	
+				_c pushBack format["%1BWA3_Medic_Tropen", _sid];
+				_c pushBack format["%1BWA3_Crew_Tropen", _sid];
 			};
 			case 3: {//jungle camo active
-				_c pushBack format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid];
-				_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
+				_c pushBack format["%1BWA3_Rifleman_Fleck", _sid];
+				_c pushBack format["%1BWA3_Crew_Fleck", _sid];
+				_c pushBack format["%1BWA3_Medic_Fleck", _sid];
 			};
 			default {//main camo active
-				_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid];
-				_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_ols", _sid];
+				_c pushBack format["%1BWA3_Rifleman_Multi", _sid];	
+				_c pushBack format["%1BWA3_Medic_Multi", _sid];	
+				_c pushBack format["%1BWA3_Crew_Multi", _sid];	
 			};	
 		};
-		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
 	};
-};
-
-_c pushBack format["%1gm_ge_army_k125", _sid];
-_c pushBack format["%1gm_ge_civ_typ1200", _sid];
-_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
-_c pushBack format["%1gm_ge_pol_typ1200", _sid];
-_c pushBack format["%1gm_ge_ff_typ1200", _sid];
-if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_des", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_trp", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_wdl", _sid];
-};
-if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo", _sid];
 };
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-			_c pushBack format["%1gm_ge_army_kat1_451_refuel_win", _sid];
-			_c pushBack format["%1gm_ge_army_kat1_454_reammo_win", _sid];
-			_c pushBack format["%1gm_ge_army_u1300l_repair_win", _sid];			//repair
+			_c pushBack format["%1BW_LKW_Munition_Winter", _sid];
+			_c pushBack format["%1BW_LKW_Treibstoff_Winter", _sid];
+			_c pushBack format["%1BW_LKW_Reparatur_Winter", _sid];	
 		};
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-			_c pushBack format["%1gm_ge_army_kat1_451_refuel_des", _sid];
-			_c pushBack format["%1gm_ge_army_kat1_454_reammo_des", _sid];
-			_c pushBack format["%1gm_ge_army_u1300l_repair_des", _sid];			//repair
+			_c pushBack format["%1BW_LKW_Munition_Tropen", _sid];
+			_c pushBack format["%1BW_LKW_Treibstoff_Tropen", _sid];
+			_c pushBack format["%1BW_LKW_Reparatur_Tropen", _sid];	
 		};
-		if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-			_c pushBack format["%1gm_ge_army_kat1_451_refuel_trp", _sid];
-			_c pushBack format["%1gm_ge_army_kat1_454_reammo_trp", _sid];
-			_c pushBack format["%1gm_ge_army_u1300l_repair_trp", _sid];			//repair
-		};
-		if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-			_c pushBack format["%1gm_ge_army_kat1_451_refuel_wdl", _sid];
-			_c pushBack format["%1gm_ge_army_kat1_454_reammo_wdl", _sid];
-			_c pushBack format["%1gm_ge_army_u1300l_repair_wdl", _sid];			//repair
-		};
-		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-			_c pushBack format["%1gm_ge_army_kat1_451_refuel", _sid];
-			_c pushBack format["%1gm_ge_army_kat1_454_reammo", _sid];
-			_c pushBack format["%1gm_ge_army_u1300l_repair", _sid];			//repair
+		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+			_c pushBack format["%1BW_LKW_Munition_Fleck", _sid];
+			_c pushBack format["%1BW_LKW_Treibstoff_Fleck", _sid];
+			_c pushBack format["%1BW_LKW_Reparatur_Fleck", _sid];
 		};
 	};
 };

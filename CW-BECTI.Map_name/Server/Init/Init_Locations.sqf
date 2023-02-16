@@ -101,7 +101,6 @@ if !(_loadingOK) then {
 				} forEach _camps;
 			} forEach _nearTownsE;
 		};
-		
 		//--- Random Towns (25% East, 25% West, 50% Res).
 		case 3: {
 			{

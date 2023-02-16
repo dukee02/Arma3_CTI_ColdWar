@@ -5,9 +5,9 @@ _sid = "";
 _building_time = 10;
 
 switch (_side) do {
-	case "west": {/*_sid = "VIOC_B_";*/_faction = "West";};
-	case "east": {/*_sid = "VIOC_O_";*/_faction = "East";};
-	case "resistance": {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	case west: {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case east: {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case resistance: {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
 	default {_sid = "";_faction = "";};
 };
 
@@ -689,7 +689,8 @@ switch true do
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
 	_d pushBack 0;
-};
+	};
+	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC >= 1): {};
 	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC < 1): {
 		_c pushBack format["CTI_Salvager_%1", _side];
 		_p pushBack '';
@@ -711,7 +712,6 @@ switch true do
 		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
 		_d pushBack 0;
 	};
-	case (CTI_GM_DLC > 1): {};
 	default  {
 		_c pushBack format["CTI_Salvager_%1", _faction];
 		_p pushBack '';

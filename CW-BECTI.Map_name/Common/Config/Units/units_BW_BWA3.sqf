@@ -5,9 +5,9 @@ _sid = "";
 _building_time = 10;
 
 switch (_side) do {
-	case "west": {/*_sid = "VIOC_B_";*/_faction = "West";};
-	case "east": {/*_sid = "VIOC_O_";*/_faction = "East";};
-	case "resistance": {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	case west: {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case east: {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case resistance: {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
 	default {_sid = "";_faction = "";};
 };
 
@@ -459,9 +459,9 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
-	_c pushBack format["%1BWA3_Tiger_Gunpod_FZ", _sid];
+	//_c pushBack format["%1BWA3_Tiger_Gunpod_FZ", _sid];
 	_c pushBack format["%1BWA3_Tiger_Gunpod_Heavy", _sid];
-	_c pushBack format["%1BWA3_Tiger_Gunpod_PARS", _sid];
+	//_c pushBack format["%1BWA3_Tiger_Gunpod_PARS", _sid];
 
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -483,8 +483,8 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
-	_c pushBack format["%1BWA3_Tiger_RMK_Heavy", _sid];
-	_c pushBack format["%1BWA3_Tiger_RMK_PARS", _sid];
+	//_c pushBack format["%1BWA3_Tiger_RMK_Heavy", _sid];
+	//_c pushBack format["%1BWA3_Tiger_RMK_PARS", _sid];
 	_c pushBack format["%1BWA3_Tiger_RMK_Universal", _sid];
 
 	//set all other vars in a slope
@@ -537,29 +537,7 @@ switch true do
 		_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
 		_d pushBack 0;
 	};
-	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC > 0): {
-		/*_c pushBack format["CTI_Salvager_%1", _side];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1gm_ge_ff_u1300l_firefighter", _sid],"salvager"];
-		_d pushBack 0;
-			
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		//_s pushBack [format["%1gm_ge_ff_u1300l_firefighter", _sid],"salvager-independent"];
-		_s pushBack [format["%1gm_ge_ff_typ1200", _sid],"salvager-independent"];
-		_d pushBack 0;*/
-	};
-	//case (CTI_GM_DLC > 1): {};	//--- this is GM
+	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC >= 1): {};
 	default  {
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 			_c pushBack format["CTI_Salvager_%1", _faction];

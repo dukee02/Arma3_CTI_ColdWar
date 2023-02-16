@@ -38,8 +38,26 @@ if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command"];
 		};
+	} else {
+		if(CTI_REDD_ADDON > 0) then {
+			if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Wintertarn"];
+			};
+			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Tropentarn"];
+			};
+			if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Flecktarn"];
+			};
+		} else {
+			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "BWA3_Multi_Tropen"];
+			};
+			if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "BWA3_Multi_Fleck"];
+			};
+		};
 	};
-	// else {		missionNamespace setVariable [format["CTI_%1_HQ", _side], "BW_LKW_Geraet_Fleck"];	}
 };
 if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {
@@ -223,124 +241,89 @@ _upgrade_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS",
 if (isNil "_upgrade_levels_east") then { 
 	_upgrade_levels = [0,0,0,0,0,1,-1,-1,-1,1,3,4,0,-1]; 
 };
+
 /********************************************************************************************************************************
- *											USA																					*
+ *														TECH 0																	*
  ********************************************************************************************************************************/
  _tech_level = 0;
 
-if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,1.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceMG = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,2.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+/********************************************************************************************************************************
+ *											USA																					*
+ ********************************************************************************************************************************/
+ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if (CTI_CUP_ADDON >= 0) then {
 		_headers pushBack 		"[CUP] Static SearchLight";
 		_classes pushBack 		"CUP_B_CUP_SearchLight_static_US";
-		_prices pushBack 		500;
+		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
 		_headers pushBack 		"[CUP] Static MG (M2)";
 		_classes pushBack 		"CUP_B_M2StaticMG_US";
-		_prices pushBack 		1500;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CUP] Static MG low (M2)";
 		_classes pushBack 		"CUP_B_M2StaticMG_MiniTripod_US";
-		_prices pushBack 		1000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
 		_headers pushBack 		"[CUP] Static GW (MK19)";
 		_classes pushBack 		"CUP_B_MK19_TriPod_US";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-
-		_headers pushBack 		"[CUP] M119";
-		_classes pushBack 		"CUP_B_M119_US";
-		_prices pushBack 		6000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CUP] Mortar";
 		_classes pushBack 		"CUP_B_M252_US";
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-
-		_headers pushBack 		"[CUP] AT Defense (TOW)";
-		_classes pushBack 		"CUP_B_TOW_TriPod_US";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] AT Defense (TOW2)";
-		_classes pushBack 		"CUP_B_TOW2_TriPod_US";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] AA Defense (Stinger)";
-		_classes pushBack 		"CUP_B_CUP_Stinger_AA_pod_US";
-		_prices pushBack 		12000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
+		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_CWR3_ADDON >= 0) then {
 		_headers pushBack 		"[CWr3] Static SearchLight";
 		_classes pushBack 		"cwr3_b_searchlight";
-		_prices pushBack 		500;
+		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
 		_headers pushBack 		"[CWr3] Static MG (M2 high)";
 		_classes pushBack 		"cwr3_b_m2hb_high";
-		_prices pushBack 		1500;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
 		_headers pushBack 		"[CWr3] Static MG (M2 low)";
 		_classes pushBack 		"cwr3_b_m2hb_low";
-		_prices pushBack 		1500;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
 		_headers pushBack 		"[CWr3] Static GW (MK19)";
 		_classes pushBack 		"cwr3_b_mk19";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-
-		_headers pushBack 		"[CWr3] AT Defense (TOW)";
-		_classes pushBack 		"cwr3_b_tow";
-		_prices pushBack 		8000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CWr3] Mortar M252";
 		_classes pushBack 		"cwr3_b_m252";
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-
-		_headers pushBack 		"[CWr3] M119";
-		_classes pushBack 		"cwr3_b_m119";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
+		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
 	};	
 };
@@ -351,153 +334,411 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CUP_ADDON >= 0) then {
 		_headers pushBack 		"[CUP] Static SearchLight";
 		_classes pushBack 		"CUP_O_SearchLight_static_RU";
-		_prices pushBack 		500;
+		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CUP] Static MG (KORD)";
 		_classes pushBack 		"CUP_O_KORD_high_RU";
-		_prices pushBack 		1500;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CUP] Static MG low (KORD)";
 		_classes pushBack 		"CUP_O_KORD_RU";
-		_prices pushBack 		1000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CUP] Static GW (AGS)";
 		_classes pushBack 		"CUP_O_AGS_RU";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] D30 Arty";
-		_classes pushBack 		"CUP_O_D30_RU";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] D30 AT";
-		_classes pushBack 		"CUP_O_D30_AT_RU";
-		_prices pushBack 		6000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CUP] Mortar";
 		_classes pushBack 		"CUP_O_2b14_82mm_RU";
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
+		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] AT Defense (Metis)";
-		_classes pushBack 		"CUP_O_Metis_RU";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] AT Defense (Kornet)";
-		_classes pushBack 		"CUP_O_Kornet_RU";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] AA Defense (ZU23)";
-		_classes pushBack 		"CUP_O_ZU23_RU";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CUP] AA Defense (Igla)";
-		_classes pushBack 		"CUP_O_Igla_AA_pod_RU";
-		_prices pushBack 		12000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
 	};
 	if(CTI_CWR3_ADDON >= 0) then {
 		_headers pushBack 		"[CWr3] Static SearchLight";
 		_classes pushBack 		"cwr3_o_searchlight";
-		_prices pushBack 		500;
+		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CWr3] Static MG (NSV)";
 		_classes pushBack 		"cwr3_o_nsv_high";
-		_prices pushBack 		1500;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CWr3] Static MG low (NSV)";
 		_classes pushBack 		"cwr3_o_nsv_low";
-		_prices pushBack 		1000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CWr3] Static GW (AGS)";
 		_classes pushBack 		"cwr3_o_ags30";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CWr3] D30 Arty";
-		_classes pushBack 		"cwr3_o_d30";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CWr3] D30 AT";
-		_classes pushBack 		"cwr3_o_d30_at";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CWr3] AT Defense (Spg9)";
-		_classes pushBack 		"cwr3_o_spg9";
-		_prices pushBack 		6000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CWr3] AT Defense (Konkurs)";
-		_classes pushBack 		"cwr3_o_konkurs_tripod";
-		_prices pushBack 		8000;
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[CWr3] Mortar 2b14";
 		_classes pushBack 		"cwr3_o_2b14";
-		_prices pushBack 		5000;
+		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
+		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[CWr3] AA Defense (ZU23)";
-		_classes pushBack 		"cwr3_o_zu23";
-		_prices pushBack 		8000;
+	};
+};
+/********************************************************************************************************************************
+ *											Bundeswehr (West Germany)															*
+ ********************************************************************************************************************************/
+if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_GM_DLC == 0) then {
+		_headers pushBack 		"MG3 AA (GM)";
+		_classes pushBack 		"gm_ge_army_mg3_aatripod";
+		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 	};
+	if (CTI_REDD_ADDON > 0) then {
+		_headers pushBack 		"Static MG (MG3)";
+		_classes pushBack 		"rnt_mg3_static";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+	
+		_headers pushBack 		"Static MG low (MG3 ai)";
+		_classes pushBack 		"rnt_mg3_static_ai";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+	
+		_headers pushBack 		"Static GW (GMW)";
+		_classes pushBack 		"rnt_gmw_static";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"Mortar (REDD)";
+		_classes pushBack 		"Redd_Tank_M120_Tampella";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *											NVA (East Germany)																	*
+ ********************************************************************************************************************************/
+if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_GM_DLC == 0) then {
+		_headers pushBack 		"DShKM (GM)";
+		_classes pushBack 		"gm_gc_army_dshkm_aatripod";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *														TECH 1																	*
+ ********************************************************************************************************************************/
+ _tech_level = 1;
+
+_priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+/********************************************************************************************************************************
+ *											USA																					*
+ ********************************************************************************************************************************/
+if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_CUP_ADDON >= 0) then {
+		_headers pushBack 		"[CUP] M119";
+		_classes pushBack 		"CUP_B_M119_US";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_headers pushBack 		"[CWr3] M119";
+		_classes pushBack 		"cwr3_b_m119";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+	};	
+};
+/********************************************************************************************************************************
+ *											Russia																				*
+ ********************************************************************************************************************************/
+if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_CUP_ADDON >= 0) then {
+		
+		_headers pushBack 		"[CUP] D30 Arty";
+		_classes pushBack 		"CUP_O_D30_RU";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] D30 AT";
+		_classes pushBack 		"CUP_O_D30_AT_RU";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] AA Defense (ZU23)";
+		_classes pushBack 		"CUP_O_ZU23_RU";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+		
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		
+		_headers pushBack 		"[CWr3] D30 Arty";
+		_classes pushBack 		"cwr3_o_d30";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CWr3] D30 AT";
+		_classes pushBack 		"cwr3_o_d30_at";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CWr3] AT Defense (Spg9)";
+		_classes pushBack 		"cwr3_o_spg9";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CWr3] AA Defense (ZU23)";
+		_classes pushBack 		"cwr3_o_zu23";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *											NVA (East Germany)																	*
+ ********************************************************************************************************************************/
+if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_GM_DLC == 0) then {
+		_headers pushBack 		"SPG 9 (GM)";
+		_classes pushBack 		"gm_gc_army_spg9_tripod";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+	};
+};
+
+/********************************************************************************************************************************
+ *														TECH 2																	*
+ ********************************************************************************************************************************/
+ _tech_level = 2;
+
+_priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+/********************************************************************************************************************************
+ *											USA																					*
+ ********************************************************************************************************************************/
+if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_CUP_ADDON >= 0) then {
+		_headers pushBack 		"[CUP] AT Defense (TOW)";
+		_classes pushBack 		"CUP_B_TOW_TriPod_US";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] AT Defense (TOW2)";
+		_classes pushBack 		"CUP_B_TOW2_TriPod_US";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] AA Defense (Stinger)";
+		_classes pushBack 		"CUP_B_CUP_Stinger_AA_pod_US";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_headers pushBack 		"[CWr3] AT Defense (TOW)";
+		_classes pushBack 		"cwr3_b_tow";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+	};	
+};
+/********************************************************************************************************************************
+ *											Russia																				*
+ ********************************************************************************************************************************/
+if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_CUP_ADDON >= 0) then {
+		_headers pushBack 		"[CUP] AT Defense (Metis)";
+		_classes pushBack 		"CUP_O_Metis_RU";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] AT Defense (Kornet)";
+		_classes pushBack 		"CUP_O_Kornet_RU";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] AA Defense (Igla)";
+		_classes pushBack 		"CUP_O_Igla_AA_pod_RU";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+		
+	};
+	if(CTI_CWR3_ADDON >= 0) then {
+		_headers pushBack 		"[CWr3] AT Defense (Konkurs)";
+		_classes pushBack 		"cwr3_o_konkurs_tripod";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *											Bundeswehr (West Germany)															*
+ ********************************************************************************************************************************/
+if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_GM_DLC == 0) then {
+		_headers pushBack 		"AT Milan (GM)";
+		_classes pushBack 		"gm_ge_army_milan_launcher_tripod";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+	};
+	if (CTI_REDD_ADDON > 0) then {
+		_headers pushBack 		"AT Milan (REDD)";
+		_classes pushBack 		"Redd_Milan_Static";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *											NVA (East Germany)																	*
+ ********************************************************************************************************************************/
+if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_GM_DLC == 0) then {		
+		_headers pushBack 		"AT Fagot (GM)";
+		_classes pushBack 		"gm_gc_army_fagot_launcher_tripod";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+	};
+};
+
+/********************************************************************************************************************************
+ *														TECH 3																	*
+ ********************************************************************************************************************************/
+ _tech_level = 3;
+
+_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,1.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+/********************************************************************************************************************************
+ *											Others																				*
+ ********************************************************************************************************************************/
+if(_side == west) then {
+	if(CTI_BW_ADDON > 0) then {
+		_headers pushBack 		"Radar System";
+		_classes pushBack 		"TBW_MEADS_Radar_Fleck";
+		_prices pushBack 		_priceBase;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"SAM System";
+		_classes pushBack 		"TBW_MEADS_Launcher_Fleck";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+	} else {
+		_headers pushBack 		"Radar System";
+		_classes pushBack 		"B_Radar_System_01_F";
+		_prices pushBack 		_priceBase;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"SAM System";
+		_classes pushBack 		"B_SAM_System_03_F";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+	};
+} else {
+	_headers pushBack 		"Radar System";
+	_classes pushBack 		"O_Radar_System_02_F";
+	_prices pushBack 		_priceBase;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"AA";
+	_tiers pushBack 		_tech_level;
+	
+	_headers pushBack 		"SAM System";
+	_classes pushBack 		"O_SAM_System_04_F";
+	_prices pushBack 		_priceAA;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"AA";
+	_tiers pushBack 		_tech_level;
+};
+
+//Update the calculated max upgrade level
+if((_tech_level) > _upgrade_levels select CTI_UPGRADE_DEFENSE) then {
+	_upgrade_levels set [CTI_UPGRADE_DEFENSE, (_tech_level)];
+};
+
+/********************************************************************************************************************************
+ *											Russia		RHS																		*
+ ********************************************************************************************************************************/
+//if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	/*if(CTI_RHS_ADDON >= 0) then {
 		_headers pushBack 		"Static MG (KORD)";
 		_classes pushBack 		"rhs_KORD_high_VDV";
@@ -583,137 +824,17 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 	};*/
-};
-/********************************************************************************************************************************
- *											Bundeswehr (West Germany)															*
- ********************************************************************************************************************************/
-if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	//if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
-	//};
-	//if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 3) then {		//Desert camo active
-	//};
-	
-	if(CTI_GM_DLC == 0) then {
-		_headers pushBack 		"MG3 AA (GM)";
-		_classes pushBack 		"gm_ge_army_mg3_aatripod";
-		_prices pushBack 		1500;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"AT Milan (GM)";
-		_classes pushBack 		"gm_ge_army_milan_launcher_tripod";
-		_prices pushBack 		7000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	};
-	
-	if (CTI_REDD_ADDON > 0) then {
-		_headers pushBack 		"Static MG (MG3)";
-		_classes pushBack 		"rnt_mg3_static";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	
-		_headers pushBack 		"Static MG low (MG3 ai)";
-		_classes pushBack 		"rnt_mg3_static_ai";
-		_prices pushBack 		1000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	
-		_headers pushBack 		"Static GW (GMW)";
-		_classes pushBack 		"rnt_gmw_static";
-		_prices pushBack 		3000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"Mortar (REDD)";
-		_classes pushBack 		"Redd_Tank_M120_Tampella";
-		_prices pushBack 		5000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	
-		_headers pushBack 		"AT Milan (REDD)";
-		_classes pushBack 		"Redd_Milan_Static";
-		_prices pushBack 		8000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	};
-};
-
-/********************************************************************************************************************************
- *											NVA (East Germany)																	*
- ********************************************************************************************************************************/
-if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_GM_DLC == 0) then {
-		_headers pushBack 		"AT Fagot (GM)";
-		_classes pushBack 		"gm_gc_army_fagot_launcher_tripod";
-		_prices pushBack 		7000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	};
-};
-
-/********************************************************************************************************************************
- *											Others																				*
- ********************************************************************************************************************************/
-/*if(_side == west && CTI_AIR_ADDON >= 0) then {
-	if(CTI_BW_ADDON > 0) then {
-		_headers pushBack 		"Radar System";
-		_classes pushBack 		"TBW_MEADS_Radar_Fleck";
-		_prices pushBack 		5000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"SAM System";
-		_classes pushBack 		"TBW_MEADS_Launcher_Fleck";
-		_prices pushBack 		50000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	} else {
-		_headers pushBack 		"Radar System";
-		_classes pushBack 		"B_Radar_System_01_F";
-		_prices pushBack 		5000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"SAM System";
-		_classes pushBack 		"B_SAM_System_03_F";
-		_prices pushBack 		50000;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"Defense";
-		_tiers pushBack 		_tech_level;
-	};
-} else {
-	_headers pushBack 		"Radar System";
-	_classes pushBack 		"O_Radar_System_02_F";
-	_prices pushBack 		5000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	_tiers pushBack 		_tech_level;
-	
-	_headers pushBack 		"SAM System";
-	_classes pushBack 		"O_SAM_System_04_F";
-	_prices pushBack 		50000;
-	_placements pushBack 	[180, 5];
-	_categories pushBack 	"Defense";
-	_tiers pushBack 		_tech_level;
-};
-*/
+//};
 
 //******************************BASE DEFENSE 0*******************************************************************************************************
+ _tech_level = 0;
 
-_headers pushBack 		"Bunker (Small)";
+_priceBase = [CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceFence = [CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,false,1.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceWall = [CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,false,2] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceDummy = [CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,false,5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+
+/*_headers pushBack 		"Bunker (Small)";
 _classes pushBack 		"Land_BagBunker_Small_F";
 _prices pushBack 		150;
 _placements pushBack 	[0, 7];
@@ -776,16 +897,16 @@ _classes pushBack 		"Land_CampingTable_F";
 _prices pushBack 		50;
 _placements pushBack 	[90, 7];
 _categories pushBack 	"Misc";
-_tiers pushBack 		_tech_level;
+_tiers pushBack 		_tech_level;*/
 
 _headers pushBack 		"Latrine";
 _classes pushBack 		"Land_ToiletBox_F";
-_prices pushBack 		50;
+_prices pushBack 		_priceBase;
 _placements pushBack 	[90, 7];
 _categories pushBack 	"Misc";
 _tiers pushBack 		_tech_level;
 
-_headers pushBack 		"Tent";
+/*_headers pushBack 		"Tent";
 _classes pushBack 		"Land_TentDome_F";
 _prices pushBack 		50;
 _placements pushBack 	[90, 7];
@@ -818,41 +939,34 @@ _classes pushBack 		"Windsock_01_F";
 _prices pushBack 		1;
 _placements pushBack 	[0, 5];
 _categories pushBack 	"Misc";
-_tiers pushBack 		_tech_level;
+_tiers pushBack 		_tech_level;*/
 
 _headers pushBack 		"Dirt ramp";
 _classes pushBack 		"Land_Rampart_F";
-_prices pushBack 		500;
+_prices pushBack 		_priceBase;
 _placements pushBack 	[180, 10];
 _categories pushBack 	"Misc";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"Concrete ramp";
 _classes pushBack 		"Land_RampConcrete_F";
-_prices pushBack 		2000;
+_prices pushBack 		_priceDummy;
 _placements pushBack 	[180, 10];
 _categories pushBack 	"Misc";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"Wooden pier";
 _classes pushBack 		"Land_PierWooden_02_16m_F";
-_prices pushBack 		1000;
+_prices pushBack 		_priceDummy;
 _placements pushBack 	[180, 10];
 _categories pushBack 	"Misc";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"Concrete pier";
 _classes pushBack 		"Land_PierConcrete_01_16m_F";
-_prices pushBack 		5000;
+_prices pushBack 		_priceDummy;
 _placements pushBack 	[180, 10];
 _categories pushBack 	"Misc";
-_tiers pushBack 		_tech_level;
-
-_headers pushBack 		["High Wall (Mil)",[["CanAutoAlign", 3.8, 0]]];
-_classes pushBack 		"Land_Mil_WallBig_4m_F";
-_prices pushBack 		20;
-_placements pushBack 	[0, 7];
-_categories pushBack 	"Walls";
 _tiers pushBack 		_tech_level;
 
 /*_headers pushBack 		"Camo net";
@@ -877,63 +991,377 @@ _categories pushBack 	"Camo";
 _tiers pushBack 		_tech_level;*/
 
 
+_headers pushBack 		["Wall IndCnc 2deco",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Wall_IndCnc_2deco_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Wall_IndCnc 4 D",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Wall_IndCnc_4_D_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Wall IndCnc 4",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Wall_IndCnc_4_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WiredFence 01 16m",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_WiredFence_01_16m_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WiredFence 01 4m",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_WiredFence_01_4m_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WiredFence 01 8m",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_WiredFence_01_8m_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WiredFence 01 pole",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_WiredFence_01_pole_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["TinWall_02 4m",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_TinWall_02_l_4m_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["TinWall 02 8m",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_TinWall_02_l_8m_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["TinWall 02 pole",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_TinWall_02_l_pole_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Wall Tin Pole",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Wall_Tin_Pole";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Wall Tin 4",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Wall_Tin_4";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Wall Tin 4 2",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Wall_Tin_4_2";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Bar Gate",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_BarGate_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Bar Gate open",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_BarGate_01_open_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["Road Barrier",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_RoadBarrier_01_F";
+_prices pushBack 		_priceFence;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["CamoConcreteWall 01 4m d v1",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_CamoConcreteWall_01_l_4m_d_v1_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Fence";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["CamoConcreteWall 01 4m d v2",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_CamoConcreteWall_01_l_4m_d_v2_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["CamoConcreteWall 01 4m v1",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_CamoConcreteWall_01_l_4m_v1_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["CamoConcreteWall 01 4m v2",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_CamoConcreteWall_01_l_4m_v2_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["CamoConcreteWall 01 pole",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_CamoConcreteWall_01_pole_v1_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WallBig 4m",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Mil_WallBig_4m_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WallBig 4m battered",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Mil_WallBig_4m_battered_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WallBig Corner",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Mil_WallBig_Corner_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+_headers pushBack 		["WallBig corner battered",[["CanAutoAlign", 3.8, 0]]];
+_classes pushBack 		"Land_Mil_WallBig_corner_battered_F";
+_prices pushBack 		_priceWall;
+_placements pushBack 	[0, 7];
+_categories pushBack 	"Walls";
+_tiers pushBack 		_tech_level;
+
+
+
+_headers pushBack 		"HQ";
+_classes pushBack 		"Land_Research_house_V1_F";
+_prices pushBack 		_priceDummy;
+_placements pushBack 	[180, 5];
+_categories pushBack 	"Dummy";
+_tiers pushBack 		_tech_level;
+
+if (isClass(configFile >> "CfgVehicles" >> "CDF_WarfareBBarracks")) then {
+	_headers pushBack 		"Repair Depot";
+	_classes pushBack 		"TK_GUE_WarfareBContructionSite_Base_EP1";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Ammo Depot";
+	_classes pushBack 		"RU_WarfareBVehicleServicePoint";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"FOB";
+	_classes pushBack 		"INS_WarfareBFieldhHospital";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Light Vehicle Factory";
+	_classes pushBack 		"CDF_WarfareBLightFactory";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Heavy Vehicle Factory";
+	_classes pushBack 		"RU_WarfareBHeavyFactory";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Aircraft Factory";
+	_classes pushBack 		"RU_WarfareBAircraftFactory";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Barracks";
+	_classes pushBack 		"CDF_WarfareBBarracks";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Control Center";
+	_classes pushBack 		"GUE_WarfareBUAVterminal";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+} else {
+	_headers pushBack 		"Repair Depot";
+	_classes pushBack 		"Land_Cargo_House_V3_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Ammo Depot";
+	_classes pushBack 		"Land_Cargo_House_V1_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"FOB";
+	_classes pushBack 		"Land_Medevac_house_V1_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Light Vehicle Factory";
+	_classes pushBack 		"Land_Cargo_HQ_V3_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Heavy Vehicle Factory";
+	_classes pushBack 		"Land_Cargo_HQ_V1_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Aircraft Factory";
+	_classes pushBack 		"Land_Medevac_HQ_V1_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Barracks";
+	_classes pushBack 		"Land_Cargo_HQ_V2_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+
+	_headers pushBack 		"Control Center";
+	_classes pushBack 		"Land_Research_HQ_F";
+	_prices pushBack 		_priceDummy;
+	_placements pushBack 	[180, 5];
+	_categories pushBack 	"Dummy";
+	_tiers pushBack 		_tech_level;
+};
+
+_headers pushBack 		"Naval Yard";
+_classes pushBack 		"Land_Cargo_House_V2_F";
+_prices pushBack 		_priceDummy;
+_placements pushBack 	[180, 5];
+_categories pushBack 	"Dummy";
+_tiers pushBack 		_tech_level;
+
 //--------------------------------------------------------------------------------------------------------
 //										Mines
 //--------------------------------------------------------------------------------------------------------
+_tech_level = 0;
+
+_priceAP = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,20] call CTI_CO_FNC_GetCalculatedItemPrize;
+_priceAT = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize;
+
 _headers pushBack 		"Training Mine";
 _classes pushBack 		"TrainingMine_01_F";
-_prices pushBack 		500;
+_prices pushBack 		_priceAP;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"APERS Bounding Mine";
 _classes pushBack 		"APERSBoundingMine";
-_prices pushBack 		500;
+_prices pushBack 		_priceAP;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"APERS Mine";
 _classes pushBack 		"APERSMine";
-_prices pushBack 		500;
+_prices pushBack 		_priceAP;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"APERS Trip Mine";
 _classes pushBack 		"APERSTripMine";
-_prices pushBack 		500;
+_prices pushBack 		_priceAP;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"M6 SLAM Mine";
 _classes pushBack 		"SLAMDirectionalMine";
-_prices pushBack 		500;
+_prices pushBack 		_priceAP;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"AT Mine";
 _classes pushBack 		"ATMine";
-_prices pushBack 		500;
+_prices pushBack 		_priceAT;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"AT-15 Mine";
 _classes pushBack 		"CUP_Mine";
-_prices pushBack 		500;
+_prices pushBack 		_priceAT;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 _headers pushBack 		"TM46 AT Mine";
 _classes pushBack 		"CUP_MineE";
-_prices pushBack 		500;
+_prices pushBack 		_priceAT;
 _placements pushBack 	[0, 0];
 _categories pushBack 	"Mine";
 _tiers pushBack 		_tech_level;
 
 [_side, _headers, _classes, _prices, _placements, _categories, _tiers] call compile preprocessFileLineNumbers "Common\Config\Base\Set_Defenses.sqf";
+
+//all units are declared, we update the possible upgrades
+missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", _side], _upgrade_levels];
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Base\Base.sqf", format["calculated upgrade levels for %1: [%2] ", _side, _upgrade_levels]] call CTI_CO_FNC_Log};

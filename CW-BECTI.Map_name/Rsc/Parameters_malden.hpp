@@ -17,6 +17,12 @@ class Params {
 		texts[] = {"5min","10 min","15 min","20 min","25 min","30 min","45 min","60 min"};
 		default = 900;
 	};
+	class CTI_PERFORMANCE_CHECK {
+		title = "PERFORMANCE: On active Persistence, log unit infos to .rpt and maybe disband stuck AI teams";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","only Information","Enabled AI disbanding"};
+		default = 1;
+	};
 	class SEPARATOR_ADDONS {
 		title = "=========================== ADDONS/DLCs ============================";
 		values[] = {1};
@@ -331,13 +337,13 @@ class Params {
 		title = "AI: Team Size (Player)";
 		values[] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,35,40,45,50,60,70,80,90,100};
 		texts[] = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","35","40","45","50","60","70","80","90","100"};
-		default = 20;
+		default = 10;
 	};
 	class CTI_AI_SKILL_BASE {
 		title = "AI: Skill (all AI units)";
-		values[] = {0.05,0.25,0.45,0.65,0.80};
+		values[] = {0,1,2,3,4};
 		texts[] = {"Novice","Rookie","Recruit","Veteran","Expert"};
-		default = 0.25;
+		default = 2;
 	};
 	class SEPERATOR_BASE {
 		title = "============ Base ============";
@@ -379,7 +385,7 @@ class Params {
 		title = "BASE: Structure resell ratio";
 		values[] = {0,10,20,30,40,50,60,70,80,90,100};
 		texts[] = {"0%","10%","20%","30%","40%","50%","60%","70%","80%","90%","100%"};
-		default = 0;
+		default = 50;
 	};
 	class CTI_BASE_BUILDING_DAMAGE_SYSTEM {
 		title = "BASE: Handle Building destruction";
@@ -421,7 +427,7 @@ class Params {
 		title = "INCOME: Delay";
 		values[] = {30,45,60,90,120,150,180,300};
 		texts[] = {"30 Seconds","45 Seconds","01:00 Minutes","01:30 Minutes","02:00 Minutes","02:30 Minutes","03:00 Minutes","05:00 Minutes"};
-		default = 90;
+		default = 120;
 	};
 	class CTI_ECONOMY_CURRENCY_SYSTEM {
 		title = "INCOME: Currency";
@@ -583,7 +589,7 @@ class Params {
 		title = "ARTILLERY: Delay between each fire mission";
 		values[] = {0,60,120,180,240,300,600};
 		texts[] = {"Disabled","0","60","120","180","240","300","600"};
-		default = 180;
+		default = 300;
 	};
 	class CTI_GAMEPLAY_TEAMSTACK_DISABLE {
 		title = "GAMEPLAY: Kick Team Stackers";
@@ -785,13 +791,13 @@ class Params {
 		title = "VISUAL: Terrain Grid";
 		values[] = {10,20,30,50};
 		texts[] = {"Far","Medium","Short","Free"};
-		default = 50;
+		default = 20;
 	};
 	class CTI_GRAPHICS_VD_MAX {
 		title = "VISUAL: View Distance";
 		values[] = {1000,1500,2000,2500,3000,3500,4000,4500,5000};
 		texts[] = {"1 KM","1.5 KM","2 KM","2.5 KM","3 KM","3.5 KM","4 KM","4.5 KM","5 KM"};
-		default = 5000;
+		default = 2500;
 	};
 	class SEPARATOR_LOG {
 		title = "=========================== LOG-DEBUG-AND-TESTING ============================";
@@ -800,9 +806,9 @@ class Params {
 		default = 1;
 	};
 	class CTI_AI_TEAMS_ENABLED {
-		title = "AI: Teams";
-		values[] = {0,1,2,3,4};
-		texts[] = {"Disabled", "1/4 Slots", "1/2 Slots", "3/4 Slots", "All Slots"};
+		title = "AI: Teams (Coop disables AI on player side)";
+		values[] = {0,1,2,3,4,5,6,7,8};
+		texts[] = {"Disabled", "1 Slot", "2 Slots", "3 Slots", "4 Slots", "5 Slots", "6 Slots", "7 Slots", "8 Slots"};
 		default = 0;
 	};
 	class CTI_AI_TEAMS_GROUPSIZE {

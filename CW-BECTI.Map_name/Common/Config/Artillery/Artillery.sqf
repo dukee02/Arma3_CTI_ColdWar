@@ -193,6 +193,19 @@ if(CTI_CWR3_ADDON > 0) then {
 	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
 };
 
+if(CTI_BW_ADDON > 0) then {
+	_c pushBack "BWA3_Panzerhaubitze2000_Tropen";
+	_m pushBack ["BWA3_32Rnd_155mm_Mo_shells", "BWA3_12Rnd_155mm_Mo_Flare_white", "BWA3_6Rnd_155mm_Mo_Smoke_white"];
+	_b pushBack [2, 4, 6, 12];
+	_r pushBack [[2973,5059], [5096,8670], [9831,16725], [13689,23289]];
+	//_r pushBack [[2973,5059], [4026,6850], [5096,8670], [7103,12084], [9831,16725], [13689,23289], [18183,30936]];
+
+	_c pushBack "BWA3_Panzerhaubitze2000_Fleck";
+	_m pushBack ["BWA3_32Rnd_155mm_Mo_shells", "BWA3_12Rnd_155mm_Mo_Flare_white", "BWA3_6Rnd_155mm_Mo_Smoke_white"];
+	_b pushBack [2, 4, 6, 12];
+	_r pushBack [[2973,5059], [5096,8670], [9831,16725], [13689,23289]];
+};
+
 //RHS Arty dosn't have any ammo in there setup, maybe this works
 //round name: M-21OF
 /*if(CTI_RHS_ADDON > 0) then {

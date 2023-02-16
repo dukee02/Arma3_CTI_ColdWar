@@ -187,11 +187,9 @@ if (CTI_CWR3_ADDON > 0) then {
 	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_CWr3.sqf"};
 	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV_CWr3.sqf"};
 };
-if(CTI_GM_DLC >= 0) then {
-	if(1042220 in (getDLCs 1)) then {
-		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
-		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
-	};
+if(CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)) then {
+	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
+	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
 };
 if(CTI_BW_SIDE >= 0) then {
 	if(CTI_BW_ADDON >= 0) then {

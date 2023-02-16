@@ -47,7 +47,7 @@ link21[] = {18,16};
 link22[] = {19,20};
 link23[] = {20,18};
 globals[] = {0.000000,0,0,0,0,640,480,1,196,6316128,1,-555.809814,609.651367,630.043701,-455.164551,973,884,1};
-window[] = {2,-1,-1,-1,-1,989,208,1463,208,3,991};
+window[] = {2,-1,-1,-1,-1,1015,234,1489,234,3,991};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -168,9 +168,9 @@ class FSM
                         itemno = 7;
                         init = /*%FSM<STATEINIT""">*/"_sideLogic setVariable [""cti_salvagers"", (_sideLogic getVariable ""cti_salvagers"") - [objNull, _salvager], true];" \n
                          "" \n
+                         "[_salvager, false] call CTI_SE_FNC_HandleSalvagerSpecial;" \n
                          "if (alive _salvager) then { _salvager setDammage 1 };" \n
                          "{ if (alive _x) then {deleteVehicle _x}} forEach units _group;" \n
-                         "[_salvager, false] call CTI_SE_FNC_HandleSalvagerSpecial;" \n
                          "" \n
                          "if (count units _group < 1) then {deleteGroup _group}; //--- Attempt to remove the group if possible, the GC will do it in any case."/*%FSM</STATEINIT""">*/;
                         precondition = /*%FSM<STATEPRECONDITION""">*/""/*%FSM</STATEPRECONDITION""">*/;

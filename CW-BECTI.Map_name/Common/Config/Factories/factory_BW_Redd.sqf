@@ -250,17 +250,25 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1Redd_Tank_Wiesel_1A2_TOW_Wintertarn", _sid];
-		
-		_c pushBack format["%1Redd_Marder_1A5_Wintertarn", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1Redd_Tank_Wiesel_1A2_TOW_Tropentarn", _sid];
-		
-		_c pushBack format["%1Redd_Marder_1A5_Tropentarn", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 		_c pushBack format["%1Redd_Tank_Wiesel_1A2_TOW_Flecktarn", _sid];
-		
+	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+		_c pushBack format["%1Redd_Marder_1A5_Wintertarn", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1Redd_Marder_1A5_Tropentarn", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 		_c pushBack format["%1Redd_Marder_1A5_Flecktarn", _sid];
 	};
 };

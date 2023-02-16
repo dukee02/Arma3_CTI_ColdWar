@@ -5,9 +5,9 @@ _sid = "";
 _building_time = 10;
 
 switch (_side) do {
-	case "west": {/*_sid = "VIOC_B_";*/_faction = "West";};
-	case "east": {/*_sid = "VIOC_O_";*/_faction = "East";};
-	case "resistance": {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	case west: {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case east: {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case resistance: {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
 	default {_sid = "";_faction = "";};
 };
 
@@ -336,6 +336,12 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_s pushBack "";
 		_d pushBack 0;	
 	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1Redd_Marder_1A5_Wintertarn", _sid];

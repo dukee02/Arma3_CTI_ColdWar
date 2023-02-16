@@ -1,22 +1,14 @@
-/*
-format["%1<vanilla_unitname>", _sid] gets used later 4 the upcomming sidepatch
-format["%1", _sid] - 4 copy paste
-*/
-_side = _this;
-_faction = "";
-_sid = "";
+private ["_side", "_faction", "_sid", "_building_time", "_tech_level", "_upgrade_levels", "_cntstart", "_cntend", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_faction = "West";
-} else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_faction = "East";
-	} else {
-		//_sid = "VIOC_I_";
-		_faction = "Resistance";
-	};
+_side = _this;
+_sid = "";
+_building_time = 10;
+
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case east: {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case resistance: {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	default {_sid = "";_faction = "";};
 };
 
 _c = []; //--- Classname

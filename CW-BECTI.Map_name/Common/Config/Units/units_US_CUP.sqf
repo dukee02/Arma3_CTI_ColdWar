@@ -5,9 +5,9 @@ _sid = "";
 _building_time = 10;
 
 switch (_side) do {
-	case "west": {/*_sid = "VIOC_B_";*/_faction = "West";};
-	case "east": {/*_sid = "VIOC_O_";*/_faction = "East";};
-	case "resistance": {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	case west: {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case east: {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case resistance: {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
 	default {_sid = "";_faction = "";};
 };
 
@@ -329,7 +329,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true,0.5] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false,0.25] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -1297,6 +1297,7 @@ switch true do
 		_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
 		_d pushBack 0;
 	};
+	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC >= 1): {};
 	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC < 1): {
 		_c pushBack format["CTI_Salvager_%1", _side];
 		_p pushBack '';
@@ -1318,7 +1319,6 @@ switch true do
 		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
 		_d pushBack 0;
 	};
-	case (CTI_GM_DLC > 1): {};
 	default  {
 		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
 			_c pushBack format["CTI_Salvager_%1", _faction];

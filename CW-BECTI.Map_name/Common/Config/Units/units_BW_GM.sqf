@@ -5,9 +5,9 @@ _sid = "";
 _building_time = 10;
 
 switch (_side) do {
-	case "west": {/*_sid = "VIOC_B_";*/_faction = "West";};
-	case "east": {/*_sid = "VIOC_O_";*/_faction = "East";};
-	case "resistance": {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
+	case west: {/*_sid = "VIOC_B_";*/_faction = "West";};
+	case east: {/*_sid = "VIOC_O_";*/_faction = "East";};
+	case resistance: {/*_sid = "VIOC_I_";*/_faction = "Resistance";};
 	default {_sid = "";_faction = "";};
 };
 
@@ -278,21 +278,24 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
 	_c pushBack format["%1gm_ge_army_bicycle_01_oli", _sid];
+	_p pushBack '';
+	_n pushBack '';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false,0.25] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "";
+	_d pushBack 0;	
+
 	_c pushBack format["%1gm_ge_army_k125", _sid];
-	
-	//set all other vars in a slope
-	_cntstart = count _c;
-	_cntend = count _p;
-	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "";
-		_d pushBack 0;	
-	};
+	_p pushBack '';
+	_n pushBack '';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false,0.5] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "";
+	_d pushBack 0;
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
@@ -1040,7 +1043,6 @@ switch true do
 		_s pushBack [format["%1gm_ge_ff_typ1200", _sid],"salvager-independent"];
 		_d pushBack 0;
 	};
-	//case (CTI_GM_DLC > 1): {};	//--- this is GM
 	default  {
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 			_c pushBack format["CTI_Salvager_%1", _faction];

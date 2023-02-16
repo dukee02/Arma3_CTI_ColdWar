@@ -1,10 +1,10 @@
 if (isClass(configFile >> "CfgPatches" >> "task_force_radio")) then 
 { 
-//TFAR mod is enabled
-TF_give_personal_radio_to_regular_soldier = true;
-tf_no_auto_long_range_radio = true;
-TF_give_microdagr_to_soldier = false;
-}; 
+	//TFAR mod is enabled
+	TFAR_givePersonalRadioToRegularSoldier = true;
+	TFAR_giveLongRangeRadioToGroupLeaders = true;
+	TFAR_giveMicroDagrToSoldier = false;
+};
 
 //--- Initial View Distance and Object View Distance for both clients and server
 setViewDistance 3000;
@@ -68,8 +68,6 @@ if (CTI_Log_Level >= CTI_Log_Information) then { ["INFORMATION", "FILE: init.sqf
 call compile preprocessFileLineNumbers "Common\Init\Init_CommonConstants.sqf";
 call compile preprocessFileLineNumbers "Common\Init\Init_Common.sqf";
 
-
-
 //--- JIP Part is over
 CTI_Init_JIP = true;
 
@@ -82,12 +80,8 @@ CTI_Init_Common = true;
 //--- Server execution
 if (CTI_IsServer) then {
 	if (CTI_Log_Level >= CTI_Log_Information) then { ["INFORMATION", "FILE: init.sqf", "Running server initialization"] call CTI_CO_FNC_Log	};
-	CTI_Server_Loaded = false;
-	publicVariable "CTI_Server_Loaded";
 	execVM "Server\Init\Init_Server.sqf";
 };
-
-waitUntil {CTI_Server_Loaded};
 
 //--- Pure client execution
 if (CTI_IsClient && !CTI_IsHeadless) then {	

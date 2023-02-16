@@ -38,7 +38,7 @@ private ["_groups", "_maxSV", "_pool", "_pool_group_size", "_pool_units", "_posi
 
 _town = _this;
 
-_maxSV = _town getVariable "cti_town_maxSV";
+_maxSV = if(_town getVariable "cti_town_maxSV" > 150) then {150} else {_town getVariable "cti_town_maxSV"};
 _resistanceSize = round(_maxSV * CTI_TOWNS_RESISTANCE_GROUPS_RATIO);
 _totalGroups = round(_resistanceSize / 2);
 if (_totalGroups < 1) then {_totalGroups = 1};
@@ -141,21 +141,23 @@ for '_i' from 1 to _totalGroups do {
 		
 		_can_use = true;
 		if (_probability != 100) then {
-			if (random 100 > _probability) then { _can_use = false };
-		};
-		if !(_unit isKindOf "Man") then {
-			if(_pool_vehicle_count >= 2) then { 
-				_can_use = false;
-				if (CTI_Log_Level >= CTI_Log_Debug) then { 
-					["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownResistance.sqf", format ["Resistance team max vehicle count: <%1>", _pool_vehicle_count]] call CTI_CO_FNC_Log;
+			if (random 100 > _probability) then { _can_use = false } else {
+				if !(_unit isKindOf "Man") then {
+					if(_pool_vehicle_count >= 2) then { 
+						_can_use = false;
+						if (CTI_Log_Level >= CTI_Log_Debug) then { 
+							["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownOccupation.sqf", format ["Occupation team max vehicle count: <%1>", _pool_vehicle_count]] call CTI_CO_FNC_Log;
+						};
+					} else {
+						_pool_vehicle_count = _pool_vehicle_count + 1;
+					};
 				};
-			} else {
-				_pool_vehicle_count = _pool_vehicle_count + 1;
 			};
 		};
 		//if(isNil _unit) then { _can_use = false };
 		
 		if (_can_use) then {
+			if (typeName _unit == "ARRAY") then { _unit = _unit select floor(random count _unit) };
 			_units pushBack _unit;
 			_pool_group_size_current = _pool_group_size_current - 1;
 		};

@@ -45,7 +45,8 @@ if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_PylonPod_2Rnd_AIM_9L_LAU_Sidewinder_M";	//2x AIM-9L Sidewinder 		<AIM-9L Sidewinder missile>
 	_c pushBack "CUP_PylonPod_1Rnd_R73_Vympel";					//1x R-73 Vympel 			<Short-range, infrared-guided, air-to-air missile with high-explosive warhead>
 };
-if(CTI_CWR3_ADDON > 0) then {
+if(CTI_BW_ADDON > 0) then {
+	_c pushBack "Pylonweapon_2Rnd_Fliegerfaust";			//Fliegerfaust 2 Stinger
 };
 
 // set all other vars in a slope
@@ -117,8 +118,8 @@ if(1042220 in _ownedDLCs) then {		//Arma 3 Creator DLC: Global Mobilization - Co
 	_c pushBack "gm_1Rnd_hot_heat_dm72_blk";			//DM72 (Black) 		<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
 	_c pushBack "gm_1Rnd_hot_heat_dm72_red";			//DM72 (Red) 		<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
 	_c pushBack "gm_1Rnd_hot_heat_dm72_yel";			//DM72 (Yellow) 	<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
-	_c pushBack "PylonRack_12Rnd_PG_missiles";			//9M14 				<HEAT 9M14<br />Rounds: 1<br />Used in: Maljutka>
-	_c pushBack "PylonRack_12Rnd_PG_missiles";			//9M14M 			<HEAT 9M14M<br />Rounds: 1<br />Used in: Maljutka>
+	_c pushBack "gm_1Rnd_maljutka_heat_9m14_pylon";		//9M14 				<HEAT 9M14<br />Rounds: 1<br />Used in: Maljutka>
+	_c pushBack "gm_1Rnd_maljutka_heat_9m14m_pylon";	//9M14M 			<HEAT 9M14M<br />Rounds: 1<br />Used in: Maljutka>
 };
 if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_PylonPod_1Rnd_AGM65_Maverick_M";		//1x AGM-65 Maverick
@@ -167,6 +168,9 @@ if(CTI_CUP_ADDON > 0) then {
 
 	_c pushBack "CUP_PylonPod_6Rnd_Vikhr_M";							//6x 9K121 Vikhr 	<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 	_c pushBack "CUP_PylonPod_1Rnd_Kh29_M";								//1x Kh-29L 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+};
+if(CTI_BW_ADDON > 0) then {
+	_c pushBack "Pylonweapon_4Rnd_PARS";					//PARS 3 LR
 };
 
 // set all other vars in a slope
@@ -266,6 +270,9 @@ if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_PylonPod_20Rnd_S8N_M";		//20x S8 Rocket <Unguided rockets with high-explosive warhead>
 	_c pushBack "CUP_PylonPod_20Rnd_S8N_CCIP_M";		//20x S8 Rocket (CCIP) <Unguided rockets with high-explosive warhead>
 	_c pushBack "CUP_PylonPod_20Rnd_S8_plane_M";		//20x S8 Rocket <Unguided rockets with high-explosive warhead>
+};
+if(CTI_BW_ADDON > 0) then {
+	_c pushBack "Pylonweapon_19Rnd_FZRockets";				//FZ71
 };
 
 // set all other vars in a slope
@@ -397,6 +404,9 @@ if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_PylonPod_1200Rnd_TE1_Red_Tracer_M621_20mm_HE_M";			//M621 Cannon Pod
 	_c pushBack "CUP_PylonPod_1200Rnd_TE1_Red_Tracer_30x113mm_M789_HEDP_M";		//M230 Chaingun Pod
 	_c pushBack "CUP_PylonPod_250Rnd_TE2_Green_Tracer_GSh23_23mm_APHE_M";		//GSh-23L
+};
+if(CTI_BW_ADDON > 0) then {
+	_c pushBack "Pylonweapon_400Rnd_127x99";				//HMP 400
 };
 
 // set all other vars in a slope

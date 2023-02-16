@@ -45,7 +45,7 @@ _sideID = (_side) call CTI_CO_FNC_GetSideID;
 _upgrade = (_side call CTI_CO_FNC_GetSideUpgrades) select CTI_UPGRADE_TOWNS;
 
 _SV = _town getVariable "cti_town_SV";
-_maxSV = _town getVariable "cti_town_maxSV";
+_maxSV = if(_town getVariable "cti_town_maxSV" > 150) then {150} else {_town getVariable "cti_town_maxSV"};
 _occupation_size = round(_maxSV * CTI_TOWNS_OCCUPATION_GROUPS_RATIO * _upgrade);
 _totalGroups = round(_occupation_size / 6);
 if (_totalGroups < 1) then {_totalGroups = 1};
@@ -179,16 +179,17 @@ for '_i' from 1 to _totalGroups do {
 		
 		_can_use = true;
 		if (_probability != 100) then {
-			if (random 100 > _probability) then { _can_use = false };
-		};
-		if !(_unit isKindOf "Man") then {
-			if(_pool_vehicle_count >= 2) then { 
-				_can_use = false;
-				if (CTI_Log_Level >= CTI_Log_Debug) then { 
-					["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownOccupation.sqf", format ["Occupation team max vehicle count: <%1>", _pool_vehicle_count]] call CTI_CO_FNC_Log;
+			if (random 100 > _probability) then { _can_use = false } else {
+				if !(_unit isKindOf "Man") then {
+					if(_pool_vehicle_count >= 2) then { 
+						_can_use = false;
+						if (CTI_Log_Level >= CTI_Log_Debug) then { 
+							["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownOccupation.sqf", format ["Occupation team max vehicle count: <%1>", _pool_vehicle_count]] call CTI_CO_FNC_Log;
+						};
+					} else {
+						_pool_vehicle_count = _pool_vehicle_count + 1;
+					};
 				};
-			} else {
-				_pool_vehicle_count = _pool_vehicle_count + 1;
 			};
 		};
 		

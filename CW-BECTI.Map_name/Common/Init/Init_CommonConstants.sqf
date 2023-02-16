@@ -30,13 +30,13 @@ CTI_UNKNOWN_COLOR = "ColorBlack";
 //--- National IDs
 CTI_BW_ID = 0;
 CTI_NVA_ID = 1;
-CTI_DEN_ID = 2;
-CTI_POL_ID = 3;
-CTI_US_ID = 4;
-CTI_SOV_ID = 5;
-CTI_NPOC_ID = 6;
-CTI_RACS_ID = 7;
-CTI_FIA_ID = 8;
+CTI_US_ID = 2;
+CTI_SOV_ID = 3;
+CTI_NPOC_ID = 4;
+CTI_RACS_ID = 5;
+CTI_FIA_ID = 6;
+CTI_DEN_ID = 7;
+CTI_POL_ID = 8;
 CTI_TK_ID = 9;
 CTI_CDF_B_ID = 10;
 CTI_CDF_I_ID = 11;
@@ -779,7 +779,7 @@ CTI_SCORE_CAMP_VALUE = 2; //--- Camp value
 
 
 with missionNamespace do {
-	if (isNil 'CTI_LOG_INFO') then {CTI_LOG_INFO = 0};
+	if (isNil 'CTI_PERFORMANCE_CHECK') then {CTI_PERFORMANCE_CHECK = 0};
 	if (isNil 'CTI_PERSISTANT') then {CTI_PERSISTANT = 1};
 	if (isNil 'CTI_SAVE_PERIODE') then {CTI_SAVE_PERIODE = 900};		//900
 	
@@ -804,6 +804,8 @@ with missionNamespace do {
 	/*if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
+
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON]] call CTI_CO_FNC_Log };
 	
 	if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
