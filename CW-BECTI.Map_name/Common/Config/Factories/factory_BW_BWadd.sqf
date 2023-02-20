@@ -33,8 +33,8 @@ _setupBaseUnits = false;
 switch(true) do {
 	case (CTI_GM_DLC > 0 && (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0));			//upgrade was triggert
 	case (CTI_GM_DLC <= 0 && _ai == CTI_BW_ID && CTI_CAMO_ACTIVATION == 1);
-	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2 && CTI_CAMO_ACTIVATION == 1);
-	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2 && CTI_CAMO_ACTIVATION == 1): {_setupBaseUnits = true;};
+	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2 && CTI_CAMO_ACTIVATION == 1 && CTI_GM_DLC <= 0);
+	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2 && CTI_CAMO_ACTIVATION == 1 && CTI_GM_DLC <= 0): {_setupBaseUnits = true;};
 	default {};
 };
 
@@ -260,12 +260,6 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1bw_bo105_p1m", _sid];
 };
-
-_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	_c pushBack format["%1bw_bo105_pah1", _sid];
-};
 	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -273,6 +267,12 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1kyo_MH47E_Ramp", _sid];
 	_c pushBack format["%1bw_ec135_transport", _sid];
 };
+
+/*_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	_c pushBack format["%1bw_bo105_pah1", _sid];
+};*/
 	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -303,7 +303,9 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 /*_c = [];
-_c pushBack format["CTI_Salvager_%1", _side];
+if (_setupBaseUnits) then {
+	_c pushBack format["CTI_Salvager_%1", _side];
+};
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_BW_ID, CTI_BWADD_ID] call CTI_CO_FNC_GetTechmatrix;

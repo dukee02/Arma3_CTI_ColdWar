@@ -29,12 +29,15 @@ else {
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_NVA_GM.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
+//Check if the based units have to set.
+_setupBaseUnits = false;
+switch(true) do {
+	case (CTI_GM_DLC > 0 || _ai == CTI_NVA_ID);
+	case (CTI_GM_DLC > 0 && CTI_CUP_ADDON < 2 && CTI_CWR3_ADDON < 2): {_setupBaseUnits = true;};
+	default {};
+};
 
-//check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-//if (isNil "_priorUnits" || _ai == 1) then { 
-if ((CTI_GM_DLC > 0 || _ai == CTI_NVA_ID) || ( CTI_GM_DLC > 0 && CTI_CUP_ADDON < 2 && CTI_CWR3_ADDON < 2)) then {
-	
+if (_setupBaseUnits) then {
 	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
 	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
 	
@@ -388,7 +391,9 @@ if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo a
 if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 	_c pushBack format["%1gm_gc_army_ural4320_repair", _sid];//Repairtruck
 };
-_c pushBack format["CTI_Salvager_%1", _side];
+if (_setupBaseUnits) then {
+	_c pushBack format["CTI_Salvager_%1", _side];
+};
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_REPAIR];
 if (isNil "_priorUnits") then { 

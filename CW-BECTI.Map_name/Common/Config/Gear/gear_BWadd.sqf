@@ -116,7 +116,7 @@ _c pushBack "BW_Backpack_Carryall_Tropentarn";
 _c pushBack "TBW_Notfallrucksack";
 _c pushBack "BW_Kitbag_Flecktarn";
 _c pushBack "BW_Kitbag_Tropentarn";
-_c pushBack "jgkp_PatrolPack_schnee";
+//_c pushBack "jgkp_PatrolPack_schnee";				//Picture \bwa3_backpacks\ui\bwa3_backpack_fleck_ca.paa not found
 _c pushBack "BW_Backpack_Flecktarn";
 _c pushBack "BW_Backpack_Flecktarn_Med";
 _c pushBack "BW_Backpack_Tropentarn";

@@ -374,7 +374,7 @@ switch (_action) do {
 				// _templates set [_index, "!nil!"];
 				// _templates = _templates - ["!nil!"];
 				// profileNamespace setVariable [format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], _templates];
-				// saveProfileNamespace;
+				//saveProfileNamespace;
 				
 				if (uiNamespace getVariable "cti_dialog_ui_gear_shop_tab" == CTI_GEAR_TAB_TEMPLATES) then { //--- Reload the template tab if needed
 					(CTI_GEAR_TAB_TEMPLATES) call CTI_UI_Gear_DisplayShoppingItems;

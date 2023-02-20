@@ -28,13 +28,16 @@ else {
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_US_CWr3.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
+//Check if the based units have to set.
+_setupBaseUnits = false;
+switch(true) do {
+	case (CTI_CWR3_ADDON > 1 || _ai == CTI_US_ID);
+	case (CTI_CUP_ADDON > 0 && CTI_CWR3_ADDON > 0 && CTI_GM_DLC < 2);
+	case (CTI_CUP_ADDON < 1 && CTI_CWR3_ADDON > 0): {_setupBaseUnits = true;};
+	default {};
+};
 
-//check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-//_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-//if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
-//Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CWR3_ADDON > 1 || _ai == CTI_US_ID) || (CTI_CUP_ADDON > 0 && CTI_CWR3_ADDON > 0 && CTI_GM_DLC < 2) || (CTI_CUP_ADDON < 1 && CTI_CWR3_ADDON > 0)) then {
-	
+if (_setupBaseUnits) then {
 	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1cwr3_b_soldier82_tl", _sid]];
 	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1cwr3_b_soldier82_light", _sid]];
 	missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1cwr3_b_soldier82_driver", _sid]];
@@ -324,7 +327,9 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
-_c pushBack format["CTI_Salvager_%1", _side];
+if (_setupBaseUnits) then {
+	_c pushBack format["CTI_Salvager_%1", _side];
+};
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CWR3_ID] call CTI_CO_FNC_GetTechmatrix;

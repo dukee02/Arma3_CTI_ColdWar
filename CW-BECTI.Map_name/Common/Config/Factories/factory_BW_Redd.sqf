@@ -33,8 +33,8 @@ _setupBaseUnits = false;
 switch(true) do {
 	case (CTI_GM_DLC > 0 && (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0));			//upgrade was triggert
 	case (CTI_GM_DLC <= 0 && _ai == CTI_BW_ID);
-	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2);
-	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2): {_setupBaseUnits = true;};
+	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2 && CTI_GM_DLC <= 0);
+	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2 && CTI_GM_DLC <= 0 ): {_setupBaseUnits = true;};
 	default {};
 };
 

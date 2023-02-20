@@ -679,8 +679,8 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
  _tech_level = 3;
 
-_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,1.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
-_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,40] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 /********************************************************************************************************************************
  *											Others																				*
  ********************************************************************************************************************************/
@@ -1166,9 +1166,9 @@ _placements pushBack 	[0, 7];
 _categories pushBack 	"Walls";
 _tiers pushBack 		_tech_level;
 
-
-
-_headers pushBack 		"HQ";
+//buildings gets declared twice if we try it like that - pause to find another solution -.-
+/*
+_headers pushBack 		"HQ Dummy";
 _classes pushBack 		"Land_Research_house_V1_F";
 _prices pushBack 		_priceDummy;
 _placements pushBack 	[180, 5];
@@ -1176,112 +1176,112 @@ _categories pushBack 	"Dummy";
 _tiers pushBack 		_tech_level;
 
 if (isClass(configFile >> "CfgVehicles" >> "CDF_WarfareBBarracks")) then {
-	_headers pushBack 		"Repair Depot";
+	_headers pushBack 		"Repair Depot Dummy";
 	_classes pushBack 		"TK_GUE_WarfareBContructionSite_Base_EP1";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Ammo Depot";
+	_headers pushBack 		"Ammo Depot Dummy";
 	_classes pushBack 		"RU_WarfareBVehicleServicePoint";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"FOB";
+	_headers pushBack 		"FOB Dummy";
 	_classes pushBack 		"INS_WarfareBFieldhHospital";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Light Vehicle Factory";
+	_headers pushBack 		"Light Factory Dummy";
 	_classes pushBack 		"CDF_WarfareBLightFactory";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Heavy Vehicle Factory";
+	_headers pushBack 		"Heavy Factory Dummy";
 	_classes pushBack 		"RU_WarfareBHeavyFactory";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Aircraft Factory";
+	_headers pushBack 		"Aircraft Factory Dummy";
 	_classes pushBack 		"RU_WarfareBAircraftFactory";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Barracks";
+	_headers pushBack 		"Barracks Dummy";
 	_classes pushBack 		"CDF_WarfareBBarracks";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Control Center";
+	_headers pushBack 		"Control Center Dummy";
 	_classes pushBack 		"GUE_WarfareBUAVterminal";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 } else {
-	_headers pushBack 		"Repair Depot";
+	_headers pushBack 		"Repair Depot Dummy";
 	_classes pushBack 		"Land_Cargo_House_V3_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Ammo Depot";
+	_headers pushBack 		"Ammo Depot Dummy";
 	_classes pushBack 		"Land_Cargo_House_V1_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"FOB";
+	_headers pushBack 		"FOB Dummy";
 	_classes pushBack 		"Land_Medevac_house_V1_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Light Vehicle Factory";
+	_headers pushBack 		"Light Factory Dummy";
 	_classes pushBack 		"Land_Cargo_HQ_V3_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Heavy Vehicle Factory";
+	_headers pushBack 		"Heavy Factory Dummy";
 	_classes pushBack 		"Land_Cargo_HQ_V1_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Aircraft Factory";
+	_headers pushBack 		"Aircraft Factory Dummy";
 	_classes pushBack 		"Land_Medevac_HQ_V1_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Barracks";
+	_headers pushBack 		"Barracks Dummy";
 	_classes pushBack 		"Land_Cargo_HQ_V2_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
 	_categories pushBack 	"Dummy";
 	_tiers pushBack 		_tech_level;
 
-	_headers pushBack 		"Control Center";
+	_headers pushBack 		"Control Center Dummy";
 	_classes pushBack 		"Land_Research_HQ_F";
 	_prices pushBack 		_priceDummy;
 	_placements pushBack 	[180, 5];
@@ -1289,12 +1289,12 @@ if (isClass(configFile >> "CfgVehicles" >> "CDF_WarfareBBarracks")) then {
 	_tiers pushBack 		_tech_level;
 };
 
-_headers pushBack 		"Naval Yard";
+_headers pushBack 		"Naval Yard Dummy";
 _classes pushBack 		"Land_Cargo_House_V2_F";
 _prices pushBack 		_priceDummy;
 _placements pushBack 	[180, 5];
 _categories pushBack 	"Dummy";
-_tiers pushBack 		_tech_level;
+_tiers pushBack 		_tech_level;*/
 
 //--------------------------------------------------------------------------------------------------------
 //										Mines

@@ -395,9 +395,11 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1BWA3_Panzerhaubitze2000_Tropen", _sid];
+		_c pushBack format["%1BWA3_Skorpion_Tropen", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1BWA3_Panzerhaubitze2000_Fleck", _sid];
+		_c pushBack format["%1BWA3_Skorpion_Fleck", _sid];
 	};
 
 	//set all other vars in a slope

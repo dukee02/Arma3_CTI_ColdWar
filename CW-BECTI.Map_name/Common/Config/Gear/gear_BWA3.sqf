@@ -205,6 +205,13 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,100] call CTI_CO_FNC_Get
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Uniforms																//
 //--------------------------------------------------------------------------------------------------------------------------//
+
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+
+} else {
+
+};
+
 _c pushBack "BWA3_Uniform_Crew_Fleck";
 _c pushBack "BWA3_Uniform_Helipilot";
 _c pushBack "BWA3_Uniform_Crew_Tropen";
@@ -233,6 +240,11 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Vests																	//
 //--------------------------------------------------------------------------------------------------------------------------//
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+
+} else {
+
+};
 _c pushBack "BWA3_Vest_Fleck";
 _c pushBack "BWA3_Vest_Grenadier_Fleck";
 _c pushBack "BWA3_Vest_MachineGunner_Fleck";
@@ -264,22 +276,25 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Backpacks																//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "BWA3_AssaultPack_Fleck";
-_c pushBack "BWA3_AssaultPack_Tropen";
-_c pushBack "BWA3_Carryall_Fleck";
-_c pushBack "BWA3_Carryall_Tropen";
-_c pushBack "BWA3_FieldPack_Fleck";
-_c pushBack "BWA3_FieldPack_Tropen";
-_c pushBack "BWA3_Kitbag_Fleck";
-_c pushBack "BWA3_Kitbag_Fleck_Medic";
-_c pushBack "BWA3_Kitbag_Tropen";
-_c pushBack "BWA3_Kitbag_Tropen_Medic";
-_c pushBack "BWA3_PatrolPack_Fleck";
-_c pushBack "BWA3_PatrolPack_Tropen";
-_c pushBack "BWA3_TacticalPack_Fleck";
-_c pushBack "BWA3_TacticalPack_Fleck_Medic";
-_c pushBack "BWA3_TacticalPack_Tropen";
-_c pushBack "BWA3_TacticalPack_Tropen_Medic";
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+	_c pushBack "BWA3_AssaultPack_Tropen";
+	_c pushBack "BWA3_Carryall_Tropen";
+	_c pushBack "BWA3_FieldPack_Tropen";
+	_c pushBack "BWA3_Kitbag_Tropen";
+	_c pushBack "BWA3_Kitbag_Tropen_Medic";
+	_c pushBack "BWA3_PatrolPack_Tropen";
+	_c pushBack "BWA3_TacticalPack_Tropen";
+	_c pushBack "BWA3_TacticalPack_Tropen_Medic";
+} else {
+	_c pushBack "BWA3_AssaultPack_Fleck";
+	_c pushBack "BWA3_Carryall_Fleck";
+	_c pushBack "BWA3_FieldPack_Fleck";
+	_c pushBack "BWA3_Kitbag_Fleck";
+	_c pushBack "BWA3_Kitbag_Fleck_Medic";
+	_c pushBack "BWA3_PatrolPack_Fleck";
+	_c pushBack "BWA3_TacticalPack_Fleck";
+	_c pushBack "BWA3_TacticalPack_Fleck_Medic";
+};
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -291,23 +306,27 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Helms																	//
 //--------------------------------------------------------------------------------------------------------------------------//
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+	_c pushBack "BWA3_CrewmanKSK_Tropen";
+	_c pushBack "BWA3_CrewmanKSK_Tropen_Headset";
+	_c pushBack "BWA3_M92_Tropen";
+	_c pushBack "BWA3_OpsCore_Tropen";
+	_c pushBack "BWA3_OpsCore_Tropen_Camera";
+	_c pushBack "BWA3_OpsCore_Tropen_Patch";
+} else {
+	_c pushBack "BWA3_CrewmanKSK_Fleck";
+	_c pushBack "BWA3_CrewmanKSK_Fleck_Headset";
+	_c pushBack "BWA3_M92_Fleck";
+	_c pushBack "BWA3_OpsCore_Fleck";
+	_c pushBack "BWA3_OpsCore_Fleck_Camera";
+	_c pushBack "BWA3_OpsCore_Fleck_Patch";
+};
 _c pushBack "BWA3_CrewmanKSK";
-_c pushBack "BWA3_CrewmanKSK_Fleck";
-_c pushBack "BWA3_CrewmanKSK_Fleck_Headset";
 _c pushBack "BWA3_CrewmanKSK_Headset";
-_c pushBack "BWA3_CrewmanKSK_Tropen";
-_c pushBack "BWA3_CrewmanKSK_Tropen_Headset";
 _c pushBack "BWA3_Knighthelm";
-_c pushBack "BWA3_M92_Fleck";
-_c pushBack "BWA3_M92_Tropen";
 _c pushBack "BWA3_OpsCore";
 _c pushBack "BWA3_OpsCore_Camera";
-_c pushBack "BWA3_OpsCore_Fleck";
-_c pushBack "BWA3_OpsCore_Fleck_Camera";
-_c pushBack "BWA3_OpsCore_Fleck_Patch";
-_c pushBack "BWA3_OpsCore_Tropen";
-_c pushBack "BWA3_OpsCore_Tropen_Camera";
-_c pushBack "BWA3_OpsCore_Tropen_Patch";
+
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -324,8 +343,11 @@ _c pushBack "BWA3_Beret_PzGren";
 _c pushBack "BWA3_Beret_Pz";
 _c pushBack "BWA3_Beret_Wach_blue";
 _c pushBack "BWA3_Beret_Wach_green";
-_c pushBack "BWA3_Booniehat_Fleck";
-_c pushBack "BWA3_Booniehat_Tropen";
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+	_c pushBack "BWA3_Booniehat_Fleck";
+} else {
+	_c pushBack "BWA3_Booniehat_Tropen";
+};
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;

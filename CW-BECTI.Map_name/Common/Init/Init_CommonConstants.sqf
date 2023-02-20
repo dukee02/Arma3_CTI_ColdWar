@@ -818,8 +818,14 @@ with missionNamespace do {
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	
-	
-	if (isNil 'CTI_CAMO_ACTIVATION') then {CTI_CAMO_ACTIVATION = 0}	//--- "Standard", "Winter", "Desert", "All active (Main = Standard)"
+					//case 1: {//winter camo active
+					//case 2: {//desert camo active
+					//case 3: {//jungle camo active
+					//case 4: {//urban camo active
+					//case 5: {//maritim camo active
+					//case 6: {//special camo active
+					//default {//main camo active
+	if (isNil 'CTI_CAMO_ACTIVATION') then {CTI_CAMO_ACTIVATION = 0}
 	else {
 		//check the camo setup if fixed or auto, on auto check map and set camo
 		if(CTI_CAMO_ACTIVATION == -1) then {

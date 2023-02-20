@@ -33,8 +33,8 @@ _setupBaseUnits = false;
 switch(true) do {
 	case (CTI_GM_DLC > 0 && (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0));			//upgrade was triggert
 	case (CTI_GM_DLC <= 0 && _ai == CTI_BW_ID);
-	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2);
-	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2): {_setupBaseUnits = true;};
+	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2 && CTI_GM_DLC <= 0);
+	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2 && CTI_GM_DLC <= 0): {_setupBaseUnits = true;};
 	default {};
 };
 
@@ -357,9 +357,11 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1BWA3_Panzerhaubitze2000_Tropen", _sid];
+		_c pushBack format["%1BWA3_Skorpion_Tropen", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1BWA3_Panzerhaubitze2000_Fleck", _sid];
+		_c pushBack format["%1BWA3_Skorpion_Fleck", _sid];
 	};
 };
 
@@ -422,7 +424,9 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
-_c pushBack format["CTI_Salvager_%1", _side];
+if (_setupBaseUnits) then {
+	_c pushBack format["CTI_Salvager_%1", _side];
+};
 /*if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		//_c pushBack format["%1BW_LKW_Geraet_Winter", _sid];

@@ -65,7 +65,7 @@ if !(_world == worldName) then {
 };
 
 if(_loadingFine) then {
-	if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", "World and Towns found, loading seems OK, load data"] call CTI_CO_FNC_Log;};
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["World and Towns found, loading seems OK, load data %1", _part]] call CTI_CO_FNC_Log;};
 	
 	switch(_part) do {
 		case "towns": {
@@ -213,10 +213,8 @@ if(_loadingFine) then {
 					if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No FOBs found, vars: <%1>", _fobs_stored]] call CTI_CO_FNC_Log;};
 				} else {
 					{	
-						if !(isNull (_x select 0)) then {
-							[_x select 0, _side_building, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, VIOC_ZEUS, false] call CTI_SE_FNC_BuildDefense;				
-							if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Defences loaded from profile:<SAVE_%1_DEFENSES> Defenses: <%2,%3,%4,%5>", _savename, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
-						};
+						[_x select 0, _side_building, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, VIOC_ZEUS, false] call CTI_SE_FNC_BuildDefense;				
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Defences loaded from profile:<SAVE_%1_DEFENSES> Defenses: <%2,%3,%4,%5>", _savename, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
 					} forEach _fobs_stored;
 				};
 				
@@ -226,15 +224,14 @@ if(_loadingFine) then {
 					if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No defences found, vars: <%1>", _defences_stored]] call CTI_CO_FNC_Log;};
 				} else {
 					{	
-						if !(isNull (_x select 0)) then {
-							[_x select 0, _side_building, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, VIOC_ZEUS, false,  _x select 3] call CTI_SE_FNC_BuildDefense;				
-							if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Defences loaded from profile:<SAVE_%1_DEFENSES> Defenses: <%2,%3,%4,%5>", _savename, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
-						};
+						[_x select 0, _side_building, [( _x select 1) select 0,( _x select 1) select 1], _x select 2, VIOC_ZEUS, false,  _x select 3] call CTI_SE_FNC_BuildDefense;				
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Defences loaded from profile:<SAVE_%1_DEFENSES> Defenses: <%2,%3,%4,%5>", _savename, _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
 					} forEach _defences_stored;
 				};
 			} forEach [east,west];
 		};
 		case "funds": {
+			_sides = if(_side == sideEmpty) then {[east,west]} else {[_side]};
 			{
 				waitUntil {!isNil 'CTI_Init_Server'};
 				
@@ -285,7 +282,7 @@ if(_loadingFine) then {
 						};
 					} forEach (_groups);
 				};
-			} forEach [east,west];
+			} forEach _sides;
 		};
 		case "funds_com": {
 			if !(_side == sideEmpty) then {

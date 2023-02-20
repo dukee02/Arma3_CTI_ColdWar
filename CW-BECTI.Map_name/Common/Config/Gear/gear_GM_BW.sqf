@@ -533,19 +533,6 @@ _p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,3.0] call CTI_CO_FNC_GetCa
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-//--------------------------------------------------------------------------------------------------------------------------//
-//													Assault Rifles															//
-//--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_g36e_blk";
-_c pushBack "gm_g36a1_blk";
-_c pushBack "gm_g36a1_des";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
 
 _c pushBack "gm_30Rnd_556x45mm_B_DM11_g36_blk";
 _c pushBack "gm_30Rnd_556x45mm_B_T_DM21_g36_blk";
@@ -632,6 +619,20 @@ _p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,5.0] call CTI_CO_FNC_GetCa
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 //-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Assault Rifles															//
+//--------------------------------------------------------------------------------------------------------------------------//
+_c pushBack "gm_g36e_blk";
+_c pushBack "gm_g36a1_blk";
+_c pushBack "gm_g36a1_des";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													MG																		//
 //--------------------------------------------------------------------------------------------------------------------------//

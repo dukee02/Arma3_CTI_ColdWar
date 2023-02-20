@@ -213,13 +213,16 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_Get
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Uniforms																//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "CUP_U_B_GER_Flecktarn_1";
-_c pushBack "CUP_U_B_GER_Flecktarn_2";
-_c pushBack "CUP_U_B_GER_Tropentarn_1";
-_c pushBack "CUP_U_B_GER_Tropentarn_2";
-_c pushBack "CUP_U_B_GER_BDU_Tropentarn";
-_c pushBack "CUP_U_B_GER_BDU_Flecktarn";
-_c pushBack "CUP_U_B_GER_BDU_Flecktarn_ODBottom";
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+	_c pushBack "CUP_U_B_GER_Tropentarn_1";
+	_c pushBack "CUP_U_B_GER_Tropentarn_2";
+	_c pushBack "CUP_U_B_GER_BDU_Tropentarn";
+} else {
+	_c pushBack "CUP_U_B_GER_Flecktarn_1";
+	_c pushBack "CUP_U_B_GER_Flecktarn_2";
+	_c pushBack "CUP_U_B_GER_BDU_Flecktarn";
+	_c pushBack "CUP_U_B_GER_BDU_Flecktarn_ODBottom";
+};
 //set all other vars in a slope
 _cntstart = count _i;
 _cntend = count _u;
@@ -251,9 +254,12 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Backpacks																//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "CUP_B_GER_Pack_Flecktarn";
-_c pushBack "CUP_B_GER_Pack_Tropentarn";
-_c pushBack "CUP_B_GER_Backpack_Medic_Fleck";
+if(CTI_CAMO_ACTIVATION == 2) then {//desert camo active
+	_c pushBack "CUP_B_GER_Pack_Tropentarn";
+} else {
+	_c pushBack "CUP_B_GER_Pack_Flecktarn";
+	_c pushBack "CUP_B_GER_Backpack_Medic_Fleck";
+};
 //set all other vars in a slope
 _cntstart = count _i;
 _cntend = count _u;

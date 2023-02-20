@@ -73,6 +73,34 @@ CTI_UI_Fill_PylonsSelection = {
 		//_mirrorPos;
 
 		_uiVehPos = getArray (configfile >> "CfgVehicles" >> typeOf _veh >> "Components" >> "TransportPylonsComponent" >> "pylons" >> _pylonName >> "UIposition");
+		//check and fix formulas in the position array -.- CUP things
+		for[{ _v = 0 }, { _v < count _uiVehPos}, { _v = _v + 1 }] do {
+			if (typeName (_uiVehPos select _v) != "SCALAR") then {
+				_tmpPos = [(_uiVehPos select _v), " "] call BIS_fnc_splitString;
+				_result1 = 0;
+				_result2 = 0;
+				switch (count _tmpPos) do
+				{
+					case 1: {
+						_tmpPos2 = [(_tmpPos select 0), "+"] call BIS_fnc_splitString;
+						_result1 = (_tmpPos2 select 0) call BIS_fnc_parseNumber;
+						_result2 = (_tmpPos2 select 1) call BIS_fnc_parseNumber;
+					};
+					case 2: {
+						_result1 = (_tmpPos select 0) call BIS_fnc_parseNumber;
+						_tmpPos2 = [(_tmpPos select 1), "+", true] call BIS_fnc_splitString;
+						_result2 = (_tmpPos2 select 1) call BIS_fnc_parseNumber;
+					};
+					default {
+						_result1 = (_tmpPos select 0) call BIS_fnc_parseNumber;
+						_result2 = (_tmpPos select 2) call BIS_fnc_parseNumber;
+					};
+				};
+				_result = _result1 + _result2;
+				_uiVehPos set [_v, _result];
+			};
+		};
+
 		_uiSpace = ctrlPosition ((uiNamespace getVariable "cti_dialog_ui_pylonmenu") displayCtrl 410001);
 		_uiPosPhylon = ctrlPosition ((uiNamespace getVariable "cti_dialog_ui_pylonmenu") displayCtrl _UIIdx);
 		_uiPosControl = ctrlPosition ((uiNamespace getVariable "cti_dialog_ui_pylonmenu") displayCtrl (_UIIdx+1));

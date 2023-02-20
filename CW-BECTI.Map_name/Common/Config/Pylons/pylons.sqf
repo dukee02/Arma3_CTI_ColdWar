@@ -114,16 +114,13 @@ _c pushBack "PylonRack_3Rnd_LG_scalpel";				//Scalpel 3x 		<Short-range, laser/i
 _c pushBack "PylonRack_4Rnd_LG_scalpel";				//Scalpel 4x 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 
 if(1042220 in _ownedDLCs) then {		//Arma 3 Creator DLC: Global Mobilization - Cold War Germany
-	_c pushBack "gm_1Rnd_hot_heat_dm72";				//DM72 				<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
-	_c pushBack "gm_1Rnd_hot_heat_dm72_blk";			//DM72 (Black) 		<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
-	_c pushBack "gm_1Rnd_hot_heat_dm72_red";			//DM72 (Red) 		<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
-	_c pushBack "gm_1Rnd_hot_heat_dm72_yel";			//DM72 (Yellow) 	<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
 	_c pushBack "gm_1Rnd_maljutka_heat_9m14_pylon";		//9M14 				<HEAT 9M14<br />Rounds: 1<br />Used in: Maljutka>
 	_c pushBack "gm_1Rnd_maljutka_heat_9m14m_pylon";	//9M14M 			<HEAT 9M14M<br />Rounds: 1<br />Used in: Maljutka>
 };
 if(CTI_CUP_ADDON > 0) then {
-	_c pushBack "CUP_PylonPod_1Rnd_AGM65_Maverick_M";		//1x AGM-65 Maverick
-	_c pushBack "CUP_PylonPod_3Rnd_AGM65_Maverick_M";		//3x AGM-65 Maverick
+	_c pushBack "CUP_PylonPod_2Rnd_AGM114K_Hellfire_II_M";				//2x AGM-114K
+	_c pushBack "CUP_PylonPod_4Rnd_AGM114K_Hellfire_II_M";				//4x AGM-114K
+	_c pushBack "CUP_PylonPod_2Rnd_AGM114K_Hellfire_II_Plane_M";		//2x AGM-114K
 
 	_c pushBack "CUP_PylonPod_2Rnd_AT2_M";					//2x 9M17P Falanga-PV 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 	_c pushBack "CUP_PylonPod_4Rnd_Ataka_Empty_M";			//4x 9M120 Ataka 			<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
@@ -154,6 +151,10 @@ _c pushBack "PylonMissile_Missile_AGM_KH25_x1";			//KH25 AGM x1 		<Short-range, 
 _c pushBack "PylonMissile_Missile_AGM_KH25_INT_x1";		//KH25 AGM x1 		<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
 
 if(1042220 in _ownedDLCs) then {		//Arma 3 Creator DLC: Global Mobilization - Cold War Germany
+	_c pushBack "gm_1Rnd_hot_heat_dm72";				//DM72 				<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
+	_c pushBack "gm_1Rnd_hot_heat_dm72_blk";			//DM72 (Black) 		<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
+	_c pushBack "gm_1Rnd_hot_heat_dm72_red";			//DM72 (Red) 		<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
+	_c pushBack "gm_1Rnd_hot_heat_dm72_yel";			//DM72 (Yellow) 	<HEAT DM72<br />Rounds: 1<br />Used in: HATGM 1>
 	_c pushBack "gm_1Rnd_hot_heat_dm102";				//DM102 			<HEAT DM102<br />Rounds: 1<br />Used in: HATGM 2>
 	_c pushBack "gm_1Rnd_hot_heat_dm102_blk";			//DM102 (Black) 	<HEAT DM102<br />Rounds: 1<br />Used in: HATGM 2>
 	_c pushBack "gm_1Rnd_hot_heat_dm102_red";			//DM102 (Red) 		<HEAT DM102<br />Rounds: 1<br />Used in: HATGM 2
@@ -162,15 +163,20 @@ if(1042220 in _ownedDLCs) then {		//Arma 3 Creator DLC: Global Mobilization - Co
 	_c pushBack "gm_1Rnd_hot_heat_dm102_hornet";		//DM102 (Hornet) 	<HEAT DM102<br />Rounds: 1<br />Used in: HATGM 2>
 };
 if(CTI_CUP_ADDON > 0) then {
-	_c pushBack "CUP_PylonPod_2Rnd_AGM114K_Hellfire_II_M";				//2x AGM-114K
-	_c pushBack "CUP_PylonPod_4Rnd_AGM114K_Hellfire_II_M";				//4x AGM-114K
-	_c pushBack "CUP_PylonPod_2Rnd_AGM114K_Hellfire_II_Plane_M";		//2x AGM-114K
+	_c pushBack "CUP_PylonPod_2Rnd_AGM114L_Hellfire_II_M";				//2x AGM-114L
+	_c pushBack "CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M";				//4x AGM-114L
+	_c pushBack "CUP_PylonPod_2Rnd_AGM114L_Hellfire_II_Plane_M";		//2x AGM-114L
+	_c pushBack "CUP_PylonPod_1Rnd_AGM65_Maverick_M";		//1x AGM-65 Maverick
+	_c pushBack "CUP_PylonPod_3Rnd_AGM65_Maverick_M";		//3x AGM-65 Maverick
 
 	_c pushBack "CUP_PylonPod_6Rnd_Vikhr_M";							//6x 9K121 Vikhr 	<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 	_c pushBack "CUP_PylonPod_1Rnd_Kh29_M";								//1x Kh-29L 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 };
 if(CTI_BW_ADDON > 0) then {
 	_c pushBack "Pylonweapon_4Rnd_PARS";					//PARS 3 LR
+};
+if(CTI_BWADD_ADDON > 0) then {
+	_c pushBack "sfp_hot1_6x_mag";							//HOT	(HATGM)
 };
 
 // set all other vars in a slope
@@ -191,11 +197,6 @@ _c pushBack "PylonRack_Missile_HARM_x1";								//AGM-88C HARM x1 	<Medium-range
 _c pushBack "PylonMissile_Missile_HARM_x1";								//AGM-88C HARM x1 	<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
 _c pushBack "PylonMissile_Missile_HARM_INT_x1";							//AGM-88C HARM x1 	<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
 
-if(CTI_CUP_ADDON > 0) then {
-	_c pushBack "CUP_PylonPod_2Rnd_AGM114L_Hellfire_II_M";				//2x AGM-114L
-	_c pushBack "CUP_PylonPod_4Rnd_AGM114L_Hellfire_II_M";				//4x AGM-114L
-	_c pushBack "CUP_PylonPod_2Rnd_AGM114L_Hellfire_II_Plane_M";		//2x AGM-114L
-};
 if(CTI_CWR3_ADDON > 0) then {
 	_c pushBack "cwr3_4rnd_tow2_proxy";									//BGM-71C TOW
 };

@@ -29,12 +29,17 @@ else {
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_BW_GM.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
+//Check if the based units have to set.
+_setupBaseUnits = false;
+switch(true) do {
+	case (CTI_GM_DLC > 0 && _ai == CTI_BW_ID);
+	case (CTI_GM_DLC > 0 && CTI_CUP_ADDON < 2);
+	case (CTI_GM_DLC > 0 && CTI_CWR3_ADDON < 2);
+	case (CTI_GM_DLC > 0 && _ai != CTI_US_ID): {_setupBaseUnits = true;};
+	default {};
+};
 
-//check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-//_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-//if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
-//Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_GM_DLC > 0 || _ai == CTI_BW_ID) || ( CTI_GM_DLC > 0 && CTI_CUP_ADDON < 2 && CTI_CWR3_ADDON < 2)) then {
+if (_setupBaseUnits) then {
 	switch(CTI_CAMO_ACTIVATION) do {
 		case 1: {//winter camo active
 			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_win", _sid]];
@@ -636,8 +641,6 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	_c pushBack format["%1gm_ge_army_bo105p_pah1", _sid];
-	_c pushBack format["%1gm_ge_army_bo105p_pah1a1", _sid];
 	_c pushBack format["%1gm_ge_airforce_do28d2", _sid];
 	_c pushBack format["%1gm_ge_airforce_do28d2_medevac", _sid];
 };
@@ -647,6 +650,13 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1gm_ge_army_ch53g", _sid];
 	_c pushBack format["%1gm_ge_army_ch53gs", _sid];
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	_c pushBack format["%1gm_ge_army_bo105p_pah1", _sid];
+	_c pushBack format["%1gm_ge_army_bo105p_pah1a1", _sid];
 };
 	
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR];
@@ -663,7 +673,9 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
-_c pushBack format["CTI_Salvager_%1", _side];
+if (_setupBaseUnits) then {
+	_c pushBack format["CTI_Salvager_%1", _side];
+};
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_BW_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
