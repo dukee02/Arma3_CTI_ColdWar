@@ -298,6 +298,22 @@ if(_loadingFine) then {
 				};
 			};
 		};
+		case "funds_player": {
+			if !(_side == sideEmpty) then {
+				if !(_group isEqualTo grpNull) then {
+					_playerUID = getPlayerUID leader _group;
+					_teamfunds_stored = profileNamespace getVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _side, _playerUID],0];
+
+					if(_teamfunds_stored <= 0) then {
+						_default_funds = missionNamespace getVariable [Format ["CTI_ECONOMY_STARTUP_FUNDS_%1", _side],0];
+						if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No Team funds found, set to default: <%1>", _default_funds]] call CTI_CO_FNC_Log;};
+					} else {
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Team funds loaded from profile:<SAVE_%1_FUNDS_%2> Funds: <%3>", _savename, _groupname, _teamfunds_stored]] call CTI_CO_FNC_Log;};
+						_group setVariable ["cti_funds", _teamfunds_stored, true];
+					};
+				};
+			};
+		};
 		case "funds_group": {
 			if !(_side == sideEmpty) then {
 				if !(_group isEqualTo grpNull) then {
@@ -315,6 +331,42 @@ if(_loadingFine) then {
 					};
 				};
 			};
+		};
+		case "empty_vehicles": {
+			_vehicles_stored = profileNamespace getVariable [Format ["SAVE_%1_EMPTYVEHICLES", _savename],[]];
+			if!(count _vehicles_stored > 0) then {
+				if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["No vehicles found, vars: <%1>", _vehicles_stored]] call CTI_CO_FNC_Log;};
+			} else {
+				{
+					_model = _x select 0;
+					_var_classname = missionNamespace getVariable _model;
+
+					if !(isNil '_var_classname') then {
+
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["vehicle loaded from profile:<SAVE_%1_EMPTYVEHICLES> Infos: <%2><%3,%4-%5>", _savename,  _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
+					} else {
+						if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["vehicle not found:<SAVE_%1_EMPTYVEHICLES> Infos: <%2><%3,%4-%5>", _savename,  _x select 0, _x select 1, _x select 2, _x select 3]] call CTI_CO_FNC_Log;};
+					};
+
+					//--- Custom vehicle?
+					_script = _var_classname select CTI_UNIT_SCRIPTS;
+					//_customid = -1;
+					if (typeName (_var_classname select CTI_UNIT_SCRIPTS) == "ARRAY") then { 
+						_model = (_var_classname select CTI_UNIT_SCRIPTS) select 0; 
+						_script = (_var_classname select CTI_UNIT_SCRIPTS) select 1; 
+						//_customid = (_var_classname select CTI_UNIT_SCRIPTS) select 2;
+					};
+					_vehicle = [_model, (_x select 1), (_x select 2), (_x select 3), false, true, true] call CTI_CO_FNC_CreateVehicle;
+					
+					if ((_script != "") && alive _vehicle) then {
+						[_vehicle, (_x select 3), _script, ""] spawn CTI_CO_FNC_InitializeCustomVehicle;
+						//if (_customid > -1) then {_vehicle setVariable ["cti_customid", _customid, true]};
+					};
+
+					sleep 0.1;
+				} forEach _vehicles_stored;
+			};
+				
 		};
 		default {};
 	};

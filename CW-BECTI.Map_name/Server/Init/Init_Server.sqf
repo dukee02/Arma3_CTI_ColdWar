@@ -336,6 +336,7 @@ if !(missionNamespace getvariable "CTI_PERSISTANT" == 0) then {
 		sleep 10; // prenvent loading without all town FSM stable
 		["upgrades"] call CTI_SE_FNC_LOAD;
 		["buildings"] call CTI_SE_FNC_LOAD;
+		["empty_vehicles"] call CTI_SE_FNC_LOAD;
 		0 spawn {
 			waitUntil {!isNil 'CTI_Teams_Loaded'};
 			["funds"] call CTI_SE_FNC_LOAD;
@@ -375,6 +376,7 @@ if !(missionNamespace getvariable "CTI_PERSISTANT" == 0) then {
 				["upgrades"] call CTI_SE_FNC_SAVE;
 				["buildings"] call CTI_SE_FNC_SAVE;
 				["funds"] call CTI_SE_FNC_SAVE;
+				["empty_vehicles"] call CTI_SE_FNC_SAVE;
 			};
 			
 			_missionPath = "\CTI\AutoRestartConfig.hpp";
