@@ -30,13 +30,8 @@ else {
 //*********************************************************************************************************************************************
 //Check if the based units have to set.
 _setupBaseUnits = false;
-switch(true) do {
-	case (CTI_GM_DLC > 0 && (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0));			//upgrade was triggert
-	case (CTI_GM_DLC <= 0 && _ai == CTI_BW_ID);
-	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2 && CTI_GM_DLC <= 0);
-	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2 && CTI_GM_DLC <= 0 ): {_setupBaseUnits = true;};
-	default {};
-};
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if((_isThisMain select 0) == CTI_BW_ID && ((_isThisMain select 1) == CTI_BWA3_ID || (_isThisMain select 1) == CTI_BWADD_ID)) then {_setupBaseUnits = true;};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_BW_REDD.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
 

@@ -459,9 +459,9 @@ _matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_BWA3_ID] call CTI_CO_FN
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	air_to_add = [[format["%1BWA3_Tiger_Gunpod_FZ", _sid], 1, 40]];
-	air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_Heavy", _sid], 1, 40];
-	air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_PARS", _sid], 1, 40];
+	air_to_add = [[format["%1BWA3_Tiger_Gunpod_Heavy", _sid], 1, 40]];
+	//air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_FZ", _sid], 1, 40];
+	//air_to_add pushBack [format["%1BWA3_Tiger_Gunpod_PARS", _sid], 1, 40];
 	
 	units_air append air_to_add;
 	air_auto append air_to_add;
@@ -479,9 +479,9 @@ kind_air pushBack format["AirT%1", _level];
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	air_to_add = [[format["%1BWA3_Tiger_RMK_Heavy", _sid], 1, 40]];
-	air_to_add pushBack [format["%1BWA3_Tiger_RMK_PARS", _sid], 1, 40];
-	air_to_add pushBack [format["%1BWA3_Tiger_RMK_Universal", _sid], 1, 40];
+	air_to_add = [[format["%1BWA3_Tiger_RMK_PARS", _sid], 1, 40]];
+	//air_to_add pushBack [format["%1BWA3_Tiger_RMK_Universal", _sid], 1, 40];
+	//air_to_add pushBack [format["%1BWA3_Tiger_RMK_Heavy", _sid], 1, 40];
 	
 	units_air append air_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};

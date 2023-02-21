@@ -30,13 +30,8 @@ else {
 //*********************************************************************************************************************************************
 //Check if the based units have to set.
 _setupBaseUnits = false;
-switch(true) do {
-	case (CTI_GM_DLC > 0 && (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0));			//upgrade was triggert
-	case (CTI_GM_DLC <= 0 && _ai == CTI_BW_ID);
-	case (CTI_BW_ADDON > 0 && CTI_CUP_ADDON < 2 && CTI_GM_DLC <= 0);
-	case (CTI_BW_ADDON > 0 && CTI_CWR3_ADDON < 2 && CTI_GM_DLC <= 0): {_setupBaseUnits = true;};
-	default {};
-};
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_BWA3_ID) then {_setupBaseUnits = true;};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_BW_BWA3.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
 
@@ -397,17 +392,17 @@ _matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_BWA3_ID] call CTI_CO_FN
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	_c pushBack format["%1BWA3_Tiger_Gunpod_FZ", _sid];
+	//_c pushBack format["%1BWA3_Tiger_Gunpod_FZ", _sid];
 	_c pushBack format["%1BWA3_Tiger_Gunpod_Heavy", _sid];
-	_c pushBack format["%1BWA3_Tiger_Gunpod_PARS", _sid];
+	//_c pushBack format["%1BWA3_Tiger_Gunpod_PARS", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	_c pushBack format["%1BWA3_Tiger_RMK_Heavy", _sid];
+	//_c pushBack format["%1BWA3_Tiger_RMK_Heavy", _sid];
 	_c pushBack format["%1BWA3_Tiger_RMK_PARS", _sid];
-	_c pushBack format["%1BWA3_Tiger_RMK_Universal", _sid];
+	//_c pushBack format["%1BWA3_Tiger_RMK_Universal", _sid];
 };
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR];

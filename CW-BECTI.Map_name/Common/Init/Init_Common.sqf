@@ -107,6 +107,48 @@ call compile preprocessFileLineNumbers "Common\Config\Artillery\Artillery.sqf";
 (east) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
 (resistance) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
 
+//calculate the main mod depends on the given parameters
+_mainmod = -1;
+_nation = -1;
+{
+	// Current result is saved in variable _x
+	switch true do
+	{
+		case (CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_BW_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
+			_mainmod = CTI_GM_ID;
+			_nation = if(_x == west) then {CTI_BW_ID} else {CTI_NVA_ID};
+		};
+		case (CTI_BW_SIDE >= 0 && CTI_GM_DLC < 1): {
+			if(_x == west) then {
+				if(CTI_CAMO_ACTIVATION == 1) then {_mainmod = CTI_BWADD_ID;} else {_mainmod = CTI_BWA3_ID;};
+				_nation = CTI_BW_ID;
+			} else {
+				_mainmod = CTI_CUP_ID;
+				_nation = CTI_SOV_ID;
+			};
+		};
+		case (CTI_CWR3_ADDON == 2);
+		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
+			_mainmod = CTI_CWR3_ID;
+			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
+		};
+		case (!([1042220] call CTI_CO_FNC_HasDLC) || CTI_IsClient);
+		case (CTI_CUP_ADDON == 2);
+		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
+			_mainmod = CTI_CUP_ID;
+			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
+		};
+		//case (): {};
+		default {};
+	};
+	//if (CTI_Log_Level >= CTI_Log_Debug) then {
+		["VIOC_DEBUG", "FILE: Common\Init\Init_Common.sqf", format ["Start gear config: side %1 NationID <%2> MainMod: <%3>", _x, _nation, _mainmod]] call CTI_CO_FNC_Log;
+	//};
+	missionNamespace setVariable [format ["CTI_%1_MAINNATIONS", _x], [_nation, _mainmod]];
+	[_x, _nation, _mainmod] call compile preprocessFileLineNumbers "Common\Config\Gear\gear_start_config.sqf";
+	
+} forEach [west,east];
+
 //CTI_US_SIDE declaration
 if(CTI_US_SIDE >= 0) then {
 	if(CTI_CUP_ADDON > 0) then {
@@ -520,43 +562,3 @@ if ((missionNamespace getVariable "CTI_ECONOMY_CURRENCY_SYSTEM") == 1) then {
 		} forEach (missionNamespace getVariable format ["CTI_%1_STRUCTURES", _x]) + (missionNamespace getVariable format ["CTI_%1_HQSTRUCTURE", _x]);
 	} forEach [east, west];
 };
-
-_mainmod = -1;
-_nation = -1;
-{
-	// Current result is saved in variable _x
-	switch true do
-	{
-		case (CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_BW_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
-			_mainmod = CTI_GM_ID;
-			_nation = if(_x == west) then {CTI_BW_ID} else {CTI_NVA_ID};
-		};
-		case (CTI_BW_SIDE >= 0 && CTI_GM_DLC < 1): {
-			if(_x == west) then {
-				if(CTI_CAMO_ACTIVATION == 1) then {_mainmod = CTI_BWADD_ID;} else {_mainmod = CTI_BWA3_ID;};
-				_nation = CTI_BW_ID;
-			} else {
-				_mainmod = CTI_CUP_ID;
-				_nation = CTI_SOV_ID;
-			};
-		};
-		case (CTI_CWR3_ADDON == 2);
-		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
-			_mainmod = CTI_CWR3_ID;
-			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
-		};
-		case (!([1042220] call CTI_CO_FNC_HasDLC) || CTI_IsClient);
-		case (CTI_CUP_ADDON == 2);
-		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
-			_mainmod = CTI_CUP_ID;
-			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
-		};
-		//case (): {};
-		default {};
-	};
-	//if (CTI_Log_Level >= CTI_Log_Debug) then {
-		["VIOC_DEBUG", "FILE: Common\Init\Init_Common.sqf", format ["Start gear config: side %1 NationID <%2> MainMod: <%3>", _x, _nation, _mainmod]] call CTI_CO_FNC_Log;
-	//};
-	[_x, _nation, _mainmod] call compile preprocessFileLineNumbers "Common\Config\Gear\gear_start_config.sqf";
-	
-} forEach [west,east];

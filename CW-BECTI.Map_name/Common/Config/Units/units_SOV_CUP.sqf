@@ -425,8 +425,9 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-	
-	_c pushBack format["%1CUP_O_BRDM2_HQ_RUS", _sid];			//MG	
+		
+	_c pushBack format["%1CUP_O_UAZ_METIS_RU", _sid];			//Metris (ATGM)
+	_c pushBack format["%1CUP_O_BRDM2_HQ_RUS", _sid];			//MG
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;
@@ -441,7 +442,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_d pushBack 0;	
 	};
 	
-	_c pushBack format["%1CUP_O_UAZ_METIS_RU", _sid];			//Metris (ATGM)
 	_c pushBack format["%1CUP_O_BRDM2_RUS", _sid];				//MG + 2cm
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -975,76 +975,82 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //											 Reapir Factory units																			  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
+_setupBaseUnits = false;
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if((_isThisMain select 0) == CTI_SOV_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {_setupBaseUnits = true;};
+
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-
-switch true do
-{
-	case (CTI_ADDON_CHARLIECO == 1): {
-		_c pushBack format["CTI_Salvager_%1", _side];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1chEPA_RenaultM", _sid],"salvager"];
-		_d pushBack 0;
-			
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1ccfm_mercedes", _sid],"salvager-independent"];
-		_d pushBack 0;
-	};
-	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC >= 1): {};
-	case (CTI_SALVAGE_SPECIAL == 1 && CTI_GM_DLC < 1): {
-		_c pushBack format["CTI_Salvager_%1", _side];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager"];
-		_d pushBack 0;
-			
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager-independent"];
-		_d pushBack 0;
-	};
-	default  {
-		_c pushBack format["CTI_Salvager_%1", _side];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1CUP_O_Ural_Empty_RU", _sid],"salvager"];
-		_d pushBack 0;
-			
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-		_p pushBack '';
-		_n pushBack 'Salvager Truck';
-		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_REPAIR;
-		_s pushBack [format["%1CUP_O_Ural_Empty_RU", _sid],"salvager-independent"];
-		_d pushBack 0;	
+if(_setupBaseUnits) then {
+	switch true do
+	{
+		case (CTI_ADDON_CHARLIECO == 1): {
+			_c pushBack format["CTI_Salvager_%1", _side];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1chEPA_RenaultM", _sid],"salvager"];
+			_d pushBack 0;
+				
+			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1ccfm_mercedes", _sid],"salvager-independent"];
+			_d pushBack 0;
+		};
+		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC >= 1): {};
+		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC < 1): {
+			_c pushBack format["CTI_Salvager_%1", _side];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager"];
+			_d pushBack 0;
+				
+			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager-independent"];
+			_d pushBack 0;
+		};
+		default  {
+			_c pushBack format["CTI_Salvager_%1", _side];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1CUP_O_Ural_Empty_RU", _sid],"salvager"];
+			_d pushBack 0;
+				
+			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_s pushBack [format["%1CUP_O_Ural_Empty_RU", _sid],"salvager-independent"];
+			_d pushBack 0;	
+		};
 	};
 };
+
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_SOV_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;

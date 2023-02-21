@@ -280,17 +280,17 @@ _matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_BWA3_ID] call CTI_CO_FN
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	AIR_BOMBER = [[format["%1BWA3_Tiger_Gunpod_FZ", _sid],1]];
-	AIR_FIGHTER = [[format["%1BWA3_Tiger_Gunpod_Heavy", _sid],1]];
-	AIR_FIGHTER pushBack [format["%1BWA3_Tiger_Gunpod_PARS", _sid],1];
+	//AIR_BOMBER = [[format["%1BWA3_Tiger_Gunpod_FZ", _sid],1]];
+	AIR_BOMBER = [[format["%1BWA3_Tiger_Gunpod_Heavy", _sid],1]];
+	//AIR_FIGHTER pushBack [format["%1BWA3_Tiger_Gunpod_PARS", _sid],1];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	AIR_BOMBER = [[format["%1BWA3_Tiger_RMK_Heavy", _sid],1]];
-	AIR_FIGHTER = [[format["%1BWA3_Tiger_RMK_PARS", _sid],1]];
-	AIR_FIGHTER pushBack [format["%1BWA3_Tiger_RMK_Universal", _sid],1];
+	//AIR_BOMBER = [[format["%1BWA3_Tiger_RMK_Heavy", _sid],1]];
+	AIR_BOMBER = [[format["%1BWA3_Tiger_RMK_PARS", _sid],1]];
+	//AIR_FIGHTER pushBack [format["%1BWA3_Tiger_RMK_Universal", _sid],1];
 };
 
 if(count AIR_FIGHTER == 0) then {AIR_FIGHTER = AIR_BOMBER;};

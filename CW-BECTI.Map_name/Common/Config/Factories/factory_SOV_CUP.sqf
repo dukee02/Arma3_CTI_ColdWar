@@ -27,19 +27,20 @@ else {
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
-
-//check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-//_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-//if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
-//Check if the based mod is set as main, or the nation is explicit set.
+//Check if the based units have to set.
+//CTI_GM_DLC	CTI_CUP_ADDON	CTI_CWR3_ADDON
+//		0			0				0				err 
+//		0			0				1				0
+//		0			1				0				1
+//		0			1				1				0	1 cup 2
+//		1			0				0				0
+//		1			0				1				0
+//		1			1				0				0	1 upgrade
+//		1			1				1				0	1 cup 2
 
 _setupBaseUnits = false;
-switch(true) do {
-	case (CTI_CUP_ADDON > 1 || _ai == CTI_SOV_ID);
-	case (CTI_CWR3_ADDON > 0 && CTI_CUP_ADDON > 0 && CTI_GM_DLC < 2);
-	case (CTI_CWR3_ADDON < 1 && CTI_CUP_ADDON > 0): {_setupBaseUnits = true;};
-	default {};
-};
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if((_isThisMain select 0) == CTI_SOV_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {_setupBaseUnits = true;};
 
 if (_setupBaseUnits) then {
 	switch(CTI_CAMO_ACTIVATION) do {

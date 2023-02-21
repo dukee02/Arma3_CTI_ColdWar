@@ -31,11 +31,8 @@ else {
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_NVA_GM.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
 //Check if the based units have to set.
 _setupBaseUnits = false;
-switch(true) do {
-	case (CTI_GM_DLC > 0 || _ai == CTI_NVA_ID);
-	case (CTI_GM_DLC > 0 && CTI_CUP_ADDON < 2 && CTI_CWR3_ADDON < 2): {_setupBaseUnits = true;};
-	default {};
-};
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if((_isThisMain select 0) == CTI_NVA_ID && (_isThisMain select 1) == CTI_GM_ID) then {_setupBaseUnits = true;};
 
 if (_setupBaseUnits) then {
 	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
