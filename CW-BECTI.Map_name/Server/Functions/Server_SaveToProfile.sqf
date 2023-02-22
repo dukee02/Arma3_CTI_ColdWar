@@ -152,7 +152,7 @@ if(_savemode > 0) then {
 		};
 		case "funds_player": {
 			if(leader _group == player) then {
-				_storedUIDs = profileNamespace getVariable [Format ["SAVE_%1_%2_UIDs", _savename, _side] []];
+				_storedUIDs = profileNamespace getVariable [Format ["SAVE_%1_%2_UIDs", _savename, _side], []];
 				_playerUID = getPlayerUID leader _group;
 				_storedUIDs pushBackUnique _playerUID;
 				profileNamespace setVariable [Format ["SAVE_%1_%2_UIDs", _savename, _side], _storedUIDs];
@@ -212,7 +212,7 @@ if(_savemode > 0) then {
 				_logic= (_x) call CTI_CO_FNC_GetSideLogic;
 				_side_group = _x;
 
-				_storedUIDs = profileNamespace getVariable [Format ["SAVE_%1_%2_UIDs", _savename, _x] []];
+				_storedUIDs = profileNamespace getVariable [Format ["SAVE_%1_%2_UIDs", _savename, _x], []];
 				{
 					profileNamespace setVariable [Format ["SAVE_%1_%2_FUNDS_%3", _savename, _side_group, _x], nil];
 				} forEach _storedUIDs;
