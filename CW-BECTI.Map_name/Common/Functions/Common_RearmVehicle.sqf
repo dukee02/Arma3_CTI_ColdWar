@@ -35,6 +35,27 @@ _type = typeOf _vehicle;
 //_vehicle setVehicleAmmoDef 1;
 _vehicle setVehicleAmmo 1;
 
+//Workaround for the new CUP Tanks setVehicleAmmo only adds 1 round for maingun
+_config = configFile >> "CfgVehicles" >> _type >> "CUP_Shell_Default";
+_array = getArray(_config);
+if(count _array > 0) then {
+	_ammotype = [];
+	_rounds = [];
+	{
+		if(_x isEqualType 0) then {
+			_rounds pushBack _x;
+		};
+		if(_x isEqualType "") then {
+			_ammotype pushBack _x;
+		};
+	} forEach _array;
+	{
+		if(_rounds select _foreachindex > 0) then {
+			_vehicle addMagazines [_x,(_rounds select _foreachindex)-1];
+		};
+	} forEach _ammotype;
+};
+
 //--- Driver
 {
 	_vehicle removeMagazineTurret [_x, [-1]];
