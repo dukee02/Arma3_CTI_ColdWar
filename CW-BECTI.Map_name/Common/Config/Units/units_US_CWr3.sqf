@@ -403,8 +403,14 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_d pushBack 0;
 	};
 	
-	_c pushBack format["%1cwr3_b_m1", _sid];
-	_c pushBack format["%1cwr3_b_m1a1", _sid];
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%cwr3_b_m1_des", _sid];
+		_c pushBack format["%cwr3_b_m1a1_des", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1cwr3_b_m1", _sid];
+		_c pushBack format["%1cwr3_b_m1a1", _sid];
+	};
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;

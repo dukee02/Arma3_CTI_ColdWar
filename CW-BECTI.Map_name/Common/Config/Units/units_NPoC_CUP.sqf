@@ -67,7 +67,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -94,7 +94,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_BARRACKS;
 	_s pushBack "";
 	_d pushBack 0;	
@@ -120,7 +120,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_INFANTRY*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_BARRACKS;
 	_s pushBack "";
 	_d pushBack 0;	
@@ -154,7 +154,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -172,7 +172,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -197,7 +197,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -215,7 +215,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -239,7 +239,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -269,7 +269,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -293,7 +293,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -307,7 +307,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -341,7 +341,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -351,7 +351,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_n pushBack '';
 	_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
 	_d pushBack 0;
@@ -367,7 +367,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
 	_d pushBack 0;
@@ -383,7 +383,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
 	_d pushBack 0;
@@ -392,7 +392,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_n pushBack '';
 	_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
 	_d pushBack 0;
@@ -408,7 +408,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_n pushBack '';
 	_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "";
 	_d pushBack 0;
@@ -433,7 +433,7 @@ _tech_level = 0;
 		_n pushBack '';
 		_o pushBack (CTI_ECONOMY_PRIZE_AIR*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100));
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
 		_d pushBack 0;	
@@ -460,7 +460,7 @@ if(CTI_CUP_ADDON > 0) then {
 	_n pushBack 'Repair Truck';
 	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack "service-repairtruck";
 	_d pushBack 0;
@@ -471,7 +471,7 @@ if(CTI_CUP_ADDON > 0) then {
 		_n pushBack 'Salvager Truck';
 		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager"];
 		_d pushBack 0;
@@ -481,7 +481,7 @@ if(CTI_CUP_ADDON > 0) then {
 		_n pushBack 'Salvager Truck';
 		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
 		_t pushBack _building_time;
-		_u pushBack (_tech_level*_no_upgrade_multiplier);
+		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack [format["%1CUP_B_MTVR_USMC", _sid],"salvager-independent"];
 		_d pushBack 0;
@@ -502,7 +502,7 @@ if(CTI_CUP_ADDON > 0) then {
 	_n pushBack 'Ammo Truck';
 	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
 	_d pushBack 0;	
@@ -512,7 +512,7 @@ if(CTI_CUP_ADDON > 0) then {
 	_n pushBack 'Fuel Truck';
 	_o pushBack ((CTI_ECONOMY_PRIZE_WHEELED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
 	_d pushBack 0;	
@@ -532,7 +532,7 @@ _tech_level = 0;
 	_n pushBack '';
 	_o pushBack (CTI_ECONOMY_PRIZE_NAVAL*(((_tech_level+2)*CTI_ECONOMY_LEVEL_MULTI)/100));
 	_t pushBack _building_time;
-	_u pushBack (_tech_level*_no_upgrade_multiplier);
+	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_NAVAL;
 	_s pushBack "";
 	_d pushBack 0;

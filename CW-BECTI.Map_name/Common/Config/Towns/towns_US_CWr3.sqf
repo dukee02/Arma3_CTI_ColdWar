@@ -169,8 +169,14 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	TRACKED_HEAVY pushBack [format["%1cwr3_b_m1", _sid],1];
-	TRACKED_HEAVY pushBack [format["%1cwr3_b_m1a1", _sid],1];
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		TRACKED_HEAVY pushBack [format["%cwr3_b_m1_des", _sid],1];
+		TRACKED_HEAVY pushBack [format["%cwr3_b_m1a1_des", _sid],1];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		TRACKED_HEAVY pushBack [format["%1cwr3_b_m1", _sid],1];
+		TRACKED_HEAVY pushBack [format["%1cwr3_b_m1a1", _sid],1];
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;

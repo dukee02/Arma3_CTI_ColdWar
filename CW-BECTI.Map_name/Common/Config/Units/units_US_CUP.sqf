@@ -856,29 +856,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_s pushBack "";
 		_d pushBack 0;	
 	};
-	
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%CUP_B_M1A1FEP_OD_USMC", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
-		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
-	};
-	//set all other vars in a slope
-	_cntstart = count _c;
-	_cntend = count _p;
-	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_HEAVY;
-		_s pushBack "";
-		_d pushBack 0;	
-	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -909,13 +886,15 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	};
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_Desert_US_Army", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%CUP_B_M1A1EP_TUSK_OD_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_OD_US_Army", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
-		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_Woodland_US_Army", _sid];
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -958,13 +937,19 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	};
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_Desert_TUSK_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_Desert_USMC", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_TUSK_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_OD_USMC", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
-		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_TUSK_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_Woodland_USMC", _sid];
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -973,6 +958,96 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;	
+	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A2C_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_TUSK_Desert_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M1A2C_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1EP_TUSK_OD_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1A2C_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1EP_TUSK_Woodland_USMC", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;	
+	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+	
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_II_Desert_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_II_OD_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_II_Woodland_US_Army", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 0;	
+	};
+
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true,1.2] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;

@@ -635,13 +635,16 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		arm_to_add = [[format["%1CUP_B_M2Bradley_USA_D", _sid], 1, 40]];
 		arm_to_add pushBack [format["%1CUP_B_M6LineBacker_USA_D", _sid], 1, 40];
-		arm_to_add pushBack [format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M1A1_DES_US_Army", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M1A1SA_Desert_US_Army", _sid], 1, 40];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		arm_to_add = [[format["%1CUP_B_M2Bradley_USA_W", _sid], 1, 40]];
 		arm_to_add pushBack [format["%1CUP_B_M6LineBacker_USA_W", _sid], 1, 40];
-		arm_to_add pushBack [format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M1A1_Woodland_US_Army", _sid], 1, 40];
+		arm_to_add pushBack [format["%1CUP_B_M1A1SA_Woodland_US_Army", _sid], 1, 40];
 	};
+
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {tracked_auto append arm_to_add;};
 };
@@ -664,6 +667,87 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		arm_to_add = [[format["%1CUP_B_M2A3Bradley_USA_W", _sid], 1, 40]];
 	};
+
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M1A1SA_Desert_TUSK_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_Desert_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A1FEP_Desert_USMC", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		arm_to_add = [[format["%1CUP_B_M1A1SA_TUSK_OD_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_OD_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A1FEP_OD_USMC", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M1A1SA_TUSK_Woodland_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_Woodland_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A1FEP_Woodland_USMC", _sid], 1, 40]];
+	};
+
+	units_tracked append arm_to_add;
+	if(CTI_FACTORY_LEVEL_PRESET >= _level) then {tracked_auto append arm_to_add;};
+};
+
+_v pushBack format["ArmoredT%1", _level];
+_t pushBack format["Tracked T%1", _level];
+_p pushBack arm_to_add;
+_f pushBack CTI_HEAVY;
+_m pushBack 500;
+_c pushBack "Armored";
+_s pushBack [];
+kind_tracked pushBack format["ArmoredT%1", _level];
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M1A2C_Desert_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_TUSK_Desert_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A1FEP_TUSK_Desert_USMC", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		arm_to_add = [[format["%1CUP_B_M1A2C_OD_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_TUSK_OD_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A1EP_TUSK_OD_USMC", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M1A2C_Woodland_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_TUSK_Woodland_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A1EP_TUSK_Woodland_USMC", _sid], 1, 40]];
+	};
+
+	units_tracked append arm_to_add;
+	if(CTI_FACTORY_LEVEL_PRESET >= _level) then {tracked_auto append arm_to_add;};
+};
+
+_v pushBack format["ArmoredT%1", _level];
+_t pushBack format["Tracked T%1", _level];
+_p pushBack arm_to_add;
+_f pushBack CTI_HEAVY;
+_m pushBack 500;
+_c pushBack "Armored";
+_s pushBack [];
+kind_tracked pushBack format["ArmoredT%1", _level];
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		arm_to_add = [[format["%1CUP_B_M1A2C_TUSK_Desert_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_TUSK_II_Desert_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		arm_to_add = [[format["%1CUP_B_M1A2C_TUSK_OD_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_TUSK_II_OD_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid], 1, 40]];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		arm_to_add = [[format["%1CUP_B_M1A2C_TUSK_Woodland_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2SEP_TUSK_II_Woodland_US_Army", _sid], 1, 40]];
+		arm_to_add = [[format["%1CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid], 1, 40]];
+	};
+
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET >= _level) then {tracked_auto append arm_to_add;};
 };

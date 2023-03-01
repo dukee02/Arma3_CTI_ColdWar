@@ -551,16 +551,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 		_c pushBack format["%1CUP_B_M270_DPICM_USMC", _sid];
 		_c pushBack format["%1CUP_B_M270_HE_USMC", _sid];
 	};
-	
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%CUP_B_M1A1FEP_OD_USMC", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
-		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
-	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -574,18 +564,20 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 		_c pushBack format["%1CUP_B_M2Bradley_USA_W", _sid];
 		_c pushBack format["%1CUP_B_M6LineBacker_USA_W", _sid];
 	};
-	
+
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_DES_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1_DES_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_Desert_US_Army", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%CUP_B_M1A1EP_TUSK_OD_USMC", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_OD_US_Army", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
-		_c pushBack format["%1CUP_B_M1A2_TUSK_MG_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_Woodland_US_Army", _sid];
 	};
 };
-
+	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
@@ -597,13 +589,59 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	};
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_Desert_TUSK_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_Desert_USMC", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_TUSK_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_OD_USMC", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
-		_c pushBack format["%CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1SA_TUSK_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_Woodland_USMC", _sid];
+	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A2C_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1FEP_TUSK_Desert_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M1A2C_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1EP_TUSK_OD_USMC", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1A2C_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A1EP_TUSK_Woodland_USMC", _sid];
+	};
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_II_Desert_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_II_Desert_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_II_OD_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_II_OD_US_Army", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 3) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2SEP_TUSK_II_Woodland_US_Army", _sid];
+		_c pushBack format["%1CUP_B_M1A2C_TUSK_II_Woodland_US_Army", _sid];
 	};
 };
 
