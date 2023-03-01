@@ -464,9 +464,9 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
  _tech_level = 1;
 
-_priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
-_priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
-_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,20] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,6] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,12] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 /********************************************************************************************************************************
  *											USA																					*
  ********************************************************************************************************************************/
@@ -566,8 +566,8 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
  _tech_level = 2;
 
-_priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
-_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,12] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 /********************************************************************************************************************************
  *											USA																					*
  ********************************************************************************************************************************/
@@ -679,8 +679,8 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
  _tech_level = 3;
 
-_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,4] call CTI_CO_FNC_GetCalculatedUnitsPrize;
-_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,40] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,8] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,16] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 /********************************************************************************************************************************
  *											Others																				*
  ********************************************************************************************************************************/
