@@ -34,7 +34,7 @@ private ["_salvager", "_handleOn", "_beacon", "_siren"];
 _salvager = _this select 0;
 _handleOn = _this select 1;
 
-if(CTI_SALVAGE_SPECIAL == 2) then {
+if(CTI_SALVAGE_SPECIAL > 1) then {
 	if(CTI_ADDON_CHARLIECO <= 0) then {
 		{
 			if(typeOf _salvager == _x) then {
@@ -46,7 +46,7 @@ if(CTI_SALVAGE_SPECIAL == 2) then {
 				};
 				_beacon = _action_handlings select 0;
 				_siren = _action_handlings select 1;
-				if(CTI_GM_DLC > 0 && CTI_SALVAGE_SPECIAL == 1) then {
+				if(CTI_GM_DLC > 0) then {
 					_siren set [0, _salvager];
 					_beacon set [0, _salvager];
 					_beacon call gm_core_vehicles_fnc_beaconSwitch;

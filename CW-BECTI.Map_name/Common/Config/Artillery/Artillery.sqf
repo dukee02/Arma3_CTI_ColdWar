@@ -14,7 +14,7 @@ _m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Fl
 _b pushBack [1, 2, 4, 8];
 _r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
 
-/*if(CTI_MAIN_ADDON == 0) then {
+if(CTI_GM_DLC > 0) then {
 	
 	_c pushBack "gm_ge_army_m109g";
 	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
@@ -41,8 +41,6 @@ _r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
 	_b pushBack [1];
 	_r pushBack [[10150,13600], [13500,18100], [17600,23600], [22300,29900]];
 };
-*/
-
 
 //no real config for M120 in REDD, only manuel fire atm
 //if(CTI_REDD_ADDON == 1) then {
