@@ -171,7 +171,10 @@ if(_savemode > 0) then {
 			_saveObjects = [];
 			{
 				{ 
-					if (count crew vehicle _x == 0) then {_saveObjects pushBack _x}; 
+					if (count crew vehicle _x == 0) then {
+						_startup = _x getVariable "isStartup";
+						if (isNil '_startup') then { _saveObjects pushBack _x };
+					}; 
 				} forEach (allMissionObjects _x);
 			} forEach ["Car","Motorcycle","Tank","Air","Ship"];
 

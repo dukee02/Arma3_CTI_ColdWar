@@ -193,6 +193,7 @@ if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\In
 		_vehicle = [_model, _startPos, 0, _side, false, true, true] call CTI_CO_FNC_CreateVehicle;
 		[_vehicle, getPos _hq, 45, 60, true, false, true] call CTI_CO_FNC_PlaceNear;
 		[_vehicle] spawn CTI_SE_FNC_HandleEmptyVehicle;
+		_vehicle setVariable ["isStartup", true];
 		if (count _equipment > 0) then {[_vehicle, _equipment] call CTI_CO_FNC_EquipVehicleCargoSpace};
 		if (_script != "" && alive _vehicle) then {
 			[_vehicle, _side, _script, ""] spawn CTI_CO_FNC_InitializeCustomVehicle;
