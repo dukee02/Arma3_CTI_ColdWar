@@ -648,7 +648,7 @@ with missionNamespace do {
 	if (isNil 'CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX') then {CTI_VEHICLES_SALVAGE_INDEPENDENT_MAX = 2}; //--- Maximum amount of Independent Salvage Trucks which may be present per side
 };
 
-if(CTI_GM_DLC > 0 && CTI_SALVAGE_SPECIAL == 1) then {
+if(CTI_GM_DLC > 0 && CTI_SALVAGE_SPECIAL >= 1) then {
 	CTI_SALVAGE_SPECIALUNITS = ["gm_gc_ff_p601","gm_ge_ff_typ1200","gm_ge_ff_u1300l_firefighter"];		//unitswith lights and sirens
 	CTI_SALVAGE_SPECIAL_ACTIONOFF = [[[objNull,'gm_beacons_blu',false],[objNull,'CustomSoundController1',0,0.4]],[[objNull,'gm_beacons_blu',false],[objNull,'CustomSoundController1',0,0.4]],[[objNull,'gm_beacons_blu',false],[objNull,'CustomSoundController1',0,0.4]]];		//handle for turning lights and sirens off
 	CTI_SALVAGE_SPECIAL_ACTIONON = [[[objNull,'gm_beacons_blu',true],[objNull,'CustomSoundController1',1,0.2]],[[objNull,'gm_beacons_blu',true],[objNull,'CustomSoundController1',1,0.2]],[[objNull,'gm_beacons_blu',true],[objNull,'CustomSoundController1',1,0.2]]];		//handle for turning lights and sirens on
@@ -839,7 +839,7 @@ with missionNamespace do {
 		};
 	};
 	
-	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 0}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, 0: Short, 1: Medium, 2: Long, 3: Far)
+	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 15000}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, max. 5000m (can make units unusable),max. 10000m, max. 15000m, max. 20000m, max. 30000m, max. 40000m")
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission
 	
 	CTI_ECONOMY_INCOME_COEF = 10; //--- Town Multiplicator Coefficient (SV * x)

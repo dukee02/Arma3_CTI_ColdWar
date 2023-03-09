@@ -15,28 +15,103 @@ _b pushBack [1, 2, 4, 8];
 _r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
 
 if(CTI_GM_DLC > 0) then {
-	
 	_c pushBack "gm_ge_army_m109g";
 	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
 	_b pushBack [1, 2, 5, 10];
 	_r pushBack [[3000,6000], [3360,10700], [9350,18600], [9350,18600]];
 	
+	_c pushBack "gm_ge_army_m109g_wdl";
+	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
+	_b pushBack [1, 2, 5, 10];
+	_r pushBack [[3000,6000], [3360,10700], [9350,18600], [9350,18600]];
+	
+	_c pushBack "gm_ge_army_m109g_trp";
+	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
+	_b pushBack [1, 2, 5, 10];
+	_r pushBack [[3000,6000], [3360,10700], [9350,18600], [9350,18600]];
+	
+	_c pushBack "gm_ge_army_m109g_des";
+	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
+	_b pushBack [1, 2, 5, 10];
+	_r pushBack [[3000,6000], [3360,10700], [9350,18600], [9350,18600]];
+	
+	_c pushBack "gm_ge_army_m109g_win";
+	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
+	_b pushBack [1, 2, 5, 10];
+	_r pushBack [[3000,6000], [3360,10700], [9350,18600], [9350,18600]];
+
+
 	_c pushBack "gm_gc_army_2s1";
 	_m pushBack ["gm_28Rnd_122x447mm_he_of462","gm_28Rnd_122x447mm_he_3of56","gm_28Rnd_122x447mm_smoke_d462","gm_28Rnd_122x447mm_illum_s463","gm_28Rnd_122x447mm_heat_bk6m","gm_28Rnd_122x447mm_heat_t_bk13"];
 	_b pushBack [1, 2, 4, 8, 14, 28];
 	_r pushBack [[3250,5000], [4920,7600], [7300,11300], [10010,15500]];
+
+	_c pushBack "gm_gc_army_2s1_wdl";
+	_m pushBack ["gm_28Rnd_122x447mm_he_of462","gm_28Rnd_122x447mm_he_3of56","gm_28Rnd_122x447mm_smoke_d462","gm_28Rnd_122x447mm_illum_s463","gm_28Rnd_122x447mm_heat_bk6m","gm_28Rnd_122x447mm_heat_t_bk13"];
+	_b pushBack [1, 2, 4, 8, 14, 28];
+	_r pushBack [[3250,5000], [4920,7600], [7300,11300], [10010,15500]];
+
+	_c pushBack "gm_gc_army_2s1_win";
+	_m pushBack ["gm_28Rnd_122x447mm_he_of462","gm_28Rnd_122x447mm_he_3of56","gm_28Rnd_122x447mm_smoke_d462","gm_28Rnd_122x447mm_illum_s463","gm_28Rnd_122x447mm_heat_bk6m","gm_28Rnd_122x447mm_heat_t_bk13"];
+	_b pushBack [1, 2, 4, 8, 14, 28];
+	_r pushBack [[3250,5000], [4920,7600], [7300,11300], [10010,15500]];
 	
+
 	_c pushBack "gm_ge_army_kat1_463_mlrs";
+	_m pushBack ["gm_36Rnd_mlrs_110mm_he_dm21"];
+	//_m pushBack ["gm_36Rnd_mlrs_110mm_he_dm21","gm_36Rnd_mlrs_110mm_icm_dm602","gm_36Rnd_mlrs_110mm_mine_dm711","gm_36Rnd_mlrs_110mm_smoke_dm15"];
+	_b pushBack [1, 2, 5, 10, 18, 36];
+	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
+	
+	_c pushBack "gm_ge_army_kat1_463_mlrs_wdl";
 	_m pushBack ["gm_36Rnd_mlrs_110mm_he_dm21"];
 	_b pushBack [1, 2, 5, 10, 18, 36];
 	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
 	
+	_c pushBack "gm_ge_army_kat1_463_mlrs_trp";
+	_m pushBack ["gm_36Rnd_mlrs_110mm_he_dm21"];
+	_b pushBack [1, 2, 5, 10, 18, 36];
+	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
+	
+	_c pushBack "gm_ge_army_kat1_463_mlrs_des";
+	_m pushBack ["gm_36Rnd_mlrs_110mm_he_dm21"];
+	_b pushBack [1, 2, 5, 10, 18, 36];
+	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
+
+	_c pushBack "gm_ge_army_kat1_463_mlrs_win";
+	_m pushBack ["gm_36Rnd_mlrs_110mm_he_dm21"];
+	_b pushBack [1, 2, 5, 10, 18, 36];
+	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
+
+	
 	_c pushBack "gm_gc_army_ural375d_mlrs";
+	_m pushBack ["gm_40Rnd_mlrs_122mm_he_9m22u"];
+	//_m pushBack ["gm_40Rnd_mlrs_122mm_he_9m22u","gm_40Rnd_mlrs_122mm_icm_9m218","gm_40Rnd_mlrs_122mm_mine_9m28k","gm_40Rnd_mlrs_122mm_mine_9m22k","gm_40Rnd_mlrs_122mm_smoke_9m43"];
+	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
+	
+	_c pushBack "gm_gc_army_ural375d_mlrs_wdl";
 	_m pushBack ["gm_40Rnd_mlrs_122mm_he_9m22u"];
 	_b pushBack [1, 2, 5, 10, 20, 40];
 	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
 	
+	_c pushBack "gm_gc_army_ural375d_mlrs_win";
+	_m pushBack ["gm_40Rnd_mlrs_122mm_he_9m22u"];
+	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[5900,7900], [7850,10500], [10500,14000], [10500,14000]];
+	
+
 	_c pushBack "gm_gc_army_2p16";
+	_m pushBack ["gm_1Rnd_luna_he_3r9"];
+	_b pushBack [1];
+	_r pushBack [[10150,13600], [13500,18100], [17600,23600], [22300,29900]];
+		
+	_c pushBack "gm_gc_army_2p16_wdl";
+	_m pushBack ["gm_1Rnd_luna_he_3r9"];
+	_b pushBack [1];
+	_r pushBack [[10150,13600], [13500,18100], [17600,23600], [22300,29900]];
+		
+	_c pushBack "gm_gc_army_2p16_win";
 	_m pushBack ["gm_1Rnd_luna_he_3r9"];
 	_b pushBack [1];
 	_r pushBack [[10150,13600], [13500,18100], [17600,23600], [22300,29900]];
