@@ -65,6 +65,15 @@ switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 	case 16: {
 		if(CTI_BW_ADDON > 0) then {_texture = "\bw_flags\data\flagge_bund_CO.paa";};	//GER BUND
 	};
+	case 17: {
+		if(CTI_RHS_ADDON > 0) then {_texture = "\rhsafrf\addons\rhs_main\data\Flag_rus_CO.paa";};
+	};
+	case 18: {
+		if(CTI_RHS_ADDON > 0) then {_texture = "\rhsafrf\addons\rhs_main\data\Flag_vdv_CO.paa";};
+	};
+	case 19: {
+		if(CTI_RHS_ADDON > 0) then {_texture = "\rhsgref\addons\rhsgref_main\data\flag_chdkz_co.paa";};		//chdkz
+	};
 	/*case 11: {
 		_texture = "";
 	};*/
