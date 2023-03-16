@@ -157,7 +157,17 @@ if(CTI_CWR3_ADDON > 0) then {
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[86,499], [347,1998], [708,4078], [708,4078]];
 };
+if(CTI_RHS_ADDON > 0) then {
+	_c pushBack "RHS_M252_D";
+	_m pushBack ["rhs_1Rnd_m821_HE","rhs_12Rnd_m821_HE","8Rnd_82mm_Mo_shells","8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_Smoke_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
 
+	_c pushBack "rhs_2b14_82mm_vdv";
+	_m pushBack ["rhs_mag_3vo18_10","rhs_mag_3vs25m_10","rhs_mag_53_va_832a_10","rhs_mag_d832du_10"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+};
 /*if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_2b14_82mm_vdv";
 	_m pushBack ["rhs_mag_3vo18_10", "rhs_mag_3vs25m_10", "rhs_mag_53_va_832a_10", "rhs_mag_d832du_10"];
@@ -189,6 +199,17 @@ if(CTI_CWR3_ADDON > 0) then {
 	_m pushBack ["CUP_30Rnd_122mmHE_D30_M", "CUP_30Rnd_122mmWP_D30_M", "CUP_30Rnd_122mmLASER_D30_M", "CUP_30Rnd_122mmSMOKE_D30_M", "CUP_30Rnd_122mmILLUM_D30_M"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[826,2415], [2059,6021], [5272,15414], [5272,15414]];
+};
+if(CTI_RHS_ADDON > 0) then {
+	_c pushBack "RHS_M119_D";
+	_m pushBack ["RHS_mag_m1_he_12","rhs_mag_m314_ilum_4","rhs_mag_m60a2_smoke_4"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhs_D30_vdv";
+	_m pushBack ["rhs_mag_of462","rhs_mag_of462_10","rhs_mag_3of56","rhs_mag_3of56_10","rhs_mag_3of56_5","rhs_mag_of462_direct","rhs_mag_of462_direct_10","rhs_mag_3of56_direct","rhs_mag_3of56_direct_10","rhs_mag_3of56_direct_5","rhs_mag_bk6m","rhs_mag_bk6m_26","rhs_mag_bk6m_5","rhs_mag_bk13","rhs_mag_bk13_26","rhs_mag_bk13_5","rhs_mag_d462","rhs_mag_d462_2","rhs_mag_s463","rhs_mag_s463_2","rhs_mag_3of69m","rhs_mag_3of69m_2"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
 };
 
 /*if(CTI_RHS_ADDON > 0) then {
@@ -278,6 +299,23 @@ if(CTI_BW_ADDON > 0) then {
 	_b pushBack [2, 4, 6, 12];
 	_r pushBack [[2973,5059], [5096,8670], [9831,16725], [13689,23289]];
 };
+if(CTI_RHS_ADDON > 0) then {
+
+	_c pushBack "rhsusf_m109d_usarmy";
+	_m pushBack ["rhs_mag_155mm_m795_28","rhs_mag_155mm_m825a1_2","rhs_mag_155mm_485_2","rhs_mag_155mm_m712_2","rhs_mag_155mm_m731_1","rhs_mag_155mm_raams_1","rhs_mag_155mm_m864_3"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhsusf_m109_usarmy";
+	_m pushBack ["rhs_mag_155mm_m795_28","rhs_mag_155mm_m825a1_2","rhs_mag_155mm_485_2","rhs_mag_155mm_m712_2","rhs_mag_155mm_m731_1","rhs_mag_155mm_raams_1","rhs_mag_155mm_m864_3"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhs_2s3_tv";
+	_m pushBack ["rhs_mag_HE_2a33","rhs_mag_WP_2a33","rhs_mag_Atomic_2a33","rhs_mag_LASER_2a33","rhs_mag_SMOKE_2a33","rhs_mag_ILLUM_2a33","rhs_mag_53vof546v","rhs_mag_53vof546v_26","rhs_mag_53vof546v_32","rhs_mag_53vof546v_46","rhs_mag_53vof546v_direct","rhs_mag_53vof546v_direct_32","rhs_mag_br540_10","rhs_mag_br540","rhs_mag_bp540_4","rhs_mag_bp540","rhs_mag_HE_2a33_46","rhs_mag_WP_2a33_46","rhs_mag_Atomic_2a_2633_46","rhs_mag_LASER_2a33_46","rhs_mag_SMOKE_2a33_46","rhs_mag_ILLUM_2a33_46","rhs_mag_HE_2a33_32","rhs_mag_HE_2a33_26","rhs_mag_WP_2a33_26","rhs_mag_Atomic_2a_2633_26","rhs_mag_LASER_2a33_26","rhs_mag_SMOKE_2a33_26","rhs_mag_ILLUM_2a33_26"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+};
 
 //RHS Arty dosn't have any ammo in there setup, maybe this works
 //round name: M-21OF
@@ -285,7 +323,17 @@ if(CTI_BW_ADDON > 0) then {
 	_c pushBack "RHS_BM21_VDV_01";
 	_m pushBack ["rhs_mag_m21of_1"];
 	_b pushBack [1, 2, 5, 10, 20, 40];
-	_r pushBack [[5000,6500], [6500,8300], [8300,10000], [13000,16000]];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+	
+	rhsusf_M142_usarmy_D
+	rhsusf_M142_usarmy_WD
+
+
+	RHS_BM21_VDV_01
+
+	rhs_9k79
+	rhs_9k79_K
+	rhs_9k79_B
 };*/
 
 [_c, _m, _b, _r] call compile preprocessFileLineNumbers "Common\Config\Artillery\Set_Artillery.sqf";

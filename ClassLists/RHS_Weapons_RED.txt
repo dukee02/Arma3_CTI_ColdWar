@@ -1,31 +1,48 @@
 
-
+/*
 this addItemToBackpack "rhs_mine_msk40p_blue_mag";
 this addItemToBackpack "rhs_mine_msk40p_green_mag";
 this addItemToBackpack "rhs_mine_msk40p_red_mag";
 this addItemToBackpack "rhs_mine_msk40p_white_mag";
+this addItemToBackpack "rhs_mine_sm320_green_mag";
+this addItemToBackpack "rhs_mine_sm320_red_mag";
+this addItemToBackpack "rhs_mine_sm320_white_mag";
+
 this addItemToBackpack "rhs_mine_ozm72_a_mag";
 this addItemToBackpack "rhs_mine_ozm72_b_mag";
 this addItemToBackpack "rhs_mine_ozm72_c_mag";
 this addItemToBackpack "rhs_mag_mine_pfm1";
-this addItemToBackpack "rhs_mine_pmn2_mag";
 this addItemToBackpack "rhs_mag_mine_ptm1";
-this addItemToBackpack "rhs_mine_sm320_green_mag";
-this addItemToBackpack "rhs_mine_sm320_red_mag";
-this addItemToBackpack "rhs_mine_sm320_white_mag";
-this addItemToBackpack "rhs_mine_tm62m_mag";
+this addItemToBackpack "rhs_mine_pmn2_mag";
+
 this addItemToBackpack "rhs_ec75_mag";
-this addItemToBackpack "rhs_ec200_sand_mag";
-this addItemToBackpack "rhs_ec200_mag";
-this addItemToBackpack "rhs_ec400_sand_mag";
-this addItemToBackpack "rhs_ec400_mag";
 this addItemToBackpack "rhs_ec75_sand_mag";
 
+this addItemToBackpack "rhs_mine_tm62m_mag";
+this addItemToBackpack "rhs_ec200_sand_mag";
+this addItemToBackpack "rhs_ec200_mag";
 
+this addItemToBackpack "rhs_ec400_sand_mag";
+this addItemToBackpack "rhs_ec400_mag";
+*/
 
+/*
+this addItemToBackpack "rhs_mag_rgd5";
+this addItemToBackpack "rhs_mag_rgn";
+this addItemToBackpack "rhs_mag_rgo";
+this addItemToBackpack "rhs_mag_rdg2_black";
+this addItemToBackpack "rhs_mag_rdg2_white";
+this addItemToBackpack "rhs_mag_plamyam";
+this addItemToBackpack "rhs_mag_nspn_yellow";
+this addItemToBackpack "rhs_mag_nspn_red";
+this addItemToBackpack "rhs_mag_nspn_green";
+this addItemToBackpack "rhs_mag_nspd";
+this addItemToBackpack "rhs_mag_fakels";
+this addItemToBackpack "rhs_mag_fakel";
+this addItemToBackpack "rhs_mag_zarya2";
+*/
 
-
-
+/*
 this addWeapon "rhs_weap_6p53";
 this addItemToBackpack "rhs_18rnd_9x21mm_7N28";
 this addItemToBackpack "rhs_18rnd_9x21mm_7N29";
@@ -64,9 +81,9 @@ this addWeapon "rhs_weap_rsp30_red";
 this addHandgunItem "rhs_mag_rsp30_red";
 
 this addWeapon "rhs_weap_tr8";
+*/
 
-
-
+/*
 this addWeapon "rhs_weap_ak103";
 this addWeapon "rhs_weap_ak103_1";
 this addWeapon "rhs_weap_ak103_2";
@@ -109,9 +126,9 @@ this addItemToBackpack "rhs_GRD40_Green";
 this addItemToBackpack "rhs_GRD40_Red";
 this addItemToBackpack "rhs_GDM40";
 this addItemToBackpack "rhs_VG40MD";
+*/
 
-
-
+/*
 this addWeapon "rhs_weap_ak103_1_npz";
 this addWeapon "rhs_weap_ak103_2_npz";
 this addWeapon "rhs_weap_ak103_npz";
@@ -155,8 +172,8 @@ this addItemToBackpack "rhs_60Rnd_545X39_7N10_AK";
 this addItemToBackpack "rhs_60Rnd_545X39_7N22_AK";
 this addItemToBackpack "rhs_60Rnd_545X39_AK_Green";
 this addItemToBackpack "rhs_60Rnd_545X39_7U1_AK";
-
-
+*/
+/*
 //Optics
 //AK 
 this addPrimaryWeaponItem "rhs_acc_1p29";
@@ -196,14 +213,14 @@ this addPrimaryWeaponItem "rhs_acc_dtk3";
 this addPrimaryWeaponItem "rhs_acc_dtk4long";
 this addPrimaryWeaponItem "rhs_acc_dtk4screws";
 this addPrimaryWeaponItem "rhs_acc_pbs1";
+*/
 
 
 
 
 
 
-
-
+/*
 this addWeapon "rhs_weap_ak74";
 this addWeapon "rhs_weap_ak74_3";
 this addWeapon "rhs_weap_ak74_2";
@@ -306,10 +323,10 @@ this addWeapon "rhs_weap_aks74n_2_npz";
 this addWeapon "rhs_weap_aks74u";
 this addWeapon "rhs_weap_aks74un";
 this addPrimaryWeaponItem "rhs_30Rnd_545x39_7N6M_AK";
+*/
 
 
-
-
+/*
 this addWeapon "rhs_weap_asval";
 this addWeapon "rhs_weap_asval_grip";
 this addWeapon "rhs_weap_asval_grip_npz";
@@ -318,10 +335,10 @@ this addItemToBackpack "rhs_20rnd_9x39mm_SP5";
 this addItemToBackpack "rhs_20rnd_9x39mm_SP6";
 this addItemToBackpack "rhs_10rnd_9x39mm_SP5";
 this addItemToBackpack "rhs_10rnd_9x39mm_SP6";
+*/
 
 
-
-
+/*
 this addWeapon "rhs_weap_pkm";
 this addItemToBackpack "rhs_100Rnd_762x54mmR";
 this addItemToBackpack "rhs_100Rnd_762x54mmR_green";
@@ -353,9 +370,9 @@ this addItemToBackpack "rhs_mag_9x19mm_7n21_20";
 this addItemToBackpack "rhs_mag_9x19mm_7n31_20";
 this addItemToBackpack "rhs_mag_9x19mm_7n21_44";
 this addItemToBackpack "rhs_mag_9x19mm_7n31_44";
+*/
 
-
-
+/*
 this addWeapon "rhs_weap_rpk74m";
 this addWeapon "rhs_weap_rpk74m_npz";
 this addItemToBackpack "rhs_45Rnd_545X39_7N6M_AK";
@@ -364,9 +381,9 @@ this addItemToBackpack "rhs_45Rnd_545X39_7N10_AK";
 this addItemToBackpack "rhs_45Rnd_545X39_7N22_AK";
 this addItemToBackpack "rhs_45Rnd_545X39_AK_Green";
 this addItemToBackpack "rhs_45Rnd_545X39_7U1_AK";
+*/
 
-
-
+/*
 this addWeapon "rhs_weap_svdp";
 this addWeapon "rhs_weap_svdp_wd";
 this addWeapon "rhs_weap_svdp_wd_npz";
@@ -375,10 +392,10 @@ this addWeapon "rhs_weap_svds";
 this addWeapon "rhs_weap_svds_npz";
 this addItemToBackpack "rhs_10Rnd_762x54mmR_7N1";
 this addItemToBackpack "rhs_10Rnd_762x54mmR_7N14";
+*/
 
 
-
-
+/*
 this addWeapon "rhs_weap_t5000";
 this addPrimaryWeaponItem "rhs_5Rnd_338lapua_t5000";
 
@@ -392,26 +409,11 @@ this addItemToBackpack "rhs_10rnd_9x39mm_SP5";
 this addItemToBackpack "rhs_10rnd_9x39mm_SP6";
 this addItemToBackpack "rhs_20rnd_9x39mm_SP5";
 this addItemToBackpack "rhs_20rnd_9x39mm_SP6";
+*/
 
 
 
-
-
-
-
-this addWeapon "rhs_weap_igla";
-this addSecondaryWeaponItem "rhs_mag_9k38_rocket";
-
-
-this addWeapon "rhs_weap_rpg18";
-this addSecondaryWeaponItem "rhs_rpg18_mag";
-
-
-this addWeapon "rhs_weap_rpg26";
-this addSecondaryWeaponItem "rhs_rpg26_mag";
-
-
-
+/*
 this addWeapon "rhs_weap_rpg7";
 this addItemToBackpack "rhs_rpg7_PG7VL_mag";
 this addItemToBackpack "rhs_rpg7_PG7V_mag";
@@ -423,15 +425,26 @@ this addItemToBackpack "rhs_rpg7_TBG7V_mag";
 this addItemToBackpack "rhs_rpg7_type69_airburst_mag";
 
 
+
+this addWeapon "rhs_weap_rpg18";
+this addSecondaryWeaponItem "rhs_rpg18_mag";
+
+
+
+this addWeapon "rhs_weap_rpg26";
+this addSecondaryWeaponItem "rhs_rpg26_mag";
+
 this addWeapon "rhs_weap_rshg2";
 this addSecondaryWeaponItem "rhs_rshg2_mag";
 
 
-
+this addWeapon "rhs_weap_igla";
+this addSecondaryWeaponItem "rhs_mag_9k38_rocket";
+*/
 
 ---------------------------------------------------------------------------------------------------------------------------
 
-
+/*
 this forceAddUniform "rhs_uniform_6sh122_v2";
 this forceAddUniform "rhs_uniform_6sh122_gloves_v2";
 this forceAddUniform "rhs_uniform_6sh122_v1";
@@ -503,27 +516,60 @@ this forceAddUniform "rhs_uniform_vkpo";
 this forceAddUniform "rhs_uniform_vkpo_alt";
 this forceAddUniform "rhs_uniform_vkpo_gloves";
 this forceAddUniform "rhs_uniform_vkpo_gloves_alt";
+*/
 
 
 
+/*
+this addVest "rhs_6sh117_mg";
+this addVest "rhs_6sh117_rifleman";
+this addVest "rhs_6sh117_ar";
+this addVest "rhs_6sh117_nco";
+this addVest "rhs_6sh117_nco_azart";
+this addVest "rhs_6sh117_svd";
+this addVest "rhs_6sh117_val";
+this addVest "rhs_6sh117_grn";
+this addVest "rhs_6sh46";
+this addVest "rhs_6sh92";
+this addVest "rhs_6sh92_headset";
+this addVest "rhs_6sh92_radio";
+this addVest "rhs_6sh92_vog";
+this addVest "rhs_6sh92_vog_headset";
+this addVest "rhs_6sh92_digi";
+this addVest "rhs_6sh92_digi_headset";
+this addVest "rhs_6sh92_digi_radio";
+this addVest "rhs_6sh92_digi_vog";
+this addVest "rhs_6sh92_digi_vog_headset";
+this addVest "rhs_6sh92_vsr";
+this addVest "rhs_6sh92_vsr_headset";
+this addVest "rhs_6sh92_vsr_radio";
+this addVest "rhs_6sh92_vsr_vog";
+this addVest "rhs_6sh92_vsr_vog_headset";
 
-this addVest "rhs_6b13_Flora";
-this addVest "rhs_6b13_Flora_6sh92";
-this addVest "rhs_6b13_Flora_6sh92_headset_mapcase";
-this addVest "rhs_6b13_Flora_6sh92_radio";
-this addVest "rhs_6b13_Flora_6sh92_vog";
-this addVest "rhs_6b13_Flora_crewofficer";
-this addVest "rhs_6b13_EMR";
-this addVest "rhs_6b13_EMR_6sh92";
-this addVest "rhs_6b13_EMR_6sh92_radio";
-this addVest "rhs_6b13_EMR_6sh92_vog";
-this addVest "rhs_6b13_EMR_6sh92_headset_mapcase";
-this addVest "rhs_6b13";
-this addVest "rhs_6b13_6sh92";
-this addVest "rhs_6b13_6sh92_headset_mapcase";
-this addVest "rhs_6b13_6sh92_radio";
-this addVest "rhs_6b13_6sh92_vog";
-this addVest "rhs_6b13_crewofficer";
+this addVest "rhs_belt_sks";
+this addVest "rhs_belt_AK4";
+this addVest "rhs_belt_AK4_back";
+this addVest "rhs_belt_RPK";
+this addVest "rhs_belt_AK_GL";
+this addVest "rhs_belt_holster";
+this addVest "rhs_belt_AK";
+this addVest "rhs_belt_AK_back";
+this addVest "rhs_belt_svd";
+this addVest "rhs_chicom";
+this addVest "rhs_chicom_khk";
+this addVest "rhs_lifchik_NCO";
+this addVest "rhs_lifchik_vog";
+this addVest "rhs_lifchik";
+this addVest "rhs_lifchik_light";
+this addVest "rhs_vest_commander";
+this addVest "rhs_gear_OFF";
+this addVest "rhs_vest_pistol_holster";
+this addVest "rhs_suspender_AK8_chestrig";
+this addVest "rhs_suspender_AK";
+this addVest "rhs_suspender_AK4";
+this addVest "rhs_suspender_SKS";
+this addVest "rhs_vydra_3m";
+
 this addVest "rhs_6b2";
 this addVest "rhs_6b2_AK";
 this addVest "rhs_6b2_chicom";
@@ -531,6 +577,9 @@ this addVest "rhs_6b2_holster";
 this addVest "rhs_6b2_lifchik";
 this addVest "rhs_6b2_RPK";
 this addVest "rhs_6b2_SVD";
+
+
+
 this addVest "rhs_6b23";
 this addVest "rhs_6b23_6sh116_od";
 this addVest "rhs_6b23_6sh116_vog_od";
@@ -599,6 +648,25 @@ this addVest "rhs_6b3_RPK";
 this addVest "rhs_6b3_VOG";
 this addVest "rhs_6b3_VOG_2";
 
+
+this addVest "rhs_6b13_Flora";
+this addVest "rhs_6b13_Flora_6sh92";
+this addVest "rhs_6b13_Flora_6sh92_headset_mapcase";
+this addVest "rhs_6b13_Flora_6sh92_radio";
+this addVest "rhs_6b13_Flora_6sh92_vog";
+this addVest "rhs_6b13_Flora_crewofficer";
+this addVest "rhs_6b13_EMR";
+this addVest "rhs_6b13_EMR_6sh92";
+this addVest "rhs_6b13_EMR_6sh92_radio";
+this addVest "rhs_6b13_EMR_6sh92_vog";
+this addVest "rhs_6b13_EMR_6sh92_headset_mapcase";
+this addVest "rhs_6b13";
+this addVest "rhs_6b13_6sh92";
+this addVest "rhs_6b13_6sh92_headset_mapcase";
+this addVest "rhs_6b13_6sh92_radio";
+this addVest "rhs_6b13_6sh92_vog";
+this addVest "rhs_6b13_crewofficer";
+
 this addVest "rhs_6b43";
 this addVest "rhs_6b45";
 this addVest "rhs_6b45_desert";
@@ -635,61 +703,9 @@ this addVest "rhs_6b5_rifleman_vsr";
 this addVest "rhs_6b5_medic_vsr";
 this addVest "rhs_6b5_officer_vsr";
 this addVest "rhs_6b5_sniper_vsr";
+*/
 
-this addVest "rhs_6sh117_mg";
-this addVest "rhs_6sh117_rifleman";
-this addVest "rhs_6sh117_ar";
-this addVest "rhs_6sh117_nco";
-this addVest "rhs_6sh117_nco_azart";
-this addVest "rhs_6sh117_svd";
-this addVest "rhs_6sh117_val";
-this addVest "rhs_6sh117_grn";
-this addVest "rhs_6sh46";
-this addVest "rhs_6sh92";
-this addVest "rhs_6sh92_headset";
-this addVest "rhs_6sh92_radio";
-this addVest "rhs_6sh92_vog";
-this addVest "rhs_6sh92_vog_headset";
-this addVest "rhs_6sh92_digi";
-this addVest "rhs_6sh92_digi_headset";
-this addVest "rhs_6sh92_digi_radio";
-this addVest "rhs_6sh92_digi_vog";
-this addVest "rhs_6sh92_digi_vog_headset";
-this addVest "rhs_6sh92_vsr";
-this addVest "rhs_6sh92_vsr_headset";
-this addVest "rhs_6sh92_vsr_radio";
-this addVest "rhs_6sh92_vsr_vog";
-this addVest "rhs_6sh92_vsr_vog_headset";
-
-this addVest "rhs_belt_sks";
-this addVest "rhs_belt_AK4";
-this addVest "rhs_belt_AK4_back";
-this addVest "rhs_belt_RPK";
-this addVest "rhs_belt_AK_GL";
-this addVest "rhs_belt_holster";
-this addVest "rhs_belt_AK";
-this addVest "rhs_belt_AK_back";
-this addVest "rhs_belt_svd";
-this addVest "rhs_chicom";
-this addVest "rhs_chicom_khk";
-this addVest "rhs_lifchik_NCO";
-this addVest "rhs_lifchik_vog";
-this addVest "rhs_lifchik";
-this addVest "rhs_lifchik_light";
-this addVest "rhs_vest_commander";
-this addVest "rhs_gear_OFF";
-this addVest "rhs_vest_pistol_holster";
-this addVest "rhs_suspender_AK8_chestrig";
-this addVest "rhs_suspender_AK";
-this addVest "rhs_suspender_AK4";
-this addVest "rhs_suspender_SKS";
-this addVest "rhs_vydra_3m";
-
-
-
-
-
-
+/*
 this addBackpack "RHS_Podnos_Bipod_Bag";
 this addBackpack "RHS_Podnos_Gun_Bag";
 this addBackpack "RHS_Metis_Gun_Bag";
@@ -735,9 +751,9 @@ this addBackpack "rhs_tortila_khaki";
 this addBackpack "rhs_tortila_olive";
 this addBackpack "rhs_assault_umbts";
 this addBackpack "rhs_assault_umbts_engineer_empty";
+*/
 
-
-
+/*
 this addHeadgear "rhs_6b26_green";
 this addHeadgear "rhs_6b26_bala_green";
 this addHeadgear "rhs_6b26_ess_green";
@@ -891,10 +907,10 @@ this addHeadgear "rhs_zsh7a_mike_green";
 this addHeadgear "rhs_zsh7a_mike_green_alt";
 this addHeadgear "rhs_zsh7a";
 this addHeadgear "rhs_zsh7a_alt";
+*/
 
 
-
-
+/*
 this addGoggles "rhs_facewear_6m2";
 this addGoggles "rhs_facewear_6m2_1";
 this addGoggles "rhs_balaclava";
@@ -918,7 +934,7 @@ this addWeapon "rhs_tr8_periscope_pip";
 this linkItem "rhs_radio_R169P1";
 this linkItem "rhs_radio_R187P1";
 
-
+*/
 
 
 

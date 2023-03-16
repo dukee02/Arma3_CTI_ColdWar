@@ -145,48 +145,6 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_PylonMenu.sqf";
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Vanilla_Basic.sqf";
 
-/*switch(CTI_MAIN_ADDON) do {
-	case 0: {	//Global Mobilization - Cold War
-		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
-		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
-	};
-	case 1: {	//BW-Mod & BW add vs. RUS (CUP and/or RHS)
-		//--- Load BW Gear if BW mode is active
-		if(CTI_BW_ADDON > 0) then {
-			if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_BWadd_West.sqf"};
-		};
-	};
-	default {	//Cold-War (CUP and/or RHS)
-		//if (CTI_CUP_ADDON > 0) then { 
-		//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
-		//};
-	};
-};*/
-//--- Load GM Gear if DLC is owned
-//if(CTI_MAIN_ADDON == 0 && 1042220 in (getDLCs 1)) then {
-//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
-//	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
-//};
-//--- Load BW Gear
-//if(CTI_BW_ADDON > 0) then {
-//	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_BWadd_West.sqf"};
-	//if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_East.sqf"};
-//};
-//--- Load RHS Gear
-/*if (CTI_RHS_ADDON > 0) then { 
-	//if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_West.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_East.sqf"};
-};*/
-//--- Load CUP Gear
-if (CTI_CUP_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_CUP_SOV.sqf"};
-};
-//--- Load CWR3 Gear
-if (CTI_CWR3_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_CWr3.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV_CWr3.sqf"};
-};
 if(CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)) then {
 	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
 	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
@@ -201,6 +159,21 @@ if(CTI_BW_SIDE >= 0) then {
 	if(CTI_REDD_ADDON >= 0) then {
 		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_BWredd.sqf"};
 	};
+};
+//--- Load CWR3 Gear
+if (CTI_CWR3_ADDON > 0) then { 
+	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_CWr3.sqf"};
+	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV_CWr3.sqf"};
+};
+//--- Load CUP Gear
+if (CTI_CUP_ADDON > 0) then { 
+	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
+	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_CUP_SOV.sqf"};
+};
+//--- Load RHS Gear
+if (CTI_RHS_ADDON > 0) then { 
+	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_US.sqf"};
+	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_SOV.sqf"};
 };
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template.sqf";

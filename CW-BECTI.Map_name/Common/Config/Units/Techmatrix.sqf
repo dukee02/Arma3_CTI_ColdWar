@@ -71,7 +71,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,false,false,true,true,true,true],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
 			//CTI_VME_ID
@@ -98,7 +98,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,false,false,true,true,true,false],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
 			//CTI_VME_ID
@@ -279,7 +279,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,true,true,true,true,true,true,false,false],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false,false,false,false],
+			[false,true,true,true,true,true,true,false,false,false],
 			//CTI_CWR3_ID
 			[true,true,false,true,false,false,false,false,false,false],
 			//CTI_VME_ID
@@ -306,7 +306,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,true,true,true,true,true,true,true,true,true],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false,false,false,false],
+			[true,true,true,false,false,true,true,true,true,true],
 			//CTI_CWR3_ID
 			[false,true,true,true,true,true,false,true,false,false],
 			//CTI_VME_ID
@@ -487,7 +487,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[true,true,true,true,true,true,true,true,true],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,false,true,true,true,true],
 			//CTI_CWR3_ID
 			[true,true,true,true,true,true,false,false,false],
 			//CTI_VME_ID
@@ -514,7 +514,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[true,false,true,true,true,true,false,false,false],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,true,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,true,false,false,false,false],
 			//CTI_VME_ID
@@ -695,7 +695,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[true,true,true,true,true,true,true,false,false],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,true,true,true,false,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,false,true,true,false,false],
 			//CTI_VME_ID
@@ -722,7 +722,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,true,true,true,true,true,true,false,false],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false,false,false],
+			[false,true,true,true,true,true,true,false,false],
 			//CTI_CWR3_ID
 			[false,true,true,true,true,false,false,false,false],
 			//CTI_VME_ID
@@ -1113,7 +1113,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,false,false,true,true,true,true],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,true,true],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
 			//CTI_VME_ID
@@ -1140,7 +1140,7 @@ _tech_matrix =
 			//CTI_CUP_ID
 			[false,false,false,true,true,true,false],
 			//CTI_RHS_ID
-			[false,false,false,false,false,false,false],
+			[false,false,false,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
 			//CTI_VME_ID
@@ -1255,4 +1255,4 @@ _tech_matrix =
 ];
 
 missionNamespace setVariable ["CTI_TECHMATRIX", _tech_matrix];
-if (CTI_Log_Level >= CTI_Log_Information) then { ["INFORMATION", "FILE: Common\Config\Units\Techmatrx.sqf", format ["Techmatrix are defined <>", count (_tech_matrix select 0), count (_tech_matrix select 0 select 0), count (_tech_matrix select 0 select 0 select 0)]] call CTI_CO_FNC_Log };
+if (CTI_Log_Level >= CTI_Log_Information) then { ["INFORMATION", "FILE: Common\Config\Units\Techmatrx.sqf", format ["Techmatrix are defined <%1|%2|%3>", count (_tech_matrix select 0), count (_tech_matrix select 0 select 0), count (_tech_matrix select 0 select 0 select 0)]] call CTI_CO_FNC_Log };

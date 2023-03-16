@@ -537,13 +537,13 @@ _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
-		arm_to_add pushBack [format["%1CUP_O_MTLB_pk_Winter_RU", _sid], 1, 50];
+		arm_to_add = [[format["%1CUP_O_MTLB_pk_Winter_RU", _sid], 1, 50]];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		arm_to_add pushBack [format["%1CUP_O_MTLB_pk_Green_RU", _sid], 1, 50];
+		arm_to_add = [[format["%1CUP_O_MTLB_pk_Green_RU", _sid], 1, 50]];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
-		arm_to_add pushBack [format["%1CUP_O_MTLB_pk_WDL_RU", _sid], 1, 50];
+		arm_to_add = [[format["%1CUP_O_MTLB_pk_WDL_RU", _sid], 1, 50]];
 	};
 	units_tracked append arm_to_add;
 	tracked_auto append arm_to_add;
@@ -561,7 +561,7 @@ kind_tracked pushBack format["ArmoredT%1", _level];
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	arm_to_add pushBack [format["%1CUP_O_BMP2_RU", _sid], 1, 50];
+	arm_to_add = [[format["%1CUP_O_BMP2_RU", _sid], 1, 50]];
 
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {tracked_auto append arm_to_add;};
@@ -579,7 +579,7 @@ kind_tracked pushBack format["ArmoredT%1", _level];
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	arm_to_add pushBack [format["%1CUP_O_BMP3_RU", _sid], 1, 50];
+	arm_to_add = [[format["%1CUP_O_BMP3_RU", _sid], 1, 50]];
 
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {tracked_auto append arm_to_add;};
@@ -597,7 +597,7 @@ kind_tracked pushBack format["ArmoredT%1", _level];
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	arm_to_add pushBack [format["%1CUP_O_T72_RU", _sid], 1, 50];
+	arm_to_add = [[format["%1CUP_O_T72_RU", _sid], 1, 50]];
 
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {tracked_auto append arm_to_add;};
@@ -615,7 +615,7 @@ kind_tracked pushBack format["ArmoredT%1", _level];
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
-	arm_to_add pushBack [format["%1CUP_O_T90_RU", _sid], 1, 50];
+	arm_to_add = [[format["%1CUP_O_T90_RU", _sid], 1, 50]];
 
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET >= _level) then {tracked_auto append arm_to_add;};

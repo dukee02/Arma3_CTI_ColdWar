@@ -21,7 +21,7 @@ link7[] = {6,5};
 link8[] = {7,8};
 link9[] = {8,3};
 globals[] = {0.000000,0,0,0,0,640,480,1,25,6316128,1,-250.707367,382.218109,123.338257,-445.555908,871,884,1};
-window[] = {2,-1,-1,-1,-1,816,182,1356,182,3,889};
+window[] = {2,-1,-1,-1,-1,712,78,1252,78,3,889};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -154,13 +154,14 @@ class FSM
                          "		_lastCheck = ""Camp"";" \n
                          "	};" \n
                          "} else {" \n
-                         "	_defUnits = switch (_sideID) do {" \n
-                         "		case CTI_WEST_ID: {_west};" \n
-                         "		case CTI_EAST_ID: {_east};" \n
-                         "		case CTI_RESISTANCE_ID: {_resistance};" \n
+                         "	_defUnits = 0;" \n
+                         "	switch (_sideID) do {" \n
+                         "		case CTI_WEST_ID: {if(west == playerSide) then {_defUnits = _east + _resistance} else {_defUnits = _west};};" \n
+                         "		case CTI_EAST_ID: {if(east == playerSide) then {_defUnits = _west + _resistance} else {_defUnits = _east};};" \n
+                         "		case CTI_RESISTANCE_ID: {_defUnits = _resistance};" \n
                          "		default {0};" \n
                          "	};" \n
-                         "	_txt = Format [""%1: %2/%3 (Units %4)"", _name, _curSV,_maxSV, _defUnits];" \n
+                         "	_txt = Format [""%1: %2/%3 (Enemys %4)"", _name, _curSV,_maxSV, _defUnits];" \n
                          "	_lastCheck = ""Town"";" \n
                          "};" \n
                          "" \n

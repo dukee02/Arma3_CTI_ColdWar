@@ -260,4 +260,28 @@ CTI_UI_GetPhylonVehicle = {
 	//typeOf _veh;
 };
 
+/*RHS artys has pylons too, maybe we can handle them here
 
+configfile >> "CfgVehicles" >> "RHS_BM21_VDV_01" >> "Components" >> "TransportPylonsComponent" >> "pylons" >> "pylon40" >> "attachment"
+hardpoints[] = {"RHS_HP_BM21"};
+attachment = "rhs_mag_m21of_1";
+
+"RHS_BM21_VDV_01" getCompatiblePylonMagazines "pylon40";
+["rhs_mag_m21of_1","rhs_mag_9m28f_1","rhs_mag_9m28k_1","rhs_mag_9m218_1","rhs_mag_9m521_1","rhs_mag_9m522_1"]
+
+configfile >> "CfgMagazines" >> "rhs_mag_m21of_1" >> "ammo"
+ammo = "rhs_ammo_m21OF_HE";
+descriptionShort = "High explosive 18,4kg warhead. 20km range";
+pylonWeapon = "rhs_weap_bm21";
+
+configfile >> "CfgWeapons" >> "rhs_weap_bm21"
+configfile >> "CfgWeapons" >> "rhs_weap_bm21" >> "modes"
+modes[] = {"Mode_1","Mode_2","Mode_3","Mode_4","Mode_5","Mode_6"};
+
+configfile >> "CfgWeapons" >> "rhs_weap_bm21" >> "Mode_1"
+configfile >> "CfgWeapons" >> "rhs_weap_bm21" >> "Mode_1" >> "maxRange"
+maxRange = 6500;
+minRange = 5000;
+displayName = "5000m-6500m";
+
+*/

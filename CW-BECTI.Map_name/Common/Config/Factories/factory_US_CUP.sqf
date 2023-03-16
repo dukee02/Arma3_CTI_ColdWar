@@ -1,5 +1,5 @@
 /*
-format["%1<vanilla_cnitname>", _sid] gets used later 4 the upcomming sidepatch
+format["%1<vanilla_unitname>", _sid] gets used later 4 the upcomming sidepatch
 format["%1", _sid] - 4 copy paste
 
 CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
@@ -847,9 +847,6 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 _c = [];
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		
-		
-		
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 2: {//desert camo active
 				_c pushBack format["%1CUP_B_USMC_Soldier_des", _sid];

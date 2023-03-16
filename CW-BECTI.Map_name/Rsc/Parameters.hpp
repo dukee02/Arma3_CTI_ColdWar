@@ -33,44 +33,27 @@ class Params {
 		title = "DLC: Global Mobilization Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_CWR3_ADDON {
 		title = "ADDON: Cold War Rearmed III Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
-	};
-	/*class CTI_MAIN_ADDON {
-		title = "ADDON: Main Cold-War or BW untis (80s or modern)";
-		values[] = {-1,0,1};
-		texts[] = {"Cold-War (CUP and/or RHS)","Global Mobilization - Cold War","BW-Mod & BW add vs. RUS (CUP and/or RHS AFRF)"};
-		default = -1;
-	};
-	class CTI_BW_ADDON {
-		title = "ADDON: BWA3 Support - Vehicles west";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 0;
-	};
-	class CTI_REDD_ADDON {
-		title = "ADDON: Redd-Tank Support - Vehicles west";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
 		default = 0;
 	};
 	class CTI_RHS_ADDON {
-		title = "ADDON: RHS AFRF Support - Vehicles east";
-		values[] = {0,1};
-		texts[] = {"Disabled","Enabled"};
-		default = 0;
+		title = "ADDON: RHS Support - Vehicles at all sides possible";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","set as main"};
+		default = 1;
 	};
+	/*
 	class CTI_LEN_ADDON {
 		title = "ADDON: LEN Support - Vehicles west+east";
 		values[] = {0,1};

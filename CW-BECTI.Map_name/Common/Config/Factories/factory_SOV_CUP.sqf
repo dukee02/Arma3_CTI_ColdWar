@@ -27,16 +27,6 @@ else {
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
-//Check if the based units have to set.
-//CTI_GM_DLC	CTI_CUP_ADDON	CTI_CWR3_ADDON
-//		0			0				0				err 
-//		0			0				1				0
-//		0			1				0				1
-//		0			1				1				0	1 cup 2
-//		1			0				0				0
-//		1			0				1				0
-//		1			1				0				0	1 upgrade
-//		1			1				1				0	1 cup 2
 
 _setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];

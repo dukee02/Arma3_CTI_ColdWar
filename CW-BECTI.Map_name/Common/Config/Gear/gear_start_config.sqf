@@ -229,7 +229,38 @@ switch(_nationID) do {
 					};
 				};
 			};
-			//case CTI_RHS_ID: {};
+			case CTI_RHS_ID: {
+				_weapon = "rhs_weap_m16a4_carryhandle";
+				_weapon_ammo = "rhs_mag_30Rnd_556x45_M855_Stanag";
+				_weapon_att_optic = "rhsusf_acc_ACOG_USMC";
+				_weapon_att_light = "rhsusf_acc_anpeq16a";
+				_grenades = "rhs_mag_m67";
+				_bino = "rhsusf_bino_m24";
+				//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+				switch(CTI_CAMO_ACTIVATION) do {
+					//case 1: {};
+					case 2: {//Desert
+						_uniform = "rhs_uniform_FROG01_d";
+						_vest = "rhsusf_spc_rifleman";
+						_helmet = "rhsusf_lwh_helmet_marpatd";
+					};
+					case 3: {//Jungle
+						_uniform = "rhs_uniform_FROG01_wd";
+						_vest = "rhsusf_spc_rifleman";
+						_helmet = "rhsusf_lwh_helmet_marpatwd";
+					};
+					case 4: {//Urban US
+						_uniform = "rhs_uniform_acu_ucp";
+						_vest = "rhsusf_iotv_ucp_Rifleman";
+						_helmet = "rhsusf_ach_helmet_ucp";
+					};
+					default {//multi
+						_uniform = "rhs_uniform_acu_oefcp";
+						_vest = "rhsusf_iotv_ocp_Rifleman";
+						_helmet = "rhsusf_ach_helmet_ocp";
+					};
+				};
+			};
 			case CTI_CWR3_ID: {
 				_weapon = "CUP_arifle_M16A1";
 				_weapon_ammo = "CUP_30Rnd_556x45_Stanag";
@@ -292,7 +323,34 @@ switch(_nationID) do {
 					};
 				};
 			};
-			//case CTI_RHS_ID: {};
+			case CTI_RHS_ID: {
+				_weapon = "rhs_weap_ak74m";
+				_weapon_ammo = "rhs_30Rnd_545x39_7N10_AK";
+				_grenades = "rhs_mag_rgd5";
+				//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+				switch(CTI_CAMO_ACTIVATION) do {
+					case 2: {
+						_uniform = "rhs_uniform_vdv_emr_des";
+						_vest = "rhs_6b23_digi_6sh92";
+						_helmet = "rhs_6b28";
+					};
+					case 3: {
+						_uniform = "rhs_uniform_vkpo_gloves";
+						_vest = "rhs_6b45_rifleman_2";
+						_helmet = "rhs_6b47_emr_1";
+					};
+					case 4: {
+						_uniform = "rhs_uniform_vdv_mflora";
+						_vest = "rhs_6sh92_digi";
+						_helmet = "rhs_6b27m_green_ess";
+					};
+					default {
+						_uniform = "rhs_uniform_vdv_flora";
+						_vest = "rhs_6b23_rifleman";
+						_helmet = "rhs_6b28_flora";
+					};
+				};
+			};
 			case CTI_CWR3_ID: {
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 2;
