@@ -70,8 +70,13 @@ switch (_action) do {
 			} forEach (uiNamespace getVariable "cti_dialog_ui_artillerymenu_artillery");
 			
 			if !(isNil '_get') then {
+				//--- Available units.
+				_artillery = (_selected) call CTI_UI_Artillery_GetGivenTeamArtillery;
+				_artillery_array = [];
+
 				//--- Modes
-				_weapon = getArray (configfile >> "CfgVehicles" >> _selected >> "Turrets" >> "MainTurret" >> "weapons");
+				//_weapon = getArray (configfile >> "CfgVehicles" >> _selected >> "Turrets" >> "MainTurret" >> "weapons");
+				_weapon = (_artillery select 0) weaponsTurret [0];
 				_modes = getArray (configfile >> "CfgWeapons" >> (_weapon select 0) >> "modes");
 				
 				_usable_modes = [];
@@ -121,11 +126,7 @@ switch (_action) do {
 				} forEach (_get select 3);
 				
 				if (count (_get select 3) > 0) then {((uiNamespace getVariable "cti_dialog_ui_artillerymenu") displayCtrl 290011) lbSetCurSel 0};
-								
-				//--- Available units.
-				_artillery = (_selected) call CTI_UI_Artillery_GetGivenTeamArtillery;
-				_artillery_array = [];
-				
+												
 				lbClear ((uiNamespace getVariable "cti_dialog_ui_artillerymenu") displayCtrl 290014);
 				{
 					_row = ((uiNamespace getVariable "cti_dialog_ui_artillerymenu") displayCtrl 290014) lbAdd format ["[%1] - %2", _x call CTI_CL_FNC_GetAIDigit, _get select 0];
@@ -156,7 +157,8 @@ switch (_action) do {
 			_modes = uiNamespace getVariable "cti_dialog_ui_artillerymenu_artillery_modes";
 			uiNamespace setVariable ["cti_dialog_ui_artillerymenu_artillery_mode", _modes select _selected];
 
-			_weapon = getArray (configfile >> "CfgVehicles" >> _artilleryUnit >> "Turrets" >> "MainTurret" >> "weapons");
+			//_weapon = getArray (configfile >> "CfgVehicles" >> _artilleryUnit >> "Turrets" >> "MainTurret" >> "weapons");
+			_weapon = (_artillery select 0) weaponsTurret [0];
 			_rangemin = (getNumber (configfile >> "CfgWeapons" >> (_weapon select 0) >> (_modes select _selected) >> "minRange"));
 			_rangemax = (getNumber (configfile >> "CfgWeapons" >> (_weapon select 0) >> (_modes select _selected) >> "maxRange"));
 			uiNamespace setVariable ["cti_dialog_ui_artillerymenu_artillery_range", [_rangemin,_rangemax]];

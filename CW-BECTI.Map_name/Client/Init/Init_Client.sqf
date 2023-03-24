@@ -172,8 +172,14 @@ if (CTI_CUP_ADDON > 0) then {
 };
 //--- Load RHS Gear
 if (CTI_RHS_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_US.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_SOV.sqf"};
+	if (CTI_P_SideJoined == west) then {
+		if(CTI_CDF_SIDE == 0) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_CDF.sqf"};
+		if(CTI_US_SIDE == 0) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_US.sqf"};
+	};
+	if (CTI_P_SideJoined == east) then {
+		if(CTI_CHDKZ_SIDE == 1) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_ChDKZ.sqf"};
+		if(CTI_SOV_SIDE == 1) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_RHS_SOV.sqf"};
+	};
 };
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Template.sqf";

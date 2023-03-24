@@ -58,27 +58,25 @@ _item_watch = "itemwatch";
 //--- National IDs
 CTI_BW_ID = 0;
 CTI_NVA_ID = 1;
-CTI_DEN_ID = 2;
-CTI_POL_ID = 3;
-CTI_US_ID = 4;
-CTI_SOV_ID = 5;
-CTI_NPOC_ID = 6;
-CTI_RACS_ID = 7;
-CTI_FIA_ID = 8;
+CTI_US_ID = 2;
+CTI_SOV_ID = 3;
+CTI_NPOC_ID = 4;
+CTI_RACS_ID = 5;
+CTI_FIA_ID = 6;
+CTI_DEN_ID = 7;
+CTI_POL_ID = 8;
 CTI_TK_ID = 9;
-CTI_CDF_B_ID = 10;
-CTI_CDF_I_ID = 11;
-CTI_CZ_ID = 12;
-CTI_CHDKZ_ID = 13;
-CTI_SLA_ID = 14;
-CTI_TKA_ID = 15;
-CTI_SAF_ID = 16;
-CTI_SAF_I_ID = 17;
-CTI_HIDF_ID = 18;
-CTI_NAPA_ID = 19;
-CTI_ION_ID = 20;
-CTI_PLA_ID = 21;
-CTI_UKRAIN_ID = 22;
+CTI_CDF_ID = 10;
+CTI_CZ_ID = 11;
+CTI_CHDKZ_ID = 12;
+CTI_SLA_ID = 13;
+CTI_TKA_ID = 14;
+CTI_SAF_ID = 15;
+CTI_HIDF_ID = 16;
+CTI_NAPA_ID = 17;
+CTI_ION_ID = 18;
+CTI_PLA_ID = 19;
+CTI_UKRAIN_ID = 20;
 
 //--- Mod IDs
 CTI_GM_ID = 0;		//Global Mobilization - Cold War Germany
@@ -384,14 +382,77 @@ switch(_nationID) do {
 	//case CTI_RACS_ID: {};
 	//case CTI_FIA_ID: {};
 	//case CTI_TK_ID: {};
-	//case CTI_CDF_B_ID: {};
-	//case CTI_CDF_I_ID: {};
+	case CTI_CDF_ID: {
+		switch _modID do	{
+			//case CTI_GM_ID: {};
+			//case CTI_PF_ID: {};
+			//case CTI_IC_ID: {};
+			//case CTI_WS_ID: {};
+			//case CTI_CUP_ID: {};
+			case CTI_RHS_ID: {
+				//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
+				switch(CTI_CAMO_ACTIVATION) do {
+					case 3: {
+						_weapon = "rhs_weap_akm";
+						_weapon_ammo = "rhs_30Rnd_762x39mm";
+						_grenades = "rhs_mag_rgd5";
+						_uniform = "rhsgref_uniform_ttsko_forest";
+						_vest = "rhs_6b5_khaki";
+						_helmet = "rhsgref_ssh68_ttsko_forest";
+					};
+					case 4: {
+						_weapon = "rhs_weap_vhsd2";
+						_weapon_ammo = "rhsgref_30rnd_556x45_vhs2";
+						_grenades = "rhs_mag_rgn";
+						_uniform = "rhsgref_uniform_para_ttsko_urban";
+						_vest = "rhs_6b5_rifleman";
+						_helmet = "rhsgref_6b27m_ttsko_digi";
+					};
+					default {
+						_weapon = "rhs_weap_ak74";
+						_weapon_ammo = "rhs_30Rnd_545x39_7N6M_AK";
+						_grenades = "rhs_mag_rgd5";
+						_uniform = "rhsgref_uniform_ttsko_mountain";
+						_vest = "rhs_6b5_rifleman_ttsko";
+						_helmet = "rhsgref_6b27m_ttsko_mountain";
+					};
+				};
+			};
+			//case CTI_VME_ID: {};
+			//case CTI_UKR_ID: {};
+			//case CTI_BWA3_ID: {};
+			//case CTI_BWADD_ID: {};
+			//case CTI_REDD_ID: {};
+			//default: {};
+		};
+	};
 	//case CTI_CZ_ID: {};
-	//case CTI_CHDKZ_ID: {};
+	case CTI_CHDKZ_ID: {
+		switch _modID do	{
+			//case CTI_GM_ID: {};
+			//case CTI_PF_ID: {};
+			//case CTI_IC_ID: {};
+			//case CTI_WS_ID: {};
+			//case CTI_CUP_ID: {};
+			case CTI_RHS_ID: {
+				_weapon = "rhs_weap_akm";
+				_weapon_ammo = "rhs_30Rnd_762x39mm_bakelite";
+				_uniform = "rhsgref_uniform_reed";
+				_vest = "V_TacVest_oli";
+				_helmet = "rhs_beanie_green";
+				_grenades = "rhs_mag_rgd5";
+			};
+			//case CTI_VME_ID: {};
+			//case CTI_UKR_ID: {};
+			//case CTI_BWA3_ID: {};
+			//case CTI_BWADD_ID: {};
+			//case CTI_REDD_ID: {};
+			//default: {};
+		};
+	};
 	//case CTI_SLA_ID: {};
 	//case CTI_TKA_ID: {};
 	//case CTI_SAF_ID: {};
-	//case CTI_SAF_I_ID: {};
 	//case CTI_HIDF_ID: {};
 	//case CTI_NAPA_ID: {};
 	//case CTI_ION_ID: {};

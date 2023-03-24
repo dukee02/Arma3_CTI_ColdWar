@@ -35,22 +35,20 @@ CTI_SOV_ID = 3;
 CTI_NPOC_ID = 4;
 CTI_RACS_ID = 5;
 CTI_FIA_ID = 6;
-CTI_DEN_ID = 7;
-CTI_POL_ID = 8;
-CTI_TK_ID = 9;
-CTI_CDF_B_ID = 10;
-CTI_CDF_I_ID = 11;
+CTI_CHDKZ_ID = 7;
+CTI_CDF_ID = 8;
+CTI_DEN_ID = 9;
+CTI_POL_ID = 10;
+CTI_TK_ID = 11;
 CTI_CZ_ID = 12;
-CTI_CHDKZ_ID = 13;
-CTI_SLA_ID = 14;
-CTI_TKA_ID = 15;
-CTI_SAF_ID = 16;
-CTI_SAF_I_ID = 17;
-CTI_HIDF_ID = 18;
-CTI_NAPA_ID = 19;
-CTI_ION_ID = 20;
-CTI_PLA_ID = 21;
-CTI_UKRAIN_ID = 22;
+CTI_SLA_ID = 13;
+CTI_TKA_ID = 14;
+CTI_SAF_ID = 15;
+CTI_HIDF_ID = 16;
+CTI_NAPA_ID = 17;
+CTI_ION_ID = 18;
+CTI_PLA_ID = 19;
+CTI_UKRAIN_ID = 20;
 
 //--- Mod IDs
 CTI_GM_ID = 0;		//Global Mobilization - Cold War Germany
@@ -457,10 +455,7 @@ with missionNamespace do {
 	if (isNil "CTI_TOWNS_RESISTANCE") then {CTI_TOWNS_RESISTANCE = 1}; //--- Determine whether resistance is enabled or not.
 	if (isNil "CTI_TOWNS_VEHICLES_LOCK") then {CTI_TOWNS_VEHICLES_LOCK = 2}; //--- Lock the vehicles of the defender side.
 	if (isNil 'CTI_TOWNS_CAPTURED_DISTANCE') then {CTI_TOWNS_CAPTURED_DISTANCE = 4000}; //--- max distance of captured towns
-	if (isNil "CTI_TOWNS_STARTING_MODE") then {CTI_TOWNS_STARTING_MODE = 0}; //--- Town starting mode {"Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"}. 
-	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "FFI (Infantry with unarmed cars - difficulty very easy)","Polish Units (Infantry with armed trucks - difficulty easy)","3rd Party (needs one Side on GUER - difficulty normal)"
-	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
-	if (isNil 'CTI_EAST_TOWNS') then {CTI_EAST_TOWNS = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
+	if (isNil "CTI_TOWNS_STARTING_MODE") then {CTI_TOWNS_STARTING_MODE = 0}; //--- Town starting mode {"Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side, 'Distance' affects starting border","Coop at West side, 'Distance' affects starting border"}.
 	if !(isNil 'CTI_TOWNS_ACTIVE_TIME') then {
 		CTI_TOWNS_OCCUPATION_INACTIVE_MAX = CTI_TOWNS_ACTIVE_TIME;
 		CTI_TOWNS_RESISTANCE_INACTIVE_MAX = CTI_TOWNS_ACTIVE_TIME;
@@ -783,18 +778,6 @@ with missionNamespace do {
 	if (isNil 'CTI_PERSISTANT') then {CTI_PERSISTANT = 1};
 	if (isNil 'CTI_SAVE_PERIODE') then {CTI_SAVE_PERIODE = 900};		//900
 	
-	/*if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	//Check if CTI_MAIN_ADDON is 0, what means that Global Mobilization DLC is active, if not change the preseted GM-Nations to disabled
-	if (isNil 'CTI_NVA_SIDE' || CTI_MAIN_ADDON > 0) then {if(CTI_MAIN_ADDON > 0) then {CTI_NVA_SIDE = -1} else {CTI_NVA_SIDE = 1};};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_US_CUP_SIDE') then {CTI_US_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_BAF_SIDE') then {CTI_BAF_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_SOV_CUP_SIDE') then {CTI_SOV_CUP_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_SOV_RHS_SIDE') then {CTI_SOV_RHS_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	*/
-	
-	//if (isNil 'CTI_MAIN_ADDON') then {CTI_MAIN_ADDON = 0};
 	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
 	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
@@ -814,10 +797,17 @@ with missionNamespace do {
 	if (isNil 'CTI_FIA_SIDE') then {CTI_FIA_SIDE = 2};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_NVA_SIDE') then {CTI_NVA_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_CDF_SIDE') then {CTI_CDF_SIDE = 2};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_CHDKZ_SIDE') then {CTI_CHDKZ_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	//if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	//if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	
+	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"
+	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Bundeswehr (West Germany)","USA","CDF"
+	if (isNil 'CTI_EAST_TOWNS') then {CTI_EAST_TOWNS = -1};	//--- "no changes","NVA (East Germany)","Soviet","CHDKZ"
 	
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
-	
 					//case 1: {//winter camo active
 					//case 2: {//desert camo active
 					//case 3: {//jungle camo active
@@ -825,8 +815,10 @@ with missionNamespace do {
 					//case 5: {//maritim camo active
 					//case 6: {//special camo active
 					//default {//main camo active
-	if (isNil 'CTI_CAMO_ACTIVATION') then {CTI_CAMO_ACTIVATION = 0}
-	else {
+	if (isNil 'CTI_CAMO_ACTIVATION') then {
+		CTI_CAMO_ACTIVATION = 0;
+		if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = CTI_CAMO_ACTIVATION};
+	} else {
 		//check the camo setup if fixed or auto, on auto check map and set camo
 		if(CTI_CAMO_ACTIVATION == -1) then {
 			CTI_CAMO_ACTIVATION = 0;
@@ -839,6 +831,7 @@ with missionNamespace do {
 			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = CTI_CAMO_ACTIVATION};
 		};
 	};
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConfig.sqf", format ["CTI_TOWN_CAMO set to <%1>", CTI_TOWN_CAMO]] call CTI_CO_FNC_Log };
 	
 	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 15000}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, max. 5000m (can make units unusable),max. 10000m, max. 15000m, max. 20000m, max. 30000m, max. 40000m")
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission

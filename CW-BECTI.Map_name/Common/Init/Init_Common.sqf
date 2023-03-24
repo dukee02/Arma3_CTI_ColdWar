@@ -119,7 +119,13 @@ _nation = -1;
 		//case (CTI_RHS_ADDON == 2);
 		case (CTI_RHS_ADDON > 0): {
 			_mainmod = CTI_RHS_ID;
-			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
+			if(_x == west) then {
+				if(CTI_CDF_SIDE == 0) then {_nation = CTI_CDF_ID};
+				if(CTI_US_SIDE == 0) then {_nation = CTI_US_ID};
+			} else {
+				if(CTI_CHDKZ_SIDE == 1) then {_nation = CTI_CHDKZ_ID};
+				if(CTI_SOV_SIDE == 1) then {_nation = CTI_SOV_ID};
+			};
 		};
 		case (CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_BW_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
 			_mainmod = CTI_GM_ID;
@@ -236,20 +242,6 @@ if(CTI_SOV_SIDE >= 0) then {
 		((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_SOV.sqf";
 	};
 };
-//CTI_NPOC_SIDE declaration	--- not a complete nation atm
-/*if(CTI_NPOC_SIDE >= 0) then {
-	if(CTI_CUP_ADDON >= 0) then {
-		((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NPOC_CUP.sqf";
-		((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NPOC_CUP.sqf";
-		if((CTI_NPOC_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NPOC_SIDE == 1 && CTI_EAST_AI < 0)) then {
-			((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NPOC_CUP.sqf";
-		};
-		if((CTI_NPOC_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NPOC_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NPOC_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
-			((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPOC_CUP.sqf";
-		};
-		((CTI_NPOC_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_NPOC.sqf";
-	};
-};*/
 //CTI_RACS_SIDE declaration
 if(CTI_RACS_SIDE >= 0) then {
 	if(CTI_CUP_ADDON > 0) then {
@@ -262,6 +254,32 @@ if(CTI_RACS_SIDE >= 0) then {
 			((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_RACS_CUP.sqf";
 		};
 		//((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_RACS.sqf";
+	};
+};
+if(CTI_CDF_SIDE >= 0) then {
+	if(CTI_RHS_ADDON >= 0) then {
+		((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_CDF_RHS.sqf";
+		((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_CDF_RHS.sqf";
+		if((CTI_CDF_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_CDF_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_CDF_RHS.sqf";
+		};
+		if((CTI_CDF_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_CDF_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_CDF_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
+			((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_CDF_RHS.sqf";
+		};
+		((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_CDF.sqf";
+	};
+};
+if(CTI_CHDKZ_SIDE >= 0) then {
+	if(CTI_RHS_ADDON >= 0) then {
+		((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_ChDKZ_RHS.sqf";
+		((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_ChDKZ_RHS.sqf";
+		if((CTI_CHDKZ_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_CHDKZ_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_ChDKZ_RHS.sqf";
+		};
+		if((CTI_CHDKZ_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_CHDKZ_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_CHDKZ_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
+			((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_ChDKZ_RHS.sqf";
+		};
+		((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_ChDKZ.sqf";
 	};
 };
 //CTI_DK_SIDE declaration
@@ -411,12 +429,13 @@ if(CTI_WEST_TOWNS >= 0) then {
 				((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_RHS.sqf";
 			};
 		};
-		/*
-		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
+		case 6: {
+			if(CTI_RHS_ADDON > 0) then {
+				((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_CDF_RHS.sqf";
+			};
 		};
-		case 7: {
-			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
+		/*case 7: {
+			((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
 		};*/
 		default {};
 	};
@@ -439,11 +458,8 @@ if(CTI_EAST_TOWNS >= 0) then {
 		};
 		case 4: {
 			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_CUP.sqf";
-		};
-		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
 		};*/
-		case 6: {
+		case 5: {
 			if(CTI_CUP_ADDON > 0) then {
 				((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
 			};
@@ -455,9 +471,14 @@ if(CTI_EAST_TOWNS >= 0) then {
 			};
 		};
 		/*
-		case 7: {
-			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_RHS.sqf";
+		case 6: {
+			((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SOV_CUP.sqf";
 		};*/
+		case 7: {
+			if(CTI_RHS_ADDON > 0) then {
+				((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_ChDKZ_RHS.sqf";
+			};
+		};
 		default {};
 	};
 };
@@ -500,11 +521,13 @@ if(CTI_WEST_AI >= 0) then {
 		/*
 		case 5: {
 			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_CUP.sqf";
-		};
+		};*/
 		case 6: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
+			if(CTI_RHS_ADDON > 0) then {
+				((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_CDF_RHS.sqf";
+			};
 		};
-		case 7: {
+		/*case 7: {
 			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
 		};*/
 		default {};
@@ -528,11 +551,8 @@ if(CTI_EAST_AI >= 0) then {
 		};
 		case 4: {
 			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_CUP.sqf";
-		};
-		case 5: {
-			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
 		};*/
-		case 6: {
+		case 5: {
 			if(CTI_CUP_ADDON > 0) then {
 				((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
 			};
@@ -543,10 +563,14 @@ if(CTI_EAST_AI >= 0) then {
 				((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
 			};
 		};
-		/*
-		case 7: {
-			((CTI_SOV_RHS_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_RHS.sqf";
+		/*case 6: {
+			((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_SOV_CUP.sqf";
 		};*/
+		case 7: {
+			if(CTI_RHS_ADDON > 0) then {
+				((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_ChDKZ_RHS.sqf";
+			};
+		};
 		default {};
 	};
 };

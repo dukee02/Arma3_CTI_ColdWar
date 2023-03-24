@@ -805,9 +805,41 @@ _c pushBack "rhs_pdu4";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.5] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "rhs_1PN138";
+_c pushBack "rhs_1PN138";				//1PN138 Monocular Night Vision Device
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Attachments 															//
+//--------------------------------------------------------------------------------------------------------------------------//
+//Optics
+//AK 
+_c pushBack"rhs_acc_rakursPM";			//1P76 Rakurs-PM RIS Collimator
+_c pushBack"rhs_acc_1p63";				//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_ekp1";				//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_ekp8_02";			//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_nita";				//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_okp7_dovetail";		//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_pkas";				//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_1p87";				//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_ekp8_18";			//Collimator Sight<br />Magnification: 1x
+_c pushBack"rhs_acc_okp7_picatinny";	//Collimator Sight<br />Magnification: 1x
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+_c pushBack"rhs_acc_2dpZenit";			//2DP Zenit LED Flashlight
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Level 1																	//
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -873,60 +905,6 @@ _cntend = count _u;
 for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-
-//--------------------------------------------------------------------------------------------------------------------------//
-//													Assault Rifles															//
-//--------------------------------------------------------------------------------------------------------------------------//
-
-_c pushBack "rhs_weap_ak103_1_npz";
-_c pushBack "rhs_weap_ak103_2_npz";
-_c pushBack "rhs_weap_ak103_npz";
-_c pushBack "rhs_weap_ak103_gp25_npz";
-_c pushBack "rhs_weap_ak103_zenitco01_b33";
-_c pushBack "rhs_weap_ak104_npz";
-_c pushBack "rhs_weap_ak104_zenitco01";
-_c pushBack "rhs_weap_ak104_zenitco01_b33";
-_c pushBack "rhs_weap_ak105_npz";
-_c pushBack "rhs_weap_ak105_zenitco01_b33";
-_c pushBack "rhs_weap_ak105";
-_c pushBack "rhs_weap_ak105_zenitco01";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-
-_c pushBack "rhs_30Rnd_545x39_7N10_plum_AK";
-_c pushBack "rhs_30Rnd_545x39_7N10_desert_AK";
-_c pushBack "rhs_30Rnd_545x39_7N10_camo_AK";
-_c pushBack "rhs_30Rnd_545x39_7N6_AK";
-_c pushBack "rhs_30Rnd_545x39_7N6_green_AK";
-_c pushBack "rhs_30Rnd_545x39_AK_green";
-_c pushBack "rhs_30Rnd_545x39_AK_plum_green";
-_c pushBack "rhs_30Rnd_545x39_7U1_AK";
-_c pushBack "rhs_30Rnd_545x39_7N6M_green_AK";
-_c pushBack "rhs_30Rnd_545x39_7N6M_plum_AK";
-_c pushBack "rhs_30Rnd_545x39_7N22_AK";
-_c pushBack "rhs_30Rnd_545x39_7N22_plum_AK";
-_c pushBack "rhs_30Rnd_545x39_7N22_camo_AK";
-_c pushBack "rhs_30Rnd_545x39_7N22_desert_AK";
-_c pushBack "rhs_30Rnd_545x39_7N10_2mag_AK";
-_c pushBack "rhs_30Rnd_545x39_7N10_2mag_plum_AK";
-_c pushBack "rhs_30Rnd_545x39_7N10_2mag_camo_AK";
-_c pushBack "rhs_30Rnd_545x39_7N10_2mag_desert_AK";
-_c pushBack "rhs_60Rnd_545X39_7N10_AK";
-_c pushBack "rhs_60Rnd_545X39_7N22_AK";
-_c pushBack "rhs_60Rnd_545X39_AK_Green";
-_c pushBack "rhs_60Rnd_545X39_7U1_AK";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(545*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -1139,6 +1117,23 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
+//													Attachments 															//
+//--------------------------------------------------------------------------------------------------------------------------//
+//Optics
+//AK 
+_c pushBack"rhs_acc_1p78";				//Optical Sight<br />Magnification: 2.8x
+_c pushBack"rhs_acc_pgo7v";				//Optical Sight<br />Magnification: 2.7x
+_c pushBack"rhs_acc_pgo7v2";			//Optical Sight<br />Magnification: 2.7x
+_c pushBack"rhs_acc_pgo7v3";			//Optical Sight<br />Magnification: 2.7x
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
 //													Level 2																	//
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Weapons																	//
@@ -1168,13 +1163,55 @@ _c pushBack "rhs_weap_ak103_1";
 _c pushBack "rhs_weap_ak103_2";
 _c pushBack "rhs_weap_ak103_gp25";
 _c pushBack "rhs_weap_ak103_zenitco01";
+_c pushBack "rhs_weap_ak103_1_npz";
+_c pushBack "rhs_weap_ak103_2_npz";
+_c pushBack "rhs_weap_ak103_npz";
+_c pushBack "rhs_weap_ak103_gp25_npz";
+_c pushBack "rhs_weap_ak103_zenitco01_b33";
 _c pushBack "rhs_weap_ak104";
+_c pushBack "rhs_weap_ak104_npz";
+_c pushBack "rhs_weap_ak104_zenitco01";
+_c pushBack "rhs_weap_ak104_zenitco01_b33";
+_c pushBack "rhs_weap_ak105_npz";
+_c pushBack "rhs_weap_ak105_zenitco01_b33";
+_c pushBack "rhs_weap_ak105";
+_c pushBack "rhs_weap_ak105_zenitco01";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
 for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+_c pushBack "rhs_30Rnd_545x39_7N10_plum_AK";
+_c pushBack "rhs_30Rnd_545x39_7N10_desert_AK";
+_c pushBack "rhs_30Rnd_545x39_7N10_camo_AK";
+_c pushBack "rhs_30Rnd_545x39_7N6_AK";
+_c pushBack "rhs_30Rnd_545x39_7N6_green_AK";
+_c pushBack "rhs_30Rnd_545x39_AK_green";
+_c pushBack "rhs_30Rnd_545x39_AK_plum_green";
+_c pushBack "rhs_30Rnd_545x39_7U1_AK";
+_c pushBack "rhs_30Rnd_545x39_7N6M_green_AK";
+_c pushBack "rhs_30Rnd_545x39_7N6M_plum_AK";
+_c pushBack "rhs_30Rnd_545x39_7N22_AK";
+_c pushBack "rhs_30Rnd_545x39_7N22_plum_AK";
+_c pushBack "rhs_30Rnd_545x39_7N22_camo_AK";
+_c pushBack "rhs_30Rnd_545x39_7N22_desert_AK";
+_c pushBack "rhs_30Rnd_545x39_7N10_2mag_AK";
+_c pushBack "rhs_30Rnd_545x39_7N10_2mag_plum_AK";
+_c pushBack "rhs_30Rnd_545x39_7N10_2mag_camo_AK";
+_c pushBack "rhs_30Rnd_545x39_7N10_2mag_desert_AK";
+_c pushBack "rhs_60Rnd_545X39_7N10_AK";
+_c pushBack "rhs_60Rnd_545X39_7N22_AK";
+_c pushBack "rhs_60Rnd_545X39_AK_Green";
+_c pushBack "rhs_60Rnd_545X39_7U1_AK";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(545*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -1237,32 +1274,25 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,5,(900*39)] call CTI_CO_
 //--------------------------------------------------------------------------------------------------------------------------//
 //Optics
 //AK 
-_c pushBack "rhs_acc_1p29";
-_c pushBack "rhs_acc_1p63";
-_c pushBack "rhs_acc_1p78";
-_c pushBack "rhs_acc_1pn34";
-_c pushBack "rhs_acc_1pn93_1";
-_c pushBack "rhs_acc_1pn93_2";
-_c pushBack "rhs_acc_ekp1";
-_c pushBack "rhs_acc_ekp8_02";
-_c pushBack "rhs_acc_nita";
-_c pushBack "rhs_acc_okp7_dovetail";
-_c pushBack "rhs_acc_pgo7v";
-_c pushBack "rhs_acc_pgo7v2";
-_c pushBack "rhs_acc_pgo7v3";
-_c pushBack "rhs_acc_pkas";
-_c pushBack "rhs_acc_pso1m2";
-_c pushBack "rhs_acc_pso1m21";
-_c pushBack "rhs_acc_rakursPM";
-_c pushBack "rhs_acc_1p87";
-_c pushBack "rhs_acc_dh520x56";
-_c pushBack "rhs_acc_ekp8_18";
-_c pushBack "rhs_acc_okp7_picatinny";
+_c pushBack"rhs_acc_1pn93_2";			//Optical Night Sight<br />Magnification: 2.7x
+_c pushBack"rhs_acc_1pn34";				//Night vision scope<br />Magnification: 3.5x
+_c pushBack"rhs_acc_1pn93_1";			//Optical Night Sight<br />Magnification: 4x
+_c pushBack"rhs_acc_1p29";				//Optical Sight<br />Magnification: 4x
+_c pushBack"rhs_acc_pso1m2";			//Optical Sniper Sight<br />Magnification: 4x
+_c pushBack"rhs_acc_pso1m21";			//Optical Sniper Sight<br />Magnification: 4x
+_c pushBack"rhs_acc_dh520x56";			//Russian sniper scope<br />Magnification: 5-20x
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
 
 //attatchments
 //AK
-_c pushBack "rhs_acc_2dpZenit";
-_c pushBack "rhs_acc_perst1ik";
+_c pushBack"rhs_acc_perst1ik";			//Emits light visible in the image intensification mode (night vision).
 
 //muzzles
 //AK

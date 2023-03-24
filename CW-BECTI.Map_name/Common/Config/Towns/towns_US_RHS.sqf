@@ -70,9 +70,9 @@ if(_tag == "GUER_" || CTI_UPGRADE_MODE > 0) then {
 };
 //needed for Tonw units if the camo differs
 if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1CUP_B_US_Soldier_SL_UCP", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_B_US_Soldier_UCP", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_B_US_Crew_UCP", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1rhsusf_army_ucp_teamleader", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1rhsusf_army_ucp_rifleman", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1rhsusf_army_ucp_crewman", _sid]];
 };
 
 //***************************************************************************************************************************************

@@ -83,9 +83,24 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		};
 	};
 };
-/*if(CTI_SOV_RHS_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhs_gaz66_r142_vdv"];
-};*/
+if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_RHS_ADDON > 0) then {
+		if(_side == resistance) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_cdf_gaz66_r142"];
+		} else {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_cdf_b_gaz66_r142"];
+		};
+	};
+};
+if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_RHS_ADDON > 0) then {
+		if(_side == resistance) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_ins_g_gaz66_r142"];
+		} else {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_ins_gaz66_r142"];
+		};
+	};
+};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then { ["VIOC_DEBUG", "FILE: Common\Config\Base\Base.sqf", format ["Set HQ Vehicle [%1] for side [%2]", missionNamespace getVariable format["CTI_%1_HQ", _side], _side]] call CTI_CO_FNC_Log };
 
@@ -263,7 +278,7 @@ _priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_Ge
 /********************************************************************************************************************************
  *											USA																					*
  ********************************************************************************************************************************/
- if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if (CTI_RHS_ADDON > 0) then {
 		_headers pushBack 		"[RHS] Static MG (M2)";
 		_classes pushBack 		"RHS_M2StaticMG_D";
@@ -527,6 +542,137 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 	};
 };
+
+/********************************************************************************************************************************
+ *											CDF (BLUFOR/GREEN)																	*
+ ********************************************************************************************************************************/
+if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == west) then {
+			_headers pushBack 		"[RHS] Static MG (DSHKM)";
+			_classes pushBack 		"rhsgref_cdf_b_DSHKM";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] Static MG low (DSHKM)";
+			_classes pushBack 		"rhsgref_cdf_b_DSHKM_Mini_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"[RHS] Static GW (AGS30)";
+			_classes pushBack 		"rhsgref_cdf_b_AGS30_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] M252 Mortar";
+			_classes pushBack 		"rhsgref_cdf_b_reg_M252";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+		} else {
+			_headers pushBack 		"[RHS] Static MG (DSHKM)";
+			_classes pushBack 		"rhsgref_cdf_DSHKM";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] Static MG low (DSHKM)";
+			_classes pushBack 		"rhsgref_cdf_DSHKM_Mini_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"[RHS] Static GW (AGS30)";
+			_classes pushBack 		"rhsgref_cdf_AGS30_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] M252 Mortar";
+			_classes pushBack 		"rhsgref_cdf_reg_M252";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+		};
+	};
+};
+
+/********************************************************************************************************************************
+ *											CHDKZ (BLUFOR/GREEN)																*
+ ********************************************************************************************************************************/
+if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == east) then {
+			_headers pushBack 		"[RHS] Static MG (DSHKM)";
+			_classes pushBack 		"rhsgref_ins_DSHKM";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] Static MG low (DSHKM)";
+			_classes pushBack 		"rhsgref_ins_DSHKM_Mini_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"[RHS] Static GW (AGS30)";
+			_classes pushBack 		"rhsgref_ins_AGS30_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] 2b14 Mortar";
+			_classes pushBack 		"rhsgref_ins_2b14";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+		} else {
+			_headers pushBack 		"[RHS] Static MG (DSHKM)";
+			_classes pushBack 		"rhsgref_ins_g_DSHKM";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] Static MG low (DSHKM)";
+			_classes pushBack 		"rhsgref_ins_g_DSHKM_Mini_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"[RHS] Static GW (AGS30)";
+			_classes pushBack 		"rhsgref_ins_g_AGS30_TriPod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Defense";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] 2b14 Mortar";
+			_classes pushBack 		"rhsgref_ins_g_2b14";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+		};
+	};
+};
+
 /********************************************************************************************************************************
  *														TECH 1																	*
  ********************************************************************************************************************************/
@@ -670,6 +816,191 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *											CDF (BLUFOR/GREEN)																	*
+ ********************************************************************************************************************************/
+if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == west) then {
+			_headers pushBack 		"[RHS] D30 Arty";
+			_classes pushBack 		"rhsgref_cdf_b_reg_d30";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] D30 AT";
+			_classes pushBack 		"rhsgref_cdf_b_reg_d30_at";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9 AT";
+			_classes pushBack 		"rhsgref_cdf_b_SPG9";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9M AT";
+			_classes pushBack 		"rhsgref_cdf_b_SPG9M";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] NSV";
+			_classes pushBack 		"rhsgref_cdf_b_NSV_TriPod";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] AA Defense (ZU23)";
+			_classes pushBack 		"rhsgref_cdf_b_ZU23";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		} else {
+			_headers pushBack 		"[RHS] D30 Arty";
+			_classes pushBack 		"rhsgref_cdf_reg_d30";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] D30 AT";
+			_classes pushBack 		"rhsgref_cdf_reg_d30_at";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9 AT";
+			_classes pushBack 		"rhsgref_cdf_SPG9";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9M AT";
+			_classes pushBack 		"rhsgref_cdf_SPG9M";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] NSV";
+			_classes pushBack 		"rhsgref_cdf_NSV_TriPod";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] AA Defense (ZU23)";
+			_classes pushBack 		"RHSgref_cdf_ZU23";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		};
+	};
+};
+
+/********************************************************************************************************************************
+ *											CHDKZ (BLUFOR/GREEN)																*
+ ********************************************************************************************************************************/
+if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == east) then {
+			_headers pushBack 		"[RHS] D30 Arty";
+			_classes pushBack 		"rhsgref_ins_d30";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] D30 AT";
+			_classes pushBack 		"rhsgref_ins_d30_at";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9 AT";
+			_classes pushBack 		"rhsgref_ins_SPG9";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9M AT";
+			_classes pushBack 		"rhsgref_ins_SPG9M";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] NSV";
+			_classes pushBack 		"rhsgref_ins_NSV_TriPod";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] AA Defense (ZU23)";
+			_classes pushBack 		"rhsgref_ins_ZU23";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		} else {
+			_headers pushBack 		"[RHS] D30 Arty";
+			_classes pushBack 		"rhsgref_ins_g_d30";
+			_prices pushBack 		_priceArty;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"Arty";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] D30 AT";
+			_classes pushBack 		"rhsgref_ins_g_d30_at";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9 AT";
+			_classes pushBack 		"rhsgref_ins_g_SPG9";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] SPG9M AT";
+			_classes pushBack 		"rhsgref_ins_g_SPG9M";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] NSV";
+			_classes pushBack 		"rhsgref_ins_g_NSV_TriPod";
+			_prices pushBack 		_priceGun;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AT";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] AA Defense (ZU23)";
+			_classes pushBack 		"rhsgref_ins_g_ZU23";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 };
 
@@ -820,6 +1151,51 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AT";
 		_tiers pushBack 		_tech_level;
+	};
+};
+/********************************************************************************************************************************
+ *											CDF (BLUFOR/GREEN)																	*
+ ********************************************************************************************************************************/
+if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == west) then {
+			_headers pushBack 		"[RHS] AA Defense (Igla)";
+			_classes pushBack 		"rhsgref_cdf_b_Igla_AA_pod";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		} else {
+			_headers pushBack 		"[RHS] AA Defense (Igla)";
+			_classes pushBack 		"rhsgref_cdf_Igla_AA_pod";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		};
+	};
+};
+
+/********************************************************************************************************************************
+ *											CHDKZ (BLUFOR/GREEN)																*
+ ********************************************************************************************************************************/
+if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == west) then {
+			_headers pushBack 		"[RHS] AA Defense (Igla)";
+			_classes pushBack 		"rhsgref_ins_Igla_AA_pod";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		} else {
+			_headers pushBack 		"[RHS] AA Defense (Igla)";
+			_classes pushBack 		"rhsgref_ins_g_Igla_AA_pod";
+			_prices pushBack 		_priceAA;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"AA";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 };
 

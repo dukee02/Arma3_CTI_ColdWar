@@ -192,14 +192,65 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false]
+		],
+		//CTI_CDF_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false]
+		],
+		//CTI_CHDKZ_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
 		//CTI_TK_ID
-		//CTI_CDF_B_ID
-		//CTI_CDF_I_ID
 		//CTI_CZ_ID
-		//CTI_CHDKZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
 		//CTI_SAF_ID
@@ -400,14 +451,65 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_CDF_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[false,true,true,true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_CHDKZ_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,false,true,true,true,true,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
 		//CTI_TK_ID
-		//CTI_CDF_B_ID
-		//CTI_CDF_I_ID
 		//CTI_CZ_ID
-		//CTI_CHDKZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
 		//CTI_SAF_ID
@@ -608,14 +710,65 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_CDF_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,true,true,true,true,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_CHDKZ_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
 		//CTI_TK_ID
-		//CTI_CDF_B_ID
-		//CTI_CDF_I_ID
 		//CTI_CZ_ID
-		//CTI_CHDKZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
 		//CTI_SAF_ID
@@ -816,14 +969,65 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_CDF_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_CHDKZ_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[false,true,false,false,false,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
 		//CTI_TK_ID
-		//CTI_CDF_B_ID
-		//CTI_CDF_I_ID
 		//CTI_CZ_ID
-		//CTI_CHDKZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
 		//CTI_SAF_ID
@@ -1024,14 +1228,65 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false]
+		],
+		//CTI_CDF_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false],
+			//CTI_RHS_ID
+			[false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false]
+		],
+		//CTI_CHDKZ_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false],
+			//CTI_RHS_ID
+			[false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
 		//CTI_TK_ID
-		//CTI_CDF_B_ID
-		//CTI_CDF_I_ID
 		//CTI_CZ_ID
-		//CTI_CHDKZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
 		//CTI_SAF_ID
@@ -1234,14 +1489,65 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false]
+		],
+		//CTI_CDF_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false]
+		],
+		//CTI_CHDKZ_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[true,true,true,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_VME_ID
+			[false,false,false,false,false,false,false],
+			//CTI_UKR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
 		//CTI_TK_ID
-		//CTI_CDF_B_ID
-		//CTI_CDF_I_ID
 		//CTI_CZ_ID
-		//CTI_CHDKZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
 		//CTI_SAF_ID

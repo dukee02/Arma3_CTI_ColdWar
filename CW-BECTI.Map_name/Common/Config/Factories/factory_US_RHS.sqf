@@ -331,6 +331,12 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1rhsusf_m1025_d", _sid];
 	_c pushBack format["%1rhsusf_m1043_d", _sid];
 	_c pushBack format["%1rhsusf_mrzr4_d", _sid];
+	if(CTI_ADDON_CHARLIECO > 0) then {
+		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
+		_c pushBack format["%1chmaster2_ap", _sid];				//medic
+	} else {
+		_c pushBack format["rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -395,9 +401,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 6) then {		//Desert camo active
-		if(CTI_ARTILLERY_SETUP < 0) then {
-			_c pushBack format["%1rhsusf_M142_usarmy_D", _sid];
-		};
+		_c pushBack format["%1rhsusf_M142_usarmy_D", _sid];
 		_c pushBack format["%1rhsusf_M1078A1P2_B_D_flatbed_fmtv_usarmy", _sid];
 		_c pushBack format["%1rhsusf_M1078A1P2_B_D_CP_fmtv_usarmy", _sid];
 		_c pushBack format["%1rhsusf_M1078A1R_SOV_M2_D_fmtv_socom", _sid];
@@ -417,9 +421,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1rhsusf_m1165a1_gmv_mk19_m240_socom_d", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		if(CTI_ARTILLERY_SETUP < 0) then {
-			_c pushBack format["%1rhsusf_M142_usarmy_WD", _sid];
-		};
+		_c pushBack format["%1rhsusf_M142_usarmy_WD", _sid];
 		_c pushBack format["%1rhsusf_M977A4_usarmy_wd", _sid];
 		_c pushBack format["%1rhsusf_M978A4_usarmy_wd", _sid];
 		_c pushBack format["%1rhsusf_M1078A1P2_WD_flatbed_fmtv_usarmy", _sid];

@@ -170,5 +170,83 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 };
 
+/********************************************************************************************************************************
+ *											CDF (BLUFOR/GREEN)																	*
+ ********************************************************************************************************************************/
+if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == west) then {
+			_classes_town pushBack 		format["%1rhsgref_cdf_b_DSHKM", _sid];
+			_categories_town pushBack 	"MG";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_b_reg_M252", _sid];
+			_categories_town pushBack 	"Mortar";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_b_ZU23", _sid];
+			_categories_town pushBack 	"AA";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_b_SPG9M", _sid];
+			_categories_town pushBack 	"AT";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_b_reg_d30", _sid];
+			_categories_town pushBack 	"Artillery";
+		} else {
+			_classes_town pushBack 		format["%1rhsgref_cdf_DSHKM", _sid];
+			_categories_town pushBack 	"MG";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_reg_M252", _sid];
+			_categories_town pushBack 	"Mortar";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_ZU23", _sid];
+			_categories_town pushBack 	"AA";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_SPG9M", _sid];
+			_categories_town pushBack 	"AT";
+			
+			_classes_town pushBack 		format["%1rhsgref_cdf_reg_d30", _sid];
+			_categories_town pushBack 	"Artillery";
+		};
+	};
+};
+
+/********************************************************************************************************************************
+ *											CHDKZ (BLUFOR/GREEN)																*
+ ********************************************************************************************************************************/
+if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if (CTI_RHS_ADDON > 0) then {
+		if(_side == east) then {
+			_classes_town pushBack 		format["%1rhsgref_ins_DSHKM", _sid];
+			_categories_town pushBack 	"MG";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_2b14", _sid];
+			_categories_town pushBack 	"Mortar";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_ZU23", _sid];
+			_categories_town pushBack 	"AA";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_SPG9M", _sid];
+			_categories_town pushBack 	"AT";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_d30", _sid];
+			_categories_town pushBack 	"Artillery";
+		} else {
+			_classes_town pushBack 		format["%1rhsgref_ins_g_DSHKM", _sid];
+			_categories_town pushBack 	"MG";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_g_2b14", _sid];
+			_categories_town pushBack 	"Mortar";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_g_ZU23", _sid];
+			_categories_town pushBack 	"AA";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_g_SPG9M", _sid];
+			_categories_town pushBack 	"AT";
+			
+			_classes_town pushBack 		format["%1rhsgref_ins_g_d30", _sid];
+			_categories_town pushBack 	"Artillery";
+		};
+	};
+};
+
 //--- Defenses management for towns.
 if (isServer) then {[_side, _classes_town, _categories_town] Call Compile preprocessFileLineNumbers "Common\Config\Config_Defenses_Towns.sqf"};

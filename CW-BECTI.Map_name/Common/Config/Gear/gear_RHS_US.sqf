@@ -712,6 +712,66 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
+//scopes
+_c pushBack "rhsusf_acc_EOTECH";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_M2A1";						//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_eotech_552";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_eotech_552_d";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_eotech_552_wd";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_compm4";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_mrds";						//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_mrds_fwd";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_mrds_c";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_mrds_fwd_c";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_RM05";						//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_RM05_fwd";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_RX01_NoFilter";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_RX01";						//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_RX01_NoFilter_tan";			//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_RX01_tan";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_T1_high";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_T1_low";					//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_T1_low_fwd";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhsusf_acc_eotech_xps3";				//Collimator Sight<br />Magnification: 1x
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//light/laser
+_c pushBack "rhsusf_acc_M952V";						//Weapon mounted light
+_c pushBack "rhsusf_acc_wmx";						//Weapon mounted light
+_c pushBack "rhsusf_acc_wmx_bk";					//Weapon mounted light
+_c pushBack "rhsusf_acc_anpeq15_top";				//IR Laser
+_c pushBack "rhsusf_acc_anpeq15_bk_top";			//IR Laser
+
+//bipod
+_c pushBack "rhsusf_acc_grip2";
+_c pushBack "rhsusf_acc_grip2_tan";
+_c pushBack "rhsusf_acc_grip2_wd";
+_c pushBack "rhsusf_acc_grip1";
+_c pushBack "rhsusf_acc_harris_bipod";
+_c pushBack "rhsusf_acc_kac_grip";
+_c pushBack "rhsusf_acc_rvg_blk";
+_c pushBack "rhsusf_acc_rvg_de";
+_c pushBack "rhsusf_acc_tacsac_blk";
+_c pushBack "rhsusf_acc_tacsac_blue";
+_c pushBack "rhsusf_acc_tacsac_tan";
+_c pushBack "rhsusf_acc_tdstubby_blk";
+_c pushBack "rhsusf_acc_tdstubby_tan";
+_c pushBack "rhsusf_acc_grip3";
+_c pushBack "rhsusf_acc_grip3_tan";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Level 1																	//
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -871,112 +931,55 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 };
 
 //scopes
-_c pushBack "rhsusf_acc_anpas13gv1";
-_c pushBack "rhsusf_acc_ACOG2_USMC";
-_c pushBack "rhsusf_acc_ACOG3_USMC";
-_c pushBack "rhsusf_acc_ACOG_USMC";
-_c pushBack "rhsusf_acc_anpvs27";
-_c pushBack "rhsusf_acc_EOTECH";
-_c pushBack "rhsusf_acc_g33_T1";
-_c pushBack "rhsusf_acc_g33_xps3";
-_c pushBack "rhsusf_acc_g33_xps3_tan";
-_c pushBack "rhsusf_acc_ELCAN";
-_c pushBack "rhsusf_acc_ELCAN_ard";
-_c pushBack "rhsusf_acc_ACOG";
-_c pushBack "rhsusf_acc_ACOG2";
-_c pushBack "rhsusf_acc_ACOG3";
-_c pushBack "rhsusf_acc_ACOG_anpvs27";
-_c pushBack "rhsusf_acc_M2A1";
-_c pushBack "rhsusf_acc_eotech_552";
-_c pushBack "rhsusf_acc_eotech_552_d";
-_c pushBack "rhsusf_acc_eotech_552_wd";
-_c pushBack "rhsusf_acc_compm4";
-_c pushBack "rhsusf_acc_M8541";
-_c pushBack "rhsusf_acc_M8541_d";
-_c pushBack "rhsusf_acc_M8541_mrds";
-_c pushBack "rhsusf_acc_M8541_wd";
-_c pushBack "rhsusf_acc_premier_low";
-_c pushBack "rhsusf_acc_premier_anpvs27";
-_c pushBack "rhsusf_acc_premier";
-_c pushBack "rhsusf_acc_premier_mrds";
-_c pushBack "rhsusf_acc_LEUPOLDMK4_2";
-_c pushBack "rhsusf_acc_LEUPOLDMK4_2_d";
-_c pushBack "rhsusf_acc_LEUPOLDMK4_2_mrds";
-_c pushBack "rhsusf_acc_mrds";
-_c pushBack "rhsusf_acc_mrds_fwd";
-_c pushBack "rhsusf_acc_mrds_c";
-_c pushBack "rhsusf_acc_mrds_fwd_c";
-_c pushBack "rhsusf_acc_nxs_3515x50_md";
-_c pushBack "rhsusf_acc_nxs_3515x50f1_h58";
-_c pushBack "rhsusf_acc_nxs_3515x50f1_md";
-_c pushBack "rhsusf_acc_nxs_3515x50f1_h58_sun";
-_c pushBack "rhsusf_acc_nxs_3515x50f1_md_sun";
-_c pushBack "rhsusf_acc_nxs_5522x56_md";
-_c pushBack "rhsusf_acc_nxs_5522x56_md_sun";
-_c pushBack "rhsusf_acc_RM05";
-_c pushBack "rhsusf_acc_RM05_fwd";
-_c pushBack "rhsusf_acc_RX01_NoFilter";
-_c pushBack "rhsusf_acc_RX01";
-_c pushBack "rhsusf_acc_RX01_NoFilter_tan";
-_c pushBack "rhsusf_acc_RX01_tan";
-_c pushBack "rhsusf_acc_su230";
-_c pushBack "rhsusf_acc_su230_c";
-_c pushBack "rhsusf_acc_su230_mrds";
-_c pushBack "rhsusf_acc_su230_mrds_c";
-_c pushBack "rhsusf_acc_su230a";
-_c pushBack "rhsusf_acc_su230a_c";
-_c pushBack "rhsusf_acc_su230a_mrds";
-_c pushBack "rhsusf_acc_su230a_mrds_c";
-_c pushBack "rhsusf_acc_ACOG_MDO";
-_c pushBack "rhsusf_acc_T1_high";
-_c pushBack "rhsusf_acc_T1_low";
-_c pushBack "rhsusf_acc_T1_low_fwd";
-_c pushBack "rhsusf_acc_ACOG_RMR";
-_c pushBack "rhsusf_acc_ACOG_d";
-_c pushBack "rhsusf_acc_ACOG_wd";
-_c pushBack "rhsusf_acc_eotech_xps3";
+_c pushBack "rhsusf_acc_ELCAN";						//M145 MGO
+_c pushBack "rhsusf_acc_ELCAN_ard";					//M145 MGO
+_c pushBack "rhsusf_acc_g33_T1";					//Magnifier<br />Magnification: 4x
+_c pushBack "rhsusf_acc_g33_xps3";					//Magnifier<br />Magnification: 4x
+_c pushBack "rhsusf_acc_g33_xps3_tan";				//Magnifier<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG2_USMC";				//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG3_USMC";				//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG_USMC";					//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG";						//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG2";						//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG3";						//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG_anpvs27";				//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG_RMR";					//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG_d";					//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_ACOG_wd";					//Rifle Combat Optics<br />Magnification: 4x
+_c pushBack "rhsusf_acc_su230";						//5.56 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230_c";					//5.56 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230_mrds";				//5.56 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230_mrds_c";				//5.56 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230a";					//7.62 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230a_c";					//7.62 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230a_mrds";				//7.62 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_su230a_mrds_c";				//7.62 Dual role Combat Sight (4x/1x)
+_c pushBack "rhsusf_acc_premier_low";				//Mk. 4 M3
+_c pushBack "rhsusf_acc_premier_anpvs27";			//Mk. 4 M3
+_c pushBack "rhsusf_acc_premier";					//Mk. 4 M3
+_c pushBack "rhsusf_acc_premier_mrds";				//Mk. 4 M3
+_c pushBack "rhsusf_acc_LEUPOLDMK4_2";				//Mk. 4 M3
+_c pushBack "rhsusf_acc_LEUPOLDMK4_2_d";			//Mk. 4 M3
+_c pushBack "rhsusf_acc_LEUPOLDMK4_2_mrds";			//Mk. 4 M3
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
 //light/laser
-_c pushBack "rhsusf_acc_anpeq15side";
-_c pushBack "rhsusf_acc_anpeq15_top";
-_c pushBack "rhsusf_acc_anpeq15_wmx";
-_c pushBack "rhsusf_acc_anpeq15_wmx_light";
-_c pushBack "rhsusf_acc_anpeq15side_bk";
-_c pushBack "rhsusf_acc_anpeq15_bk_top";
-_c pushBack "rhsusf_acc_anpeq15";
-_c pushBack "rhsusf_acc_anpeq15_light";
-_c pushBack "rhsusf_acc_anpeq15_bk";
-_c pushBack "rhsusf_acc_anpeq15_bk_light";
-_c pushBack "rhsusf_acc_anpeq15A";
-_c pushBack "rhsusf_acc_anpeq16a";
-_c pushBack "rhsusf_acc_anpeq16a_light";
-_c pushBack "rhsusf_acc_anpeq16a_top";
-_c pushBack "rhsusf_acc_anpeq16a_light_top";
-_c pushBack "rhsusf_acc_M952V";
-_c pushBack "rhsusf_acc_wmx";
-_c pushBack "rhsusf_acc_wmx_bk";
-//muzzles
-_c pushBack "rhsusf_acc_nt4_black";
-_c pushBack "rhsusf_acc_nt4_tan";
-_c pushBack "rhsusf_acc_rotex5_grey";
-_c pushBack "rhsusf_acc_rotex5_tan";
-_c pushBack "rhsusf_acc_SF3P556";
-_c pushBack "rhsusf_acc_SFMB556";
-//bipod
-_c pushBack "rhsusf_acc_grip2";
-_c pushBack "rhsusf_acc_grip2_tan";
-_c pushBack "rhsusf_acc_grip2_wd";
-_c pushBack "rhsusf_acc_grip1";
-_c pushBack "rhsusf_acc_harris_bipod";
-_c pushBack "rhsusf_acc_kac_grip";
-_c pushBack "rhsusf_acc_rvg_blk";
-_c pushBack "rhsusf_acc_rvg_de";
-_c pushBack "rhsusf_acc_tacsac_blk";
-_c pushBack "rhsusf_acc_tacsac_blue";
-_c pushBack "rhsusf_acc_tacsac_tan";
-_c pushBack "rhsusf_acc_tdstubby_blk";
-_c pushBack "rhsusf_acc_tdstubby_tan";
-_c pushBack "rhsusf_acc_grip3";
-_c pushBack "rhsusf_acc_grip3_tan";
+_c pushBack "rhsusf_acc_anpeq15_wmx";				//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq15_wmx_light";			//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq15";					//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq15_light";				//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode>
+_c pushBack "rhsusf_acc_anpeq15_bk";				//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq15_bk_light";			//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq16a";					//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq16a_light";			//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq16a_top";				//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
+_c pushBack "rhsusf_acc_anpeq16a_light_top";		//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -984,7 +987,6 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
-
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Other Rifles															//
@@ -1531,6 +1533,48 @@ _p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,2.0] call CTI_CO_FNC_GetCa
 _c pushBack "rhs_fim92_mag";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+//scopes
+_c pushBack "rhsusf_acc_M8541";						//Magnification: 3-12x
+_c pushBack "rhsusf_acc_M8541_d";					//Magnification: 3-12x
+_c pushBack "rhsusf_acc_M8541_mrds";				//Magnification: 3-12x
+_c pushBack "rhsusf_acc_M8541_wd";					//Magnification: 3-12x
+_c pushBack "rhsusf_acc_nxs_3515x50_md";			//Reticle: Second focal plane mildot<br />Magnification: 3.5-15x
+_c pushBack "rhsusf_acc_nxs_3515x50f1_h58";			//Reticle: First focal plane H58<br />Magnification: 3.5-15x
+_c pushBack "rhsusf_acc_nxs_3515x50f1_md";			//Reticle: First focal plane mildot<br />Magnification: 3.5-15x
+_c pushBack "rhsusf_acc_nxs_3515x50f1_h58_sun";		//Reticle: First focal plane H58<br />Magnification: 3.5-15x
+_c pushBack "rhsusf_acc_nxs_3515x50f1_md_sun";		//Reticle: First focal plane mildot<br />Magnification: 3.5-15x
+_c pushBack "rhsusf_acc_nxs_5522x56_md";			//Reticle: Second focal plane mildot<br />Magnification: 5.5-22x
+_c pushBack "rhsusf_acc_nxs_5522x56_md_sun";		//Reticle: Second focal plane mildot<br />Magnification: 5.5-22x
+_c pushBack "rhsusf_acc_ACOG_MDO";					//Machine Gun Day Optic<br />ACOG TA648MDO<br />Magnification: 6x<br />RMR<br />Magnification: 1x
+_c pushBack "rhsusf_acc_anpvs27";					//Night vision scope<br />Magnification: 1x
+_c pushBack "rhsusf_acc_anpas13gv1";				//Light Weapon Thermal Sight (LWTS)
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//light/laser
+_c pushBack "rhsusf_acc_anpeq15side";				//Emits light visible in the image intensification mode (night vision).
+_c pushBack "rhsusf_acc_anpeq15side_bk";			//Emits light visible in the image intensification mode (night vision).
+_c pushBack "rhsusf_acc_anpeq15A";					//Emits light visible in the image intensification mode (night vision).
+//muzzles
+_c pushBack "rhsusf_acc_nt4_black";
+_c pushBack "rhsusf_acc_nt4_tan";
+_c pushBack "rhsusf_acc_rotex5_grey";
+_c pushBack "rhsusf_acc_rotex5_tan";
+_c pushBack "rhsusf_acc_SF3P556";
+_c pushBack "rhsusf_acc_SFMB556";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
 
 //Update the calculatetd max upgrade level
 if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {

@@ -66,9 +66,9 @@ if(_tag == "GUER_" || CTI_UPGRADE_MODE > 0) then {
 };
 //needed for Tonw units if the camo differs
 if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1CUP_O_RU_Soldier_SL_Ratnik_Autumn", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_O_RU_Soldier_Ratnik_Autumn", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Autumn", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1rhs_vdv_mflora_officer_armored", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1rhs_vdv_mflora_rifleman", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1rhs_vdv_mflora_crew", _sid]];
 };
 
 //***************************************************************************************************************************************

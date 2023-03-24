@@ -158,8 +158,29 @@ if(CTI_CWR3_ADDON > 0) then {
 	_r pushBack [[86,499], [347,1998], [708,4078], [708,4078]];
 };
 if(CTI_RHS_ADDON > 0) then {
+	_c pushBack "rhsgref_cdf_b_reg_M252";
+	_m pushBack ["rhs_1Rnd_m821_HE","rhs_12Rnd_m821_HE","8Rnd_82mm_Mo_shells","8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_Smoke_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+
+	_c pushBack "rhsgref_cdf_reg_M252";
+	_m pushBack ["rhs_1Rnd_m821_HE","rhs_12Rnd_m821_HE","8Rnd_82mm_Mo_shells","8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_Smoke_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+
 	_c pushBack "RHS_M252_D";
 	_m pushBack ["rhs_1Rnd_m821_HE","rhs_12Rnd_m821_HE","8Rnd_82mm_Mo_shells","8Rnd_82mm_Mo_Flare_white","8Rnd_82mm_Mo_Smoke_white","8Rnd_82mm_Mo_guided","8Rnd_82mm_Mo_LG"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+
+
+	_c pushBack "rhsgref_ins_2b14";
+	_m pushBack ["rhs_mag_3vo18_10","rhs_mag_3vs25m_10","rhs_mag_53_va_832a_10","rhs_mag_d832du_10"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+	
+	_c pushBack "rhsgref_ins_g_2b14";
+	_m pushBack ["rhs_mag_3vo18_10","rhs_mag_3vs25m_10","rhs_mag_53_va_832a_10","rhs_mag_d832du_10"];
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
 
@@ -203,6 +224,26 @@ if(CTI_CWR3_ADDON > 0) then {
 if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "RHS_M119_D";
 	_m pushBack ["RHS_mag_m1_he_12","rhs_mag_m314_ilum_4","rhs_mag_m60a2_smoke_4"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhsgref_cdf_b_reg_d30";
+	_m pushBack ["rhs_mag_of462","rhs_mag_of462_10","rhs_mag_3of56","rhs_mag_3of56_10","rhs_mag_3of56_5","rhs_mag_of462_direct","rhs_mag_of462_direct_10","rhs_mag_3of56_direct","rhs_mag_3of56_direct_10","rhs_mag_3of56_direct_5","rhs_mag_bk6m","rhs_mag_bk6m_26","rhs_mag_bk6m_5","rhs_mag_bk13","rhs_mag_bk13_26","rhs_mag_bk13_5","rhs_mag_d462","rhs_mag_d462_2","rhs_mag_s463","rhs_mag_s463_2","rhs_mag_3of69m","rhs_mag_3of69m_2"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhsgref_cdf_reg_d30";
+	_m pushBack ["rhs_mag_of462","rhs_mag_of462_10","rhs_mag_3of56","rhs_mag_3of56_10","rhs_mag_3of56_5","rhs_mag_of462_direct","rhs_mag_of462_direct_10","rhs_mag_3of56_direct","rhs_mag_3of56_direct_10","rhs_mag_3of56_direct_5","rhs_mag_bk6m","rhs_mag_bk6m_26","rhs_mag_bk6m_5","rhs_mag_bk13","rhs_mag_bk13_26","rhs_mag_bk13_5","rhs_mag_d462","rhs_mag_d462_2","rhs_mag_s463","rhs_mag_s463_2","rhs_mag_3of69m","rhs_mag_3of69m_2"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhsgref_ins_d30";
+	_m pushBack ["rhs_mag_of462","rhs_mag_of462_10","rhs_mag_3of56","rhs_mag_3of56_10","rhs_mag_3of56_5","rhs_mag_of462_direct","rhs_mag_of462_direct_10","rhs_mag_3of56_direct","rhs_mag_3of56_direct_10","rhs_mag_3of56_direct_5","rhs_mag_bk6m","rhs_mag_bk6m_26","rhs_mag_bk6m_5","rhs_mag_bk13","rhs_mag_bk13_26","rhs_mag_bk13_5","rhs_mag_d462","rhs_mag_d462_2","rhs_mag_s463","rhs_mag_s463_2","rhs_mag_3of69m","rhs_mag_3of69m_2"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhsgref_ins_g_d30";
+	_m pushBack ["rhs_mag_of462","rhs_mag_of462_10","rhs_mag_3of56","rhs_mag_3of56_10","rhs_mag_3of56_5","rhs_mag_of462_direct","rhs_mag_of462_direct_10","rhs_mag_3of56_direct","rhs_mag_3of56_direct_10","rhs_mag_3of56_direct_5","rhs_mag_bk6m","rhs_mag_bk6m_26","rhs_mag_bk6m_5","rhs_mag_bk13","rhs_mag_bk13_26","rhs_mag_bk13_5","rhs_mag_d462","rhs_mag_d462_2","rhs_mag_s463","rhs_mag_s463_2","rhs_mag_3of69m","rhs_mag_3of69m_2"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
 
@@ -311,29 +352,61 @@ if(CTI_RHS_ADDON > 0) then {
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
 
+	_c pushBack "rhsgref_ins_g_2s1";
+	_m pushBack ["rhs_mag_HE_2a33","rhs_mag_WP_2a33","rhs_mag_Atomic_2a33","rhs_mag_LASER_2a33","rhs_mag_SMOKE_2a33","rhs_mag_ILLUM_2a33","rhs_mag_53vof546v","rhs_mag_53vof546v_26","rhs_mag_53vof546v_32","rhs_mag_53vof546v_46","rhs_mag_53vof546v_direct","rhs_mag_53vof546v_direct_32","rhs_mag_br540_10","rhs_mag_br540","rhs_mag_bp540_4","rhs_mag_bp540","rhs_mag_HE_2a33_46","rhs_mag_WP_2a33_46","rhs_mag_Atomic_2a_2633_46","rhs_mag_LASER_2a33_46","rhs_mag_SMOKE_2a33_46","rhs_mag_ILLUM_2a33_46","rhs_mag_HE_2a33_32","rhs_mag_HE_2a33_26","rhs_mag_WP_2a33_26","rhs_mag_Atomic_2a_2633_26","rhs_mag_LASER_2a33_26","rhs_mag_SMOKE_2a33_26","rhs_mag_ILLUM_2a33_26"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
+	_c pushBack "rhsgref_ins_2s1";
+	_m pushBack ["rhs_mag_HE_2a33","rhs_mag_WP_2a33","rhs_mag_Atomic_2a33","rhs_mag_LASER_2a33","rhs_mag_SMOKE_2a33","rhs_mag_ILLUM_2a33","rhs_mag_53vof546v","rhs_mag_53vof546v_26","rhs_mag_53vof546v_32","rhs_mag_53vof546v_46","rhs_mag_53vof546v_direct","rhs_mag_53vof546v_direct_32","rhs_mag_br540_10","rhs_mag_br540","rhs_mag_bp540_4","rhs_mag_bp540","rhs_mag_HE_2a33_46","rhs_mag_WP_2a33_46","rhs_mag_Atomic_2a_2633_46","rhs_mag_LASER_2a33_46","rhs_mag_SMOKE_2a33_46","rhs_mag_ILLUM_2a33_46","rhs_mag_HE_2a33_32","rhs_mag_HE_2a33_26","rhs_mag_WP_2a33_26","rhs_mag_Atomic_2a_2633_26","rhs_mag_LASER_2a33_26","rhs_mag_SMOKE_2a33_26","rhs_mag_ILLUM_2a33_26"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+
 	_c pushBack "rhs_2s3_tv";
 	_m pushBack ["rhs_mag_HE_2a33","rhs_mag_WP_2a33","rhs_mag_Atomic_2a33","rhs_mag_LASER_2a33","rhs_mag_SMOKE_2a33","rhs_mag_ILLUM_2a33","rhs_mag_53vof546v","rhs_mag_53vof546v_26","rhs_mag_53vof546v_32","rhs_mag_53vof546v_46","rhs_mag_53vof546v_direct","rhs_mag_53vof546v_direct_32","rhs_mag_br540_10","rhs_mag_br540","rhs_mag_bp540_4","rhs_mag_bp540","rhs_mag_HE_2a33_46","rhs_mag_WP_2a33_46","rhs_mag_Atomic_2a_2633_46","rhs_mag_LASER_2a33_46","rhs_mag_SMOKE_2a33_46","rhs_mag_ILLUM_2a33_46","rhs_mag_HE_2a33_32","rhs_mag_HE_2a33_26","rhs_mag_WP_2a33_26","rhs_mag_Atomic_2a_2633_26","rhs_mag_LASER_2a33_26","rhs_mag_SMOKE_2a33_26","rhs_mag_ILLUM_2a33_26"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
-};
 
-//RHS Arty dosn't have any ammo in there setup, maybe this works
-//round name: M-21OF
-/*if(CTI_RHS_ADDON > 0) then {
+
+	_c pushBack "rhsgref_cdf_b_reg_BM21";
+	_m pushBack ["rhs_mag_m21of_1"];
+	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+
+	_c pushBack "rhsgref_ins_g_BM21";
+	_m pushBack ["rhs_mag_m21of_1"];
+	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+
 	_c pushBack "RHS_BM21_VDV_01";
 	_m pushBack ["rhs_mag_m21of_1"];
 	_b pushBack [1, 2, 5, 10, 20, 40];
 	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
 	
-	rhsusf_M142_usarmy_D
-	rhsusf_M142_usarmy_WD
+	_c pushBack "rhsusf_M142_usarmy_D";
+	_m pushBack ["rhs_mag_m26a1_6"];
+	_b pushBack [1, 2, 3, 6];
+	//_r pushBack [[233,1342], [299,1724], [391,2256], [511,2946], [665,3829], [871,5018], [1151,6630], [1487,8566], [1925,11091], [2476,14263], [3134,18052], [4012,23104], [5223,30083], [7005,40344], [9070,52232], [11790,67898]];
+	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
+	
+	_c pushBack "rhsusf_M142_usarmy_WD";
+	_m pushBack ["rhs_mag_m26a1_6"];
+	_b pushBack [1, 2, 3, 6];
+	//_r pushBack [[233,1342], [299,1724], [391,2256], [511,2946], [665,3829], [871,5018], [1151,6630], [1487,8566], [1925,11091], [2476,14263], [3134,18052], [4012,23104], [5223,30083], [7005,40344], [9070,52232], [11790,67898]];
+	_r pushBack [[1487,8566], [1925,11091], [2476,14263], [3134,18052]];
+};
 
-
-	RHS_BM21_VDV_01
+//RHS Arty dosn't have any ammo in there setup
+//round name: M-21OF
+/*if(CTI_RHS_ADDON > 0) then {
 
 	rhs_9k79
 	rhs_9k79_K
 	rhs_9k79_B
+	
+17:44:15 "[CTI (INFORMATION)] [frameno:78561 | ticktime:1750.79 | fps:58.3942] [FILE: init.sqf] Ammo Test: <[[""RHS_ss21_dummy_launcher"",[],[0],""bin\config.bin/CfgVehicles/OTR21_Base/Turrets/MainTurret""]]>"
+17:44:15 "[CTI (INFORMATION)] [frameno:78561 | ticktime:1750.79 | fps:58.3942] [FILE: init.sqf] Ammo Test: <[[""RHS_ss21_dummy_launcher"",[],[0],""bin\config.bin/CfgVehicles/rhs_9k79_K/Turrets/MainTurret""]]>"
+17:44:15 "[CTI (INFORMATION)] [frameno:78561 | ticktime:1750.79 | fps:58.3942] [FILE: init.sqf] Ammo Test: <[[""RHS_ss21_dummy_launcher"",[],[0],""bin\config.bin/CfgVehicles/rhs_9k79_B/Turrets/MainTurret""]]>"
 };*/
 
 [_c, _m, _b, _r] call compile preprocessFileLineNumbers "Common\Config\Artillery\Set_Artillery.sqf";

@@ -281,9 +281,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1rhs_zil131_open_vdv", _sid];
 	_c pushBack format["%1rhs_zil131_flatbed_vdv", _sid];
 	_c pushBack format["%1rhs_gaz66_zu23_vdv", _sid];			//Flak
-	_c pushBack format["%1rhs_gaz66_ap2_vdv", _sid];			//Medic
 	_c pushBack format["%1rhs_gaz66_r142_vdv", _sid];			//HQ
+	_c pushBack format["%1rhs_gaz66_ap2_vdv", _sid];			//Medic
 	//_c pushBack format["%1rhs_zil131_flatbed_cover_vdv", _sid];	//salvager
+	if(CTI_ADDON_CHARLIECO > 0) then {
+		_c pushBack format["%1chdefender_vsavhr", _sid];				//medic
+		_c pushBack format["%1chmerc_amb", _sid];				//medic
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -304,9 +308,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1RHS_Ural_Zu23_VDV_01", _sid];			//Flak
-	if(CTI_ARTILLERY_SETUP < 0) then {
-		_c pushBack format["%1RHS_BM21_VDV_01", _sid];				//Artytruck
-	};
+	_c pushBack format["%1RHS_BM21_VDV_01", _sid];				//Artytruck
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
