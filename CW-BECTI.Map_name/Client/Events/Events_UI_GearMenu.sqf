@@ -305,15 +305,15 @@ switch (_action) do {
 				_cost = _cost + ((_var select 0) select 1);
 				if (((_var select 0) select 0) > _upgrade) then {
 					_upgrade = (_var select 0) select 0;
-					_maxUGgear = _x;
+					_maxUGgear pushBack _x;
 				};
 			} else {
 				_has_nil = true;
 			};
-			if !(_x in _side_gear) then {
+			/*if !(_x in _side_gear) then {
 				//_dontbelong = true;
-				_maxUGgear = _x;
-			};
+				_maxUGgear pushBack _x;
+			};*/
 			//if (_has_nil || _dontbelong) exitWith {};
 		} forEach (_gear call CTI_CO_FNC_ConvertGearToFlat);
 		

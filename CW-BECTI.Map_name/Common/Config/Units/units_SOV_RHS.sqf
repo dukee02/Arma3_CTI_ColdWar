@@ -241,6 +241,11 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_d pushBack 0;	
 };
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_BARRACKS) then {
+	_upgrade_levels set [CTI_UPGRADE_BARRACKS, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											Wheeled Vehicles																				  *
 //*********************************************************************************************************************************************
@@ -310,20 +315,24 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 
 	if(CTI_ADDON_CHARLIECO > 0) then {
 		_c pushBack format["%1chdefender_vsavhr", _sid];				//medic
+		_p pushBack '';
+		_n pushBack 'Red Mobile Respawn';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;	
+
 		_c pushBack format["%1chmerc_amb", _sid];				//medic
-		//set all other vars in a slope
-		_cntstart = count _c;
-		_cntend = count _p;
-		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-			_p pushBack '';
-			_n pushBack 'Civil Mobile Respawn';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_LIGHT;
-			_s pushBack "service-medic";
-			_d pushBack 0;		
-		};
+		_p pushBack '';
+		_n pushBack 'Civil White Medic';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;
 	};
 };
 
@@ -541,6 +550,11 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	};
 };
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_LIGHT) then {
+	_upgrade_levels set [CTI_UPGRADE_LIGHT, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											Tracked Vehicles																				  *
 //*********************************************************************************************************************************************
@@ -556,7 +570,6 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_c pushBack format["%1rhs_brm1k_tv", _sid];
 	_c pushBack format["%1rhs_bmd1k", _sid];
 	_c pushBack format["%1rhs_bmd1pk", _sid];
-	_c pushBack format["%1rhs_prp3_tv", _sid];//repair / HQ ?
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;
@@ -864,6 +877,11 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	};
 };*/
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_HEAVY) then {
+	_upgrade_levels set [CTI_UPGRADE_HEAVY, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											AIR - Choppers and Planes																		  *
 //*********************************************************************************************************************************************
@@ -1087,6 +1105,11 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	};
 };
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
+	_upgrade_levels set [CTI_UPGRADE_AIR, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											 Reapir Factory units																			  *
 //*********************************************************************************************************************************************
@@ -1200,6 +1223,23 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_d pushBack 0;
 };
 
+_matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_SOV_ID, CTI_RHS_ID] call CTI_CO_FNC_GetTechmatrix;
+
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+	_building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+	_c pushBack format["%1rhs_prp3_tv", _sid];		//repair
+	_p pushBack '';
+	_n pushBack 'Repair Vehicle';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_REPAIR;
+	_s pushBack "service-repairtruck";
+	_d pushBack 0;
+};
 
 //*********************************************************************************************************************************************
 //											 Ammo Factory units																			  	  *
@@ -1290,6 +1330,11 @@ _u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 _f pushBack CTI_FACTORY_NAVAL;
 _s pushBack "";
 _d pushBack 0;*/
+
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_NAVAL) then {
+	_upgrade_levels set [CTI_UPGRADE_NAVAL, _tech_level];
+};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_SOV_RHS.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};
 

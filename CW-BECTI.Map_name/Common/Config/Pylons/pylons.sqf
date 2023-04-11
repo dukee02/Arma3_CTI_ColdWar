@@ -764,9 +764,10 @@ if((_tech_level) > _upgrade_levels_west select CTI_UPGRADE_AIR_FFAR) then {
 	_upgrade_levels_west set [CTI_UPGRADE_AIR_FFAR, (_tech_level)];
 };
 
-//*********************************************************************************************************************************************
-//														weapon pod																		  *
-//*********************************************************************************************************************************************
+//*******************************************************************************************************************************************
+//														weapon pod																		  	*
+//*******************************************************************************************************************************************
+_tech_level = 0;
 
 _c pushBack "PylonWeapon_2000Rnd_65x39_belt";		//Minigun 6.5 mm <6.5mm gatling gun>
 _c pushBack "PylonWeapon_300Rnd_20mm_shells";		//Twin Cannon 20mm <20mm twin-cannon weapon pod>
@@ -889,7 +890,6 @@ if(CTI_RHS_ADDON > 0) then {
 	//_c pushBack "rhs_mag_l159_fuelpod_grey";			//Fuel Pod (Grey) <>
 	
 };
-
 
 // set all other vars in a slope
 _cntstart = count _c;

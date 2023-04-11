@@ -317,6 +317,43 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_s pushBack "";
 		_d pushBack 0;	
 	};
+
+	if(CTI_ADDON_CHARLIECO > 0) then {
+		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
+		_p pushBack '';
+		_n pushBack 'Red Mobile Respawn';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;	
+
+		_c pushBack format["%1chmaster2_ap", _sid];				//medic
+		_p pushBack '';
+		_n pushBack 'Civil White Medic';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 0;
+	} else {
+		_c pushBack format["rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
+		//set all other vars in a slope
+		_cntstart = count _c;
+		_cntend = count _p;
+		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+			_p pushBack '';
+			_n pushBack 'GAZ66 Mobile Respawn';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_LIGHT;
+			_s pushBack "service-medic";
+			_d pushBack 0;		
+		};
+	};
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -382,39 +419,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
-	};
-
-	if(CTI_ADDON_CHARLIECO > 0) then {
-		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
-		_c pushBack format["%1chmaster2_ap", _sid];				//medic
-		//set all other vars in a slope
-		_cntstart = count _c;
-		_cntend = count _p;
-		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-			_p pushBack '';
-			_n pushBack 'Civil Mobile Respawn';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_LIGHT;
-			_s pushBack "service-medic";
-			_d pushBack 0;		
-		};
-	} else {
-		_c pushBack format["rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
-		//set all other vars in a slope
-		_cntstart = count _c;
-		_cntend = count _p;
-		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-			_p pushBack '';
-			_n pushBack 'GAZ66 Mobile Respawn';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_LIGHT;
-			_s pushBack "service-medic";
-			_d pushBack 0;		
-		};
 	};
 };
 

@@ -335,7 +335,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
 		_c pushBack format["%1chmaster2_ap", _sid];				//medic
 	} else {
-		_c pushBack format["rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
+		_c pushBack format["%1rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
 	};
 };
 

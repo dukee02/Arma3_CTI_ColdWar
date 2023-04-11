@@ -23,7 +23,11 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\fa
 //Check if the based units have to set.
 _setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
-if((_isThisMain select 0) == CTI_ChDKZ_ID && ((_isThisMain select 1) == CTI_RHS_ID)) then {_setupBaseUnits = true;};
+if(count _isThisMain > 0) then {
+	if((_isThisMain select 0) == CTI_ChDKZ_ID && (_isThisMain select 1) == CTI_RHS_ID) then {_setupBaseUnits = true;};
+} else {
+	_setupBaseUnits = true;
+};
 
 if (_setupBaseUnits) then {
 	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["rhsgref_ins%1_commander", _sid]];

@@ -357,6 +357,21 @@ if(_loadingFine) then {
 						//_customid = (_var_classname select CTI_UNIT_SCRIPTS) select 2;
 					};
 					_vehicle = [_model, (_x select 1), (_x select 2), (_x select 3), false, true, true] call CTI_CO_FNC_CreateVehicle;
+
+					//_sideVeh = civilian;
+					_sideVeh = west;
+					//{
+						// Current result is saved in variable _x
+						//_side = _x;
+						_side = east;
+						{
+							// Current result is saved in variable _x
+							if(_model in _x) then {
+								_sideVeh = east;
+							};
+						} forEach [(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_BARRACKS]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_HEAVY]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_REPAIR]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AMMO]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT]),(missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_NAVAL])];
+					//} forEach [east,west];
+					[_vehicle, _sideVeh] call CTI_CO_FNC_InitializeNetVehicle;
 					
 					if ((_script != "") && alive _vehicle) then {
 						[_vehicle, (_x select 3), _script, ""] spawn CTI_CO_FNC_InitializeCustomVehicle;
