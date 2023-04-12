@@ -167,9 +167,14 @@ if(Side _unit == west) then {
 } else {
 	//East unit
 	//addon needed?
-	//_voices append ["Male01RUS","Male02RUS","Male03RUS"];
+	if([1021790] call CTI_CO_FNC_HasDLC) then {
+		_voices append ["Male01RUS","Male02RUS","Male03RUS"];
+	};
 	if(CTI_CUP_ADDON > 0) then {
 		_voices append ["CUP_D_Male01_RU","CUP_D_Male02_RU","CUP_D_Male03_RU","CUP_D_Male04_RU","CUP_D_Male05_RU"];
+	};
+	if(CTI_RHS_ADDON > 0) then {
+		_voices append ["RHS_Male01RUS","RHS_Male02RUS","RHS_Male03RUS","CUP_Male04RUS","CUP_Male05RUS"];
 	};
 	
 };

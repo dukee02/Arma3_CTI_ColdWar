@@ -4,54 +4,16 @@ _tag = "";
 _level = 0;
 
 switch (_side) do {
-	case west: {_sid = "_b";_tag = "WEST_";};
+	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};
 	case east: {/*_sid = "VIOC_O_";*/_tag = "EAST_";};
-	case resistance: {_sid = "";_tag = "GUER_";};
-	default {_sid = "";};
+	case resistance: {/*_sid = "VIOC_I_";*/_tag = "GUER_";};
+	default {};
 };
+//if(CTI_VIO_ADDON == 0) then {_sid = "";};
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_US_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_CDF_RHS.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
 
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
-
-//needed for townvehicles if nation on IND side or if the units gets upgraded
-if(_tag == "GUER_" || CTI_UPGRADE_MODE > 0) then {
-	switch(CTI_TOWN_CAMO) do {
-		case 3: {//jungle camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["rhsgref_cdf%1_ngd_officer", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["rhsgref_cdf%1_ngd_rifleman_lite", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["rhsgref_cdf%1_ngd_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["rhsgref_cdf%1_ngd_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["rhsgref_cdf%1_ngd_crew", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["rhsgref_cdf%1_ngd_crew", _sid]];
-		};
-		case 4: {//urban camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["rhsgref_cdf%1_para_squadleader", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["rhsgref_cdf%1_para_rifleman_lite", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["rhsgref_cdf%1_para_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["rhsgref_cdf%1_para_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["rhsgref_cdf%1_para_crew", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["rhsgref_cdf%1_para_crew", _sid]];
-		};
-		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["rhsgref_cdf%1_reg_general", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["rhsgref_cdf%1_reg_rifleman_lite", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["rhsgref_cdf%1_reg_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["rhsgref_cdf%1_reg_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["rhsgref_cdf%1_reg_crew", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["rhsgref_cdf%1_reg_crew", _sid]];
-		};		
-	};
-};
-//needed for Tonw units if the camo differs
-if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["rhsgref_cdf%1_para_squadleader", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["rhsgref_cdf%1_para_rifleman", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["rhsgref_cdf%1_para_crew", _sid]];
-};
 
 //***************************************************************************************************************************************
 //														Town infantry setup																*
@@ -305,8 +267,13 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	AIR_BOMBER = [[format["rhsgref_cdf%1_reg_Mi17Sh", _sid],1]];
-	AIR_FIGHTER = [[format["rhs_l159_cdf%1_CDF", _sid],1]];
-	AIR_FIGHTER pushBack [format["rhs_l39_cdf%1_cdf", _sid],1];
+	if(_side == west) then {
+		AIR_FIGHTER = [[format["rhs_l159_cdf%1_CDF", _sid],1]];
+		AIR_FIGHTER pushBack [format["rhs_l39_cdf%1_cdf", _sid],1];
+	} else {
+		AIR_FIGHTER = [[format["rhs_l159_cdf%1", _sid],1]];
+		AIR_FIGHTER pushBack [format["rhs_l39_cdf%1", _sid],1];
+	};
 };
 	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;

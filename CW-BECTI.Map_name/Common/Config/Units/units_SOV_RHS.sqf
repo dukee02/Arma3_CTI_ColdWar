@@ -69,7 +69,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1rhs_vdv_grenadier_rpg", _sid];
 		_c pushBack format["%1rhs_vdv_strelok_rpg_assist", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1rhs_vdv_mflora_crew", _sid];
 		_c pushBack format["%1rhs_vdv_mflora_armoredcrew", _sid];
 		_c pushBack format["%1rhs_vdv_mflora_combatcrew", _sid];
@@ -140,7 +140,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1rhs_vdv_rifleman_alt", _sid];
 		_c pushBack format["%1rhs_vdv_LAT", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1rhs_vdv_mflora_crew_commander", _sid];
 		_c pushBack format["%1rhs_vdv_mflora_machinegunner", _sid];
 		_c pushBack format["%1rhs_vdv_mflora_machinegunner_assistant", _sid];
@@ -200,7 +200,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1rhs_vdv_grenadier_alt", _sid];
 		_c pushBack format["%1rhs_vdv_RShG2", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1rhs_vdv_mflora_marksman", _sid];
 		_c pushBack format["%1rhs_vdv_mflora_officer", _sid];
 		_c pushBack format["%1rhs_vdv_mflora_grenadier", _sid];
@@ -219,7 +219,7 @@ if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo a
 if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 	_c pushBack format["%1rhs_vdv_officer_armored", _sid];
 };
-if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 	_c pushBack format["%1rhs_vdv_mflora_officer_armored", _sid];
 };
 if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 4) then {		//main camo active

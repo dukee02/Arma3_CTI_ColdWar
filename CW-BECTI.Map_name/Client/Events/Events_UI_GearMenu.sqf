@@ -340,9 +340,9 @@ switch (_action) do {
 		_seed = round(time + random 10000 - random 500 + diag_frameno);
 		missionNamespace getVariable "cti_gear_list_templates" pushBack [_label, _picture, _cost, _gear, _upgrade, _seed];
 		
-		_templates = if !(isNil {profileNamespace getVariable format["CTI_VIOWW2_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {profileNamespace getVariable format["CTI_VIOWW2_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]} else {+(missionNamespace getVariable "cti_gear_list_templates")};
+		_templates = if !(isNil {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]} else {+(missionNamespace getVariable "cti_gear_list_templates")};
 		_templates pushBack [_label, _picture, _cost, _gear, _upgrade, _seed]; 
-		profileNamespace setVariable [format["CTI_VIOWW2_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], _templates];
+		profileNamespace setVariable [format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], _templates];
 		saveProfileNamespace;
 		if (CTI_Log_Level >= CTI_Log_Debug) then {
 			["VIOC-DEBUG", "File: Client\Events\Events_UI_GearMenu.sqf", format["Client saves template: <%1>", _templates]] call CTI_CO_FNC_Log;
@@ -368,12 +368,12 @@ switch (_action) do {
 				
 				//--- Persistent!
 				//todo: finds the ID that matches
-				// if (isNil {profileNamespace getVariable format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {call CTI_UI_Gear_InitializeProfileTemplates};
-				// _templates = profileNamespace getVariable format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined];
+				// if (isNil {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {call CTI_UI_Gear_InitializeProfileTemplates};
+				// _templates = profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined];
 				(_seed) call CTI_UI_Gear_RemoveProfileTemplate;
 				// _templates set [_index, "!nil!"];
 				// _templates = _templates - ["!nil!"];
-				// profileNamespace setVariable [format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], _templates];
+				// profileNamespace setVariable [format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], _templates];
 				//saveProfileNamespace;
 				
 				if (uiNamespace getVariable "cti_dialog_ui_gear_shop_tab" == CTI_GEAR_TAB_TEMPLATES) then { //--- Reload the template tab if needed

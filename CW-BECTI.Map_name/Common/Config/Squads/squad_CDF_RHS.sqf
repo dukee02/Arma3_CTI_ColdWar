@@ -571,9 +571,14 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	units_air = []; //delete unarmed vehicles if max tier allow it
-	air_to_add = [[format["rhsgref_cdf%1_reg_Mi17Sh", _sid], 1, 40]];
-	air_to_add pushBack [format["rhs_l159_cdf%1_CDF", _sid], 1, 40];
-	air_to_add pushBack [format["rhs_l39_cdf%1_cdf", _sid], 1, 40];
+	air_to_add = [[format["rhsgref_cdf%1_reg_Mi17Sh", _sid], 1, 40]];	
+	if(_side == west) then {
+		air_to_add pushBack [format["rhs_l159_cdf%1_CDF", _sid], 1, 40];
+		air_to_add pushBack [format["rhs_l39_cdf%1_cdf", _sid], 1, 40];
+	} else {
+		air_to_add pushBack [format["rhs_l159_cdf%1", _sid], 1, 40];
+		air_to_add pushBack [format["rhs_l39_cdf%1", _sid], 1, 40];
+	};
 	
 	units_air append air_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};

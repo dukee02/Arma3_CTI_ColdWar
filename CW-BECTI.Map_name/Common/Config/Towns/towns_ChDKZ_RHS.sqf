@@ -1,45 +1,19 @@
 _side = _this;
 _sid = "";
 _tag = "";
-_level = -1;
+_level = 0;
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_tag = "WEST_";
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_tag = "EAST_";
-	} 
-	else {
-		//_sid = "VIOC_I_";
-		_tag = "GUER_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_tag = "EAST_";};
+	case resistance: {/*_sid = "VIOC_I_";*/_tag = "GUER_";};
+	default {};
 };
 //if(CTI_VIO_ADDON == 0) then {_sid = "";};
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_SOV_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_ChDKZ_RHS.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
 
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
-
-//needed for townvehicles if nation on IND side or if the units gets upgraded
-if(_tag == "GUER_" || CTI_UPGRADE_MODE > 0) then {
-	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["rhsgref_ins%1_commander", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["rhsgref_ins%1_rifleman_aksu", _sid]];
-
-	missionNamespace setVariable [format["CTI_%1_Diver", _side], format["rhsgref_ins%1_rifleman", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["rhsgref_ins%1_rifleman", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["rhsgref_ins%1_pilot", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Crew", _side], format["rhsgref_ins%1_crew", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Static", _side], format["rhsgref_ins%1_crew", _sid]];
-};
-//needed for Tonw units if the camo differs
-if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["rhsgref_ins%1_commander", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["rhsgref_ins%1_rifleman", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["rhsgref_ins%1_crew", _sid]];
-};
 
 //***************************************************************************************************************************************
 //														Town infantry setup																*

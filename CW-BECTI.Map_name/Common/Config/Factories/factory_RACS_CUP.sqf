@@ -1,84 +1,32 @@
-/*
-format["%1<vanilla_cnitname>", _sid] gets used later 4 the upcomming sidepatch
-format["%1", _sid] - 4 copy paste
-
-CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
-*/
 private ["_side", "_c", "_sid", "_priorUnits", "_ai", "_level", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
 _side = _this;
 _ai = -1;
 _sid = "";
+_tag = "GUER_";
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_ai = CTI_WEST_AI;
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_ai = CTI_EAST_AI;
-	} 
-	else {
-		//_sid = "VIOC_I_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_ai = CTI_WEST_AI;_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_ai = CTI_EAST_AI;_tag = "EAST_";};
+	case resistance: {_sid = "";_tag = "GUER_";};
+	default {_sid = "";};
 };
+
+//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 
 //*********************************************************************************************************************************************
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
-
-//check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-//_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-//if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
-//Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CUP_ADDON > 0) || _ai == CTI_RACS_SIDE) then {
-	switch (CTI_CAMO_ACTIVATION) do {
-		case 2: {									//Desert camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_I_RACS_Officer", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_I_RACS_Soldier_Unarmed", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_I_RACS_AR", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_I_RACS_Soldier", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_I_RACS_Soldier_Light", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_I_RACS_Soldier_Light", _sid]];
-		};
-		case 4: {									//urban camo
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_I_RACS_Officer_Urban", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_I_RACS_Soldier_Unarmed_Urban", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_I_RACS_AR_Urban", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_I_RACS_Soldier_Urban", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_I_RACS_Soldier_Light_Urban", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_I_RACS_Soldier_Light_Urban", _sid]];
-		};
-		default {									//Woodland if all camos active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_I_RACS_Officer_wdl", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_I_RACS_Soldier_Unarmed_wdl", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_I_RACS_AR_wdl", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_I_RACS_Soldier_wdl", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_I_RACS_Soldier_Light_wdl", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_I_RACS_Soldier_Light_wdl", _sid]];
-		};
-	};
-	missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_I_RACS_Pilot", _sid]];
-	//Set starting vehicles
-	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-		[format["%1CUP_I_LR_Transport_RACS", _sid], []], 
-		[format["%1CUP_I_LR_Transport_RACS", _sid], []]
-	]];
-	if (CTI_Log_Level >= CTI_Log_Debug) then {
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Diver: <%1>", missionNamespace getVariable format["CTI_%1_Diver", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Soldier: <%1>", missionNamespace getVariable format["CTI_%1_Soldier", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Crew: <%1>", missionNamespace getVariable format["CTI_%1_Crew", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Pilot: <%1>", missionNamespace getVariable format["CTI_%1_Pilot", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["Static: <%1>", missionNamespace getVariable format["CTI_%1_Static", _side]]] call CTI_CO_FNC_Log;
-	};
+//Check if the based units have to set.
+_setupBaseUnits = false;
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if(count _isThisMain > 0) then {
+	if((_isThisMain select 0) == CTI_RACS_ID && (_isThisMain select 1) == CTI_CUP_ID) then {_setupBaseUnits = true;};
+} else {
+	_setupBaseUnits = true;
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_RACS_CUP.sqf", format["starting vehicles for side %1 declared", _side]] call CTI_CO_FNC_Log;};
+if (_setupBaseUnits) then {
+	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_RACS_CUP.sqf";
+};
 
 //*********************************************************************************************************************************************
 //											Infantry units																					  *

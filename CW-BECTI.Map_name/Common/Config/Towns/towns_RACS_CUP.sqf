@@ -1,54 +1,19 @@
 _side = _this;
 _sid = "";
 _tag = "";
-_level = -1;
+_level = 0;
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_tag = "WEST_";
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_tag = "EAST_";
-	} 
-	else {
-		//_sid = "VIOC_I_";
-		_tag = "GUER_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_tag = "EAST_";};
+	case resistance: {/*_sid = "VIOC_I_";*/_tag = "GUER_";};
+	default {};
 };
 //if(CTI_VIO_ADDON == 0) then {_sid = "";};
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_RACS_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;
-};
-(_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_RACS_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
 
-//needed for townvehicles if nation on IND side
-if(_tag == "GUER_") then {
-	switch(CTI_TOWN_CAMO) do {
-		case 2: {//desert camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_I_RACS_Soldier", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_I_RACS_Soldier_Light", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_I_RACS_Pilot", _sid]];
-		};
-		case 4: {//urban camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_I_RACS_Soldier_Urban", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_I_RACS_Soldier_Light_Urban", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_I_RACS_Pilot", _sid]];
-		};
-		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_I_RACS_Soldier_wdl", _sid]];
-			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_I_RACS_Soldier_Light_wdl", _sid]];
-			missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_I_RACS_Pilot", _sid]];
-		};	
-	};
-};
-//needed for Tonw units if the camo differs
-if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1CUP_I_RACS_GL_Urban", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_I_RACS_Soldier_Urban", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_I_RACS_Soldier_Light_Urban", _sid]];
-};
+(_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
 
 //***************************************************************************************************************************************
 //														Town infantry setup																*

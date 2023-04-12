@@ -194,7 +194,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_O_RU_Officer_M_EMR_V2", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_SL_M_EMR_V2", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1CUP_O_RU_Soldier_AAR_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AR_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_MG_Ratnik_Autumn", _sid];
@@ -259,7 +259,7 @@ if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo a
 if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 	_c pushBack format["%1CUP_O_RU_Soldier_TL_M_EMR_V2", _sid];
 };
-if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 	_c pushBack format["%1CUP_O_RU_Soldier_TL_Ratnik_Autumn", _sid];
 };
 //if(CTI_CAMO_ACTIVATION == 5 || CTI_CAMO_ACTIVATION == 7) then {		//maritim camo active
@@ -292,7 +292,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_M_EMR_V2", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_AA_M_EMR_V2", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1CUP_O_RU_Soldier_AHAT_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Soldier_HAT_Ratnik_Autumn", _sid];
 		_c pushBack format["%1CUP_O_RU_Recon_TL_Ratnik_Autumn", _sid];

@@ -1,113 +1,28 @@
-/*
-format["%1<vanilla_cnitname>", _sid] gets used later 4 the upcomming sidepatch
-format["%1", _sid] - 4 copy paste
-
-CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
-*/
 private ["_side", "_c", "_sid", "_priorUnits", "_ai", "_level", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
 _side = _this;
 _ai = -1;
 _sid = "";
+_tag = "GUER_";
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_ai = CTI_WEST_AI;
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_ai = CTI_EAST_AI;
-	} 
-	else {
-		//_sid = "VIOC_I_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_ai = CTI_WEST_AI;_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_ai = CTI_EAST_AI;_tag = "EAST_";};
+	case resistance: {_sid = "";_tag = "GUER_";};
+	default {_sid = "";};
 };
+
+//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 
 //*********************************************************************************************************************************************
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
-
+//Check if the based units have to set.
 _setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 if((_isThisMain select 0) == CTI_SOV_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {_setupBaseUnits = true;};
-
 if (_setupBaseUnits) then {
-	switch(CTI_CAMO_ACTIVATION) do {
-		case 1: {//winter camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_Ratnik_Winter", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Unarmed_Ratnik_Winter", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_Ratnik_Winter", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Winter", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_Ratnik_Winter", _sid]];
-		};
-		case 2: {//desert camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_Ratnik_Desert", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Unarmed_Ratnik_Desert", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Desert", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_Ratnik_Desert", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Desert", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_Ratnik_Desert", _sid]];
-		};
-		case 3: {//jungle camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_M_EMR_V2", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Unarmed_M_EMR_V2", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Soldier_Crew_M_EMR_V2", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_Lite_M_EMR_V2", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Soldier_Crew_M_EMR_V2", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_Lite_M_EMR_V2", _sid]];
-		};
-		case 4: {//urban camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_Ratnik_Autumn", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Unarmed_Ratnik_Autumn", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Autumn", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_Ratnik_Autumn", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Autumn", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_Ratnik_Autumn", _sid]];
-		};
-		case 6: {//special camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_Ratnik_BeigeDigital", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Unarmed_Ratnik_BeigeDigital", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_BeigeDigital", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_Ratnik_BeigeDigital", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_BeigeDigital", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_Ratnik_BeigeDigital", _sid]];
-		};
-		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1CUP_O_RU_Soldier_TL_Ratnik_Summer", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1CUP_O_RU_Soldier_Unarmed_Ratnik_Summer", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Summer", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1CUP_O_RU_Soldier_Ratnik_Summer", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1CUP_O_RU_Soldier_Lite_Ratnik_Summer", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1CUP_O_RU_Soldier_Ratnik_Summer", _sid]];
-		};	
-	};
-	//1 pilot for all camos
-	missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1CUP_O_RU_Pilot_M_EMR", _sid]];
-	//Set starting vehicles
-	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-		[format["%1CUP_O_UAZ_Unarmed_RU", _sid], []], 
-		[format["%1CUP_O_UAZ_Open_RU", _sid], []]
-	]];
-		
-	if (CTI_Log_Level >= CTI_Log_Debug) then {
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Diver: <%1>", missionNamespace getVariable format["CTI_%1_Diver", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Soldier: <%1>", missionNamespace getVariable format["CTI_%1_Soldier", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Crew: <%1>", missionNamespace getVariable format["CTI_%1_Crew", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Pilot: <%1>", missionNamespace getVariable format["CTI_%1_Pilot", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["Static: <%1>", missionNamespace getVariable format["CTI_%1_Static", _side]]] call CTI_CO_FNC_Log;
-	};
+	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_SOV_CUP.sqf";
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_SOV_CUP.sqf", format["starting vehicles for side %1 declared", _side]] call CTI_CO_FNC_Log;};
 
 //*********************************************************************************************************************************************
 //											Infantry units																					  *

@@ -49,7 +49,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["rhsgref_cdf%1_ngd_rifleman_ak74", _sid];
 		_c pushBack format["rhsgref_cdf%1_ngd_grenadier", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["rhsgref_cdf%1_para_rifleman", _sid];
 		_c pushBack format["rhsgref_cdf%1_para_rifleman_lite", _sid];
 		_c pushBack format["rhsgref_cdf%1_para_crew", _sid];
@@ -645,8 +645,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_d pushBack 0;	
 	};
 
-	_c pushBack format["rhs_l159_cdf%1_CDF", _sid];
-	_c pushBack format["rhs_l39_cdf%1_cdf", _sid];
+	if(_side == west) then {
+		_c pushBack format["rhs_l159_cdf%1_CDF", _sid];
+		_c pushBack format["rhs_l39_cdf%1_cdf", _sid];
+	} else {
+		_c pushBack format["rhs_l159_cdf%1", _sid];
+		_c pushBack format["rhs_l39_cdf%1", _sid];
+	};
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;

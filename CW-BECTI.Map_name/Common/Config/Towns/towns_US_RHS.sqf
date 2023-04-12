@@ -3,77 +3,17 @@ _sid = "";
 _tag = "";
 _level = 0;
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_tag = "WEST_";
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_tag = "EAST_";
-	} 
-	else {
-		//_sid = "VIOC_I_";
-		_tag = "GUER_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_tag = "EAST_";};
+	case resistance: {/*_sid = "VIOC_I_";*/_tag = "GUER_";};
+	default {};
 };
 //if(CTI_VIO_ADDON == 0) then {_sid = "";};
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_US_CUP.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_US_RHS.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
 
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
-
-//needed for townvehicles if nation on IND side or if the units gets upgraded
-if(_tag == "GUER_" || CTI_UPGRADE_MODE > 0) then {
-	switch(CTI_TOWN_CAMO) do {
-		case 2: {//desert camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1rhsusf_usmc_marpat_d_teamleader", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1rhsusf_usmc_marpat_d_rifleman_light", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1rhsusf_usmc_marpat_d_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1rhsusf_usmc_marpat_d_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1rhsusf_usmc_marpat_d_crewman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1rhsusf_usmc_marpat_d_helipilot", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1rhsusf_usmc_marpat_d_crewman", _sid]];
-		};
-		case 3: {//jungle camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1rhsusf_usmc_marpat_wd_teamleader", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1rhsusf_usmc_marpat_wd_rifleman_light", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1rhsusf_usmc_marpat_wd_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1rhsusf_usmc_marpat_wd_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1rhsusf_usmc_marpat_wd_crewman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1rhsusf_usmc_marpat_wd_helipilot", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1rhsusf_usmc_marpat_wd_crewman", _sid]];
-		};
-		case 4: {//urban camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1rhsusf_army_ucp_teamleader", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1rhsusf_army_ucp_riflemanl", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1rhsusf_army_ucp_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1rhsusf_army_ucp_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1rhsusf_army_ucp_crewman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1rhsusf_army_ucp_helipilot", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1rhsusf_army_ucp_crewman", _sid]];
-		};
-		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1rhsusf_army_ocp_teamleader", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1rhsusf_army_ocp_riflemanl", _sid]];
-
-			missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1rhsusf_army_ocp_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1rhsusf_army_ocp_rifleman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1rhsusf_army_ocp_crewman", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1rhsusf_army_ocp_helipilot", _sid]];
-			missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1rhsusf_army_ocp_crewman", _sid]];
-		};	
-	};
-};
-//needed for Tonw units if the camo differs
-if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1rhsusf_army_ucp_teamleader", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1rhsusf_army_ucp_rifleman", _sid]];
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1rhsusf_army_ucp_crewman", _sid]];
-};
 
 //***************************************************************************************************************************************
 //														Town infantry setup																*

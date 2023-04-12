@@ -1,65 +1,32 @@
-/*
-format["%1<vanilla_cnitname>", _sid] gets used later 4 the upcomming sidepatch
-format["%1", _sid] - 4 copy paste
-
-CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
-*/
-private ["_side", "_c", "_sid", "_priorUnits", "_ai", "_tech_level", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
+private ["_side", "_c", "_sid", "_priorUnits", "_ai", "_level", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
 _side = _this;
 _ai = -1;
 _sid = "";
-_tech_level = 0;
+_tag = "GUER_";
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_ai = CTI_WEST_AI;
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_ai = CTI_EAST_AI;
-	} 
-	else {
-		//_sid = "VIOC_I_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_ai = CTI_WEST_AI;_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_ai = CTI_EAST_AI;_tag = "EAST_";};
+	case resistance: {_sid = "";_tag = "GUER_";};
+	default {_sid = "";};
 };
+
+//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
 
 //*********************************************************************************************************************************************
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
-
-//check if the CTI SIDE base units are set. If not or this side is set as AI, setup the variable.
-//_priorUnits = missionNamespace getVariable format ["CTI_%1_Commander", _side];
-//if ((isNil "_priorUnits" || _ai == 4) && CTI_CUP_ADDON > 0) then { 
-//Check if the based mod is set as main, or the nation is explicit set.
-if ((CTI_CUP_ADDON > 0) || _ai == CTI_FIA_ID) then {
-	
-	missionNamespace setVariable [format["CTI_%1_Commander", _side], format["%1cwr3_i_commander", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Worker", _side], format["%1cwr3_i_soldier_driver", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Diver", _side], format["%1cwr3_i_soldier_driver", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Soldier", _side], format["%1cwr3_i_soldier", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Crew", _side], format["%1cwr3_i_soldier_crew", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Pilot", _side], format["%1cwr3_i_camel_pilot", _sid]];
-	missionNamespace setVariable [format["CTI_%1_Static", _side], format["%1cwr3_i_soldier", _sid]];
-	
-	//Set starting vehicles
-	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-		[format["%1cwr3_i_m151", _sid], []], 
-		[format["%1cwr3_i_uaz452", _sid], []]
-	]];
-	
-	if (CTI_Log_Level >= CTI_Log_Debug) then {
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1_Commander", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Worker: <%1>", missionNamespace getVariable format["CTI_%1_Worker", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Diver: <%1>", missionNamespace getVariable format["CTI_%1_Diver", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Soldier: <%1>", missionNamespace getVariable format["CTI_%1_Soldier", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Crew: <%1>", missionNamespace getVariable format["CTI_%1_Crew", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Pilot: <%1>", missionNamespace getVariable format["CTI_%1_Pilot", _side]]] call CTI_CO_FNC_Log;
-		["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["Static: <%1>", missionNamespace getVariable format["CTI_%1_Static", _side]]] call CTI_CO_FNC_Log;
-	};
+//Check if the based units have to set.
+_setupBaseUnits = false;
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if(count _isThisMain > 0) then {
+	if((_isThisMain select 0) == CTI_FIA_ID && (_isThisMain select 1) == CTI_CWR3_ID) then {_setupBaseUnits = true;};
+} else {
+	_setupBaseUnits = true;
 };
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_FIA_CWr3.sqf", format["starting vehicles for side %1 declared", _side]] call CTI_CO_FNC_Log;};
+if (_setupBaseUnits) then {
+	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_FIA_CWR3.sqf";
+};
 
 //***************************************************************************************************************************************
 //														Barracks Factory																*

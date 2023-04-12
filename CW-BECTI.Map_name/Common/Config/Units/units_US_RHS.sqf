@@ -73,7 +73,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1rhsusf_usmc_marpat_wd_grenadier_m32", _sid];
 		_c pushBack format["%1rhsusf_usmc_marpat_wd_gunner", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1rhsusf_army_ucp_rifleman", _sid];
 		_c pushBack format["%1rhsusf_army_ucp_riflemanl", _sid];
 		_c pushBack format["%1rhsusf_army_ucp_rifleman_m4", _sid];
@@ -159,7 +159,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1rhsusf_usmc_marpat_wd_sniper", _sid];
 		_c pushBack format["%1rhsusf_usmc_marpat_wd_spotter", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1rhsusf_army_ucp_autorifleman", _sid];
 		_c pushBack format["%1rhsusf_army_ucp_autoriflemana", _sid];
 		_c pushBack format["%1rhsusf_army_ucp_maaws", _sid];
@@ -227,7 +227,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_c pushBack format["%1rhsusf_usmc_marpat_wd_stinger", _sid];
 		_c pushBack format["%1rhsusf_usmc_marpat_wd_uav", _sid];
 	};
-	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//urban camo active
+	if(CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7 || CTI_TOWN_CAMO == 4) then {		//urban camo active
 		_c pushBack format["%1rhsusf_army_ucp_machinegunner", _sid];
 		_c pushBack format["%1rhsusf_army_ucp_machinegunnera", _sid];
 		_c pushBack format["%1rhsusf_army_ucp_javelin", _sid];

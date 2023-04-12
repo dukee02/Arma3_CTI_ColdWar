@@ -30,7 +30,7 @@
 	  -> Will bring the barracks on level 1 after the upgrade completion
 */
 
-private ["_level", "_side", "_upgrade", "_upgrade_time"];
+private ["_level", "_side", "_upgrade", "_upgrade_time", "_evolve", "_upgrade_cur", "_upgrade_max", "_isThisMain", "_sid", "_tag"];
 
 _side = _this select 0;
 _upgrade = _this select 1;
@@ -66,6 +66,72 @@ switch (_upgrade) do {
 	case CTI_UPGRADE_GEAR: { };
 	case CTI_UPGRADE_DEFENSE: { };*/
 	default { };
+};
+
+//If we play with early and late units, after the half we switch the mainunits spawning.
+_evolve = [];
+{
+	_upgrade_cur = _upgrades select _x;
+	_upgrade_max_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS", _side];
+	_upgrade_max = ceil(_upgrade_max_levels select _x);
+
+	switch(true) do {
+		case (_upgrade_cur == (_upgrade_max/2)): {_evolve pushBackUnique 1};
+		case (_upgrade_cur > (_upgrade_max/2)): {_evolve pushBackUnique 2};
+		default {_evolve pushBackUnique 0};
+	};
+	
+} forEach [CTI_UPGRADE_GEAR,CTI_UPGRADE_BARRACKS,CTI_UPGRADE_LIGHT,CTI_UPGRADE_HEAVY];
+
+if!(0 in _evolve) then {
+	if(1 in _evolve) then {
+		_sid = "";
+		_tag = "GUER_";
+		switch (_side) do {
+			case west: {_tag = "WEST_";};
+			case east: {_tag = "EAST_";};
+			case resistance: {_tag = "GUER_";};
+			default {};
+		};
+
+		if(_side == west) then {
+			if(CTI_BW_ADDON > 0) then {
+				_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+				if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_BWA3_ID) then {
+					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_BW_BWA3.sqf";
+				};
+			};
+			if(CTI_BWADD_ADDON > 0) then {
+				if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_BWADD_ID) then {
+					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_BW_BWadd.sqf";
+				};
+			};
+		} else {
+			//no later versions off NVA units because history
+		};
+		if(CTI_RHS_ADDON > 0) then {
+			if(_side == west) then {
+				if((_isThisMain select 0) == CTI_US_ID && (_isThisMain select 1) == CTI_RHS_ID) then {
+					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_US_RHS.sqf";
+				};
+			} else {
+				if((_isThisMain select 0) == CTI_SOV_ID && (_isThisMain select 1) == CTI_RHS_ID) then {
+					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_SOV_RHS.sqf";
+				};
+			};
+		};
+		if(CTI_CUP_ADDON > 0) then {
+			if(_side == west) then {
+				if((_isThisMain select 0) == CTI_US_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {
+					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_US_CUP.sqf";
+				};
+			} else {
+				if((_isThisMain select 0) == CTI_SOV_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {
+					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_SOV_CUP.sqf";
+				};
+			};
+		};
+	};
 };
 
 _logic setVariable ["cti_upgrades", _upgrades, true];

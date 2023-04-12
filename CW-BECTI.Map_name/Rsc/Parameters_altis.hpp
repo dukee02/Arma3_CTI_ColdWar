@@ -170,6 +170,14 @@ class Params {
 		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
 		default = -1;
 	};
+	class CTI_CAMO_ACTIVATION {
+		title = "Main Camo";
+		values[] = {-1,0,1,2,3,4,5,6,7};
+		texts[] = {"auto","Standard", "Winter", "Desert", "Jungle", "Urban", "Maritim", "Special", "All active (Main = Standard)"};
+		//values[] = {0,1,2,3,4};
+		//texts[] = {"Standard", "Winter", "Desert", "Autumn (Brown)", "All active (Main = Standard)"};
+		default = -1;
+	};
 	class CTI_WEST_FLAG {
 		title = "FLAG: Flagtexture of the West-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};

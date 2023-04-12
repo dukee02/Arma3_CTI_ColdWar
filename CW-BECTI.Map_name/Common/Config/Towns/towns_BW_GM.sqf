@@ -3,56 +3,17 @@ _sid = "";
 _tag = "";
 _level = 0;
 
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_tag = "WEST_";
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_tag = "EAST_";
-	} 
-	else {
-		//_sid = "VIOC_I_";
-		_tag = "GUER_";
-	};
+switch (_side) do {
+	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};
+	case east: {/*_sid = "VIOC_O_";*/_tag = "EAST_";};
+	case resistance: {/*_sid = "VIOC_I_";*/_tag = "GUER_";};
+	default {};
 };
 //if(CTI_VIO_ADDON == 0) then {_sid = "";};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Towns_BW_GM.sqf", format["Town Squad preparation - sid: <%1> tag: <%2> ", _sid, _tag]] call CTI_CO_FNC_Log;};
 
 (_tag) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_SetTownFlag.sqf";
-
-//needed for townvehicles if nation on IND side
-if(_tag == "GUER_") then {
-	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid]];
-	};
-	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid]];
-	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION > 3 || CTI_CAMO_ACTIVATION == 7) then {		//main camo active
-		missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid]];
-	};
-	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1gm_ge_army_crew_mp2a1_80_oli", _sid]];
-	missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1gm_ge_army_pilot_p1_80_oli", _sid]];
-};
-//needed for Tonw units if the camo differs
-if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_win", _sid]];
-		missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid]];
-	};
-	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_ge_army_squadleader_g3a3_p2a1_80_ols", _sid]];
-		missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid]];
-	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION > 3 || CTI_CAMO_ACTIVATION == 7) then {		//main camo active
-		missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_ge_army_squadleader_g3a3_p2a1_parka_80_ols", _sid]];
-		missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid]];
-	};
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1gm_ge_army_crew_mp2a1_80_oli", _sid]];
-};
 
 //***************************************************************************************************************************************
 //														Town infantry setup																*
