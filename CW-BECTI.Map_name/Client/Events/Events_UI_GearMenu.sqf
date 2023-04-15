@@ -319,7 +319,7 @@ switch (_action) do {
 		
 		if (_upgrade > _upgrade_gear) exitWith {
 			hint parseText format["<t size='1.3' color='#2394ef'>Information</t><br /><br /><t align='left'>The template could not be created since some items does not meet the current <t color='#F5D363'>Gear:[%1]</t> upgrade level</t>", _maxUGgear];
-			
+			["CTI_DEBUG_INFO", "Method: onTemplateCreation", format["The template for side %1 could not be created! Gear:<%2> Upgrade:<%3>", CTI_P_SideJoined, _maxUGgear, _upgrade_gear]] call CTI_CO_FNC_Log;	
 		};
 		
 		//if (_dontbelong) exitWith {

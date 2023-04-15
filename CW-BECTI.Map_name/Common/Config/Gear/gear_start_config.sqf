@@ -230,8 +230,8 @@ switch(_nationID) do {
 			case CTI_RHS_ID: {
 				_weapon = "rhs_weap_m16a4_carryhandle";
 				_weapon_ammo = "rhs_mag_30Rnd_556x45_M855_Stanag";
-				_weapon_att_optic = "rhsusf_acc_ACOG_USMC";
-				_weapon_att_light = "rhsusf_acc_anpeq16a";
+				_weapon_att_optic = "rhsusf_acc_mrds";
+				_weapon_att_light = "rhsusf_acc_M952V";
 				_grenades = "rhs_mag_m67";
 				_bino = "rhsusf_bino_m24";
 				//CTI_CAMO_ACTIVATION = 0 normal camo | 1 winter camo | 2 desert camo | 3 jungle camo | 4 urban camo | 5 maritim camo | 6 special | 7 all
@@ -329,22 +329,22 @@ switch(_nationID) do {
 				switch(CTI_CAMO_ACTIVATION) do {
 					case 2: {
 						_uniform = "rhs_uniform_vdv_emr_des";
-						_vest = "rhs_6b23_digi_6sh92";
+						_vest = "rhs_6sh92_vsr";
 						_helmet = "rhs_6b28";
 					};
 					case 3: {
 						_uniform = "rhs_uniform_vkpo_gloves";
-						_vest = "rhs_6b45_rifleman_2";
+						_vest = "rhs_6sh92_digi";
 						_helmet = "rhs_6b47_emr_1";
 					};
 					case 4: {
 						_uniform = "rhs_uniform_vdv_mflora";
-						_vest = "rhs_6sh92_digi";
+						_vest = "rhs_6sh92_vsr";
 						_helmet = "rhs_6b27m_green_ess";
 					};
 					default {
 						_uniform = "rhs_uniform_vdv_flora";
-						_vest = "rhs_6b23_rifleman";
+						_vest = "rhs_6sh92";
 						_helmet = "rhs_6b28_flora";
 					};
 				};

@@ -223,6 +223,47 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 };
 
 _c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_Stanag";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk262_Stanag";
+_c pushBack "rhs_mag_30Rnd_556x45_M193_Stanag";
+_c pushBack "rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M200_Stanag";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Pull";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Ranger";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Ranger_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk262_Stanag_Ranger";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_SCAR";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_PMAG";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk262_PMAG";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan";
+_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG_Tan";
+_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG_Tan_Tracer_Red";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan";
+_c pushBack "rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -851,55 +892,6 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_Stanag";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk262_Stanag";
-_c pushBack "rhs_mag_30Rnd_556x45_M193_Stanag";
-_c pushBack "rhs_mag_30Rnd_556x45_M196_Stanag_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M200_Stanag";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Pull";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Ranger";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Pull_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_Stanag_Ranger_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Pull_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_Stanag_Ranger_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_Stanag_Pull";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_Stanag_Ranger";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk262_Stanag_Pull";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk262_Stanag_Ranger";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Pull_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_EPM_Ranger_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_SCAR";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_SCAR_Pull";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_SCAR_Ranger";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_PMAG";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk262_PMAG";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan";
-_c pushBack "rhs_mag_30Rnd_556x45_M855A1_PMAG_Tan_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG_Tan";
-_c pushBack "rhs_mag_30Rnd_556x45_M855_PMAG_Tan_Tracer_Red";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk318_PMAG_Tan";
-_c pushBack "rhs_mag_30Rnd_556x45_Mk262_PMAG_Tan";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(556*45)] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-
 _c pushBack "rhs_mag_20Rnd_556x45_M193_Stanag";
 _c pushBack "rhs_mag_20Rnd_556x45_M196_Stanag_Tracer_Red";
 _c pushBack "rhs_mag_20Rnd_556x45_M200_Stanag";
@@ -967,25 +959,6 @@ _cntend = count _u;
 for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-
-//light/laser
-_c pushBack "rhsusf_acc_anpeq15_wmx";				//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq15_wmx_light";			//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq15";					//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq15_light";				//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode>
-_c pushBack "rhsusf_acc_anpeq15_bk";				//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq15_bk_light";			//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq16a";					//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq16a_light";			//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq16a_top";				//IR Laser. Press CTRL+C (next CM key) to change IR/Light mode
-_c pushBack "rhsusf_acc_anpeq16a_light_top";		//Weapon mounted light. Press CTRL+C (next CM key) to change IR/Light mode
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
