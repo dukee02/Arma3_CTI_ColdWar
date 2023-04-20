@@ -113,3 +113,15 @@ gm_gc_army_dshkm_aatripod
 gm_gc_army_fagot_launcher_tripod
 gm_gc_army_spg9_tripod
 
+
+
+
+
+"gm_gc_army_brdm2rkh"
+"gm_gc_army_btr60pa_dshkm"
+
+
+
+
+
+

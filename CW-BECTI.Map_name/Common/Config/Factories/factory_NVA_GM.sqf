@@ -158,14 +158,17 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_brdm2_win", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_brdm2rkh_win", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_brdm2um_win", _sid];//unarmed	
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_brdm2_wdl", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_brdm2rkh_wdl", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_brdm2um_wdl", _sid];//unarmed	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_brdm2", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_brdm2rkh", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_brdm2um", _sid];//unarmed	
 	};		
 };
@@ -177,18 +180,21 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1gm_gc_army_btr60pa_win", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pu12_win", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pb_win", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_btr60pa_dshkm_win", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs_win", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_btr60pa_wdl", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pu12_wdl", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pb_wdl", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_btr60pa_dshkm_wdl", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs_wdl", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_btr60pa", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pu12", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pb", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_btr60pa_dshkm", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs", _sid];		
 	};
 };

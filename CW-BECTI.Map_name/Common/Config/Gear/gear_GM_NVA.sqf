@@ -53,6 +53,14 @@ _c pushBack "gm_gc_army_medkit";
 _u pushBack 0;
 _p pushBack 15;
 
+_c pushBack "gm_lpr1_oli";
+_u pushBack 3;
+_p pushBack 1000;
+
+_c pushBack "gm_nsg66_oli";
+_u pushBack 2;
+_p pushBack 500;
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Grenade and Mines														//
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -117,8 +125,16 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 };
 
 _c pushBack "gm_pm_blk";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "gm_pim_blk";
+_c pushBack "gm_pimb_blk";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
 
 _c pushBack "gm_8rnd_9x18mm_b_pst_pm_blk";
 _u pushBack _tech_level;
@@ -170,11 +186,15 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,25,(900*18)] call CTI_CO
 //													Assault Rifles															//
 //--------------------------------------------------------------------------------------------------------------------------//
 _c pushBack "gm_mpiak74n_brn";
+_c pushBack "gm_mpiak74n_blk";
 _c pushBack "gm_mpiak74n_prp";
 _c pushBack "gm_mpiaks74n_brn";
+_c pushBack "gm_mpiaks74n_blk";
 _c pushBack "gm_mpiaks74n_prp";
 _c pushBack "gm_mpiaks74nk_brn";
+_c pushBack "gm_mpiaks74nk_blk";
 _c pushBack "gm_mpiaks74nk_prp";
+_c pushBack "gm_ak74n_wud";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -200,6 +220,26 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
+//													Attachments																//
+//--------------------------------------------------------------------------------------------------------------------------//
+//light
+_c pushBack "gm_zvn64_ak";
+_c pushBack "gm_zvn64_rear_ak";
+_c pushBack "gm_zvn64_front";
+_c pushBack "gm_flashlightp2_wht_ak74handguard_blu";
+_c pushBack "gm_flashlightp2_brk_ak74handguard_dino";
+
+_c pushBack "gm_bayonet_6x3_wud";
+_c pushBack "gm_bayonet_6x3_blk";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
 //													MG																		//
 //--------------------------------------------------------------------------------------------------------------------------//
 _c pushBack "gm_lmgrpk74n_brn";
@@ -222,6 +262,10 @@ _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 _c pushBack "gm_1Rnd_40mm_heat_pg7v_rpg7";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "gm_1Rnd_40mm_heat_pg7vl_rpg7";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
 
@@ -330,22 +374,6 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
-//--------------------------------------------------------------------------------------------------------------------------//
-//													Attachments																//
-//--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_zvn64_rear_ak";
-_c pushBack "gm_zvn64_front";
-_c pushBack "gm_bayonet_6x3_wud";
-_c pushBack "gm_bayonet_6x3_blk";
-_c pushBack "gm_pgo7v_blk";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-
 //-------------------------------------------------------------------------------------------Level 1-----------------------------------------------------------------------------------------------
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
@@ -353,32 +381,57 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Assault Rifles															//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_mpikm72_brn";
-_c pushBack "gm_mpikm72_prp";
-_c pushBack "gm_mpikms72_brn";
-_c pushBack "gm_mpikms72_prp";
+_c pushBack "gm_akm_pallad_wud";
+_c pushBack "gm_akml_wud";
+_c pushBack "gm_akmn_wud";
+_c pushBack "gm_akms_wud";
+_c pushBack "gm_akmsl_wud";
+_c pushBack "gm_akmsn_wud";
 _c pushBack "gm_akm_wud";
+_c pushBack "gm_mpikm72_brn";
+_c pushBack "gm_mpikm72_blk";
+_c pushBack "gm_mpikm72_prp";
+_c pushBack "gm_mpikm_brn";
+_c pushBack "gm_mpikms72_brn";
+_c pushBack "gm_mpikms72_blk";
+_c pushBack "gm_mpikms72_prp";
+_c pushBack "gm_mpikms72k_brn";
+_c pushBack "gm_mpikms72k_blk";
+_c pushBack "gm_mpikms72k_prp";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
+_itemprise = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize;
 for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
 	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+	_p pushBack _itemprise;
 };
 
 _c pushBack "gm_30Rnd_762x39mm_b_M43_ak47_blk";
 _c pushBack "gm_30Rnd_762x39mm_b_t_M43_ak47_blk";
-_c pushBack "gm_75Rnd_762x39mm_b_M43_ak47_blk";
-_c pushBack "gm_75Rnd_762x39mm_b_t_M43_ak47_blk";
 _c pushBack "gm_30Rnd_762x39mm_B_57N231_ak47_blk";
 _c pushBack "gm_30Rnd_762x39mm_B_T_57N231P_ak47_blk";
 _c pushBack "gm_30Rnd_762x39mm_AP_7N23_ak47_blk";
+_c pushBack "gm_30Rnd_762x39mm_AP_7N23_akm_org";
+_c pushBack "gm_30Rnd_762x39mm_B_57N231_mpikm_blk";
+_c pushBack "gm_30Rnd_762x39mm_BSD_57N231U_ak47_blk";
+_c pushBack "gm_30Rnd_762x39mm_BSD_57N231U_mpikm_blk";
+_c pushBack "gm_30Rnd_762x39mm_B_T_57N231P_mpikm_blk";
+_c pushBack "gm_30Rnd_762x39mm_AP_7N23_mpikm_blk";
+_c pushBack "gm_30Rnd_762x39mm_B_57N231_akm_blk";
+_c pushBack "gm_30Rnd_762x39mm_BSD_57N231U_akm_blk";
+_c pushBack "gm_30Rnd_762x39mm_B_T_57N231P_akm_blk";
+_c pushBack "gm_30Rnd_762x39mm_AP_7N23_akm_blk";
+_c pushBack "gm_30Rnd_762x39mm_B_57N231_akm_org";
+_c pushBack "gm_30Rnd_762x39mm_BSD_57N231U_akm_org";
+_c pushBack "gm_30Rnd_762x39mm_B_T_57N231P_akm_org";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
+_itemprise = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(762*39)] call CTI_CO_FNC_GetCalculatedItemPrize;
 for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
 	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30,(762*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
+	_p pushBack _itemprise;
 };
 
 //_c pushBack "gm_1Rnd_fagot_heat_9m111";
@@ -396,10 +449,85 @@ _c pushBack "gm_lmgrpk_prp";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "gm_75Rnd_762x39mm_b_M43_ak47_blk";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,75,(762*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "gm_lmgrpk74n_brn";
+_c pushBack "gm_lmgrpk74n_blk";
+_c pushBack "gm_lmgrpk74n_prp";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
 
+_u pushBack _tech_level;
+
+
+_c pushBack "gm_lmgk500_brn";
+_c pushBack "gm_lmgk500_blk";
+_c pushBack "gm_lmgk500_prp";
+_c pushBack "gm_lmgk500s_brn";
+_c pushBack "gm_lmgk500s_blk";
+_c pushBack "gm_lmgk500s_prp";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+_itemprise = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack _itemprise;
+};
+
+_c pushBack "gm_75Rnd_762x39mm_b_M43_ak47_blk";
+_c pushBack "gm_75Rnd_762x39mm_b_t_M43_ak47_blk";
+_c pushBack "gm_75Rnd_762x39mm_B_57N231_ak47_blk";
+_c pushBack "gm_75Rnd_762x39mm_BSD_57N231U_ak47_blk";
+_c pushBack "gm_75Rnd_762x39mm_B_T_57N231P_ak47_blk";
+_c pushBack "gm_75Rnd_762x39mm_AP_7N23_ak47_blk";
+_c pushBack "gm_75Rnd_762x39mm_B_57N231_mpikm_blk";
+_c pushBack "gm_75Rnd_762x39mm_BSD_57N231U_mpikm_blk";
+_c pushBack "gm_75Rnd_762x39mm_B_T_57N231P_mpikm_blk";
+_c pushBack "gm_75Rnd_762x39mm_AP_7N23_mpikm_blk";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+_itemprise = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,75,(762*39)] call CTI_CO_FNC_GetCalculatedItemPrize;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack _itemprise;
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													AT-Guns																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+_c pushBack "gm_rpg18_oli";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+//_c pushBack "gm_1Rnd_64mm_heat_pg18";
+//_u pushBack _tech_level;
+//_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Attachments																//
+//--------------------------------------------------------------------------------------------------------------------------//
+_c pushBack "gm_pso1_gry";
+_c pushBack "gm_zfk4x25_blk";
+
+//laser
+_c pushBack "gm_zln1k_grn_dovetail_blk";
+_c pushBack "gm_zln1k_grn_dovetail_gry";
+_c pushBack "gm_zln1k_ir_dovetail_blk";
+_c pushBack "gm_zln1k_ir_dovetail_gry";
+
+_c pushBack "gm_suppressor_pbs4_545mm_blk";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
 
 //-------------------------------------------------------------------------------------------Level 2-----------------------------------------------------------------------------------------------
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -408,9 +536,10 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Assault Rifles															//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_akm_pallad_wud";
-_c pushBack "gm_akmn_wud";
 _c pushBack "gm_svd_wud";
+_c pushBack "gm_mpikms72ksd_brn";
+_c pushBack "gm_mpikms72ksd_blk";
+_c pushBack "gm_mpikms72ksd_prp";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -458,13 +587,20 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_Get
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Optics																	//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_zfk4x25_blk";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "gm_pka_dovetail_blk";
+_c pushBack "gm_pka_dovetail_gry";
 
-_c pushBack "gm_pso1_gry";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "gm_nspu_dovetail_blk";
+_c pushBack "gm_nspu_dovetail_gry";
+
+_c pushBack "gm_suppressor_pbs1_762mm_blk";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
 
 //Update the calculatetd max upgrade level
 if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {

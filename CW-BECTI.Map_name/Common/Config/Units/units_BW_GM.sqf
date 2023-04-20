@@ -297,6 +297,11 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_s pushBack "";
 	_d pushBack 0;
 
+	_c pushBack format["%1gm_ge_army_typ1200_cargo", _sid];
+	_c pushBack format["%1gm_ge_army_typ247_firefighter", _sid];
+	_c pushBack format["%1gm_ge_army_typ247_cargo", _sid];
+	_c pushBack format["%1gm_ge_army_typ253_cargo", _sid];
+	_c pushBack format["%1gm_ge_army_typ253_mp", _sid];
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
 		_c pushBack format["%1gm_ge_army_u1300l_container_win", _sid];
@@ -342,6 +347,16 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+
+	_c pushBack format["%1gm_ge_army_w123_cargo", _sid];
+	_p pushBack '';
+	_n pushBack '';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false,0.5] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "";
+	_d pushBack 0;
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_iltis_mg3_win", _sid];
@@ -1024,6 +1039,8 @@ if(_setupBaseUnits) then {
 	switch true do
 	{
 		case (CTI_ADDON_CHARLIECO == 1): {
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["Salvager CHARLIECO declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
 			_c pushBack format["CTI_Salvager_%1", _side];
 			_p pushBack '';
 			_n pushBack 'Salvager Truck';
@@ -1045,6 +1062,8 @@ if(_setupBaseUnits) then {
 			_d pushBack 0;
 		};
 		case (CTI_SALVAGE_SPECIAL > 0): {
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["Salvager GM Fire declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
 			_c pushBack format["CTI_Salvager_%1", _side];
 			_p pushBack '';
 			_n pushBack 'Salvager Truck';
@@ -1067,6 +1086,8 @@ if(_setupBaseUnits) then {
 			_d pushBack 0;
 		};
 		default  {
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["Salvager default declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
 			if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
 				_p pushBack '';
@@ -1380,14 +1401,22 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_NAVAL) then {
 	_upgrade_levels set [CTI_UPGRADE_NAVAL, _tech_level];
 };
 
-//*********************************************************************************************************************************************
-//											 Civilian units																		  	  *
-//*********************************************************************************************************************************************
+//*******************************************************************************************************************************************
+//											 Civilian units																		  	  		*
+//*******************************************************************************************************************************************
 _tech_level = 0;
 _building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
 _c pushBack format["%1gm_ge_civ_typ1200", _sid];
+_c pushBack format["%1gm_ge_civ_typ247", _sid];
+_c pushBack format["%1gm_ge_civ_typ251", _sid];
+_c pushBack format["%1gm_ge_civ_typ253", _sid];
+
+_c pushBack format["%1gm_ge_taxi_typ253", _sid];
+
 _c pushBack format["%1gm_ge_dbp_typ1200", _sid];
+_c pushBack format["%1gm_ge_dbp_typ247", _sid];
+_c pushBack format["%1gm_ge_dbp_typ251", _sid];
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _p;
@@ -1402,8 +1431,13 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_d pushBack 0;	
 };
 
-_c pushBack format["%1gm_ge_pol_typ1200", _sid];
 _c pushBack format["%1gm_ge_ff_typ1200", _sid];
+_c pushBack format["%1gm_ge_ff_typ247_firefighter", _sid];
+_c pushBack format["%1gm_ge_ff_typ247", _sid];
+_c pushBack format["%1gm_ge_ff_typ253", _sid];
+
+_c pushBack format["%1gm_ge_pol_typ1200", _sid];
+_c pushBack format["%1gm_ge_pol_typ253", _sid];
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _p;
@@ -1416,6 +1450,57 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
 	_d pushBack 0;	
+};
+
+_c pushBack format["%1gm_ge_civ_w123", _sid];
+
+_c pushBack format["%1gm_ge_taxi_w123", _sid];
+
+_c pushBack format["%1gm_ge_dbp_w123", _sid];
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _p;
+for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+	_p pushBack '';
+	_n pushBack '';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true,0.5] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "";
+	_d pushBack 0;	
+};
+
+_c pushBack format["%1gm_ge_ff_w123", _sid];
+
+_c pushBack format["%1gm_ge_pol_w123", _sid];
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _p;
+for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+	_p pushBack '';
+	_n pushBack '';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "";
+	_d pushBack 0;	
+};
+
+_c pushBack format["%1gm_ge_ff_u1300l_medic", _sid];
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _p;
+for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+	_p pushBack '';
+	_n pushBack 'Rettungswagen FW (Mobile Respawn)';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "service-medic";
+	_d pushBack 0;		
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};

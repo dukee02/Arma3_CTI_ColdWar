@@ -317,12 +317,15 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_brdm2_win", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_brdm2rkh_win", _sid];//MG + 2cm
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_brdm2_wdl", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_brdm2rkh_wdl", _sid];//MG + 2cm
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_brdm2", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_brdm2rkh", _sid];//MG + 2cm
 	};	
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -372,14 +375,17 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_btr60pb_win", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_btr60pa_dshkm_win", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs_win", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_btr60pb_wdl", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_btr60pa_dshkm_wdl", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs_wdl", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		_c pushBack format["%1gm_gc_army_btr60pb", _sid];//MG + 2cm
+		_c pushBack format["%1gm_gc_army_btr60pa_dshkm", _sid];//MG + 2cm
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs", _sid];		
 	};
 	//set all other vars in a slope
@@ -647,6 +653,8 @@ if(_setupBaseUnits) then {
 	switch true do
 	{
 		case (CTI_ADDON_CHARLIECO == 1): {
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_NVA_GM.sqf", format["Salvager CHARLIECO declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
 			_c pushBack format["CTI_Salvager_%1", _side];
 			_p pushBack '';
 			_n pushBack 'Salvager Truck';
@@ -668,6 +676,8 @@ if(_setupBaseUnits) then {
 			_d pushBack 0;
 		};
 		case (CTI_SALVAGE_SPECIAL > 0): {
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_NVA_GM.sqf", format["Salvager GM Fire declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
 			_c pushBack format["CTI_Salvager_%1", _side];
 			_p pushBack '';
 			_n pushBack 'Salvager Truck';
@@ -689,6 +699,8 @@ if(_setupBaseUnits) then {
 			_d pushBack 0;
 		};
 		default  {
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_NVA_GM.sqf", format["Salvager default declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
 			if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
 				_p pushBack '';
@@ -731,7 +743,7 @@ if(_setupBaseUnits) then {
 				_s pushBack [format["%1gm_gc_army_ural44202_wdl", _sid],"salvager-independent"];
 				_d pushBack 0;
 			};
-			if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+			if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
 				_p pushBack '';
 				_n pushBack 'Salvager Truck';
@@ -756,7 +768,6 @@ if(_setupBaseUnits) then {
 	};
 };
 
-
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_NVA_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
 
@@ -770,7 +781,7 @@ if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo a
 if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 	_c pushBack format["%1gm_gc_army_ural4320_repair_wdl", _sid];//Repairtruck
 };
-if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 	_c pushBack format["%1gm_gc_army_ural4320_repair", _sid];//Repairtruck
 };
 //set all other vars in a slope

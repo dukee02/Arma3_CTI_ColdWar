@@ -199,6 +199,11 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1gm_ge_army_bicycle_01_oli", _sid];
 	_c pushBack format["%1gm_ge_army_k125", _sid];
+	_c pushBack format["%1gm_ge_army_typ1200_cargo", _sid];
+	_c pushBack format["%1gm_ge_army_typ247_firefighter", _sid];
+	_c pushBack format["%1gm_ge_army_typ247_cargo", _sid];
+	_c pushBack format["%1gm_ge_army_typ253_cargo", _sid];
+	_c pushBack format["%1gm_ge_army_typ253_mp", _sid];
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
 		_c pushBack format["%1gm_ge_army_u1300l_container_win", _sid];
@@ -229,6 +234,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	_c pushBack format["%1gm_ge_army_w123_cargo", _sid];
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_iltis_mg3_win", _sid];
 		_c pushBack format["%1gm_ge_army_iltis_milan_win", _sid];
@@ -709,11 +715,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 	};
 };
 
-_c pushBack format["%1gm_ge_army_k125", _sid];
-_c pushBack format["%1gm_ge_civ_typ1200", _sid];
-_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
-_c pushBack format["%1gm_ge_pol_typ1200", _sid];
-_c pushBack format["%1gm_ge_ff_typ1200", _sid];
 if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 	_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
 };
@@ -729,6 +730,32 @@ if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo 
 if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 	_c pushBack format["%1gm_ge_army_iltis_cargo", _sid];
 };
+_c pushBack format["%1gm_ge_army_k125", _sid];
+
+_c pushBack format["%1gm_ge_civ_typ1200", _sid];
+_c pushBack format["%1gm_ge_civ_typ247", _sid];
+_c pushBack format["%1gm_ge_civ_typ251", _sid];
+_c pushBack format["%1gm_ge_civ_typ253", _sid];
+_c pushBack format["%1gm_ge_civ_w123", _sid];
+
+_c pushBack format["%1gm_ge_taxi_typ253", _sid];
+_c pushBack format["%1gm_ge_taxi_w123", _sid];
+
+_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
+_c pushBack format["%1gm_ge_dbp_typ247", _sid];
+_c pushBack format["%1gm_ge_dbp_typ251", _sid];
+_c pushBack format["%1gm_ge_dbp_w123", _sid];
+
+_c pushBack format["%1gm_ge_ff_typ1200", _sid];
+_c pushBack format["%1gm_ge_ff_typ247_firefighter", _sid];
+_c pushBack format["%1gm_ge_ff_typ247", _sid];
+_c pushBack format["%1gm_ge_ff_typ253", _sid];
+_c pushBack format["%1gm_ge_ff_u1300l_medic", _sid];
+_c pushBack format["%1gm_ge_ff_w123", _sid];
+
+_c pushBack format["%1gm_ge_pol_typ1200", _sid];
+_c pushBack format["%1gm_ge_pol_typ253", _sid];
+_c pushBack format["%1gm_ge_pol_w123", _sid];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {

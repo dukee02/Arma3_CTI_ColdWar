@@ -285,32 +285,6 @@ if(CTI_CHDKZ_SIDE >= 0) then {
 		if(CTI_CHDKZ_SIDE == 2) then {missionNamespace setVariable [format ["CTI_%1_MAINNATIONS", resistance], [CTI_CHDKZ_ID, CTI_RHS_ID]]};
 	};
 };
-if(CTI_CDF_SIDE >= 0) then {
-	if(CTI_RHS_ADDON >= 0) then {
-		((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_CDF_RHS.sqf";
-		((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_CDF_RHS.sqf";
-		if((CTI_CDF_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_CDF_SIDE == 1 && CTI_EAST_AI < 0)) then {
-			((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_CDF_RHS.sqf";
-		};
-		if((CTI_CDF_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_CDF_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_CDF_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
-			((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_CDF_RHS.sqf";
-		};
-		((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_CDF.sqf";
-	};
-};
-if(CTI_CHDKZ_SIDE >= 0) then {
-	if(CTI_RHS_ADDON >= 0) then {
-		((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_ChDKZ_RHS.sqf";
-		((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_ChDKZ_RHS.sqf";
-		if((CTI_CHDKZ_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_CHDKZ_SIDE == 1 && CTI_EAST_AI < 0)) then {
-			((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_ChDKZ_RHS.sqf";
-		};
-		if((CTI_CHDKZ_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_CHDKZ_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_CHDKZ_SIDE == 2 && CTI_GUER_TOWNS < 0)) then {
-			((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_ChDKZ_RHS.sqf";
-		};
-		((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_RHS_ChDKZ.sqf";
-	};
-};
 //CTI_DK_SIDE declaration
 /*if(CTI_DK_SIDE >= 0) then {
 	((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_DK.sqf";
