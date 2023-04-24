@@ -45,5 +45,5 @@ copy "%gitpath%\CW-BECTI.Map_name\description.ext" "%buildpath%\%missionfloder%\
 copy "%gitpath%\CW-BECTI.Map_name\init.sqf" "%buildpath%\%missionfloder%\init.sqf"
 ::copy "%gitpath%\CW-BECTI.Map_name\mission_%mapname%.sqm" "%buildpath%\%missionfloder%\mission.sqm"
 copy "%gitpath%\CW-BECTI.Map_name\mission_rosche.sqm" "%buildpath%\%missionfloder%\mission.sqm"
-copy "%gitpath%\CW-BECTI.Map_name\VIO_BECTI.jpg" "%buildpath%\%missionfloder%\VIO_BECTI.jpg"
+copy "%gitpath%\CW-Thumpnails\CW_BECTI_%mapname%_small.jpg" "%buildpath%\%missionfloder%\VIO_BECTI.jpg"
 copy "%gitpath%\CW-BECTI.Map_name\WFpostprocess.sqf" "%buildpath%\%missionfloder%\WFpostprocess.sqf"
