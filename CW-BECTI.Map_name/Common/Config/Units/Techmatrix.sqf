@@ -7,7 +7,7 @@ _tech_matrix =
 		//CTI_BW_ID
 		[
 			//CTI_GM_ID
-			[true,true,true,true,true,false,false],
+			[true,true,true,true,false,false,false],
 			//CTI_PF_ID
 			[false,false,false,false,false,false,false],
 			//CTI_IC_ID
@@ -20,9 +20,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,true,true,true,false],
@@ -47,9 +47,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -74,9 +74,9 @@ _tech_matrix =
 			[false,false,false,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -101,9 +101,9 @@ _tech_matrix =
 			[false,false,false,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -128,9 +128,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -155,9 +155,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -182,9 +182,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -209,9 +209,9 @@ _tech_matrix =
 			[true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -236,9 +236,9 @@ _tech_matrix =
 			[true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -279,9 +279,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,true,true,false,false,false,false,false,false],
@@ -306,9 +306,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -333,9 +333,9 @@ _tech_matrix =
 			[false,true,true,true,true,true,true,false,false,false],
 			//CTI_CWR3_ID
 			[true,true,false,true,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -360,9 +360,9 @@ _tech_matrix =
 			[true,true,true,false,false,true,true,true,true,true],
 			//CTI_CWR3_ID
 			[false,true,true,true,true,true,false,true,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -387,9 +387,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -414,9 +414,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -441,9 +441,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,true,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -468,9 +468,9 @@ _tech_matrix =
 			[false,true,true,true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -495,9 +495,9 @@ _tech_matrix =
 			[true,true,false,true,true,true,true,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false,false],
@@ -538,9 +538,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,true,true,true,false],
@@ -565,9 +565,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -592,9 +592,9 @@ _tech_matrix =
 			[true,true,true,true,false,true,true,true,true],
 			//CTI_CWR3_ID
 			[true,true,true,true,true,true,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -619,9 +619,9 @@ _tech_matrix =
 			[true,true,true,true,true,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -646,9 +646,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -673,9 +673,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -700,9 +700,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -727,9 +727,9 @@ _tech_matrix =
 			[true,true,true,true,true,true,true,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -754,9 +754,9 @@ _tech_matrix =
 			[true,true,true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -797,10 +797,10 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
-			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
-			[false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,true,true,true,false,true,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,true,true,true,true,true,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,true,true,false,false,false],
 			//CTI_BWADD_ID
@@ -824,10 +824,10 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
-			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
-			[false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,true,true,true,false,true,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,true,true,true,true,true,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWADD_ID
@@ -851,10 +851,10 @@ _tech_matrix =
 			[true,true,true,true,true,true,true,false,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,false,true,true,false,false],
-			//CTI_VME_ID
-			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
-			[false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,true,true,true,false,true,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,true,true,true,true,true,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWADD_ID
@@ -878,10 +878,10 @@ _tech_matrix =
 			[false,true,true,true,true,true,true,false,false],
 			//CTI_CWR3_ID
 			[false,true,true,true,true,false,false,false,false],
-			//CTI_VME_ID
-			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
-			[false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,true,true,true,false,true,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,true,true,true,true,true,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWADD_ID
@@ -905,9 +905,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -932,9 +932,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -959,9 +959,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[true,true,true,true,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -986,9 +986,9 @@ _tech_matrix =
 			[true,true,true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -1013,9 +1013,9 @@ _tech_matrix =
 			[false,true,false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false,false,false],
@@ -1056,9 +1056,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1083,9 +1083,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1110,9 +1110,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[true,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1137,9 +1137,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[true,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1164,9 +1164,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1191,9 +1191,9 @@ _tech_matrix =
 			[true,true,true,true],
 			//CTI_CWR3_ID
 			[false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1218,9 +1218,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[true,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1245,9 +1245,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1272,9 +1272,9 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false],
@@ -1317,9 +1317,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,true,true,false,false],
@@ -1344,9 +1344,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1371,9 +1371,9 @@ _tech_matrix =
 			[false,false,false,true,true,true,true],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1398,9 +1398,9 @@ _tech_matrix =
 			[false,false,false,true,true,true,false],
 			//CTI_CWR3_ID
 			[true,true,true,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1425,9 +1425,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1452,9 +1452,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1479,9 +1479,9 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1506,9 +1506,9 @@ _tech_matrix =
 			[true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],
@@ -1533,9 +1533,9 @@ _tech_matrix =
 			[true,true,true,false,false,false,false],
 			//CTI_CWR3_ID
 			[false,false,false,false,false,false,false],
-			//CTI_VME_ID
+			//CTI_SABAIR_ID
 			[false,false,false,false,false,false,false],
-			//CTI_UKR_ID
+			//CTI_POOKAIR_ID
 			[false,false,false,false,false,false,false],
 			//CTI_BWA3_ID
 			[false,false,false,false,false,false,false],

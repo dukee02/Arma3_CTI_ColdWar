@@ -33,8 +33,8 @@ _matrix_full = [_side, CTI_UPGRADE_BARRACKS] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_BARRACKS, CTI_US_ID, CTI_CWR3_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	_c pushBack format["%1cwr3_b_soldier82", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_driver", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_sapper", _sid];
@@ -53,8 +53,8 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	_c pushBack format["%1cwr3_b_soldier82_aar_m16", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_aar", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_ar", _sid];
@@ -72,8 +72,8 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 	_c pushBack format["%1cwr3_b_soldier_pilot_light", _sid];
 };
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	_c pushBack format["%1cwr3_b_soldier82_aa_stinger", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_at_m47", _sid];
 	_c pushBack format["%1cwr3_b_soldier82_aat_m47", _sid];
@@ -103,15 +103,15 @@ _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_CWR3_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1cwr3_b_m151", _sid];
 	_c pushBack format["%1cwr3_b_m151_m2", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1cwr3_b_hmmwv", _sid];
 	_c pushBack format["%1cwr3_b_hmmwv_transport", _sid];
 	_c pushBack format["%1cwr3_b_hmmwv_m2", _sid];
@@ -124,13 +124,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1cwr3_b_hmmwv_mev", _sid];
 	_c pushBack format["%1cwr3_b_hmmwv_tow", _sid];
 };
@@ -153,38 +153,38 @@ _matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_HEAVY, CTI_US_ID, CTI_CWR3_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	_c pushBack format["%1cwr3_b_m577_hq", _sid];
 	_c pushBack format["%1cwr3_b_m113a1_hq", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	_c pushBack format["%1cwr3_b_m113a1", _sid];
 	_c pushBack format["%1cwr3_b_m113a3_hq", _sid];
 	_c pushBack format["%1cwr3_b_m113a1_mev", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {	
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {	
 	_c pushBack format["%1cwr3_b_m113a3", _sid];
 	_c pushBack format["%1cwr3_b_m163", _sid];
 	_c pushBack format["%1cwr3_b_m113a3_mev", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	_c pushBack format["%1cwr3_b_m60a3", _sid];
 	_c pushBack format["%1cwr3_b_m60a3_tts", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	_c pushBack format["%1cwr3_b_m270_dpicm", _sid];
 	_c pushBack format["%1cwr3_b_m270_he", _sid];
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
@@ -198,8 +198,8 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	_c pushBack format["%1cwr3_b_m2a2", _sid];
 };
 
@@ -222,22 +222,22 @@ _matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_CWR3_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1cwr3_b_camel", _sid];
 	_c pushBack format["%1cwr3_b_mh6j", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1cwr3_b_ah6j", _sid];
 	_c pushBack format["%1cwr3_b_uh1", _sid];
 };
 	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1cwr3_b_uh1_armed", _sid];
 	_c pushBack format["%1cwr3_b_uh1_gunship", _sid];
 	_c pushBack format["%1cwr3_b_uh1_mev", _sid];
@@ -246,8 +246,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 };
 	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1cwr3_b_ah1f", _sid];
 	_c pushBack format["%1cwr3_b_uh60_unarmed", _sid];
 	_c pushBack format["%1cwr3_b_uh60_unarmed_ffv", _sid];
@@ -264,15 +264,15 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1cwr3_b_ah64", _sid];
 	_c pushBack format["%1cwr3_b_ah64_hellfire", _sid];
 };
 	
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1cwr3_b_kiowa_at", _sid];
 	_c pushBack format["%1cwr3_b_kiowa_dyn", _sid];
 	_c pushBack format["%1cwr3_b_kiowa_ffar", _sid];
@@ -375,8 +375,8 @@ _matrix_full = [_side, CTI_UPGRADE_NAVAL] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_NAVAL, CTI_US_ID, CTI_CWR3_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_NAVAL >= _level) then {
 	_c pushBack format["%1cwr3_b_boat", _sid];
 	_c pushBack format["%1cwr3_b_zodiac", _sid];
 };

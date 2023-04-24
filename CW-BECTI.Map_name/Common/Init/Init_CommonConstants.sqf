@@ -49,6 +49,7 @@ CTI_NAPA_ID = 17;
 CTI_ION_ID = 18;
 CTI_PLA_ID = 19;
 CTI_UKRAIN_ID = 20;
+CTI_BAF_ID = 21;
 
 //--- Mod IDs
 CTI_GM_ID = 0;		//Global Mobilization - Cold War Germany
@@ -58,11 +59,13 @@ CTI_WS_ID = 3;		//Western Sahara
 CTI_CUP_ID = 4;
 CTI_RHS_ID = 5;
 CTI_CWR3_ID = 6;
-CTI_VME_ID = 7;
-CTI_UKR_ID = 8;
+CTI_SABAIR_ID = 7;
+CTI_POOKAIR_ID = 8;
 CTI_BWA3_ID = 9;
 CTI_BWADD_ID = 10;
 CTI_REDD_ID = 11;
+CTI_UKR_ID = 12;
+CTI_VME_ID = 13;
 
 CTI_GEAR_TAB_PRIMARY = 0;
 CTI_GEAR_TAB_SECONDARY = 1;
@@ -827,6 +830,7 @@ with missionNamespace do {
 			if(worldName in ["Tanoa"]) then {CTI_CAMO_ACTIVATION = 3};
 			//if(worldName in ["gm_weferlingen_summer"]) then {CTI_CAMO_ACTIVATION = 0};
 			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = 4};
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConfig.sqf", format ["automatic CTI_CAMO_ACTIVATION, now set to <%1>", CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log };
 		} else {
 			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = CTI_CAMO_ACTIVATION};
 		};

@@ -1,104 +1,116 @@
 _side = _this;
 _sid = "";
 
-if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_CUP_ADDON > 0) then {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_O_BTR60_RU"];
-	};
-	if(CTI_CWR3_ADDON > 0) then {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_o_btr60"];
-	};
-	if(CTI_RHS_ADDON > 0) then {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhs_btr60_vdv"];
-	};
+_setupBaseUnits = false;
+_isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
+if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_GM_ID) then {_setupBaseUnits = true;};
+if (_setupBaseUnits) then {
+	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_BW_GM.sqf";
 };
-if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_CUP_ADDON > 0) then {
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_desert_USMC"];
-		} else {
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_USMC"];
-		};
-	};
-	if(CTI_CWR3_ADDON > 0) then {
-		missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_b_m577_hq"];
-	};
-	if(CTI_RHS_ADDON > 0) then {
-		if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsusf_m113d_usarmy_unarmed"];
-		} else {
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsusf_m113_usarmy_unarmed"];
-		};
-	};
-};
-if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_GM_DLC > 0) then {
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_win"];
-		};
-		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_des"];
-		};
-		if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_trp"];
-		};
-		if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_wdl"];	
-		};
-		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command"];
-		};
-	} else {
-		if(CTI_REDD_ADDON > 0) then {
+
+switch((_isThisMain select 0)) do {
+	case CTI_BW_ID: {
+		if(CTI_GM_DLC > 0) then {
 			if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-				missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Wintertarn"];
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_win"];
 			};
 			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-				missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Tropentarn"];
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_des"];
 			};
-			if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-				missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Flecktarn"];
+			if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_trp"];
+			};
+			if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command_wdl"];	
+			};
+			if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_ge_army_fuchsa0_command"];
 			};
 		} else {
-			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-				missionNamespace setVariable [format["CTI_%1_HQ", _side], "BWA3_Multi_Tropen"];
-			};
-			if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-				missionNamespace setVariable [format["CTI_%1_HQ", _side], "BWA3_Multi_Fleck"];
+			if(CTI_REDD_ADDON > 0) then {
+				if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+					missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Wintertarn"];
+				};
+				if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+					missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Tropentarn"];
+				};
+				if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+					missionNamespace setVariable [format["CTI_%1_HQ", _side], "Redd_Tank_Fuchs_1A4_Pi_Flecktarn"];
+				};
+			} else {
+				if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+					missionNamespace setVariable [format["CTI_%1_HQ", _side], "BWA3_Multi_Tropen"];
+				};
+				if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+					missionNamespace setVariable [format["CTI_%1_HQ", _side], "BWA3_Multi_Fleck"];
+				};
 			};
 		};
 	};
-};
-if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_GM_DLC > 0) then {
-		
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12_win"];
-		};
-		if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12_wdl"];
-		};
-		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12"];	
-		};
-	};
-};
-if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_RHS_ADDON > 0) then {
-		if(_side == resistance) then {
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_cdf_gaz66_r142"];
-		} else {
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_cdf_b_gaz66_r142"];
+	case CTI_NVA_ID: {
+		if(CTI_GM_DLC > 0) then {
+			if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12_win"];
+			};
+			if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12_wdl"];
+			};
+			if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "gm_gc_army_btr60pu12"];	
+			};
 		};
 	};
-};
-if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_RHS_ADDON > 0) then {
-		if(_side == resistance) then {
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_ins_g_gaz66_r142"];
-		} else {
-			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_ins_gaz66_r142"];
+	case CTI_SOV_ID: {
+		if(CTI_CUP_ADDON > 0) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_O_BTR60_RU"];
 		};
+		if(CTI_CWR3_ADDON > 0) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_o_btr60"];
+		};
+		if(CTI_RHS_ADDON > 0) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhs_btr60_vdv"];
+		};
+	};
+	case CTI_US_ID: {
+		if(CTI_CUP_ADDON > 0) then {
+			if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_desert_USMC"];
+			} else {
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_LAV25_HQ_USMC"];
+			};
+		};
+		if(CTI_CWR3_ADDON > 0) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "cwr3_b_m577_hq"];
+		};
+		if(CTI_RHS_ADDON > 0) then {
+			if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsusf_m113d_usarmy_unarmed"];
+			} else {
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsusf_m113_usarmy_unarmed"];
+			};
+		};
+	};
+	case CTI_CHDKZ_ID: {
+		if(CTI_RHS_ADDON > 0) then {
+			if(_side == resistance) then {
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_ins_g_gaz66_r142"];
+			} else {
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_ins_gaz66_r142"];
+			};
+		};
+	};
+	case CTI_CDF_ID: {
+		if(CTI_RHS_ADDON > 0) then {
+			if(_side == resistance) then {
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_cdf_gaz66_r142"];
+			} else {
+				missionNamespace setVariable [format["CTI_%1_HQ", _side], "rhsgref_cdf_b_gaz66_r142"];
+			};
+		};
+	};
+	//case CTI_BW_ID: {};
+	default {
+		if (CTI_Log_Level >= CTI_Log_ERROR) then { ["ERROR", "FILE: Common\Config\Base\Base.sqf", format ["Basic units setup failed <%1>", _isThisMain] call CTI_CO_FNC_Log };
 	};
 };
 

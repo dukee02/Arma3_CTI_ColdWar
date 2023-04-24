@@ -385,14 +385,14 @@ switch(CTI_GUER_TOWNS) do {
 	default {};
 };
 
-/*if(CTI_AIR_ADDON >= 0) then {
+if(CTI_AIR_ADDON >= 0) then {
 	{ 
 		(_x) call compile preprocessFileLineNumbers "Common\Config\Units\units_other_mods.sqf";
 		(_x) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_other_mods.sqf";
-		(_x) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_other_mods.sqf";
-		(_x) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_other_mods.sqf";
+		//(_x) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_other_mods.sqf";
+		//(_x) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_other_mods.sqf";
 	} forEach [west, east, resistance];
-};*/
+};
 
 if(CTI_WEST_TOWNS >= 0) then {
 	//values[] = {-1,0,1,2,3,4,5,6,7};

@@ -174,7 +174,7 @@ if(Side _unit == west) then {
 		_voices append ["CUP_D_Male01_RU","CUP_D_Male02_RU","CUP_D_Male03_RU","CUP_D_Male04_RU","CUP_D_Male05_RU"];
 	};
 	if(CTI_RHS_ADDON > 0) then {
-		_voices append ["RHS_Male01RUS","RHS_Male02RUS","RHS_Male03RUS","CUP_Male04RUS","CUP_Male05RUS"];
+		_voices append ["RHS_Male01RUS","RHS_Male02RUS","RHS_Male03RUS","RHS_Male04RUS","RHS_Male05RUS"];
 	};
 	
 };

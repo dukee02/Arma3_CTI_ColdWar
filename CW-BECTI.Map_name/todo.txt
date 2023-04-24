@@ -1,17 +1,3 @@
-[ ] check start gear if CWR3 active
-[ ] modern urban camo from start?
-[ ] with charliCos mod - early civ medi-truck?
-[ ] Motorcycle and Towtractor 3500 ??? M151 1500 ? HMMWV 3K ?
-[ ] Gear not correct - modern gear active - no config?
-
-
-
-
-
-
-
-
-
 
 
 

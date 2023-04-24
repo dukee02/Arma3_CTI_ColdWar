@@ -76,8 +76,66 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_ATAS_2";				//ATAS 					<×2 Stinger, IR-homing>
 	_c pushBack "rhs_mag_ATAS_AH64_2";			//ATAS 					<×2 Stinger, IR-homing>
 };
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_ASRAAM_x1";					//ASRAAM 			<Type: SR-AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_ASRAAM_WINGTIP";				//ASRAAM 			<Type: SR-AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_IRIS_T_x1";					//IRIS-T 			<Type: IRIS-T SR-AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_IRIS_T_WINGTIP";				//IRIS-T 			<Type: IRIS-T SR-AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_9M38_Heli_4xmag";				//9K38 A-A (SA-18) x4 	<9K38 IR Anti-Air Guided Missile<br />'Igla' (NATO: SA-18 'Grouse') <br />Type: HE Anti-Air<br />Rounds: 4>
+	_c pushBack "pook_9M38_Heli_2xmag";				//9K38 A-A (SA-18) x2 	<9K38 IR Anti-Air Guided Missile<br />'Igla' (NATO: SA-18 'Grouse') <br />Type: HE Anti-Air<br />Rounds: 2>
+	_c pushBack "pook_mag_R3_AA";					//R-3 (AA-2) A-A 		<R-3 Infrared Homing Missile<br />R-3 (NATO: AA-2)<br />Type: Short-Range IR AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R3_AA_Wingtip";			//R-3 (AA-2) A-A 		<R-3 Infrared Homing Missile<br />R-3 (NATO: AA-2)<br />Type: Short-Range IR AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R60_AA";					//R-60 (AA-8) A-A 		<R-60 Infrared Homing Missile<br />R-60 (NATO: AA-8)<br />Type: Short-Range IR AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R60_AA_Wingtip";			//R-60 (AA-8) A-A 		<R-60 Infrared Homing Missile<br />R-60 (NATO: AA-8)<br />Type: Short-Range IR AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R60_x2_L";				//R-60 (AA-8) A-A x2 	<R-60 Infrared Homing Missile<br />R-60 (NATO: AA-8)<br />Type: Short-Range IR AAM<br />Rounds: 2>
+	_c pushBack "pook_mag_R60_x2_R";				//R-60 (AA-8) A-A x2 	<R-60 Infrared Homing Missile<br />R-60 (NATO: AA-8)<br />Type: Short-Range IR AAM<br />Rounds: 2>
+	_c pushBack "pook_mag_R73_AA";					//R-73 (AA-11) A-A 		<R-73 Infrared Homing Missile<br />R-73 (NATO: AA-11)<br />Type: Short-Range IR AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R73_AA_Wingtip";			//R-73 (AA-11) A-A 		<R-73 Infrared Homing Missile<br />R-73 (NATO: AA-11)<br />Type: Short-Range IR AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R73_x2_L";				//R-73 (AA-11) A-A x2 	<R-73 Infrared Homing Missile<br />R-73 (NATO: AA-11)<br />Type: Short-Range IR AAM<br />Rounds: 2>
+	_c pushBack "pook_mag_R73_x2_R";				//R-73 (AA-11) A-A x2 	<R-73 Infrared Homing Missile<br />R-73 (NATO: AA-11)<br />Type: Short-Range IR AAM<br />Rounds: 2>
+	_c pushBack "pook_mag_R23T_AA";					//R-23T (AA-7) A-A 		<R-23T Infrared Homing Missile<br />R-23T (NATO: AA-7T)<br />Type: Infrared-Homing Medium-Range AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R27T_AA";					//R-27T (AA-10 IR) A-A 	<R-27T Infrared Homing Missile<br />R-27T (NATO: AA-10T)<br />Type: Infrared-Homing Medium-Range AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R40T_AA";					//R-40T (AA-6) A-A 		<R-40T Infrared Homing Missile<br />R-40T (NATO: AA-6T)<br />Type: Infrared-Homing Extended-Range AAM<br />Rounds: 1<br />Used in: Mig-25, Mig-31>
+};
+if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
+	_c pushBack "sab_milavi_1rnd_aim9x_mag";		//MA AAM AIM-9 x1 		<Short-range, infrared-guided, air-to-air missile with high-explosive warhead>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_AIM9L_P_1rnd_M")) then {
+	_c pushBack "FIR_AIM9L_P_1rnd_M";				//AIM-9L Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9L_P_1rnd_M_Tornado_AWS";	//AIM-9L Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_IRIS_T_P_1rnd_M";				//IRIS-T <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_IRIS_T_P_1rnd_M_Tornado_AWS";	//IRIS-T <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_AIM132_P_1rnd_M";				//AIM-132 ASRAAM <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_AIM132_P_1rnd_M_Tornado_AWS";	//AIM-132 ASRAAM <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_AIM9P_P_1rnd_M";				//AIM-9P Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9P_P_2rnd_M";				//AIM-9P Sidewinder x2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9H_P_1rnd_M";				//AIM-9H Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9H_LAU7_P_1rnd_M";			//AIM-9H Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9L_LAU138_P_1rnd_M";		//AIM-9L Sidewinder w/LAU-138 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9L_LAU115_P_1rnd_M";		//AIM-9L Sidewinder w/LAU-7 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9L_LAU115_P_2rnd_M";		//AIM-9L Sidewinder x 2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9L_P_2rnd_M";				//AIM-9L Sidewinder x2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9M_P_1rnd_M";				//AIM-9M Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9M_LAU138_P_1rnd_M";		//AIM-9M Sidewinder w/LAU-138 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9M_LAU115_P_1rnd_M";		//AIM-9M Sidewinder w/LAU-7 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9M_LAU115_P_2rnd_M";		//AIM-9M Sidewinder x 2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>		//wrong 'pylonWeapon' in magazine:'FIR_AIM9M_LAU115_P_2rnd_M' this magazine cannot be used in weapon'FIR_AIM9L'
+	_c pushBack "FIR_AIM9M_P_2rnd_M";				//AIM-9M Sidewinder x2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_P_1rnd_M";				//AIM-9X Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_LAU115_P_1rnd_M";		//AIM-9X Sidewinder <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_P_2rnd_M";				//AIM-9X Sidewinder x 2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_LAU115_P_2rnd_M";		//AIM-9X Sidewinder x 2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_P_EWP_2rnd_M";			//(EWP)AIM-9X Sidewinder x2 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_P_F23A_3rnd_M";			//AIM-9X Sidewinder x 3 <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AIM9X_EWP_4rnd_M";				//AIM-9X Sidewinder x4 (EWP) <short-range, IR guided, Anti-air missile / the standard short-range air-to-air missile in Western countries. Don't laugh at the word 'short-distance'. You can die from rattlesnake's poison teeth.>
+	_c pushBack "FIR_AAM3_P_1rnd_M";				//AAM-3 <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_AAM5_P_1rnd_M";				//AAM-5 <Short-range,  IR guided, air-to-air missile>
 
-
+	_c pushBack "FIR_R60M_P_1rnd_M";				//R-60M <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_R73_P_1rnd_M";					//R-73 <Short-range,  IR guided, air-to-air missile>
+	_c pushBack "FIR_R27ET_P_1rnd_M";				//R-27ET <Mid-range,  IR guided, air-to-air missile>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -127,6 +185,73 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_R77M_AKU170_MIG29";	//R-77M 				<Active radar homing missile with improved CM resistance. Range: 2km-25km>
 };
 
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_AIM120_x1";					//AIM-120 MR-AAM 	<Type: AIM-120 Medium-Range AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_AIM120_Fuselage";				//AIM-120 MR-AAM 	<Type: AIM-120 Medium-Range AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_ASPIDE_x1";					//ASPIDE MR-AAM 	<Type: ASPIDE Medium-Range AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_ASPIDE_Fuselage";				//ASPIDE MR-AAM 	<Type: ASPIDE Medium-Range AAM<br />Rounds: 1x HE-Frag Proximity Warhead<br />Used in: EF-2000>
+};
+
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_mag_R23R_AA";					//R-23R (AA-7) A-A 			<R-23R Radar Homing Missile<br />R-23R (NATO: AA-7)<br />Type: Radar-Homing Medium-Range AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R27R_AA";					//R-27R (AA-10 RDR) A-A 	<R-27R Radar Homing Missile<br />R-27R (NATO: AA-10R)<br />Type: Radar-Homing Medium-Range AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R27R_AA_2x";				//R-27R (AA-10 RDR) A-A x2 	<R-27R Radar Homing Missile<br />R-27R (NATO: AA-10R)<br />Type: Radar-Homing Medium-Range AAM<br />Rounds: 2>
+	_c pushBack "pook_mag_R40R_AA";					//R-40R (AA-6) A-A 			<R-40R Radar Homing Missile<br />R-40R (NATO: AA-6)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 1<br />Used in: Mig-25, Mig-31>
+	_c pushBack "pook_mag_R77R_AA";					//R-77R (AA-12) A-A 		<R-77R Radar Homing Missile<br />R-77R (NATO: AA-12)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 1>
+	_c pushBack "pook_mag_R77R_AA_2x";				//R-77R (AA-12) A-A x2 		<R-77R Radar Homing Missile<br />R-77R (NATO: AA-12)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 2>
+	_c pushBack "pook_mag_R33_AA";					//R-33 (AA-9) A-A 			<R-33 Radar-Homing Missile<br />R-33 (NATO: AA-9)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 1<br /> Used in: Mig-31>
+	_c pushBack "pook_mag_R33_AA_4x";				//R-33 (AA-9) A-A x4 		<R-33 Radar-Homing Missile<br />R-33 (NATO: AA-9)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 4<br /> Used in: Mig-31>
+	_c pushBack "pook_mag_R37M_AA";					//R-37M (AA-13) A-A 		<R-37 Radar-Homing Missile<br />R-37 (NATO: AA-13)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 1<br /> Used in: Mig-31, Su-35>
+	_c pushBack "pook_mag_R37M_AA_4x";				//R-37M (AA-13) A-A x4 		<R-37 Radar-Homing Missile<br />R-37 (NATO: AA-13)<br />Type: Radar-Homing Extended-Range AAM<br />Rounds: 4<br /> Used in: Mig-31>
+};
+
+if (isClass(configFile >> "CfgMagazines" >> "FIR_AIM120_P_1rnd_M")) then {
+	_c pushBack "FIR_AIM120_P_1rnd_M";				//AIM-120C AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_1rnd_M_Tornado_AWS";	//AIM-120C AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120A_P_1rnd_M";				//AIM-120A AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120A_LAU115_P_1rnd_M";		//AIM-120A AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120A_LAU115_P_2rnd_M";		//AIM-120A AMRAAM x2 <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120B_P_1rnd_M";				//AIM-120B AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120B_LAU115_P_1rnd_M";		//AIM-120B AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_F15SE_P_1rnd_M";		//AIM-120C AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_LAU115_P_1rnd_M";		//AIM-120C AMRAAM <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_LAU115_P_2rnd_M";		//AIM-120C AMRAAM x2 (LAU-115C/A) <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_LAU115BA_P_2rnd_M";		//AIM-120C AMRAAM x2 (LAU-115B/A) <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_type1_2rnd_M";		//AIM-120 AMRAAM x2 <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_AMBER_2rnd_M";		//AIM-120 AMRAAM x2 (AMBER) <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_F22_Type1_2rnd_M";	//AIM-120 AMRAAM x2 <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_F22_Type2_2rnd_M";	//AIM-120 AMRAAM x2 / Fueltank <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_F23A_3rnd_M";			//AIM-120 AMRAAM x 3 <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_P_EWP_2rnd_M";			//(EWP)AIM-120 AMRAAM x2 <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_EWP_4rnd_M";			//AIM-120 AMRAAM x4 (EWP) <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM120_EWP_F14_4rnd_M";		//AIM-120 AMRAAM x4 (EWP) <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AAM4_P_1rnd_M";				//AAM-4 <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_P_1rnd_M";				//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_2_P_1rnd_M";				//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_LAU115_P_1rnd_M";			//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_P_F14_U1_1rnd_M";			//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_P_F14_U2_1rnd_M";			//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_P_F14_U3_1rnd_M";			//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7_P_F14_U4_1rnd_M";			//AIM-7M Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_P_1rnd_M";				//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_2_P_1rnd_M";				//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_LAU115_P_1rnd_M";		//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_P_F14_U1_1rnd_M";		//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_P_F14_U2_1rnd_M";		//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_P_F14_U3_1rnd_M";		//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7F_P_F14_U4_1rnd_M";		//AIM-7F Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7E_P_1rnd_M";				//AIM-7E-4 Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7E_2_P_1rnd_M";				//AIM-7E-3 Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7E_P_F14_U1_1rnd_M";		//AIM-7E-4 Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7E_P_F14_U2_1rnd_M";		//AIM-7E-4 Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7E_P_F14_U3_1rnd_M";		//AIM-7E-4 Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM7E_P_F14_U4_1rnd_M";		//AIM-7E-4 Sparrow <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_Skyflash_P_1rnd_M";			//Skyflash <Mid-range,  Radar guided, air-to-air missile>
+
+	_c pushBack "FIR_R27ER_P_1rnd_M";				//R-27ER <Mid-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_R77_P_1rnd_M";					//R-77 <Mid-range,  Radar guided, air-to-air missile>
+};
+
 // set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _d;
@@ -134,6 +259,27 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_d pushBack "air-to-air";
 	_m pushBack 100;
 	_u pushBack _tech_level;
+};
+
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Meteor_P_1rnd_M")) then {
+	//*****************************************************LEVEL*2****************************************************************************
+	_tech_level = 2;
+
+	_c pushBack "FIR_Meteor_P_1rnd_M";				//MBDA Meteor <Long-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_Meteor_P_1rnd_M_Tornado_AWS";	//MBDA Meteor <Long-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM54_P_1rnd_M";				//AIM-54C Phoenix <Extreme Long-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM54_LAU93_P_1rnd_M";			//AIM-54C Phoenix <Extreme Long-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM54A_P_1rnd_M";				//AIM-54A Phoenix <Extreme Long-range,  Radar guided, air-to-air missile>
+	_c pushBack "FIR_AIM54A_LAU93_P_1rnd_M";		//AIM-54A Phoenix <Extreme Long-range,  Radar guided, air-to-air missile>
+
+	// set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _d;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_d pushBack "air-to-air";
+		_m pushBack 100;
+		_u pushBack _tech_level;
+	};
 };
 
 //Update the calculated max upgrade level
@@ -234,7 +380,36 @@ if(CTI_CUP_ADDON > 0) then {
 	//_c pushBack "rhs_mag_mi24_empty";		//Empty Shelf <>
 	//_c pushBack "rhs_mag_bm21_base";		//<>
 };
+if (isClass(configFile >> "CfgMagazines" >> "FIR_AGM65E_P_1rnd_M")) then {
+	_c pushBack "FIR_Scalpel_P_1rnd_M";					//Scalpel LCDPB x1 			<LCDPB>
+	_c pushBack "FIR_Scalpel_P_F15E_1rnd_M";			//Scalpel LCDPB x1 			<LCDPB>
+	_c pushBack "FIR_Scalpel_P_F14_1rnd_M";				//Scalpel LCDPB x1 			<LCDPB>
+	_c pushBack "FIR_Scalpel_P_2rnd_M";					//Scalpel LCDPB x2 			<LCDPB>
+	_c pushBack "FIR_Scalpel_P_3rnd_M";					//Scalpel LCDPB x3 			<LCDPB>
+	_c pushBack "Tornado_AWS_1Rnd_LG_scalpel";			//AGM-25 SCALPEL 			<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+	_c pushBack "Tornado_AWS_3Rnd_LG_scalpel";			//AGM-25 SCALPEL x3 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+	_c pushBack "Tornado_AWS_4Rnd_LG_scalpel";			//AGM-25 SCALPEL x4 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Hydra_P_7rnd_M")) then {
+	_c pushBack "FIR_APKWS_P_7rnd_M";				//APKWS M151 HE LAU-131 x 1 			<Laser-guided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_APKWS_P_19rnd_M";				//APKWS M151 HE LAU-61/A 				<Laser-guided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_APKWS_P_14rnd_M";				//APKWS M151 HE LAU-68FA x 2 			<Laser-guided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_APKWS_P_38rnd_M";				//APKWS M151 HE LAU-61/A x 2 			<Laser-guided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_APKWS_M247_P_7rnd_M";			//APKWS M247 HEAT LAU-131 x 1 			<Laser-guided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_APKWS_M247_P_19rnd_M";			//APKWS M247 HEAT LAU-61/A 				<Laser-guided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_APKWS_M247_P_14rnd_M";			//APKWS M247 HEAT LAU-68FA x 2 			<Laser-guided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_APKWS_M247_P_38rnd_M";			//APKWS M247 HEAT LAU-61/A x 2 			<Laser-guided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_APKWS_M282_P_7rnd_M";			//APKWS M282 MPP LAU-131 x 1 			<Laser-guided rocket, 2.75-inch, MPP>
+	_c pushBack "FIR_APKWS_M282_P_19rnd_M";			//APKWS M282 MPP LAU-61/A 				<Laser-guided rocket, 2.75-inch, MPP>
+	_c pushBack "FIR_APKWS_M282_P_14rnd_M";			//APKWS M282 MPP LAU-68FA x 2 			<Laser-guided rocket, 2.75-inch, MPP>
+	_c pushBack "FIR_APKWS_M282_P_38rnd_M";			//APKWS M282 MPP LAU-61/A x 2 			<Laser-guided rocket, 2.75-inch, MPP>
+	_c pushBack "FIR_Poniard_P_7rnd_M";				//Poniard LAU-131 x 1 					<IR-guided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_LZuni_P_4rnd_M";				//Laser Zuni LAU-10 x 1 				<Laser-guided rocket, 5-inch, HE>
+	_c pushBack "FIR_LZuni_P_8rnd_M";				//Laser Zuni LAU-10 x 2 				<Laser-guided rocket, 5-inch, HE>
 
+	_c pushBack "FIR_S8KOR_P_20rnd_M";				//S-8KOR x 20 			<laser-guided rocket, 80mm>
+	_c pushBack "FIR_S25L_P_1rnd_M";				//S-25-L x 1 			<Laser-guided rocket, 340mm>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -328,6 +503,70 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_agm65f_3";					//AGM-65F (LAU-88/A) 	<×3 IR-guided Anti-Ship Maverick>
 };
 
+
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_Brimstone_mag3x";				//Brimstone-AGM x3 		<Type: Radar-Guided AGM <br />Rounds: 3x HE-AT Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_Brimstone_mag2x";				//Brimstone-AGM x2 		<Type: Radar-Guided AGM <br />Rounds: 2x HE-AT Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_BrimstoneDM_mag3x";			//Brimstone-DM-AGM x3 	<Type: Dual-Mode Radar\Laser-Guided AGM<br />Rounds: 3x HE-AT Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_BrimstoneDM_mag2x";			//Brimstone-DM-AGM x2 	<Type: Dual-Mode Radar\Laser-Guided AGM<br />Rounds: 2x HE-AT Warhead<br />Used in: EF-2000>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_mag_9K120";				//9M120 HEAT (AT-9) x8 	<9K120 SACLOS AT Guided Missile (ATGM)<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />HEAT<br />Rounds: 8>
+	_c pushBack "pook_mag_9K120x4";				//9M120 HEAT (AT-9) x4 	<9K120 SACLOS AT Guided Missile (ATGM)<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />HEAT<br />Rounds: 4>
+	_c pushBack "pook_mag_9K120x2";				//9M120 HEAT (AT-9) x2 	<9K120 SACLOS AT Guided Missile (ATGM)<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />HEAT<br />Rounds: 2>
+	_c pushBack "pook_mag_9K120F";				//9M120 FAE (AT-9) x8 	<9K120 SACLOS MP Guided Missile<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />Type: Thermobaric Fuel-Air Explosive (FAE)<br />Rounds: 8>
+	_c pushBack "pook_mag_9K120Fx4";			//9M120 FAE (AT-9) x4 	<9K120 SACLOS MP Guided Missile<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />Type: Thermobaric Fuel-Air Explosive (FAE)<br />Rounds: 4>
+	_c pushBack "pook_mag_9K120Fx2";			//9M120 FAE (AT-9) x2 	<9K120 SACLOS MP Guided Missile<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />Type: Thermobaric Fuel-Air Explosive (FAE)<br />Rounds: 2>
+	_c pushBack "pook_mag_KH38_T";				//Kh-38_MTE (IR) 		<Type: Infrared Guided A-G Missile<br />Kh-38<br />Maximum Range: 12km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH25MTP";				//Kh-25 MTP (AS-10) 	<Type: IR Guided Missile<br />Kh-25MTP (NATO: AS-10I)<br />Maximum Range: 10km<br />Rounds: 1>"		//Strange convex component04 in pook_missilebox\kh25\fza_kh25mtp_fly.p3d:geometryFire
+	_c pushBack "pook_mag_KH29D";				//Kh-29D (AS-14) 		<Type: IR Imaging Guided Missile<br />Kh-29D (NATO: AS-14D)<br />Maximum Range: 16km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH25ML";				//Kh-25 ML (AS-10) 		<Type: Laser Guided Missile<br />Kh-25ML (NATO: AS-10L)<br />Maximum Range: 10km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH29L";				//Kh-29L (AS-14) 		<Type: Laser Guided Missile<br />Kh-29L (NATO: AS-14L)<br />Maximum Range: 16km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH38_L";				//Kh-38_MLE (laser) 	<Type: Laser Guided A-G Missile<br />Kh-38<br />Maximum Range: 12km<br />Rounds: 1>
+};
+if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
+	_c pushBack "sab_milavi_1rnd_maverick_mag";				//MA AGM 65 x1 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+	_c pushBack "sab_milavi_1rnd_exocet_mag";				//MA ASM AM.39 		<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+	_c pushBack "sab_milavi_1rnd_hellfire_mag";				//MA AGM 114 x1 	<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+	_c pushBack "sab_milavi_2rnd_hellfire_mag";				//MA AGM 114 x2 	<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+	_c pushBack "sab_milavi_4rnd_hellfire_mag";				//MA AGM 114 x4 	<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_AGM65E_P_1rnd_M")) then {
+	_c pushBack "FIR_AGM65E_P_1rnd_M";					//AGM-65E Maverick x1 		<Air to surface missile , Laser guided>
+	_c pushBack "FIR_AGM65E2_P_1rnd_M";					//AGM-65E2 Maverick x1 		<Air to surface missile , Laser guided>
+	_c pushBack "FIR_AGM65L_P_1rnd_M";					//AGM-65L Maverick x1 		<Air to surface missile , Laser guided>
+	_c pushBack "FIR_AGM123_P_1rnd_M";					//AGM-123 Skipper II 		<Air to ground missile, Laser guided>
+	_c pushBack "FIR_AGM65D_P_1rnd_M";					//AGM-65D Maverick x1 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_AGM65D_P_1rnd_M_Tornado_AWS";		//AGM-65D Maverick x1 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_AGM65D_P_3rnd_M";					//AGM-65D Maverick x3 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_AGM65D_P_3rnd_M_Tornado_AWS";		//AGM-65D Maverick x3 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_AGM65D_P_2rnd_M";					//AGM-65D Maverick x2 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_AGM65F_P_1rnd_M";					//AGM-65F Maverick x1 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_AGM65G_P_1rnd_M";					//AGM-65G Maverick x1 		<Air to surface missile , IR-guided>
+	_c pushBack "FIR_ASM2_P_1rnd_M";					//ASM-2 					<Anti-Ship missile , IR-guided>
+	_c pushBack "FIR_AGM84H_P_1rnd_M";					//AGM-84H SLAM-ER 			<Cruise missile , GPS/IR Guided>
+	_c pushBack "FIR_AGM84H_P_1rnd_M_Tornado_AWS";		//AGM-84H SLAM-ER 			<Cruise missile , GPS/IR Guided>
+	_c pushBack "FIR_AGM84E_P_1rnd_M";					//AGM-84E SLAM 				<Cruise missile , GPS/IR Guided>
+	_c pushBack "FIR_AGM84K_P_1rnd_M";					//AGM-84K SLAM-ER 			<Cruise missile , GPS/IR Guided>
+	_c pushBack "FIR_AGM158B_P_1rnd_M";					//AGM-158B JASSM-ER 		<Cruise missile , GPS/IR Guided>
+
+	_c pushBack "FIR_9K121_P_8rnd_M";					//9K121 Vikhr x 8 			<Anti-tank missile , laser-guided>
+	_c pushBack "FIR_Kh29_P_1rnd_M";					//Kh-29L 					<Air to surface missile , Laser-guided>
+	_c pushBack "FIR_Kh25ML_P_1rnd_M";					//Kh-25ML 					<Air to surface missile , laser-guided>
+	_c pushBack "FIR_Kh25MTP_P_1rnd_M";					//Kh-25MTP 					<Air to surface missile , IR-guided>
+	_c pushBack "FIR_Kh29D_P_1rnd_M";					//Kh-29D 					<Air to surface missile , IR-guided>
+	_c pushBack "FIR_Kh25MS_P_1rnd_M";					//Kh-25MS 					<Air to surface missile , GLONASS guided>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
+	_c pushBack "tu95_1Rnd_Kh65";				//Kh-65 (AS-15) 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 1<br />Warhead: HE>
+	_c pushBack "tu95_2Rnd_Kh65";				//Kh-65 (AS-15) x2 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 2<br />Warhead: HE>
+	_c pushBack "tu95_3Rnd_Kh65";				//Kh-65 (AS-15) x3 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 3<br />Warhead: HE>
+	_c pushBack "tu95_6Rnd_Kh65";				//Kh-65 (AS-15) x6 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 6<br />Warhead: HE>
+	_c pushBack "tu95_1Rnd_Kh101";				//Kh-101 					<Type: Tactical Air-Surface Missile (TASM)<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_2Rnd_Kh101";				//Kh-101 (x2) 				<Type: Tactical Air-Surface Missile (TASM)<br />Rounds: 2<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_6Rnd_Kh101";				//Kh-101 (x6) 				<Type: Tactical Air-Surface Missile (TASM)<br />Rounds: 6<br />Warhead: HE-Penetrator>
+};
+
 // set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _d;
@@ -358,6 +597,80 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_kh29T";					//Kh-29T 				<TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-9km>
 	_c pushBack "rhs_mag_kh25MT";					//Kh-25MT 				<TV-guided version which is fitted with automatic optical homing to a distinguishable object indicated by the pilot in the cockpit. Range: 1.5km-8km>
 };
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_AGM88_mag1x";					//AGM-88 ARM 			<Type: Anti-Radar Homing Missile<br />Homes in on SAM and AAA Radars<br />Rounds: 1x HE-Frag Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_SCALP_mag1x";					//SCALP-ER 				<Type: ER-CALCM<br />Extended-Range Conventional Air-Launched Cruise Missile<br />Rounds: 1x HE Penetrator Warhead<br />Used in: EF-2000>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_mag_KH38_G";				//Kh-38_MAE (GLONASS) 	<Type: GPS Guided Missile<br />Kh-38<br />Maximum Range: 12km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH25MSE";				//Kh-25 MSE (AS-10) 	<Type: GPS Guided Missile<br />Kh-25MSE (NATO: AS-10G)<br />Maximum Range: 10km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH23M";				//Kh-23 (AS-7) 			<Type: Radar Guided Missile<br />Kh-23M (NATO: AS-7)<br />Maximum Range: 9km<br />Rounds: 1>
+	//_c pushBack "pook_mag_KH23Mx2_SU22";		//Kh-23 (AS-7) x2 		<Type: Radar Guided Missile<br />Kh-23M (NATO: AS-7)<br />Maximum Range: 9km<br />Rounds: 2>"		//wrong 'pylonWeapon' in magazine:'pook_mag_KH23Mx2_SU22' this magazine cannot be used in weapon'pook_AS7Launcher'
+	_c pushBack "pook_mag_KH25MAE";				//Kh-25 MAE (AS-10) 	<Type: Radar Guided Missile<br />Kh-25MAE (NATO: AS-10R)<br />Maximum Range: 10km<br />Rounds: 1>"		//Strange convex component04 in pook_missilebox\kh25\fza_kh25mr_fly.p3d:geometryFire
+	_c pushBack "pook_mag_KH59M";				//Kh-59M (AS-18) 		<Type: Radar Guided Missile<br />Kh-59M (NATO: AS-18)<br />Maximum Range: 115km<br />Rounds: 1<br />Requires APK-9 TGT Pod<br />for extended-range attacks>
+	_c pushBack "pook_mag_KH59MK2";				//Kh-59MK2 (AS-22) 		<Type: Radar Guided Missile<br />Kh-59Mk2 (NATO: AS-22)<br />Maximum Range: 115km<br />Rounds: 1<br />For extended-range attacks>
+	_c pushBack "pook_mag_KH31";				//Kh-31 (AS-17) 		<Type: Radar Guided Missile<br />Kh-31 (NATO: AS-17)<br />Maximum Range: 110km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH31x2";				//Kh-31 (AS-17) x2 		<Type: Radar Guided Missile<br />Kh-31 (NATO: AS-17)<br />Maximum Range: 110km<br />Rounds: 2>
+	_c pushBack "pook_mag_KH35";				//Kh-35 (AS-20) 		<Type: Radar Guided Missile<br />Kh-35 (NATO: AS-20)<br />Maximum Range: 130km<br />Rounds: 1>"		//Strange convex component09 in pook_missilebox\kh35\kh35_fly.p3d:geometryFire
+	_c pushBack "pook_mag_KH38_R";				//Kh-38_MAE (radar) 	<Type: Radar Guided Missile<br />Kh-38<br />Maximum Range: 12km<br />Rounds: 1>
+	_c pushBack "pook_mag_KH61";				//Kh-61 				<Type: Radar Guided Long-Range Anti-Shipping Missile (LRASM)<br />Kh-61 'Onyks'<br />Maximum Range: 120km<br />Rounds: 1>"		//Strange convex component12 in pook_missilebox\kh61\s800_fly.p3d:geometryFire
+	_c pushBack "pook_mag_KH58";				//Kh-58 (AS-11) 		<Type: Anti-Radar Homing Missile (ARM)<br />Kh-58 (NATO: AS-11)<br />Rounds: 1<br />Use L-081 'Fantasmagoria' or Vyuga-17 ARM Targeting Pods for extended-range targeting>"		//Strange convex component05 in pook_missilebox\kh58\kh58_fly.p3d:geometryFire
+	_c pushBack "pook_mag_KH25MP";				//Kh-25MP (AS-12) 		<Type: Anti-Radar Homing Missile<br />Kh-25MP (NATO: AS-12)<br />Rounds: 1>
+	_c pushBack "pook_mag_KH31P";				//Kh-31P (AS-17) 		<Type: Anti-Radar Homing Missile<br />Kh-31P (NATO: AS-17)<br />Rounds: 1>
+	_c pushBack "pook_mag_KH31Px2";				//Kh-31P (AS-17) x2 	<Type: Anti-Radar Homing Missile<br />Kh-31P (NATO: AS-17)<br />Rounds: 2>
+	_c pushBack "pook_mag_KH28";				//Kh-28 (AS-9) 			<Type: Anti-Radar Homing Missile<br />Kh-28 (NATO: AS-9)<br />Rounds: 1>
+	_c pushBack "pook_mag_KH59";				//Kh-59 (AS-13) 		<Type: TV Guided Missile<br />Kh-59 (NATO: AS-13)<br />Maximum Range: 40km<br />Rounds: 1<br />Requires APK-9 TGT Pod<br />for extended-range attacks>
+	_c pushBack "pook_mag_KH25MT";				//Kh-25 MT (AS-10) 		<Type: TV Guided Missile<br />Kh-25MT (NATO: AS-10T)<br />Maximum Range: 10km<br />Rounds: 1>"		//Strange convex component04 in pook_missilebox\kh25\fza_kh25mt_fly.p3d:geometryFire
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_AGM65H_P_1rnd_M")) then {
+	_c pushBack "FIR_AGM65H_P_1rnd_M";					//AGM-65H Maverick x1 		<Air to surface missile , EO guided>
+	_c pushBack "FIR_AGM65H_P_1rnd_M_Tornado_AWS";		//AGM-65H Maverick x1 		<Air to surface missile , EO guided>
+	_c pushBack "FIR_AGM65H_P_3rnd_M";					//AGM-65H Maverick x3 		<Air to surface missile , EO guided>
+	_c pushBack "FIR_AGM65H_P_3rnd_M_Tornado_AWS";		//AGM-65H Maverick x3 		<Air to surface missile , EO guided>
+	_c pushBack "FIR_AGM65B_P_1rnd_M";					//AGM-65B Maverick x1 		<Air to surface missile , EO-TV guided>
+	_c pushBack "FIR_AGM65B_P_2rnd_M";					//AGM-65B Maverick x2 		<Air to surface missile , EO-TV guided>
+	_c pushBack "FIR_AGM65B_P_3rnd_M";					//AGM-65B Maverick x3 		<Air to surface missile , EO-TV guided>
+	_c pushBack "FIR_AGM65H_P_2rnd_M";					//AGM-65H Maverick x2 		<Air to surface missile , EO guided>
+	_c pushBack "FIR_AGM65K_P_1rnd_M";					//AGM-65K Maverick x1 		<Air to surface missile , EO guided>
+	_c pushBack "FIR_AGM84D_P_1rnd_M";					//AGM-84D Harpoon 			<Air-to-ship/surface missile, Active radar guided. It's designed on destroying the ship, but also can use for destroying ground unit too.>
+	_c pushBack "FIR_ASM1_P_1rnd_M";					//ASM-1 					<Anti-Ship missile , Active radar-guided>
+	_c pushBack "FIR_Brimstone_std_P_3rnd_M";			//Brimstone x3 				<Air to surface missile , radar-guided>
+	_c pushBack "FIR_Brimstone_type1_P_3rnd_M";			//Brimstone x3 				<Air to surface missile , radar-guided>
+	_c pushBack "FIR_Brimstone_type2_P_3rnd_M";			//Brimstone x3 				<Air to surface missile , radar-guided>
+	_c pushBack "FIR_Brimstone_DM_std_P_3rnd_M";		//Brimstone Dual-mode x3 	<Air to surface missile , radar/laser guided>
+	_c pushBack "FIR_Brimstone_DM_type1_P_3rnd_M";		//Brimstone Dual-mode x3 	<Air to surface missile , radar/laser guided>
+	_c pushBack "FIR_Brimstone_DM_type2_P_3rnd_M";		//Brimstone Dual-mode x3 	<Air to surface missile , radar/laser guided>
+	_c pushBack "FIR_AGM88_P_1rnd_M";					//AGM-88 HARM 				<Anti-Radiation Missile>
+	_c pushBack "FIR_AGM88_P_1rnd_M_Tornado_AWS";		//AGM-88 HARM 				<Anti-Radiation Missile>
+	//ground to air?
+	_c pushBack "FIR_RIM162_P_9rnd_M";					//RIM-162 ESSM x9 				<ESSM>	semi-active radar homing
+	_c pushBack "FIR_RIM162_P_36rnd_M";					//RIM-162 ESSM x36 				<ESSM>	semi-active radar homing
+	_c pushBack "FIR_SM2_BLK3C_P_9rnd_M";				//SM-2 Block IIIC Canisters x9 	<SM-2 Blk IIIC>
+	_c pushBack "FIR_SM2_BLK4_P_9rnd_M";				//SM-2 Block IV Canisters x9 	<SM-2 Blk IV>
+
+	_c pushBack "FIR_Kh29T_P_1rnd_M";					//Kh-29T 					<Air to surface missile , EO guided>
+	_c pushBack "FIR_Kh25MT_P_1rnd_M";					//Kh-25MT 					<Air to surface missile , EO guided>
+	_c pushBack "FIR_Kh25MPU_P_1rnd_M";					//Kh-25MPU 					<Anti-Radiation Missile>
+	_c pushBack "FIR_CruiseMissile_01_P_9rnd_M";			//Cruise Missile HE 	<Long-range, data link guided, surface-to-surface missile with high-explosive warhead>
+	_c pushBack "FIR_CruiseMissile_01_Cluster_P_9rnd_M";	//Cruise Missile Cluster <Long-range, data link guided, surface-to-surface missile with cluster munitions>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
+	_c pushBack "tu95_1Rnd_3M80";				//Kh-41 (3M80) Moskit ASM 	<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_1Rnd_Kh22";				//Kh-22 (AS-4) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Kh-22 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>		//Strange convex component01 in pook_tu16\wep\kh22_fly.p3d:geometry
+	_c pushBack "tu22_1Rnd_Kh22";				//Kh-22 (AS-4) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Kh-22 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu22_1Rnd_Kh22_CL";			//Kh-22 (AS-4) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Kh-22 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_1Rnd_Kh32";				//Kh-32 ASM 				<Type: Extended Long-Range Anti-Shipping Missile (LRASM)<br />Kh-32 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu22_1Rnd_Kh32";				//Kh-32 ASM 				<Type: Extended Long-Range Anti-Shipping Missile (LRASM)<br />Kh-32 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu22_1Rnd_Kh32_CL";			//Kh-32 ASM 				<Type: Extended Long-Range Anti-Shipping Missile (LRASM)<br />Kh-32 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_1Rnd_Kh15S";				//Kh-15/S (AS-16) HE 		<Type: Long-Range Air-Surface Guided Missile (LRAGM)<br />Kh-15S NATO:('AS-16')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_6Rnd_Kh15S";				//Kh-15/S (AS-16) HE x6 	<Type: Long-Range Air-Surface Guided Missile (LRAGM)<br />Kh-15S NATO:('AS-16')<br />Rounds: 6<br />Warhead: HE-Penetrator>
+	_c pushBack "tu160_12Rnd_Kh15S";			//Kh-15/S (AS-16) HE x12 	<Type: Long-Range Air-Surface Guided Missile (LRAGM)<br />Kh-15S NATO:('AS-16')<br />Rounds: 12<br />Warhead: HE-Penetrator>
+	_c pushBack "tu95_1Rnd_Kh15P";				//Kh-15/P (AS-16) ARM 		<Type: Long-Range Anti-Radiation Missile (LRARM)<br />Kh-15P NATO:('AS-16')<br />Rounds: 1x Radar Homing Missile<br />Warhead: HE-Fragmentation>
+	_c pushBack "tu95_6Rnd_Kh15P";				//Kh-15/P (AS-16) ARM x6 	<Type: Long-Range Anti-Radiation Missile (LRARM)<br />Kh-15P NATO:('AS-16')<br />Rounds: 6x Radar Homing Missiles<br />Warhead: HE-Fragmentation>
+	_c pushBack "tu160_12Rnd_Kh15P";			//Kh-15/P (AS-16) ARM x12 	<Type: Long-Range Anti-Radiation Missile (LRARM)<br />Kh-15P NATO:('AS-16')<br />Rounds: 12x Radar Homing Missiles<br />Warhead: HE-Fragmentation>
+	_c pushBack "tu16_1Rnd_KSR2";				//KSR-2 (AS-5) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />KSR-2 NATO:('AS-5')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+	_c pushBack "tu16_1Rnd_K10";				//K-10 (AS-2) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />K-10 NATO:('AS-2')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -368,14 +681,36 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 };
 
+//*****************************************************LEVEL*4****************************************************************************
 if(CTI_RHS_ADDON > 0) then {
-	//*****************************************************LEVEL*4****************************************************************************
-	_tech_level = 3;
+	_tech_level = 4;
 
 	_c pushBack "rhs_mag_kh55sm";					//Kh-55SM Nuke (camo) 	<Tactical nuke>
 	_c pushBack "rhs_mag_kh55sm_6";					//Kh-55SM Nuke (camo) 	<Tactical nuke>
 	_c pushBack "rhs_mag_kh55sm_nocamo";			//Kh-55SM Nuke 			<Tactical nuke>
 	_c pushBack "rhs_mag_kh55sm_nocamo_6";			//Kh-55SM Nuke 			<Tactical nuke>
+
+	// set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _d;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_d pushBack "air-to-surface";
+		_m pushBack 100;
+		_u pushBack _tech_level;
+	};
+};
+
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
+	_tech_level = 4;
+
+	_c pushBack "tu95_1Rnd_Kh55";				//Kh-55 (AS-15) 			<Type: Air-Launched Cruise Missile (ALCM)<br />Kh-55 NATO:('AS-15')<br />Rounds: 1<br />Warhead: Nuclear 200kt>
+	_c pushBack "tu95_6Rnd_Kh55";				//Kh-55 (AS-15) x6 			<Type: Air-Launched Cruise Missile (ALCM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 6<br />Warhead: Nuclear 200kt>
+	//_c pushBack "tu95_sonobuoy_24xmag";			//RGB-N Sonobuoy (x24) 		<Type: Air-Launched Sonobuoy<br />Range: 3nm<br />Lifespan: 2 minutes>"		//wrong 'pylonWeapon' in magazine:'tu95_sonobuoy_24xmag' this magazine cannot be used in weapon'tu95bomblauncher'
+	//_c pushBack "tu95_sonobuoy_12xmag";			//RGB-N Sonobuoy (x12) 		<Type: Air-Launched Sonobuoy<br />Range: 3nm<br />Lifespan: 2 minutes>"		//wrong 'pylonWeapon' in magazine:'tu95_sonobuoy_12xmag' this magazine cannot be used in weapon'tu95bomblauncher'
+	//_c pushBack "tu95_sonobuoy_6xmag";			//RGB-N Sonobuoy (x6) 		<Type: Air-Launched Sonobuoy<br />Range: 3nm<br />Lifespan: 2 minutes>"		//wrong 'pylonWeapon' in magazine:'tu95_sonobuoy_6xmag' this magazine cannot be used in weapon'tu95bomblauncher'
+	//_c pushBack "tu95_sonobuoy_4xmag";			//RGB-N Sonobuoy (x4) 		<Type: Air-Launched Sonobuoy<br />Range: 3nm<br />Lifespan: 2 minutes>"		//wrong 'pylonWeapon' in magazine:'tu95_sonobuoy_4xmag' this magazine cannot be used in weapon'tu95bomblauncher'
+	//_c pushBack "tu95_sonobuoy_2xmag";			//RGB-N Sonobuoy (x2) 		<Type: Air-Launched Sonobuoy<br />Range: 3nm<br />Lifespan: 2 minutes>"		//wrong 'pylonWeapon' in magazine:'tu95_sonobuoy_2xmag' this magazine cannot be used in weapon'tu95bomblauncher'
+	//_c pushBack "tu95_sonobuoy_1xmag";			//RGB-N Sonobuoy 			<Type: Air-Launched Sonobuoy<br />Range: 3nm<br />Lifespan: 2 minutes>"		//wrong 'pylonWeapon' in magazine:'tu95_sonobuoy_1xmag' this magazine cannot be used in weapon'tu95bomblauncher'
 
 	// set all other vars in a slope
 	_cntstart = count _c;
@@ -559,7 +894,84 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_bd3_umk2a_o25l_s25l";				//S-25L HE 							<Obstacle penetration/HE>
 	_c pushBack "rhs_mag_bd3_umk2a_o25l_s25ld";				//S-25LD HE 						<Obstacle penetration/HE>
 };
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_68mm_HE_x18";			//68mm RKT HE x18 <Type: Rocket Pod<br />Rounds: 18x 2.7-inch HE-Frag Rockets<br />90 lb.<br />Used in: EF-2000>
+	_c pushBack "EF2K_68mm_SMK_x5";			//68mm Smoke Rocket x5 <Type: Rocket Pod<br />Rounds: 18x 2.7-inch HE-Frag Rockets<br />90 lb.<br />Used in: EF-2000>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_80mm_HE_x18";			//S-8 80mm HE x18 			<Type: S-8 80mm Rocket Pod<br />Rounds: 18<br />High Explosive warhead>
+	_c pushBack "pook_80mm_SMK_x5";			//S-8 80mm Smoke x5 		<Type: S-8 80mm Rocket Pod SMOKE MARKERS - White<br />Rounds: 5<br />Smoke Marker warhead>
+	_c pushBack "pook_80mm_SMK_O_x5";		//S-8 80mm Smoke Orange x5 	<Type: S-8 80mm Rocket Pod SMOKE MARKERS - Orange<br />Rounds: 5<br />Smoke Marker warhead>
+	_c pushBack "pook_80mm_SMK_P_x5";		//S-8 80mm Smoke Purple x5 	<Type: S-8 80mm Rocket Pod SMOKE MARKERS - Purple<br />Rounds: 5<br />Smoke Marker warhead>
+	_c pushBack "pook_122mm_HE_x5";			//S-13 122mm Rockets HE x5 	<Type: S-13 HE 122mm Rocket Pod<br />Rounds: 5<br />High Explosive warhead>
+	_c pushBack "pook_S24_x1";				//S-24 HE x1 				<Type: S-24 240mm Rocket<br />Rounds: 1<br />High Explosive warhead>
+	_c pushBack "pook_S25_Ox1";				//S-25_O HE-Frag x1 		<Type: S-25-O 340mm HE-Frag Rocket<br />Rounds: 1<br />Anti-personnel blast-fragmentation warhead>		//Strange convex component10 in pook_missilebox\rockets\s25_o_fly.p3d:geometry
+	_c pushBack "pook_S25_Ox2";				//S-25_O HE-Frag x2 		<Type: S-25-O 340mm HE-Frag Rocket<br />Rounds: 2<br />Anti-personnel blast-fragmentation warhead>
+	_c pushBack "pook_S25_OFMx1";			//S-25_OFM HE x1 			<Type: S-25-OFM 340mm HE Rocket<br />Rounds: 1<br />HE penetrator warhead>
+	_c pushBack "pook_S25_OFMx2";			//S-25_OFM HE x2 			<Type: S-25-OFM 340mm HE Rocket<br />Rounds: 2<br />HE penetrator warhead>
+	_c pushBack "pook_S25_Lx1";				//S-25_L HE x1 				<Type: S-25-L 340mm HE Rocket<br />Laser Guided Targeting<br /><br />Rounds: 1<br />HE penetrator warhead>
+	_c pushBack "pook_S25_Lx2";				//S-25_L HE x2 				<Type: S-25-L 340mm HE Rocket<br />Laser Guided Targeting<br /><br />Rounds: 2<br />HE penetrator warhead>
+};
+if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
+	_c pushBack "sab_milavi_4rnd_zuni_mag";			//MA RKT Zuni x4 	<Unguided rockets with high-explosive warhead>
+	_c pushBack "sab_milavi_7rnd_hydra_mag";		//MA RKT Hydra x7 	<Unguided rockets with high-explosive warhead>
+};
+if (isClass(configFile >> "CfgMagazines" >> "PylonRack_Rocket_S8_JS_SU35_x20")) then {
+	_c pushBack "PylonRack_Rocket_S8_JS_SU35_x20";	//S8 HE x20 <Unguided rockets with high-explosive warhead>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_CRV7_P_19rnd_M")) then {
+	_c pushBack "FIR_CRV7_P_19rnd_M";				//CRV7 x 19 							<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_P_7rnd_M";				//Hydra 70 M151 HE LAU-131 x 1 			<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_P_19rnd_M";				//Hydra 70 M151 HE LAU-3 				<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_LAU130_P_19rnd_M";		//Hydra 70 M151 HE LAU-61/A 			<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_P_21rnd_M";				//Hydra 70 M151 HE LAU-131 x 3 			<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_P_14rnd_M";				//Hydra 70 M151 HE LAU-68FA x 2 		<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_P_38rnd_M";				//Hydra 70 M151 HE LAU-61/A x 2 		<unguided rocket, 2.75-inch, HEPD>
+	_c pushBack "FIR_Hydra_M229_P_7rnd_M";			//Hydra 70 M229 HE LAU-131 x 1 			<unguided rocket, 2.75-inch, HE>
+	_c pushBack "FIR_Hydra_M229_P_19rnd_M";			//Hydra 70 M229 HE LAU-61/A 			<unguided rocket, 2.75-inch, HE>
+	_c pushBack "FIR_Hydra_M229_P_14rnd_M";			//Hydra 70 M229 HE LAU-68FA x 2 		<unguided rocket, 2.75-inch, HE>
+	_c pushBack "FIR_Hydra_M229_P_38rnd_M";			//Hydra 70 M229 HE LAU-61/A x 2 		<unguided rocket, 2.75-inch, HE>
+	_c pushBack "FIR_Hydra_M247_P_7rnd_M";			//Hydra 70 M247 HEAT LAU-131 x 1 		<unguided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_Hydra_M247_P_19rnd_M";			//Hydra 70 M247 HEAT LAU-61/A 			<unguided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_Hydra_M247_P_14rnd_M";			//Hydra 70 M247 HEAT LAU-68FA x 2 		<unguided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_Hydra_M247_P_38rnd_M";			//Hydra 70 M247 HEAT LAU-61/A x 2 		<unguided rocket, 2.75-inch, HEAT>
+	_c pushBack "FIR_Hydra_M257_P_7rnd_M";			//Hydra 70 M257 FLARE LAU-131 x 1 		<unguided rocket, 2.75-inch, FLARE>
+	_c pushBack "FIR_Hydra_M278_P_7rnd_M";			//Hydra 70 M278 IR FLARE LAU-131 x 1 	<unguided rocket, 2.75-inch, IR FLARE>
+	_c pushBack "FIR_Hydra_M261_P_7rnd_M";			//Hydra 70 M261 MPSM LAU-131 x 1 		<unguided rocket, 2.75-inch, HE Cluster>
+	_c pushBack "FIR_Hydra_M261_P_19rnd_M";			//Hydra 70 M261 MPSM LAU-61/A 			<unguided rocket, 2.75-inch, HE Cluster>
+	_c pushBack "FIR_Hydra_M261_P_14rnd_M";			//Hydra 70 M261 MPSM LAU-68FA x 2 		<unguided rocket, 2.75-inch, HE Cluster>
+	_c pushBack "FIR_Hydra_M261_P_38rnd_M";			//Hydra 70 M261 MPSM LAU-61/A x 2 		<unguided rocket, 2.75-inch, HE Cluster>
+	_c pushBack "FIR_Hydra_M282_P_7rnd_M";			//Hydra 70 M282 MPP LAU-131 x 1 		<unguided rocket, 2.75-inch, Penetrator>
+	_c pushBack "FIR_Hydra_M282_P_19rnd_M";			//Hydra 70 M282 MPP LAU-61/A 			<unguided rocket, 2.75-inch, Penetrator>
+	_c pushBack "FIR_Hydra_M282_P_14rnd_M";			//Hydra 70 M282 MPP LAU-68FA x 2 		<unguided rocket, 2.75-inch, Penetrator>
+	_c pushBack "FIR_Hydra_M282_P_38rnd_M";			//Hydra 70 M282 MPP LAU-61/A x 2 		<unguided rocket, 2.75-inch, Penetrator>
+	_c pushBack "FIR_Hydra_WDU4_P_7rnd_M";			//Hydra 70 WDU-4/A APERS LAU-131 x 1 	<unguided rocket, 2.75-inch, APERS>
+	_c pushBack "FIR_Hydra_WDU4_P_19rnd_M";			//Hydra 70 WDU-4/A APERS LAU-61/A 		<unguided rocket, 2.75-inch, APERS>
+	_c pushBack "FIR_Hydra_WDU4_P_14rnd_M";			//Hydra 70 WDU-4/A APERS LAU-68FA x 2 	<unguided rocket, 2.75-inch, APERS>
+	_c pushBack "FIR_Hydra_WDU4_P_38rnd_M";			//Hydra 70 WDU-4/A APERS LAU-61/A x 2 	<unguided rocket, 2.75-inch, APERS>
+	_c pushBack "FIR_Hydra_WP_P_7rnd_M";			//Hydra 70 M156 WP LAU-131 x 1 			<unguided rocket, 2.75-inch, WP Smoke>
+	_c pushBack "FIR_Hydra_WP_P_21rnd_M";			//Hydra 70 M156 WP LAU-131 x 3 			<unguided rocket, 2.75-inch, WP Smoke>
+	_c pushBack "FIR_Hydra_M259_P_7rnd_M";			//Hydra 70 M259 WP LAU-131 x 1 			<unguided rocket, 2.75-inch, WP Smoke>
+	_c pushBack "FIR_Hydra_Smoke_P_7rnd_M";			//Hydra 70 M264 RP LAU-131 x 1 			<unguided rocket, 2.75-inch, RP Smoke>
+	_c pushBack "FIR_Hydra_Smoke_P_21rnd_M";		//Hydra 70 M264 RP LAU-131 x 3 			<unguided rocket, 2.75-inch, RP Smoke>
+	_c pushBack "FIR_Zuni_P_4rnd_M";				//Zuni Mk24 MOD 1 HE LAU-10 x 1 		<un-guided rocket, 5-inch, HE>
+	_c pushBack "FIR_Zuni_P_8rnd_M";				//Zuni Mk24 MOD 1 HE LAU-10 x 2 		<un-guided rocket, 5-inch, HE>
+	_c pushBack "FIR_Zuni_Fairing_P_4rnd_M";		//Zuni Mk24 MOD 1 HE LAU-10 x 1(Fairing) <un-guided rocket, 5-inch, HE>
+	_c pushBack "FIR_Zuni_Fairing_P_8rnd_M";		//Zuni Mk24 MOD 1 HE LAU-10 x 2(Fairing) <un-guided rocket, 5-inch, HE>
+	_c pushBack "FIR_Zuni_F14_P_4rnd_M";			//Zuni Mk24 MOD 1 HE LAU-10 x 1 		<un-guided rocket, 5-inch, HE>
+	_c pushBack "FIR_Zuni_Mk32_P_4rnd_M";			//Zuni Mk32 MOD 0 HEAT LAU-10 x 1 		<un-guided rocket, 5-inch, HEAT>
+	_c pushBack "FIR_Zuni_Mk32_P_8rnd_M";			//Zuni Mk32 MOD 0 HEAT LAU-10 x 2 		<un-guided rocket, 5-inch, HEAT>
+	_c pushBack "FIR_Zuni_Fairing_Mk32_P_4rnd_M";	//Zuni Mk32 MOD 0 HEAT LAU-10 x 1(Fairing) <un-guided rocket, 5-inch, HEAT>
+	_c pushBack "FIR_Zuni_Fairing_Mk32_P_8rnd_M";	//Zuni Mk32 MOD 0 HEAT LAU-10 x 2(Fairing) <un-guided rocket, 5-inch, HEAT>
+	_c pushBack "FIR_Zuni_Mk32_F14_P_4rnd_M";		//Zuni Mk32 MOD 0 HEAT LAU-10 x 1 		<un-guided rocket, 5-inch, HEAT>
 
+	_c pushBack "FIR_S8KOM_P_20rnd_M";				//S-8KOM x 20 			<unguided rocket, 80mm>
+	_c pushBack "FIR_S8S_P_20rnd_M";				//S-8S x 20 			<unguided rocket, 80mm, APERS>
+	_c pushBack "FIR_S8TsM_P_20rnd_M";				//S-8TsM x 20 Smoke 	<unguided rocket, 80mm Smoke>
+	_c pushBack "FIR_S13_P_5rnd_M";					//S-13 x 5 				<unguided rocket, 122mm>
+	_c pushBack "FIR_S25OF_P_1rnd_M";				//S-25-OF x 1 			<unguided rocket, 340mm, HE Frag>
+	_c pushBack "FIR_S25OFM_P_1rnd_M";				//S-25-OFM x 1 			<unguided rocket, 340mm, Penetrator>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -685,6 +1097,182 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_cbu100";						//CBU-100 				<SUU-76/B Dispenser (×123 Mk 118 HEAT)>
 	_c pushBack "rhs_mag_cbu100_3";						//CBU-100 (BRU-42) 		<×3 SUU-76/B Dispenser (×123 Mk 118 HEAT)>
 };
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_Bomb_Mk82_x1";			//Mk-82 x1 		<Type: GP Bomb<br />Rounds: 1x HE<br />Used in: EF-2000>
+	_c pushBack "EF2K_Bomb_Mk82_x2";			//Mk-82 x2 		<Type: GP Bomb<br />Rounds: 2x HE<br />Used in: EF-2000>
+	_c pushBack "EF2K_Bomb_Mk82HD_x1";			//Mk-82-HD x1 	<Type: High-Drag GP Bomb<br />Rounds: 1x HE<br />500 lb.<br />Used in: EF-2000>
+	_c pushBack "EF2K_Bomb_Mk82HD_x2";			//Mk-82-HD x2 	<Type: High-Drag GP Bomb<br />Rounds: 2x HE<br />500 lb.<br />Used in: EF-2000>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_FAB100_x1";				//FAB-100 HE x1 			<Type: Conventional Low-Drag Bomb<br />Rounds: 1<br />220 lb.>"		//Strange convex component06 in pook_missilebox\frl_fab100\frl_fab100.p3d:geometryFire
+	_c pushBack "pook_FAB100_x2";				//FAB-100 HE x2 			<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />220 lb.>
+	_c pushBack "pook_FAB100_x3";				//FAB-100 HE x3 			<Type: Conventional Low-Drag Bomb<br />Rounds: 3<br />220 lb.>
+	_c pushBack "pook_FAB100_x4";				//FAB-100 HE x4 			<Type: Conventional Low-Drag Bomb<br />Rounds: 4<br />220 lb.>
+	_c pushBack "pook_FAB100_x6";				//FAB-100 HE x6 			<Type: Conventional Low-Drag Bomb<br />Rounds: 6<br />220 lb.>
+	_c pushBack "pook_FAB100_SU22_x4";			//FAB-100 HE x4 			<Type: Conventional Low-Drag Bomb<br />Rounds: 4<br />220 lb.>
+	_c pushBack "pook_FAB250_x1";				//FAB-250 HE x1 			<Type: Conventional Low-Drag Bomb<br />Rounds: 1<br />550 lb.>
+	_c pushBack "pook_FAB250_x2";				//FAB-250 HE x2 			<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />550 lb.>
+	_c pushBack "pook_FAB250_x2_CL";			//FAB-250 HE x2 			<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />550 lb.>
+	_c pushBack "pook_FAB250_x3";				//FAB-250 HE x3 			<Type: Conventional Low-Drag Bomb<br />Rounds: 3<br />550 lb.>
+	_c pushBack "pook_FAB250_x4";				//FAB-250 HE x4 			<Type: Conventional Low-Drag Bomb<br />Rounds: 4<br />550 lb.>
+	_c pushBack "pook_FAB250_x6";				//FAB-250 HE x6 			<Type: Conventional Low-Drag Bomb<br />Rounds: 6<br />550 lb.>
+	_c pushBack "pook_RBK250AO_x1";				//RBK-250-A0 CBU x1 		<Type: CBU Cluster Bomb<br />AO-2.5 Anti-Personnel Multi-purpose bomblets<br />Rounds: 1<br />Submunitions: 48<br />550 lb.>
+	_c pushBack "pook_RBK250AO_x2";				//RBK-250-A0 CBU x2 		<Type: CBU Cluster Bomb<br />AO-2.5 Anti-Personnel Multi-purpose bomblets<br />Rounds: 2<br />Submunitions: 48<br />550 lb.>
+	_c pushBack "pook_ZB250_x1";				//ZB-250 INC x1 			<Type: Incendiary Fire Bomb<br />Rounds: 1<br />550 lb.>
+	_c pushBack "pook_ZB250_x2";				//ZB-250 INC x2 			<Type: Incendiary Fire Bomb<br />Rounds: 2<br />550 lb.>
+	_c pushBack "pook_KAB250L_x1";				//KAB-250 (LGB) x1 			<Type: Laser-Guided Bomb<br />Rounds: 1<br />550 lb.>
+	_c pushBack "pook_KAB250L_x2";				//KAB-250 (LGB) x2 			<Type: Laser-Guided Bomb<br />Rounds: 2<br />550 lb.>
+};
+if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
+	_c pushBack "sab_milavi_1rnd_mk82_mag";				//MA BMB Mk82 x1 <>
+	_c pushBack "sab_milavi_2rnd_mk82_mag";				//MA BMB Mk82 x2 <>
+	_c pushBack "sab_milavi_3rnd_mk82_mag";				//MA BMB Mk82 x3 <>
+	_c pushBack "sab_milavi_1rnd_fab250_mag";			//MA BMB Fab250 x1 <>
+	_c pushBack "sab_milavi_2rnd_fab250_mag";			//MA BMB Fab250 x2 <>
+	_c pushBack "sab_milavi_3rnd_fab250_mag";			//MA BMB Fab250 x3 <>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
+	_c pushBack "FIR_Mk82_GP_P_1rnd_M";						//Mk82 GPB x1 						<500lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk82_GP_P_3rnd_M";						//Mk82 GPB x3 						<500lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk82_GP_TER9A_P_3rnd_M";				//Mk82 GPB x3 (TER-9A) 				<500lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk82_GP_P_6rnd_M";						//Mk82 GPB x 6 						<500lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk82_GP_F15E_Demo_P_4rnd_M";			//Mk82 GPB x 4 						<500lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk82_GP_F15E_Demo_P_6rnd_M";			//Mk82 GPB x 6 						<500lbs un-guided bomb, General Purpose>
+	//_c pushBack "FIR_Mk82_GP_Navy_P_1rnd_M";				//Mk82 GPB - BLU-111A/B x1 			<500lbs un-guided bomb, General Purpose / Thermally protected coating>"		//wrong 'pylonWeapon' in magazine:'FIR_Mk82_GP_Navy_P_1rnd_M' this magazine cannot be used in weapon'FIR_mk82_Snakeye_Launcher'
+	_c pushBack "FIR_Mk82_GP_P_F14_1rnd_M";					//Mk82 GPB - BLU-111A/B 			<500lbs un-guided bomb, General Purpose / Thermally protected coating>
+	_c pushBack "FIR_Mk82_GP_Navy_P_2rnd_M";				//Mk82 GPB - BLU-111A/B x2 			<500lbs un-guided bomb, General Purpose / Thermally protected coating>
+	_c pushBack "FIR_Mk82_GP_Navy_P_6rnd_M";				//Mk82 GPB - BLU-111A/B x6 			<500lbs un-guided bomb, General Purpose / Thermally protected coating>
+	_c pushBack "FIR_Mk82_GP_prox_P_1rnd_M";				//Mk82 GPB w/DSU-33 x1 				<500lbs un-guided bomb, General Purpose, with radar proximity sensor for airburst.>
+	_c pushBack "FIR_Mk82_GP_Navy_prox_P_1rnd_M";			//Mk82 GPB - BLU-111A/B w/DSU-33 x1 <500lbs un-guided bomb, General Purpose, Thermally protected coating with radar proximity sensor for airburst.>
+	_c pushBack "FIR_Mk82_snakeye_P_1rnd_M";				//Mk82 Snakeye x1 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_P_3rnd_M";				//Mk82 Snakeye x3 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_P_6rnd_M";				//Mk82 Snakeye x 6 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_F15E_Demo_P_4rnd_M";		//Mk82 Snakeye x 4 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_F15E_Demo_P_6rnd_M";		//Mk82 Snakeye x 6 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_Navy_P_1rnd_M";			//Mk82 Snakeye x1 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_P_F14_1rnd_M";			//Mk82 Snakeye 						<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_snakeye_Navy_P_2rnd_M";			//Mk82 Snakeye x2 					<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_AIR_P_1rnd_M";					//Mk82 AIR x1 						<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_AIR_P_3rnd_M";					//Mk82 AIR x3 						<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_AIR_TER9A_P_3rnd_M";				//Mk82 AIR x3 (TER-9A) 				<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_AIR_P_6rnd_M";					//Mk82 AIR x 6 						<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_AIR_F15E_Demo_P_4rnd_M";			//Mk82 AIR x 4 						<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk82_AIR_F15E_Demo_P_6rnd_M";			//Mk82 AIR x 6 						<500lbs un-guided bomb, High-drag>
+	_c pushBack "FIR_Mk83_GP_Navy_P_1rnd_M";				//Mk83 GPB x1 						<1000lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk83_GP_Navy_P_F14_1rnd_M";			//Mk83 GPB 							<1000lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk83_GP_Navy_P_2rnd_M";				//Mk83 GPB x2 						<1000lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk83_AIR_Navy_P_1rnd_M";				//Mk83 AIR x1 						<1000lbs un-guided bomb with Air Inflatable Retarder>
+	_c pushBack "FIR_Mk83_AIR_Navy_P_F14_1rnd_M";			//Mk83 AIR 							<1000lbs un-guided bomb with Air Inflatable Retarder>
+	_c pushBack "FIR_Mk83_AIR_Navy_P_2rnd_M";				//Mk83 AIR x2 						<1000lbs un-guided bomb with Air Inflatable Retarder>
+	_c pushBack "FIR_Mk84_GP_P_1rnd_M";						//Mk84 GPB x1 						<2000lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk84_GP_Navy_P_1rnd_M";				//Mk84 GPB x1 						<2000lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk84_GP_P_F14_1rnd_M";					//Mk84 GPB 							<2000lbs un-guided bomb, General Purpose>
+	_c pushBack "FIR_Mk84_AIR_P_1rnd_M";					//Mk84 AIR x1 						<2000lbs un-guided bomb with Air Inflatable Retarder>
+	_c pushBack "FIR_MW1_P_1rnd_M";							//MW-1 								<Cluster Dispenser>
+	_c pushBack "FIR_CBU87_P_1rnd_M";						//CBU-87 CEM x1 					<1000lbs un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU87_P_BRU57_2rnd_M";					//CBU-87 CEM x2(BRU-57) 			<1000lbs un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU87_P_TripleRack_2rnd_M";			//CBU-87 CEM x2(TER) 				<1000lbs un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU87_F15E_Demo_P_4rnd_M";				//CBU-87 CEM x4 (MER) 				<1000lbs un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU87_F15E_Demo_P_6rnd_M";				//CBU-87 CEM x6 (MER) 				<1000lbs un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_P_1rnd_M";						//Mk-20 Rockeye II 					<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_P_F14_1rnd_M";					//Mk-20 Rockeye II 					<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_P_TripleRack_2rnd_M";			//Mk-20 Rockeye II x2(TER) 			<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_P_TripleRack_3rnd_M";			//Mk-20 Rockeye II x3(TER) 			<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_P_6rnd_M";						//Mk-20 Rockeye II x 6 				<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_F15E_Demo_P_4rnd_M";			//Mk-20 Rockeye II x 4 				<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU100_F15E_Demo_P_6rnd_M";			//Mk-20 Rockeye II x 6 				<500lbs class un-guided bomb, Cluster>
+	_c pushBack "FIR_CBU78_P_1rnd_M";						//CBU-78 GATOR 						<500lbs un-guided bomb, Cluster Mine>
+	_c pushBack "FIR_CBU78_P_BRU57_2rnd_M";					//CBU-78 GATOR x2 					<500lbs un-guided bomb, Cluster Mine>
+	_c pushBack "FIR_CBU78_P_F14_1rnd_M";					//CBU-78 GATOR 						<500lbs un-guided bomb, Cluster Mine>
+	_c pushBack "FIR_CBU89_P_1rnd_M";						//CBU-89 GATOR 						<1000lbs un-guided bomb, Cluster Mine>
+	_c pushBack "FIR_CBU89_P_BRU57_2rnd_M";					//CBU-89 GATOR x2(BRU-57) 			<1000lbs un-guided bomb, Cluster Mine>
+	_c pushBack "FIR_CBU89_P_TripleRack_2rnd_M";			//CBU-89 GATOR x2(TER) 				<1000lbs un-guided bomb, Cluster Mine>
+	_c pushBack "FIR_CBU97_P_1rnd_M";						//CBU-97 SFW 						<1000lbs un-guided bomb, Sensor Fuzed Weapon>
+	_c pushBack "FIR_CBU97_P_BRU57_2rnd_M";					//CBU-97 SFW x2(BRU-57) 			<1000lbs un-guided bomb, Sensor Fuzed Weapon>
+	_c pushBack "FIR_CBU97_P_TripleRack_2rnd_M";			//CBU-97 SFW x2(TER) 				<1000lbs un-guided bomb, Sensor Fuzed Weapon>
+	_c pushBack "FIR_CBU103_P_1rnd_M";						//CBU-103 WCMD 						<1000lbs un-guided bomb,Wind Corrected Munitions Dispenser>
+	_c pushBack "FIR_CBU103_P_BRU57_2rnd_M";				//CBU-103 WCMD x2(BRU-57) 			<1000lbs un-guided bomb,Wind Corrected Munitions Dispenser>
+	_c pushBack "FIR_CBU103_P_TripleRack_2rnd_M";			//CBU-103 WCMD x2(TER) 				<1000lbs un-guided bomb,Wind Corrected Munitions Dispenser>
+	_c pushBack "FIR_CBU105_P_1rnd_M";						//CBU-105 SFW WCMD 					<1000lbs un-guided bomb,SFW / Wind Corrected Munitions Dispenser>
+	_c pushBack "FIR_CBU105_P_BRU57_2rnd_M";				//CBU-105 SFW WCMD x2(BRU-57) 		<1000lbs un-guided bomb,SFW / Wind Corrected Munitions Dispenser>
+	_c pushBack "FIR_CBU105_P_TripleRack_2rnd_M";			//CBU-105 SFW WCMD x2(TER) 			<1000lbs un-guided bomb,SFW / Wind Corrected Munitions Dispenser>
+	_c pushBack "FIR_PDU5B_P_1rnd_M";						//PDU-5/B Leaflets Bomb(West) 		<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_Custom1_P_1rnd_M";				//PDU-5/B Leaflets Bomb(Custom 1) 	<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_Custom2_P_1rnd_M";				//PDU-5/B Leaflets Bomb(Custom 2) 	<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_Custom3_P_1rnd_M";				//PDU-5/B Leaflets Bomb(Custom 3) 	<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_P_F14_1rnd_M";					//PDU-5/B Leaflets Bomb(West) 		<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_Custom1_P_F14_1rnd_M";			//PDU-5/B Leaflets Bomb(Custom 1) 	<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_Custom2_P_F14_1rnd_M";			//PDU-5/B Leaflets Bomb(Custom 2) 	<Leaflet Bomb>
+	_c pushBack "FIR_PDU5B_Custom3_P_F14_1rnd_M";			//PDU-5/B Leaflets Bomb(Custom 3) 	<Leaflet Bomb>
+	_c pushBack "FIR_BLU107_P_3rnd_M";						//BLU-107/B Durandal x 3 			<un-guided bomb, Anti-Runway>
+	_c pushBack "FIR_GBU12_P_1rnd_M";						//GBU-12 Paveway II x1 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_P_1rnd_M_Tornado_AWS";			//GBU-12 Paveway II x1 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_P_3rnd_M";						//GBU-12 Paveway II x3 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_P_3rnd_M_Tornado_AWS";			//GBU-12 Paveway II x3 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_EGBU12_P_3rnd_M";						//EGBU-12 Enhanced Paveway II x3 	<500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_EGBU12_P_3rnd_M_Tornado_AWS";			//EGBU-12 Enhanced Paveway II x3 	<500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_PavewayIV_P_1rnd_M";					//Paveway IV x1 					<500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_PavewayIV_P_1rnd_M_Tornado_AWS";		//Paveway IV x1 					<500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_GBU12_PW1_P_1rnd_M";					//GBU-12 Paveway I x1 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_Navy_P_1rnd_M";					//GBU-12 Paveway II x1 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_P_F14_1rnd_M";					//GBU-12 Paveway II 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_P_2rnd_M";						//GBU-12 Paveway II x2 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_Navy_P_2rnd_M";					//GBU-12 Paveway II x2 (BRU-57) 	<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU12_Navy_P_3rnd_M";					//GBU-12 Paveway II x3 				<500lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_EGBU12_P_1rnd_M";						//EGBU-12 Enhanced Paveway II x1 	<500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_EGBU12_P_2rnd_M";						//EGBU-12 Enhanced Paveway II x2 	<500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_EGBU12_Navy_P_2rnd_M";					//EGBU-12 Enhanced Paveway II x2 (BRU-57) <500lbs Laser/GPS guided bomb>
+	_c pushBack "FIR_GCS1_P_1rnd_M";						//GCS-1 							<500lbs IR guided bomb>
+	_c pushBack "FIR_GBU38_P_1rnd_M";						//GBU-38 JDAM x1 					<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_F15SE_P_1rnd_M";					//GBU-38 JDAM x1 					<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_P_EWP_2rnd_M";					//(EWP)GBU-38 JDAM x2 				<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_P_2rnd_M";						//GBU-38 JDAM x2 					<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_P_3rnd_M";						//GBU-38 JDAM x3 					<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_Navy_P_1rnd_M";					//GBU-38 JDAM x1 					<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_P_F14_1rnd_M";					//GBU-38 JDAM 						<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_Navy_P_2rnd_M";					//GBU-38 JDAM x2 					<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU38_Navy_EWP_2rnd_M";				//GBU-38 JDAM x2 (EWP) 				<500lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU54_P_1rnd_M";						//GBU-54 LJDAM x1 					<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU54_F15SE_P_1rnd_M";					//GBU-54 LJDAM x1 					<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU54_P_2rnd_M";						//GBU-54 LJDAM x2 					<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU54_P_3rnd_M";						//GBU-54 LJDAM x3 					<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU54_Navy_P_1rnd_M";					//GBU-54 LJDAM x1 					<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU54_Navy_P_2rnd_M";					//GBU-54 LJDAM x2 					<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU54_Navy_EWP_2rnd_M";				//GBU-54 LJDAM x2 (EWP) 			<500lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU39_P_4rnd_M";						//GBU-39 SDB 						<250lbs GPS guided bomb>
+	_c pushBack "FIR_GBU39_P_EWP_4rnd_M";					//(EWP)GBU-39 SDB x4 				<250lbs GPS guided bomb>
+	_c pushBack "FIR_GBU39_P_EWP_6rnd_M";					//(EWP)GBU-39 SDB x6 				<250lbs GPS guided bomb>
+	_c pushBack "FIR_GBU39_EWP_4rnd_M";						//GBU-39 SDB x4 (EWP) 				<250lbs GPS guided bomb>
+	_c pushBack "FIR_GBU39_EWP_6rnd_M";						//GBU-39 SDB x6 (EWP) 				<250lbs GPS guided bomb>
+	_c pushBack "FIR_GBU53_P_4rnd_M";						//GBU-53 SDB II 					<250lbs GPS/Laser/Radar guided bomb>
+	_c pushBack "FIR_GBU53_P_EWP_4rnd_M";					//(EWP)GBU-53 SDB II x4 			<250lbs GPS/Laser/Radar guided bomb>
+	_c pushBack "FIR_GBU53_P_EWP_6rnd_M";					//(EWP)GBU-53 SDB II x6 			<250lbs GPS/Laser/Radar guided bomb>
+	_c pushBack "FIR_GBU53_EWP_4rnd_M";						//GBU-53 SDB II x4 (EWP) 			<250lbs GPS/Laser/Radar guided bomb>
+	_c pushBack "FIR_GBU53_EWP_6rnd_M";						//GBU-53 SDB II x6 (EWP) 			<250lbs GPS/Laser/Radar guided bomb>
+	_c pushBack "FIR_KGGB_P_1rnd_M";						//KGGB x1 							<500lbs GPS guided bomb>
+	_c pushBack "FIR_KAB250L_P_1rnd_M";						//KAB-250L 							<250kg Laser-guided bomb>
+	_c pushBack "FIR_KAB500L_P_1rnd_M";						//KAB-500L 							<500kg Laser-guided bomb>
+	_c pushBack "FIR_KAB500Kr_P_1rnd_M";					//KAB-500Kr 						<500kg EO guided bomb>
+	_c pushBack "FIR_KAB500SE_P_1rnd_M";					//KAB-500SE 						<500kg GLONASS guided bomb>
+	_c pushBack "FIR_FAB250_P_1rnd_M";						//FAB-250 							<500kg un-guided bomb>
+	_c pushBack "FIR_RBK250_P_1rnd_M";						//RBK-250 							<250kg bomb,cluster>
+	_c pushBack "FIR_RBK500_SPBE_D_P_1rnd_M";				//RBK-500 SPBE-D 					<500kg bomb,Sensor Fuzed Weapon>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
+	_c pushBack "tu95_24Rnd_FAB250";			//FAB-250 HE (x24) 	<Type: Conventional Low-Drag Bomb<br />Rounds: 24<br />550lb \ 250kg<br />Warhead: HE>
+	_c pushBack "tu16_24Rnd_FAB250";			//FAB-250 HE (x24) 	<Type: Conventional Low-Drag Bomb<br />Rounds: 24<br />550lb \ 250kg<br />Warhead: HE>
+	_c pushBack "tu22_33Rnd_FAB250";			//FAB-250 HE x33 	<Type: Conventional Low-Drag Bomb<br />Rounds: 33x 550lb (250kg)<br />Warhead: HE>
+	_c pushBack "tu22_9Rnd_FAB250";				//FAB-250 HE x9 	<Type: Conventional Low-Drag Bomb<br />Rounds: 9x 550lb (250kg)<br />Warhead: HE>
+	_c pushBack "su24_6Rnd_FAB250";				//FAB-250 HE x6 	<Type: Conventional Low-Drag Bomb<br />Rounds: 6<br />550lb \ 250kg<br />Warhead: HE>
+	_c pushBack "su24_4Rnd_FAB250";				//FAB-250 HE x4 	<Type: Conventional Low-Drag Bomb<br />Rounds: 4<br />550lb \ 250kg<br />Warhead: HE>
+	_c pushBack "su24_3Rnd_FAB250";				//FAB-250 HE x3 	<Type: Conventional Low-Drag Bomb<br />Rounds: 3<br />550lb \ 250kg<br />Warhead: HE>
+	_c pushBack "su24_2Rnd_FAB250";				//FAB-250 HE x2 	<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />550lb \ 250kg<br />Warhead: HE>
+	_c pushBack "su24_1Rnd_FAB250";				//FAB-250 HE x1 	<Type: Conventional Low-Drag Bomb<br />Rounds: 1<br />550lb \ 250kg<br />Warhead: HE>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
+	_c pushBack "js_m_fa18_wing_tank_x1";		//F/A-18 Fuel Tank 	<500lb, high-explosive, unguided bomb>
+	//_c pushBack "js_m_fa18_buddypod_x1";		//F/A-18 Buddy Pod 	<500lb, high-explosive, unguided bomb>"		//wrong 'pylonWeapon' in magazine:'js_m_fa18_buddypod_x1' this magazine cannot be used in weapon'js_w_fa18_fueltank_holder'
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -715,6 +1303,63 @@ if(CTI_CUP_ADDON > 0) then {
 if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_gbu32";						//GBU-32 				<1000lb JDAM>
 };
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_GBU48_x1";				//GBU-48 x1 	<Type: Low-Drag LGB-GPS Bomb<br />Rounds: 1<br />1000 lb.<br />Used in: EF-2000>
+	_c pushBack "EF2K_GBU48_x2";				//GBU-48 x2 	<Type: Low-Drag LGB-GPS Bomb<br />Rounds: 2<br />1000 lb.<br />Used in: EF-2000>
+	_c pushBack "EF2K_BL755_x1";				//BL-755 x1 	<Type: BL-755 Cluster Bomb<br />147 Multi-Purpose AP-AT bomblets<br />Rounds: 1x AP-AT<br />250 lb.<br />Used in: EF-2000>
+	_c pushBack "EF2K_BL755_x2";				//BL-755 x2 	<Type: BL-755 Cluster Bomb<br />147 Multi-Purpose AP-AT bomblets<br />Rounds: 2x AP-AT<br />250 lb.<br />Used in: EF-2000>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_FAB500_x1";				//FAB-500 HE x1 			<Type: Conventional Low-Drag Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_FAB500_x2";				//FAB-500 HE x2 			<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />1100 lb.>
+	_c pushBack "pook_FAB500_x2_CL";			//FAB-500 HE x2 			<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />1100 lb.>
+	_c pushBack "pook_FAB500_x4";				//FAB-500 HE x4 			<Type: Conventional Low-Drag Bomb<br />Rounds: 4<br />2200 lb.>
+	_c pushBack "pook_FAB1500_x1";				//FAB-1500 HE x1 			<Type: Conventional Low-Drag Bomb<br />Rounds: 1<br />3000 lb.>"		//Strange convex component06 in pook_missilebox\frl_fab100\frl_fab1500.p3d:geometryFire
+	_c pushBack "pook_OFAB500_x1";				//OFAB-500 HD x1 			<Type: Conventional High-Drag Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_OFAB500_x2";				//OFAB-500 HD x2 			<Type: Conventional High-Drag Bomb<br />Rounds: 2<br />1100 lb.>
+	_c pushBack "pook_FAB500sh_x1";				//FAB-500sh HD x1 			<Type: Conventional High-Drag Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_FAB500sh_x2";				//OFAB-500sh HD x2 			<Type: Conventional High-Drag Bomb<br />Rounds: 2<br />1100 lb.>
+	_c pushBack "pook_ODAB500_x1";				//ODAB-500 FAE x1 			<Type: Fuel-Air Explosive (Thermobaric) Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_ODAB500_x2";				//ODAB-500 FAE x2 			<Type: Fuel-Air Explosive (Thermobaric) Bomb<br />Rounds: 2<br />1100 lb.>
+	_c pushBack "pook_RBK500AT_x1";				//RBK-500 CBU x1 			<Type: CBU Cluster Bomb<br />PTAB-1M Anti-tank bomblets<br />Rounds: 1<br />Submunitions: 352<br />1100 lb.>"		//Strange convex component05 in pook_missilebox\rbk\fza_rbk500.p3d:geometryFire
+	_c pushBack "pook_RBK500AT_x2";				//RBK-500 CBU x2 			<Type: CBU Cluster Bomb<br />PTAB-1M Anti-tank bomblets<br />Rounds: 2<br />Submunitions: 352<br />1100 lb.>
+	_c pushBack "pook_RBK500AO_x1";				//RBK-500-A0 CBU x1 		<Type: CBU Cluster Bomb<br />AO-2.5 Anti-Personnel Multi-purpose bomblets<br />Rounds: 1<br />Submunitions: 126<br />1100 lb.>
+	_c pushBack "pook_RBK500AO_x2";				//RBK-500-A0 CBU x2 		<Type: CBU Cluster Bomb<br />AO-2.5 Anti-Personnel Multi-purpose bomblets<br />Rounds: 2<br />Submunitions: 126<br />1100 lb.>
+	_c pushBack "pook_RBK500SFU_x1";			//RBK-500-SPBE CBU x1 		<Type: CBU Cluster Bomb<br />SPBE Sensor-Fused Anti-Tank bomblets<br />Rounds: 1<br />Submunitions: 15<br />1100 lb.>"		//Strange convex component02 in pook_missilebox\rbk\rbk_500_sdbp_fly.p3d:geometryFire
+	_c pushBack "pook_RBK500SFU_x2";			//RBK-500-SPBE CBU x2 		<Type: CBU Cluster Bomb<br />SPBE Sensor-Fused Anti-Tank bomblets<br />Rounds: 2<br />Submunitions: 15<br />1100 lb.>
+	_c pushBack "pook_BetAB500_x1";				//BetAB-500 RP x1 			<Type: Anti-Runway Penetrator Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_BetAB500_x2";				//BetAB-500 RP x2 			<Type: Anti-Runway Penetrator Bomb<br />Rounds: 2<br />1100 lb.>
+	_c pushBack "pook_ZB500_x1";				//ZB-500 INC x1 			<Type: Incendiary Fire Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_ZB500_x2";				//ZB-500 INC x2 			<Type: Incendiary Fire Bomb<br />Rounds: 2<br />1100 lb.>
+};
+if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
+	_c pushBack "sab_milavi_1rnd_cluster_01_mag";		//MA BMB Cluster HE <>
+	_c pushBack "sab_milavi_1rnd_cluster_02_mag";		//MA BMB Cluster IN <>
+	_c pushBack "sab_milavi_1rnd_gbu_mag";				//MA LGB GBU <>
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_GBU16_Navy_P_1rnd_M")) then {
+	_c pushBack "FIR_GBU16_Navy_P_1rnd_M";					//GBU-16 Paveway II x1 				<1000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	//_c pushBack "FIR_GBU16_Navy_P_1rnd_M_Tornado_AWS";		//GBU-16 Paveway II x1 				<1000lbs laser guided bomb / CAUTION-Not a cat toys.>		//wrong 'pylonWeapon' in magazine:'FIR_GBU16_Navy_P_1rnd_M_Tornado_AWS' this magazine cannot be used in weapon'FIR_GBU16_Tornado_AWS'
+	_c pushBack "FIR_GBU10_PW1_P_1rnd_M";					//GBU-10 Paveway I 					<2000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU10_P_1rnd_M";						//GBU-10 Paveway II 				<2000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU10_Navy_P_1rnd_M";					//GBU-10 Paveway II (BLU-117A/B) 	<2000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU10_P_F14_1rnd_M";					//GBU-10 Paveway II 				<2000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU16_Navy_P_2rnd_M";					//GBU-16 Paveway II x2 (BRU-57) 	<1000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU16_Navy_P_F14_1rnd_M";				//GBU-16 Paveway II 				<1000lbs laser guided bomb / CAUTION-Not a cat toys.>
+	_c pushBack "FIR_GBU24A_P_1rnd_M";						//GBU-24A Paveway III 				<2000lbs Laser guided bomb>
+	_c pushBack "FIR_GBU24B_P_1rnd_M";						//GBU-24B Paveway III 				<2000lbs Laser guided bomb>
+	_c pushBack "FIR_GBU24_EWP_1rnd_M";						//GBU-24B Paveway III x1 (EWP) 		<2000lbs Laser guided bomb>
+	_c pushBack "FIR_GBU24B_P_F14_1rnd_M";					//GBU-24B Paveway III 				<2000lbs Laser guided bomb>
+	_c pushBack "FIR_GBU24A_BLU118_P_1rnd_M";				//GBU-24A Paveway III w/BLU-118 	<2000lbs Laser guided bomb w/BLU-118 Thermobaric warhead>
+	_c pushBack "FIR_GBU24A_BLU109_P_1rnd_M";				//GBU-24A/B Paveway III w/ BLU-109 	<2000lbs Laser guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU24B_BLU109_P_1rnd_M";				//GBU-24B/B Paveway III w/ BLU-109 	<2000lbs Laser guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU24B_BLU109_P_F14_1rnd_M";			//GBU-24B/B Paveway III w/ BLU-109 	<2000lbs Laser guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU24EB_P_1rnd_M";						//GBU-24E/B Paveway III w/ BLU-109 	<2000lbs Laser guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU24EB_P_F14_1rnd_M";					//GBU-24E/B Paveway III w/ BLU-109 	<2000lbs Laser guided bomb, Bunker Buster>
+};
+if (isClass(configFile >> "CfgMagazines" >> "Tornado_AWS_StormShadow_P_1rnd_M")) then {
+	_c pushBack "Tornado_AWS_StormShadow_P_1rnd_M";				//Storm Shadow <2,900lb GPS guided missile>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -729,6 +1374,46 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 _tech_level = 3;
 
 _c pushBack "PylonRack_Bomb_SDB_x4";						//GBU SDB x4 				<250lb, high-explosive, infrared/laser-guided bomb>
+
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "pook_KAB500L_x1";				//KAB-500 (LGB) x1 			<Type: Laser-Guided Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_KAB1500L_x1";				//KAB-1500 (LGB) x1 		<Type: Laser-Guided Bomb<br />Rounds: 1<br />3000 lb.>"		//Strange convex component02 in pook_missilebox\frl_kab1500l\frl_kab1500.p3d:geometryFire
+	_c pushBack "pook_KAB500KR_x1";				//KAB-500KR (IR) x1 		<Type: IR Targeting Guided Bomb<br />Rounds: 1<br />1100 lb.>
+	_c pushBack "pook_KAB1500KR_x1";			//KAB-1500KR (IR) x1 		<Type: IR Targeting Guided Bomb<br />Rounds: 1<br />3000 lb.>"		//Strange convex component02 in pook_missilebox\frl_kab1500l\frl_kab1500kr_fly.p3d:geometryFire
+	//_c pushBack "pook_KAB500SE_x1";				//KAB-500SE (GLONASS) x1 	<Type: GPS Guided Bomb<br />Rounds: 1<br />1100 lb.>"		//wrong 'pylonWeapon' in magazine:'pook_KAB500SE_x1' this magazine cannot be used in weapon'pook_LGB_Launcher'
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_GBU16_Navy_P_1rnd_M")) then {
+	_c pushBack "FIR_GBU31_P_1rnd_M";						//GBU-31 JDAM x1 					<2000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU31_P_EWP_1rnd_M";					//(EWP)GBU-31 JDAM x1 				<2000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU31_Navy_P_1rnd_M";					//GBU-31 JDAM x1 					<2000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU31_P_F14_1rnd_M";					//GBU-31 JDAM 						<2000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU31_EWP_1rnd_M";						//GBU-31 JDAM x1 (EWP) 				<2000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU31_BLU109_P_1rnd_M";				//GBU-31 JDAM w/ BLU-109 x1 		<2000lbs GPS guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU31_BLU109_P_F14_1rnd_M";			//GBU-31 JDAM w/ BLU-109  			<2000lbs GPS guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU31_BLU109_P_EWP_1rnd_M";			//(EWP)GBU-31 JDAM w/ BLU-109 x1 	<2000lbs GPS guided bomb, Bunker Buster>
+	_c pushBack "FIR_GBU56_P_1rnd_M";						//GBU-56 LJDAM x1 					<2000lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU56_Navy_P_1rnd_M";					//GBU-56 LJDAM x1 					<2000lbs GPS/Laser guided bomb>
+	_c pushBack "FIR_GBU32_P_1rnd_M";						//GBU-32 JDAM x1 					<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU32_F15SE_P_1rnd_M";					//GBU-32 JDAM x1 					<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU32_P_EWP_1rnd_M";					//(EWP)GBU-32 JDAM x1 				<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU32_Navy_P_1rnd_M";					//GBU-32 JDAM x1 					<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU32_Navy_EWP_1rnd_M";				//GBU-32 JDAM x1 (EWP) 				<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU32_Navy_P_F14_1rnd_M";				//GBU-32 JDAM x1 					<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU32_Navy_P_2rnd_M";					//GBU-32 JDAM x2 					<1000lbs GPS Guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU55_P_1rnd_M";						//GBU-55 LJDAM x1 					<1000lbs GPS + Laser guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_gbu55_F15SE_P_1rnd_M";					//GBU-55 LJDAM x1 					<1000lbs GPS + Laser guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_gbu55_P_EWP_1rnd_M";					//(EWP)GBU-55 LJDAM x1 				<1000lbs GPS + Laser guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_GBU55_Navy_P_1rnd_M";					//GBU-55 LJDAM x1(Navy) 			<1000lbs GPS + Laser guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_gbu55_Navy_EWP_1rnd_M";				//GBU-55 LJDAM x1 (EWP) 			<1000lbs GPS + Laser guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_gbu55_Navy_P_2rnd_M";					//GBU-55 LJDAM x2 					<1000lbs GPS + Laser guided Bomb / 30 Minutes delivery guaranteed. Free if delivery is late.>
+	_c pushBack "FIR_AGM154A_P_1rnd_M";						//AGM-154A JSOW 					<1000lbs GPS guided glide bomb, Cluster>
+	_c pushBack "FIR_AGM154C_P_1rnd_M";						//AGM-154-A1 JSOW 					<1000lbs GPS guided glide bomb, HE>
+	_c pushBack "FIR_AGM154C_P_1rnd_M_Tornado_AWS";			//AGM-154-A1 JSOW 					<1000lbs GPS guided glide bomb, HE>
+	_c pushBack "FIR_AGM62_Walleye1_P_1rnd_M";				//Mk1 Walleye 1 					<Guided bomb , EO/CG Guided>
+	_c pushBack "FIR_AGM62_Walleye2_P_1rnd_M";				//Mk5 Walleye 2 					<Guided bomb , EO/CG Guided>
+	_c pushBack "FIR_AGM62_Walleye1ER_P_1rnd_M";			//Mk29 Walleye 1 ERDL 				<Guided bomb , EO/CG Guided>
+	_c pushBack "FIR_AGM62_Walleye2ER_P_1rnd_M";			//Mk30 Walleye 2 ERDL 				<Guided bomb , EO/CG Guided>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -805,6 +1490,75 @@ if(CTI_RHS_ADDON > 0) then {
 	//_c pushBack "rhs_mag_gau19_air_base";				//GAU-19/A <×1300 12.7×99mm M962 (SLAP-T)>
 	//_c pushBack "rhs_mag_m134_pylon_base";				//M134 <>
 };
+if (isClass(configFile >> "CfgMagazines" >> "FIR_GEPOD30_P_330rnd_M")) then {
+	_c pushBack "FIR_GEPOD30_P_330rnd_M";				//GAU-13/A 30mm Gun pod 	<Gunpod,30mm>
+	_c pushBack "FIR_SUU23_P_1200rnd_M";				//SUU-23/A 20mm Gun pod 	<Gunpod,20mm>
+};
+
+if (isClass(configFile >> "CfgMagazines" >> "FIR_Litening_std_P_1rnd_M")) then {
+	_c pushBack "FIR_Litening_std_P_1rnd_M";				//LITENING Pod 					<targeting pod>
+	//_c pushBack "FIR_Litening_std_P_1rnd_M_Tornado_AWS";	//LITENING Pod 					<targeting pod>		//wrong 'pylonWeapon' in magazine:'FIR_Litening_std_P_1rnd_M_Tornado_AWS' this magazine cannot be used in weapon'FIR_TGTPOD'
+	_c pushBack "FIR_ALQ99_P_1rnd_M";						//AN/ALQ-99 					<Jammer pod>
+	_c pushBack "FIR_ALQ99_EA6B_P_1rnd_M";					//AN/ALQ-99 					<Jammer pod>
+	//_c pushBack "FIR_ALQ76_P_1rnd_M";						//AN/ALQ-76 					<Jammer pod>		//wrong 'pylonWeapon' in magazine:'FIR_ALQ76_P_1rnd_M' this magazine cannot be used in weapon'FIR_ECMPOD'
+	_c pushBack "FIR_ALQ99Hi_P_1rnd_M";						//AN/ALQ-99 High 				<Jammer pod>
+	_c pushBack "FIR_ALQ99Hi_EA6B_P_1rnd_M";				//AN/ALQ-99 High 				<Jammer pod>
+	_c pushBack "FIR_ECMPod_P_1rnd_M";						//AN/ALQ-131 					<ECM pod>
+	_c pushBack "FIR_ECMPod_Camo_P_1rnd_M";					//AN/ALQ-131(Camo) 				<ECM pod>
+	_c pushBack "FIR_ECMPod_F15A_P_1rnd_M";					//AN/ALQ-131 					<ECM pod>
+	_c pushBack "FIR_ALQ184_1_P_1rnd_M";					//AN/ALQ-184 					<ECM pod>
+	_c pushBack "FIR_ALQ184_2_P_1rnd_M";					//AN/ALQ-184 					<ECM pod>
+	_c pushBack "FIR_ALQ119_1_P_1rnd_M";					//AN/ALQ-119 					<ECM pod>
+	_c pushBack "FIR_ALQ119_2_P_1rnd_M";					//AN/ALQ-119 					<ECM pod>
+	_c pushBack "FIR_ALQ119_F15A_P_1rnd_M";					//AN/ALQ-119 					<ECM pod>
+	_c pushBack "FIR_ALQ188_1_P_1rnd_M";					//AN/ALQ-188 					<ECM pod>
+	_c pushBack "FIR_Tiger2_P_1rnd_M";						//Intrepid Tiger II 			<ECM pod>
+	_c pushBack "FIR_ALQ167_P_1rnd_M";						//AN/ALQ-167 					<ECM pod>
+	_c pushBack "FIR_ATFLIR_2_P_1rnd_M";					//ATFLIR Pod 					<ATFLIR targeting pod>
+	_c pushBack "FIR_ATFLIR_3_P_1rnd_M";					//ATFLIR Pod 					<ATFLIR targeting pod>
+	_c pushBack "FIR_Nitehawk_P_1rnd_M";					//AN/AAS-38A/B Nite Hawk Pod 	<Nite Hawk FLIR/LTD pod>
+	_c pushBack "FIR_LantirnPod_P_1rnd_M";					//LANTIRN Pod 					<targeting pod>
+	_c pushBack "FIR_LantirnPod_std_P_1rnd_M";				//LANTIRN Pod 					<targeting pod>
+	_c pushBack "FIR_LantirnPod_std_Tigereye_P_1rnd_M";		//LANTIRN Pod w/ Tiger Eye 		<targeting pod>
+	_c pushBack "FIR_LantirnPod_f14_P_1rnd_M";				//LANTIRN Pod 					<targeting pod>
+	_c pushBack "FIR_Litening_P_1rnd_M";					//LITENING Pod 					<targeting pod>
+	_c pushBack "FIR_Litening_SIDE_P_1rnd_M";				//LITENING Pod 					<targeting pod>
+	_c pushBack "FIR_Litening_Nomodel_P_1rnd_M";			//LITENING Pod 					<targeting pod>
+	_c pushBack "FIR_SniperXR_1_P_1rnd_M";					//Sniper XR 					<targeting pod>
+	_c pushBack "FIR_SniperXR_2_P_1rnd_M";					//Sniper XR 					<targeting pod>
+	_c pushBack "FIR_SniperXR_2_Tigereye_P_1rnd_M";			//Sniper XR w/ Tiger eye 		<targeting pod>
+	_c pushBack "FIR_SniperXR_3_P_1rnd_M";					//Sniper XR 					<targeting pod>
+	_c pushBack "FIR_SniperXR_SIDE_P_1rnd_M";				//Sniper XR 					<targeting pod>
+	_c pushBack "FIR_SniperXR_Nomodel_P_1rnd_M";			//Sniper XR 					<targeting pod>
+	_c pushBack "FIR_SniperXR_HTS_P_1rnd_M";				//Sniper/HTS Pod 				<targeting pod>
+	_c pushBack "FIR_TARPS_P_1rnd_M";						//TARPS 						<Recce pod>
+};
+if (isClass(configFile >> "CfgMagazines" >> "js_jc_120Rnd_CMChaff_Magazine")) then {
+	_c pushBack "js_jc_120Rnd_CMChaff_Magazine";			//Chaff <>
+	_c pushBack "js_jc_120Rnd_CMFlare_Magazine";			//Flares <>
+	_c pushBack "js_jc_120Rnd_CMFlare_MJU57B_Magazine";		//MJU-57/B Kinematic Flares <>
+	_c pushBack "PylonRack_Wing_Tank_JS_SU35_x1";			//SU35 Wing Tank <>
+	_c pushBack "PylonRack_Buddy_Pod_JS_SU35_x1";			//SU35 Buddy Pod <>
+	//_c pushBack "js_m_su35_empty";							//SU35 Empty <>"		//wrong 'pylonWeapon' in magazine:'js_m_su35_empty' this magazine cannot be used in weapon'js_w_su35_master_arms_safe'
+	//_c pushBack "js_m_su35_fake_empty";						//<>"		//wrong 'pylonWeapon' in magazine:'js_m_su35_fake_empty' this magazine cannot be used in weapon'js_w_su35_master_arms_safe'
+};
+if (isClass(configFile >> "CfgMagazines" >> "pook_UPK23_250")) then {
+	_c pushBack "pook_UPK23_250";				//UPK-23 23mmx2 Pod 		<Type: Gunpod, 23mm, Twin Barrel<br />Rounds: 250>
+	_c pushBack "pook_UPK23_SU22";				//UPK-23 23mmx2 Twin Pods 	<Type: Gunpod, 23mm, Twin Barrel<br />Rounds: 250>
+};
+if (isClass(configFile >> "CfgMagazines" >> "sab_milavi_pod_mgx2_mag")) then {
+	_c pushBack "sab_milavi_pod_mgx2_mag";				//MA POD 2x HMG <>
+	_c pushBack "sab_milavi_pod_lmgx2_mag";				//MA POD 2x LMG <>
+	_c pushBack "sab_milavi_pod_mgx1_mag";				//MA POD 20mm <>
+	_c pushBack "sab_milavi_pod_cannon_mag";			//MA POD 20mm (V2) <>
+	_c pushBack "sab_milavi_pod_mauser_mag";			//MA POD 27mm <>
+	_c pushBack "sab_milavi_pod_30mm_he_mag";			//MA POD ADEN HE <>
+	_c pushBack "sab_milavi_pod_30mm_ap_mag";			//MA POD ADEN AP <>
+};
+if (isClass(configFile >> "CfgMagazines" >> "js_jc_120Rnd_CMChaff_Magazine")) then {
+	_c pushBack "FIR_BK27_L_M";										//BK-27 Revolver Cannon (Left) 	<Revolver Cannon,27mm>
+	_c pushBack "FIR_BK27_R_M";										//BK-27 Revolver Cannon (Right) <Revolver Cannon,27mm>
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -814,7 +1568,6 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_m pushBack 100;
 	_u pushBack _tech_level;
 };
-
 //*********************************************************************************************************************************************
 //														special-purpose																		  *
 //*********************************************************************************************************************************************
@@ -889,6 +1642,74 @@ if(CTI_RHS_ADDON > 0) then {
 	//_c pushBack "rhs_mag_l159_fuelpod";					//Fuel Pod <>
 	//_c pushBack "rhs_mag_l159_fuelpod_grey";			//Fuel Pod (Grey) <>
 	
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_LITENING_POD";			//LITENING POD 	<Type: Multi-Mode Targeting Pod<br />Used in: EF-2000>
+	_c pushBack "EF2K_CL_fueltank";				//FUEL 950 kg 	<EF-2000 Centerline Fuel Tank (950 kg)>
+	_c pushBack "EF2K_fueltank";				//FUEL 816 kg 	<EF-2000 Wing Fuel Tank (816 kg)>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+	_c pushBack "POOK_SORB_ECM_POD_L";				//L005S (Sorbtsiya) ECM Pod 	<L005S Sorbtsiya Self-Protection Jamming Pod<br />Mount: Left Wingtip<br />Must be used in pairs!<br />Used in: Su-27, Su-30>
+	_c pushBack "POOK_SORB_ECM_POD_R";				//L005S (Sorbtsiya) ECM Pod 	<L005S Sorbtsiya Self-Protection Jamming Pod<br />Mount: Right Wingtip<br />Must be used in pairs!<br />Used in: Su-27, Su-30>
+	_c pushBack "POOK_SOV_ECM_POD";					//MSP-418 ECM Pod 				<MSP-418 Self-Protection Jamming Pod<br />Operates in 4-18 GHz range<br />Used in Soviet-type aircraft without internal jammers>
+	_c pushBack "POOK_SOV_ARM_POD";					//L-081 ARM Targeting Pod 		<L-081 'Fantasmagoria' ARM Targeting Pod<br />Type: Radar Detection and Locator Pod<br />Detects enemy radars and guides Anti-Radar Missiles (ARM's) to radar targets<br />Required for extended range targeting>
+	_c pushBack "POOK_SU22_ARM_POD";				//Vyuga-17 ARM Targeting Pod 	<Vyuga-17 ARM Targeting Pod<br />Type: Radar Detection and Locator Pod<br />Detects enemy radars and guides Anti-Radar Missiles (ARM's) to radar targets<br />Required for extended range targeting>
+	_c pushBack "POOK_APK9E_POD";					//APK-9E Targeting Pod 			<APK-9 Command Guidance Pod<br />Targeting Pod for Kh-59 and Kh-29D AGMs<br />Required for extended range targeting>
+	_c pushBack "POOK_MIG23_CL_fueltank";			//FUEL 800l 					<Centerline Fuel Tank (800 liter)>
+	_c pushBack "POOK_MIG23_fueltank";				//FUEL 800l 					<Fuel Tank (800 liter)>
+	_c pushBack "POOK_MIG25_CL_fueltank";			//FUEL 6966 kg 					<MiG-25 Centerline Fuel Tank (6966 kg)>
+	_c pushBack "POOK_MIG29_CL_fueltank";			//FUEL 1980 kg 					<MiG-29 Centerline Fuel Tank (1980 kg)>
+	_c pushBack "POOK_MIG29_fueltank";				//FUEL 816 kg 					<MiG-29 Wing Fuel Tank (816 kg)>
+	_c pushBack "POOK_MIG21_fueltank";				//FUEL 490 kg 					<MiG-21 Wing Fuel Tank (490 kg)>
+	_c pushBack "POOK_SU22_fueltank";				//FUEL 800l 					<Fuel Tank (800 liter)>
+	//_c pushBack "BE200_WaterTank_F";				//Water, 2000 litres 			<Water, 2000 litres>"		//unable to create weapon for missile 'BE200_WaterTank_F', check config entry'pylonWeapon'	lot of errors!!!!
+	//_c pushBack "BE200_WaterTank_R";				//Water, 2000 litres 			<Water, 2000 litres>"		//unable to create weapon for missile 'BE200_WaterTank_R', check config entry'pylonWeapon'	lot of errors!!!!
+};
+if (isClass(configFile >> "CfgMagazines" >> "FIR_GBU16_Navy_P_1rnd_M")) then {
+	_c pushBack "sab_milavi_1rnd_droptank_mag";			//MA TNK Droptank v1 <>
+	_c pushBack "sab_milavi_1rnd_droptank_2_mag";		//MA TNK Droptank v2 <>
+	_c pushBack "sab_milavi_1rnd_droptank_3_mag";		//MA TNK Droptank v3 <>
+	//_c pushBack "sab_milavi_1rnd_droptank_4_mag";		//MA TNK Centertank <>		//wrong 'pylonWeapon' in magazine:'sab_milavi_1rnd_droptank_4_mag' this magazine cannot be used in weapon'sab_milavi_droptank_weapon'
+};
+if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
+	_c pushBack "sab_milavi_1rnd_aim9tr_mag";		//MA AAM AIM-9 Training <Short-range, infrared-guided, air-to-air missile with high-explosive warhead>
+};
+if (isClass(configFile >> "CfgVehicles" >> "FIR_Mk76_P_1rnd_M")) then {
+	_c pushBack "FIR_Mk76_P_1rnd_M";								//Mk76 Practice bomb x1 		<Training Weapon>
+	_c pushBack "FIR_Mk76_P_F15E_1rnd_M";							//Mk76 Practice bomb x1 		<Training Weapon>
+	_c pushBack "FIR_Mk76_P_F14_1rnd_M";							//Mk76 Practice bomb x1 		<Training Weapon>
+	_c pushBack "FIR_Mk76_P_2rnd_M";								//Mk76 Practice bomb x2 		<Training Weapon>
+	_c pushBack "FIR_Mk76_P_3rnd_M";								//Mk76 Practice bomb x3 		<Training Weapon>
+	_c pushBack "FIR_SUU25_P_8rnd_M";								//SUU25 x 1 					<Parachute Flare>
+	_c pushBack "FIR_CATM120B_P_1rnd_M";							//CATM-120B 					<Training Weapon>
+	_c pushBack "FIR_CATM120C_P_1rnd_M";							//CATM-120C 					<Training Weapon>
+	_c pushBack "FIR_CATM120C_LAU115_P_1rnd_M";						//CATM-120C AMRAAM 				<Training Weapon>
+	_c pushBack "FIR_CATM120C_P_F23A_3rnd_M";						//CATM-120C AMRAAM x 3 			<Training Weapon>
+	_c pushBack "FIR_CATM9M_P_1rnd_M";								//CATM-9M 						<Training Weapon>
+	_c pushBack "FIR_CATM9M_LAU115_P_1rnd_M";						//CATM-9M Sidewinder 			<Training Weapon>
+	//_c pushBack "FIR_CATM7_P_1rnd_M";								//CATM-7 Sparrow 				<Training Weapon>			//No class FIR_CATM7_2
+	_c pushBack "FIR_CATM7_2_P_1rnd_M";								//CATM-7 Sparrow 				<Training Weapon>
+	_c pushBack "FIR_CATM7_LAU115_P_1rnd_M";						//CATM-7M Sparrow 				<Training Weapon>
+	_c pushBack "FIR_CATM7_P_F14_U1_1rnd_M";						//CATM-7 Sparrow 				<Training Weapon>
+	_c pushBack "FIR_CATM7_P_F14_U2_1rnd_M";						//CATM-7 Sparrow 				<Training Weapon>
+	_c pushBack "FIR_CATM7_P_F14_U3_1rnd_M";						//CATM-7 Sparrow 				<Training Weapon>
+	_c pushBack "FIR_CATM7_P_F14_U4_1rnd_M";						//CATM-7 Sparrow 				<Training Weapon>
+	_c pushBack "FIR_CATM54_P_1rnd_M";								//CATM-54 Phoenix 				<Training Weapon>
+	_c pushBack "FIR_AAM3T_P_1rnd_M";								//AAM-3(Training) 				<Training Weapon>
+	_c pushBack "FIR_AAM4T_P_1rnd_M";								//AAM-4(Training) 				<Training Weapon>
+	_c pushBack "FIR_BDU57_P_1rnd_M";								//BDU-57 LGTR x1 				<Training Weapon>
+	_c pushBack "FIR_BDU57_P_F15E_1rnd_M";							//BDU-57 LGTR x1 				<Training Weapon>
+	_c pushBack "FIR_BDU57_P_F14_1rnd_M";							//BDU-57 LGTR x1 				<Training Weapon>
+	_c pushBack "FIR_BDU57_P_2rnd_M";								//BDU-57 LGTR x2 				<Training Weapon>
+	_c pushBack "FIR_BDU57_P_3rnd_M";								//BDU-57 LGTR x3 				<Training Weapon>
+	_c pushBack "FIR_AerobaticSmoke_White_Engine_P_10rnd_M";		//Smoke generator(White) 		<smoke generator for engine>
+	_c pushBack "FIR_AerobaticSmoke_Red_Engine_P_10rnd_M";			//Smoke generator(Red) 			<smoke generator for engine>
+	_c pushBack "FIR_AerobaticSmoke_Blue_Engine_P_10rnd_M";			//Smoke generator(Blue) 		<smoke generator for engine>
+	_c pushBack "FIR_AerobaticSmoke_Yellow_Engine_P_10rnd_M";		//Smoke generator(Yellow) 		<smoke generator for engine>
+	_c pushBack "FIR_Smokewinder_White_P_10rnd_M";					//Smokewinder (White) 			<Smokewinder (White)>
+	_c pushBack "FIR_Smokewinder_Red_P_10rnd_M";					//Smokewinder (Red) 			<Smokewinder (Red)>
+	_c pushBack "FIR_Smokewinder_Blue_P_10rnd_M";					//Smokewinder (Blue) 			<Smokewinder (Blue)>
+	_c pushBack "FIR_Smokewinder_Yellow_P_10rnd_M";					//Smokewinder (Yellow) 			<Smokewinder (Yellow)>
 };
 
 // set all other vars in a slope

@@ -147,6 +147,11 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 	};
 };
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_BARRACKS) then {
+	_upgrade_levels set [CTI_UPGRADE_BARRACKS, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											Wheeled Vehicles																				  *
 //*********************************************************************************************************************************************
@@ -403,6 +408,11 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	};
 };
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_LIGHT) then {
+	_upgrade_levels set [CTI_UPGRADE_LIGHT, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											Tracked Vehicles																				  *
 //*********************************************************************************************************************************************
@@ -565,6 +575,11 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	};
 };
 
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_HEAVY) then {
+	_upgrade_levels set [CTI_UPGRADE_HEAVY, _tech_level];
+};
+
 //*********************************************************************************************************************************************
 //											AIR - Choppers and Planes																		  *
 //*********************************************************************************************************************************************
@@ -637,6 +652,11 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_s pushBack "";
 		_d pushBack 0;	
 	};
+};
+
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
+	_upgrade_levels set [CTI_UPGRADE_AIR, _tech_level];
 };
 
 //*********************************************************************************************************************************************
@@ -876,6 +896,11 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
 	_f pushBack CTI_FACTORY_NAVAL;
 	_s pushBack "";
 	_d pushBack 0;*/
+};
+
+//Update the calculatetd max upgrade level
+if(_tech_level > _upgrade_levels select CTI_UPGRADE_NAVAL) then {
+	_upgrade_levels set [CTI_UPGRADE_NAVAL, _tech_level];
 };
 
 //*********************************************************************************************************************************************

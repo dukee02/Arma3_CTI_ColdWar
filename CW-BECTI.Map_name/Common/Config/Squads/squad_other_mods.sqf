@@ -1,22 +1,13 @@
 _side = _this;
-_sideID = 3;
 _sid = "";
+_level = -1;
 
-
-if(_side == west) then {
-	//_sid = "VIOC_B_";
-	_ai = CTI_WEST_AI;
-} 
-else {
-	if(_side == east) then {
-		//_sid = "VIOC_O_";
-		_ai = CTI_EAST_AI;
-	} 
-	else {
-		//_sid = "VIOC_I_";
-	};
-};
-_sideID = _side call CTI_CO_FNC_GetSideID;
+/*switch (_side) do {
+	case "west": {_sid = "VIOC_B_"};
+	case "east": {_sid = "VIOC_O_"};
+	case "independent": {_sid = "VIOC_I_"};
+	default { };
+};*/
 
 _v = [];
 _t = [];
@@ -25,7 +16,7 @@ _f = [];
 _m = [];
 _c = [];
 _s = [];
-/*
+
 //--- Commander will assign those orders based on the force and the probability [type, strenght, {probability}, {Max per side}]
 missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_INFANTRY", _side], [["Infantry", 2, 40]]];
 missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_LIGHT", _side], [["Motorized", 2, 60]]];
@@ -34,12 +25,9 @@ missionNamespace setVariable [format["CTI_SQUADS_%1_CATEGORY_AIR", _side], [["Ai
 
 missionNamespace setVariable [format["CTI_SQUADS_%1_TOWN_DEFENSE", _side], ["Infantry", "Motorized"]];
 
-//--- Those are used by the commander to determine the kind of unit an AI team has
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_INFANTRY", _side], ["Infantry"]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], ["Motorized"]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], ["AntiAir", "ArmoredMBT"]];
-missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], ["Air"]]; 
-*/
+//***************************************************************************************************************************************
+//														Infanttry																		*
+//***************************************************************************************************************************************
 //Infantry setup for the AI groups
 /*units_infantry = [];
 units_to_add = [];
@@ -152,89 +140,615 @@ _s pushBack [];
 //Air setup for the AI groups
 units_air = [];
 air_to_add = [];
+air_auto = [];
+kind_air = [];
 
+_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+//_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
+
+//check if the parameter allows us to load SABs units for all sides or only
+//for west/ind and load the matrix of this nation
+_loadSabPlanes = false;
+switch (_side) do {
+	case west: {
+		_sid = "_b";
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR")) then {_loadSabPlanes = true};
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_SABAIR_ID] call CTI_CO_FNC_GetTechmatrix;
+	};
+	case east: {
+		_sid = "_o";
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR") && CTI_AIR_ADDON >= 1) then {_loadSabPlanes = true};
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_SOV_ID, CTI_SABAIR_ID] call CTI_CO_FNC_GetTechmatrix;
+	};
+	case resistance: {
+		_sid = "_i";
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR") ) then {_loadSabPlanes = true};
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_NPOC_ID, CTI_SABAIR_ID] call CTI_CO_FNC_GetTechmatrix;
+	};
+	default {
+		_sid = "";
+	};
+};
+
+if(_loadSabPlanes) then {
+	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_panther%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_panther%1", _sid], 1, 40]];//Mai 1949					Jagdbomber
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_t28trojan%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_t28trojan%1", _sid], 1, 40]];//1950						Trainingsflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_mystere%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_mystere%1", _sid], 1, 40]];//1954						Jagdbomber
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_fiat%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_fiat%1", _sid], 1, 40]];//August 1956				Erdkampf- und Aufklärungsflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_jaguar%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_jaguar%1", _sid], 1, 40]];//1956					Jagdflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_magister%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_magister%1", _sid], 1, 40]];//1957						Strahltrainer
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_etendard%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_etendard%1", _sid], 1, 40]];//Mai 1958					trägergestütztes Jagdflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_f104%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_f104%1", _sid], 1, 40]];//Februar 1958				Abfangjäger
+			};
+		};
+	
+		units_air append air_to_add;
+		air_auto append air_to_add;
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_mirageiv%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_mirageiv%1", _sid], 1, 40]];//Oktober 1964				Strategischer Bomber
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_sf260%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_sf260%1", _sid], 1, 40]];//Juli 1964					Trainingsflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_f11tiger%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_f11tiger%1", _sid], 1, 40]];//1973					Jagdbomber
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_pc7%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_pc7%1", _sid], 1, 40]];//1978						Schulflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_alphajet%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_alphajet%1", _sid], 1, 40]];//1979						Leichter Jagdbomber	
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_baehawk%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_baehawk%1", _sid], 1, 40]];//1974						Erdkampfflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_baehawk%1_2", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_baehawk%1_", _sid], 1, 40]];//1974						Erdkampfflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_mb339%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_mb339%1", _sid], 1, 40]];//August 1979				Leichtes Erdkampfflugzeug
+			};
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_m2000%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_m2000%1", _sid], 1, 40]];	//Juni 1984					Mehrzweckkampfflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_pc9%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_pc9%1", _sid], 1, 40]];//Mai 1984					Schulflugzeug
+			};
+		};
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_t45goshawk%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_t45goshawk%1", _sid], 1, 40]];//1991						Trainingsflugzeug
+			};
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		//pc21															Juli 2002					Schulflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> format["sab_pc21%1", _sid])) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["sab_pc21%1", _sid], 1, 40]];
+			};
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+};
+
+_sid = "";
+/*switch (_side) do {
+	case west: {_sid = "";};
+	case east: {_sid = "";};
+	case resistance: {_sid = "";};
+	default {_sid = "";};
+};*/
+
+air_to_add = [];
+//Pook Soviet Air Force Pack
+if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
+	_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+	_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_SOV_ID, CTI_POOKAIR_ID] call CTI_CO_FNC_GetTechmatrix;
+
+	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		//Mikojan-Gurewitsch MiG-21		Dezember 1958	Abfangjäger
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_MIG21_OPFOR", _sid], 1, 40]];
+			};	
+		};
+	
+		units_air append air_to_add;
+		air_auto append air_to_add;
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		//Mikojan-Gurewitsch MiG-23		1970			Abfangjäger (M), Jagdbomber (B)
+		if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_Mig23_OPFOR", _sid], 1, 40]];
+			};		
+		};
+		//Mikojan-Gurewitsch MiG-25		1970			Abfangjäger
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG25_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_MIG25_OPFOR", _sid], 1, 40]];
+			};	
+		};
+		//Mikojan-Gurewitsch MiG-27		1975			Jagdbomber
+		if (isClass(configFile >> "CfgVehicles" >> "pook_Mig27_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_Mig27_OPFOR", _sid], 1, 40]];
+			};		
+		};
+		//Suchoi Su-22					1976			Jagdbomber
+		if (isClass(configFile >> "CfgVehicles" >> "pook_Su22_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_Su22_OPFOR", _sid], 1, 40]];
+			};		
+		};
+		//Jakowlew Jak-38				1977			VTOL-Kampfflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> "pook_YAK38_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_YAK38_OPFOR", _sid], 1, 40]];
+			};
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		//Mikojan-Gurewitsch MiG-31		1981			Abfangjäger
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG31_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_MIG31_OPFOR", _sid], 1, 40]];
+			};
+		};
+		//Mikojan-Gurewitsch MiG-29		Juni 1983		Mehrzweckkampfflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG29_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_MIG29_OPFOR", _sid], 1, 40]];
+				//air_to_add append [[format["%1pook_MIG29SM_OPFOR", _sid], 1, 40]];
+			};
+		};
+		//Suchoi Su-27					Dezember 1984	Luftüberlegenheitsjäger
+		if (isClass(configFile >> "CfgVehicles" >> "pook_SU27_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_SU27_OPFOR", _sid], 1, 40]];
+			};
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		//Suchoi Su-30					14. April 1992	Langstreckenabfangjäger/Mehrzweckkampfflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> "pook_SU30_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_SU30_OPFOR", _sid], 1, 40]];
+				//air_to_add append [[format["%1pook_SU30M_OPFOR", _sid], 1, 40]];
+			};			
+		};
+		//MIG-29 Fulcrum AWS											Juni 1983					Mehrzweckkampfflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> "Mig29AWS_rus")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1Mig29AWS_rus", _sid], 1, 40]];
+			};
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1Mig29AWS_SMT_rus", _sid];
+			};*/		
+		};
+		//The Sukhoi Su-33 Flanker-D									1994						Luftüberlegenheitsjäger
+		if (isClass(configFile >> "CfgVehicles" >> "Su33_Protatype_PT_2")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1Su33_Protatype_PT_2", _sid], 1, 40]];
+			};	
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+		//RSK MiG-35					2019			Mehrzweckkampfflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG35_OPFOR")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_MIG35_OPFOR", _sid], 1, 40]];
+			};
+		};
+		//SU-34SM FULLBACK-D AWS										9. Dezember 2011				Jagdbomber
+		if (isClass(configFile >> "CfgVehicles" >> "AWS_SU34_genericopfor_BOMBER")) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1AWS_SU34_RU_BOMBER", _sid], 1, 40]];
+			};
+		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+};
+
+if(count kind_air > 0) then {
+	if (isNil {missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_AIR", _side]}) then {
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], kind_air];
+	} else {
+		{
+			kind_air pushBackUnique _x;
+		} forEach (missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_AIR", _side]);
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], kind_air];
+	};
+};
+
+[_side, _v, _t, _p, _f, _m, _c, _s] call compile preprocessFileLineNumbers "Common\Config\Squads\Squads_Set.sqf";
+
+//***********************************************************************************************************************************************
+//											Nation specific units																				*
+//***********************************************************************************************************************************************
+//Level 0
+units_air = [];
+air_to_add = [];
+air_auto = [];
+kind_air = [];
+//German Bundeswehr Mod is active
 if(CTI_BW_SIDE == _sideID) then {
-	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
+	_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+	_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_BWA3_ID] call CTI_CO_FNC_GetTechmatrix;
+
+	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		//Panavia Tornado AWS and variants							1980						Jagdbomber
 		if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_GER")) then {
 			//loading with BW-Mod / GM
-			//units_air append [[format["%1Tornado_AWS_ecr_ger", _sid], 1, 40]];//Suppression of Enemy Air Defenses (SEAD)
-			//units_air append [[format["%1Tornado_AWS_GER", _sid], 1, 40]];
-			units_air append [[format["%1Tornado_AWS_camo_ger", _sid], 1, 40]];
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1Tornado_AWS_GER", _sid], 1, 40]];
+				_c pushBack format["", _sid];	
+			};
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1Tornado_AWS_ecr_ger", _sid];						//Suppression of Enemy Air Defenses (SEAD)
+				_c pushBack format["%1Tornado_AWS_camo_ger", _sid];
+			};*/
 		};
+	
+		units_air append air_to_add;
+		air_auto append air_to_add;
 	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= (_level+1)) then {
 		//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_GER_CAP")) then {	
-			units_air append [[format["%1EAWS_EF2000_GER_CAP", _sid], 1, 40]];
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1EAWS_EF2000_GER_CAP", _sid], 1, 40]];
+			};		
+		};
+		//pook_EF2000													Juli 2006					Mehrzweckkampfflugzeug
+		if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {	
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1pook_EF2000_BLUFOR", _sid], 1, 40]];
+			};		
 		};
 		//Project Lightning - F-35B Armaverse Version					31. Juli 2015				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F35B_MFG1")) then {
-			units_air append [[format["%1FIR_F35B_MFG1", _sid], 1, 40]];
-			//units_air append [[format["%1FIR_F35B_MFG2", _sid], 1, 40]];
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1FIR_F35B_MFG1", _sid], 1, 40]];
+			};
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_F35B_MFG2", _sid];//GER
+			};*/
 		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
 	};	
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
 };
-
+/*
+air_to_add = [];
 //upcomming British Forces
 if(CTI_BAF_SIDE == _sideID) then {
-	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
+	_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+	_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BAF_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+
+	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		//AV-8B Harrier 2												April 1969				VTOL-Erdkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_GR9A_2")) then {
-			//units_air append [[format["%1FIR_AV8B_GR7A_Lucy", _sid], 1, 40]];
-			units_air append [[format["%1FIR_AV8B_GR9A_2", _sid], 1, 40]];
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1FIR_AV8B_GR9A_2", _sid], 1, 40]];
+			};
+			//if(CTI_AIR_ADDON >= 2) then {
+			//	_c pushBack format["%1FIR_AV8B_GR7A_Lucy", _sid];
+			//};	
 		};
+	
+		units_air append air_to_add;
+		air_auto append air_to_add;
 	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
 	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
 		//Panavia Tornado AWS and variants							1980						Jagdbomber
 		if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_UK_DS")) then {
-			//units_air append [[format["%1Tornado_AWS_ADV_uk", _sid], 1, 40]];
-			//units_air append [[format["%1Tornado_AWS_UK_DS", _sid], 1, 40]];
-			//units_air append [[format["%1Tornado_AWS_UK_617", _sid], 1, 40]];
-			units_air append [[format["%1Tornado_AWS_camo_uk", _sid], 1, 40]];
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1Tornado_AWS_camo_uk", _sid], 1, 40]];
+			};
+			if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1Tornado_AWS_ADV_uk", _sid];
+			};
+			if(CTI_AIR_ADDON >= 3) then {
+				_c pushBack format["%1Tornado_AWS_UK_DS", _sid];	
+				_c pushBack format["%1Tornado_AWS_UK_617", _sid];
+			};		
 		};
 		//F/A-18 Hornet												7. Januar 1983				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_RCAF")) then {
-			units_air append [[format["%1FIR_F18C_RCAF", _sid], 1, 40]];
-			//units_air append [[format["%1FIR_F18C_RAAF", _sid], 1, 40]];
+			///BAF
+			if(CTI_AIR_ADDON >= 0) then {	
+				air_to_add append [[format["%1FIR_F18C_RAAF", _sid], 1, 40]];
+			};
+			if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_F18C_RCAF", _sid];
+			};
 		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
 	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
 	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
 		//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
-		if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_UK_CAP")) then {	
-			units_air append [[format["%1EAWS_EF2000_rafhist_CAP", _sid], 1, 40]];
-			//units_air append [[format["%1EAWS_EF2000_UK_CAP", _sid], 1, 40]];	
-		};
+		//if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_UK_CAP")) then {
+		//	if(CTI_AIR_ADDON >= 0) then {
+		//		air_to_add append [[format["%1EAWS_EF2000_UK_CAP", _sid], 1, 40]];
+		//	};
+		//	if(CTI_AIR_ADDON >= 2) then {	
+		//		_c pushBack format["%1EAWS_EF2000_rafhist_CAP", _sid];
+		//	};			
+		//};
 		//EA-18G Growler												22. September 2009			EloKa-Kampfflugzeug
-		if (isClass(configFile >> "CfgVehicles" >> "EA18G_RAAF") && CTI_US_CUP_SIDE != _sideID) then {
-			units_air append [[format["%1EA18G_RAAF", _sid], 1, 40]];
+		if (isClass(configFile >> "CfgVehicles" >> "EA18G_RAAF") && CTI_US_SIDE != _sideID) then {
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1EA18G_RAAF", _sid], 1, 40]];
+			};
 		};
 		//Project Lightning - F-35B Armaverse Version					31. Juli 2015				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F35B_RAF01")) then {
-			units_air append [[format["%1FIR_F35B_RAF01", _sid], 1, 40]];
-			//units_air append [[format["%1FIR_F35B_RAF02", _sid], 1, 40]];	
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1FIR_F35B_RAF01", _sid], 1, 40]];
+			};
+			if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_F35B_RAF02", _sid];
+			};	
 		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
 	};
-};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
+};*/
+air_to_add = [];
+if(CTI_US_SIDE == _sideID) then {
+	_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+	if(CTI_RHS_ADDON > 0) then {
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_RHS_ID] call CTI_CO_FNC_GetTechmatrix;
+	} else {
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
+	}; 
 
-//if(CTI_US_CUP_SIDE == _sideID || CTI_US_RHS_SIDE == _sideID) then {
-if(CTI_US_CUP_SIDE == _sideID) then {
-	if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
+	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		//AV-8B Harrier 2												April 1969				VTOL-Erdkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_VMA223")) then {
 			if(CTI_AIR_ADDON >= 0) then {
-				//units_air append [[format["%1FIR_AV8B_NA_VMA211", _sid], 1, 40]];
-				units_air append [[format["%1FIR_AV8B_VMA223", _sid], 1, 40]];	
+				air_to_add append [[format["%1FIR_AV8B_VMA223", _sid], 1, 40]];
 			};
-			if(CTI_AIR_ADDON >= 1) then {
-				//units_air append [[format["%1FIR_AV8B_VMA211_OLD", _sid], 1, 40]];
-				//units_air append [[format["%1FIR_AV8B_VMA223_OLD", _sid], 1, 40]];
-				//units_air append [[format["%1FIR_AV8B_VMA231_02", _sid], 1, 40]];
-				units_air append [[format["%1FIR_AV8B_VMA311", _sid], 1, 40]];
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_AV8B_NA_VMA211", _sid];
+				_c pushBack format["%1FIR_AV8B_VMA211_OLD", _sid];	
+				_c pushBack format["%1FIR_AV8B_VMA223_OLD", _sid];
+				_c pushBack format["%1FIR_AV8B_VMA231_02", _sid];	
+				_c pushBack format["%1FIR_AV8B_VMA311", _sid];
 			};
-			if(CTI_AIR_ADDON >= 2) then {
-				units_air append [[format["%1FIR_AV8B_VMA214_01", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_AV8B_VMA214_02", _sid];	
+			if(CTI_AIR_ADDON >= 3) then {
+				_c pushBack format["%1FIR_AV8B_VMA214_01", _sid];	//VMA214
+				_c pushBack format["%1FIR_AV8B_VMA214_02", _sid];	
 				_c pushBack format["%1FIR_AV8B_VMA214_03", _sid];	
 				_c pushBack format["%1FIR_AV8B_VMA214_04", _sid];	
 				_c pushBack format["%1FIR_AV8B_VMA214_05", _sid];	
@@ -246,29 +760,30 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_AV8B_VMA214_12", _sid];	
 				_c pushBack format["%1FIR_AV8B_VMA214_15", _sid];	
 				_c pushBack format["%1FIR_AV8B_VMA214_20", _sid];	
-				_c pushBack format["%1FIR_AV8B_VMA214_22", _sid];*/
-			};	
+				_c pushBack format["%1FIR_AV8B_VMA214_22", _sid];
+			};*/
 		};
 		//F-14 Tomcat													//September 1974			Abfangjäger
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F14A_Iceman")) then {
 			if(CTI_AIR_ADDON >= 0) then {
 				//skin pack 1
-				units_air append [[format["%1FIR_F14D_VF213_AJ200", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F14A_VF213_95low", _sid];	
-				_c pushBack format["%1FIR_F14A_VF213_First", _sid];	
+				air_to_add append [[format["%1FIR_F14B_VF102", _sid], 1, 40]];
+				//_c pushBack format["%1FIR_F14A_VF213_First", _sid];
+				//_c pushBack format["%1FIR_F14D_VF213_2001", _sid];	
+				
+				//_c pushBack format["%1FIR_F14A_Iceman", _sid];	
+				//_c pushBack format["%1FIR_F14A_Maverick", _sid];
+			};
+			/*if(CTI_AIR_ADDON >= 2) then {
 				_c pushBack format["%1FIR_F14A_VF213_Early", _sid];	
-				_c pushBack format["%1FIR_F14A_VF213_95high", _sid];
+				_c pushBack format["%1FIR_F14A_VF213_95low", _sid];	
+				_c pushBack format["%1FIR_F14A_VF213_95high", _sid];	
+				_c pushBack format["%1FIR_F14D_VF213_AJ200", _sid];	
 				_c pushBack format["%1FIR_F14D_VF213_AJ205", _sid];	
 				_c pushBack format["%1FIR_F14D_VF213_AJ207", _sid];	
-				_c pushBack format["%1FIR_F14D_VF213_AJ211", _sid];	
-				_c pushBack format["%1FIR_F14D_VF213_2001", _sid];	
+				_c pushBack format["%1FIR_F14D_VF213_AJ211", _sid];
 				
-				_c pushBack format["%1FIR_F14A_Iceman", _sid];	
-				_c pushBack format["%1FIR_F14A_Maverick", _sid];*/
-			};
-			if(CTI_AIR_ADDON >= 1) then {
-				units_air append [[format["%1FIR_F14B_VF102", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F14A_HBK1", _sid];	
+				_c pushBack format["%1FIR_F14A_HBK1", _sid];	
 				_c pushBack format["%1FIR_F14A_NSAWC", _sid];//blue	
 				_c pushBack format["%1FIR_F14A_VF1", _sid];	
 				_c pushBack format["%1FIR_F14A_VF111", _sid];	
@@ -298,12 +813,12 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F14D_VF101", _sid];	
 				_c pushBack format["%1FIR_F14D_VF2", _sid];	
 				_c pushBack format["%1FIR_F14D_VF213", _sid];	
-				_c pushBack format["%1FIR_F14D_VF31CAG", _sid];*/
+				_c pushBack format["%1FIR_F14D_VF31CAG", _sid];
 			};
-			if(CTI_AIR_ADDON >= 2) then {
+			if(CTI_AIR_ADDON >= 3) then {
 				//skin pack 2
-				units_air append [[format["%1FIR_F14A_VF201_HIVIZ", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F14A_VF201_LOVIZ", _sid];	
+				_c pushBack format["%1FIR_F14A_VF201_HIVIZ", _sid];	
+				_c pushBack format["%1FIR_F14A_VF201_LOVIZ", _sid];	
 				_c pushBack format["%1FIR_F14A_VF202_HIVIZ", _sid];	
 				_c pushBack format["%1FIR_F14A_VF202_LOVIZ", _sid];	
 				_c pushBack format["%1FIR_F14A_VF301_HIVIZ", _sid];	
@@ -362,37 +877,38 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F14D_VF31_AJ110", _sid];	
 				_c pushBack format["%1FIR_F14D_VF31_AJ111_Christine", _sid];	
 				_c pushBack format["%1FIR_F14D_VF31_AJ111", _sid];	
-				_c pushBack format["%1FIR_F14D_VF31_AJ112", _sid];*/
-			};
+				_c pushBack format["%1FIR_F14D_VF31_AJ112", _sid];
+			};*/
 		};
+	
 		//F-15 Eagle													November 1974				Mehrzweckkampfflugzeug/Luftüberlegenheitsjäger
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F15A_BT")) then {
 			if(CTI_AIR_ADDON >= 0) then {
-				units_air append [[format["%1FIR_F15A_BT", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F15B_5FIS", _sid];
-				_c pushBack format["%1FIR_F15C_AK_CFT", _sid];
-				_c pushBack format["%1FIR_F15D_LN", _sid];	
-				_c pushBack format["%1FIR_F15E_Demo", _sid];
-				_c pushBack format["%1FIR_F15SE_CR", _sid];	*/
+				air_to_add append [[format["%1FIR_F15A_BT", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F15B_5FIS", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F15C_AK_CFT", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F15D_LN", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F15E_Demo", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F15SE_CR", _sid], 1, 40]];	
 			};				
-			if(CTI_AIR_ADDON >= 1) then {
-				units_air append [[format["%1FIR_F15B_48FIS", _sid], 1, 40]];	
-				/*_c pushBack format["%1FIR_F15A_318FIS_1", _sid];	
+			/*if(CTI_AIR_ADDON >= 2) then {	
+				_c pushBack format["%1FIR_F15A_318FIS_1", _sid];	
 				_c pushBack format["%1FIR_F15A_318FIS_2", _sid];
 				_c pushBack format["%1FIR_F15B_318FIS", _sid];	
+				_c pushBack format["%1FIR_F15B_48FIS", _sid];	
 				_c pushBack format["%1FIR_F15C_FL", _sid];	
 				_c pushBack format["%1FIR_F15C_LN", _sid];
 				_c pushBack format["%1FIR_F15E_LN_492", _sid];	
 				_c pushBack format["%1FIR_F15E_LN_494", _sid];
-				_c pushBack format["%1FIR_F15SE_LA", _sid];	*/		
+				_c pushBack format["%1FIR_F15SE_LA", _sid];			
 			};	
-			if(CTI_AIR_ADDON >= 2) then {	
-				units_air append [[format["%1FIR_F15C_BT_22TFS", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F15A_5FIS", _sid];	
+			if(CTI_AIR_ADDON >= 3) then {	
+				_c pushBack format["%1FIR_F15A_5FIS", _sid];	
 				_c pushBack format["%1FIR_F15A_AK_43d", _sid];	
 				_c pushBack format["%1FIR_F15A_BT_Tigermeet", _sid];	
 				_c pushBack format["%1FIR_F15A_FF", _sid];
-				_c pushBack format["%1FIR_F15A_HO_7th", _sid];		
+				_c pushBack format["%1FIR_F15A_HO_7th", _sid];	
+				_c pushBack format["%1FIR_F15C_BT_22TFS", _sid];	
 				_c pushBack format["%1FIR_F15C_BT_36TFW", _sid];	
 				_c pushBack format["%1FIR_F15C_CR_32TFS", _sid];	
 				_c pushBack format["%1FIR_F15C_CFT_57FIS", _sid];	
@@ -408,35 +924,36 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F15E_SJ_334", _sid];	
 				_c pushBack format["%1FIR_F15E_SJ_335", _sid];	
 				_c pushBack format["%1FIR_F15E_SJ_336", _sid];	
-				_c pushBack format["%1FIR_F15SE_LN", _sid];	*/
-			};
+				_c pushBack format["%1FIR_F15SE_LN", _sid];	
+			};*/
 		};
+	
 		//A-10 Warthog												März 1977					Erdkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_A10A_MD")) then {
 			if(CTI_AIR_ADDON >= 0) then {	
 				//skinpack 3
-				units_air append [[format["%1FIR_A10C_MD", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_A10C_FR", _sid];	
+				air_to_add append [[format["%1FIR_A10C_MD", _sid], 1, 40]];
+			};
+			/*if(CTI_AIR_ADDON >= 2) then {	
+				//skinpack 3
+				_c pushBack format["%1FIR_A10C_FR", _sid];	
 				_c pushBack format["%1FIR_A10C_47FS_Tigress", _sid];	
 				_c pushBack format["%1FIR_A10C_FT", _sid];		
-				_c pushBack format["%1FIR_A10C_OS", _sid];*/
-			};
-			if(CTI_AIR_ADDON >= 1) then {	
+				_c pushBack format["%1FIR_A10C_OS", _sid];
 				//skinpack 2
-				units_air append [[format["%1FIR_A10A_MD", _sid], 1, 40]];//white
-				/*_c pushBack format["%1FIR_A10A_Camo1", _sid];	
+				_c pushBack format["%1FIR_A10A_MD", _sid];//white
+				_c pushBack format["%1FIR_A10A_Camo1", _sid];	
 				_c pushBack format["%1FIR_A10A_Camo2", _sid];	
 				_c pushBack format["%1FIR_A10A_47fs", _sid];//white	
 				_c pushBack format["%1FIR_A10A_WR_Bonus", _sid];	
 				_c pushBack format["%1FIR_A10A_74fs", _sid];//white		
 				_c pushBack format["%1FIR_A10A_Grey_Bonus", _sid];	
 				_c pushBack format["%1FIR_A10A_Sand_Bonus", _sid];	
-				_c pushBack format["%1FIR_A10A_Snow_Bonus", _sid];*/
+				_c pushBack format["%1FIR_A10A_Snow_Bonus", _sid];
 			};
-			if(CTI_AIR_ADDON >= 2) then {
+			if(CTI_AIR_ADDON >= 3) then {
 				//skinpack 1 camo
-				units_air append [[format["%1FIR_A10A_Fulda_WR_510TFS", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_A10A_Fulda_SB_608", _sid];	
+				_c pushBack format["%1FIR_A10A_Fulda_SB_608", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_SB_620", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_LM", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_AN", _sid];	
@@ -458,18 +975,23 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_A10A_Fulda_NY", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_PA", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_WI", _sid];	
+				_c pushBack format["%1FIR_A10A_Fulda_WR_510TFS", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_WR_78TFS", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_WR_91TFS", _sid];	
 				_c pushBack format["%1FIR_A10A_Fulda_WR_92TFS", _sid];	
-				_c pushBack format["%1FIR_A10A_Fulda_WR_White", _sid];*/
-			};
+				_c pushBack format["%1FIR_A10A_Fulda_WR_White", _sid];
+			};*/
 		};
+	
 		//F-16 Fighting Falcon										August 1978				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F16C_930550_sqd")) then {
 			if(CTI_AIR_ADDON >= 0) then {
 				//55th USAF
-				units_air append [[format["%1FIR_F16C_930550_sqd", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F16C_900830", _sid];	
+				air_to_add append [[format["%1FIR_F16D_900482", _sid], 1, 40]];
+				//_c pushBack format["%1FIR_F16C_930550_sqd", _sid];
+			};	
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_F16C_900830", _sid];	
 				_c pushBack format["%1FIR_F16C_910345", _sid];	
 				_c pushBack format["%1FIR_F16C_910355", _sid];	
 				_c pushBack format["%1FIR_F16C_910378", _sid];	
@@ -484,20 +1006,18 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F16C_923923", _sid];	
 				_c pushBack format["%1FIR_F16C_930532", _sid];	
 				_c pushBack format["%1FIR_F16C_930540", _sid];	
-				_c pushBack format["%1FIR_F16C_930546", _sid];		
+				_c pushBack format["%1FIR_F16C_930546", _sid];	
 				_c pushBack format["%1FIR_F16C_930552", _sid];	
 				_c pushBack format["%1FIR_F16C_940045", _sid];	
 				_c pushBack format["%1FIR_F16C_940049", _sid];	
 				_c pushBack format["%1FIR_F16C_960084", _sid];	
 				_c pushBack format["%1FIR_F16C_970110", _sid];	
 				_c pushBack format["%1FIR_F16C_970111", _sid];	
-				_c pushBack format["%1FIR_F16C_980003", _sid];	
-				_c pushBack format["%1FIR_F16D_900482", _sid];*/
-			};	
-			if(CTI_AIR_ADDON >= 1) then {
+				_c pushBack format["%1FIR_F16C_980003", _sid];
+				//55th USAF
 				//camo pack 4
-				units_air append [[format["%1FIR_F16C_AS_2", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F16C_AS_3", _sid];	
+				_c pushBack format["%1FIR_F16C_AS_2", _sid];	
+				_c pushBack format["%1FIR_F16C_AS_3", _sid];	
 				_c pushBack format["%1FIR_F16C_AS_1", _sid];	
 				_c pushBack format["%1FIR_F16C_BS", _sid];	
 				_c pushBack format["%1FIR_F16C_LS", _sid];	
@@ -537,12 +1057,11 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F16C_ANG_VT", _sid];	
 				_c pushBack format["%1FIR_F16C_ANG_VA", _sid];	
 				_c pushBack format["%1FIR_F16C_ANG_WI", _sid];	
-				_c pushBack format["%1FIR_F16D_ANG_MN", _sid];*/	
+				_c pushBack format["%1FIR_F16D_ANG_MN", _sid];	
 			};
-			if(CTI_AIR_ADDON >= 2) then {
+			if(CTI_AIR_ADDON >= 3) then {
 				//77th USAF
-				units_air append [[format["%1FIR_F16C_910377_sqd", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F16C_000225", _sid];	
+				_c pushBack format["%1FIR_F16C_000225", _sid];	
 				_c pushBack format["%1FIR_F16C_000226", _sid];	
 				_c pushBack format["%1FIR_F16C_017050", _sid];	
 				_c pushBack format["%1FIR_F16C_017052", _sid];	
@@ -553,6 +1072,7 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F16C_910368", _sid];	
 				_c pushBack format["%1FIR_F16C_910371", _sid];	
 				_c pushBack format["%1FIR_F16C_910376_Wing", _sid];	
+				_c pushBack format["%1FIR_F16C_910377_sqd", _sid];	
 				_c pushBack format["%1FIR_F16C_910380", _sid];	
 				_c pushBack format["%1FIR_F16C_910463", _sid];	
 				_c pushBack format["%1FIR_F16C_923910", _sid];	
@@ -637,30 +1157,44 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F16C_SP_225", _sid];	
 				_c pushBack format["%1FIR_F16C_WR_254", _sid];	
 				_c pushBack format["%1FIR_F16C_TJ_367", _sid];	
-				_c pushBack format["%1FIR_F16C_TJ_369", _sid];*/
-			};
+				_c pushBack format["%1FIR_F16C_TJ_369", _sid];
+			};*/
 		};
+	
+		units_air append air_to_add;
+		air_auto append air_to_add;
 	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		//F/A-18 Hornet												7. Januar 1983				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_VMFA251CAG")) then {
 			if(CTI_AIR_ADDON >= 0) then {	
-				units_air append [[format["%1FIR_F18C_VMFA251", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F18C_VMFA251CAG", _sid];	
-				_c pushBack format["%1FIR_F18D_VMFAAW533", _sid];*/
+				air_to_add append [[format["%1FIR_F18C_VMFA251CAG", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F18D_VMFAAW533", _sid], 1, 40]];
 			};
-			if(CTI_AIR_ADDON >= 1) then {
-				units_air append [[format["%1FIR_F18D_VMF224", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F18C_VMFAAW224CAG", _sid];	
+			/*if(CTI_AIR_ADDON >= 2) then {	
+				_c pushBack format["%1FIR_F18C_VMFA251", _sid];	
+				_c pushBack format["%1FIR_F18C_VMFAAW224CAG", _sid];	
 				_c pushBack format["%1FIR_F18C_VMFA232CAG", _sid];	
 				_c pushBack format["%1FIR_F18C_VMFA232", _sid];
 				_c pushBack format["%1FIR_F18C_VMFA314CAG", _sid];	
 				_c pushBack format["%1FIR_F18C_VMFA314", _sid];	
-				_c pushBack format["%1FIR_F18D_VMFAAW533CO", _sid];	*/
+				_c pushBack format["%1FIR_F18D_VMFAAW533CO", _sid];	
+				_c pushBack format["%1FIR_F18D_VMF224", _sid];	
 			};
-			if(CTI_AIR_ADDON >= 2) then {
-				units_air append [[format["%1FIR_F18C_MALS11", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_F18C_MAG31_WW2", _sid];	
+			if(CTI_AIR_ADDON >= 3) then {
+				_c pushBack format["%1FIR_F18C_MALS11", _sid];	
+				_c pushBack format["%1FIR_F18C_MAG31_WW2", _sid];	
 				_c pushBack format["%1FIR_F18C_MALS31", _sid];		
 				_c pushBack format["%1FIR_F18C_Wildcat_USN", _sid];	
 				_c pushBack format["%1FIR_F18C_Hellcat_USN", _sid];	
@@ -674,209 +1208,182 @@ if(CTI_US_CUP_SIDE == _sideID) then {
 				_c pushBack format["%1FIR_F18C_VFA15CAG", _sid];	
 				_c pushBack format["%1FIR_F18C_VFA15", _sid];
 				_c pushBack format["%1FIR_F18D_VMFAAW224_CO", _sid];	
-				_c pushBack format["%1FIR_F18D_VMFAAW224_02", _sid];*/
-			};			
+				_c pushBack format["%1FIR_F18D_VMFAAW224_02", _sid];
+			};*/	
 		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
 	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
+
+	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+	if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		//F-22 Raptor													15. Dezember 2005			Luftüberlegenheitsjäger
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F22_Blue")) then {
-			units_air append [[format["%1FIR_F22_FF", _sid], 1, 40]];
-			//_c pushBack format["%1FIR_F22_Blue", _sid];
-			//_c pushBack format["%1FIR_F22_TY", _sid];	
+			if(CTI_AIR_ADDON >= 0) then {
+				air_to_add append [[format["%1FIR_F22_Blue", _sid], 1, 40]];
+			};
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_F22_TY", _sid];	
+			};
+			if(CTI_AIR_ADDON >= 3) then {
+				_c pushBack format["%1FIR_F22_FF", _sid];
+			};*/
 		};
 		//EA-18G Growler												22. September 2009			EloKa-Kampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_EA18G_390ECS")) then {
 			if(CTI_AIR_ADDON >= 0) then {
-				units_air append [[format["%1FIR_EA18G_390ECS", _sid], 1, 40]];
-				/*_c pushBack format["%1FIR_EA18G_VAQ130", _sid];
-				_c pushBack format["%1FIR_EA18G_VAQ136", _sid];
-				_c pushBack format["%1FIR_EA18G_VAQ138", _sid];*/
+				air_to_add append [[format["%1FIR_EA18G_390ECS", _sid], 1, 40]];
 			};
-			if(CTI_AIR_ADDON >= 1) then {
-				units_air append [[format["%1EA18G_VAQ131", _sid], 1, 40]];
-				/*_c pushBack format["%1EA18G_129CAG", _sid];	
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_EA18G_VAQ130", _sid];
+				_c pushBack format["%1FIR_EA18G_VAQ136", _sid];
+				_c pushBack format["%1FIR_EA18G_VAQ138", _sid];
+				_c pushBack format["%1EA18G_VAQ131", _sid];
+				_c pushBack format["%1EA18G_129CAG", _sid];	
 				_c pushBack format["%1EA18G_137CAG", _sid];	
 				_c pushBack format["%1EA18G_139CAG", _sid];	
 				_c pushBack format["%1EA18G_141CAG", _sid];	
 				_c pushBack format["%1EA18G_142CAG", _sid];	
-				_c pushBack format["%1EA18G_209CAG", _sid];*/
+				_c pushBack format["%1EA18G_209CAG", _sid];
 			};
-			if(CTI_AIR_ADDON >= 2) then {
-				units_air append [[format["%1EA18G_129LOW", _sid], 1, 40]];
-				/*_c pushBack format["%1EA18G_132LOW", _sid];	
+			if(CTI_AIR_ADDON >= 3) then {
+				_c pushBack format["%1EA18G_129LOW", _sid];	
+				_c pushBack format["%1EA18G_132LOW", _sid];	
 				_c pushBack format["%1EA18G_137LOW", _sid];	
 				_c pushBack format["%1EA18G_139LOW", _sid];		
 				_c pushBack format["%1EA18G_141LOW", _sid];
 				_c pushBack format["%1EA18G_142LOW", _sid];	
-				_c pushBack format["%1EA18G_209LOW", _sid];*/
-			};
+				_c pushBack format["%1EA18G_209LOW", _sid];
+			};*/
 		};
 		//Project Lightning - F-35B Armaverse Version					31. Juli 2015				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F35B_VMFA211")) then {
 			if(CTI_AIR_ADDON >= 0) then {
-				units_air append [[format["%1FIR_F35B_VMFA211", _sid], 1, 40]];
+				air_to_add append [[format["%1FIR_F35B_VMFA211", _sid], 1, 40]];
 			};
-			if(CTI_AIR_ADDON >= 1) then {
-				//units_air append [[format["%1FIR_F35B_DarkGrey", _sid], 1, 40]];
-				units_air append [[format["%1FIR_F35B_VMFA214", _sid], 1, 40]];
+			/*if(CTI_AIR_ADDON >= 2) then {
+				_c pushBack format["%1FIR_F35B_DarkGrey", _sid];	
+				_c pushBack format["%1FIR_F35B_VMFA214", _sid];	
 			};
-			if(CTI_AIR_ADDON >= 2) then {
-				//units_air append [[format["%1FIR_F35B_VMFA214Special", _sid], 1, 40]];
-				units_air append [[format["%1FIR_F35B_VMFA251", _sid], 1, 40]];
-				//units_air append [[format["%1FIR_F35B_VMFA531", _sid], 1, 40]];
-			};
+			if(CTI_AIR_ADDON >= 3) then {
+				_c pushBack format["%1FIR_F35B_VMFA214Special", _sid];
+				_c pushBack format["%1FIR_F35B_VMFA251", _sid];		
+				_c pushBack format["%1FIR_F35B_VMFA531", _sid];	
+			};*/
 		};
+	
+		units_air append air_to_add;
+		if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
+	};
+	_v pushBack format["AirT%1", _level];
+	_t pushBack format["Air T%1", _level];
+	_p pushBack air_to_add;
+	_f pushBack CTI_AIR;
+	_m pushBack 1000;
+	_c pushBack "Air";
+	_s pushBack [];
+	kind_air pushBack format["AirT%1", _level];
+	
+};
+
+if(count kind_air > 0) then {
+	if (isNil {missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_AIR", _side]}) then {
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], kind_air];
+	} else {
+		{
+			kind_air pushBackUnique _x;
+		} forEach (missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_AIR", _side]);
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], kind_air];
 	};
 };
 
-if(CTI_SOV_CUP_SIDE == _sideID || CTI_SOV_RHS_SIDE == _sideID) then {
-	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-		//MIG-29 Fulcrum AWS											Juni 1983					Mehrzweckkampfflugzeug
-		if (isClass(configFile >> "CfgVehicles" >> "Mig29AWS_rus")) then {
-			if(CTI_AIR_ADDON >= 0) then {
-				units_air append [[format["%1Mig29AWS_rus", _sid], 1, 40]];
-			};
-			if(CTI_AIR_ADDON >= 1) then {
-				units_air append [[format["%1Mig29AWS_SMT_rus", _sid], 1, 40]];
-			};			
-		};
-		//The Sukhoi Su-33 Flanker-D									1994						Luftüberlegenheitsjäger
-		if (isClass(configFile >> "CfgVehicles" >> "Su33_Protatype_PT_2")) then {
-			units_air append [[format["%1Su33_Protatype_PT_2", _sid], 1, 40]];	
-		};
-	};
-	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-		
-		//SU-34SM FULLBACK-D AWS										9. Dezember 2011				Jagdbomber
-		if (isClass(configFile >> "CfgVehicles" >> "AWS_SU34_genericopfor_BOMBER")) then {
-			units_air append [[format["%1AWS_SU34_RU_BOMBER", _sid], 1, 40]];
-		};
-	};	
-};
+[_side, _v, _t, _p, _f, _m, _c, _s] call compile preprocessFileLineNumbers "Common\Config\Squads\Squads_Set.sqf";
 
-
+//*********************************************************************************************************************************************
+//											Side specific units																				  *
+//*********************************************************************************************************************************************
+units_air = [];
+air_to_add = [];
+air_auto = [];
+kind_air = [];
 switch(_side) do {
 	case west: {
+		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_POOKAIR_ID] call CTI_CO_FNC_GetTechmatrix;
 		
-		if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
-			//if (isClass(configFile >> "CfgVehicles" >> "")) then {
-			//	_c pushBack format["%1", _sid];	
-			//};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_panther_b")) then {
-				units_air append [[format["%1sab_panther_b", _sid], 1, 40]];//Mai 1949					Jagdbomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_t28trojan_b")) then {
-				units_air append [[format["%1sab_t28trojan_b", _sid], 1, 40]];//1950						Trainingsflugzeug
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_mystere_b")) then {
-				units_air append [[format["%1sab_mystere_b", _sid], 1, 40]];//1954						Jagdbomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_fiat_b")) then {
-				units_air append [[format["%1sab_fiat_b", _sid], 1, 40]];//August 1956				Erdkampf- und Aufklärungsflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_magister_b")) then {
-				units_air append [[format["%1sab_magister_b", _sid], 1, 40]];//1957						Strahltrainer	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_etendard_b")) then {
-				units_air append [[format["%1sab_etendard_b", _sid], 1, 40]];//Mai 1958					trägergestütztes Jagdflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_f104_b")) then {
-				units_air append [[format["%1sab_f104_b", _sid], 1, 40]];//Februar 1958				Abfangjäger	
-			};
-		};
-		if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-			if (isClass(configFile >> "CfgVehicles" >> "sab_mirageiv_b")) then {
-				units_air append [[format["%1sab_mirageiv_b", _sid], 1, 40]];//Oktober 1964				Strategischer Bomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_sf260_b")) then {
-				units_air append [[format["%1sab_sf260_b", _sid], 1, 40]];//Juli 1964					Trainingsflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_pc7_b")) then {
-				units_air append [[format["%1sab_pc7_b", _sid], 1, 40]];//1978						Schulflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_alphajet_b")) then {
-				units_air append [[format["%1sab_alphajet_b", _sid], 1, 40]];//1979						Leichter Jagdbomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_baehawk_b")) then {
-				units_air append [[format["%1sab_baehawk_b", _sid], 1, 40]];//1974						Erdkampfflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_baehawk_b_2")) then {
-				units_air append [[format["%1sab_baehawk_b_2", _sid], 1, 40]];//1974						Erdkampfflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_mb339_b")) then {
-				units_air append [[format["%1sab_mb339_b", _sid], 1, 40]];//August 1979				Leichtes Erdkampfflugzeug	
-			};
-		};
-		if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
-			if (isClass(configFile >> "CfgVehicles" >> "sab_m2000_b")) then {
-				units_air append [[format["%1sab_m2000_b", _sid], 1, 40]];//Juni 1984					Mehrzweckkampfflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_pc9_b")) then {
-				units_air append [[format["%1sab_pc9_b", _sid], 1, 40]];//Mai 1984					Schulflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_t45goshawk_b")) then {
-				units_air append [[format["%1sab_t45goshawk_b", _sid], 1, 40]];//1991						Trainingsflugzeug
-			};
-			
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 			//AV-8B Harrier 2												April 1969				VTOL-Erdkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_Blank") && CTI_US_CUP_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_AV8B_Blank", _sid], 1, 40]];
-				};
+			//if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_Blank") && CTI_US_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_Blank") && CTI_US_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_AV8B_NA_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_AV8B_Blank", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1FIR_AV8B_GR9A_Blank", _sid], 1, 40]];
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_AV8B_NA_Blank", _sid];	
 				};
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1FIR_AV8B_GR9A_Blank", _sid];	
+				};*/
 			};
 			//F-14 Tomcat													//September 1974			Abfangjäger
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F14A_Blank") && CTI_US_CUP_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F14A_Blank", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F14B_Blank", _sid];	
-					_c pushBack format["%1FIR_F14D_Blank", _sid];	*/
-				};
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F14A_Blank") && CTI_US_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_F14A_ISAF", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F14D_AC6", _sid];	
+					air_to_add append [[format["%1FIR_F14A_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F14B_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F14D_Blank", _sid], 1, 40]];
+				};
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_F14A_ISAF", _sid];	
+					_c pushBack format["%1FIR_F14D_AC6", _sid];	
 					_c pushBack format["%1FIR_F14B_UNSPACY", _sid];
 					_c pushBack format["%1FIR_F14A_A88", _sid];		
 					_c pushBack format["%1FIR_F14D_Razgriz", _sid];//black	
 					_c pushBack format["%1FIR_F14D_Schnee", _sid];//black	
 					_c pushBack format["%1FIR_F14D_VF31_ChristmasSpecial", _sid];
-					_c pushBack format["%1FIR_F14D_MIKU", _sid];//manga	*/
+					_c pushBack format["%1FIR_F14D_MIKU", _sid];//manga	
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1FIR_F14A_VFA206", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F14A_Wardog", _sid];	
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1FIR_F14A_VFA206", _sid];	
+					_c pushBack format["%1FIR_F14A_Wardog", _sid];	
 					_c pushBack format["%1FIR_F14A_Wardog2", _sid];	
 					_c pushBack format["%1FIR_F14A_Wardog3", _sid];	
-					_c pushBack format["%1FIR_F14A_Wardog4", _sid];*/
-				};				
+					_c pushBack format["%1FIR_F14A_Wardog4", _sid];
+				};*/				
 			};
 			//F-15 Eagle													November 1974				Mehrzweckkampfflugzeug/Luftüberlegenheitsjäger
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F15C_Blank") && CTI_US_CUP_SIDE != _sideID) then {	
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F15C_Blank", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F15D_Blank", _sid];	
-					_c pushBack format["%1FIR_F15E_Blank", _sid];	
-					_c pushBack format["%1FIR_F15SE_Blank", _sid];*/
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F15C_Blank") && CTI_US_SIDE != _sideID) then {	
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1FIR_F15C_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F15D_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F15E_Blan", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F15SE_Blank", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 1) then {	
-					units_air append [[format["%1FIR_F15C_GALM1", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F15C_GALM2", _sid];
+				/*if(CTI_AIR_ADDON >= 2) then {	
+					_c pushBack format["%1FIR_F15C_GALM1", _sid];	
+					_c pushBack format["%1FIR_F15C_GALM2", _sid];
 					_c pushBack format["%1FIR_F15SE_Reaper", _sid];
 					//Other decals
 					_c pushBack format["%1FIR_F15A_Baz_673", _sid];
 					_c pushBack format["%1FIR_F15SE_ROKAF", _sid];
-					_c pushBack format["%1FIR_F15K_1st", _sid];*/
+					_c pushBack format["%1FIR_F15K_1st", _sid];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
+				if(CTI_AIR_ADDON >= 3) then {
 					//JPN
-					units_air append [[format["%1FIR_F15DJ_202TFS", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F15DJ_203TFS", _sid];	
+					_c pushBack format["%1FIR_F15DJ_202TFS", _sid];	
+					_c pushBack format["%1FIR_F15DJ_203TFS", _sid];	
 					_c pushBack format["%1FIR_F15DJ_204TFS", _sid];	
 					_c pushBack format["%1FIR_F15DJ_303TFS", _sid];	
 					_c pushBack format["%1FIR_F15J_JASDF_202TFS", _sid];	
@@ -893,373 +1400,518 @@ switch(_side) do {
 					_c pushBack format["%1FIR_F15J_ME4_924", _sid];	
 					_c pushBack format["%1FIR_F15J_ME4_945", _sid];	
 					_c pushBack format["%1FIR_F15J_ME4_948", _sid];	
-					_c pushBack format["%1FIR_F15J_ME4_949", _sid];*/
-				};		
+					_c pushBack format["%1FIR_F15J_ME4_949", _sid];
+				};*/		
 			};
 			//A-10 Warthog												März 1977					Erdkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_A10A_Blank") && CTI_US_CUP_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {	
-					units_air append [[format["%1FIR_A10A_Blank", _sid], 1, 40]];//white
-					//units_air append [[format["%1FIR_A10C_Blank", _sid], 1, 40]];	
-				};
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_A10A_Blank") && CTI_US_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_A10A_Blank2", _sid], 1, 40]];	//camo
-					//units_air append [[format["%1FIR_A10C_Camo", _sid], 1, 40]];	
+					air_to_add append [[format["%1FIR_A10A_Blank", _sid], 1, 40]];//white
+					air_to_add append [[format["%1FIR_A10C_Blank", _sid], 1, 40]];
 				};
+				/*if(CTI_AIR_ADDON >= 2) then {		
+					_c pushBack format["%1FIR_A10A_Blank2", _sid];//camo
+					_c pushBack format["%1FIR_A10C_Camo", _sid];
+				};*/
 			};
 			//F-16 Fighting Falcon										August 1978				Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F16D_Blank") && CTI_US_CUP_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F16C_Blank", _sid], 1, 40]];
-					//_c pushBack format["%1FIR_F16D_Blank", _sid];	
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F16D_Blank") && CTI_US_SIDE != _sideID) then {
+				if(CTI_AIR_ADDON >= 1) then {	
+					air_to_add append [[format["%1FIR_F16C_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F16D_Blank", _sid], 1, 40]];	
 				};
-				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_F16C_MERC", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F16C_Blank2", _sid];	
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_F16C_MERC", _sid];	
+					_c pushBack format["%1FIR_F16C_Blank2", _sid];	
 					_c pushBack format["%1FIR_F16C_Blank3", _sid];
-					_c pushBack format["%1FIR_F16D_CFTTEST", _sid];	*/
+					_c pushBack format["%1FIR_F16D_CFTTEST", _sid];	
 				};
-				if(CTI_AIR_ADDON >= 2) then {
+				if(CTI_AIR_ADDON >= 3) then {
 					//Polish
-					units_air append [[format["%1FIR_F16C_Polish", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F16C_Polish_CFT", _sid];
+					_c pushBack format["%1FIR_F16C_Polish", _sid];	
+					_c pushBack format["%1FIR_F16C_Polish_CFT", _sid];
 					_c pushBack format["%1FIR_F16D_Polish_CFT", _sid];
 					//ROKAF
 					_c pushBack format["%1FIR_F16C_ROKAF_B32", _sid];
 					_c pushBack format["%1FIR_F16C_ROKAF_Hess", _sid];	
 					_c pushBack format["%1FIR_F16C_ROKAF", _sid];
-					_c pushBack format["%1FIR_F16D_ROKAF", _sid];*/
-				};	
+					_c pushBack format["%1FIR_F16D_ROKAF", _sid];
+				};*/
 			};
-			//if (isClass(configFile >> "CfgVehicles" >> "")) then {
-			//	_c pushBack format["%1", _sid];	
-			//};
+	
+			units_air append air_to_add;
+			air_auto append air_to_add;
 		};
-		if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 			//Panavia Tornado AWS and variants							1980						Jagdbomber
+			//if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_1") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
 			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_1") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					//default
-					units_air append [[format["%1Tornado_AWS_1", _sid], 1, 40]];
-				};
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1Tornado_AWS_50_DS", _sid], 1, 40]];
-				};	
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1Tornado_AWS_camo_ita", _sid], 1, 40]];
-					//_c pushBack format["%1Tornado_AWS_ADV_ita", _sid];						//Air Defence Variant (ADV)	
-					//_c pushBack format["%1Tornado_AWS_ECR_ita", _sid];						//ECR (electronic combat/reconnaissance)
+					//default
+					air_to_add append [[format["%1Tornado_AWS_1", _sid], 1, 40]];
 				};
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1Tornado_AWS_50_DS", _sid];
+				};	
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1Tornado_AWS_ADV_ita", _sid];						//Air Defence Variant (ADV)	
+					_c pushBack format["%1Tornado_AWS_ECR_ita", _sid];						//ECR (electronic combat/reconnaissance)
+					_c pushBack format["%1Tornado_AWS_camo_ita", _sid];	
+				};*/
 			};
 			//MIG-29 Fulcrum AWS											Juni 1983					Mehrzweckkampfflugzeug
 			if (isClass(configFile >> "CfgVehicles" >> "Mig29AWS_blufor")) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1Mig29AWS_blufor", _sid], 1, 40]];
-				};
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1Mig29AWS_chern", _sid], 1, 40]];
+					air_to_add append [[format["%1Mig29AWS_blufor", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1Mig29AWS_livonia", _sid], 1, 40]];
-				};			
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1Mig29AWS_chern", _sid];
+					_c pushBack format["%1Mig29AWS_livonia", _sid];	
+				};*/		
 			};
 			//F/A-18 Hornet												7. Januar 1983				Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_Blank") && CTI_US_CUP_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F18C_Blank", _sid], 1, 40]];
-				};
+			//if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_Blank") && CTI_US_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_Blank") && CTI_US_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_F18C_Blank_Aggressor", _sid], 1, 40]];
-					//units_air append [[format["%1FIR_F18C_Scar", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F18C_Blank", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1FIR_F18C_FINNISH", _sid], 1, 40]];
-					/*_c pushBack format["%1FIR_F18D_FINNISH", _sid];	
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_F18C_Blank_Aggressor", _sid];	
+					_c pushBack format["%1FIR_F18C_Scar", _sid];
+				};
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1FIR_F18C_FINNISH", _sid];	
+					_c pushBack format["%1FIR_F18D_FINNISH", _sid];	
 					_c pushBack format["%1FIR_F18C_SWISS", _sid];
 					_c pushBack format["%1FIR_F18D_Swiss", _sid];
 					_c pushBack format["%1FIR_F18C_SPAF", _sid];	
 					_c pushBack format["%1FIR_F18C_RNZAF", _sid];
 					_c pushBack format["%1FIR_F18D_RMAF", _sid];
-					_c pushBack format["%1FIR_F18C_ROKAF", _sid];*/
-				};	
+					_c pushBack format["%1FIR_F18C_ROKAF", _sid];
+				};*/
 			};
 			//FA-18 Super Hornet										1999						Mehrzweckkampfflugzeug
 			if (isClass(configFile >> "CfgVehicles" >> "JS_JC_FA18E")) then {
-				units_air append [[format["%1JS_JC_FA18E", _sid], 1, 40]];//1 seat	
-				units_air append [[format["%1JS_JC_FA18F", _sid], 1, 40]];//2 seats	
-			};
-		};
-		if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-			//F-2 Viper ZERO												2000						Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F2A_Blank") && CTI_US_CUP_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F2A_Blank", _sid], 1, 40]];
-					//_c pushBack format["%1FIR_F2B_Blank", _sid];
-				};
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_F2A_60Ani", _sid], 1, 40]];//1 seat JPN	
-					//_c pushBack format["%1FIR_F2B_21sq", _sid];//2 seats
-				};	
-				if(CTI_AIR_ADDON >= 2) then {	
-					units_air append [[format["%1FIR_F2A_TACMEET", _sid], 1, 40]];
-					//_c pushBack format["%1FIR_F2A_IMAS", _sid];//yellow manga
+					air_to_add append [[format["%1JS_JC_FA18E", _sid], 1, 40]];//1 seat	
+					air_to_add append [[format["%1JS_JC_FA18F", _sid], 1, 40]];//2 seats	
 				};
 			};
-			//pc21															Juli 2002					Schulflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "sab_pc21_b")) then {
-				units_air append [[format["%1sab_pc21_b", _sid], 1, 40]];
+	
+			units_air append air_to_add;
+			if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
+		};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+			//F-2 Viper ZERO												2000						Mehrzweckkampfflugzeug
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F2A_Blank") && CTI_US_SIDE != _sideID) then {
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1FIR_F2A_Blank", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F2B_Blank", _sid], 1, 40]];
+				};
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_F2A_60Ani", _sid];//1 seat JPN	
+					_c pushBack format["%1FIR_F2B_21sq", _sid];//2 seats
+				};	
+				if(CTI_AIR_ADDON >= 3) then {	
+					_c pushBack format["%1FIR_F2A_TACMEET", _sid];	
+					_c pushBack format["%1FIR_F2A_IMAS", _sid];//yellow manga
+				};*/
 			};
 			//F-22 Raptor													15. Dezember 2005			Luftüberlegenheitsjäger
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F22_Blank") && CTI_US_CUP_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F22_Blank", _sid], 1, 40]];
-				};
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F22_Blank") && CTI_US_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_F22_Blank2", _sid], 1, 40]];
-					//_c pushBack format["%1FIR_F22_Blank3", _sid];
+					air_to_add append [[format["%1FIR_F22_Blank", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1FIR_F22_Gryphus1", _sid], 1, 40]];//unknown icon	
-					//_c pushBack format["%1FIR_F22_Mobius1", _sid];//unknown icon
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_F22_Blank2", _sid];	
+					_c pushBack format["%1FIR_F22_Blank3", _sid];
 				};
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1FIR_F22_Gryphus1", _sid];//unknown icon	
+					_c pushBack format["%1FIR_F22_Mobius1", _sid];//unknown icon
+				};*/
 			};
 			//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericblu_CAP") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1EAWS_EF2000_genericgray2_CAP", _sid], 1, 40]];
-					//_c pushBack format["%1EAWS_EF2000_genericartic2_CAP", _sid];
-				};					
+			/*if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericblu_CAP") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1EAWS_EF2000_genericdesert2_CAP", _sid], 1, 40]];	
-					//_c pushBack format["%1EAWS_EF2000_Genericblu_CAP", _sid];
+					air_to_add append [[format["%1EAWS_EF2000_genericartic2_CAP", _sid], 1, 40]];
+					//_c pushBack format["%1EAWS_EF2000_genericgray2_CAP", _sid];	
+				};					
+				if(CTI_AIR_ADDON >= 2) then {	
+					_c pushBack format["%1EAWS_EF2000_genericdesert2_CAP", _sid];
+					_c pushBack format["%1EAWS_EF2000_Genericblu_CAP", _sid];
 				};				
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1EAWS_EF2000_FRA_CAP", _sid], 1, 40]];
-					/*_c pushBack format["%1EAWS_EF2000_ITA51_CAP", _sid];	
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1EAWS_EF2000_ITA51_CAP", _sid];	
 					_c pushBack format["%1EAWS_EF2000_specialita_CAP", _sid];	
 					_c pushBack format["%1EAWS_EF2000_bel_CAP", _sid];
+					_c pushBack format["%1EAWS_EF2000_FRA_CAP", _sid];
 					_c pushBack format["%1EAWS_EF2000_aus_CAP", _sid];	
 					_c pushBack format["%1EAWS_EF2000_can_CAP", _sid];
 					_c pushBack format["%1EAWS_EF2000_poland_CAP", _sid];	
 					_c pushBack format["%1EAWS_EF2000_Spa_CAP", _sid];	
-					_c pushBack format["%1EAWS_EF2000_spaspecial_CAP", _sid];*/
+					_c pushBack format["%1EAWS_EF2000_spaspecial_CAP", _sid];
 				};
+			};*/
+			//pook_EF2000													Juli 2006					Mehrzweckkampfflugzeug
+			if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {	
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1pook_EF2000_BLUFOR", _sid], 1, 40]];
+				};		
 			};
 			//EA-18G Growler												22. September 2009			EloKa-Kampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_EA18G_Blank") && CTI_US_CUP_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_EA18G_Blank", _sid], 1, 40]];
-				};
+			//if (isClass(configFile >> "CfgVehicles" >> "FIR_EA18G_Blank") && CTI_US_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_EA18G_Blank") && CTI_US_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_EA18G_NA", _sid], 1, 40]];
-				};	
+					air_to_add append [[format["%1FIR_EA18G_Blank", _sid], 1, 40]];
+				};
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_EA18G_NA", _sid];
+				};*/
 			};
 			//SU-34SM FULLBACK-D AWS										9. Dezember 2011				Jagdbomber
 			if (isClass(configFile >> "CfgVehicles" >> "AWS_SU34_CDF_BOMBER")) then {
-				units_air append [[format["%1AWS_SU34_CDF_BOMBER", _sid], 1, 40]];
+				_c pushBack format["%1AWS_SU34_CDF_BOMBER", _sid];	
 			};
 			//Project Lightning - F-35B Armaverse Version					31. Juli 2015				Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "FIR_F35B_Blank1") && CTI_US_CUP_SIDE != _sideID && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1FIR_F35B_Blank1", _sid], 1, 40]];
-				};
+			//if (isClass(configFile >> "CfgVehicles" >> "FIR_F35B_Blank1") && CTI_US_SIDE != _sideID && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
+			if (isClass(configFile >> "CfgVehicles" >> "FIR_F35B_Blank1") && CTI_US_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1FIR_F35B_Blank2", _sid], 1, 40]];
+					air_to_add append [[format["%1FIR_F35B_Blank1", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1FIR_F35B_Arctic", _sid], 1, 40]];
-				};		
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1FIR_F35B_Blank2", _sid];
+				};
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1FIR_F35B_Arctic", _sid];
+				};*/	
 			};
+	
+			units_air append air_to_add;
+			if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
 		};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
 	};
 	case east: {
+		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_SOV_ID, CTI_POOKAIR_ID] call CTI_CO_FNC_GetTechmatrix;
 		
-		if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
-			//if (isClass(configFile >> "CfgVehicles" >> "")) then {
-			//	_c pushBack format["%1", _sid];	
-			//};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_panther_o")) then {
-				units_air append [[format["%1sab_panther_o", _sid], 1, 40]];//Mai 1949					Jagdbomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_t28trojan_o")) then {
-				units_air append [[format["%1sab_t28trojan_o", _sid], 1, 40]];//1950						Trainingsflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_mystere_o")) then {
-				units_air append [[format["%1sab_mystere_o", _sid], 1, 40]];//1954						Jagdbomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_fiat_o")) then {
-				units_air append [[format["%1sab_fiat_o", _sid], 1, 40]];//August 1956				Erdkampf- und Aufklärungsflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_magister_o")) then {
-				units_air append [[format["%1sab_magister_o", _sid], 1, 40]];//1957						Strahltrainer	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_etendard_o")) then {
-				units_air append [[format["%1sab_etendard_o", _sid], 1, 40]];//Mai 1958					trägergestütztes Jagdflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_f104_o")) then {
-				units_air append [[format["%1sab_f104_o", _sid], 1, 40]];//Februar 1958				Abfangjäger	
-			};
-		};
-		if(CTI_ECONOMY_LEVEL_AIR >= 1) then {
-			if (isClass(configFile >> "CfgVehicles" >> "sab_mirageiv_o")) then {
-				units_air append [[format["%1sab_mirageiv_o", _sid], 1, 40]];//Oktober 1964				Strategischer Bomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_sf260_o")) then {
-				units_air append [[format["%1sab_sf260_o", _sid], 1, 40]];//Juli 1964					Trainingsflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_pc7_o")) then {
-				units_air append [[format["%1sab_pc7_o", _sid], 1, 40]];//1978						Schulflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_alphajet_o")) then {
-				units_air append [[format["%1sab_alphajet_o", _sid], 1, 40]];//1979						Leichter Jagdbomber	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_baehawk_o")) then {
-				units_air append [[format["%1sab_baehawk_o", _sid], 1, 40]];//1974						Erdkampfflugzeug
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_mb339_o")) then {
-				units_air append [[format["%1sab_mb339_o", _sid], 1, 40]];//August 1979				Leichtes Erdkampfflugzeug
-			};
-		};
-		
-		if(CTI_ECONOMY_LEVEL_AIR >= 2) then {
-			if (isClass(configFile >> "CfgVehicles" >> "sab_m2000_o")) then {
-				units_air append [[format["%1sab_m2000_o", _sid], 1, 40]];//Juni 1984					Mehrzweckkampfflugzeug	
-			};
-			if (isClass(configFile >> "CfgVehicles" >> "sab_pc9_o")) then {
-				units_air append [[format["%1sab_pc9_o", _sid], 1, 40]];//Mai 1984					Schulflugzeug	
-			};
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 			//F-14 Tomcat													September 1974			Abfangjäger
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_F14D_ENEMY_TYPE_A")) then {
-				units_air append [[format["%1FIR_F14D_ENEMY_TYPE_A", _sid], 1, 40]];
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1FIR_F14D_ENEMY_TYPE_A", _sid], 1, 40]];
+				};
 			};
 			//A-10 Warthog												März 1977					Erdkampfflugzeug
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_A10C_Enemy_Type1")) then {
-				units_air append [[format["%1FIR_A10C_Enemy_Type1", _sid], 1, 40]];
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1FIR_A10C_Enemy_Type1", _sid], 1, 40]];
+				};
 			};
+	
+			units_air append air_to_add;
+			air_auto append air_to_add;
 		};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		
-		if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 			//Panavia Tornado AWS and variants								1980						Jagdbomber
 			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_opf")) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1Tornado_AWS_opf", _sid], 1, 40]];
-				};
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1Tornado_AWS_ADV_OPF", _sid], 1, 40]];
-					//units_air append [[format["%1Tornado_AWS_ecr_opf", _sid], 1, 40]];
-				};		
+					air_to_add append [[format["%1Tornado_AWS_opf", _sid], 1, 40]];
+				};
+				/*if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1Tornado_AWS_ADV_OPF", _sid];	
+					_c pushBack format["%1Tornado_AWS_ecr_opf", _sid];
+				};*/	
 			};
 			//MIG-29 Fulcrum AWS											Juni 1983					Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "Mig29AWS_rus") && CTI_SOV_CUP_SIDE != _sideID && CTI_SOV_RHS_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {	
-				units_air append [[format["%1Mig29AWS_sla", _sid], 1, 40]];
+			if (isClass(configFile >> "CfgVehicles" >> "Mig29AWS_rus") && CTI_SOV_SIDE != _sideID) then {
+				if(CTI_AIR_ADDON >= 1) then {	
+					air_to_add append [[format["%1Mig29AWS_sla", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 1) then {
-				units_air append [[format["%1Mig29AWS_taki", _sid], 1, 40]];
+				/*if(CTI_AIR_ADDON >= 2) then {
+					_c pushBack format["%1Mig29AWS_taki", _sid];
 				};
-				if(CTI_AIR_ADDON >= 2) then {
-				units_air append [[format["%1Mig29AWS_chernreb", _sid], 1, 40]];
-				};	
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1Mig29AWS_chernreb", _sid];
+				};*/
 			};
 			//F/A-18 Hornet												7. Januar 1983			Mehrzweckkampfflugzeug
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_Enemy_Type1")) then {
-				units_air append [[format["%1FIR_F18C_Enemy_Type1", _sid], 1, 40]];
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1FIR_F18C_Enemy_Type1", _sid], 1, 40]];
+				};
 			};
 			//The Sukhoi Su-33 Flanker-D									1994						Luftüberlegenheitsjäger
-			if (isClass(configFile >> "CfgVehicles" >> "Su33_Protatype_PT_2") && CTI_SOV_CUP_SIDE != _sideID && CTI_SOV_RHS_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1Su33_Chine", _sid], 1, 40]];
+			if (isClass(configFile >> "CfgVehicles" >> "Su33_Protatype_PT_2") && CTI_SOV_SIDE != _sideID) then {
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1Su33_Chine", _sid], 1, 40]];
 				};
-				if(CTI_AIR_ADDON >= 2) then {	
-					units_air append [[format["%1Su33_Chine_PT", _sid], 1, 40]];
-				};		
+				/*if(CTI_AIR_ADDON >= 3) then {	
+					_c pushBack format["%1Su33_Chine_PT", _sid];
+				};*/
 			};
+	
+			units_air append air_to_add;
+			if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
 		};
-		if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-			if (isClass(configFile >> "CfgVehicles" >> "sab_pc21_o")) then {
-				units_air append [[format["%1sab_pc21_o", _sid], 1, 40]];//Juli 2002					Schulflugzeug	
-			};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 			//F-22 Raptor													15. Dezember 2005			Luftüberlegenheitsjäger
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_F22_ENEMY_TYPE_A")) then {
-				units_air append [[format["%1FIR_F22_ENEMY_TYPE_A", _sid], 1, 40]];
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1FIR_F22_ENEMY_TYPE_A", _sid], 1, 40]];
+				};
 			};
 			//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericopfor_CAP")) then {
-				if(CTI_AIR_ADDON >= 0) then {	
-					units_air append [[format["%1EAWS_EF2000_Genericopfor_CAP", _sid], 1, 40]];
-				};
-				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1EAWS_EF2000_taki_CAP", _sid], 1, 40]];	
-				};
+			/*if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericopfor_CAP")) then {
 				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1EAWS_EF2000_genericartic_CAP", _sid], 1, 40]];
-					//units_air append [[format["%1EAWS_EF2000_genericdesert_CAP", _sid], 1, 40]];
-					//units_air append [[format["%1EAWS_EF2000_genericgray_CAP", _sid], 1, 40]];
+					air_to_add append [[format["%1EAWS_EF2000_Genericopfor_CAP", _sid], 1, 40]];
 				};
+				if(CTI_AIR_ADDON >= 3) then {
+					_c pushBack format["%1EAWS_EF2000_taki_CAP", _sid];
+					_c pushBack format["%1EAWS_EF2000_genericartic_CAP", _sid];	
+					_c pushBack format["%1EAWS_EF2000_genericdesert_CAP", _sid];
+					_c pushBack format["%1EAWS_EF2000_genericgray_CAP", _sid];
+				};
+			};*/
+			//pook_EF2000													Juli 2006					Mehrzweckkampfflugzeug
+			if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_OPFOR")) then {	
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1pook_EF2000_OPFOR", _sid], 1, 40]];
+				};		
 			};
 			//SU-35 Flanker E												2009 						Mehrzweckkampfflugzeug
 			if (isClass(configFile >> "CfgVehicles" >> "JS_JC_SU35")) then {
-				units_air append [[format["%1JS_JC_SU35", _sid], 1, 40]];//CSAT camo
+				if(CTI_AIR_ADDON >= 1) then {
+					air_to_add append [[format["%1JS_JC_SU35", _sid], 1, 40]];//CSAT camo
+				};	
 			};			
 			//Sukhoi Su-34													9. Dezember 2011				Jagdbomber
 			if (isClass(configFile >> "CfgVehicles" >> "sab_su34_O")) then {
-				units_air append [[format["%1sab_su34_O", _sid], 1, 40]];
-			};
-			//SU-34SM FULLBACK-D AWS										9. Dezember 2011				Jagdbomber
-			if (isClass(configFile >> "CfgVehicles" >> "AWS_SU34_genericopfor_BOMBER") && CTI_SOV_CUP_SIDE != _sideID && CTI_SOV_RHS_SIDE != _sideID) then {
-				if(CTI_AIR_ADDON >= 0) then {
-					units_air append [[format["%1AWS_SU34_genericopfor_BOMBER", _sid], 1, 40]];
-				};
 				if(CTI_AIR_ADDON >= 1) then {
-					units_air append [[format["%1AWS_SU34_plaaf_BOMBER", _sid], 1, 40]];	
-				};
-				if(CTI_AIR_ADDON >= 2) then {
-					units_air append [[format["%1AWS_SU34_sla_BOMBER", _sid], 1, 40]];
-					//units_air append [[format["%1AWS_SU34_TK_BOMBER", _sid], 1, 40]];	
-				};		
-			};
-		};
-	};
-	default {
-		if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-			//Panavia Tornado AWS and variants								1980						Jagdbomber
-			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_ind")) then {
-				units_air append [[format["%1Tornado_AWS_ind", _sid], 1, 40]];
-				//units_air append [[format["%1Tornado_AWS_ADV_IND", _sid], 1, 40]];
-			};
-		};
-		
-		if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-			//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
-			if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericind_CAP")) then {
-				if(CTI_AIR_ADDON >= 0) then {	
-					units_air append [[format["%1EAWS_EF2000_racs_CAP", _sid], 1, 40]];
-				};
-				if(CTI_AIR_ADDON >= 1) then {	
-					units_air append [[format["%1EAWS_EF2000_Genericind_CAP", _sid], 1, 40]];
-				};
-				if(CTI_AIR_ADDON >= 2) then {
-					//units_air append [[format["%1EAWS_EF2000_genericartic3_CAP", _sid], 1, 40]];
-					units_air append [[format["%1EAWS_EF2000_genericdesert3_CAP", _sid], 1, 40]];
-					//units_air append [[format["%1EAWS_EF2000_genericgray3_CAP", _sid], 1, 40]];	
+					air_to_add append [[format["%1sab_su34_O", _sid], 1, 40]];
 				};	
 			};
+			//SU-34SM FULLBACK-D AWS										9. Dezember 2011				Jagdbomber
+			if (isClass(configFile >> "CfgVehicles" >> "AWS_SU34_genericopfor_BOMBER") && CTI_SOV_SIDE != _sideID) then {
+				if(CTI_AIR_ADDON >= 1) then {	
+					air_to_add append [[format["%1AWS_SU34_genericopfor_BOMBER", _sid], 1, 40]];
+				};
+				/*if(CTI_AIR_ADDON >= 2) then {	
+					_c pushBack format["%1AWS_SU34_plaaf_BOMBER", _sid];
+				};
+				if(CTI_AIR_ADDON >= 3) then {	
+					_c pushBack format["%1AWS_SU34_sla_BOMBER", _sid];	
+					_c pushBack format["%1AWS_SU34_TK_BOMBER", _sid];
+				};	*/	
+			};
+	
+			units_air append air_to_add;
+			if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
 		};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+	};
+	default {
+		/*_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_NPOC_ID, CTI_POOKAIR_ID] call CTI_CO_FNC_GetTechmatrix;
 		
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+			//Panavia Tornado AWS and variants								1980						Jagdbomber
+			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_ind")) then {
+				if(CTI_AIR_ADDON >= 2) then {
+					air_to_add append [[format["%1Tornado_AWS_ind", _sid], 1, 40]];
+					//_c pushBack format["%1Tornado_AWS_ADV_IND", _sid];	
+				};
+			};
+	
+			units_air append air_to_add;
+			air_auto append air_to_add;
+		};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+		
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
+			//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
+			//if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericind_CAP")) then {
+			//	if(CTI_AIR_ADDON >= 2) then {	
+			//		air_to_add append [[format["%1EAWS_EF2000_racs_CAP", _sid], 1, 40]];
+			//		_c pushBack format["%1EAWS_EF2000_Genericind_CAP", _sid];
+			//	};
+			//	if(CTI_AIR_ADDON >= 3) then {	
+			//		_c pushBack format["%1EAWS_EF2000_genericartic3_CAP", _sid];	
+			//		_c pushBack format["%1EAWS_EF2000_genericdesert3_CAP", _sid];	
+			//		_c pushBack format["%1EAWS_EF2000_genericgray3_CAP", _sid];
+			//	};	
+			//};
+			//pook_EF2000													Juli 2006					Mehrzweckkampfflugzeug
+			if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_INDFOR")) then {	
+				if(CTI_AIR_ADDON >= 1) then {
+					_c pushBack format["%1pook_EF2000_INDFOR", _sid];
+				};		
+			};
+	
+			units_air append air_to_add;
+			if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
+		};
+		_v pushBack format["AirT%1", _level];
+		_t pushBack format["Air T%1", _level];
+		_p pushBack air_to_add;
+		_f pushBack CTI_AIR;
+		_m pushBack 1000;
+		_c pushBack "Air";
+		_s pushBack [];
+		kind_air pushBack format["AirT%1", _level];
+	
+		*/
 	};
 };
 
-if(count units_air > 0) then {
-	_v pushBack "Air";
-	_t pushBack "Air";
-	_p pushBack units_air;
-	_f pushBack CTI_AIR;
-	_m pushBack 1000;
-	_c pushBack "Air";
-	_s pushBack [];
-};
+_v pushBack format["AirT%1", _level];
+_t pushBack format["Air T%1", _level];
+_p pushBack air_to_add;
+_f pushBack CTI_AIR;
+_m pushBack 1000;
+_c pushBack "Air";
+_s pushBack [];
+kind_air pushBack format["AirT%1", _level];
 
+_v pushBack "Air";
+_t pushBack "Air (Auto)";
+_p pushBack air_auto;
+_f pushBack CTI_AIR;
+_m pushBack 1000;
+_c pushBack "Air";
+_s pushBack [];
+kind_air pushBack "Air";
+
+_v pushBack "AirAll";
+_t pushBack "Air  T0-Max";
+_p pushBack units_air;
+_f pushBack CTI_AIR;
+_m pushBack 1000;
+_c pushBack "Air";
+_s pushBack [];
+kind_air pushBack "AirAll";
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\squads\squad_other_mods.sqf", format["generated squads: [%1] side: [%2]", count _v, _side]] call CTI_CO_FNC_Log};
+
+//--- Those are used by the commander to determine the kind of unit an AI team has
+/*if(count kind_infantry > 0) then {
+	if (isNil {missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_INFANTRY", _side]}) then {
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_INFANTRY", _side], kind_infantry];
+	} else {
+		{
+			kind_infantry pushBackUnique _x;
+		} forEach (missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_INFANTRY", _side]);
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_INFANTRY", _side], kind_infantry];
+	};
+};
+if(count kind_wheeled > 0) then {
+	if (isNil {missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_LIGHT", _side]}) then {
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], kind_wheeled];
+	} else {
+		{
+			kind_wheeled pushBackUnique _x;
+		} forEach (missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_LIGHT", _side]);
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_LIGHT", _side], kind_wheeled];
+	};
+};
+if(count kind_tracked > 0) then {
+	if (isNil {missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_HEAVY", _side]}) then {
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], kind_tracked];
+	} else {
+		{
+			kind_tracked pushBackUnique _x;
+		} forEach (missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_HEAVY", _side]);
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_HEAVY", _side], kind_tracked];
+	};
+};*/
+if(count kind_air > 0) then {
+	if (isNil {missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_AIR", _side]}) then {
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], kind_air];
+	} else {
+		{
+			kind_air pushBackUnique _x;
+		} forEach (missionNamespace getVariable format ["CTI_SQUADS_%1_KIND_AIR", _side]);
+		missionNamespace setVariable [format["CTI_SQUADS_%1_KIND_AIR", _side], kind_air];
+	};
+};
 
 [_side, _v, _t, _p, _f, _m, _c, _s] call compile preprocessFileLineNumbers "Common\Config\Squads\Squads_Set.sqf";

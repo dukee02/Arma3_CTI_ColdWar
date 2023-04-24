@@ -1,51 +1,46 @@
--------------------MAPS----------------------------
-Altis
-Baranow
-Baranow Winter
-Henderson Airfield (FoW)
-Merderet
-Merderet (koth)
-Merderet V2
-Merderet V3
-Merderet Winter
-Tobruk
-Malden
-Marenice (CSA)
-Neaville
-Neaville Winter
-Staszow
-Staszow Winter
-Stratis
-El Alamein
-Kokoda (FoW)
-Tanoa
-Rosche Germany
-
 
 --------------------------------------------------
-
-
 [hr][/hr]
 
 [h1]Unser Projekt: [/h1] 
 Unser Ziel ist es auf der Basis von Bennys Arbeit (die eine frühe Portierung der Arma2 Version ist), diese CTI zu vervollständigen und in einigen 
-Teilen weiter zu entwickeln. Jedoch ohne den Grundgedanken der kombinierten Kriegsführung all zu sehr außer Acht zu lassen.
-[ColdWar]
-Diese Version setzt dabei den Fokus auf den kalten Krieg und das Gespaltene Deutschland. Die Kontrahenten sind hier in erster Linie
-West Deutschland auf der einen Seite, gegen die DDR und die sowjetischen/russischen Truppen auf der anderen.
-[WW2]
-Diese Mission benötigt grundlegend nur IFA3 um zu funktionieren. Switchen der Nationen auf andere Seiten funktioniert auch ohne [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2555935114]IFA3-Side-Patch[/url], kann 
-aber zu Anzeigefehlern und anderem Fehlverhalten führen. Wir raten jedem, den [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2555935114]IFA3-Side-Patch[/url] zusammen mit der Mission zu nutzen.
+Teilen weiter zu entwickeln. Jedoch ohne den Grundgedanken der kombinierten Kriegsführung im Team gegen Team(TvT) all zu sehr außer Acht zu lassen.
+Diese Version setzt dabei den Fokus auf die Zeit des kalten Krieges, den Kampf Ost gegen West in dem die NATO (US,Bundeswehr) und die des 
+Warschauer Paktes(Russland,NVA) sich erbitterte Gefechte liefern.
 
-[h1]CTI features: [/h1] 
+[h1]VIO-BECTI Eigenschaften: [/h1] 
 
+[list]
+    [*]Hochgradig individualisierbare Mission.
+    [*]Persistent, da speichern aktiviert werden kann.
+    [*]Große Mod Unterstützung(CWR3,CUP,RHS,Global Mobilization).
+    [*]Großer[url=https://docs.google.com/spreadsheets/d/1XOMzwaS1EUat-T5xsH_e0hmcwjhrvS7gtNSfKtlhrbc/edit#gid=291594001] Technologiebaum [/url].
+    [*]Nationen und deren Technologiebaum sind kombinierbar.
+    [*]Integrierter Loadout Manager für Luft-Einheiten.
+    [*]Einfache KI Gruppen für kleine Communitys zuschaltbar.
+[/list]
+
+[h1]Neue individualisierungs Optionen: [/h1]
+[list]
+    [*]Bei einigen Nationen kann die Seite geändert werden.
+    [*]Maximale und auch Starttechnologiestufe wählbar.
+    [*]Forschungs Kosten und maximale Zeit einstellbar.
+    [*]Einheitenkosten je Kathegorie einstellbar.
+    [*]Belohnung für Abschüsse einstellbar 0-60%
+    [*]Einstellbarer Skill für AI Einheiten
+    [*]Ausdauer und Waffen schaukeln einstellbar.
+    [*]Einstellbare max. Reichweite und cooldown für Artillery.
+    [*]Mission erstellt für TvT, Coop Einstellungen jedoch möglich.
+    [*]und einiges mehr ...
+[/list]
+
+[h1]CTI basis Eigenschaften: [/h1] 
 [list]
     [*]Klassisches Team gegen Team (TvT) max. 16vs16
     [*]Warfare auf allen Ebenen (zu Fuß, im Fahrzeug, in der Luft).
     [*]Freie Einheitenwahl, stelle dir dein Team selbst zusammen.
     [*]Freier Basisbau, auch mehere Basen möglich.
-    [*]Gut balancierter Technologiebaum.
-    [*]Forschung für bessere Einheiten, somit früher Tankrush nicht möglich.
+    [*]Forschung für bessere Einheiten, somit früher Tankrush vermeidbar.
     [*]Kein festes Script, jede Partie kann anders verlaufen.
     [*]Mission zwar für PvP ausgelegt, aber auch Coop möglich.
 [/list]
@@ -105,20 +100,45 @@ hierfür eine gute Adresse.
 
 
 [h1]Our project: [/h1] 
-Our goal is, based on Benny's work (which is an early port of the Arma2 version), to complete this CTI and develop it in some parts of it. However, without 
-disregarding the basic idea of combined warfare too much.
-This mission basically only needs IFA3 to work. Switching nations to other sites works without [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2555935114]IFA3-Side-Patch[/url], but can lead to 
-but can lead to display errors and other misbehavior. We advise everyone to use the [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2555935114]IFA3-Side-Patch[/url] together with the mission.
-[h1]CTI features: [/h1] 
-[list][*]Classic Team vs Team (TvT) max. 16vs16
+Our goal is, based on Benny's work (which is an early port of the Arma2 version), to complete this CTI and develop it in some parts of it. However, without disregarding the basic idea of combined warfare in team against team(TvT) too much.
+This version focuses on the time of the cold war, the fight east against west in which NATO (US,Bundeswehr) and the Warsaw Pact (Russia, NVA) deliver bitter battles.
+
+[h1]VIO-BECTI features: [/h1] 
+
+[list]
+    [*]Highly customizable mission.
+    [*]Persistent, as save can be activated.
+    [*]Great mod support(CWR3,CUP,RHS,Global Mobilization).
+    [*]Large[url=https://docs.google.com/spreadsheets/d/1XOMzwaS1EUat-T5xsH_e0hmcwjhrvS7gtNSfKtlhrbc/edit#gid=291594001] technology tree [/url].
+    [*]Nations and their technology tree can be combined.
+    [*]Integrated loadout manager for air units.
+    [*]Simple AI groups for small communities switchable.
+[/list]
+
+[h1]New customization options: [/h1]
+[list]
+    [*]For some nations the side can be changed.
+    [*]Maximale und auch Starttechnologiestufe wählbar.
+    [*]Maximum and also start technology level selectable.
+    [*]Unit cost per cathegory adjustable.
+    [*]Reward for kills adjustable 0-60%
+    [*]Adjustable skill for AI units
+    [*]Fatigue and weapons sway adjustable.
+    [*]Adjustable max. range and cooldown for artillery.
+    [*]Mission created for TvT, but coop settings possible.
+    [*]and much more ...
+[/list]
+
+[h1]CTI basis features: [/h1] 
+[list]
+    [*]Classic Team vs Team (TvT) max. 16vs16
     [*]Warfare on all levels (on foot, in the vehicle, in the air).
     [*]Free choice of units, put your team together yourself.
     [*]Free base construction, several bases also possible.
-    [*]Well-balanced technology tree.
-    [*]Research for better units, thus earlier Tankrush not possible.
+    [*]Researchable technology tree. Research for better units, thus earlier Tankrush not possible.
     [*]No fixed script, every game can run differently.
-    [*]Mission designed for PvP, but also Coop possible.
 [/list]
+
 [h1]CTI main description: [/h1]
 CTI (Conquer The Island) is a mission that already existed in ArmA2 under the name Warfare. Here 2 factions are facing each other and fight for supremacy over the map. Depending on the map and the setting, a 3rd independent faction can also be involved, but it does not actively participate. but does not actively participate in the action. The goal is to find and destroy the enemy base or alternatively capture all cities/villages. These cities/villages also serve to generate "supplies" with which the "research" can be advanced, the own base can be expanded and further bases can be built. To capture a town/village it is sufficient to be within a small radius of the main bunker, without enemy forces being are also in this zone.
 
@@ -144,28 +164,45 @@ Want to know more about the mission, find servers running the mission or find ot
     [*][b]all testers[/b]
 [/list]
 
-[h1]If you like my work, you can[url=paypal.me/dukeeVio] Support me [/url][/h1]
+[h1][url=paypal.me/dukeeVio]If you like my work, you can Support me[/url][/h1]
 
 [url=https://steamcommunity.com/groups/vio-community] Steam-Community [/url]
-[url=https://steamcommunity.com/groups/vio-community/discussions/0/3039354546887486100/] IFA3 BECTI Info [/url]
 [url=https://discord.gg/sJw2Nynh7s] Discord [/url]
+[url=https://steamcommunity.com/sharedfiles/filedetails/?edit=true&id=2418491371] List of all supported mods [/url]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2564772956] VIO-BECTI WorldWar2 Collection [/url]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2484775180] VIO-BECTI Vanilla Collection [/url]
+[url=https://steamcommunity.com/groups/vio-community/discussions/0/3039354546887486100/] IFA3 BECTI Info [/url]
 
 
 
 -------------------------------------------------------------------------------
-IFA3-Maps uploaded:
-Neaville 		https://steamcommunity.com/sharedfiles/filedetails/?id=2564777040
-Neaville Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=2564780249
-El Alamein		https://steamcommunity.com/sharedfiles/filedetails/?id=2564783130
-Altis			https://steamcommunity.com/sharedfiles/filedetails/?id=2588965899
-Malden			https://steamcommunity.com/sharedfiles/filedetails/?id=2588967024
-Stratis			https://steamcommunity.com/sharedfiles/filedetails/?id=2588967617
-Tanoa			https://steamcommunity.com/sharedfiles/filedetails/?id=2588968236
+Cold-War-Maps uploaded:
 
+Altis					https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892
+Chernarus
+Chernarus Summer
+Chernarus Winter
+Weferlingen
+Weferlingen Winter
+Malden
+MSKE
+Stratis
+Tanoa
+Rosche Germany
+
+
+[list]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892] Altis [/url]
+    [*]Chernarus (comming soon)
+    [*]Chernarus Summer (comming soon)
+    [*]Chernarus Winter (comming soon)
+    [*]Weferlingen (comming soon)
+    [*]Weferlingen Winter (comming soon)
+    [*]Malden (comming soon)
+    [*]MSKE (comming soon)
+    [*]Stratis (comming soon)
+    [*]Tanoa (comming soon)
+    [*]Rosche Germany (comming soon)
+[/list]
 -------------------------------------------------------------------------------
-
-List of all supported mods:
-https://steamcommunity.com/groups/vio-community/discussions/0/1740012252800579933/
 

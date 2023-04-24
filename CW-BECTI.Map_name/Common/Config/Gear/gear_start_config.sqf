@@ -99,8 +99,8 @@ switch(_nationID) do {
 	case CTI_BW_ID: {
 		switch (_modID) do {
 			case CTI_GM_ID: {
-				_weapon = "gm_m16a1_blk";
-				_weapon_ammo = "gm_30Rnd_556x45mm_B_T_M856_stanag_gry";
+				_weapon = "gm_hk33a2_blk";
+				_weapon_ammo = "gm_30Rnd_556x45mm_B_DM11_hk33_blk";
 				_uniform = "gm_ge_army_uniform_soldier_80_ols";
 				_vest = "gm_ge_army_vest_80_demolition";
 				_backpack = "gm_ge_army_backpack_80_oli";

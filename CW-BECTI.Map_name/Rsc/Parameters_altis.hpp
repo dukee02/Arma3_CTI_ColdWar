@@ -53,17 +53,16 @@ class Params {
 		texts[] = {"Disabled","Enabled","set as main"};
 		default = 1;
 	};
-	/*
-	class CTI_LEN_ADDON {
+	class CTI_AIR_ADDON {
+		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
+		values[] = {-1,0,1,2,3};
+		texts[] = {"DISABLED: ignore loaded plane addons", "ACTIVE: Only planes that match the side", "ACTIVE: I will all planes (only some skins each type)", "ACTIVE: more skins each type", "ACTIVE: without restrictions !!can result in a large list in the factory!!"};
+		default = 0;
+	};
+	/*class CTI_LEN_ADDON {
 		title = "ADDON: LEN Support - Vehicles west+east";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
-		default = 0;
-	};
-	class CTI_AIR_ADDON {
-		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
-		values[] = {-1,0,1,2};
-		texts[] = {"ignore loaded plane addons", "ACTIVE: only some skins each plane", "ACTIVE: more skins each plane", "ACTIVE: without restrictions !!can result in a large list in the factory!!"};
 		default = 0;
 	};*/
 	class SEPARATOR_STARTUP {
