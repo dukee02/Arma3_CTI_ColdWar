@@ -11,37 +11,41 @@ _sid = _this select 2;
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_BW_BWadd.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
 
-switch(CTI_CAMO_ACTIVATION) do {
-	case 1: {//winter camo active
-		missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1PzBrig17_TL_Snow", _sid]];
-		missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1PzBrig17_Rifleman_Snow", _sid]];
-		missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1PzBrig17_Crew_Snow", _sid]];
-		if!(_tag == "GUER_") then {
-			missionNamespace setVariable [format["CTI_%1Worker", _tag], format["%1PzBrig17_unarmed_Snow", _sid]];
-			missionNamespace setVariable [format["CTI_%1Diver", _tag], format["%1PzBrig17_Rifleman_Snow", _sid]];
-			missionNamespace setVariable [format["CTI_%1Static", _tag], format["%1PzBrig17_Crew_Snow", _sid]];
+if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_BW_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_BW_ID) || CTI_EAST_AI == -1))) then {
+	switch(CTI_CAMO_ACTIVATION) do {
+		case 1: {//winter camo active
+			missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1PzBrig17_TL_Snow", _sid]];
+			missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1PzBrig17_Rifleman_Snow", _sid]];
+			missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1PzBrig17_Crew_Snow", _sid]];
+			if!(_tag == "GUER_") then {
+				missionNamespace setVariable [format["CTI_%1Worker", _tag], format["%1PzBrig17_unarmed_Snow", _sid]];
+				missionNamespace setVariable [format["CTI_%1Diver", _tag], format["%1PzBrig17_Rifleman_Snow", _sid]];
+				missionNamespace setVariable [format["CTI_%1Static", _tag], format["%1PzBrig17_Crew_Snow", _sid]];
+			};
 		};
+		default {//winter camo active
+		};	
 	};
-	default {//winter camo active
-	};	
+	//1 pilot for all camos
+	missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1bw_pilot", _sid]];
+
+	//Set starting vehicles
+	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
+		[format["%1bw_unimog_cargo", _sid], []], 
+		[format["%1bw_unimog_cargo_covered", _sid], []]
+	]];
 };
-//1 pilot for all camos
-missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1bw_pilot", _sid]];
 
-//Set starting vehicles
-missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-	[format["%1bw_unimog_cargo", _sid], []], 
-	[format["%1bw_unimog_cargo_covered", _sid], []]
-]];
-
-//needed for Tonw units because the camo can differ
-switch(CTI_TOWN_CAMO) do {
-	case 1: {
-		missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1PzBrig17_SL_Snow", _sid]];
-		missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1PzBrig17_Rifleman_Snow", _sid]];
-		missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1PzBrig17_Crew_Snow", _sid]];
-	};
-	default {//main camo active
+if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_BW_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_BW_ID) || CTI_EAST_TOWNS == -1))) then {
+	//needed for Tonw units because the camo can differ
+	switch(CTI_TOWN_CAMO) do {
+		case 1: {
+			missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1PzBrig17_SL_Snow", _sid]];
+			missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1PzBrig17_Rifleman_Snow", _sid]];
+			missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1PzBrig17_Crew_Snow", _sid]];
+		};
+		default {//main camo active
+		};
 	};
 };
 

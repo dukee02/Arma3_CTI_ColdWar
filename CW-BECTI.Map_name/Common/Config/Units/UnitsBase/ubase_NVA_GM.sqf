@@ -11,35 +11,39 @@ _sid = _this select 2;
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_NVA_GM.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
 
-missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
-missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
-missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
-missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
-if!(_tag == "GUER_") then {
-	missionNamespace setVariable [format["CTI_%1Worker", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
-	missionNamespace setVariable [format["CTI_%1Diver", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
-	missionNamespace setVariable [format["CTI_%1Static", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
+if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_NVA_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_NVA_ID) || CTI_EAST_AI == -1))) then {
+	missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
+	missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
+	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
+	missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
+	if!(_tag == "GUER_") then {
+		missionNamespace setVariable [format["CTI_%1Worker", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
+		missionNamespace setVariable [format["CTI_%1Diver", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
+		missionNamespace setVariable [format["CTI_%1Static", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
+	};
+
+	//Set starting vehicles
+	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
+		[format["%1gm_gc_army_p601", _sid], []], 
+		[format["%1gm_gc_army_p601", _sid], []]
+	]];
 };
 
-//Set starting vehicles
-missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-	[format["%1gm_gc_army_p601", _sid], []], 
-	[format["%1gm_gc_army_p601", _sid], []]
-]];
-
-//needed for Tonw units if the camo differs
-if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
-	switch(CTI_TOWN_CAMO) do {
-		case 1: {//winter camo active
-			missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_gc_army_squadleader_mpiak74n_80_win", _sid]];
-			missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid]];
+if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_NVA_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_NVA_ID) || CTI_EAST_TOWNS == -1))) then {
+	//needed for Tonw units if the camo differs
+	if !(CTI_TOWN_CAMO == CTI_CAMO_ACTIVATION) then {
+		switch(CTI_TOWN_CAMO) do {
+			case 1: {//winter camo active
+				missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_gc_army_squadleader_mpiak74n_80_win", _sid]];
+				missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid]];
+			};
+			default {//main camo active
+				missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
+				missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
+			};	
 		};
-		default {//main camo active
-			missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1gm_gc_army_squadleader_mpiak74n_80_str", _sid]];
-			missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid]];
-		};	
+		missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
 	};
-	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid]];
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {

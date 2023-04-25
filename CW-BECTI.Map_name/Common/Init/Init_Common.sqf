@@ -98,17 +98,6 @@ CTI_CO_FNC_HasDLC = compileFinal preprocessFileLineNumbers "Common\Functions\Com
 
 CTI_CO_CustomIterator = 0;
 
-call compile preprocessFileLineNumbers "Common\Config\Units\Techmatrix.sqf";
-
-call compile preprocessFileLineNumbers "Common\Config\Artillery\Artillery.sqf";
-
-(west) call compile preprocessFileLineNumbers "Common\Config\Base\Base.sqf";
-(east) call compile preprocessFileLineNumbers "Common\Config\Base\Base.sqf";
-
-(west) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
-(east) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
-(resistance) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
-
 //calculate the main mod depends on the given parameters
 _mainmod = -1;
 _nation = -1;
@@ -154,13 +143,24 @@ _nation = -1;
 		//case (): {};
 		default {};
 	};
-	//if (CTI_Log_Level >= CTI_Log_Debug) then {
+	if (CTI_Log_Level >= CTI_Log_Debug) then {
 		["VIOC_DEBUG", "FILE: Common\Init\Init_Common.sqf", format ["Start gear config: side %1 NationID <%2> MainMod: <%3>", _x, _nation, _mainmod]] call CTI_CO_FNC_Log;
-	//};
+	};
 	missionNamespace setVariable [format ["CTI_%1_MAINNATIONS", _x], [_nation, _mainmod]];
 	[_x, _nation, _mainmod] call compile preprocessFileLineNumbers "Common\Config\Gear\gear_start_config.sqf";
 	
 } forEach [west,east];
+
+call compile preprocessFileLineNumbers "Common\Config\Units\Techmatrix.sqf";
+
+call compile preprocessFileLineNumbers "Common\Config\Artillery\Artillery.sqf";
+
+(west) call compile preprocessFileLineNumbers "Common\Config\Base\Base.sqf";
+(east) call compile preprocessFileLineNumbers "Common\Config\Base\Base.sqf";
+
+(west) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
+(east) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
+(resistance) call compile preprocessFileLineNumbers "Common\Config\Base\Town_Defenses.sqf";
 
 //CTI_US_SIDE declaration
 if(CTI_US_SIDE >= 0) then {

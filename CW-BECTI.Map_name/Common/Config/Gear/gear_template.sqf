@@ -24,10 +24,10 @@ if(CTI_CWR3_ADDON >= 0) then {
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 2;
 			case 4: {//desert/urban camo active
-				_t = _t 	+ [[[["CUP_arifle_AK74",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK_M"]],["",[],[""]],["",[],[""]]],[["cwr3_o_uniform_m1969",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["",[]]],["cwr3_o_headgear_ssh68",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+				_t = _t 	+ [[[["CUP_arifle_AK74",["","","",""],["CUP_30Rnd_545x39_AK_M"]],["",[],[""]],["",[],[""]]],[["cwr3_o_uniform_m1969",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["",[]]],["cwr3_o_headgear_ssh68",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 			};
 			default {//main camo active
-				_t = _t 	+ [[[["CUP_arifle_AK74",["","CUP_optic_1P87_RIS","",""],["CUP_30Rnd_545x39_AK_M"]],["",[],[""]],["",[],[""]]],[["cwr3_o_uniform_klmk_1957_birch_v1",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["",[]]],["cwr3_o_headgear_ssh68",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
+				_t = _t 	+ [[[["CUP_arifle_AK74",["","","",""],["CUP_30Rnd_545x39_AK_M"]],["",[],[""]],["",[],[""]]],[["cwr3_o_uniform_klmk_1957_birch_v1",["firstaidkit","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["cwr3_o_vest_beltkit_ak74",["CUP_HandGrenade_RGD5","CUP_HandGrenade_RGD5","CUP_30Rnd_545x39_AK_M","CUP_30Rnd_545x39_AK_M"]],["",[]]],["cwr3_o_headgear_ssh68",""],[["", "binocular"],["itemmap","","itemradio","itemcompass","itemwatch"]]]];
 			};
 		};
 	};

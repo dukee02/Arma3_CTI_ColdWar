@@ -11,25 +11,29 @@ _sid = _this select 2;
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_NPoC_CUP.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
 
-missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1CUP_I_GUE_Commander", _sid]];
-missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
-missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_I_GUE_Crew", _sid]];
-missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_I_GUE_Pilot", _sid]];
-if!(_tag == "GUER_") then {
-	missionNamespace setVariable [format["CTI_%1Worker", _tag], format["%1CUP_I_GUE_Soldier_AKSU", _sid]];
-	missionNamespace setVariable [format["CTI_%1Diver", _tag], format["%1CUP_I_GUE_Saboteur", _sid]];
-	missionNamespace setVariable [format["CTI_%1Static", _tag], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
+if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_NPOC_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_NPOC_ID) || CTI_EAST_AI == -1))) then {
+	missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1CUP_I_GUE_Commander", _sid]];
+	missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
+	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1CUP_I_GUE_Crew", _sid]];
+	missionNamespace setVariable [format["CTI_%1Pilot", _tag], format["%1CUP_I_GUE_Pilot", _sid]];
+	if!(_tag == "GUER_") then {
+		missionNamespace setVariable [format["CTI_%1Worker", _tag], format["%1CUP_I_GUE_Soldier_AKSU", _sid]];
+		missionNamespace setVariable [format["CTI_%1Diver", _tag], format["%1CUP_I_GUE_Saboteur", _sid]];
+		missionNamespace setVariable [format["CTI_%1Static", _tag], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
+	};
+
+	//Set starting vehicles
+	missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
+		[format["%1CUP_I_TT650_NAPA", _sid], []], 
+		[format["%1CUP_I_Hilux_unarmed_NAPA", _sid], []]
+	]];
 };
 
-//Set starting vehicles
-missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
-	[format["%1CUP_I_TT650_NAPA", _sid], []], 
-	[format["%1CUP_I_Hilux_unarmed_NAPA", _sid], []]
-]];
-
-missionNamespace setVariable [format["CTI_%1_TownLeader", _tag], format["%1CUP_I_GUE_Commander", _sid]];
-missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
-missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
+if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_NPOC_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_NPOC_ID) || CTI_EAST_TOWNS == -1))) then {
+	missionNamespace setVariable [format["CTI_%1_TownLeader", _tag], format["%1CUP_I_GUE_Commander", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
+};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {
 	["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_NPoC_CUP.sqf", format["Commander: <%1>", missionNamespace getVariable format["CTI_%1Commander", _tag]]] call CTI_CO_FNC_Log;

@@ -3,10 +3,6 @@ _sid = "";
 
 _setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
-if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_GM_ID) then {_setupBaseUnits = true;};
-if (_setupBaseUnits) then {
-	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_BW_GM.sqf";
-};
 
 switch((_isThisMain select 0)) do {
 	case CTI_BW_ID: {
@@ -110,11 +106,11 @@ switch((_isThisMain select 0)) do {
 	};
 	//case CTI_BW_ID: {};
 	default {
-		if (CTI_Log_Level >= CTI_Log_ERROR) then { ["ERROR", "FILE: Common\Config\Base\Base.sqf", format ["Basic units setup failed <%1>", _isThisMain] call CTI_CO_FNC_Log };
+		if (CTI_Log_Level >= CTI_Log_ERROR) then { ["ERROR", "FILE: Common\Config\Base\Base.sqf", format ["Basic units setup failed <%1>", _isThisMain]] call CTI_CO_FNC_Log };	
 	};
 };
 
-if (CTI_Log_Level >= CTI_Log_Debug) then { ["VIOC_DEBUG", "FILE: Common\Config\Base\Base.sqf", format ["Set HQ Vehicle [%1] for side [%2]", missionNamespace getVariable format["CTI_%1_HQ", _side], _side]] call CTI_CO_FNC_Log };
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Config\Base\Base.sqf", format ["Set HQ Vehicle [%1] for side [%2]", missionNamespace getVariable format["CTI_%1_HQ", _side], _side]] call CTI_CO_FNC_Log};
 
 missionNamespace setVariable [format["CTI_%1_Factories", _side], ["Barracks","Light","Heavy","Air","Naval"]];
 

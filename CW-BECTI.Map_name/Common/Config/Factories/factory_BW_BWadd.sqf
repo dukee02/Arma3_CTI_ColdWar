@@ -1,13 +1,21 @@
-private ["_side", "_c", "_sid", "_priorUnits", "_ai", "_level", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
+private ["_side", "_c", "_sid", "_setupBaseUnits", "_level", "_matrix_cnt", "_matrix_full", "_matrix_nation"];
 _side = _this;
-_ai = -1;
 _sid = "";
 _tag = "GUER_";
+_setupBaseUnits = false;
 
 switch (_side) do {
-	case west: {/*_sid = "VIOC_B_";*/_ai = CTI_WEST_AI;_tag = "WEST_";};
-	case east: {/*_sid = "VIOC_O_";*/_ai = CTI_EAST_AI;_tag = "EAST_";};
-	case resistance: {_sid = "";_tag = "GUER_";};
+	case west: {
+		/*_sid = "VIOC_B_";*/_tag = "WEST_";
+		if(CTI_WEST_AI == CTI_BW_ID || CTI_WEST_TOWNS == CTI_BW_ID) then {_setupBaseUnits = true};
+	};
+	case east: {
+		/*_sid = "VIOC_O_";*/_tag = "EAST_";
+		if(CTI_EAST_AI == CTI_BW_ID || CTI_EAST_TOWNS == CTI_BW_ID) then {_setupBaseUnits = true};
+	};
+	case resistance: {
+		_sid = "";_tag = "GUER_";
+	};
 	default {_sid = "";};
 };
 
@@ -17,13 +25,11 @@ switch (_side) do {
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 //Check if the based units have to set.
-_setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_BWADD_ID) then {_setupBaseUnits = true;};
 if (_setupBaseUnits) then {
 	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_BW_BWadd.sqf";
 };
-
 //***************************************************************************************************************************************
 //														Barracks Factory																*
 //***************************************************************************************************************************************

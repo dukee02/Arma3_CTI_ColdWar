@@ -139,42 +139,40 @@ class Params {
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only if 2 nations at one side and no mixing wanted)";
-		values[] = {-1,1,4,6};
+		values[] = {-1,0,2,8};
 		texts[] = {"no changes","Bundeswehr (West Germany)","USA","CDF"};
-		//values[] = {-1,0,1,2,3,4,5,6,7};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
+		//values[] = {-1,0,1,2,3,7,8};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_EAST_TOWNS {
 		title = "OPFOR (East) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
-		values[] = {-1,2,5,7};
+		values[] = {-1,1,3,7};
 		texts[] = {"no changes","NVA (East Germany)","Soviet","CHDKZ"};
-		//values[] = {-1,0,1,2,3,4,5,6,7};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
+		//values[] = {-1,0,1,2,3,7,8};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_WEST_AI {
 		title = "BLUFOR (West) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,1,4,6};
+		values[] = {-1,0,2,8};
 		texts[] = {"no changes","Bundeswehr (West Germany)","USA","CDF"};
-		//values[] = {-1,0,1,2,3,4,5,6,7};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
+		//values[] = {-1,0,1,2,3,7,8};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_EAST_AI {
 		title = "OPFOR (East) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
-		values[] = {-1,2,5,7};
+		values[] = {-1,1,3,7};
 		texts[] = {"no changes","NVA (East Germany)","Soviet","CHDKZ"};
-		//values[] = {-1,0,1,2,3,4,5,6,7};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","Denmark","Polish","USA (CUP Mod)","Soviet (CUP Mod)","USA (RHS Mod)","Soviet (RHS Mod)"};
+		//values[] = {-1,0,1,2,3,7,8};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_CAMO_ACTIVATION {
 		title = "Main Camo";
 		values[] = {-1,0,1,2,3,4,5,6,7};
 		texts[] = {"auto","Standard", "Winter", "Desert", "Jungle", "Urban", "Maritim", "Special", "All active (Main = Standard)"};
-		//values[] = {0,1,2,3,4};
-		//texts[] = {"Standard", "Winter", "Desert", "Autumn (Brown)", "All active (Main = Standard)"};
 		default = -1;
 	};
 	class CTI_WEST_FLAG {
