@@ -33,7 +33,7 @@ class Params {
 		title = "DLC: Global Mobilization Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
@@ -51,7 +51,7 @@ class Params {
 		title = "ADDON: RHS Support - Vehicles at all sides possible";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_AIR_ADDON {
 		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
