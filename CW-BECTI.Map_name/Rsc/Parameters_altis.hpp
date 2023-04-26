@@ -33,7 +33,7 @@ class Params {
 		title = "DLC: Global Mobilization Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
@@ -51,7 +51,7 @@ class Params {
 		title = "ADDON: RHS Support - Vehicles at all sides possible";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_AIR_ADDON {
 		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
@@ -89,7 +89,7 @@ class Params {
 		title = "RACS Side";
 		values[] = {-1,2};
 		texts[] = {"deactivated","GUER (Independent) [CUP needed]"};
-		default = 2;
+		default = -1;
 	};
 	class CTI_BW_SIDE {
 		title = "Bundeswehr (West Germany) Side [GM cDLC or BWA3-Mod needed]";
@@ -113,7 +113,7 @@ class Params {
 		title = "CHDKZ Side [RHS needed]";
 		values[] = {-1,1,2};
 		texts[] = {"deactivated", "OPFOR (East)", "GUER (Independent)"};
-		default = -1;
+		default = 2;
 	};
 	/*class CTI_DK_SIDE {
 		title = "Denmark Side";
