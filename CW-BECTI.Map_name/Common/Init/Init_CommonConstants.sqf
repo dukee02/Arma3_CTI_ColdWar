@@ -783,11 +783,14 @@ with missionNamespace do {
 	
 	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
+	if !(isClass(configFile >> "CfgVehicles" >> "CUP_B_M1030_USMC")) then {CTI_CUP_ADDON = 0};
 	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
+	if !(isClass(configFile >> "CfgVehicles" >> "cwr3_b_m151")) then {CTI_CWR3_ADDON = 0};
+	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
+	if !(isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {CTI_RHS_ADDON = 0};
 	if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 1} else {CTI_BW_ADDON = 0};
 	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0};
 	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0};
-	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	/*if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
 
