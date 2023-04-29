@@ -723,7 +723,7 @@ class Params {
 		title = "TOWNS: Vehicle Lock";
 		values[] = {0,1,2,3};
 		texts[] = {"Unlocked","Locked (Resistance)","Locked (Occupation)","Locked (Resistance and Occupation)"};
-		default = 0;
+		default = 3;
 	};
 	class SEPERATOR_OTHER {
 		title = "============ Other ============";
