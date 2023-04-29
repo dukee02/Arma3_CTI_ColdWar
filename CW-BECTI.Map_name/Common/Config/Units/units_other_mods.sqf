@@ -85,7 +85,7 @@ if(_loadSabPlanes) then {
 	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
 		if (isClass(configFile >> "CfgVehicles" >> format["sab_panther%1", _sid])) then {
 			if(CTI_AIR_ADDON >= 0) then {
@@ -146,7 +146,7 @@ if(_loadSabPlanes) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		if (isClass(configFile >> "CfgVehicles" >> format["sab_mirageiv%1", _sid])) then {
 			if(CTI_AIR_ADDON >= 0) then {
@@ -207,7 +207,7 @@ if(_loadSabPlanes) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		if (isClass(configFile >> "CfgVehicles" >> format["sab_m2000%1", _sid])) then {
 			if(CTI_AIR_ADDON >= 0) then {
@@ -243,7 +243,7 @@ if(_loadSabPlanes) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//pc21															Juli 2002					Schulflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> format["sab_pc21%1", _sid])) then {
@@ -285,7 +285,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Mikojan-Gurewitsch MiG-21		Dezember 1958	Abfangjäger
 		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR")) then {
@@ -312,7 +312,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Mikojan-Gurewitsch MiG-23		1970			Abfangjäger (M), Jagdbomber (B)
 		if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
@@ -363,7 +363,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Mikojan-Gurewitsch MiG-31		1981			Abfangjäger
 		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG31_OPFOR")) then {
@@ -403,7 +403,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Suchoi Su-30					14. April 1992	Langstreckenabfangjäger/Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "pook_SU30_OPFOR")) then {
@@ -446,7 +446,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//RSK MiG-35					2019			Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG35_OPFOR")) then {
@@ -494,7 +494,7 @@ if(CTI_BW_SIDE == _sideID) then {
 	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Panavia Tornado AWS and variants							1980						Jagdbomber
 		if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_GER")) then {
@@ -526,7 +526,7 @@ if(CTI_BW_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= (_tech_level+1)) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_GER_CAP")) then {	
@@ -575,7 +575,7 @@ if(CTI_BAF_SIDE == _sideID) then {
 	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//AV-8B Harrier 2												April 1969				VTOL-Erdkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_GR9A_2")) then {
@@ -588,7 +588,7 @@ if(CTI_BAF_SIDE == _sideID) then {
 		};
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 3) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Panavia Tornado AWS and variants							1980						Jagdbomber
 		if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_UK_DS")) then {
@@ -615,7 +615,7 @@ if(CTI_BAF_SIDE == _sideID) then {
 		};
 	};
 	if(CTI_ECONOMY_LEVEL_AIR >= 4) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
 		//if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_UK_CAP")) then {
@@ -654,7 +654,7 @@ if(CTI_US_SIDE == _sideID) then {
 	_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//AV-8B Harrier 2												April 1969				VTOL-Erdkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_VMA223")) then {
@@ -1099,7 +1099,7 @@ if(CTI_US_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//F/A-18 Hornet												7. Januar 1983				Mehrzweckkampfflugzeug
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F18C_VMFA251CAG")) then {
@@ -1156,7 +1156,7 @@ if(CTI_US_SIDE == _sideID) then {
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 	if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-		_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+		_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 		//F-22 Raptor													15. Dezember 2005			Luftüberlegenheitsjäger
 		if (isClass(configFile >> "CfgVehicles" >> "FIR_F22_Blue")) then {
@@ -1245,7 +1245,7 @@ switch(_side) do {
 		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//AV-8B Harrier 2												April 1969				VTOL-Erdkampfflugzeug
 			//if (isClass(configFile >> "CfgVehicles" >> "FIR_AV8B_Blank") && CTI_US_SIDE != _sideID && CTI_BAF_SIDE != _sideID) then {
@@ -1379,7 +1379,7 @@ switch(_side) do {
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//Panavia Tornado AWS and variants							1980						Jagdbomber
 			//if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_1") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
@@ -1454,7 +1454,7 @@ switch(_side) do {
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//F-2 Viper ZERO												2000						Mehrzweckkampfflugzeug
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_F2A_Blank") && CTI_US_SIDE != _sideID) then {
@@ -1564,7 +1564,7 @@ switch(_side) do {
 		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//F-14 Tomcat													September 1974			Abfangjäger
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_F14D_ENEMY_TYPE_A")) then {
@@ -1601,7 +1601,7 @@ switch(_side) do {
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//Panavia Tornado AWS and variants								1980						Jagdbomber
 			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_opf")) then {
@@ -1659,7 +1659,7 @@ switch(_side) do {
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//F-22 Raptor													15. Dezember 2005			Luftüberlegenheitsjäger
 			if (isClass(configFile >> "CfgVehicles" >> "FIR_F22_ENEMY_TYPE_A")) then {
@@ -1734,7 +1734,7 @@ switch(_side) do {
 		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//Panavia Tornado AWS and variants								1980						Jagdbomber
 			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_ind")) then {
@@ -1763,7 +1763,7 @@ switch(_side) do {
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
-			_building_time = [CTI_FACTORY_BARRACKS,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 		
 			//Eurofighter Typhoon AWS										Juli 2006					Mehrzweckkampfflugzeug
 			//if (isClass(configFile >> "CfgVehicles" >> "EAWS_EF2000_Genericind_CAP")) then {
