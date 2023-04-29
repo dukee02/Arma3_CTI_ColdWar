@@ -9,9 +9,9 @@ _sid = _this select 2;
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_US_CWR3.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_US_CWR3.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
 
-if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_US_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_US_ID) || CTI_EAST_AI == -1))) then {
+if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_US_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_US_ID) || CTI_EAST_AI == -1)) || _tag == "GUER_") then {
 	missionNamespace setVariable [format["CTI_%1Commander", _tag], format["%1cwr3_b_soldier82_tl", _sid]];
 	missionNamespace setVariable [format["CTI_%1Soldier", _tag], format["%1cwr3_b_soldier82", _sid]];
 	missionNamespace setVariable [format["CTI_%1Crew", _tag], format["%1cwr3_b_soldier82_driver", _sid]];
@@ -29,7 +29,7 @@ if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_US_ID) ||  CTI_WES
 	]];
 };
 
-if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_US_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_US_ID) || CTI_EAST_TOWNS == -1))) then {
+if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_US_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_US_ID) || CTI_EAST_TOWNS == -1)) || _tag == "GUER_") then {
 	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1cwr3_b_soldier82_sl", _sid]];
 	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1cwr3_b_soldier82", _sid]];
 	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1cwr3_b_soldier82_driver", _sid]];

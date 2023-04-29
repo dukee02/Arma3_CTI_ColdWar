@@ -1,0 +1,3 @@
+- option to turn on/off auto earplugs
+- respawn with last gear
+- Altis spawnings not random

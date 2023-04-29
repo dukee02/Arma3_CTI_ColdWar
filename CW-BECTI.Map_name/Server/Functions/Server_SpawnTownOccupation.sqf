@@ -182,7 +182,7 @@ for '_i' from 1 to _totalGroups do {
 				if !(_unit isKindOf "Man") then {
 					if(_pool_vehicle_count >= 2) then { 
 						_can_use = false;
-						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownOccupation.sqf", format ["Occupation team max vehicle count: <%1>", _pool_vehicle_count]] call CTI_CO_FNC_Log};
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_SpawnTownOccupation.sqf", format ["cant use unit <%1> vehicle count: <%2>", _unit, _pool_vehicle_count]] call CTI_CO_FNC_Log};
 					} else {
 						_pool_vehicle_count = _pool_vehicle_count + 1;
 					};

@@ -376,11 +376,13 @@ switch(CTI_GUER_TOWNS) do {
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\units_NPoC_CUP.sqf";
 		//(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NPoC_CUP.sqf";
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NPoC_CUP.sqf";
+		[resistance,"GUER_",""] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_NPoC_CUP.sqf";
 	};
 	case 1: {
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Units\units_FIA_CWr3.sqf";
 		//(resistance) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_FIA_CWr3.sqf";
 		(resistance) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_FIA_CWr3.sqf";
+		[resistance,"GUER_",""] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_FIA_CWr3.sqf";
 	};
 	default {};
 };

@@ -9,9 +9,9 @@ _sid = _this select 2;
 //											Setup base units																				  *
 //*********************************************************************************************************************************************
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_SOV_CWR3.sqf", format["setting up factory units for side %1, loading base units -> %2", _side, _setupBaseUnits]] call CTI_CO_FNC_Log;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\unitsbase\ubase_SOV_CWR3.sqf", format["setting up factory units for side %1", _side]] call CTI_CO_FNC_Log;};
 
-if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_SOV_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_SOV_ID) || CTI_EAST_AI == -1))) then {
+if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_SOV_ID) ||  CTI_WEST_AI == -1)) || (_side == east && ((CTI_EAST_AI >= 0 && CTI_EAST_AI == CTI_SOV_ID) || CTI_EAST_AI == -1)) || _tag == "GUER_") then {
 	switch(CTI_CAMO_ACTIVATION) do {
 		case 2;
 		case 4: {//desert/urban camo active
@@ -43,7 +43,7 @@ if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_SOV_ID) ||  CTI_WE
 	]];
 };
 
-if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_SOV_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_SOV_ID) || CTI_EAST_TOWNS == -1))) then {
+if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_SOV_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_SOV_ID) || CTI_EAST_TOWNS == -1)) || _tag == "GUER_") then {
 	//needed for Tonw units because the camo can differ
 	switch(CTI_TOWN_CAMO) do {
 		case 2: {};
