@@ -316,7 +316,7 @@ if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_PylonPod_2Rnd_Ataka_M";				//2x 9M120 Ataka 			<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 	_c pushBack "CUP_PylonPod_2Rnd_AT6_M";					//2x 9M114 Shturm 			<Short-range, laser/infrared-guided, air-to-surface missile with tandem high-explosive anti-tank warhead>
 };
-if(CTI_CUP_ADDON > 0) then {
+if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_9M17_Mi24_2x";				//ATGM 9M17 			<>
 	_c pushBack "rhs_mag_9M17p_Mi24_2x";			//ATGM 9M17P 			<>
 	_c pushBack "rhs_mag_9m113_5_9P148_pylon";		//9M113 				<HEAT. 600 mm RHA penetration >
