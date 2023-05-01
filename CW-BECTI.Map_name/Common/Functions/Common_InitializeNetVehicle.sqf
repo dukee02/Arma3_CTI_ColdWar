@@ -38,28 +38,7 @@ _classname = typeOf _vehicle;
 
 _marker_type = "";
 _marker_size = [1,1];
-_marker_iterator = 0;
-_side_color = "ColorBlack";
-_marker_prefix = "";
-
-switch (_sideID) do {
-	case CTI_WEST_ID: {
-		_side_color = CTI_WEST_COLOR;
-		_marker_prefix = "b_";
-	};
-	case CTI_EAST_ID: {
-		_side_color = CTI_EAST_COLOR;
-		_marker_prefix = "o_";
-	};
-	case CTI_RESISTANCE_ID: {
-		_side_color = CTI_RESISTANCE_COLOR;
-		_marker_prefix = "n_";
-	};
-	default { };
-};
-if (isNil 'CTI_P_MarkerIterator') then { _marker_iterator = 10000 } else {_marker_iterator = CTI_P_MarkerIterator};
-if (CTI_Log_Level >= CTI_Log_Debug) then {["INFORMATION", "FILE: Server\Common\Functions\InitNetVeh.sqf", Format ["Server <%1|%2|%3|%4|%5>", CTI_IsServer, _side_color, _marker_prefix, _sideID, _marker_iterator]] Call CTI_CO_FNC_Log};
-_marker_color = _side_color;
+_marker_color = CTI_P_SideColor;
 
 //--- Perform general operations
 _special = _vehicle getVariable "cti_spec";
@@ -68,7 +47,7 @@ if (typeName _special != "ARRAY") then { _special = [_special] };
 
 if (CTI_SPECIAL_REPAIRTRUCK in _special) then { //--- Repair truck.
 	_marker_size = [0.75,0.75];
-	_marker_type = _marker_prefix+"maint"; //type is ok? b_support ?
+	_marker_type = CTI_P_MarkerPrefix+"maint"; //type is ok? b_support ?
 	_name = "";
 	if (_vehicle isKindof "car") then {_name = "Truck"} else {_name = "Pod"};
 	_vehicle addAction [format ["<t color='#a5c4ff'>MENU: Construction (Repair %1)</t>", _name], "Client\Actions\Action_DefenseMenu.sqf", "", 93, false, true, "", "_this == player && !CTI_P_PreBuilding"];
@@ -80,11 +59,11 @@ if (CTI_SPECIAL_REPAIRTRUCK in _special) then { //--- Repair truck.
 };
 if (CTI_SPECIAL_AMMOTRUCK in _special) then { //--- Ammo truck.
 	_marker_size = [0.75,0.75];
-	_marker_type = _marker_prefix+"support";
+	_marker_type = CTI_P_MarkerPrefix+"support";
 };
 if (CTI_SPECIAL_MEDICALVEHICLE in _special) then { //--- Medical vehicle.
 	_marker_size = [0.75,0.75];
-	_marker_type = _marker_prefix+"med";
+	_marker_type = CTI_P_MarkerPrefix+"med";
 };
 
 /*if (_classname in CTI_VEHICLES_HOOKERS) then { //--- Revamped A2  Airlift
@@ -111,7 +90,7 @@ if (_vehicle isKindOf "Ship") then {
 if (_vehicle isKindOf "Plane") then {_vehicle addAction ["<t color='#86F078'>Taxi Reverse</t>","Client\Actions\Action_Reverse.sqf", "REVERSE", 99, false, true, "", 'driver _target == _this && alive _target && speed _target < 4 && speed _target > -4 && getPos _target select 2 < 4']};
 
 //--- Perform side-speficic operations
-if!(CTI_IsServer) then {if (_sideID != CTI_P_SideID) exitWith {};};
+if (_sideID != CTI_P_SideID) exitWith {};
 
 if (CTI_SPECIAL_REPAIRTRUCK in _special) then { //--- Repair truck.
 	if (CTI_BASE_FOB_MAX > 0) then {
@@ -125,21 +104,21 @@ if (CTI_SPECIAL_REPAIRTRUCK in _special) then { //--- Repair truck.
 if (_marker_type == "") then {
 	_marker_size = [0.75,0.75];
 	switch (true) do {
-		case (_classname isKindOf "Man"): { _marker_type = _marker_prefix+"inf"; _marker_size = [0.4, 0.4]; _marker_color = "ColorYellow"; };
-		case ((_classname isKindOf "Car" || _classname isKindOf "Motorcycle") && !(_classname isKindOf "Wheeled_APC_F")): { _marker_type = _marker_prefix+"motor_inf" };
-		case (_classname isKindOf "Wheeled_APC_F"): { _marker_type = _marker_prefix+"mech_inf" };
-		case (_classname isKindOf "Ship"): { _marker_type = _marker_prefix+"naval" };
-		case (_classname isKindOf "Tank"): { _marker_type = _marker_prefix+"armor" };
-		case (_classname isKindOf "Helicopter"): { _marker_type = _marker_prefix+"air" };
-		case (_classname isKindOf "Plane"): { _marker_type = _marker_prefix+"plane" };
-		default { _marker_type = _marker_prefix+"unknown" };
+		case (_classname isKindOf "Man"): { _marker_type = CTI_P_MarkerPrefix+"inf"; _marker_size = [0.4, 0.4]; _marker_color = "ColorYellow"; };
+		case ((_classname isKindOf "Car" || _classname isKindOf "Motorcycle") && !(_classname isKindOf "Wheeled_APC_F")): { _marker_type = CTI_P_MarkerPrefix+"motor_inf" };
+		case (_classname isKindOf "Wheeled_APC_F"): { _marker_type = CTI_P_MarkerPrefix+"mech_inf" };
+		case (_classname isKindOf "Ship"): { _marker_type = CTI_P_MarkerPrefix+"naval" };
+		case (_classname isKindOf "Tank"): { _marker_type = CTI_P_MarkerPrefix+"armor" };
+		case (_classname isKindOf "Helicopter"): { _marker_type = CTI_P_MarkerPrefix+"air" };
+		case (_classname isKindOf "Plane"): { _marker_type = CTI_P_MarkerPrefix+"plane" };
+		default { _marker_type = CTI_P_MarkerPrefix+"unknown" };
 	};
 };
 
 //--- Marker initialization
 _marker_label = "";
-_marker_name = format["cti_vehicle_%1", _marker_iterator];
-_marker_iterator = _marker_iterator + 1;
+_marker_name = format["cti_vehicle_%1", CTI_P_MarkerIterator];
+CTI_P_MarkerIterator = CTI_P_MarkerIterator + 1;
 _marker_dead_type = _marker_type;
 _marker_dead_color = "ColorBlack";
 _marker_dead_size = _marker_size;

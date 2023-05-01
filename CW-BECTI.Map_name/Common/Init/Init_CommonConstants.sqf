@@ -788,13 +788,21 @@ with missionNamespace do {
 	if !(isClass(configFile >> "CfgVehicles" >> "cwr3_b_m151")) then {CTI_CWR3_ADDON = 0};
 	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
 	if !(isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {CTI_RHS_ADDON = 0};
-	if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 1} else {CTI_BW_ADDON = 0};
-	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0};
-	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0};
+	//if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 1} else {CTI_BW_ADDON = 0};
+	//if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0};
+	//if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0};
+	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
+	if (isNil 'CTI_BWADD_ADDON') then {CTI_BWADD_ADDON = 0};
+	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
+	if !(isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 0};
+	if(CTI_BW_ADDON >= 1) then {
+		if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 0} else {CTI_BWADD_ADDON = 0};
+		if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 0} else {CTI_REDD_ADDON = 0};
+	};
 	/*if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
 	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
 
-	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON]] call CTI_CO_FNC_Log };
+	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON]] call CTI_CO_FNC_Log;
 	
 	if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"

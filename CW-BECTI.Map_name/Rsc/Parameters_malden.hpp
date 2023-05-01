@@ -53,6 +53,12 @@ class Params {
 		texts[] = {"Disabled","Enabled","set as main"};
 		default = 1;
 	};
+	class CTI_BW_ADDON {
+		title = "ADDON: BWA3 Support - Vehicles at all sides possible";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","set as main"};
+		default = 0;
+	};
 	class CTI_AIR_ADDON {
 		title = "ADDON: AIR Addon Support (depends on loaded Addons)";
 		values[] = {-1,0,1,2,3};
