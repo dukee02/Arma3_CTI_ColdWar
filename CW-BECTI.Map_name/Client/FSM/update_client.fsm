@@ -17,7 +17,7 @@ link5[] = {4,2};
 link6[] = {5,3};
 link7[] = {6,5};
 globals[] = {0.000000,0,0,0,0,640,480,1,22,6316128,1,-248.973633,248.972198,210.556976,-134.453537,381,476,1};
-window[] = {0,-1,-1,-1,-1,804,156,1903,156,1,399};
+window[] = {0,-1,-1,-1,-1,674,26,1773,26,1,399};
 *//*%FSM</HEAD>*/
 class FSM
 {
@@ -132,13 +132,12 @@ class FSM
                          "		if (!IsNull _HQ && alive _HQ) then {call CTI_CL_FNC_AddHQActions};" \n
                          "		//HQaction = player addAction [""<t color='#a5c4ff'>MENU: Construction (HQ)</t>"", ""Client\Actions\Action_BuildMenu.sqf"", """", 93, false, true, """", ""_target == player && !CTI_P_PreBuilding && CTI_Base_HQInRange""];" \n
                          "		if(CTI_Base_RestrictedArea) then {" \n
-                         "			HQaction = player addAction [""<t color='#a5c4ff'>MENU: Construction (HQ)</t>"", ""Client\Actions\Action_BuildMenu.sqf"", """", 93, false, true, """", ""_target == player && !CTI_P_PreBuilding && CTI_Base_HQInRange""];" \n
-                         "		} else {" \n
-                         "			HQaction = player addAction [""<t color='#ff0000'>MENU: Construction (HQ) [restricted]</t>"", """", """", 93, false, true, """", ""_target == player && !CTI_P_PreBuilding && CTI_Base_HQInRange""];		" \n
+                         "				HQaction = player addAction [""<t color='#ff0000'>MENU: Construction (HQ) [restricted]</t>"", """", """", 93, false, true, """", ""_target == player && !CTI_P_PreBuilding && CTI_Base_HQInRange""];		" \n
+                         "			} else {" \n
+                         "				HQaction = player addAction [""<t color='#a5c4ff'>MENU: Construction (HQ)</t>"", ""Client\Actions\Action_BuildMenu.sqf"", """", 93, false, true, """", ""_target == player && !CTI_P_PreBuilding && CTI_Base_HQInRange""];" \n
                          "		};" \n
                          "		//if (_hc_enabled) then {player setVariable [""BIS_HC_scope"",BIS_HC_mainscope];{if !(isNil '_x') then {player HCSetGroup [_x]; [_x,false] Call SetTeamAutonomous}} forEach clientTeams};" \n
                          "	} else {" \n
-                         "		" \n
                          "		if (!IsNull _HQ) then {	removeAllActions _HQ}; //---Lock/Unlock" \n
                          "		if (!isNil ""HQAction"") then {player removeAction HQAction}; //---buildmenu" \n
                          "		//if (count (hcAllGroups player) > 0 && _hc_enabled) then {HCRemoveAllGroups player};" \n
