@@ -116,4 +116,8 @@ if (!isClass(configFile >> "CfgPatches" >> "ace_main")) then
 	//--- Earplug script to reduce sound level when required
 	//execVM "Scripts\nre_earplugs.sqf";
 	[player] execVM "Client\Module\earplugs\simpleEP.sqf";
-}; 
+};
+
+if(CTI_VAM_MODULE > 0) then {
+	[] execVM "VAM_GUI\VAM_GUI_init.sqf";
+};

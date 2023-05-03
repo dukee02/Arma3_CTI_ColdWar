@@ -38,6 +38,8 @@ echo copy Script files
 copy "%gitpath%\CW-BECTI.Map_name\\Scripts\nre_earplugs.sqf" "%buildpath%\%missionfloder%\\Scripts\nre_earplugs.sqf"
 echo copy Server folder
 xcopy "%gitpath%\CW-BECTI.Map_name\Server" "%buildpath%\%missionfloder%\Server" /E /Y /I
+echo copy VAM folder
+xcopy "%gitpath%\CW-BECTI.Map_name\VAM_GUI" "%buildpath%\%missionfloder%\VAM_GUI" /E /Y /I
 echo copy main files
 copy "%gitpath%\CW-BECTI.Map_name\briefing.sqf" "%buildpath%\%missionfloder%\briefing.sqf"
 copy "%gitpath%\CW-BECTI.Map_name\debug_diag.sqf" "%buildpath%\%missionfloder%\debug_diag.sqf"
