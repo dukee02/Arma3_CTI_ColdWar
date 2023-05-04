@@ -799,22 +799,45 @@ with missionNamespace do {
 		if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 0} else {CTI_BWADD_ADDON = 0};
 		if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 0} else {CTI_REDD_ADDON = 0};
 	};
-	/*if (isNil 'CTI_LEN_ADDON') then {CTI_LEN_ADDON = 0};
-	if (isNil 'CTI_EF_TORNADO_ADDON') then {CTI_EF_TORNADO_ADDON = 0};*/
+	if (isNil 'CTI_AIR_ADDON') then {CTI_AIR_ADDON = -1};
 
 	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON]] call CTI_CO_FNC_Log;
 	
-	if (isNil 'CTI_US_SIDE') then {CTI_US_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_SOV_SIDE') then {CTI_SOV_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_NPOC_SIDE') then {CTI_NPOC_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_RACS_SIDE') then {CTI_RACS_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_FIA_SIDE') then {CTI_FIA_SIDE = 2};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_BW_SIDE') then {CTI_BW_SIDE = 0};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_NVA_SIDE') then {CTI_NVA_SIDE = 1};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_CDF_SIDE') then {CTI_CDF_SIDE = 2};		//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-	if (isNil 'CTI_CHDKZ_SIDE') then {CTI_CHDKZ_SIDE = 2};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	if (isNil 'CTI_US_SIDE') then {							//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0) then {CTI_US_SIDE = 0} else {CTI_US_SIDE = -1};
+	};		
+	if (isNil 'CTI_SOV_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0) then {CTI_SOV_SIDE = 1} else {CTI_SOV_SIDE = -1};
+	};	
+	//CUP only
+	if (isNil 'CTI_NPOC_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_CUP_ADDON > 0) then {CTI_NPOC_SIDE = 2} else {CTI_NPOC_SIDE = -1};
+	};	
+	if (isNil 'CTI_RACS_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_CUP_ADDON > 0) then {CTI_RACS_SIDE = 2} else {CTI_RACS_SIDE = -1};
+	};	
+	//CWR3 only
+	if (isNil 'CTI_FIA_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_CWR3_ADDON > 0) then {CTI_FIA_SIDE = 2} else {CTI_FIA_SIDE = -1};
+	};		
+	//GM only
+	if (isNil 'CTI_BW_SIDE') then {							//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_GM_DLC > 0) then {CTI_BW_SIDE = 0} else {CTI_BW_SIDE = -1};
+	};		
+	if (isNil 'CTI_NVA_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_GM_DLC > 0) then {CTI_NVA_SIDE = 1} else {CTI_NVA_SIDE = -1};
+	};		
+	//RHS only
+	if (isNil 'CTI_CDF_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_RHS_ADDON > 0) then {CTI_CDF_SIDE = 2} else {CTI_CDF_SIDE = -1};
+	};		
+	if (isNil 'CTI_CHDKZ_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		if(CTI_RHS_ADDON > 0) then {CTI_CHDKZ_SIDE = 2} else {CTI_CHDKZ_SIDE = -1};
+	};	
 	//if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+	
+	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9>", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE]] call CTI_CO_FNC_Log;
 	
 	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"
 	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Bundeswehr (West Germany)","USA","CDF"
@@ -850,7 +873,8 @@ with missionNamespace do {
 	
 	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 15000}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, max. 5000m (can make units unusable),max. 10000m, max. 15000m, max. 20000m, max. 30000m, max. 40000m")
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission
-	
+	if (isNil 'CTI_VAM_MODULE') then {CTI_VAM_MODULE = 0}; //--- Vehicle appereance module on/off
+
 	CTI_ECONOMY_INCOME_COEF = 10; //--- Town Multiplicator Coefficient (SV * x)
 	//CTI_ECONOMY_INCOME_DIVIDED = 2.75; //--- Prevent commander from being a millionaire, and add the rest to the players pool.
 	//CTI_ECONOMY_INCOME_PERCENT_MAX = 100; //--- Commander may set income up to x%.
