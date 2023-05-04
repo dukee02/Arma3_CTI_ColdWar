@@ -147,42 +147,42 @@ if (handgunWeapon _unit != _item) then { //--- Replace
 	};
 } forEach [primaryWeapon _unit, handgunWeapon _unit, secondaryWeapon _unit];
 
-//change the voice of the unit (workaround)
-_voice_manuel = false;
-_voiceID = 0;
-if((Side _unit == west && CTI_WEST_AI >= 0) || Side _unit == east && CTI_EAST_AI >= 0) then {
-	_voice_manuel = true;
-	if(Side _unit == west) then {_voiceID = CTI_WEST_AI;};
-	if(Side _unit == east) then {_voiceID = CTI_EAST_AI;};
-};
-
+//set up the units identety, in this case its voice.
 _voices = [];
 if(Side _unit == west) then {
 	//West unit
-	_voices append ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"];
-	if(CTI_CUP_ADDON > 0) then {
-		_voices append ["CUP_D_Male01_EN","CUP_D_Male02_EN","CUP_D_Male03_EN","CUP_D_Male04_EN","CUP_D_Male05_EN"];
+	if(CTI_BW_SIDE == 0 && [1042220] call CTI_CO_FNC_HasDLC) then {
+		_voices append ["gm_voice_male_deu_01","gm_voice_male_deu_02","gm_voice_male_deu_03","gm_voice_male_deu_04","gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07","gm_voice_male_deu_08","gm_voice_male_deu_09"];
 	};
-	
+	if((CTI_US_SIDE > 0 && (CTI_WEST_AI == -1 || CTI_WEST_AI == CTI_US_ID)) || !([1042220] call CTI_CO_FNC_HasDLC)) then {
+		_voices append ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"];
+		if(CTI_CUP_ADDON > 0) then {
+			_voices append ["CUP_D_Male01_EN","CUP_D_Male02_EN","CUP_D_Male03_EN","CUP_D_Male04_EN","CUP_D_Male05_EN"];
+		};
+	};
 } else {
 	//East unit
 	//addon needed?
-	if([1021790] call CTI_CO_FNC_HasDLC) then {
-		_voices append ["Male01RUS","Male02RUS","Male03RUS"];
+	if(CTI_NVA_SIDE == 1 && [1042220] call CTI_CO_FNC_HasDLC) then {
+		_voices append ["gm_voice_male_deu_01","gm_voice_male_deu_02","gm_voice_male_deu_03","gm_voice_male_deu_04","gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07","gm_voice_male_deu_08","gm_voice_male_deu_09"];
 	};
-	if(CTI_CUP_ADDON > 0) then {
-		_voices append ["CUP_D_Male01_RU","CUP_D_Male02_RU","CUP_D_Male03_RU","CUP_D_Male04_RU","CUP_D_Male05_RU"];
+	if((CTI_SOV_SIDE > 0 && (CTI_EAST_AI == -1 || CTI_EAST_AI == CTI_SOV_ID)) || !([1042220] call CTI_CO_FNC_HasDLC)) then {
+		if([1021790] call CTI_CO_FNC_HasDLC) then {
+			_voices append ["Male01RUS","Male02RUS","Male03RUS"];
+		};
+		if(CTI_CUP_ADDON > 0) then {
+			_voices append ["CUP_D_Male01_RU","CUP_D_Male02_RU","CUP_D_Male03_RU","CUP_D_Male04_RU","CUP_D_Male05_RU"];
+		};
+		if(CTI_RHS_ADDON > 0) then {
+			_voices append ["RHS_Male01RUS","RHS_Male02RUS","RHS_Male03RUS","RHS_Male04RUS","RHS_Male05RUS"];
+		};
 	};
-	if(CTI_RHS_ADDON > 0) then {
-		_voices append ["RHS_Male01RUS","RHS_Male02RUS","RHS_Male03RUS","RHS_Male04RUS","RHS_Male05RUS"];
-	};
-	
 };
-
+//If no voices selected, use the deafult ENG voice
 if(count _voices <= 0) then {
 	_voices append ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"];
 };
-
 _voice = selectRandom _voices;
 [_unit,"",_voice] call BIS_fnc_setIdentity;
+
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_EquipUnit.sqf", format ["Units Voice = <%1>", _voice]] call CTI_CO_FNC_Log };
