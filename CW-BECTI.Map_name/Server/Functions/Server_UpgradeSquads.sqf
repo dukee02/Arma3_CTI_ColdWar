@@ -36,13 +36,13 @@ _upgrade_levels = missionNamespace getVariable Format ["CTI_%1_UPGRADES_LEVELS",
 
 _squads = missionNamespace getVariable [format ["CTI_SQUAD_%1_%2", _side, _troop], []];
 if(count _squads > 0) then {
-	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["CTI_SQUAD_%1_%2: [%3] ", _side, _troop, _squads]] call CTI_CO_FNC_Log;};
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["CTI_SQUAD_%1_%2: <%3> ", _side, _troop, _squads]] call CTI_CO_FNC_Log;};
 	_newSquad = [];
 	if((_upgrades select _upgrade) >= (_upgrade_levels select _upgrade)) then {
 		_newSquad = missionNamespace getVariable [format ["CTI_SQUAD_%1_%2All", _side, _troop], []];
 		
 		if (count _newSquad > 0) then {
-			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["upgraded squads: [%1] ", _newSquad]] call CTI_CO_FNC_Log;};
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["upgraded squads: <%1> ", _newSquad]] call CTI_CO_FNC_Log;};
 			_squads set [2,(_newSquad select 2)];
 		};
 	} else {
@@ -50,9 +50,11 @@ if(count _squads > 0) then {
 		
 		if (count _newSquad > 0) then {
 			_newSquad = ((_squads select 2) + (_newSquad select 2));
-			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["upgraded squads: [%1] ", _newSquad]] call CTI_CO_FNC_Log;};
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["upgraded squads: <%1> ", _newSquad]] call CTI_CO_FNC_Log;};
 			_squads set [2, _newSquad];
 		};
 	};
 	missionNamespace setVariable [format ["CTI_SQUAD_%1_%2", _side, _troop], _squads];
 };
+
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: server\functions\Server_UpgradeSquads.sqf", format["saved squads: <%1> ", missionNamespace getVariable [format ["CTI_SQUAD_%1_%2", _side, _troop], []]]] call CTI_CO_FNC_Log;};
