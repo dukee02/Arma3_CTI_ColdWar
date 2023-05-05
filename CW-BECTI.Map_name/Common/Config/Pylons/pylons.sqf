@@ -1269,7 +1269,7 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
 	_c pushBack "su24_2Rnd_FAB250";				//FAB-250 HE x2 	<Type: Conventional Low-Drag Bomb<br />Rounds: 2<br />550lb \ 250kg<br />Warhead: HE>
 	_c pushBack "su24_1Rnd_FAB250";				//FAB-250 HE x1 	<Type: Conventional Low-Drag Bomb<br />Rounds: 1<br />550lb \ 250kg<br />Warhead: HE>
 };
-if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
+if (isClass(configFile >> "CfgMagazines" >> "js_m_fa18_wing_tank_x1")) then {
 	_c pushBack "js_m_fa18_wing_tank_x1";		//F/A-18 Fuel Tank 	<500lb, high-explosive, unguided bomb>
 	//_c pushBack "js_m_fa18_buddypod_x1";		//F/A-18 Buddy Pod 	<500lb, high-explosive, unguided bomb>"		//wrong 'pylonWeapon' in magazine:'js_m_fa18_buddypod_x1' this magazine cannot be used in weapon'js_w_fa18_fueltank_holder'
 };
