@@ -50,3 +50,4 @@ copy "%gitpath%\CW-BECTI.Map_name\mission_weferlingen_w.sqm" "%buildpath%\%missi
 ::copy "%gitpath%\CW-BECTI.Map_name\VIO_BECTI.jpg" "%buildpath%\%missionfloder%\VIO_BECTI.jpg"
 copy "%gitpath%\CW-Thumpnails\CW_BECTI_weferlingen_w_small.jpg" "%buildpath%\%missionfloder%\VIO_BECTI.jpg"
 copy "%gitpath%\CW-BECTI.Map_name\WFpostprocess.sqf" "%buildpath%\%missionfloder%\WFpostprocess.sqf"
+copy "%gitpath%\CW-BECTI.Map_name\stringtable.xml" "%buildpath%\%missionfloder%\stringtable.xml"
