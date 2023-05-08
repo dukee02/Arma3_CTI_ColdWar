@@ -2,6 +2,7 @@ _side = _this;
 _sid = "";
 _tag = "";
 _level = 0;
+_sideID = (_side) call CTI_CO_FNC_GetSideID;
 
 switch (_side) do {
 	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};

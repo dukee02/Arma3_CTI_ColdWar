@@ -2,6 +2,7 @@ _side = _this;
 _sid = "";
 _tag = "";
 _level = 0;
+_sideID = (_side) call CTI_CO_FNC_GetSideID;
 
 switch (_side) do {
 	case west: {/*_sid = "VIOC_B_";*/_tag = "WEST_";};
@@ -44,6 +45,7 @@ AIR_BOMBER = [];
 
 _matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
 //_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
+_matrix_nation = [];
 
 //check if the parameter allows us to load SABs units for all sides or only
 //for west/ind and load the matrix of this nation
@@ -437,6 +439,7 @@ if(CTI_BAF_SIDE == _sideID) then {
 };*/
 if(CTI_US_SIDE == _sideID) then {
 	_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+	_matrix_nation = [];
 	if(CTI_RHS_ADDON > 0) then {
 		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_RHS_ID] call CTI_CO_FNC_GetTechmatrix;
 	} else {
