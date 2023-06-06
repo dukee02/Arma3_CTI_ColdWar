@@ -5,6 +5,7 @@ start Build_mission_Altis.bat
 start Build_mission_Chernarus.bat
 start Build_mission_Chernarus_summer.bat
 start Build_mission_Chernarus_Winter.bat
+start Build_mission_Enoch.bat
 start Build_mission_gm_weferlingen_summer.bat
 start Build_mission_gm_weferlingen_winter.bat
 start Build_mission_Malden.bat

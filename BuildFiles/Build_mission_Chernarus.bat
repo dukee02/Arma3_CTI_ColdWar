@@ -29,7 +29,7 @@ copy "%gitpath%\CW-BECTI.Map_name\RSC\Dialogs.hpp" "%buildpath%\%missionfloder%\
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Game.hpp" "%buildpath%\%missionfloder%\RSC\Game.hpp"
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Notifications.hpp" "%buildpath%\%missionfloder%\RSC\Notifications.hpp"
 ::copy "%gitpath%\CW-BECTI.Map_name\RSC\Parameters_%mapname%.hpp" "%buildpath%\%missionfloder%\RSC\Parameters.hpp"
-copy "%gitpath%\CW-BECTI.Map_name\RSC\Parameters.hpp" "%buildpath%\%missionfloder%\RSC\Parameters.hpp"
+copy "%gitpath%\CW-BECTI.Map_name\RSC\Parameters_chernarus.hpp" "%buildpath%\%missionfloder%\RSC\Parameters.hpp"
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Resources.hpp" "%buildpath%\%missionfloder%\RSC\Resources.hpp"
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Sounds.hpp" "%buildpath%\%missionfloder%\RSC\Sounds.hpp"
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Styles.hpp" "%buildpath%\%missionfloder%\RSC\Styles.hpp"
