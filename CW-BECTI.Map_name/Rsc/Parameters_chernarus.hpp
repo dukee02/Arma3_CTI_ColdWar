@@ -33,13 +33,13 @@ class Params {
 		title = "DLC: Global Mobilization Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_CWR3_ADDON {
 		title = "ADDON: Cold War Rearmed III Support - Vehicles west + east";
@@ -69,7 +69,7 @@ class Params {
 		title = "Module: VAM (Vehicle Appearance Module)";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
-		default = 1;
+		default = 0;
 	};
 	/*class CTI_LEN_ADDON {
 		title = "ADDON: LEN Support - Vehicles west+east";
@@ -89,13 +89,13 @@ class Params {
 		texts[] = {"deactivated", "BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
 		//texts[] = {"deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"};
-		default = -1;
+		default = 0; //-1
 	};
 	class CTI_SOV_SIDE {
 		title = "Soviet Side";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
-		default = -1;
+		default = 1; //-1
 	};
 	class CTI_RACS_SIDE {
 		title = "RACS Side";
@@ -107,13 +107,13 @@ class Params {
 		title = "Bundeswehr (West Germany) Side [GM cDLC or BWA3-Mod needed]";
 		values[] = {-1,0};
 		texts[] = {"deactivated","BLUFOR (West)"};
-		default = 0;
+		default = -1; //0
 	};
 	class CTI_NVA_SIDE {
 		title = "NVA (East Germany) Side [GM cDLC needed]";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
-		default = 1;
+		default = -1;
 	};
 	class CTI_CDF_SIDE {
 		title = "CDF Side [RHS needed]";
@@ -147,7 +147,7 @@ class Params {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
 		values[] = {-1,0,1};
 		texts[] = {"no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"};
-		default = -1;
+		default = 0;
 	};
 	class CTI_WEST_TOWNS {
 		title = "BLUFOR (West) Town Nation (change the defending Town Units | only if 2 nations at one side and no mixing wanted)";
@@ -191,19 +191,19 @@ class Params {
 		title = "FLAG: Flagtexture of the West-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
 		texts[] = {"Standard Blue","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)"};
-		default = 11; //0
+		default = 2; //0
 	};
 	class CTI_EAST_FLAG {
 		title = "FLAG: Flagtexture of the East-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
 		texts[] = {"Standard Red","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)"};
-		default = 12; //0
+		default = 5; //0
 	};
 	class CTI_GUER_FLAG {
 		title = "FLAG: Flagtexture of the Independent-Side";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
 		texts[] = {"Standard Green","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)"};
-		default = 0; //0
+		default = 6; //0
 	};
 	class CTI_ECONOMY_LEVEL_GEAR {
 		title = "UPGRADE: Max Level Gear (depends on activated stuff, gets adjust to lower)";
@@ -705,13 +705,13 @@ class Params {
 		title = "TOWNS: Occupation";
 		values[] = {0,1,2,3,4};
 		texts[] = {"Disabled","Light","Medium","Hard","Impossible"};
-		default = 2;
+		default = 3;
 	};
 	class CTI_TOWNS_RESISTANCE {
 		title = "TOWNS: Resistance";
 		values[] = {0,1,2,3,4};
 		texts[] = {"Disabled","Light","Medium","Hard","Impossible"};
-		default = 1;
+		default = 2;
 	};
 	class CTI_UNITS_TOWN_PURCHASE {
 		title = "TOWNS: Purchase Infantry";
@@ -729,7 +729,7 @@ class Params {
 		title = "TOWNS: Starting Mode";
 		values[] = {-1,0,1,2,3,4,5,6,7,8,9};
 		texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side [Border]","Coop at East side, rest 50:50 [Border]","Coop at East side, rest 50:50 shuffled [Border]","Coop at West side [Border]","Coop at West side, rest 50:50 [Border]","Coop at West side, rest 50:50 shuffled [Border]"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_TOWNS_VEHICLES_LOCK {
 		title = "TOWNS: Vehicle Lock";
