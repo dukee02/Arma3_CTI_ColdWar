@@ -1105,7 +1105,7 @@ switch(_side) do {
 		if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 			//Panavia Tornado AWS and variants							1980						Jagdbomber
 			//if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_1") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
-			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_1") && CTI_BAF_SIDE != _sideID && CTI_BW_SIDE != _sideID) then {
+			if (isClass(configFile >> "CfgVehicles" >> "Tornado_AWS_1") && CTI_BW_SIDE != _sideID) then {
 				if(CTI_AIR_ADDON >= 1) then {
 					//default
 					AIR_FIGHTER append [[format["%1Tornado_AWS_1", _sid],1]];
