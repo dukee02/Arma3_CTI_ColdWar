@@ -24,6 +24,9 @@ VAM_repair_vehicle_list = [
 	"O_T_Truck_03_repair_ghex_F",
 	"O_Truck_02_box_F",
 	"C_Truck_02_box_F"*/
+	//CTI Structures
+	"TK_GUE_WarfareBContructionSite_Base_EP1",
+	"Land_Cargo_House_V3_F",
 	//CDF RHS
 	"rhsgref_cdf_gaz66_repair",
 	"rhsgref_cdf_ural_repair",
