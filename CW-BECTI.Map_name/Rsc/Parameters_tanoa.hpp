@@ -35,6 +35,12 @@ class Params {
 		texts[] = {"Disabled","Enabled","set as main"};
 		default = 0;
 	};
+	class CTI_SOG_DLC {
+		title = "DLC: S.O.G. Prairie Fire - Vehicles west + east";
+		values[] = {0,1,2};
+		texts[] = {"Disabled","Enabled","set as main"};
+		default = 0;
+	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
 		values[] = {0,1,2};
@@ -54,7 +60,7 @@ class Params {
 		default = 1;
 	};
 	class CTI_BW_ADDON {
-		title = "ADDON: BWA3 Support - Vehicles at all sides possible";
+		title = "ADDON: BWA3 Support - Vehicles west";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
 		default = 0;
@@ -110,7 +116,7 @@ class Params {
 		default = -1; //0
 	};
 	class CTI_NVA_SIDE {
-		title = "NVA (East Germany) Side [GM cDLC needed]";
+		title = "NVA Side (East Germany with GM or Vietnam with SOG)";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
 		default = -1;
@@ -379,16 +385,16 @@ class Params {
 		texts[] = {"Disabled","1","2","3","4","5","6","7","8","9","10"};
 		default = 6;
 	};
-	/*class CTI_BASE_START_TOWN {
+	class CTI_BASE_START_TOWN {
 		title = "BASE: Start Near towns";
-		values[] = {0,1};
-		texts[] = {"No","Yes"};//{"Disabled","Enabled"};
-		default = 0;
-	};*/
+		values[] = {0,1000,2000,3000,4000};
+		texts[] = {"Disabled","1 KM","2 KM","3 KM","4 KM"};
+		default = 2000;
+	};
 	class CTI_BASE_STARTUP_PLACEMENT {
 		title = "BASE: Start-up Placement";
-		values[] = {1000,2000,4000,6000,8000,10000};
-		texts[] = {"1KM","2 KM","4 KM","6 KM","8 KM","10 KM"};
+		values[] = {100000,1000,2000,4000,6000,8000,10000};
+		texts[] = {"Use Default","1 KM","2 KM","4 KM","6 KM","8 KM","10 KM"};
 		default = 6000;
 	};
 	class CTI_BASE_WORKERS_LIMIT {
