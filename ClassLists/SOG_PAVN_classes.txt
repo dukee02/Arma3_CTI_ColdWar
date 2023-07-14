@@ -1,0 +1,553 @@
+// Export of 'SOG_OPF.Stratis' by dukee on v0.9
+
+"vn_o_nva_static_dshkm_high_02",
+"vn_o_static_rsna75",
+"vn_sa2",
+"vn_o_nva_static_sgm_high_01",
+"vn_o_nva_static_zpu4",
+"vn_o_nva_static_d44_01",
+"vn_o_nva_static_h12",
+"vn_o_nva_static_mortar_type53",
+"vn_o_nva_static_mortar_type63",
+"vn_o_nva_navy_static_v11m",
+"vn_o_nva_65_static_zgu1_01",
+"vn_o_nva_static_at3",
+"vn_o_nva_static_d44",
+"vn_o_nva_static_dshkm_high_01",
+"vn_o_nva_static_dshkm_low_02",
+"vn_o_nva_static_dshkm_low_01",
+"vn_o_nva_static_pk_high",
+"vn_o_nva_static_pk_low",
+"vn_o_nva_static_rpd_high",
+"vn_o_nva_static_sgm_low_02",
+"vn_o_nva_static_sgm_low_01",
+"vn_o_nva_static_type56rr",
+"vn_o_nva_spiderhole_02",
+"vn_o_nva_spiderhole_01",
+"vn_o_nva_spiderhole_03",
+
+
+
+//town
+"vn_o_men_nva_65_14",
+"vn_o_men_nva_65_35",
+"vn_o_men_nva_65_36",
+"vn_o_men_nva_65_37",
+"vn_o_men_nva_65_07",
+"vn_o_men_nva_65_11",
+"vn_o_men_nva_65_10",
+"vn_o_men_nva_65_08",
+"vn_o_men_nva_65_30",
+"vn_o_men_nva_65_29",
+"vn_o_men_nva_65_31",
+"vn_o_men_nva_65_01",
+"vn_o_men_nva_65_06",
+"vn_o_men_nva_65_03",
+"vn_o_men_nva_65_02",
+"vn_o_men_nva_65_05",
+"vn_o_men_nva_65_04",
+"vn_o_men_nva_65_13",
+"vn_o_men_nva_65_09",
+"vn_o_men_nva_65_12",
+15:39:29 "vn_o_men_nva_65_35 Crewman (Commander)"
+15:39:29 "vn_o_men_nva_65_36 Crewman (Driver)"
+15:39:29 "vn_o_men_nva_65_37 Crewman (Gunner)"
+15:39:29 "vn_o_men_nva_65_07 Grenadier (SKS)"
+15:39:29 "vn_o_men_nva_65_08 Medic (PPSh-41)"
+15:39:29 "vn_o_men_nva_65_03 Rifleman (SKS Bayo)"
+15:39:29 "vn_o_men_nva_65_02 Rifleman (SKS)"
+15:39:29 "vn_o_men_nva_65_12 Sentry (SKS Bayo)"
+
+15:39:29 "vn_o_men_nva_65_14 AT (SKS/ B41)"
+15:39:29 "vn_o_men_nva_65_11 Machine Gunner (RPD)"
+15:39:29 "vn_o_men_nva_65_06 Rifleman (PPSh-41)"
+15:39:29 "vn_o_men_nva_65_09 Sapper (PPSh-41)"
+15:39:29 "vn_o_men_nva_65_13 RTO (PPSh-41)"
+15:39:29 "vn_o_men_nva_65_30 Mortar Ammo (PPS-52)"
+15:39:29 "vn_o_men_nva_65_29 Mortar gunner (PPS-43)"
+15:39:29 "vn_o_men_nva_65_31 Mortar tripod (PPS-52)"
+
+15:39:29 "vn_o_men_nva_65_10 Marksman (SKS)"
+15:39:29 "vn_o_men_nva_65_01 Officer (PPS-43)"
+15:39:29 "vn_o_men_nva_65_05 Rifleman (Type 56 Bayo)"
+15:39:29 "vn_o_men_nva_65_04 Rifleman (Type 56)"
+
+
+//normal
+"vn_o_men_nva_43",
+"vn_o_men_nva_14",
+"vn_o_men_nva_32",
+"vn_o_men_nva_37",
+"vn_o_men_nva_38",
+"vn_o_men_nva_39",
+"vn_o_men_nva_07",
+"vn_o_men_nva_11",
+"vn_o_men_nva_10",
+"vn_o_men_nva_45",
+"vn_o_men_nva_08",
+"vn_o_men_nva_30",
+"vn_o_men_nva_29",
+"vn_o_men_nva_31",
+"vn_o_men_nva_01",
+"vn_o_men_nva_06",
+"vn_o_men_nva_03",
+"vn_o_men_nva_02",
+"vn_o_men_nva_05",
+"vn_o_men_nva_04",
+"vn_o_men_nva_13",
+"vn_o_men_nva_09",
+"vn_o_men_nva_12",
+
+15:40:30 "vn_o_men_nva_37 Crewman (Commander)"
+15:40:30 "vn_o_men_nva_38 Crewman (Driver)"
+15:40:30 "vn_o_men_nva_39 Crewman (Gunner)"
+15:40:30 "vn_o_men_nva_07 Grenadier (SKS)"
+15:40:30 "vn_o_men_nva_08 Medic (PPS-43)"
+15:40:30 "vn_o_men_nva_12 Sentry (SKS Bayo)"
+15:40:30 "vn_o_men_nva_03 Rifleman (SKS Bayo)"
+15:40:30 "vn_o_men_nva_02 Rifleman (SKS)"
+
+15:40:30 "vn_o_men_nva_14 AT (SKS/ B41)"
+15:40:30 "vn_o_men_nva_32 AT-3 gunner (PPS-43)"
+15:40:30 "vn_o_men_nva_11 Machine Gunner (RPD)"
+15:40:30 "vn_o_men_nva_13 RTO (PPSh-41)"
+15:40:30 "vn_o_men_nva_09 Sapper (PPSh-41)"
+15:40:30 "vn_o_men_nva_06 Rifleman (PPSh-41)"
+15:40:30 "vn_o_men_nva_30 Mortar Ammo (PPS52)"
+15:40:30 "vn_o_men_nva_29 Mortar gunner (PPS-43)"
+15:40:30 "vn_o_men_nva_31 Mortar tripod (PPS-52)"
+
+15:40:30 "vn_o_men_nva_43 AA (SKS/ 9K32)"
+15:40:30 "vn_o_men_nva_10 Marksman (SKS)"
+15:40:30 "vn_o_men_nva_45 Marksman (VZ54)"
+15:40:30 "vn_o_men_nva_01 Officer (PPSh-41)"
+15:40:30 "vn_o_men_nva_05 Rifleman (Type 56 Bayo)"
+15:40:30 "vn_o_men_nva_04 Rifleman (Type 56)"
+
+
+
+
+
+
+
+"vn_o_men_aircrew_02",
+"vn_o_men_aircrew_03",
+"vn_o_men_aircrew_04",
+"vn_o_men_aircrew_01",
+"vn_o_men_aircrew_07",
+"vn_o_men_aircrew_08",
+"vn_o_men_aircrew_05",
+"vn_o_men_aircrew_06",
+15:41:50 "vn_o_men_aircrew_02 Heli Co-Pilot (TT-33)"
+15:41:50 "vn_o_men_aircrew_03 Heli Crew Chief (PM)"
+15:41:50 "vn_o_men_aircrew_04 Heli Gunner (TT-33)"
+15:41:50 "vn_o_men_aircrew_01 Heli Pilot (PM)"
+15:41:50 "vn_o_men_aircrew_07 Jet Pilot (PM)"
+15:41:50 "vn_o_men_aircrew_08 Jet Pilot (TT-33)"
+15:41:50 "vn_o_men_aircrew_05 Pilot (PM)"
+15:41:50 "vn_o_men_aircrew_06 Pilot (TT-33)"
+
+
+"vn_o_bicycle_01_nva65",
+"vn_o_bicycle_02_nva65",
+"vn_o_wheeled_btr40_01_nva65",
+
+"vn_o_wheeled_btr40_mg_02_nva65",
+"vn_o_wheeled_btr40_mg_01_nva65",
+"vn_o_wheeled_btr40_mg_04_nva65",
+"vn_o_wheeled_btr40_mg_05_nva65",
+"vn_o_wheeled_btr40_mg_06_nva65",
+"vn_o_wheeled_btr40_02_nva65",		//medic
+"vn_o_wheeled_z157_mg_02_nva65",
+"vn_o_wheeled_z157_01_nva65",
+"vn_o_wheeled_z157_02_nva65",
+"vn_o_wheeled_z157_ammo_nva65",
+"vn_o_wheeled_z157_mg_01_nva65",
+"vn_o_wheeled_z157_fuel_nva65",
+"vn_o_wheeled_z157_repair_nva65",
+"vn_o_wheeled_z157_03_nva65",		//radar HQ?
+
+"vn_o_wheeled_btr40_mg_03_nva65",
+"vn_o_wheeled_z157_04_nva65",
+
+
+"vn_o_armor_m113_acav_01",
+"vn_o_armor_m113_acav_03",
+"vn_o_armor_m113_01",
+"vn_o_armor_btr50pk_01",
+"vn_o_armor_btr50pk_03",		//medic
+
+"vn_o_armor_pt76a_01_nva65",
+"vn_o_armor_btr50pk_02",
+"vn_o_armor_m125_01",
+"vn_o_armor_m577_01",			//command
+"vn_o_armor_m577_02",			//medic
+
+"vn_o_armor_ot45_01_nva65",
+"vn_o_armor_pt76b_01_nva65",
+"vn_o_armor_type63_01_nva65",
+"vn_o_armor_m41_01",
+
+"vn_o_armor_t54b_01_nva65",
+
+
+"vn_o_air_mi2_02_01",
+"vn_o_air_mi2_01_01",
+
+"vn_o_air_mi2_03_01",
+"vn_o_air_mi2_04_05",
+
+"vn_o_air_mi2_05_01",
+"vn_o_air_mig19_cas",
+
+"vn_o_air_mig21_cas",
+
+
+
+"vn_o_boat_01_00",
+"vn_o_boat_01_mg_00",
+"vn_o_boat_07_01",
+"vn_o_boat_07_02",
+
+"vn_o_boat_02_00",
+"vn_o_boat_02_mg_00",
+"vn_o_boat_08_01",
+"vn_o_boat_08_02",
+
+"vn_o_boat_03_02",
+"vn_o_boat_04_02",
+
+
+
+"vn_o_men_nva_dc_14",
+"vn_o_men_nva_dc_07",
+"vn_o_men_nva_dc_11",
+"vn_o_men_nva_dc_10",
+"vn_o_men_nva_dc_18",
+"vn_o_men_nva_dc_08",
+"vn_o_men_nva_dc_16",
+"vn_o_men_nva_dc_15",
+"vn_o_men_nva_dc_17",
+"vn_o_men_nva_dc_01",
+"vn_o_men_nva_dc_06",
+"vn_o_men_nva_dc_03",
+"vn_o_men_nva_dc_04",
+"vn_o_men_nva_dc_02",
+"vn_o_men_nva_dc_05",
+"vn_o_men_nva_dc_13",
+"vn_o_men_nva_dc_09",
+"vn_o_men_nva_dc_12",
+
+"vn_o_men_nva_65_28",
+"vn_o_men_nva_65_38",
+"vn_o_men_nva_65_39",
+"vn_o_men_nva_65_40",
+"vn_o_men_nva_65_21",
+"vn_o_men_nva_65_25",
+"vn_o_men_nva_65_24",
+"vn_o_men_nva_65_22",
+"vn_o_men_nva_65_33",
+"vn_o_men_nva_65_32",
+"vn_o_men_nva_65_34",
+"vn_o_men_nva_65_15",
+"vn_o_men_nva_65_20",
+"vn_o_men_nva_65_17",
+"vn_o_men_nva_65_16",
+"vn_o_men_nva_65_19",
+"vn_o_men_nva_65_18",
+"vn_o_men_nva_65_27",
+"vn_o_men_nva_65_23",
+"vn_o_men_nva_65_26",
+
+"vn_o_men_nva_44",
+"vn_o_men_nva_28",
+"vn_o_men_nva_36",
+"vn_o_men_nva_40",
+"vn_o_men_nva_41",
+"vn_o_men_nva_42",
+"vn_o_men_nva_21",
+"vn_o_men_nva_25",
+"vn_o_men_nva_24",
+"vn_o_men_nva_46",
+"vn_o_men_nva_22",
+"vn_o_men_nva_34",
+"vn_o_men_nva_33",
+"vn_o_men_nva_35",
+"vn_o_men_nva_15",
+"vn_o_men_nva_20",
+"vn_o_men_nva_17",
+"vn_o_men_nva_16",
+"vn_o_men_nva_19",
+"vn_o_men_nva_18",
+"vn_o_men_nva_27",
+"vn_o_men_nva_23",
+"vn_o_men_nva_26",
+
+"vn_o_men_nva_marine_14",
+"vn_o_men_nva_marine_07",
+"vn_o_men_nva_marine_11",
+"vn_o_men_nva_marine_10",
+"vn_o_men_nva_marine_08",
+"vn_o_men_nva_marine_01",
+"vn_o_men_nva_marine_06",
+"vn_o_men_nva_marine_03",
+"vn_o_men_nva_marine_02",
+"vn_o_men_nva_marine_05",
+"vn_o_men_nva_marine_04",
+"vn_o_men_nva_marine_13",
+"vn_o_men_nva_marine_09",
+"vn_o_men_nva_marine_12",
+
+"vn_o_men_nva_navy_14",
+"vn_o_men_nva_navy_07",
+"vn_o_men_nva_navy_11",
+"vn_o_men_nva_navy_10",
+"vn_o_men_nva_navy_08",
+"vn_o_men_nva_navy_01",
+"vn_o_men_nva_navy_04",
+"vn_o_men_nva_navy_06",
+"vn_o_men_nva_navy_05",
+"vn_o_men_nva_navy_02",
+"vn_o_men_nva_navy_03",
+"vn_o_men_nva_navy_13",
+"vn_o_men_nva_navy_09",
+"vn_o_men_nva_navy_12",
+
+
+
+
+
+
+
+"vn_m19_binocs_grn"
+
+12:16:05 "1x Caliber: vn_rdg2_ammo -- vn_rdg2_mag"
+12:16:05 "1x Caliber: vn_t67_grenade_ammo -- vn_t67_grenade_mag"
+12:16:05 "1x Caliber: vn_22mm_m60_frag_ammo -- vn_22mm_m60_frag_mag"
+12:16:05 "1x Caliber: vn_rg42_grenade_ammo -- vn_rg42_grenade_mag"
+12:13:46 "1x Caliber: vn_20mm_f1n60_frag_ammo -- vn_20mm_f1n60_frag_mag"
+12:13:46 "1x Caliber: vn_20mm_pgn60_heat_ammo -- vn_20mm_pgn60_heat_mag"
+12:13:46 "1x Caliber: vn_22mm_m19_wp_ammo -- vn_20mm_dgn_wp_mag"
+
+this addItemToBackpack "vn_22mm_cs_mag";
+this addItemToBackpack "vn_22mm_m19_wp_mag";
+this addItemToBackpack "vn_22mm_m22_smoke_mag";
+this addItemToBackpack "vn_22mm_lume_mag";
+this addItemToBackpack "vn_22mm_m60_heat_mag";
+this addItemToBackpack "vn_22mm_m60_frag_mag";
+
+
+this addWeapon "vn_sks";
+this addWeapon "vn_sks_gl";
+this addPrimaryWeaponItem "vn_b_sks";
+this addPrimaryWeaponItem "vn_o_3x_m9130";
+this addItemToBackpack "vn_sks_mag";
+this addItemToBackpack "vn_sks_t_mag";
+12:16:05 "10x Caliber: vn_762x39 -- vn_sks_t_mag"
+
+this addWeapon "vn_rpg7";
+this addSecondaryWeaponItem "vn_rpg7_mag";
+12:16:05 "1x Caliber: vn_rpg7_rocket_ammo -- vn_rpg7_mag"
+
+this addWeapon "vn_pps43";
+this addWeapon "vn_pps52";
+this addItemToBackpack "vn_pps_mag";
+this addItemToBackpack "vn_pps_t_mag";
+12:16:05 "35x Caliber: vn_762x25 -- vn_pps_t_mag"
+
+this addWeapon "vn_pm";
+this addWeapon "vn_fkb1_pm";
+this addHandgunItem "vn_s_pm";
+this addHandgunItem "vn_pm_mag";
+12:16:05 "8x Caliber: vn_9x18 -- vn_pm_mag"
+
+this addWeapon "vn_rpd";
+this addWeapon "vn_rpd_shorty_01";
+this addWeapon "vn_rpd_shorty";
+this addItemToBackpack "vn_rpd_100_mag";
+this addItemToBackpack "vn_rpd_125_mag";
+12:16:05 "100x Caliber: vn_762x39 -- vn_rpd_100_mag"
+
+
+
+
+this addWeapon "vn_ppsh41";
+this addItemToBackpack "vn_ppsh41_35_mag";
+this addItemToBackpack "vn_ppsh41_35_t_mag";
+this addItemToBackpack "vn_ppsh41_71_mag";
+this addItemToBackpack "vn_ppsh41_71_t_mag";
+12:16:05 "35x Caliber: vn_762x25 -- vn_ppsh41_35_t_mag"
+12:16:05 "71x Caliber: vn_762x25 -- vn_ppsh41_71_t_mag"
+
+
+this addWeapon "vn_type56";
+this addPrimaryWeaponItem "vn_b_type56";
+this addItemToBackpack "vn_type56_mag";
+this addItemToBackpack "vn_type56_t_mag";
+12:16:05 "30x Caliber: vn_762x39 -- vn_type56_t_mag"
+
+
+this addWeapon "vn_tt33";
+this addHandgunItem "vn_tt33_mag";
+12:16:05 "8x Caliber: vn_762x25 -- vn_tt33_mag"
+
+
+"vn_pps52" ??
+
+
+
+
+this addWeapon "vn_sa7";
+this addSecondaryWeaponItem "vn_sa7_mag";
+12:13:46 "1x Caliber: vn_sa7_rocket_ammo -- vn_sa7_mag"
+
+this addWeapon "vn_sa7b";
+this addSecondaryWeaponItem "vn_sa7b_mag";
+
+
+this addWeapon "vn_kbkg";
+this addWeapon "vn_kbkg_gl";
+this addPrimaryWeaponItem "vn_kbkg_mag";
+this addItemToBackpack "vn_20mm_f1n60_frag_mag";
+this addItemToBackpack "vn_20mm_kgn_frag_mag";
+this addItemToBackpack "vn_20mm_pgn60_heat_mag";
+this addItemToBackpack "vn_20mm_dgn_wp_mag";
+
+
+this addWeapon "vn_vz54";
+this addPrimaryWeaponItem "vn_o_3x_vz54";
+this addPrimaryWeaponItem "vn_b_camo_vz54";
+this addItemToBackpack "vn_m38_mag";
+this addItemToBackpack "vn_m38_t_mag";
+12:13:46 "5x Caliber: vn_762x54 -- vn_m38_t_mag"
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//town NVA
+"-----------------Start getConfig-----------------"
+"-----------------weapons 16-----------------"
+"-----------------magazines 13-----------------"
+"-----------------uniforms 6-----------------"
+"vn_o_uniform_nva_army_02_01"
+"vn_o_uniform_nva_army_04_01"
+"vn_o_uniform_nva_army_01_01"
+"vn_o_uniform_nva_army_09_01"
+"vn_o_uniform_nva_army_12_01"
+"vn_o_uniform_nva_army_03_01"
+
+"vn_o_uniform_nva_army_05_03"
+"vn_o_uniform_nva_army_06_03"
+"vn_o_uniform_nva_army_02_03"
+"vn_o_uniform_nva_army_04_03"
+"vn_o_uniform_nva_army_07_03"
+"vn_o_uniform_nva_army_11_03"
+"vn_o_uniform_nva_army_10_03"
+"vn_o_uniform_nva_army_08_03"
+"vn_o_uniform_nva_army_01_03"
+"vn_o_uniform_nva_army_03_03"
+"vn_o_uniform_nva_army_09_03"
+"vn_o_uniform_nva_army_12_03"
+"-----------------backpacks 14-----------------"
+"vn_o_pack_03_rpg7_sks_pl"
+"vn_o_pack_04_sks_pl"
+"vn_o_pack_04_rpd_pl"
+"vn_o_pack_06_sks_pl"
+"vn_o_pack_02_medic_ppsh_pl"
+"vn_o_pack_08"
+"vn_o_pack_static_type63_01"
+"vn_o_pack_static_base_01"
+"vn_o_pack_02_ppsh_pl"
+"vn_o_pack_02_sks_pl"
+"vn_o_pack_05_type56_pl"
+"vn_o_pack_t884_ppsh_01_pl"
+"vn_o_pack_02_eng_ppsh_pl"
+
+"vn_o_pack_03_sa7_sks_pl"
+"vn_o_pack_03_rpg7_sks_pl"
+"vn_o_pack_static_at3_01"
+"vn_o_pack_04_kbkg_pl"
+"vn_o_pack_04_rpd_pl"
+"vn_o_pack_06_sks_pl"
+"vn_o_pack_06_m38_pl"
+"vn_o_pack_02_medic_pps_pl"
+"vn_o_pack_08"
+"vn_o_pack_static_type63_01"
+"vn_o_pack_static_base_01"
+"vn_o_pack_01_ppsh_pl"
+"vn_o_pack_02_ppsh_pl"
+"vn_o_pack_02_sks_pl"
+"vn_o_pack_05_type56_pl"
+"vn_o_pack_t884_ppsh_01_pl"
+"vn_o_pack_02_eng_ppsh_pl"
+"-----------------items 19-----------------"
+"vn_o_vest_02"
+"vn_o_helmet_nva_08"
+"vn_o_item_map"
+"vn_b_item_compass"
+"vn_b_item_watch"
+"vn_o_item_radio_m252"
+"vn_o_item_firstaidkit"
+"vn_o_vest_07"
+"vn_o_helmet_tsh3_02"
+"vn_o_acc_goggles_01"
+"vn_o_vest_06"
+"vn_o_helmet_tsh3_01"
+"vn_o_helmet_nva_06"
+"vn_o_vest_03"
+"vn_o_helmet_nva_03"
+"vn_o_helmet_nva_04"
+"vn_o_vest_vc_01"
+"vn_o_cap_01"
+
+"vn_o_vest_01"
+"vn_o_vest_02"
+"vn_o_helmet_nva_03"
+"vn_o_item_map"
+"vn_b_item_compass"
+"vn_b_item_watch"
+"vn_o_item_radio_m252"
+"vn_o_item_firstaidkit"
+"vn_o_helmet_nva_09"
+"vn_o_vest_vc_01"
+"vn_o_vest_07"
+"vn_o_helmet_tsh3_02"
+"vn_o_acc_goggles_01"
+"vn_o_vest_06"
+"vn_o_helmet_tsh3_01"
+"vn_o_vest_03"
+"vn_o_helmet_nva_02"
+"vn_o_helmet_nva_04"
+"vn_o_helmet_nva_07"
+"vn_o_cap_01"
+"vn_o_helmet_nva_10"
+"vn_o_vest_01"
+"vn_o_helmet_nva_05"

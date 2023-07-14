@@ -59,10 +59,10 @@ if(_mod >= 0) then {
 		if(CTI_GM_DLC > 0) then {
 			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_GM_ID] call CTI_CO_FNC_MergeMatrixArray;
 		};
-		/*if(CTI_GM_ID > 0) then {	//placeholder comming soon
+		if(CTI_SOG_DLC > 0) then {
 			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_PF_ID] call CTI_CO_FNC_MergeMatrixArray;
 		};
-		if(CTI_GM_ID > 0) then {	//placeholder comming soon
+		/*if(CTI_GM_ID > 0) then {	//placeholder comming soon
 			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_IC_ID] call CTI_CO_FNC_MergeMatrixArray;
 		};
 		if(CTI_GM_ID > 0) then {	//placeholder comming soon
@@ -71,7 +71,7 @@ if(_mod >= 0) then {
 		if(CTI_CUP_ADDON > 0) then {
 			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_CUP_ID] call CTI_CO_FNC_MergeMatrixArray;
 		};
-		if(CTI_RHS_ADDON > 0) then {	//placeholder comming soon
+		if(CTI_RHS_ADDON > 0) then {
 			_tech = [_tech, _tech_matrix select _factory select _nation select CTI_RHS_ID] call CTI_CO_FNC_MergeMatrixArray;
 		};
 		if(CTI_CWR3_ADDON > 0) then {
@@ -101,29 +101,29 @@ if(_mod >= 0) then {
 				if(CTI_GM_DLC > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_GM_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
+				if(CTI_SOG_DLC > 0) then {
+					_tech = [_tech, _tech_matrix select _factory select _x select CTI_PF_ID] call CTI_CO_FNC_MergeMatrixArray;
+				};
 				/*if(CTI_GM_ID > 0) then {	//placeholder comming soon
-					_tech = [_tech, _tech_matrix select _factory select _nation_cnt select CTI_PF_ID] call CTI_CO_FNC_MergeMatrixArray;
+					_tech = [_tech, _tech_matrix select _factory select _x select CTI_IC_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
 				if(CTI_GM_ID > 0) then {	//placeholder comming soon
-					_tech = [_tech, _tech_matrix select _factory select _nation_cnt select CTI_IC_ID] call CTI_CO_FNC_MergeMatrixArray;
-				};
-				if(CTI_GM_ID > 0) then {	//placeholder comming soon
-					_tech = [_tech, _tech_matrix select _factory select _nation_cnt select CTI_WS_ID] call CTI_CO_FNC_MergeMatrixArray;
+					_tech = [_tech, _tech_matrix select _factory select _x select CTI_WS_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};*/
 				if(CTI_CUP_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_CUP_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
-				if(CTI_RHS_ADDON > 0) then {	//placeholder comming soon
+				if(CTI_RHS_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_RHS_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
 				if(CTI_CWR3_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_CWR3_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
 				/*if(CTI_GM_ID > 0) then {	//placeholder comming soon
-					_tech = [_tech, _tech_matrix select _factory select _nation_cnt select CTI_VME_ID] call CTI_CO_FNC_MergeMatrixArray;
+					_tech = [_tech, _tech_matrix select _factory select _x select CTI_VME_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
 				if(CTI_GM_ID > 0) then {	//placeholder comming soon
-					_tech = [_tech, _tech_matrix select _factory select _nation_cnt select CTI_UKR_ID] call CTI_CO_FNC_MergeMatrixArray;
+					_tech = [_tech, _tech_matrix select _factory select _x select CTI_UKR_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};*/
 				if(CTI_BW_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_BWA3_ID] call CTI_CO_FNC_MergeMatrixArray;

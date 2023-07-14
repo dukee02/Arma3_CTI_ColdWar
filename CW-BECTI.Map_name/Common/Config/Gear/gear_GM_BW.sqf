@@ -591,6 +591,14 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
+_c pushBack "gm_fim43_oli";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "gm_1Rnd_70mm_he_m585_fim43";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Attachments																//
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -677,14 +685,6 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													AT Guns																	//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_fim43_oli";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
-
-_c pushBack "gm_1Rnd_70mm_he_m585_fim43";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
-
 _c pushBack "gm_1Rnd_milan_heat_dm82";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);

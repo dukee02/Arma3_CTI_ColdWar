@@ -826,7 +826,11 @@ _c pushBack "rhsusf_weap_glock17g4";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
 _c pushBack "rhsusf_mag_17Rnd_9x19_JHP";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,17,(900*19)] call CTI_CO_FNC_GetCalculatedItemPrize);
 _c pushBack "rhsusf_mag_17Rnd_9x19_FMJ";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,17,(900*19)] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 
 _c pushBack "rhsusf_weap_MP7A2_folded";

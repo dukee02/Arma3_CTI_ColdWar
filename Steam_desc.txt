@@ -98,6 +98,8 @@ hierfür eine gute Adresse.
 
 //---------------------------------
 This Mission has the RHS preupset. To play this mission with other Mods, see [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2418491371] Our Mod-Collection [/url] with all supported mods or for special setup see our [url=https://steamcommunity.com/groups/vio-community] Steam-Group [/url] If you need help to setup a server or any questions join our [url=https://discord.gg/sJw2Nynh7s] Discord [/url].
+
+This Mission has the Global Mobilization preupset. To play this mission with other Mods, see [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2418491371] Our Mod-Collection [/url] with all supported mods or for special setup see our [url=https://steamcommunity.com/groups/vio-community] Steam-Group [/url] If you need help to setup a server or any questions join our [url=https://discord.gg/sJw2Nynh7s] Discord [/url].
 [h1]Main Mods supported: [/h1] 
 [list]
     [*]RHS
@@ -180,8 +182,8 @@ Chernarus
 Chernarus Summer
 Chernarus Winter
 Enoch / Livonia			https://steamcommunity.com/sharedfiles/filedetails/?id=2974800207				final
-Weferlingen
-Weferlingen Winter
+Weferlingen				https://steamcommunity.com/sharedfiles/filedetails/?id=2994391699				final
+Weferlingen Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=2994392454				final
 Malden					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799676				final
 MSKE
 Stratis					https://steamcommunity.com/sharedfiles/filedetails/?id=2974798605				final

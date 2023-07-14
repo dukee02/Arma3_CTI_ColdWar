@@ -782,6 +782,7 @@ with missionNamespace do {
 	if (isNil 'CTI_SAVE_PERIODE') then {CTI_SAVE_PERIODE = 900};		//900
 	
 	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
+	if (isNil 'CTI_SOG_DLC') then {CTI_SOG_DLC = 0};
 	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
 	if !(isClass(configFile >> "CfgVehicles" >> "CUP_B_M1030_USMC")) then {CTI_CUP_ADDON = 0};
 	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};

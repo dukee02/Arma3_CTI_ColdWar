@@ -136,6 +136,19 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_AIM9L_P_1rnd_M")) then {
 	_c pushBack "FIR_R73_P_1rnd_M";					//R-73 <Short-range,  IR guided, air-to-air missile>
 	_c pushBack "FIR_R27ET_P_1rnd_M";				//R-27ET <Mid-range,  IR guided, air-to-air missile>
 };
+/*if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_missile_sa7b_mag_x2";				//9K32M Strela-2M (SA-7b) <>
+	_c pushBack "vn_missile_aim7e2_mag_x1";				//AIM-7E Sparrow 				<AIM-7E Sparrow Air-to-air Radar-guided missile>
+
+	_c pushBack "vn_missile_aa2_mag_x1";				//K-15 (AA-2A) 					<K-2 (AA-2A Atoll) Air-to-air Infra-Red heat-seeking missile>
+	_c pushBack "vn_missile_mig19_01_aa2_mag_x1";		//K-15 (AA-2A) 					<K-2 (AA-2A Atoll) Air-to-air Infra-Red heat-seeking missile>
+	_c pushBack "vn_missile_aim9e_mag_x1";				//AIM-9E Sidewinder 			<AIM-9E Sidewinder Air-to-air Infra-Red heat-seeking missile>
+	_c pushBack "vn_missile_f4_lau7_aim9e_mag_x2";		//2x AIM-9E Sidewinder 			<2x AIM-9E Sidewinder Air-to-air Infra-Red heat-seeking missile>
+	_c pushBack "vn_missile_f100_lau7_aim9e_mag_x2";	//2x AIM-9E Sidewinder 			<2x AIM-9E Sidewinder Air-to-air Infra-Red heat-seeking missile>
+	_c pushBack "vn_missile_f4_lau7_aim9x_mag_x2";		//BIM 9X AA x2 					<Short-range, infrared-guided, air-to-air missile with high-explosive warhead>
+	
+	_c pushBack "vn_missile_aim120c_mag_x1";			//AMRAAM C AA x1 				<Medium-range, radar-guided, air-to-air missile with high-explosive warhead>
+};*/
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -410,6 +423,28 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_Hydra_P_7rnd_M")) then {
 	_c pushBack "FIR_S8KOR_P_20rnd_M";				//S-8KOR x 20 			<laser-guided rocket, 80mm>
 	_c pushBack "FIR_S25L_P_1rnd_M";				//S-25-L x 1 			<Laser-guided rocket, 340mm>
 };
+
+/*
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_missile_agm45_mag_x1";				//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
+	_c pushBack "vn_missile_agm45_02_mag_x1";			//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
+	_c pushBack "vn_missile_agm45_03_mag_x1";			//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
+	_c pushBack "vn_missile_f4_out_agm45_mag_x1";		//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
+	_c pushBack "vn_missile_f4_in_agm45_mag_x1";		//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
+	_c pushBack "vn_missile_at3_mag_01_x1";				//9M14M Malyutka (AT-3) 		<9M14M Malyutka (AT-3) Anti-tank manually-guided HEAT missile>
+	_c pushBack "vn_missile_agm12c_mag_01_x1";			//AGM-12C Bullpup 				<AGM-12C Bullpup Air-to-ground guided HE missile>
+	_c pushBack "vn_missile_f4_in_agm12c_mag_x1";		//AGM-12C Bullpup 				<AGM-12C Bullpup Air-to-ground guided HE missile>
+	_c pushBack "vn_missile_f4_out_agm12c_mag_x1";		//AGM-12C Bullpup 				<AGM-12C Bullpup Air-to-ground guided HE missile>
+	_c pushBack "vn_missile_kh66_mag_01_x1";			//KH-66 						<KH-66 Air-to-ground guided HE missile>
+	_c pushBack "vn_missile_agm88_rail_mag_x1";			//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_agm88_mag_x1";				//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_f4_out_agm88_mag_x1";		//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_f4_in_agm88_mag_x1";		//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_agm65_rail_mag_x1";			//Macer II AGM x1 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
+	_c pushBack "vn_missile_agm65_rail_mag_x2";			//Macer II AGM x2 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
+	_c pushBack "vn_missile_agm65_rail_mag_x3";			//Macer II AGM x3 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
+};
+*/
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -973,6 +1008,106 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_CRV7_P_19rnd_M")) then {
 	_c pushBack "FIR_S25OFM_P_1rnd_M";				//S-25-OFM x 1 			<unguided rocket, 340mm, Penetrator>
 };
 
+/*
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_rocket_s5_heat_x16";								//16x S-5KO 57mm HE/FRAG 		<16x S-5KO 57mm unguided rockets with high-explosive fragmentation warhead>
+	_c pushBack "vn_rocket_s5_he_x16";									//16x S-5K 57mm HE 				<16x S-5K 57mm unguided rockets with high-explosive warhead>
+	_c pushBack "vn_rocket_s5_fl_x16";									//16x S-5S 57mm FL 				<16x S-5S 57mm unguided rockets with flechette warhead>
+	
+	_c pushBack "vn_rocket_ffar_m151_he_x4";							//4x M151 2.75in 10lb HE 		<4x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m151_he_x7";							//7x M151 2.75in 10lb HE 		<7x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_lau59_m151_he_x7";						//7x M151 2.75in 10lb HE 		<7x M151 2.75in unguided rockets with 10lb high explosive warhead (LAU59)>
+	_c pushBack "vn_rocket_ffar_f4_lau59_m151_he_x7";					//7x M151 2.75in 10lb HE 		<7x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_m151_he_x7";				//7x M151 2.75in 10lb HE 		<7x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_m151_he_x7";				//7x M151 2.75in 10lb HE 		<7x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau59_m151_he_x21";					//21x M151 2.75in 10lb HE 		<21x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_m151_he_x21";				//21x M151 2.75in 10lb HE 		<21x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_m151_he_x21";				//21x M151 2.75in 10lb HE 		<21x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m151_he_x19";							//19x M151 2.75in 10lb HE 		<19x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_m151_he_x19";					//19x M151 2.75in 10lb HE 		<19x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_m151_he_x19";				//19x M151 2.75in 10lb HE 		<19x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_m151_he_x19";				//19x M151 2.75in 10lb HE 		<19x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_m151_he_x57";					//57x M151 2.75in 10lb HE 		<57x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_m151_he_x57";				//57x M151 2.75in 10lb HE 		<57x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_m151_he_x57";				//57x M151 2.75in 10lb HE 		<57x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m151_he_x12_01";						//12x M151 2.75in 10lb HE 		<12x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m151_he_x12_02";						//12x M151 2.75in 10lb HE 		<12x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m151_he_x24_01";						//24x M151 2.75in 10lb HE 		<24x M151 2.75in unguided rockets with 10lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m151_he_x24_02";						//24x M151 2.75in 10lb HE 		<24x M151 2.75in unguided rockets with 10lb high explosive warhead>
+
+	_c pushBack "vn_rocket_ffar_m156_wp_x4";							//4x M156 2.75in WP 			<4x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_m156_wp_x7";							//7x M156 2.75in WP 			<7x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_lau59_m156_wp_x7";						//7x M156 2.75in WP 			<7x M156 2.75in unguided rockets with white phosphorus warhead (LAU59)>
+	_c pushBack "vn_rocket_ffar_f4_lau59_m156_wp_x7";					//7x M156 2.75in WP 			<7x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_m156_wp_x7";				//7x M156 2.75in WP 			<7x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_m156_wp_x7";				//7x M156 2.75in WP 			<7x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau59_m156_wp_x21";					//21x M156 2.75in WP 			<21x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_m156_wp_x21";				//21x M156 2.75in WP 			<21x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_m156_wp_x21";				//21x M156 2.75in WP 			<21x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_m156_wp_x19";							//19x M156 2.75in WP 			<19x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_m156_wp_x19";					//19x M156 2.75in WP 			<19x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_m156_wp_x19";				//19x M156 2.75in WP 			<19x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_m156_wp_x19";				//19x M156 2.75in WP 			<19x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_m156_wp_x57";					//57x M156 2.75in WP 			<57x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_m156_wp_x57";				//57x M156 2.75in WP 			<57x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_m156_wp_x57";				//57x M156 2.75in WP 			<57x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_m156_wp_x12_01";						//12x M156 2.75in WP 			<12x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_m156_wp_x12_02";						//12x M156 2.75in WP 			<12x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_m156_wp_x24_01";						//24x M156 2.75in WP 			<24x M156 2.75in unguided rockets with white phosphorus warhead>
+	_c pushBack "vn_rocket_ffar_m156_wp_x24_02";						//24x M156 2.75in WP 			<24x M156 2.75in unguided rockets with white phosphorus warhead>
+
+	_c pushBack "vn_rocket_ffar_m229_he_x4";							//4x M229 2.75in 17lb HE 		<4x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m229_he_x7";							//7x M229 2.75in 17lb HE 		<7x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_lau59_m229_he_x7";						//7x M229 2.75in 17lb HE 		<7x M229 2.75in unguided rockets with 17lb high explosive warhead (LAU59)>
+	_c pushBack "vn_rocket_ffar_f4_lau59_m229_he_x7";					//7x M229 2.75in 17lb HE 		<7x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_m229_he_x7";				//7x M229 2.75in 17lb HE 		<7x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_m229_he_x7";				//7x M229 2.75in 17lb HE 		<7x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau59_m229_he_x21";					//21x M229 2.75in 17lb HE 		<21x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_m229_he_x21";				//21x M229 2.75in 17lb HE 		<21x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_m229_he_x21";				//21x M229 2.75in 17lb HE 		<21x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m229_he_x19";							//19x M229 2.75in 17lb HE 		<19x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_m229_he_x19";					//19x M229 2.75in 17lb HE 		<19x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_m229_he_x19";				//19x M229 2.75in 17lb HE 		<19x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_m229_he_x19";				//19x M229 2.75in 17lb HE 		<19x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_m229_he_x57";					//57x M229 2.75in 17lb HE 		<57x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_m229_he_x57";				//57x M229 2.75in 17lb HE 		<57x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_m229_he_x57";				//57x M229 2.75in 17lb HE 		<57x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m229_he_x12_01";						//12x M229 2.75in 17lb HE 		<12x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m229_he_x12_02";						//12x M229 2.75in 17lb HE 		<12x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m229_he_x24_01";						//24x M229 2.75in 17lb HE 		<24x M229 2.75in unguided rockets with 17lb high explosive warhead>
+	_c pushBack "vn_rocket_ffar_m229_he_x24_02";						//24x M229 2.75in 17lb HE 		<24x M229 2.75in unguided rockets with 17lb high explosive warhead>
+
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x4";						//4x WDU-4/A 2.75in FL 			<4x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x7";						//7x WDU-4/A 2.75in FL 			<7x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_lau59_wdu4_flechette_x7";				//7x WDU-4/A 2.75in FL 			<7x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead (LAU59)>
+	_c pushBack "vn_rocket_ffar_f4_lau59_wdu4_flechette_x7";			//7x WDU-4/A 2.75in FL 			<7x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_wdu4_flechette_x7";			//7x WDU-4/A 2.75in FL 			<7x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_wdu4_flechette_x7";		//7x WDU-4/A 2.75in FL 			<7x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau59_wdu4_flechette_x21";			//21x WDU-4/A 2.75in FL 		<21x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau59_wdu4_flechette_x21";		//21x WDU-4/A 2.75in FL 		<21x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau59_wdu4_flechette_x21";		//21x WDU-4/A 2.75in FL 		<21x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x19";					//19x WDU-4/A 2.75in FL 		<19x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_wdu4_flechette_x19";			//19x WDU-4/A 2.75in FL 		<19x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_wdu4_flechette_x19";			//19x WDU-4/A 2.75in FL 		<19x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_wdu4_flechette_x19";		//19x WDU-4/A 2.75in FL 		<19x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_wdu4_flechette_x57";			//57x WDU-4/A 2.75in FL 		<57x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_wdu4_flechette_x57";			//57x WDU-4/A 2.75in FL 		<57x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_wdu4_flechette_x57";		//57x WDU-4/A 2.75in FL 		<57x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x12_01";					//12x WDU-4/A 2.75in FL 		<12x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x12_02";					//12x WDU-4/A 2.75in FL 		<12x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x24_01";					//24x WDU-4/A 2.75in FL 		<24x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+	_c pushBack "vn_rocket_ffar_wdu4_flechette_x24_02";					//24x WDU-4/A 2.75in FL 		<24x WDU-4/A 2.75in unguided rockets with anti-personnel flechette warhead>
+
+	_c pushBack "vn_rocket_ffar_mk32_atap_x4";							//4x Mk32 5in ATAP 				<4x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_mk32_atap_x4";					//4x Mk32 5in ATAP 				<4x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_mk32_atap_x4";				//4x Mk32 5in ATAP 				<4x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_mk32_atap_x4";				//4x Mk32 5in ATAP 				<4x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+	_c pushBack "vn_rocket_ffar_f4_lau3_mk32_atap_x12";					//12x Mk32 5in ATAP 			<12x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+	_c pushBack "vn_rocket_ffar_f4_in_lau3_mk32_atap_x12";				//12x Mk32 5in ATAP 			<12x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+	_c pushBack "vn_rocket_ffar_f4_out_lau3_mk32_atap_x12";				//12x Mk32 5in ATAP 			<12x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
+};
+*/
+
 // set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _d;
@@ -1273,6 +1408,137 @@ if (isClass(configFile >> "CfgMagazines" >> "js_m_fa18_wing_tank_x1")) then {
 	_c pushBack "js_m_fa18_wing_tank_x1";		//F/A-18 Fuel Tank 	<500lb, high-explosive, unguided bomb>
 	//_c pushBack "js_m_fa18_buddypod_x1";		//F/A-18 Buddy Pod 	<500lb, high-explosive, unguided bomb>"		//wrong 'pylonWeapon' in magazine:'js_m_fa18_buddypod_x1' this magazine cannot be used in weapon'js_w_fa18_fueltank_holder'
 };
+/*
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_bomb_500_mk82_he_mag_x1";						//Mk82 500lb 					<Mk82 500lb GP Bomb>
+	_c pushBack "vn_bomb_f4_500_mk82_he_mag_x2";					//Mk82 500lb x2 				<2x Mk82 500lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_500_mk82_he_mag_x3";					//Mk82 500lb x3 				<3x Mk82 500lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_he_mag_x1";					//Mk82 500lb 					<Mk82 500lb GP Bomb>
+	_c pushBack "vn_bomb_f4_in_500_mk82_he_mag_x2";					//Mk82 500lb x2 				<2x Mk82 500lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_he_mag_x3";					//Mk82 500lb x3 				<3x Mk82 500lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_he_mag_x4";					//Mk82 500lb x4 				<4x Mk82 500lb GP Bombs on MER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_he_mag_x6";					//Mk82 500lb x6 				<6x Mk82 500lb GP Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_he_mag_x1";				//Mk82 500lb 					<Mk82 500lb GP Bomb>
+	_c pushBack "vn_bomb_f4_out_500_mk82_he_mag_x2";				//Mk82 500lb x2 				<2x Mk82 500lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_he_mag_x3";				//Mk82 500lb x3 				<3x Mk82 500lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_he_mag_x4";				//Mk82 500lb x4 				<4x Mk82 500lb GP Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_he_mag_x6";				//Mk82 500lb x6 				<6x Mk82 500lb GP Bombs on MER>
+	_c pushBack "vn_bomb_500_mk82_se_mag_x1";						//Mk82 500lb Snakeeye 			<Mk82 500lb Snakeeye Bomb>
+	_c pushBack "vn_bomb_f4_500_mk82_se_mag_x2";					//Mk82 500lb Snakeeye x2 		<2x Mk82 500lb Snakeeye Bombs on TER>
+	_c pushBack "vn_bomb_f4_500_mk82_se_mag_x3";					//Mk82 500lb Snakeeye x3 		<3x Mk82 500lb Snakeeye Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_se_mag_x1";					//Mk82 500lb Snakeeye 			<Mk82 500lb Snakeeye Bomb>
+	_c pushBack "vn_bomb_f4_in_500_mk82_se_mag_x2";					//Mk82 500lb Snakeeye x2 		<2x Mk82 500lb Snakeeye Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_se_mag_x3";					//Mk82 500lb Snakeeye x3 		<3x Mk82 500lb Snakeeye Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_se_mag_x4";					//Mk82 500lb Snakeeye x4 		<4x Mk82 500lb Snakeeye Bombs on MER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_se_mag_x6";					//Mk82 500lb Snakeeye x6 		<6x Mk82 500lb Snakeeye Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_se_mag_x1";				//Mk82 500lb Snakeeye 			<Mk82 500lb Snakeeye Bomb>
+	_c pushBack "vn_bomb_f4_out_500_mk82_se_mag_x2";				//Mk82 500lb Snakeeye x2 		<2x Mk82 500lb Snakeeye Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_se_mag_x3";				//Mk82 500lb Snakeeye x3 		<3x Mk82 500lb Snakeeye Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_se_mag_x4";				//Mk82 500lb Snakeeye x4 		<4x Mk82 500lb Snakeeye Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_se_mag_x6";				//Mk82 500lb Snakeeye x6 		<6x Mk82 500lb Snakeeye Bombs on MER>
+	_c pushBack "vn_bomb_500_mk82_dc_mag_x1";						//Mk82 500lb Daisy Cutter 		<Mk82 500lb Daisy Cutter Bomb>
+	_c pushBack "vn_bomb_f4_500_mk82_dc_mag_x2";					//Mk82 500lb Daisy Cutter x2 	<2x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_f4_500_mk82_dc_mag_x3";					//Mk82 500lb Daisy Cutter x3 	<3x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_dc_mag_x1";					//Mk82 500lb Daisy Cutter 		<Mk82 500lb Daisy Cutter Bomb>
+	_c pushBack "vn_bomb_f4_in_500_mk82_dc_mag_x2";					//Mk82 500lb Daisy Cutter x2 	<2x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk82_dc_mag_x3";					//Mk82 500lb Daisy Cutter x3 	<3x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_dc_mag_x1";				//Mk82 500lb Daisy Cutter 		<Mk82 500lb Daisy Cutter Bomb>
+	_c pushBack "vn_bomb_f4_out_500_mk82_dc_mag_x2";				//Mk82 500lb Daisy Cutter x2 	<2x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk82_dc_mag_x3";				//Mk82 500lb Daisy Cutter x3 	<3x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_750_m117_he_mag_x1";						//M117 750lb 					<M117 750lb GP Bomb>
+	_c pushBack "vn_bomb_f4_750_m117_he_mag_x2";					//M117 750lb x2 				<2x M117 750lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_750_m117_he_mag_x3";					//M117 750lb x3 				<3x M117 750lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_750_m117_he_mag_x1";					//M117 750lb 					<M117 750lb GP Bomb>
+	_c pushBack "vn_bomb_f4_in_750_m117_he_mag_x2";					//M117 750lb x2 				<2x M117 750lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_750_m117_he_mag_x3";					//M117 750lb x3 				<3x M117 750lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_750_m117_he_mag_x1";				//M117 750lb 					<M117 750lb GP Bomb>
+	_c pushBack "vn_bomb_f4_out_750_m117_he_mag_x2";				//M117 750lb x2 				<2x M117 750lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_750_m117_he_mag_x3";				//M117 750lb x3 				<3x M117 750lb GP Bombs on TER>
+	_c pushBack "vn_bomb_1000_mk83_he_mag_x1";						//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_1000_mk83_he_mag_x2";					//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x1";				//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x2";				//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x3";				//Mk83 1000lb x3 				<3x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_1000_mk83_he_mag_x1";				//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_out_1000_mk83_he_mag_x2";				//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_2000_mk84_he_mag_x1";						//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_in_2000_mk84_he_mag_x1";				//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_out_2000_mk84_he_mag_x1";				//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
+	_c pushBack "vn_bomb_2000_gbu8_he_mag_x1";						//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
+	_c pushBack "vn_bomb_f4_in_2000_gbu8_he_mag_x1";				//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
+	_c pushBack "vn_bomb_f4_out_2000_gbu8_he_mag_x1";				//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
+	_c pushBack "vn_bomb_15000_blu82_dc_mag_x1";					//BLU-82 15000lb 				<BLU-82 15000lb Daisy Cutter>
+	_c pushBack "vn_bomb_500_mk20_cb_mag_x1";						//MK20 Rockeye 					<MK20 Rockeye 500lb Anti-tank Clusterbomb>
+	_c pushBack "vn_bomb_f4_500_mk20_cb_mag_x2";					//MK20 Rockeye x2 				<2x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
+	_c pushBack "vn_bomb_f4_500_mk20_cb_mag_x3";					//MK20 Rockeye x3 				<3x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk20_cb_mag_x1";					//MK20 Rockeye 					<MK20 Rockeye 500lb Anti-tank Clusterbomb>
+	_c pushBack "vn_bomb_f4_in_500_mk20_cb_mag_x2";					//MK20 Rockeye x2 				<2x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_mk20_cb_mag_x3";					//MK20 Rockeye x3 				<3x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk20_cb_mag_x1";				//MK20 Rockeye 					<MK20 Rockeye 500lb Anti-tank Clusterbomb>
+	_c pushBack "vn_bomb_f4_out_500_mk20_cb_mag_x2";				//MK20 Rockeye x2 				<2x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_mk20_cb_mag_x3";				//MK20 Rockeye x3 				<3x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
+	_c pushBack "vn_bomb_500_blu1b_fb_mag_x1";						//BLU-1/B 500lb Napalm 			<BLU-1/B 500lb Napalm Fire Bomb>
+	_c pushBack "vn_bomb_f4_500_blu1b_fb_mag_x2";					//BLU-1/B 500lb Napalm x2 		<2x BLU-1/B 500lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_blu1b_fb_mag_x1";				//BLU-1/B 500lb Napalm 			<BLU-1/B 500lb Napalm Fire Bomb>
+	_c pushBack "vn_bomb_f4_in_500_blu1b_fb_mag_x2";				//BLU-1/B 500lb Napalm x2 		<2x BLU-1/B 500lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_500_blu1b_fb_mag_x4";				//BLU-1/B 500lb Napalm x4 		<4x BLU-1/B 500lb Napalm Fire Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_500_blu1b_fb_mag_x1";				//BLU-1/B 500lb Napalm 			<BLU-1/B 500lb Napalm Fire Bomb>
+	_c pushBack "vn_bomb_f4_out_500_blu1b_fb_mag_x2";				//BLU-1/B 500lb Napalm x2 		<2x BLU-1/B 500lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_500_blu1b_fb_mag_x4";				//BLU-1/B 500lb Napalm x4 		<4x BLU-1/B 500lb Napalm Fire Bombs on MER>
+	_c pushBack "vn_bomb_750_blu1b_fb_mag_x1";						//BLU-1/B 750lb Napalm 			<BLU-1/B 750lb Napalm Fire Bomb>
+	_c pushBack "vn_bomb_f4_750_blu1b_fb_mag_x2";					//BLU-1/B 750lb Napalm x2 		<2x BLU-1/B 750lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_750_blu1b_fb_mag_x1";				//BLU-1/B 750lb Napalm 			<BLU-1/B 750lb Napalm Fire Bomb>
+	_c pushBack "vn_bomb_f4_in_750_blu1b_fb_mag_x2";				//BLU-1/B 750lb Napalm x2 		<2x BLU-1/B 750lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_750_blu1b_fb_mag_x1";				//BLU-1/B 750lb Napalm 			<BLU-1/B 750lb Napalm Fire Bomb>
+	_c pushBack "vn_bomb_f4_out_750_blu1b_fb_mag_x2";				//BLU-1/B 750lb Napalm x2 		<2x BLU-1/B 750lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_750_blu1b_fb_mag_x3";				//BLU-1/B 750lb Napalm x3 		<3x BLU-1/B 750lb Napalm Fire Bombs on TER>
+	_c pushBack "vn_bomb_100_m47_wp_mag_x1";						//M47 100lb WP 					<M47 100lb White Phosphorus bomb>
+	_c pushBack "vn_bomb_f4_100_m47_wp_mag_x2";						//M47 100lb WP x2 				<2x M47 100lb White Phosphorus Bombs on TER>
+	_c pushBack "vn_bomb_f4_100_m47_wp_mag_x3";						//M47 100lb WP x3 				<3x M47 100lb White Phosphorus Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_100_m47_wp_mag_x1";					//M47 100lb WP 					<M47 100lb White Phosphorus bomb>
+	_c pushBack "vn_bomb_f4_in_100_m47_wp_mag_x2";					//M47 100lb WP x2 				<2x M47 100lb White Phosphorus Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_100_m47_wp_mag_x3";					//M47 100lb WP x3 				<3x M47 100lb White Phosphorus Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_100_m47_wp_mag_x4";					//M47 100lb WP x4 				<4x M47 100lb White Phosphorus Bombs on MER>
+	_c pushBack "vn_bomb_f4_in_100_m47_wp_mag_x6";					//M47 100lb WP x6 				<6x M47 100lb White Phosphorus Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x1";					//M47 100lb WP 					<M47 100lb White Phosphorus bomb>
+	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x2";					//M47 100lb WP x2 				<2x M47 100lb White Phosphorus Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x3";					//M47 100lb WP x3 				<3x M47 100lb White Phosphorus Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x4";					//M47 100lb WP x4 				<4x M47 100lb White Phosphorus Bombs on MER>
+	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x6";					//M47 100lb WP x6 				<6x M47 100lb White Phosphorus Bombs on MER>
+	_c pushBack "vn_bomb_500_fab250_he_mag_x1";						//FAB-250 500lb 				<FAB-250 500lb GP Bomb>
+	_c pushBack "vn_bomb_1000_fab500_he_mag_x1";					//FAB-500 1000lb 				<FAB-500 1000lb GP Bomb>
+	_c pushBack "vn_bomb_mk36_mine_mag_x1";							//Mk36 Naval Mine 				<Mk36 500lb Anti-ship Mine>
+	_c pushBack "vn_bomb_f4_in_mk36_mine_mag_x1";					//Mk36 Naval Mine 				<Mk36 500lb Anti-ship Mine>
+	_c pushBack "vn_bomb_f4_out_mk36_mine_mag_x1";					//Mk36 Naval Mine 				<Mk36 500lb Anti-ship Mine>
+	_c pushBack "vn_bomb_mk36_destructor_mine_mag_x1";				//Mk36 Destructor Mine 			<Mk36 500lb Anti-ship Destructor Mine>
+	_c pushBack "vn_bomb_mk36_destructor_mine_mag_x2";				//Mk36 Destructor Mine x2 		<2x Mk36 500lb Anti-ship Destructor Mines on TER>
+	_c pushBack "vn_bomb_mk36_destructor_mine_mag_x3";				//Mk36 Destructor Mine x3 		<3x Mk36 500lb Anti-ship Destructor Mines on TER>
+	_c pushBack "vn_bomb_f4_in_mk36_destructor_mine_mag_x1";		//Mk36 Destructor Mine 			<Mk36 500lb Anti-ship Destructor Mine>
+	_c pushBack "vn_bomb_f4_in_mk36_destructor_mine_mag_x2";		//Mk36 Destructor Mine x2 		<2x Mk36 500lb Anti-ship Destructor Mines on TER>
+	_c pushBack "vn_bomb_f4_in_mk36_destructor_mine_mag_x3";		//Mk36 Destructor Mine x3 		<3x Mk36 500lb Anti-ship Destructor Mines on TER>
+	_c pushBack "vn_bomb_f4_out_mk36_destructor_mine_mag_x1";		//Mk36 Destructor Mine 			<Mk36 500lb Anti-ship Destructor Mine>
+	_c pushBack "vn_bomb_f4_out_mk36_destructor_mine_mag_x2";		//Mk36 Destructor Mine x2 		<2x Mk36 500lb Anti-ship Destructor Mines on TER>
+	_c pushBack "vn_bomb_f4_out_mk36_destructor_mine_mag_x3";		//Mk36 Destructor Mine x3 		<3x Mk36 500lb Anti-ship Destructor Mines on TER>
+	_c pushBack "vn_bomb_750_cbu85_cb_mag_x1";						//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_750_cbu85_cb_mag_x2";					//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_750_cbu85_cb_mag_x3";					//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x1";				//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x2";				//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x3";				//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x1";				//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x2";				//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x3";				//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_500_gbu12_he_mag_x1";						//GBU 12 LGB x1 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_500_gbu12_he_mag_x2";					//GBU 12 LGB x2 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_500_gbu12_he_mag_x3";					//GBU 12 LGB x3 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_in_500_gbu12_he_mag_x1";				//GBU 12 LGB x1 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_in_500_gbu12_he_mag_x2";				//GBU 12 LGB x2 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_in_500_gbu12_he_mag_x3";				//GBU 12 LGB x3 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_out_500_gbu12_he_mag_x1";				//GBU 12 LGB x1 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_out_500_gbu12_he_mag_x2";				//GBU 12 LGB x2 				<500lb, high-explosive, laser-guided bomb>
+	_c pushBack "vn_bomb_f4_out_500_gbu12_he_mag_x3";				//GBU 12 LGB x3 				<500lb, high-explosive, laser-guided bomb>
+};
+*/
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -1559,6 +1825,25 @@ if (isClass(configFile >> "CfgMagazines" >> "js_jc_120Rnd_CMChaff_Magazine")) th
 	_c pushBack "FIR_BK27_L_M";										//BK-27 Revolver Cannon (Left) 	<Revolver Cannon,27mm>
 	_c pushBack "FIR_BK27_R_M";										//BK-27 Revolver Cannon (Right) <Revolver Cannon,27mm>
 };
+/*
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_pk_v_twin_3200_right";				//3200Rnd. PK Belt 	<3200Rnd. PK Belt. <br />Caliber: 7.62x54mmR. <br />Used in Twin PK Machine Gun>
+	_c pushBack "vn_pk_v_twin_3200_left";				//3200Rnd. PK Belt 	<3200Rnd. PK Belt. <br />Caliber: 7.62x54mmR. <br />Used in Twin PK Machine Gun>
+	_c pushBack "vn_gunpod_m8_v_150_mag";				//150x 40mm M8 		<40mm HE>
+	_c pushBack "vn_gunpod_m27_v_2000_mag";				//2000x 7.62mm M27 	<2000x 7.62mm in M27 minigun pod>
+	_c pushBack "vn_gunpod_m195_v_2100_mag";			//2100x 20mm M195 	<2100x 20mm HEI in M195 Vulcan gunpod>
+	_c pushBack "vn_gunpod_m18_v_750_mag";				//750x 7.62mm M18 	<750x 7.62mm in M18 minigun pod>
+	_c pushBack "vn_gunpod_suu11_v_750_mag";			//750x 7.62mm M18 	<750x 7.62mm in M18 minigun pod>				//config error
+	_c pushBack "vn_gunpod_m18_v_1500_mag";				//1500x 7.62mm M18 	<1500x 7.62mm in M18 minigun pod>
+	_c pushBack "vn_gunpod_suu11_v_1500_mag";			//1500x 7.62mm M18 	<1500x 7.62mm in M18 minigun pod>				//config error
+	_c pushBack "vn_gunpod_xm21_v_3000_mag";			//3000x 7.62mm XM21 	<3000x 7.62mm for XM21 minigun>
+	_c pushBack "vn_gunpod_xm21_v_6000_mag";			//6000x 7.62mm XM21 	<6000x 7.62mm for XM21 minigun>
+	_c pushBack "vn_gunpod_suu23_v_1200_mag";			//SUU-23/A 20mm 		<SUU-23/A 20mm Vulcan cannon pod (1200-rounds)>
+	_c pushBack "vn_gunpod_m60_v_500_mag";				//500Rnd. M60 Belt 	<500Rnd. M60 Belt. &lt;br /&gt;Calibre: 7.62x51mm. &lt;br /&gt;Used in Twin M60 Machine Gun>
+	_c pushBack "vn_gunpod_m60_v_1000_mag";				//1000Rnd. M60 Belt 	<1000Rnd. M60 Belt. &lt;br /&gt;Calibre: 7.62x51mm. &lt;br /&gt;Used in Twin M60 Machine Gun>
+	_c pushBack "vn_gunpod_m60_v_1500_mag";				//1500Rnd. M60 Belt 	<1500Rnd. M60 Belt. &lt;br /&gt;Calibre: 7.62x51mm. &lt;br /&gt;Used in Twin M60 Machine Gun>
+};
+*/
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -1711,6 +1996,22 @@ if (isClass(configFile >> "CfgVehicles" >> "FIR_Mk76_P_1rnd_M")) then {
 	_c pushBack "FIR_Smokewinder_Blue_P_10rnd_M";					//Smokewinder (Blue) 			<Smokewinder (Blue)>
 	_c pushBack "FIR_Smokewinder_Yellow_P_10rnd_M";					//Smokewinder (Yellow) 			<Smokewinder (Yellow)>
 };
+/*
+
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_fuel_mi2_mag_left";					//Fuel tank (Left) 	<Fuel tank (external)>
+	_c pushBack "vn_fuel_mi2_mag_right";				//Fuel tank (Right) 	<Fuel tank (external)>
+	_c pushBack "vn_fuel_f4_370_mag";					//Fuel tank 			<Fuel tank (external wing 370lbs)>
+	_c pushBack "vn_fuel_f4_600_mag";					//Fuel tank 			<Fuel tank (center 600lbs)>
+	_c pushBack "vn_fuel_mig17_mag";					//Fuel tank 			<Fuel tank (external wing 370lbs)>
+	_c pushBack "vn_fuel_mig19_400_mag";				//Fuel tank 			<Fuel tank (400 L)>
+	_c pushBack "vn_fuel_mig19_400_camo_01_mag";		//Fuel tank 			<Fuel tank camo (400 L)>
+	_c pushBack "vn_fuel_mig19_760_mag";				//Fuel tank 			<Fuel tank (760 L)>
+	_c pushBack "vn_fuel_mig19_760_camo_01_mag";		//Fuel tank 			<Fuel tank camo (760 L)>
+	_c pushBack "vn_fuel_f100_335_mag";					//Fuel tank 			<Fuel tank (335 gal)>
+	_c pushBack "vn_fuel_f100_335_camo_01_mag";			//Fuel tank 			<Fuel tank camo (335 gal)>
+};
+*/
 
 // set all other vars in a slope
 _cntstart = count _c;

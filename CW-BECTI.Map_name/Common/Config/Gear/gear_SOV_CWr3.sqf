@@ -325,21 +325,21 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 
 _c pushBack "CUP_launch_RPG18";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 
 _c pushBack "CUP_launch_9K32Strela";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 
 _c pushBack "CUP_arifle_RPK74_45";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 _c pushBack "CUP_arifle_RPK74M";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 _c pushBack "CUP_30Rnd_545x39_AK74_plum_M";
 _c pushBack "CUP_30Rnd_TE1_Green_Tracer_545x39_AK74M_M";
@@ -532,7 +532,7 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalc
 //--------------------------------------------------------------------------------------------------------------------------//
 _c pushBack "CUP_launch_Igla";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Uniforms																//

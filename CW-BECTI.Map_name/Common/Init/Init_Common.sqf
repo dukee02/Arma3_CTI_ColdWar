@@ -117,6 +117,10 @@ _nation = -1;
 				if(CTI_SOV_SIDE == 1) then {_nation = CTI_SOV_ID};
 			};
 		};
+		case (CTI_SOG_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_US_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
+			_mainmod = CTI_PF_ID;
+			_nation = if(_x == west) then {CTI_US_ID} else {CTI_NVA_ID};
+		};
 		case (CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_BW_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
 			_mainmod = CTI_GM_ID;
 			_nation = if(_x == west) then {CTI_BW_ID} else {CTI_NVA_ID};
@@ -165,6 +169,19 @@ call compile preprocessFileLineNumbers "Common\Config\Artillery\Artillery.sqf";
 
 //CTI_US_SIDE declaration
 if(CTI_US_SIDE >= 0) then {
+	if(CTI_SOG_DLC > 0) then {
+		((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_US_SOG.sqf";
+		if([1227700] call CTI_CO_FNC_HasDLC) then {			//Arma 3 Creator DLC: S.O.G. Prairie Fire
+			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_US_SOG.sqf";
+		};
+		if((CTI_US_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_US_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_US_SOG.sqf";
+		};
+		if((CTI_US_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_US_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_US_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+			((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_US_SOG.sqf";
+		};
+		((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_US_SOG.sqf";
+	};
 	if(CTI_CWR3_ADDON > 0) then {
 		((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_US_CWr3.sqf";
 		((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_US_CWr3.sqf";
@@ -359,17 +376,32 @@ if(CTI_BW_SIDE >= 0) then {
 };
 //CTI_NVA_SIDE declaration
 if(CTI_NVA_SIDE >= 0) then {
-	((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NVA_GM.sqf";
-	if([1042220] call CTI_CO_FNC_HasDLC) then {
-		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NVA_GM.sqf";
+	if(CTI_GM_DLC > 0) then {
+		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NVA_GM.sqf";
+		if([1042220] call CTI_CO_FNC_HasDLC) then {
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NVA_GM.sqf";
+		};
+		if((CTI_NVA_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA_GM.sqf";
+		};
+		if((CTI_NVA_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NVA_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA_GM.sqf";
+		};
+		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_GM_NVA.sqf";
 	};
-	if((CTI_NVA_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_AI < 0)) then {
-		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA_GM.sqf";
+	if(CTI_SOG_DLC > 0) then {
+		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_NVA_SOG.sqf";
+		if([1227700] call CTI_CO_FNC_HasDLC) then {			//Arma 3 Creator DLC: S.O.G. Prairie Fire
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_NVA_SOG.sqf";
+		};
+		if((CTI_NVA_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA_SOG.sqf";
+		};
+		if((CTI_NVA_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NVA_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA_SOG.sqf";
+		};
+		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_NVA_SOG.sqf";
 	};
-	if((CTI_NVA_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_NVA_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_NVA_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
-		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA_GM.sqf";
-	};
-	((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_GM_NVA.sqf";
 };
 
 switch(CTI_GUER_TOWNS) do {

@@ -508,6 +508,14 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalc
 //_u pushBack _tech_level;
 //_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
 
+_c pushBack "gm_9k32m_oli";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "gm_1Rnd_72mm_he_9m32m";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Attachments																//
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -573,16 +581,6 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,75,(762*39)] call CTI_CO
 _c pushBack "gm_100Rnd_762x54mm_api_b32_pk_grn";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,75,(762*39)] call CTI_CO_FNC_GetCalculatedItemPrize);
-//--------------------------------------------------------------------------------------------------------------------------//
-//													AT-Guns																	//
-//--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "gm_9k32m_oli";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
-
-_c pushBack "gm_1Rnd_72mm_he_9m32m";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Optics																	//

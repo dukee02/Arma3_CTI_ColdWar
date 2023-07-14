@@ -36,7 +36,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[true,true,true,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -63,7 +63,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -295,7 +295,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[true,true,true,true,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -322,7 +322,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,false,false,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -554,7 +554,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[true,true,true,true,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,false,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -581,7 +581,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,false,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -813,7 +813,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[true,true,true,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,false,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -840,7 +840,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false,false,false],
+			[true,true,true,true,false,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -1072,7 +1072,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false],
+			[true,true,true,false],
 			//CTI_IC_ID
 			[false,false,false,false],
 			//CTI_WS_ID
@@ -1099,7 +1099,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false],
+			[true,true,true,false],
 			//CTI_IC_ID
 			[false,false,false,false],
 			//CTI_WS_ID
@@ -1333,7 +1333,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[true,true,true,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false],
 			//CTI_WS_ID
@@ -1360,7 +1360,7 @@ _tech_matrix =
 			//CTI_GM_ID
 			[false,false,false,false,false,false,false],
 			//CTI_PF_ID
-			[false,false,false,false,false,false,false],
+			[true,true,true,false,false,false,false],
 			//CTI_IC_ID
 			[false,false,false,false,false,false,false],
 			//CTI_WS_ID

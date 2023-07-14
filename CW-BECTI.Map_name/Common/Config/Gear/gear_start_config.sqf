@@ -101,14 +101,25 @@ switch(_nationID) do {
 			case CTI_GM_ID: {
 				_weapon = "gm_hk33a2_blk";
 				_weapon_ammo = "gm_30Rnd_556x45mm_B_DM11_hk33_blk";
-				_uniform = "gm_ge_army_uniform_soldier_80_ols";
-				_vest = "gm_ge_army_vest_80_demolition";
-				_backpack = "gm_ge_army_backpack_80_oli";
-				_helmet = "gm_ge_headgear_m62_net";
 				_grenades = "gm_handgrenade_frag_dm51a1";
 				_healing = "gm_ge_army_gauzeBandage";
 				_bino = "gm_ferod16_des";
 				_item_compass = "gm_ge_army_conat2";
+				if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+					_uniform = "gm_ge_army_uniform_soldier_parka_80_win";
+					_vest = "gm_ge_army_vest_80_leader";
+					_helmet = "gm_ge_headgear_m62_cover_win";
+				};
+				if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+					_uniform = "gm_ge_army_uniform_soldier_parka_80_ols";
+					_vest = "gm_ge_army_vest_80_leader";
+					_helmet = "gm_ge_headgear_m62_net";
+				};
+				if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION > 3 || CTI_CAMO_ACTIVATION == 7) then {		//main camo active
+					_uniform = "gm_ge_army_uniform_soldier_80_ols";
+					_vest = "gm_ge_army_vest_80_leader";
+					_helmet = "gm_ge_headgear_m62_net";
+				};
 			};
 			//case CTI_PF_ID: {};
 			//case CTI_IC_ID: {};
@@ -159,17 +170,46 @@ switch(_nationID) do {
 			case CTI_GM_ID: {
 				_weapon = "gm_mpiak74n_brn";
 				_weapon_ammo = "gm_30Rnd_545x39mm_B_7N6_ak74_org";
-				_uniform = "gm_gc_army_uniform_soldier_80_str";
-				_vest = "gm_gc_army_vest_80_rifleman_str";
-				_backpack = "gm_gc_army_backpack_80_at_str";
-				_helmet = "gm_gc_army_headgear_m56_net";
 				_grenades = "gm_handgrenade_frag_rgd5";
 				_healing = "gm_gc_army_gauzeBandage";
 				_bino = "gm_df7x40_grn";
 				_item_compass = "gm_gc_compass_f73";
 				_item_watch = "gm_watch_kosei_80";
+				if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 3) then {		//Winter camo active
+					_uniform = "gm_gc_army_uniform_soldier_80_win";
+					_vest = "gm_gc_army_vest_80_leader_str";
+					_helmet = "gm_gc_army_headgear_m56_cover_win";
+				};
+				if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 1) then {		//default camo active
+					_uniform = "gm_gc_army_uniform_soldier_80_str";
+					_vest = "gm_gc_army_vest_80_rifleman_str";
+					_helmet = "gm_gc_army_headgear_m56_net";
+				};
 			};
-			//case CTI_PF_ID: {};
+			case CTI_PF_ID: {
+				_grenades = "vn_rdg2_mag";
+				_healing = "vn_o_item_firstaidkit";
+				_item_map = "vn_o_item_map";
+				_item_radio = "vn_o_item_radio_m252";
+				_item_compass = "vn_b_item_compass";
+				_item_watch = "vn_b_item_watch";
+				if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//desert/urban camo active
+					_weapon = "vn_type56";
+					_weapon_ammo = "vn_type56_t_mag";
+					_uniform = "vn_o_uniform_nva_army_04_01";
+					_vest = "vn_o_vest_01";
+					_backpack = "vn_o_pack_05_type56_pl";
+					_helmet = "vn_o_helmet_nva_08";
+				};
+				if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION > 4) then {		//main camo active
+					_weapon = "vn_sks";
+					_weapon_ammo = "vn_sks_t_mag";
+					_uniform = "vn_o_uniform_nva_army_02_03";
+					_vest = "vn_o_vest_02";
+					_backpack = "vn_o_pack_02_sks_pl";
+					_helmet = "vn_o_helmet_nva_02";
+				};
+			};
 			//case CTI_IC_ID: {};
 			//case CTI_WS_ID: {};
 			//case CTI_CUP_ID: {};
@@ -186,7 +226,30 @@ switch(_nationID) do {
 	case CTI_US_ID: {
 		switch _modID do	{
 			//case CTI_GM_ID: {};
-			//case CTI_PF_ID: {};
+			case CTI_PF_ID: {
+				_grenades = "vn_m61_grenade_mag";
+				_healing = "vn_b_item_firstaidkit";
+				_item_map = "vn_b_item_map";
+				_item_radio = "vn_b_item_radio_urc10";
+				_item_compass = "vn_b_item_compass";
+				_item_watch = "vn_b_item_watch";
+				if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//desert/urban camo active
+					_weapon = "vn_xm16e1";
+					_weapon_ammo = "vn_m16_40_t_mag";
+					_uniform = "vn_b_uniform_macv_06_08";
+					_vest = "vn_b_vest_usarmy_02";
+					_backpack = "vn_b_pack_01_02_m16_pl";
+					_helmet = "vn_b_boonie_01_07";
+				};
+				if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION > 4) then {		//main camo active
+					_weapon = "vn_m16";
+					_weapon_ammo = "vn_m16_20_t_mag";
+					_uniform = "vn_b_uniform_macv_04_01";
+					_vest = "vn_b_vest_usarmy_02";
+					_backpack = "vn_b_pack_lw_01_m16_pl";
+					_helmet = "vn_b_helmet_m1_07_01";
+				};
+			};
 			//case CTI_IC_ID: {};
 			//case CTI_WS_ID: {};
 			case CTI_CUP_ID: {

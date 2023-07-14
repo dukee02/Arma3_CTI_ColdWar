@@ -1,0 +1,678 @@
+// Export of 'SOG_US.Stratis' by dukee on v0.9
+
+//Town?
+"vn_b_men_cidg_22",
+"vn_b_men_cidg_03",
+"vn_b_men_cidg_08",
+"vn_b_men_cidg_07",
+"vn_b_men_cidg_11",
+"vn_b_men_cidg_17",
+"vn_b_men_cidg_05",
+"vn_b_men_cidg_15",
+"vn_b_men_cidg_16",
+"vn_b_men_cidg_18",
+"vn_b_men_cidg_12",
+"vn_b_men_cidg_02",
+"vn_b_men_cidg_10",
+"vn_b_men_cidg_20",
+"vn_b_men_cidg_06",
+"vn_b_men_cidg_14",
+"vn_b_men_cidg_19",
+"vn_b_men_cidg_04",
+"vn_b_men_cidg_09",
+"vn_b_men_cidg_21",
+"vn_b_men_cidg_13",
+"vn_b_men_cidg_01",
+15:23:13 "vn_b_men_cidg_22 Commander"
+15:23:13 "vn_b_men_cidg_03 Demolitions"
+15:23:13 "vn_b_men_cidg_08 Demolitions 2"
+15:23:13 "vn_b_men_cidg_07 Grenadier"
+15:23:13 "vn_b_men_cidg_11 Grenadier 2"
+15:23:13 "vn_b_men_cidg_17 Grenadier 3"
+15:23:13 "vn_b_men_cidg_05 Machine Gunner"
+15:23:13 "vn_b_men_cidg_15 Machine Gunner 2"
+15:23:13 "vn_b_men_cidg_16 Machine Gunner 3"
+15:23:13 "vn_b_men_cidg_18 Machine Gunner 4"
+15:23:13 "vn_b_men_cidg_12 Marksman"
+15:23:13 "vn_b_men_cidg_02 Medic"
+15:23:13 "vn_b_men_cidg_10 Medic 2"
+15:23:13 "vn_b_men_cidg_20 Medic 3"
+15:23:13 "vn_b_men_cidg_06 Rifleman"
+15:23:13 "vn_b_men_cidg_14 Rifleman 2"
+15:23:13 "vn_b_men_cidg_19 Rifleman 3"
+15:23:13 "vn_b_men_cidg_04 Scout"
+15:23:13 "vn_b_men_cidg_09 Scout 2"
+15:23:13 "vn_b_men_cidg_21 Sniper"
+15:23:13 "vn_b_men_cidg_13 Sniper (NV)"
+15:23:13 "vn_b_men_cidg_01 Squad Leader (RTO)"
+
+"vn_b_men_aircrew_18",
+"vn_b_men_aircrew_20",
+"vn_b_men_aircrew_19",
+"vn_b_men_aircrew_17",
+"vn_b_men_army_12",
+"vn_b_men_army_28",
+"vn_b_men_aircrew_06",
+"vn_b_men_army_14",
+"vn_b_men_army_13",
+"vn_b_men_aircrew_07",
+"vn_b_men_army_23",
+"vn_b_men_army_24",
+"vn_b_men_army_25",
+"vn_b_men_army_05",
+"vn_b_men_aircrew_08",
+"vn_b_men_army_04",
+"vn_b_men_aircrew_26",
+"vn_b_men_aircrew_25",
+"vn_b_men_army_07",
+"vn_b_men_army_17",
+"vn_b_men_army_29",
+"vn_b_men_army_31",
+"vn_b_men_army_30",
+"vn_b_men_army_06",
+"vn_b_men_army_27",
+"vn_b_men_army_10",
+"vn_b_men_army_03",
+"vn_b_men_army_22",
+"vn_b_men_army_01",
+"vn_b_men_aircrew_05",
+"vn_b_men_army_15",
+"vn_b_men_army_16",
+"vn_b_men_army_18",
+"vn_b_men_army_19",
+"vn_b_men_army_20",
+"vn_b_men_army_21",
+"vn_b_men_army_08",
+"vn_b_men_army_09",
+"vn_b_men_army_11",
+"vn_b_men_army_02",
+"vn_b_men_army_26",
+15:24:22 "vn_b_men_aircrew_18 Copilot"
+15:24:22 "vn_b_men_aircrew_20 Door gunner"
+15:24:22 "vn_b_men_aircrew_19 Ghostrider"
+15:24:22 "vn_b_men_aircrew_17 Pilot"
+15:24:22 "vn_b_men_army_12 AT"
+15:24:22 "vn_b_men_army_28 Commander"
+15:24:22 "vn_b_men_aircrew_06 Copilot"
+15:24:22 "vn_b_men_army_14 Crew (Commander)"
+15:24:22 "vn_b_men_army_13 Crew (Driver)"
+15:24:22 "vn_b_men_aircrew_07 Crew chief"
+15:24:22 "vn_b_men_army_23 Crewman (Commander)"
+15:24:22 "vn_b_men_army_24 Crewman (Driver)"
+15:24:22 "vn_b_men_army_25 Crewman (Gunner)"
+15:24:22 "vn_b_men_army_05 Demolitions"
+15:24:22 "vn_b_men_aircrew_08 Door gunner"
+15:24:22 "vn_b_men_army_04 Engineer"
+15:24:22 "vn_b_men_aircrew_26 FAC Copilot (Covey Rider)"
+15:24:22 "vn_b_men_aircrew_25 FAC Pilot (Covey)"
+15:24:22 "vn_b_men_army_07 Grenadier"
+15:24:22 "vn_b_men_army_17 Grenadier 2"
+15:24:22 "vn_b_men_army_29 Gun crew (Chief of Smoke)"
+15:24:22 "vn_b_men_army_31 Gun crew (Rammer)"
+15:24:22 "vn_b_men_army_30 Gun crew (Swabber)"
+15:24:22 "vn_b_men_army_06 Machine Gunner"
+15:24:22 "vn_b_men_army_27 Machine Gunner 2"
+15:24:22 "vn_b_men_army_10 Marksman"
+15:24:22 "vn_b_men_army_03 Medic"
+15:24:22 "vn_b_men_army_22 Military Policeman"
+15:24:22 "vn_b_men_army_01 Officer"
+15:24:22 "vn_b_men_aircrew_05 Pilot"
+15:24:22 "vn_b_men_army_15 Rifleman 1"
+15:24:22 "vn_b_men_army_16 Rifleman 2"
+15:24:22 "vn_b_men_army_18 Rifleman 3"
+15:24:22 "vn_b_men_army_19 Rifleman 4"
+15:24:22 "vn_b_men_army_20 Rifleman 5"
+15:24:22 "vn_b_men_army_21 Rifleman 6"
+15:24:22 "vn_b_men_army_08 RTO"
+15:24:22 "vn_b_men_army_09 Scout"
+15:24:22 "vn_b_men_army_11 Sniper"
+15:24:22 "vn_b_men_army_02 Squad Leader"
+15:24:22 "vn_b_men_army_26 Tunnel Rat"
+
+"vn_b_men_aircrew_02",
+"vn_b_men_jetpilot_10",
+"vn_b_men_jetpilot_02",
+"vn_b_men_aircrew_03",
+"vn_b_men_aircrew_04",
+"vn_b_men_aircrew_01",
+"vn_b_men_jetpilot_09",
+"vn_b_men_jetpilot_01",
+15:25:10 "vn_b_men_aircrew_02 Copilot"
+15:25:10 "vn_b_men_jetpilot_10 Copilot (Hobo)"
+15:25:10 "vn_b_men_jetpilot_02 Copilot (Wolfpack)"
+15:25:10 "vn_b_men_aircrew_03 Crew chief"
+15:25:10 "vn_b_men_aircrew_04 Door gunner"
+15:25:10 "vn_b_men_aircrew_01 Pilot"
+15:25:10 "vn_b_men_jetpilot_09 Pilot (Hobo)"
+15:25:10 "vn_b_men_jetpilot_01 Pilot (Wolfpack)"
+
+
+"vn_b_men_lrrp_03",
+"vn_b_men_lrrp_08",
+"vn_b_men_lrrp_09",
+"vn_b_men_lrrp_05",
+"vn_b_men_lrrp_02",
+"vn_b_men_lrrp_06",
+"vn_b_men_lrrp_07",
+"vn_b_men_lrrp_04",
+"vn_b_men_lrrp_01",
+
+"vn_b_men_seal_43",
+"vn_b_men_seal_47",
+"vn_b_men_seal_48",
+"vn_b_men_seal_49",
+"vn_b_men_seal_25",
+"vn_b_men_seal_50",
+"vn_b_men_seal_51",
+"vn_b_men_seal_26",
+"vn_b_men_seal_45",
+"vn_b_men_seal_46",
+"vn_b_men_seal_24",
+"vn_b_men_seal_42",
+"vn_b_men_seal_27",
+"vn_b_men_seal_44",
+"vn_b_men_seal_23",
+
+"vn_b_men_jetpilot_04",
+2vn_b_men_jetpilot_06",
+"vn_b_men_navy_03",
+"vn_b_men_aircrew_23",
+"vn_b_men_aircrew_24"
+"vn_b_men_navy_05",
+"vn_b_men_navy_06",
+"vn_b_men_navy_09",
+"vn_b_men_navy_07",
+"vn_b_men_aircrew_21",
+"vn_b_men_jetpilot_03",
+"vn_b_men_jetpilot_05",
+"vn_b_men_navy_08",
+"vn_b_men_navy_04",
+"vn_b_men_aircrew_10",
+"vn_b_men_aircrew_14",
+"vn_b_men_jetpilot_08",
+"vn_b_men_aircrew_11",
+"vn_b_men_aircrew_15",
+"vn_b_men_aircrew_12",
+"vn_b_men_aircrew_16",
+"vn_b_men_aircrew_09",
+"vn_b_men_aircrew_13",
+"vn_b_men_jetpilot_12",
+"vn_b_men_aircrew_36",
+"vn_b_men_aircrew_35",
+"vn_b_men_jetpilot_11",
+"vn_b_men_jetpilot_07",
+"vn_b_men_navy_02",
+"vn_b_men_navy_01",
+"vn_b_men_aircrew_22",
+
+"vn_b_men_seal_10",
+"vn_b_men_seal_11",
+"vn_b_men_seal_14",
+"vn_b_men_seal_15",
+"vn_b_men_seal_07",
+"vn_b_men_seal_03",
+"vn_b_men_seal_09",
+"vn_b_men_seal_08",
+"vn_b_men_seal_12",
+"vn_b_men_seal_05",
+"vn_b_men_seal_16",
+"vn_b_men_seal_17",
+"vn_b_men_seal_13",
+"vn_b_men_seal_02",
+"vn_b_men_seal_06",
+"vn_b_men_seal_04",
+"vn_b_men_seal_01",
+"vn_b_men_seal_28",
+"vn_b_men_seal_29",
+"vn_b_men_seal_30",
+"vn_b_men_seal_31",
+"vn_b_men_seal_32",
+"vn_b_men_seal_33",
+"vn_b_men_seal_34",
+"vn_b_men_seal_35",
+"vn_b_men_seal_36",
+
+"vn_b_army_static_m45",
+"vn_b_navy_static_l60mk3",
+"vn_b_navy_static_l70mk2",
+"vn_b_army_static_m101_02",
+"vn_b_army_static_mortar_m2",
+"vn_b_army_static_mortar_m29",
+"vn_b_army_static_tow",
+"vn_b_army_static_m101_01",
+"vn_b_army_static_m1919a4_high",
+"vn_b_army_static_m1919a4_low",
+"vn_b_army_static_m1919a6",
+"vn_b_army_static_m2_high",
+"vn_b_army_static_m2_low",
+"vn_b_army_static_m2_scoped_high"
+"vn_b_army_static_m2_scoped_low"
+"vn_b_army_static_m40a1rr",
+"vn_b_army_static_m60_high",
+"vn_b_army_static_m60_low",
+"vn_b_army_static_mk18",
+
+
+
+"vn_b_wheeled_m274_01_01",
+"vn_b_wheeled_m274_mg_03_01",
+"vn_b_wheeled_m274_mg_02_01",
+"vn_b_wheeled_m274_mg_01_01",
+"vn_b_wheeled_m151_01",
+"vn_b_wheeled_m151_02",
+
+"vn_b_wheeled_m151_mg_02",
+"vn_b_wheeled_m151_mg_06",
+"vn_b_wheeled_m151_mg_03",
+"vn_b_wheeled_m54_01",
+"vn_b_wheeled_m54_01_airport",
+"vn_b_wheeled_m54_01_sog",
+"vn_b_wheeled_m54_02_sog",
+"vn_b_wheeled_m54_02",
+"vn_b_wheeled_m54_repair",
+"vn_b_wheeled_m54_repair_airport",
+"vn_b_wheeled_m54_ammo",
+"vn_b_wheeled_m54_ammo_airport",
+"vn_b_wheeled_m54_fuel",
+"vn_b_wheeled_m54_fuel_airport",
+"vn_b_wheeled_m54_03",		//HQ
+
+"vn_b_wheeled_m151_mg_04",
+"vn_b_wheeled_m54_mg_01",
+"vn_b_wheeled_m54_mg_03",
+"vn_b_wheeled_m54_mg_02",
+
+"vn_b_wheeled_m151_mg_05",
+
+
+
+
+"vn_b_armor_m113_acav_02",
+"vn_b_armor_m113_acav_01",
+"vn_b_armor_m113_acav_03",
+"vn_b_armor_m113_acav_05",
+"vn_b_armor_m113_01",
+
+"vn_b_armor_m113_acav_04",
+"vn_b_armor_m113_acav_06",
+"vn_b_armor_m125_01",
+"vn_b_armor_m132_01",
+"vn_b_armor_m577_01",		//command
+"vn_b_armor_m577_02",		//medic
+
+"vn_b_armor_m67_01_01",
+"vn_b_armor_m41_01_01",
+
+"vn_b_armor_m48_01_01",
+
+
+
+"vn_b_air_oh6a_01",
+"vn_b_air_ch34_03_01",
+"vn_b_air_ch34_01_01",
+
+"vn_b_air_ch34_04_01",
+"vn_b_air_oh6a_06",
+"vn_b_air_oh6a_03",
+"vn_b_air_oh6a_02",
+"vn_b_air_uh1e_02_04",
+"vn_b_air_uh1e_03_04",
+"vn_b_air_uh1e_01_04",		//Medic
+
+"vn_b_air_uh1c_05_01",
+"vn_b_air_uh1b_01_04",
+"vn_b_air_uh1d_02_04",
+"vn_b_air_ch47_01_01",
+"vn_b_air_ch47_02_01",
+"vn_b_air_f100d_cap",
+
+"vn_b_air_ach47_05_01",
+"vn_b_air_ch47_03_01",
+"vn_b_air_ah1g_02",
+"vn_b_air_f4c_bmb",
+
+
+
+
+
+"vn_b_boat_10_01",
+"vn_b_boat_09_01",
+"vn_b_boat_11_01",
+
+"vn_b_boat_12_02",
+"vn_b_boat_13_02",
+
+"vn_b_boat_06_02",
+
+
+
+
+
+//
+
+this addWeapon "vn_m1911";
+this addWeapon "vn_mx991_m1911";
+this addHandgunItem "vn_s_m1911";
+this addHandgunItem "vn_m1911_mag";
+
+this addWeapon "vn_m3a1";
+this addPrimaryWeaponItem "vn_s_m3a1";
+this addItemToBackpack "vn_m3a1_mag";
+this addItemToBackpack "vn_m3a1_t_mag";
+
+
+this addWeapon "vn_m1897";
+this addPrimaryWeaponItem "vn_b_m1897";
+this addItemToBackpack "vn_m1897_fl_mag";
+this addItemToBackpack "vn_m1897_buck_mag";
+
+
+this addWeapon "vn_m16_usaf";
+this addWeapon "vn_m16";
+this addWeapon "vn_m16_camo";
+this addWeapon "vn_m16_m203_camo";
+this addWeapon "vn_m16_m203";
+this addWeapon "vn_m16_xm148";
+this addWeapon "vn_xm16e1";
+this addWeapon "vn_xm16e1_xm148";
+this addWeapon "vn_xm177e1";
+this addWeapon "vn_xm177e1_camo";
+this addWeapon "vn_xm177";
+this addWeapon "vn_xm177_camo";
+this addWeapon "vn_xm177_fg";
+this addWeapon "vn_xm177_m203";
+this addWeapon "vn_xm177_m203_camo";
+this addWeapon "vn_xm177_short";
+this addWeapon "vn_xm177_stock";
+this addWeapon "vn_xm177_stock_camo";
+this addWeapon "vn_xm177_xm148";
+this addWeapon "vn_xm177_xm148_camo";
+this addItemToBackpack "vn_m16_20_mag";
+this addItemToBackpack "vn_m16_30_mag";
+this addItemToBackpack "vn_m16_40_mag";
+this addItemToBackpack "vn_m16_20_t_mag";
+this addItemToBackpack "vn_m16_30_t_mag";
+this addItemToBackpack "vn_m16_40_t_mag";
+this addPrimaryWeaponItem "vn_o_9x_m16";
+this addPrimaryWeaponItem "vn_o_4x_m16";
+this addPrimaryWeaponItem "vn_o_1x_sp_m16";
+this addPrimaryWeaponItem "vn_o_anpvs2_m16";
+
+
+this addWeapon "vn_m72";
+this addSecondaryWeaponItem "vn_m72_mag";
+
+
+this addWeapon "vn_p38s";
+this addHandgunItem "vn_m10_mag";
+
+
+this addWeapon "vn_m10";
+this addHandgunItem "vn_s_mk22";
+this addHandgunItem "vn_m10_mag";
+
+
+this addWeapon "vn_m79";
+this addPrimaryWeaponItem "vn_40mm_m576_buck_mag";
+
+
+this addWeapon "vn_m60";
+this addWeapon "vn_m60_shorty";
+this addWeapon "vn_m60_shorty_camo";
+this addPrimaryWeaponItem "vn_m60_100_mag";
+
+"vn_m21" ???
+
+
+
+this addWeapon "vn_m1911";
+this addWeapon "vn_mx991_m1911";
+this addHandgunItem "vn_s_m1911";
+this addHandgunItem "vn_m1911_mag";
+
+
+this addWeapon "vn_m40a1";
+this addWeapon "vn_m40a1_camo";
+this addPrimaryWeaponItem "vn_o_anpvs2_m40a1";
+this addPrimaryWeaponItem "vn_s_m14";
+this addPrimaryWeaponItem "vn_o_9x_m40a1";
+this addPrimaryWeaponItem "vn_b_camo_m40a1";
+this addItemToBackpack "vn_m40a1_mag";
+this addItemToBackpack "vn_m40a1_t_mag";
+
+
+this addWeapon "vn_m1928_tommy";
+this addWeapon "vn_m1928a1_tommy";
+this addWeapon "vn_m1a1_tommy";
+this addWeapon "vn_m1a1_tommy_so";
+this addItemToBackpack "vn_m1928_mag";
+this addItemToBackpack "vn_m1928_t_mag";
+this addItemToBackpack "vn_m1a1_20_t_mag";
+this addItemToBackpack "vn_m1a1_20_mag";
+this addItemToBackpack "vn_m1a1_30_t_mag";
+this addItemToBackpack "vn_m1a1_30_mag";
+
+
+this addWeapon "vn_m1carbine";
+this addWeapon "vn_m1carbine_gl";
+this addWeapon "vn_m1_garand";
+this addWeapon "vn_m1_garand_gl";
+this addPrimaryWeaponItem "vn_b_m1_garand";
+this addPrimaryWeaponItem "vn_o_3x_m84";
+this addItemToBackpack "vn_carbine_15_mag";
+this addItemToBackpack "vn_carbine_15_t_mag";
+this addItemToBackpack "vn_carbine_30_mag";
+this addItemToBackpack "vn_carbine_30_t_mag";
+this addItemToBackpack "vn_22mm_m1a2_frag_mag";
+this addItemToBackpack "vn_22mm_m17_frag_mag";
+this addItemToBackpack "vn_22mm_m9_heat_mag";
+this addItemToBackpack "vn_22mm_lume_mag";
+this addItemToBackpack "vn_22mm_m22_smoke_mag";
+this addItemToBackpack "vn_22mm_m19_wp_mag";
+this addItemToBackpack "vn_22mm_cs_mag";
+
+
+
+this addWeapon "vn_rpg2";
+this addSecondaryWeaponItem "vn_rpg2_mag";
+
+
+this addWeapon "vn_m2carbine";
+this addWeapon "vn_m2carbine_gl";
+this addPrimaryWeaponItem "vn_b_carbine";
+this addPrimaryWeaponItem "vn_o_3x_m84";
+this addItemToBackpack "vn_carbine_30_mag";
+this addItemToBackpack "vn_carbine_30_t_mag";
+this addItemToBackpack "vn_carbine_15_mag";
+this addItemToBackpack "vn_carbine_15_t_mag";
+
+
+
+this addWeapon "vn_m1918";
+this addPrimaryWeaponItem "vn_bipod_m1918";
+this addItemToBackpack "vn_m1918_mag";
+this addItemToBackpack "vn_m1918_t_mag";
+
+
+this addWeapon "vn_m10";
+this addHandgunItem "vn_s_mk22";
+this addHandgunItem "vn_m10_mag";
+
+
+this addWeapon "vn_mat49";
+this addWeapon "vn_mat49_f";
+this addWeapon "vn_mat49_vc";
+this addPrimaryWeaponItem "vn_s_mat49";
+this addItemToBackpack "vn_mat49_mag";
+this addItemToBackpack "vn_mat49_t_mag";
+
+
+this addWeapon "vn_m45";
+this addWeapon "vn_m45_camo";
+this addWeapon "vn_m45_fold";
+this addPrimaryWeaponItem "vn_s_m45_camo";
+this addPrimaryWeaponItem "vn_s_m45";
+this addItemToBackpack "vn_m45_mag";
+this addItemToBackpack "vn_m45_t_mag";
+
+
+this addWeapon "vn_type56";
+this addPrimaryWeaponItem "vn_b_type56";
+this addItemToBackpack "vn_type56_mag";
+this addItemToBackpack "vn_type56_t_mag";
+
+
+this addWeapon "vn_m2carbine";
+this addWeapon "vn_m2carbine_gl";
+this addPrimaryWeaponItem "vn_b_carbine";
+this addPrimaryWeaponItem "vn_o_3x_m84";
+this addItemToBackpack "vn_carbine_30_mag";
+this addItemToBackpack "vn_carbine_30_t_mag";
+this addItemToBackpack "vn_carbine_15_mag";
+this addItemToBackpack "vn_carbine_15_t_mag";
+
+
+this addWeapon "vn_m3carbine";		//NVG
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+//cidg
+"-----------------Start getConfig-----------------"
+"-----------------weapons 27-----------------"
+"-----------------magazines 31-----------------"
+"-----------------uniforms 6-----------------"
+"vn_b_uniform_macv_06_08"
+"vn_b_uniform_macv_03_08"
+"vn_b_uniform_macv_02_08"
+"vn_b_uniform_macv_04_08"
+"vn_b_uniform_macv_05_08"
+"vn_b_uniform_macv_01_08"
+
+"vn_b_uniform_macv_02_02"
+"vn_b_uniform_macv_05_01"
+"vn_b_uniform_macv_01_01"
+"vn_b_uniform_heli_01_01"
+"vn_b_uniform_macv_03_01"
+"vn_b_uniform_macv_04_01"
+"vn_b_uniform_k2b_02_01"
+"vn_b_uniform_macv_02_01"
+"vn_b_uniform_macv_06_01"
+"-----------------backpacks 20-----------------"
+"vn_b_pack_05_02_eng_m16_pl"
+"vn_b_pack_05_02_eng_m1_pl"
+"vn_b_pack_04_02_m2_pl"
+"vn_b_pack_01_02_m79_pl"
+"vn_b_pack_02_02_m2_pl"
+"vn_b_pack_02_02_m60_pl"
+"vn_b_pack_02_02_m1918_pl"
+"vn_b_pack_static_m1919a4_low_01"
+"vn_b_pack_static_base_01"
+"vn_b_pack_04_02_m1_pl"
+"vn_b_pack_lw_07_medic_m16_pl"
+"vn_b_pack_m5_medic_m1_pl"
+"vn_b_pack_m5_medic_mat49_pl"
+"vn_b_pack_01_02_m16_pl"
+"vn_b_pack_02_02_m1_pl"
+"vn_b_pack_05_02_m1897_pl"
+"vn_b_pack_04_02_m45_pl"
+"vn_b_pack_01_02_type56_pl"
+"vn_b_pack_03_02_xm177_pl"
+"vn_b_pack_trp_03_02_m16_pl"
+"vn_b_pack_trp_03_02_eng_m16_pl"
+"vn_b_pack_lw_04_eng_m1897_pl"
+"vn_b_pack_lw_01_m79_pl"
+"vn_b_pack_lw_03_m79_pl"
+"vn_b_pack_lw_02_m60_pl"
+"vn_b_pack_trp_01_02_m60_pl"
+"vn_b_pack_lw_01_m21_pl"
+"vn_b_pack_m5_01_medic_m16_pl"
+"vn_b_pack_trp_02_02_m16_pl"
+"vn_b_pack_lw_01_m16_pl"
+"vn_b_pack_trp_04_02_m16_pl"
+"vn_b_pack_lw_03_m1897_pl"
+"vn_b_pack_trp_02_02_m40a1_pl"
+"vn_b_pack_lw_06_m16_pl"
+"-----------------items 19-----------------"
+"vn_b_vest_usarmy_01"
+"vn_b_beret_01_01"
+"vn_b_aviator"
+"vn_b_item_map"
+"vn_b_item_compass"
+"vn_b_item_watch"
+"vn_b_item_radio_urc10"
+"vn_b_item_firstaidkit"
+"vn_b_vest_usarmy_03"
+"vn_b_boonie_05_07"
+"vn_b_scarf_01_03"
+"vn_b_vest_usarmy_02"
+"vn_b_boonie_03_07"
+"vn_b_scarf_01_01"
+"vn_b_boonie_02_07"
+"vn_b_boonie_04_07"
+"vn_b_bandana_01"
+"vn_b_boonie_01_07"
+"vn_b_bandana_07"
+"vn_b_vest_aircrew_03"
+"vn_b_helmet_svh4_01_04"
+"vn_b_item_map"
+"vn_b_item_compass"
+"vn_b_item_watch"
+"vn_b_item_radio_urc10"
+"vn_b_item_firstaidkit"
+"vn_b_vest_usarmy_01"
+"vn_b_helmet_svh4_02_04"
+"vn_b_vest_aircrew_05"
+"vn_b_vest_usarmy_02"
+"vn_b_bandana_01"
+"vn_b_beret_01_02"
+"vn_b_aviator"
+"vn_b_helmet_svh4_01_01"
+"vn_b_vest_usarmy_12"
+"vn_b_helmet_m1_08_02"
+"vn_b_acc_goggles_01"
+"vn_b_vest_usarmy_11"
+"vn_b_helmet_m1_09_02"
+"vn_b_vest_aircrew_01"
+"vn_b_vest_usarmy_14"
+"vn_b_helmet_t56_01_02"
+"vn_b_vest_usarmy_13"
+"vn_b_helmet_t56_02_03"
+"vn_b_helmet_t56_02_01"
+"vn_b_helmet_m1_06_01"
+"vn_b_helmet_m1_05_01"
+"vn_b_helmet_svh4_02_01"
+"vn_b_vest_usarmy_05"
+"vn_b_helmet_m1_04_01"
+"vn_b_helmet_m1_01_01"
+"vn_b_vest_usarmy_06"
+"vn_b_helmet_m1_08_01"
+"vn_b_vest_usarmy_08"
+"vn_b_vest_usarmy_07"
+"vn_b_helmet_m1_01_02"
+"vn_b_vest_usarmy_09"
+"vn_b_helmet_m1_02_01"
+"vn_b_helmet_m1_07_01"
+"vn_b_vest_usarmy_03"
+"vn_b_vest_usarmy_04"
+"vn_b_helmet_m1_09_01"
+"vn_b_headband_01"
+"vn_b_helmet_m1_03_01"
+"vn_b_acc_m17_01"
+
+
+
