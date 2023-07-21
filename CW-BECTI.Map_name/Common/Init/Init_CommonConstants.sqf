@@ -742,9 +742,6 @@ CTI_QUEUE_DEPOT_LIMIT = 3;
 
 CTI_PLAYER_DEFAULT_ALIAS = "Soldier";
 
-CTI_RESPAWN_AI_RANGE = 600;
-CTI_RESPAWN_MOBILE_RANGE = 600;
-
 CTI_SATCAM_ZOOM_MIN = 50;
 CTI_SATCAM_ZOOM_MAX = 800;
 
@@ -802,7 +799,7 @@ with missionNamespace do {
 	};
 	if (isNil 'CTI_AIR_ADDON') then {CTI_AIR_ADDON = -1};
 
-	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON]] call CTI_CO_FNC_Log;
+	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7> <SOG-%8>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC]] call CTI_CO_FNC_Log;
 	
 	if (isNil 'CTI_US_SIDE') then {							//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0) then {CTI_US_SIDE = 0} else {CTI_US_SIDE = -1};
@@ -826,8 +823,8 @@ with missionNamespace do {
 		if(CTI_GM_DLC > 0) then {CTI_BW_SIDE = 0} else {CTI_BW_SIDE = -1};
 	};		
 	if (isNil 'CTI_NVA_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		if(CTI_GM_DLC > 0) then {CTI_NVA_SIDE = 1} else {CTI_NVA_SIDE = -1};
-	};		
+		if(CTI_GM_DLC > 0 || CTI_GM_DLC > 0) then {CTI_NVA_SIDE = 1} else {CTI_NVA_SIDE = -1};
+	};
 	//RHS only
 	if (isNil 'CTI_CDF_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_RHS_ADDON > 0) then {CTI_CDF_SIDE = 2} else {CTI_CDF_SIDE = -1};

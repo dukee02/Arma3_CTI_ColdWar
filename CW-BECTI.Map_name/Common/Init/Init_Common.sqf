@@ -117,7 +117,7 @@ _nation = -1;
 				if(CTI_SOV_SIDE == 1) then {_nation = CTI_SOV_ID};
 			};
 		};
-		case (CTI_SOG_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_US_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
+		case (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC) && (CTI_US_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
 			_mainmod = CTI_PF_ID;
 			_nation = if(_x == west) then {CTI_US_ID} else {CTI_NVA_ID};
 		};
@@ -139,7 +139,7 @@ _nation = -1;
 			_mainmod = CTI_CWR3_ID;
 			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
 		};
-		case (!([1042220] call CTI_CO_FNC_HasDLC) || CTI_IsClient);
+		case (!([1042220] call CTI_CO_FNC_HasDLC) || !([1227700] call CTI_CO_FNC_HasDLC) || CTI_IsClient);
 		case (CTI_CUP_ADDON == 2);
 		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
 			_mainmod = CTI_CUP_ID;
