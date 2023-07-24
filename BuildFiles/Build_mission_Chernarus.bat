@@ -1,5 +1,5 @@
 @echo off
-title VIO-BECTI-CW.Altis Mission gets created
+title VIO-BECTI-CW.Chernarus Mission gets created
 
 set gitpath="F:\GitReps\Arma3_CTI_ColdWar"
 set buildpath="D:\Tausch\Programmierung\VIO-BECTI\VIO-BECTI-CW"
