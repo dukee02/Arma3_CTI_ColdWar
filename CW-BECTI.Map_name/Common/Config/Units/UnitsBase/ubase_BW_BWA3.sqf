@@ -70,6 +70,12 @@ if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_BW_ID) ||  CTI_WES
 				[format["%1BW_LKW_Transport_Fleck", _sid], []]
 			]];
 		};
+	} else {
+		//Set starting vehicles
+		missionNamespace setVariable [format["CTI_%1_Vehicles_Startup", _side], [ 
+			[format["%1bw_unimog_cargo", _sid], []], 
+			[format["%1bw_unimog_cargo_covered", _sid], []]
+		]];
 	};
 };
 

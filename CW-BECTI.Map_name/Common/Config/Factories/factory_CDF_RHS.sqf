@@ -28,6 +28,7 @@ switch (_side) do {
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 if(count _isThisMain > 0) then {
 	if((_isThisMain select 0) == CTI_CDF_ID && (_isThisMain select 1) == CTI_RHS_ID) then {_setupBaseUnits = true;};
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_CDF_RHS.sqf", format["is this main: %1 <%2=%3|%4=%5>", _setupBaseUnits,(_isThisMain select 0),CTI_CDF_ID,(_isThisMain select 1),CTI_RHS_ID]] call CTI_CO_FNC_Log;};
 } else {
 	_setupBaseUnits = true;
 };

@@ -27,6 +27,7 @@ switch (_side) do {
 //Check if the based units have to set.
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_BWADD_ID) then {_setupBaseUnits = true;};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_BW_BWadd.sqf", format["is this main: %1 <%2=%3|%4=%5>", _setupBaseUnits,(_isThisMain select 0),CTI_BW_ID,(_isThisMain select 1),CTI_BWADD_ID]] call CTI_CO_FNC_Log;};
 if (_setupBaseUnits) then {
 	[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_BW_BWadd.sqf";
 };

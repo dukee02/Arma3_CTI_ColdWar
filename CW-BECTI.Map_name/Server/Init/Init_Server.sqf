@@ -206,9 +206,9 @@ if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\In
 	
 	//--- Add FOB if needed
 	if (CTI_BASE_FOB_MAX > 0) then {_logic setVariable ["cti_fobs", [], true]};
-	
+			
 	//--- Startup vehicles if we have a fresh start
-	if !(["exists"] call CTI_SE_FNC_LOAD) then {
+	if !(["exists", _side] call CTI_SE_FNC_LOAD) then {
 		{
 			//if((_x select 0) isEqualType []) then {_x = _x select 0;};
 			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Init\Init_Server.sqf", format["starting vehicles: side: [%1] | unit: [%2]", _side, _x]] call CTI_CO_FNC_Log};
@@ -248,7 +248,9 @@ if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: Server\In
 				[_group, _side] call CTI_SE_FNC_InitializeGroup;
 				
 				_group setVariable ["cti_vote", -1, true];
-				
+
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Init\Init_Server.sqf", format["set AI: side: [%1] | _group: [%2]", _side, _x]] call CTI_CO_FNC_Log};
+			
 				[leader _group, missionNamespace getVariable format ["CTI_AI_%1_DEFAULT_GEAR", _side]] call CTI_CO_FNC_EquipUnit;
 				
 				if (missionNamespace getVariable "CTI_AI_TEAMS_ENABLED" > 0) then { //--- Wait for the player to be "ready"

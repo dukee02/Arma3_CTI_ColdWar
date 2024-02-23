@@ -102,52 +102,49 @@ CTI_CO_CustomIterator = 0;
 //calculate the main mod depends on the given parameters
 _mainmod = -1;
 _nation = -1;
+
 {
 	// Current result is saved in variable _x
 	switch true do
 	{
-		//case (CTI_RHS_ADDON == 2);
-		case (CTI_RHS_ADDON > 0): {
-			_mainmod = CTI_RHS_ID;
-			if(_x == west) then {
-				if(CTI_CDF_SIDE == 0) then {_nation = CTI_CDF_ID};
-				if(CTI_US_SIDE == 0) then {_nation = CTI_US_ID};
-			} else {
-				if(CTI_CHDKZ_SIDE == 1) then {_nation = CTI_CHDKZ_ID};
-				if(CTI_SOV_SIDE == 1) then {_nation = CTI_SOV_ID};
-			};
+		//first check if we have something 'set as main'
+		case (CTI_GM_DLC > 1 && ([1042220] call CTI_CO_FNC_HasDLC)): {_mainmod = CTI_GM_ID};
+		case (CTI_SOG_DLC > 1 && ([1227700] call CTI_CO_FNC_HasDLC)): {_mainmod = CTI_PF_ID};
+		case (CTI_CUP_ADDON > 1): {_mainmod = CTI_CUP_ID};
+		case (CTI_CWR3_ADDON > 1): {_mainmod = CTI_CWR3_ID};
+		case (CTI_RHS_ADDON > 1): {_mainmod = CTI_RHS_ID};
+		case (CTI_BW_ADDON > 1 && _x == west): {_mainmod = CTI_BWA3_ID};
+		//case (CTI_GM_DLC > 1): {_mainmod = CTI_GM_ID};
+		//check some specials
+		case (CTI_BW_ADDON > 0 && _x == west && ((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_mainmod = CTI_BWA3_ID};
+		//if nothing set as main, use the first activated one
+		case (CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)): {_mainmod = CTI_GM_ID};
+		case (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)): {_mainmod = CTI_PF_ID};
+		case (CTI_CUP_ADDON > 0): {_mainmod = CTI_CUP_ID};
+		case (CTI_CWR3_ADDON > 0): {_mainmod = CTI_CWR3_ID};
+		case (CTI_RHS_ADDON > 0): {_mainmod = CTI_RHS_ID};
+		case (CTI_BW_ADDON > 0 && _x == west): {_mainmod = CTI_BWA3_ID};
+		//case (CTI_GM_DLC > 0): {_mainmod = CTI_GM_ID};
+		default {
+			["ERROR", "FILE: Common\Init\Init_Common.sqf", format ["Can't find a main mod: side %1", _x]] call CTI_CO_FNC_Log;
 		};
-		case (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC) && (CTI_US_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
-			_mainmod = CTI_PF_ID;
-			_nation = if(_x == west) then {CTI_US_ID} else {CTI_NVA_ID};
-		};
-		case (CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC) && (CTI_BW_SIDE >= 0 || CTI_NVA_SIDE >= 0)): {
-			_mainmod = CTI_GM_ID;
-			_nation = if(_x == west) then {CTI_BW_ID} else {CTI_NVA_ID};
-		};
-		case (CTI_BW_SIDE >= 0 && CTI_GM_DLC < 1): {
-			if(_x == west) then {
-				if(CTI_CAMO_ACTIVATION == 1) then {_mainmod = CTI_BWADD_ID;} else {_mainmod = CTI_BWA3_ID;};
-				_nation = CTI_BW_ID;
-			} else {
-				_mainmod = CTI_CUP_ID;
-				_nation = CTI_SOV_ID;
-			};
-		};
-		case (CTI_CWR3_ADDON == 2);
-		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
-			_mainmod = CTI_CWR3_ID;
-			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
-		};
-		case (!([1042220] call CTI_CO_FNC_HasDLC) || !([1227700] call CTI_CO_FNC_HasDLC) || CTI_IsClient);
-		case (CTI_CUP_ADDON == 2);
-		case (CTI_CUP_ADDON >= 0 && CTI_CWR3_ADDON < 2): {
-			_mainmod = CTI_CUP_ID;
-			_nation = if(_x == west) then {CTI_US_ID} else {CTI_SOV_ID};
-		};
-		//case (): {};
-		default {};
 	};
+
+	switch true do
+	{
+		case (((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0 || (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)))): {_nation = CTI_US_ID};
+		case (((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0)): {_nation = CTI_SOV_ID};
+		//case (((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_nation = CTI_RACS_ID};
+		case (((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_BW_ADDON > 0 || CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC))): {_nation = CTI_BW_ID};
+		case (((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && ((CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)) || (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)))): {_nation = CTI_NVA_ID};
+		case (((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CDF_ID};
+		case (((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CHDKZ_ID};
+		//case (((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_nation = CTI_DEN_ID};
+		default {
+			["ERROR", "FILE: Common\Init\Init_Common.sqf", format ["Can't find a valid nation: side %1", _x]] call CTI_CO_FNC_Log;
+		};
+	};
+
 	if (CTI_Log_Level >= CTI_Log_Debug) then {
 		["VIOC_DEBUG", "FILE: Common\Init\Init_Common.sqf", format ["Start gear config: side %1 NationID <%2> MainMod: <%3>", _x, _nation, _mainmod]] call CTI_CO_FNC_Log;
 	};
