@@ -322,7 +322,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	
 	_c pushBack format["%1CUP_B_M1030_USMC", _sid];
 	_c pushBack format["%1CUP_B_TowingTractor_USMC", _sid];	
-	
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;
@@ -336,12 +335,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_s pushBack "";
 		_d pushBack 0;	
 	};
-};
-
-_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
-	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 	
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1CUP_B_M1152_DSRT_USMC", _sid];
