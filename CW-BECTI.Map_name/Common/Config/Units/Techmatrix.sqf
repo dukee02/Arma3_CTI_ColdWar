@@ -811,7 +811,7 @@ _tech_matrix =
 		//CTI_NVA_ID
 		[
 			//CTI_GM_ID
-			[true,true,true,false,false,false,false,false,false],
+			[true,true,false,false,false,false,false,false,false],
 			//CTI_PF_ID
 			[true,true,true,true,false,false,false,false,false],
 			//CTI_IC_ID
