@@ -531,3 +531,5 @@ missionNamespace setVariable [_defaultGearVar, [
 	[_vest,[_grenades,_grenades,_weapon_ammo,_weapon_ammo]],
 	["",[]]],
 	[_helmet,""],[["",_bino],[_item_map,"",_item_radio,_item_compass,_item_watch]]]];
+
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Config\Gear\gear_start_config.sqf", format ["defaultGear: <%1>", missionNamespace getVariable format ["%1", _defaultGearVar]]] call CTI_CO_FNC_Log };

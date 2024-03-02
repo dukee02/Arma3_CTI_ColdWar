@@ -192,6 +192,8 @@ CTI_InitClient = true;
 
 //--- Wait for a proper overall init (disabled slot?)
 waitUntil {!isNil {(group player) getVariable "cti_funds"}};
+//--- Wait until the gera config has reached the client
+waitUntil {!isNil {missionNamespace getVariable format ["CTI_AI_%1_DEFAULT_GEAR", CTI_P_SideJoined]}};
 
 player addEventHandler ["killed", {_this spawn CTI_CL_FNC_OnPlayerKilled}];
 if !(CTI_IsServer) then {

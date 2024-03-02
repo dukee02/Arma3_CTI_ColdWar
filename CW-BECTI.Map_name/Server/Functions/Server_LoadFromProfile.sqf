@@ -246,7 +246,6 @@ if(_loadingFine) then {
 					_loadingFine = false;
 				} else {
 					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Server\Functions\Server_LoadFromProfile.sqf", format["Side supply loaded from profile:<SAVE_%1_FUNDSCOM> Funds Com: <%2>", _savename, _supply_stored]] call CTI_CO_FNC_Log;};
-					_supply_now = call CTI_CO_FNC_GetSideSupply;
 					_logic setVariable ["cti_supply", _supply_stored, true];
 				};
 				
