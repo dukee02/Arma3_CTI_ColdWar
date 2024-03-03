@@ -358,7 +358,7 @@ if(_loadingFine) then {
 						_script = (_var_classname select CTI_UNIT_SCRIPTS) select 1; 
 						//_customid = (_var_classname select CTI_UNIT_SCRIPTS) select 2;
 					};
-					_vehicle = [_model, (_x select 1), (_x select 2), (_x select 3), false, true, true] call CTI_CO_FNC_CreateVehicle;
+					_vehicle = [_model, (_x select 1), (_x select 2), (_x select 3), false, true, true, "CAN_COLLIDE"] call CTI_CO_FNC_CreateVehicle;
 
 					_sideVeh = independent;
 					{

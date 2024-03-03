@@ -53,7 +53,8 @@ _side = _this select 3;
 _locked = if (count _this > 4) then {_this select 4} else {false};
 _net = if (count _this > 5) then {_this select 5} else {false};
 _handle = if (count _this > 6) then {_this select 6} else {false};
-_special = if (count _this > 7) then {_this select 7} else {"FORM"};
+//_special = if (count _this > 7) then {_this select 7} else {"FORM"};
+_special = if (count _this > 7) then {_this select 7} else {"NONE"};
 
 if (typeName _position == "OBJECT") then {_position = getPos _position};
 if (typeName _side == "SIDE") then {_side = (_side) call CTI_CO_FNC_GetSideID};
@@ -77,10 +78,14 @@ clearBackpackCargoGlobal _vehicle;
 
 if (_special == "FLY") then {
 	//planes with a pilot gets movet to the air
-	_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 500]; //--- Make the vehicle spawn in the sky
+	_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 1000]; //--- Make the vehicle spawn in the sky
 	_vehicle setVelocity [50 * (sin _direction), 50 * (cos _direction), 0];
 } else {
-	_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 0.3]; //--- Make the vehicle spawn in the sky
+	if (_special == "CAN_COLLIDE") then {
+		_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 0.3];
+	} else {
+		_vehicle setPos [_save_pos select 0, _save_pos select 1, 0.3];
+	};
 };
 //if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_CreateVehicle.sqf", format ["type: <%1> special: <%2>",  _type, _special]] call CTI_CO_FNC_Log;};
 
