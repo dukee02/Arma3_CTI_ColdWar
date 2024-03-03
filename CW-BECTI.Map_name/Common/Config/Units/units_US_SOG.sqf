@@ -508,6 +508,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_c pushBack format["%1vn_b_air_oh6a_02", _sid];
 	_c pushBack format["%1vn_b_air_uh1e_02_04", _sid];
 	_c pushBack format["%1vn_b_air_uh1e_03_04", _sid];
+	_c pushBack format["%1vn_b_air_uh1e_01_04", _sid];
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;
@@ -538,7 +539,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_d pushBack 0;	
 	};
 
-	_c pushBack format["%1vn_b_air_uh1e_01_04", _sid];
+	_c pushBack format["%vn_b_air_uh1d_01_07", _sid];
 	_p pushBack '';
 	_n pushBack 'UH1Y Mobile Respawn';
 	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);

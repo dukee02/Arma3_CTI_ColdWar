@@ -280,7 +280,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1vn_b_air_oh6a_02", _sid];
 	_c pushBack format["%1vn_b_air_uh1e_02_04", _sid];
 	_c pushBack format["%1vn_b_air_uh1e_03_04", _sid];
-	_c pushBack format["%1vn_b_air_uh1e_01_04", _sid];//Medic
+	_c pushBack format["%1vn_b_air_uh1e_01_04", _sid];
+	_c pushBack format["%vn_b_air_uh1d_01_07", _sid];//Medic
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
