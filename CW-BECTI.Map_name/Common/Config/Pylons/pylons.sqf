@@ -136,9 +136,8 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_AIM9L_P_1rnd_M")) then {
 	_c pushBack "FIR_R73_P_1rnd_M";					//R-73 <Short-range,  IR guided, air-to-air missile>
 	_c pushBack "FIR_R27ET_P_1rnd_M";				//R-27ET <Mid-range,  IR guided, air-to-air missile>
 };
-/*if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
-	_c pushBack "vn_missile_sa7b_mag_x2";				//9K32M Strela-2M (SA-7b) <>
-	_c pushBack "vn_missile_aim7e2_mag_x1";				//AIM-7E Sparrow 				<AIM-7E Sparrow Air-to-air Radar-guided missile>
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_missile_sa7b_mag_x2";				//9K32M Strela-2M (SA-7b) 		<>
 
 	_c pushBack "vn_missile_aa2_mag_x1";				//K-15 (AA-2A) 					<K-2 (AA-2A Atoll) Air-to-air Infra-Red heat-seeking missile>
 	_c pushBack "vn_missile_mig19_01_aa2_mag_x1";		//K-15 (AA-2A) 					<K-2 (AA-2A Atoll) Air-to-air Infra-Red heat-seeking missile>
@@ -146,9 +145,7 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_AIM9L_P_1rnd_M")) then {
 	_c pushBack "vn_missile_f4_lau7_aim9e_mag_x2";		//2x AIM-9E Sidewinder 			<2x AIM-9E Sidewinder Air-to-air Infra-Red heat-seeking missile>
 	_c pushBack "vn_missile_f100_lau7_aim9e_mag_x2";	//2x AIM-9E Sidewinder 			<2x AIM-9E Sidewinder Air-to-air Infra-Red heat-seeking missile>
 	_c pushBack "vn_missile_f4_lau7_aim9x_mag_x2";		//BIM 9X AA x2 					<Short-range, infrared-guided, air-to-air missile with high-explosive warhead>
-	
-	_c pushBack "vn_missile_aim120c_mag_x1";			//AMRAAM C AA x1 				<Medium-range, radar-guided, air-to-air missile with high-explosive warhead>
-};*/
+};
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -263,6 +260,12 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_AIM120_P_1rnd_M")) then {
 
 	_c pushBack "FIR_R27ER_P_1rnd_M";				//R-27ER <Mid-range,  Radar guided, air-to-air missile>
 	_c pushBack "FIR_R77_P_1rnd_M";					//R-77 <Mid-range,  Radar guided, air-to-air missile>
+};
+
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_missile_aim7e2_mag_x1";				//AIM-7E Sparrow 				<AIM-7E Sparrow Air-to-air Radar-guided missile>
+	
+	_c pushBack "vn_missile_aim120c_mag_x1";			//AMRAAM C AA x1 				<Medium-range, radar-guided, air-to-air missile with high-explosive warhead>
 };
 
 // set all other vars in a slope
@@ -424,7 +427,6 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_Hydra_P_7rnd_M")) then {
 	_c pushBack "FIR_S25L_P_1rnd_M";				//S-25-L x 1 			<Laser-guided rocket, 340mm>
 };
 
-/*
 if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
 	_c pushBack "vn_missile_agm45_mag_x1";				//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
 	_c pushBack "vn_missile_agm45_02_mag_x1";			//AGM-45 Shrike 				<AGM-45 Shrike Air-to-ground radiation-seeking missile>
@@ -436,15 +438,7 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_missile_f4_in_agm12c_mag_x1";		//AGM-12C Bullpup 				<AGM-12C Bullpup Air-to-ground guided HE missile>
 	_c pushBack "vn_missile_f4_out_agm12c_mag_x1";		//AGM-12C Bullpup 				<AGM-12C Bullpup Air-to-ground guided HE missile>
 	_c pushBack "vn_missile_kh66_mag_01_x1";			//KH-66 						<KH-66 Air-to-ground guided HE missile>
-	_c pushBack "vn_missile_agm88_rail_mag_x1";			//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
-	_c pushBack "vn_missile_agm88_mag_x1";				//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
-	_c pushBack "vn_missile_f4_out_agm88_mag_x1";		//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
-	_c pushBack "vn_missile_f4_in_agm88_mag_x1";		//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
-	_c pushBack "vn_missile_agm65_rail_mag_x1";			//Macer II AGM x1 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
-	_c pushBack "vn_missile_agm65_rail_mag_x2";			//Macer II AGM x2 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
-	_c pushBack "vn_missile_agm65_rail_mag_x3";			//Macer II AGM x3 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
 };
-*/
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -600,6 +594,16 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
 	_c pushBack "tu95_1Rnd_Kh101";				//Kh-101 					<Type: Tactical Air-Surface Missile (TASM)<br />Rounds: 1<br />Warhead: HE-Penetrator>
 	_c pushBack "tu95_2Rnd_Kh101";				//Kh-101 (x2) 				<Type: Tactical Air-Surface Missile (TASM)<br />Rounds: 2<br />Warhead: HE-Penetrator>
 	_c pushBack "tu95_6Rnd_Kh101";				//Kh-101 (x6) 				<Type: Tactical Air-Surface Missile (TASM)<br />Rounds: 6<br />Warhead: HE-Penetrator>
+};
+
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_missile_agm88_rail_mag_x1";			//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_agm88_mag_x1";				//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_f4_out_agm88_mag_x1";		//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_f4_in_agm88_mag_x1";		//AGM-88C HARM x1 				<Medium-range, anti-radiation, air-to-surface missile with high-explosive warhead>
+	_c pushBack "vn_missile_agm65_rail_mag_x1";			//Macer II AGM x1 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
+	_c pushBack "vn_missile_agm65_rail_mag_x2";			//Macer II AGM x2 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
+	_c pushBack "vn_missile_agm65_rail_mag_x3";			//Macer II AGM x3 				<Short-range, infrared-guided, air-to-surface missile with high-explosive anti-tank warhead>
 };
 
 // set all other vars in a slope
@@ -1008,7 +1012,6 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_CRV7_P_19rnd_M")) then {
 	_c pushBack "FIR_S25OFM_P_1rnd_M";				//S-25-OFM x 1 			<unguided rocket, 340mm, Penetrator>
 };
 
-/*
 if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
 	_c pushBack "vn_rocket_s5_heat_x16";								//16x S-5KO 57mm HE/FRAG 		<16x S-5KO 57mm unguided rockets with high-explosive fragmentation warhead>
 	_c pushBack "vn_rocket_s5_he_x16";									//16x S-5K 57mm HE 				<16x S-5K 57mm unguided rockets with high-explosive warhead>
@@ -1106,7 +1109,7 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_rocket_ffar_f4_in_lau3_mk32_atap_x12";				//12x Mk32 5in ATAP 			<12x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
 	_c pushBack "vn_rocket_ffar_f4_out_lau3_mk32_atap_x12";				//12x Mk32 5in ATAP 			<12x Mk32 5in unguided rockets with Anti-Tank Anti-Personnel warhead>
 };
-*/
+
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -1408,7 +1411,7 @@ if (isClass(configFile >> "CfgMagazines" >> "js_m_fa18_wing_tank_x1")) then {
 	_c pushBack "js_m_fa18_wing_tank_x1";		//F/A-18 Fuel Tank 	<500lb, high-explosive, unguided bomb>
 	//_c pushBack "js_m_fa18_buddypod_x1";		//F/A-18 Buddy Pod 	<500lb, high-explosive, unguided bomb>"		//wrong 'pylonWeapon' in magazine:'js_m_fa18_buddypod_x1' this magazine cannot be used in weapon'js_w_fa18_fueltank_holder'
 };
-/*
+
 if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
 	_c pushBack "vn_bomb_500_mk82_he_mag_x1";						//Mk82 500lb 					<Mk82 500lb GP Bomb>
 	_c pushBack "vn_bomb_f4_500_mk82_he_mag_x2";					//Mk82 500lb x2 				<2x Mk82 500lb GP Bombs on TER>
@@ -1445,6 +1448,7 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_bomb_f4_out_500_mk82_dc_mag_x1";				//Mk82 500lb Daisy Cutter 		<Mk82 500lb Daisy Cutter Bomb>
 	_c pushBack "vn_bomb_f4_out_500_mk82_dc_mag_x2";				//Mk82 500lb Daisy Cutter x2 	<2x Mk82 500lb Daisy Cutter Bombs on TER>
 	_c pushBack "vn_bomb_f4_out_500_mk82_dc_mag_x3";				//Mk82 500lb Daisy Cutter x3 	<3x Mk82 500lb Daisy Cutter Bombs on TER>
+	_c pushBack "vn_bomb_500_fab250_he_mag_x1";						//FAB-250 500lb 				<FAB-250 500lb GP Bomb>
 	_c pushBack "vn_bomb_750_m117_he_mag_x1";						//M117 750lb 					<M117 750lb GP Bomb>
 	_c pushBack "vn_bomb_f4_750_m117_he_mag_x2";					//M117 750lb x2 				<2x M117 750lb GP Bombs on TER>
 	_c pushBack "vn_bomb_f4_750_m117_he_mag_x3";					//M117 750lb x3 				<3x M117 750lb GP Bombs on TER>
@@ -1454,20 +1458,6 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_bomb_f4_out_750_m117_he_mag_x1";				//M117 750lb 					<M117 750lb GP Bomb>
 	_c pushBack "vn_bomb_f4_out_750_m117_he_mag_x2";				//M117 750lb x2 				<2x M117 750lb GP Bombs on TER>
 	_c pushBack "vn_bomb_f4_out_750_m117_he_mag_x3";				//M117 750lb x3 				<3x M117 750lb GP Bombs on TER>
-	_c pushBack "vn_bomb_1000_mk83_he_mag_x1";						//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
-	_c pushBack "vn_bomb_f4_1000_mk83_he_mag_x2";					//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
-	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x1";				//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
-	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x2";				//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
-	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x3";				//Mk83 1000lb x3 				<3x Mk83 1000lb GP Bombs on TER>
-	_c pushBack "vn_bomb_f4_out_1000_mk83_he_mag_x1";				//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
-	_c pushBack "vn_bomb_f4_out_1000_mk83_he_mag_x2";				//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
-	_c pushBack "vn_bomb_2000_mk84_he_mag_x1";						//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
-	_c pushBack "vn_bomb_f4_in_2000_mk84_he_mag_x1";				//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
-	_c pushBack "vn_bomb_f4_out_2000_mk84_he_mag_x1";				//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
-	_c pushBack "vn_bomb_2000_gbu8_he_mag_x1";						//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
-	_c pushBack "vn_bomb_f4_in_2000_gbu8_he_mag_x1";				//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
-	_c pushBack "vn_bomb_f4_out_2000_gbu8_he_mag_x1";				//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
-	_c pushBack "vn_bomb_15000_blu82_dc_mag_x1";					//BLU-82 15000lb 				<BLU-82 15000lb Daisy Cutter>
 	_c pushBack "vn_bomb_500_mk20_cb_mag_x1";						//MK20 Rockeye 					<MK20 Rockeye 500lb Anti-tank Clusterbomb>
 	_c pushBack "vn_bomb_f4_500_mk20_cb_mag_x2";					//MK20 Rockeye x2 				<2x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
 	_c pushBack "vn_bomb_f4_500_mk20_cb_mag_x3";					//MK20 Rockeye x3 				<3x MK20 Rockeye 500lb Anti-tank Clusterbombs on TER>
@@ -1505,8 +1495,6 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x3";					//M47 100lb WP x3 				<3x M47 100lb White Phosphorus Bombs on TER>
 	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x4";					//M47 100lb WP x4 				<4x M47 100lb White Phosphorus Bombs on MER>
 	_c pushBack "vn_bomb_f4_out_100_m47_wp_mag_x6";					//M47 100lb WP x6 				<6x M47 100lb White Phosphorus Bombs on MER>
-	_c pushBack "vn_bomb_500_fab250_he_mag_x1";						//FAB-250 500lb 				<FAB-250 500lb GP Bomb>
-	_c pushBack "vn_bomb_1000_fab500_he_mag_x1";					//FAB-500 1000lb 				<FAB-500 1000lb GP Bomb>
 	_c pushBack "vn_bomb_mk36_mine_mag_x1";							//Mk36 Naval Mine 				<Mk36 500lb Anti-ship Mine>
 	_c pushBack "vn_bomb_f4_in_mk36_mine_mag_x1";					//Mk36 Naval Mine 				<Mk36 500lb Anti-ship Mine>
 	_c pushBack "vn_bomb_f4_out_mk36_mine_mag_x1";					//Mk36 Naval Mine 				<Mk36 500lb Anti-ship Mine>
@@ -1519,15 +1507,6 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_bomb_f4_out_mk36_destructor_mine_mag_x1";		//Mk36 Destructor Mine 			<Mk36 500lb Anti-ship Destructor Mine>
 	_c pushBack "vn_bomb_f4_out_mk36_destructor_mine_mag_x2";		//Mk36 Destructor Mine x2 		<2x Mk36 500lb Anti-ship Destructor Mines on TER>
 	_c pushBack "vn_bomb_f4_out_mk36_destructor_mine_mag_x3";		//Mk36 Destructor Mine x3 		<3x Mk36 500lb Anti-ship Destructor Mines on TER>
-	_c pushBack "vn_bomb_750_cbu85_cb_mag_x1";						//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_750_cbu85_cb_mag_x2";					//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_750_cbu85_cb_mag_x3";					//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x1";				//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x2";				//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x3";				//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x1";				//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x2";				//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
-	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x3";				//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
 	_c pushBack "vn_bomb_500_gbu12_he_mag_x1";						//GBU 12 LGB x1 				<500lb, high-explosive, laser-guided bomb>
 	_c pushBack "vn_bomb_f4_500_gbu12_he_mag_x2";					//GBU 12 LGB x2 				<500lb, high-explosive, laser-guided bomb>
 	_c pushBack "vn_bomb_f4_500_gbu12_he_mag_x3";					//GBU 12 LGB x3 				<500lb, high-explosive, laser-guided bomb>
@@ -1538,7 +1517,6 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_bomb_f4_out_500_gbu12_he_mag_x2";				//GBU 12 LGB x2 				<500lb, high-explosive, laser-guided bomb>
 	_c pushBack "vn_bomb_f4_out_500_gbu12_he_mag_x3";				//GBU 12 LGB x3 				<500lb, high-explosive, laser-guided bomb>
 };
-*/
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -1625,6 +1603,33 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_GBU16_Navy_P_1rnd_M")) then {
 };
 if (isClass(configFile >> "CfgMagazines" >> "Tornado_AWS_StormShadow_P_1rnd_M")) then {
 	_c pushBack "Tornado_AWS_StormShadow_P_1rnd_M";				//Storm Shadow <2,900lb GPS guided missile>
+};
+
+if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+	_c pushBack "vn_bomb_1000_fab500_he_mag_x1";					//FAB-500 1000lb 				<FAB-500 1000lb GP Bomb>
+	_c pushBack "vn_bomb_1000_mk83_he_mag_x1";						//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_1000_mk83_he_mag_x2";					//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x1";				//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x2";				//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_in_1000_mk83_he_mag_x3";				//Mk83 1000lb x3 				<3x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_f4_out_1000_mk83_he_mag_x1";				//Mk83 1000lb 					<Mk83 1000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_out_1000_mk83_he_mag_x2";				//Mk83 1000lb x2 				<2x Mk83 1000lb GP Bombs on TER>
+	_c pushBack "vn_bomb_2000_mk84_he_mag_x1";						//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_in_2000_mk84_he_mag_x1";				//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
+	_c pushBack "vn_bomb_f4_out_2000_mk84_he_mag_x1";				//Mk84 2000lb 					<Mk84 2000lb GP Bomb>
+	_c pushBack "vn_bomb_2000_gbu8_he_mag_x1";						//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
+	_c pushBack "vn_bomb_f4_in_2000_gbu8_he_mag_x1";				//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
+	_c pushBack "vn_bomb_f4_out_2000_gbu8_he_mag_x1";				//GBU-8 2000lb 					<GBU-8 2000lb HOBOS Laser-guided bomb>
+	_c pushBack "vn_bomb_15000_blu82_dc_mag_x1";					//BLU-82 15000lb 				<BLU-82 15000lb Daisy Cutter>
+	_c pushBack "vn_bomb_750_cbu85_cb_mag_x1";						//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_750_cbu85_cb_mag_x2";					//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_750_cbu85_cb_mag_x3";					//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x1";				//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x2";				//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_in_750_cbu85_cb_mag_x3";				//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x1";				//CBU-85 Cluster x1 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x2";				//CBU-85 Cluster x2 			<750lb, laser-guided cluster bomb>
+	_c pushBack "vn_bomb_f4_out_750_cbu85_cb_mag_x3";				//CBU-85 Cluster x3 			<750lb, laser-guided cluster bomb>
 };
 
 // set all other vars in a slope
@@ -1825,7 +1830,7 @@ if (isClass(configFile >> "CfgMagazines" >> "js_jc_120Rnd_CMChaff_Magazine")) th
 	_c pushBack "FIR_BK27_L_M";										//BK-27 Revolver Cannon (Left) 	<Revolver Cannon,27mm>
 	_c pushBack "FIR_BK27_R_M";										//BK-27 Revolver Cannon (Right) <Revolver Cannon,27mm>
 };
-/*
+
 if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
 	_c pushBack "vn_pk_v_twin_3200_right";				//3200Rnd. PK Belt 	<3200Rnd. PK Belt. <br />Caliber: 7.62x54mmR. <br />Used in Twin PK Machine Gun>
 	_c pushBack "vn_pk_v_twin_3200_left";				//3200Rnd. PK Belt 	<3200Rnd. PK Belt. <br />Caliber: 7.62x54mmR. <br />Used in Twin PK Machine Gun>
@@ -1843,7 +1848,7 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_gunpod_m60_v_1000_mag";				//1000Rnd. M60 Belt 	<1000Rnd. M60 Belt. &lt;br /&gt;Calibre: 7.62x51mm. &lt;br /&gt;Used in Twin M60 Machine Gun>
 	_c pushBack "vn_gunpod_m60_v_1500_mag";				//1500Rnd. M60 Belt 	<1500Rnd. M60 Belt. &lt;br /&gt;Calibre: 7.62x51mm. &lt;br /&gt;Used in Twin M60 Machine Gun>
 };
-*/
+
 
 // set all other vars in a slope
 _cntstart = count _c;
@@ -1996,10 +2001,9 @@ if (isClass(configFile >> "CfgVehicles" >> "FIR_Mk76_P_1rnd_M")) then {
 	_c pushBack "FIR_Smokewinder_Blue_P_10rnd_M";					//Smokewinder (Blue) 			<Smokewinder (Blue)>
 	_c pushBack "FIR_Smokewinder_Yellow_P_10rnd_M";					//Smokewinder (Yellow) 			<Smokewinder (Yellow)>
 };
-/*
 
 if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
-	_c pushBack "vn_fuel_mi2_mag_left";					//Fuel tank (Left) 	<Fuel tank (external)>
+	_c pushBack "vn_fuel_mi2_mag_left";					//Fuel tank (Left) 		<Fuel tank (external)>
 	_c pushBack "vn_fuel_mi2_mag_right";				//Fuel tank (Right) 	<Fuel tank (external)>
 	_c pushBack "vn_fuel_f4_370_mag";					//Fuel tank 			<Fuel tank (external wing 370lbs)>
 	_c pushBack "vn_fuel_f4_600_mag";					//Fuel tank 			<Fuel tank (center 600lbs)>
@@ -2011,7 +2015,6 @@ if(1227700 in _ownedDLCs && CTI_SOG_DLC > 0) then {		//Arma 3 Creator DLC: S.O.G
 	_c pushBack "vn_fuel_f100_335_mag";					//Fuel tank 			<Fuel tank (335 gal)>
 	_c pushBack "vn_fuel_f100_335_camo_01_mag";			//Fuel tank 			<Fuel tank camo (335 gal)>
 };
-*/
 
 // set all other vars in a slope
 _cntstart = count _c;
