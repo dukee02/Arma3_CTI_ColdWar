@@ -74,7 +74,13 @@ switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 	case 19: {
 		if(CTI_RHS_ADDON > 0) then {_texture = "\rhsgref\addons\rhsgref_main\data\flag_chdkz_co.paa";};		//chdkz
 	};
-	/*case 11: {
+	case 20: {
+		if(CTI_RHS_ADDON > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_vc_co.paa";};	//Viet Cong
+	};
+	case 21: {
+		if(CTI_RHS_ADDON > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_usa_co.paa";};
+	};
+	/*case 22: {
 		_texture = "";
 	};*/
 	default {

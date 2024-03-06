@@ -1,8 +1,16 @@
-[V2.0] Changelog:
-Changed: Switch the units from WW2 to 
-Fixed: 
-Added: 
-
+[V2.0.3] Changelog:
+Added: more options for start $
+Added: Cam Lao Nam map
+Added: Takistan map
+Added: Param to start near Town is back
+Changed: main mod selection logic
+Changed: (GM) Mi-2URN + US lowered to T1
+Changed: CUP-US wheeled T0 merged with T1 to new T0
+Changed: as voted default to CUP units
+Changed: better spawn logic after loading
+Changed: Some Arty UI improvements
+Fixed: player sometimes spawn in water with SOG
+Fixed: HQ spawns twice
 
 Known issues:
 []AI don't take command if commander disconnects

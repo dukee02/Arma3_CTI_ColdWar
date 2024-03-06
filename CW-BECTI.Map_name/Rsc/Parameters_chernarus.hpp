@@ -195,21 +195,21 @@ class Params {
 	};
 	class CTI_WEST_FLAG {
 		title = "FLAG: Flagtexture of the West-Side";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
-		texts[] = {"Standard Blue","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)"};
-		default = 2; //0
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
+		texts[] = {"Standard Blue","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)","USA (SOG)"};
+		default = 0; //0
 	};
 	class CTI_EAST_FLAG {
 		title = "FLAG: Flagtexture of the East-Side";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
-		texts[] = {"Standard Red","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)"};
-		default = 5; //0
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
+		texts[] = {"Standard Red","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)","USA (SOG)"};
+		default = 0; //0
 	};
 	class CTI_GUER_FLAG {
 		title = "FLAG: Flagtexture of the Independent-Side";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19};
-		texts[] = {"Standard Green","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)"};
-		default = 6; //0
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
+		texts[] = {"Standard Green","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)","USA (SOG)"};
+		default = 0; //0
 	};
 	class CTI_ECONOMY_LEVEL_GEAR {
 		title = "UPGRADE: Max Level Gear (depends on activated stuff, gets adjust to lower)";
