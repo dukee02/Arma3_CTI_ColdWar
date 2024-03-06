@@ -59,15 +59,34 @@ _special = if (count _this > 7) then {_this select 7} else {"NONE"};
 if (typeName _position == "OBJECT") then {_position = getPos _position};
 if (typeName _side == "SIDE") then {_side = (_side) call CTI_CO_FNC_GetSideID};
 
-if(_type isKindOf "ship") then {
+/*if(_type isKindOf "ship") then {
 	//placeing onto the water with 40m searchrange
 	_save_pos = [_position, 0, 40, 10, 2, 0, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
 } else {
 		//place on a save Pos on the ground with 20m searchrange
 	_save_pos = [_position, 0, 20, 1, 0, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
+};*/
+
+if(_type isKindOf "ship") then {
+	_save_pos = [_position, 0, 40, 10, 2, 0, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
+	_save_pos set [2, 0.5];		//set ship 0.5m in air and let it drop
+} else {
+	if (_special == "FLY") then {
+		_save_pos = _position;
+		_save_pos set [2, 1000];		//set Air unit 1000m in air
+	} else {
+		if (_special == "CAN_COLLIDE") then {
+			_save_pos = _position;
+			_save_pos set [2, 0.3];		//set unit 0.3m in air and let it drop
+		} else {
+			_save_pos = [_position, 0, 20, 1, 0, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
+			_save_pos set [2, 0.3];		//set others 0.3m in air and let it drop
+		};
+	};
 };
 
-_vehicle = createVehicle [_type, _position, [], 7, _special];
+//_vehicle = createVehicle [_type, _position, [], 7, _special];
+_vehicle = createVehicle [_type, _save_pos, [], 7, _special];
 _vehicle setDir _direction;
 VIOC_ZEUS addCuratorEditableObjects [[_vehicle], true];
 
@@ -77,6 +96,11 @@ clearWeaponCargoGlobal _vehicle;
 clearBackpackCargoGlobal _vehicle;
 
 if (_special == "FLY") then {
+	//makes the air unit starts to fly
+	_vehicle setVelocity [50 * (sin _direction), 50 * (cos _direction), 0];
+};
+
+/*if (_special == "FLY") then {
 	//planes with a pilot gets movet to the air
 	_vehicle setPos [getPos _vehicle select 0, getPos _vehicle select 1, 1000]; //--- Make the vehicle spawn in the sky
 	_vehicle setVelocity [50 * (sin _direction), 50 * (cos _direction), 0];
@@ -86,7 +110,7 @@ if (_special == "FLY") then {
 	} else {
 		_vehicle setPos [_save_pos select 0, _save_pos select 1, 0.3];
 	};
-};
+};*/
 //if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_CreateVehicle.sqf", format ["type: <%1> special: <%2>",  _type, _special]] call CTI_CO_FNC_Log;};
 
 //--- Authorize the air loadout depending on the parameters set
