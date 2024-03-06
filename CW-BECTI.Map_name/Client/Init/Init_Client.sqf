@@ -145,7 +145,7 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_PylonMenu.sqf";
 
 (CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Vanilla_Basic.sqf";
 
-if(CTI_GM_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+if(CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
 	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_SOG.sqf"};
 	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_NVA_SOG.sqf"};
 };
