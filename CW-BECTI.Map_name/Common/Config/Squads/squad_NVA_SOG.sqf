@@ -97,14 +97,14 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		inf_to_add pushBack [format["%1vn_o_men_nva_29", _sid], 1, 40];		//Mortar gunner (PPS-43)
 		inf_to_add pushBack [format["%1vn_o_men_nva_31", _sid], 1, 40];		//Mortar tripod (PPS-52)
 	};
-	inf_to_add pushBack [format["%1vn_o_men_aircrew_02", _sid], 1, 40];		//Heli Co-Pilot (TT-33)
+	/*inf_to_add pushBack [format["%1vn_o_men_aircrew_02", _sid], 1, 40];		//Heli Co-Pilot (TT-33)
 	inf_to_add pushBack [format["%1vn_o_men_aircrew_03", _sid], 1, 40];		//Heli Crew Chief (PM)
 	inf_to_add pushBack [format["%1vn_o_men_aircrew_04", _sid], 1, 40];		//Heli Gunner (TT-33)
 	inf_to_add pushBack [format["%1vn_o_men_aircrew_01", _sid], 1, 40];		//Heli Pilot (PM)
 	inf_to_add pushBack [format["%1vn_o_men_aircrew_07", _sid], 1, 40];		//Jet Pilot (PM)
 	inf_to_add pushBack [format["%1vn_o_men_aircrew_08", _sid], 1, 40];		//Jet Pilot (TT-33)
 	inf_to_add pushBack [format["%1vn_o_men_aircrew_05", _sid], 1, 40];		//Pilot (PM)
-	inf_to_add pushBack [format["%1vn_o_men_aircrew_06", _sid], 1, 40];		//Pilot (TT-33)
+	inf_to_add pushBack [format["%1vn_o_men_aircrew_06", _sid], 1, 40];		//Pilot (TT-33)*/
 	
 	units_infantry append inf_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {infantry_auto append inf_to_add;};
@@ -464,24 +464,6 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	units_air = [];
 	air_to_add = [[format["%1vn_o_air_mi2_03_01", _sid], 1, 20]];
 	air_to_add pushBack [format["%1vn_o_air_mi2_04_05", _sid], 1, 20];
-
-	units_air append air_to_add;
-	if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
-};
-
-_v pushBack format["AirT%1", _level];
-_t pushBack format["Air T%1", _level];
-_p pushBack air_to_add;
-_f pushBack CTI_AIR;
-_m pushBack 1000;
-_c pushBack "Air";
-_s pushBack [];
-kind_air pushBack format["AirT%1", _level];
-
-_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	air_to_add = [[format["%1vn_o_air_mi2_05_01", _sid], 1, 20]];
 	air_to_add pushBack [format["%1vn_o_air_mig19_cas", _sid], 1, 20];
 
 	units_air append air_to_add;
@@ -500,10 +482,11 @@ kind_air pushBack format["AirT%1", _level];
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	air_to_add = [[format["%1vn_o_air_mig21_cas", _sid], 1, 20]];
+	air_to_add = [[format["%1vn_o_air_mi2_05_01", _sid], 1, 20]];
+	air_to_add pushBack [format["%1vn_o_air_mig21_cas", _sid], 1, 20];
 
 	units_air append air_to_add;
-	if(CTI_FACTORY_LEVEL_PRESET >= _level) then {air_auto append air_to_add;};
+	if(CTI_FACTORY_LEVEL_PRESET > _level) then {air_auto append air_to_add;};
 };
 
 _v pushBack format["AirT%1", _level];

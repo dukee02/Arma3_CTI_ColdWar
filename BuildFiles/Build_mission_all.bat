@@ -10,7 +10,9 @@ start Build_mission_gm_weferlingen_summer.bat
 start Build_mission_gm_weferlingen_winter.bat
 start Build_mission_Malden.bat
 start Build_mission_Mske.bat
+start Build_mission_SOG_nam.bat
 start Build_mission_Stratis.bat
+start Build_mission_Takistan.bat
 start Build_mission_Tanoa.bat
 start Build_mission_WL_Rosche.bat
 

@@ -216,20 +216,15 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	AIR_FIGHTER pushBack [format["%1vn_o_air_mi2_03_01", _sid],1];
-	AIR_FIGHTER pushBack [format["%1vn_o_air_mi2_04_05", _sid],1];
-};
-
-_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
-	AIR_FIGHTER pushBack [format["%1vn_o_air_mi2_05_01", _sid],1];
+	AIR_BOMBER = [[format["%1vn_o_air_mi2_03_01", _sid],1]];
+	AIR_BOMBER pushBack [format["%1vn_o_air_mi2_04_05", _sid],1];
 	AIR_FIGHTER pushBack [format["%1vn_o_air_mig19_cas", _sid],1];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+	AIR_BOMBER pushBack [format["%1vn_o_air_mi2_05_01", _sid],1];
 	AIR_FIGHTER pushBack [format["%1vn_o_air_mig21_cas", _sid],1];
 };
 if(count AIR_FIGHTER == 0) then {AIR_FIGHTER = AIR_BOMBER;};
