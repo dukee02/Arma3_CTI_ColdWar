@@ -151,10 +151,17 @@ if (handgunWeapon _unit != _item) then { //--- Replace
 _voices = [];
 if(Side _unit == west) then {
 	//West unit
-	if(CTI_BW_SIDE == 0 && [1042220] call CTI_CO_FNC_HasDLC) then {
-		_voices append ["gm_voice_male_deu_01","gm_voice_male_deu_02","gm_voice_male_deu_03","gm_voice_male_deu_04","gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07","gm_voice_male_deu_08","gm_voice_male_deu_09"];
+	if(CTI_GM_DLC > 0) then {
+		if(CTI_BW_SIDE == 0 && [1042220] call CTI_CO_FNC_HasDLC) then {		//Arma 3 Creator DLC: Global Mobilization - Cold War Germany
+			_voices append ["gm_voice_male_deu_01","gm_voice_male_deu_02","gm_voice_male_deu_03","gm_voice_male_deu_04","gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07","gm_voice_male_deu_08","gm_voice_male_deu_09"];
+		};
 	};
-	if((CTI_US_SIDE > 0 && (CTI_WEST_AI == -1 || CTI_WEST_AI == CTI_US_ID)) || !([1042220] call CTI_CO_FNC_HasDLC)) then {
+	/*if(CTI_SOG_DLC > 0) then {
+		if(CTI_US_SIDE == 0 && [1227700] call CTI_CO_FNC_HasDLC) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+			_voices append ["Male01ENG","Male02ENG"];
+		};
+	};*/
+	if((CTI_US_SIDE == 0 && (CTI_WEST_AI == -1 || CTI_WEST_AI == CTI_US_ID)) || !([1042220] call CTI_CO_FNC_HasDLC)) then {
 		_voices append ["Male01ENG","Male02ENG","Male03ENG","Male04ENG","Male05ENG","Male06ENG","Male07ENG","Male08ENG","Male09ENG","Male10ENG","Male11ENG","Male12ENG"];
 		if(CTI_CUP_ADDON > 0) then {
 			_voices append ["CUP_D_Male01_EN","CUP_D_Male02_EN","CUP_D_Male03_EN","CUP_D_Male04_EN","CUP_D_Male05_EN"];
@@ -163,10 +170,17 @@ if(Side _unit == west) then {
 } else {
 	//East unit
 	//addon needed?
-	if(CTI_NVA_SIDE == 1 && [1042220] call CTI_CO_FNC_HasDLC) then {
-		_voices append ["gm_voice_male_deu_01","gm_voice_male_deu_02","gm_voice_male_deu_03","gm_voice_male_deu_04","gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07","gm_voice_male_deu_08","gm_voice_male_deu_09"];
+	if(CTI_GM_DLC > 0) then {
+		if(CTI_NVA_SIDE == 1 && [1042220] call CTI_CO_FNC_HasDLC) then {		//Arma 3 Creator DLC: Global Mobilization - Cold War Germany
+			_voices append ["gm_voice_male_deu_01","gm_voice_male_deu_02","gm_voice_male_deu_03","gm_voice_male_deu_04","gm_voice_male_deu_05","gm_voice_male_deu_06","gm_voice_male_deu_07","gm_voice_male_deu_08","gm_voice_male_deu_09"];
+		};
 	};
-	if((CTI_SOV_SIDE > 0 && (CTI_EAST_AI == -1 || CTI_EAST_AI == CTI_SOV_ID)) || !([1042220] call CTI_CO_FNC_HasDLC)) then {
+	/*if(CTI_SOG_DLC > 0) then {
+		if(CTI_NVA_SIDE == 1 && [1227700] call CTI_CO_FNC_HasDLC) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
+			_voices append ["VIE","MUTE"];
+		};
+	};*/
+	if((CTI_SOV_SIDE == 1 && (CTI_EAST_AI == -1 || CTI_EAST_AI == CTI_SOV_ID)) || !([1042220] call CTI_CO_FNC_HasDLC)) then {
 		if([1021790] call CTI_CO_FNC_HasDLC) then {
 			_voices append ["Male01RUS","Male02RUS","Male03RUS"];
 		};
