@@ -117,6 +117,49 @@ if(CTI_GM_DLC > 0) then {
 	_r pushBack [[10150,13600], [13500,18100], [17600,23600], [22300,29900]];
 };
 
+if(CTI_SOG_DLC > 0) then {
+	_c pushBack "vn_o_nva_static_mortar_type63";
+	_m pushBack ["vn_mortar_type63_mag_he_x8","vn_mortar_type63_mag_wp_x8","vn_mortar_type63_mag_lume_x8"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[48,455], [195,1820]];
+	
+	_c pushBack "vn_b_army_static_mortar_m2";
+	_m pushBack ["vn_mortar_m2_mag_he_x8","vn_mortar_m2_mag_wp_x8","vn_mortar_m2_mag_lume_x8"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[48,455], [195,1820]];
+
+	_c pushBack "vn_b_army_static_mortar_m29";
+	_m pushBack ["vn_mortar_m29_mag_he_x8","vn_mortar_m29_mag_wp_x8","vn_mortar_m29_mag_chem_x8","vn_mortar_m29_mag_lume_x8"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[83,468], [335,1874], [685,3824]];
+	
+	_c pushBack "vn_o_nva_static_mortar_type53"; 
+	_m pushBack ["vn_mortar_type53_mag_he_x8","vn_mortar_type53_mag_wp_x8","vn_mortar_type53_mag_lume_x8"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[91,471], [367,1885], [749,3847]];
+	_c pushBack "vn_o_wheeled_btr40_mg_06_nva65";		//mortar on btr40
+	_m pushBack ["vn_mortar_type53_mag_he_x8","vn_mortar_type53_mag_wp_x8","vn_mortar_type53_mag_lume_x8"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[91,471], [367,1885], [749,3847]];
+
+
+	_c pushBack "vn_o_nva_static_d44_01";
+	_m pushBack ["vn_cannon_d44_mag_he_x12","vn_cannon_d44_mag_wp_x12","vn_cannon_d44_mag_lume_x12"];
+	_b pushBack [1, 2, 4, 6, 12];
+	_r pushBack [[741,2167], [1430,4181], [5720,16725]];
+	
+	_c pushBack "vn_b_army_static_m101_02";
+	_m pushBack ["vn_cannon_m101_mag_he_x8","vn_cannon_m101_mag_ab_x8","vn_cannon_m101_mag_frag_x8","vn_cannon_m101_mag_wp_x8","vn_cannon_m101_mag_chem_x8","vn_cannon_m101_mag_lume_x8"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[3000,6000], [3360,10700], [9350,18600], [9350,18600]];
+
+	
+	_c pushBack "vn_o_nva_static_h12";
+	_m pushBack ["vn_h12_v_12_he_mag","vn_h12_v_12_hei_mag","vn_h12_v_12_hef_mag"];
+	_b pushBack [1, 2, 4, 6, 12];
+	_r pushBack [[997,1342], [1281,1724], [1676,2256], [2190,2946], [2846,3829], [3729,5018], [4927,6630], [6366,8566]];
+};
+
 //no real config for M120 in REDD, only manuel fire atm
 //if(CTI_REDD_ADDON == 1) then {
 //	_c pushBack "Redd_Tank_M120_Tampella";

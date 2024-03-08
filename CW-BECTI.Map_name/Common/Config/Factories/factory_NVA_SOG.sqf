@@ -150,7 +150,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1vn_o_wheeled_btr40_mg_01_nva65", _sid];
 	_c pushBack format["%1vn_o_wheeled_btr40_mg_04_nva65", _sid];
 	_c pushBack format["%1vn_o_wheeled_btr40_mg_05_nva65", _sid];
-	_c pushBack format["%1vn_o_wheeled_btr40_mg_06_nva65", _sid];
+	_c pushBack format["%1vn_o_wheeled_btr40_mg_06_nva65", _sid];	//mortar
 	_c pushBack format["%1vn_o_wheeled_z157_01_nva65", _sid];	
 	_c pushBack format["%1vn_o_wheeled_z157_02_nva65", _sid];	
 	_c pushBack format["%1vn_o_wheeled_z157_mg_01_nva65", _sid];	
@@ -166,7 +166,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1vn_o_wheeled_btr40_mg_03_nva65", _sid];	//AA
-	_c pushBack format["%1vn_o_wheeled_z157_04_nva65", _sid];		//Rocket arty?
+	//_c pushBack format["%1vn_o_wheeled_z157_04_nva65", _sid];		//Rocket arty?
 };
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];

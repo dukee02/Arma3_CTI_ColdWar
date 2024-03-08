@@ -288,7 +288,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_d pushBack 0;	
 	};
 	
-	_c pushBack format["%1vn_o_wheeled_z157_04_nva65", _sid];		//Rocket arty?
+	/*_c pushBack format["%1vn_o_wheeled_z157_04_nva65", _sid];		//Rocket arty?
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;
@@ -301,7 +301,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
 		_d pushBack 0;	
-	};
+	};*/
 };
 
 //Update the calculatetd max upgrade level
