@@ -33,8 +33,6 @@ copy "%gitpath%\CW-BECTI.Map_name\RSC\Resources.hpp" "%buildpath%\%missionfloder
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Sounds.hpp" "%buildpath%\%missionfloder%\RSC\Sounds.hpp"
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Styles.hpp" "%buildpath%\%missionfloder%\RSC\Styles.hpp"
 copy "%gitpath%\CW-BECTI.Map_name\RSC\Titles.hpp" "%buildpath%\%missionfloder%\RSC\Titles.hpp"
-echo copy Script files
-copy "%gitpath%\CW-BECTI.Map_name\\Scripts\nre_earplugs.sqf" "%buildpath%\%missionfloder%\\Scripts\nre_earplugs.sqf"
 echo copy Server folder
 xcopy "%gitpath%\CW-BECTI.Map_name\Server" "%buildpath%\%missionfloder%\Server" /E /Y /I
 echo copy VAM folder
