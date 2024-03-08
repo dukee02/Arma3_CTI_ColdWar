@@ -90,7 +90,7 @@ class Params {
 		default = 1;
 	};
 	class CTI_US_SIDE {
-		title = "US Side";
+		title = "US Side [CUP, RHS or CWR3 needed]";
 		values[] = {-1,0};
 		texts[] = {"deactivated", "BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
@@ -98,15 +98,15 @@ class Params {
 		default = -1;
 	};
 	class CTI_SOV_SIDE {
-		title = "Soviet Side";
+		title = "Soviet Side [CUP, RHS or CWR3 needed]";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
 		default = -1;
 	};
 	class CTI_RACS_SIDE {
-		title = "RACS Side";
+		title = "RACS Side [CUP needed]";
 		values[] = {-1,2};
-		texts[] = {"deactivated","GUER (Independent) [CUP needed]"};
+		texts[] = {"deactivated","GUER (Independent)"};
 		default = -1;
 	};
 	class CTI_BW_SIDE {

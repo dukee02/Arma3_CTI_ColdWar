@@ -39,7 +39,7 @@ class Params {
 		title = "DLC: S.O.G. Prairie Fire - Vehicles west + east";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_CUP_ADDON {
 		title = "ADDON: CUP Support - Vehicles west + east";
@@ -57,7 +57,7 @@ class Params {
 		title = "ADDON: RHS Support - Vehicles at all sides possible";
 		values[] = {0,1,2};
 		texts[] = {"Disabled","Enabled","set as main"};
-		default = 1;
+		default = 0;
 	};
 	class CTI_BW_ADDON {
 		title = "ADDON: BWA3 Support - Vehicles west";
@@ -75,7 +75,7 @@ class Params {
 		title = "Module: VAM (Vehicle Appearance Module)";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
-		default = 0;
+		default = 1;
 	};
 	/*class CTI_LEN_ADDON {
 		title = "ADDON: LEN Support - Vehicles west+east";
@@ -90,7 +90,7 @@ class Params {
 		default = 1;
 	};
 	class CTI_US_SIDE {
-		title = "US Side";
+		title = "US Side [CUP, RHS or CWR3 needed]";
 		values[] = {-1,0};
 		texts[] = {"deactivated", "BLUFOR (West)"};
 		//values[] = {-1,0,1,2};
@@ -98,15 +98,15 @@ class Params {
 		default = 0; //-1
 	};
 	class CTI_SOV_SIDE {
-		title = "Soviet Side";
+		title = "Soviet Side [CUP, RHS or CWR3 needed]";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
-		default = 1; //-1
+		default = -1; //-1
 	};
 	class CTI_RACS_SIDE {
-		title = "RACS Side";
+		title = "RACS Side [CUP needed]";
 		values[] = {-1,2};
-		texts[] = {"deactivated","GUER (Independent) [CUP needed]"};
+		texts[] = {"deactivated","GUER (Independent)"};
 		default = -1;
 	};
 	class CTI_BW_SIDE {
@@ -119,7 +119,7 @@ class Params {
 		title = "NVA Side (East Germany with GM or Vietnam with SOG)";
 		values[] = {-1,1};
 		texts[] = {"deactivated", "OPFOR (East)"};
-		default = -1;
+		default = 1;
 	};
 	class CTI_CDF_SIDE {
 		title = "CDF Side [RHS needed]";
@@ -131,7 +131,7 @@ class Params {
 		title = "CHDKZ Side [RHS needed]";
 		values[] = {-1,1,2};
 		texts[] = {"deactivated", "OPFOR (East)", "GUER (Independent)"};
-		default = 2;
+		default = -1;
 	};
 	/*class CTI_DK_SIDE {
 		title = "Denmark Side";
@@ -735,7 +735,7 @@ class Params {
 		title = "TOWNS: Starting Mode";
 		values[] = {-1,0,1,2,3,4,5,6,7,8,9};
 		texts[] = {"pre defined","Resistance","50% East, 50% West", "Nearby Towns", "Random Towns (25% East, 25% West, 50% Res)","Coop at East side [Border]","Coop at East side, rest 50:50 [Border]","Coop at East side, rest 50:50 shuffled [Border]","Coop at West side [Border]","Coop at West side, rest 50:50 [Border]","Coop at West side, rest 50:50 shuffled [Border]"};
-		default = 0;
+		default = 1;
 	};
 	class CTI_TOWNS_VEHICLES_LOCK {
 		title = "TOWNS: Vehicle Lock";

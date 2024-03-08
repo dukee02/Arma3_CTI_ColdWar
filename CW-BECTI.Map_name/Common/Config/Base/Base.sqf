@@ -1286,14 +1286,14 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"[RHS] m101 heavy Arty";
+		_headers pushBack 		"[SOG] m101 heavy Arty";
 		_classes pushBack 		"vn_b_army_static_m101_02";
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"[RHS] tow AT";
+		_headers pushBack 		"[SOG] tow AT";
 		_classes pushBack 		"vn_b_army_static_tow";
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];

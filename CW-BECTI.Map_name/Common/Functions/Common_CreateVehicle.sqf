@@ -77,11 +77,10 @@ if(_type isKindOf "ship") then {
 	} else {
 		if (_special == "CAN_COLLIDE") then {
 			_save_pos = _position;
-			_save_pos set [2, 0.3];		//set unit 0.3m in air and let it drop
 		} else {
 			_save_pos = [_position, 0, 20, 1, 0, 0.7, 0, [], [_position, _position]] call BIS_fnc_findSafePos;
-			_save_pos set [2, 0.3];		//set others 0.3m in air and let it drop
 		};
+		_save_pos set [2, 0.3];		//set others 0.3m in air and let it drop
 	};
 };
 
