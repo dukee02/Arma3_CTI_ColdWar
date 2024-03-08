@@ -189,10 +189,10 @@ switch(_nationID) do {
 			case CTI_PF_ID: {
 				_grenades = "vn_rdg2_mag";
 				_healing = "vn_o_item_firstaidkit";
-				_item_map = "vn_o_item_map";
-				_item_radio = "vn_o_item_radio_m252";
-				_item_compass = "vn_b_item_compass";
-				_item_watch = "vn_b_item_watch";
+				//_item_map = "vn_o_item_map";
+				//_item_radio = "vn_o_item_radio_m252";
+				//_item_compass = "vn_b_item_compass";
+				//_item_watch = "vn_b_item_watch";
 				if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//desert/urban camo active
 					_weapon = "vn_type56";
 					_weapon_ammo = "vn_type56_t_mag";
@@ -229,10 +229,10 @@ switch(_nationID) do {
 			case CTI_PF_ID: {
 				_grenades = "vn_m61_grenade_mag";
 				_healing = "vn_b_item_firstaidkit";
-				_item_map = "vn_b_item_map";
-				_item_radio = "vn_b_item_radio_urc10";
-				_item_compass = "vn_b_item_compass";
-				_item_watch = "vn_b_item_watch";
+				//_item_map = "vn_b_item_map";
+				//_item_radio = "vn_b_item_radio_urc10";
+				//_item_compass = "vn_b_item_compass";
+				//_item_watch = "vn_b_item_watch";
 				if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//desert/urban camo active
 					_weapon = "vn_xm16e1";
 					_weapon_ammo = "vn_m16_40_t_mag";
