@@ -99,19 +99,25 @@ hierfür eine gute Adresse.
 //---------------------------------
 This Mission has the RHS preupset. To play this mission with other Mods, see [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2418491371] Our Mod-Collection [/url] with all supported mods or for special setup see our [url=https://steamcommunity.com/groups/vio-community] Steam-Group [/url] If you need help to setup a server or any questions join our [url=https://discord.gg/sJw2Nynh7s] Discord [/url].
 
+This Mission has the S.O.G. Prairie Fire preupset. To play this mission with other Mods, see [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2418491371] Our Mod-Collection [/url] with all supported mods or for special setup see our [url=https://steamcommunity.com/groups/vio-community] Steam-Group [/url] If you need help to setup a server or any questions join our [url=https://discord.gg/sJw2Nynh7s] Discord [/url].
+
+This Mission has the CUP preupset. To play this mission with other Mods, see [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2418491371] Our Mod-Collection [/url] with all supported mods or for special setup see our [url=https://steamcommunity.com/groups/vio-community] Steam-Group [/url] If you need help to setup a server or any questions join our [url=https://discord.gg/sJw2Nynh7s] Discord [/url].
+
 This Mission has the Global Mobilization preupset. To play this mission with other Mods, see [url=https://steamcommunity.com/sharedfiles/filedetails/?id=2418491371] Our Mod-Collection [/url] with all supported mods or for special setup see our [url=https://steamcommunity.com/groups/vio-community] Steam-Group [/url] If you need help to setup a server or any questions join our [url=https://discord.gg/sJw2Nynh7s] Discord [/url].
-[h1]Main Mods supported: [/h1] 
-[list]
+
+[h1]Main Mods supported: [/h1] [list]
     [*]RHS
     [*]CUP
     [*]CWR3
     [*]Global Mobilization
+    [*]S.O.G. Prairie Fire
 [/list]
+
 [h1]Our project: [/h1] 
 Our goal is, based on Benny's work (which is an early port of the Arma2 version), to complete this CTI and develop it in some parts of it. However, without disregarding the basic idea of combined warfare in team against team(TvT) too much.
 This version focuses on the time of the cold war, the fight east against west in which NATO (US,Bundeswehr) and the Warsaw Pact (Russia, NVA) deliver bitter battles.
-[h1]VIO-BECTI features: [/h1] 
-[list]
+
+[h1]VIO-BECTI features: [/h1] [list]
     [*]Highly customizable mission.
     [*]Persistent, as save can be activated.
     [*]Great mod support(CWR3,CUP,RHS,Global Mobilization).
@@ -121,8 +127,8 @@ This version focuses on the time of the cold war, the fight east against west in
     [*]Vehicle Appearance Manager (GUI) by UNIT_normal
     [*]Simple AI groups for small communities switchable.
 [/list]
-[h1]New customization options: [/h1]
-[list]
+
+[h1]New customization options: [/h1] [list]
     [*]For some nations the side can be changed.
     [*]Maximum and also start technology level selectable.
     [*]Unit cost per cathegory adjustable.
@@ -133,8 +139,8 @@ This version focuses on the time of the cold war, the fight east against west in
     [*]Mission created for TvT, but coop settings possible.
     [*]and much more ...
 [/list]
-[h1]CTI basis features: [/h1] 
-[list]
+
+[h1]CTI basis features: [/h1] [list]
     [*]Classic Team vs Team (TvT) max. 16vs16
     [*]Warfare on all levels (on foot, in the vehicle, in the air).
     [*]Free choice of units, put your team together yourself.
@@ -142,29 +148,31 @@ This version focuses on the time of the cold war, the fight east against west in
     [*]Researchable technology tree. Research for better units, thus earlier Tankrush not possible.
     [*]No fixed script, every game can run differently.
 [/list]
+
 [h1]CTI main description: [/h1]
 CTI (Conquer The Island) is a mission that already existed in ArmA2 under the name Warfare. Here 2 factions are facing each other and fight for supremacy over the map. Depending on the map and the setting, a 3rd independent faction can also be involved, but it does not actively participate. but does not actively participate in the action. The goal is to find and destroy the enemy base or alternatively capture all cities/villages. These cities/villages also serve to generate "supplies" with which the "research" can be advanced, the own base can be expanded and further bases can be built. To capture a town/village it is sufficient to be within a small radius of the main bunker, without enemy forces being are also in this zone.
 As a player, you take on the role of a squad leader, commanding a group of AI units. The player can choose from various infantry units, as well as various vehicles and aircraft, depending on the research and expansion level of the base. There is basically no class system in ArmA (which I very much approve of), so it is up to the player which equipment he wants to use. At the beginning everyone gets a minimum equipment (will be given even if you are broke), this can be customized in the base. All weapons, units and vehicles must be paid with $. These $ are generated by towns/villages that are taken and then generate income for a period of time. time generate income, as well as through successful kills of enemies (the more expensive the unit, the more $ you get for the kill). 
 It is always better to proceed in a coordinated manner, since single missions usually end with the virtual death of the player as well as the AI comrades and thus often also brings a renewed longer journey to the front.
 The respawn system is partly different from other game modes, as it focuses on the coordinated attack of mixed group units. Therefore, any player who dies during the attack will respawn in one of the bases (though types of field hospital are possible). A spawn in close proximity to the front however only works for the players, AI chamberades and vehicles have to be ordered in the base. Since thus not immediately again a new attack can take place, it is therefore possible for the defender to strengthen the defense and also plan an attack in time.
 Each faction is led by a commander, who is chosen at the beginning by all players on each side. The commander determines the base building, the "research" as well as the basic tactics, his instructions should be followed. It is advisable to always experienced player as commander, because as commander you do not only lead your own squad, but you are also responsible for the other is responsible for the other groups. The commander can communicate these instructions via VON-Ingame/ VON-Tools, or make them visible via internal tools on the map.
+
 [h1]ABOUT REUPLOADS: [/h1]
 Instead of simply making small changes and then uploading a new version yourself, just [url=https://discord.gg/sJw2Nynh7s]contact us[/url]. Often desired features are already in the planning stages and you may be able to help us. Many very similar/similar missions just make it harder to keep track.
+
 [h1]Help and player search: [/h1]
 Want to know more about the mission, setup your own server, find servers running the mission or find other players to share with/against, our [url=https://steamcommunity.com/groups/vio-community] Steam-Community [/url] and our [url=https://discord.gg/sJw2Nynh7s] discord [/url] are a good a good address for this.
+
 [h1]CREDITS[/h1]
-[h1]Authors:[/h1]
-[list]
+[h1]Authors:[/h1] [list]
     [*][b]dukee[/b]: Projectlead and main developer
 [/list]
-[h1]Danke an:[/h1]
-[list]
+
+[h1]Danke an:[/h1] [list]
     [*][b]VIO-Community[/b], for bugfi[strike]nd[/strike]...xing
     [*][b]all testers[/b]
 [/list]
 
 [h1][url=paypal.me/dukeeVio]If you like my work, you can Support me[/url][/h1]
-
 [url=https://steamcommunity.com/groups/vio-community] Steam-Community [/url]
 [url=https://discord.gg/sJw2Nynh7s] Discord [/url]
 [url=https://steamcommunity.com/sharedfiles/filedetails/?edit=true&id=2418491371] List of all supported mods [/url]
@@ -177,32 +185,37 @@ Want to know more about the mission, setup your own server, find servers running
 -------------------------------------------------------------------------------
 Cold-War-Maps uploaded:
 
-Altis					https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892				final
-Chernarus
-Chernarus Summer
-Chernarus Winter
-Enoch / Livonia			https://steamcommunity.com/sharedfiles/filedetails/?id=2974800207				final
-Weferlingen				https://steamcommunity.com/sharedfiles/filedetails/?id=2994391699				final
-Weferlingen Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=2994392454				final
-Malden					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799676				final
-MSKE
-Stratis					https://steamcommunity.com/sharedfiles/filedetails/?id=2974798605				final
-Tanoa					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799271				final
-Rosche Germany			https://steamcommunity.com/sharedfiles/filedetails/?id=2187031931				final
+Altis					https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892				V2.0.3
+Cam Lao Nam (SOG)		https://steamcommunity.com/sharedfiles/filedetails/?id=3180139142				V2.0.3
+Chernarus				https://steamcommunity.com/sharedfiles/filedetails/?id=3180118084				V2.0.3
+Chernarus Summer		https://steamcommunity.com/sharedfiles/filedetails/?id=3180120014				V2.0.3
+Chernarus Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=3180124472				V2.0.3
+Enoch / Livonia			https://steamcommunity.com/sharedfiles/filedetails/?id=2974800207				V2.0.3
+Weferlingen				https://steamcommunity.com/sharedfiles/filedetails/?id=2994391699				V2.0.3
+Weferlingen Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=2994392454				V2.0.3
+Malden					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799676				V2.0.3
+MSKE					https://steamcommunity.com/sharedfiles/filedetails/?id=3180136306				V2.0.3
+Stratis					https://steamcommunity.com/sharedfiles/filedetails/?id=2974798605				V2.0.3
+Takistan				https://steamcommunity.com/sharedfiles/filedetails/?id=3180125933				V2.0.3
+Tanoa					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799271				V2.0.3
+Rosche Germany			https://steamcommunity.com/sharedfiles/filedetails/?id=2187031931				V2.0.3
 
 
 [list]
     [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892] Altis [/url]
-    [*]Chernarus (comming soon)
-    [*]Chernarus Summer (comming soon)
-    [*]Chernarus Winter (comming soon)
-    [*]Weferlingen (comming soon)
-    [*]Weferlingen Winter (comming soon)
-    [*]Malden (comming soon)
-    [*]MSKE (comming soon)
-    [*]Stratis (comming soon)
-    [*]Tanoa (comming soon)
-    [*]Rosche Germany (comming soon)
+	[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3180139142] Cam Lao Nam (SOG) [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3180118084] Chernarus [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3180120014] Chernarus Summer [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3180124472] Chernarus Winter [/url]
+	[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974800207] Enoch / Livonia [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2994391699] Weferlingen [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2994392454] Weferlingen Winter [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974799676] Malden [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3180136306] MSKE [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974798605] Stratis [/url]
+	[*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=3180125933] Takistan [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2974799271] Tanoa [/url]
+    [*][url=https://steamcommunity.com/sharedfiles/filedetails/?id=2187031931] Rosche Germany [/url]
 [/list]
 -------------------------------------------------------------------------------
 

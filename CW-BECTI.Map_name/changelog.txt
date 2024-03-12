@@ -9,8 +9,10 @@ Changed: CUP-US wheeled T0 merged with T1 to new T0
 Changed: as voted default to CUP units
 Changed: better spawn logic after loading
 Changed: Some Arty UI improvements
+Changed: SAM spawn logic
 Fixed: player sometimes spawn in water with SOG
 Fixed: HQ spawns twice
+Fixed: damage typo in some files
 
 Known issues:
 []AI don't take command if commander disconnects

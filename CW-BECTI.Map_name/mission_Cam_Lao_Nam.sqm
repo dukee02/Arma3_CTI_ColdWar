@@ -8,7 +8,7 @@ class EditorData
 	toggles=521;
 	class ItemIDProvider
 	{
-		nextID=4995;
+		nextID=4999;
 	};
 	class MarkerIDProvider
 	{
@@ -16,14 +16,14 @@ class EditorData
 	};
 	class LayerIndexProvider
 	{
-		nextID=3476;
+		nextID=3586;
 	};
 	class Camera
 	{
-		pos[]={2397.6797,303.12976,4002.176};
-		dir[]={-0.85600322,-0.48129898,0.18929586};
-		up[]={-0.46999487,0.87649357,0.10393406};
-		aside[]={0.21593404,4.6502828e-007,0.97650892};
+		pos[]={6894.9697,78.264313,5307.9946};
+		dir[]={0.22446753,-0.64725429,-0.72850543};
+		up[]={0.19059391,0.76226175,-0.61856395};
+		aside[]={-0.95568109,-7.2555849e-008,-0.2944659};
 	};
 };
 binarizationWanted=0;
@@ -168,7 +168,7 @@ class Mission
 	};
 	class Entities
 	{
-		items=62;
+		items=63;
 		class Item0
 		{
 			dataType="Group";
@@ -8937,7 +8937,7 @@ class Mission
 							class PositionInfo
 							{
 								position[]={6948.959,73.805,5410.8398};
-								angles[]={6.2814221,4.1111579,6.2820859};
+								angles[]={6.2814221,0.96881479,6.2820859};
 							};
 							name="Town74";
 							init="call{nullReturn = [this, ""Phu Quoc"", resistance, 30, 60, 600] execVM ""Common\Init\Init_Location.sqf""}";
@@ -8950,12 +8950,11 @@ class Mission
 							dataType="Logic";
 							class PositionInfo
 							{
-								position[]={6904.8936,59.519966,5283.8936};
-								angles[]={0,4.773828,0};
+								position[]={6897.458,59.885708,5290.1128};
+								angles[]={0,4.6478643,0};
 							};
 							id=3933;
 							type="LocationCamp_F";
-							atlOffset=0.26369858;
 						};
 						class Item2
 						{
@@ -9065,7 +9064,7 @@ class Mission
 						};
 					};
 					id=4917;
-					atlOffset=-6.057457;
+					atlOffset=-6.0570068;
 				};
 				class Item50
 				{
@@ -12846,7 +12845,6 @@ class Mission
 							init="call{nullReturn = [this, ""Nodal Lho"", resistance, 30, 90, 900] execVM ""Common\Init\Init_Location.sqf""}";
 							id=3640;
 							type="LocationArea_F";
-							atlOffset=-9.5367432e-007;
 						};
 						class Item1
 						{
@@ -19282,6 +19280,49 @@ class Mission
 			id=1250;
 			type="HeadlessClient_F";
 			atlOffset=24.935699;
+		};
+		class Item62
+		{
+			dataType="Logic";
+			class PositionInfo
+			{
+				position[]={6933.4609,73.739998,5403.52};
+			};
+			areaSize[]={6,0,6};
+			areaIsRectangle=1;
+			flags=1;
+			id=4996;
+			type="ModuleHideTerrainObjects_F";
+			class CustomAttributes
+			{
+				class Attribute0
+				{
+					property="#filter";
+					expression="_this setVariable [""#filter"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="SCALAR";
+							value=15;
+						};
+					};
+				};
+				class Attribute1
+				{
+					property="#hideLocally";
+					expression="_this setVariable [""#hideLocally"",_value]";
+					class Value
+					{
+						class data
+						{
+							singleType="BOOL";
+							value=0;
+						};
+					};
+				};
+				nAttributes=2;
+			};
 		};
 	};
 	class Connections
