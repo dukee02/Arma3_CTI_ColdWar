@@ -290,9 +290,8 @@ if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1vn_b_air_uh1c_05_01", _sid];
 	_c pushBack format["%1vn_b_air_uh1b_01_04", _sid];
 	_c pushBack format["%1vn_b_air_uh1d_02_04", _sid];
-	_c pushBack format["%1vn_b_air_ch47_01_01", _sid];
-	_c pushBack format["%1vn_b_air_ch47_02_01", _sid];
 	_c pushBack format["%1vn_b_air_uh1d_01_07", _sid];//Medic
+	_c pushBack format["%1vn_b_air_ch47_01_01", _sid];
 	_c pushBack format["%1vn_b_air_ah1g_02", _sid];
 	_c pushBack format["%1vn_b_air_f4c_bmb", _sid];
 };
@@ -302,6 +301,7 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
 	_c pushBack format["%1vn_b_air_ach47_05_01", _sid];
 	_c pushBack format["%1vn_b_air_ch47_03_01", _sid];
+	_c pushBack format["%1vn_b_air_ch47_02_01", _sid];
 };
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR];
