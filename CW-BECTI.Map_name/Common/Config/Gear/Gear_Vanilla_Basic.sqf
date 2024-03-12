@@ -1,5 +1,5 @@
 private ["_faction", "_c", "_p", "_side", "_u", "_tech_level", "_cost", "_upgrade_levels", "_matrix_full", "_matrix_nation", "_matrix_cnt", "_cntstart", "_cntend"];
-
+//deprecated file, use and may change Gear_Basic.sqf instead!
 _side = _this;
 _upgrade_levels = [];
 _tech_level = 0;

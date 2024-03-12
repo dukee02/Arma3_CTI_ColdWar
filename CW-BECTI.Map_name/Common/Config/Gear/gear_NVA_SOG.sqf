@@ -268,6 +268,9 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 _tech_level = 0;
 
+_c pushBack "vn_fkb1";
+_c pushBack "vn_fkb1_red";
+
 _c pushBack "vn_o_acc_goggles_01";
 _c pushBack "vn_m19_binocs_grn";
 
@@ -396,6 +399,7 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
 //runns on the server, if on client we setup the gear config.
 if(!isNil 'CTI_Init_Common') then {
 	[_faction, _c, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Gear\gear_NVA_SOG.sqf", format["Gear for faction %1: [%2|%3|%4] ", _faction, count _i, count _u, count _p]] call CTI_CO_FNC_Log};
 } else {
 	missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", _side], _upgrade_levels];
 	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\gear\gear_NVA_SOG.sqf", format["calculated upgrade levels for %1: [%2] ", _side, _upgrade_levels]] call CTI_CO_FNC_Log};

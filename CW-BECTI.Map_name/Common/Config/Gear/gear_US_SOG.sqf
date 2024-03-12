@@ -358,22 +358,22 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //													Vests																	//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-"vn_b_vest_usarmy_01";
-"vn_b_vest_usarmy_03";
-"vn_b_vest_usarmy_02";
-"vn_b_vest_aircrew_03";
-"vn_b_vest_aircrew_05";
-"vn_b_vest_usarmy_12";
-"vn_b_vest_usarmy_11";
-"vn_b_vest_aircrew_01";
-"vn_b_vest_usarmy_14";
-"vn_b_vest_usarmy_13";
-"vn_b_vest_usarmy_05";
-"vn_b_vest_usarmy_06";
-"vn_b_vest_usarmy_08";
-"vn_b_vest_usarmy_07";
-"vn_b_vest_usarmy_09";
-"vn_b_vest_usarmy_04";
+_c pushBack "vn_b_vest_usarmy_01";
+_c pushBack "vn_b_vest_usarmy_03";
+_c pushBack "vn_b_vest_usarmy_02";
+_c pushBack "vn_b_vest_aircrew_03";
+_c pushBack "vn_b_vest_aircrew_05";
+_c pushBack "vn_b_vest_usarmy_12";
+_c pushBack "vn_b_vest_usarmy_11";
+_c pushBack "vn_b_vest_aircrew_01";
+_c pushBack "vn_b_vest_usarmy_14";
+_c pushBack "vn_b_vest_usarmy_13";
+_c pushBack "vn_b_vest_usarmy_05";
+_c pushBack "vn_b_vest_usarmy_06";
+_c pushBack "vn_b_vest_usarmy_08";
+_c pushBack "vn_b_vest_usarmy_07";
+_c pushBack "vn_b_vest_usarmy_09";
+_c pushBack "vn_b_vest_usarmy_04";
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -486,6 +486,9 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //										Other Items																			//
 //--------------------------------------------------------------------------------------------------------------------------//
 _tech_level = 0;
+
+_c pushBack "vn_mx991";
+_c pushBack "vn_mx991_red";
 
 _c pushBack "vn_mk21_binocs";
 _c pushBack "vn_b_aviator";
@@ -726,6 +729,7 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
 //runns on the server, if on client we setup the gear config.
 if(!isNil 'CTI_Init_Common') then {
 	[_faction, _c, _u, _p] call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Config_Set.sqf";
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\Gear\gear_US_SOG.sqf", format["Gear for faction %1: [%2|%3|%4] ", _faction, count _i, count _u, count _p]] call CTI_CO_FNC_Log};
 } else {
 	missionNamespace setVariable [Format["CTI_%1_UPGRADES_LEVELS", _side], _upgrade_levels];
 	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\gear\gear_US_SOG.sqf", format["calculated upgrade levels for %1: [%2] ", _side, _upgrade_levels]] call CTI_CO_FNC_Log};
