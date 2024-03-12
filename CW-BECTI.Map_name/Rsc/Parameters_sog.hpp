@@ -269,7 +269,7 @@ class Params {
 		title = "UPGRADE: Max Level Defense (depends on activated stuff, gets adjust to lower)";
 		values[] = {0,1,2,3,4,5,6,7,8,9,10};
 		texts[] = {"0","1","2","3","4","5","6","7","8","9","full"};
-		default = 10;
+		default = 2;
 	};
 	/*class CTI_VEHICLES_AIR_CM {
 		title = "UNITS: Aircraft Countermeasures";

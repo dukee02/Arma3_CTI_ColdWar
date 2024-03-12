@@ -639,7 +639,7 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_categories pushBack 	"Arty";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"[SOG] ";
+			_headers pushBack 		"[SOG] D44 AT";
 			_classes pushBack 		"vn_o_nva_static_d44";
 			_prices pushBack 		_priceGun;
 			_placements pushBack 	[180, 5];
@@ -1426,8 +1426,11 @@ if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 };
 /********************************************************************************************************************************
- *											NVA (East Germany)																	*
+ *											NVA (East Germany / Viet Cong)														*
  ********************************************************************************************************************************/
+_priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,8] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,16] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+
 if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {		
 		_headers pushBack 		"AT Fagot (GM)";
@@ -1474,18 +1477,18 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 
 		
-		_headers pushBack 		"rsna75 Radar System";
+		_headers pushBack 		"[SOG] rsna75 SAM Radar System";
 		_classes pushBack 		"vn_o_static_rsna75";
 		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
+		_categories pushBack 	"SAM";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"sa2 SAM System";
+		_headers pushBack 		"[SOG] sa2 SAM System";
 		_classes pushBack 		"vn_sa2";
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
+		_categories pushBack 	"SAM";
 		_tiers pushBack 		_tech_level;
 	};
 };
@@ -1543,51 +1546,51 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 _priceBase = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,8] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,16] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 /********************************************************************************************************************************
- *											Others																				*
+ *											Others		Surface to Air Missile													*
  ********************************************************************************************************************************/
 if(_side == west) then {
 	if(CTI_BW_ADDON > 0) then {
-		_headers pushBack 		"Radar System";
+		_headers pushBack 		"SAM Radar System";
 		_classes pushBack 		"TBW_MEADS_Radar_Fleck";
 		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
+		_categories pushBack 	"SAM";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"SAM System";
 		_classes pushBack 		"TBW_MEADS_Launcher_Fleck";
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
+		_categories pushBack 	"SAM";
 		_tiers pushBack 		_tech_level;
 	} else {
-		_headers pushBack 		"Radar System";
+		_headers pushBack 		"SAM Radar System";
 		_classes pushBack 		"B_Radar_System_01_F";
 		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
+		_categories pushBack 	"SAM";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"SAM System";
 		_classes pushBack 		"B_SAM_System_03_F";
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"AA";
+		_categories pushBack 	"SAM";
 		_tiers pushBack 		_tech_level;
 	};
 } else {
-	_headers pushBack 		"Radar System";
+	_headers pushBack 		"SAM Radar System";
 	_classes pushBack 		"O_Radar_System_02_F";
 	_prices pushBack 		_priceBase;
 	_placements pushBack 	[180, 5];
-	_categories pushBack 	"AA";
+	_categories pushBack 	"SAM";
 	_tiers pushBack 		_tech_level;
 	
 	_headers pushBack 		"SAM System";
 	_classes pushBack 		"O_SAM_System_04_F";
 	_prices pushBack 		_priceAA;
 	_placements pushBack 	[180, 5];
-	_categories pushBack 	"AA";
+	_categories pushBack 	"SAM";
 	_tiers pushBack 		_tech_level;
 };
 
