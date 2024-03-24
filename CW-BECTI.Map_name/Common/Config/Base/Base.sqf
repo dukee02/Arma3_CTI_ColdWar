@@ -805,6 +805,7 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  _tech_level = 1;
 
 _priceMG = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,2.5] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+_priceArtyLight = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,10] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 _priceArty = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,20] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 _priceGun = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,6] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,false,12] call CTI_CO_FNC_GetCalculatedUnitsPrize;
@@ -860,7 +861,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		
 		_headers pushBack 		"[SOG] m29 Mortar";
 		_classes pushBack 		"vn_b_army_static_mortar_m29";
-		_prices pushBack 		_priceArty;
+		_prices pushBack 		_priceArtyLight;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
@@ -1023,35 +1024,35 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"[RHS] AA Defense (zpu4)";
+		_headers pushBack 		"[SOG] AA Defense (zpu4)";
 		_classes pushBack 		"vn_o_nva_static_zpu4";
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"[RHS] AA Defense (v11m)";
+		_headers pushBack 		"[SOG] AA Defense (v11m)";
 		_classes pushBack 		"vn_o_nva_navy_static_v11m";
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"[RHS] AA Defense (zgu1)";
+		_headers pushBack 		"[SOG] AA Defense (zgu1)";
 		_classes pushBack 		"vn_o_nva_65_static_zgu1_01";
 		_prices pushBack 		_priceAA;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AA";
 		_tiers pushBack 		_tech_level;
 
-		_headers pushBack 		"[RHS] Type53 heavy Mortar";
+		_headers pushBack 		"[SOG] Type53 heavy Mortar";
 		_classes pushBack 		"vn_o_nva_static_mortar_type53";
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
 			
-		_headers pushBack 		"[RHS] type56rr AT";
+		_headers pushBack 		"[SOG] type56rr AT";
 		_classes pushBack 		"vn_o_nva_static_type56rr";
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
