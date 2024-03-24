@@ -1,7 +1,6 @@
 private ["_side","_texture"];
 _side = _this;
 
-
 if(_side == "WEST_") then {
 	_texture = "\A3\Data_F\Flags\Flag_blue_CO.paa";
 } 
@@ -13,8 +12,6 @@ else {
 		_texture = "\A3\Data_F\Flags\Flag_green_CO.paa";
 	};
 };
-
-
 
 switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 	case 1: {
@@ -75,27 +72,12 @@ switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 		if(CTI_RHS_ADDON > 0) then {_texture = "\rhsgref\addons\rhsgref_main\data\flag_chdkz_co.paa";};		//chdkz
 	};
 	case 20: {
-		if(CTI_RHS_ADDON > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_vc_co.paa";};	//Viet Cong
-	};
-	case 21: {
-		if(CTI_RHS_ADDON > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_usa_co.paa";};
+		if(CTI_SOG_DLC > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_vc_co.paa";};	//Viet Cong
 	};
 	/*case 22: {
 		_texture = "";
 	};*/
-	default {
-		if(_side == "WEST_") then {
-			_texture = "\A3\Data_F\Flags\Flag_blue_CO.paa";
-		} 
-		else {
-			if(_side == "EAST_") then {
-				_texture = "\A3\Data_F\Flags\Flag_red_CO.paa";
-			} 
-			else {
-				_texture = "\A3\Data_F\Flags\Flag_green_CO.paa";
-			};
-		};
-	};
+	default {};
 };
 
 	
