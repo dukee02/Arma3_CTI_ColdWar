@@ -107,6 +107,24 @@ _nation = -1;
 	// Current result is saved in variable _x
 	switch true do
 	{
+		case ([1042220] call CTI_CO_FNC_HasDLC == false): {
+			switch true do {
+				case(CTI_CWR3_ADDON > 0): {_mainmod = CTI_CWR3_ID};
+				case(CTI_CUP_ADDON > 0): {_mainmod = CTI_CUP_ID};
+				case(CTI_RHS_ADDON > 0): {_mainmod = CTI_RHS_ID};
+				case(CTI_BW_ADDON > 0 && _x == west): {_mainmod = CTI_BWA3_ID};
+				default {["ERROR", "FILE: Common\Init\Init_Common.sqf", format ["Can't find a main mod without DLC: side %1", _x]] call CTI_CO_FNC_Log;};
+				};
+			};
+		case ([1227700] call CTI_CO_FNC_HasDLC == false): {
+			switch true do {
+				case(CTI_CWR3_ADDON > 0): {_mainmod = CTI_CWR3_ID};
+				case(CTI_CUP_ADDON > 0): {_mainmod = CTI_CUP_ID};
+				case(CTI_RHS_ADDON > 0): {_mainmod = CTI_RHS_ID};
+				case(CTI_BW_ADDON > 0 && _x == west): {_mainmod = CTI_BWA3_ID};
+				default {["ERROR", "FILE: Common\Init\Init_Common.sqf", format ["Can't find a main mod without DLC: side %1", _x]] call CTI_CO_FNC_Log;};
+				};
+			};
 		//first check if we have something 'set as main'
 		case (CTI_GM_DLC > 1 && ([1042220] call CTI_CO_FNC_HasDLC)): {_mainmod = CTI_GM_ID};
 		case (CTI_SOG_DLC > 1 && ([1227700] call CTI_CO_FNC_HasDLC)): {_mainmod = CTI_PF_ID};
@@ -132,13 +150,13 @@ _nation = -1;
 
 	switch true do
 	{
+		case (((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && ((CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)) || (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)))): {_nation = CTI_NVA_ID};
+		case (((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_BW_ADDON > 0 || CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC))): {_nation = CTI_BW_ID};
+		case (((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CHDKZ_ID};
+		case (((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CDF_ID};
 		case (((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0 || (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)))): {_nation = CTI_US_ID};
 		case (((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0)): {_nation = CTI_SOV_ID};
 		//case (((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_nation = CTI_RACS_ID};
-		case (((CTI_BW_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_BW_ADDON > 0 || CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC))): {_nation = CTI_BW_ID};
-		case (((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && ((CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)) || (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)))): {_nation = CTI_NVA_ID};
-		case (((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CDF_ID};
-		case (((CTI_CHDKZ_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CHDKZ_ID};
 		//case (((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_nation = CTI_DEN_ID};
 		default {
 			["ERROR", "FILE: Common\Init\Init_Common.sqf", format ["Can't find a valid nation: side %1", _x]] call CTI_CO_FNC_Log;
@@ -472,6 +490,9 @@ if(CTI_EAST_TOWNS >= 0) then {
 			if(CTI_GM_DLC > 0) then {
 				((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA_GM.sqf";
 			};
+			if(CTI_SOG_DLC > 0) then {
+				((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA_SOG.sqf";
+			};
 		};
 		case CTI_SOV_ID: {
 			if(CTI_CUP_ADDON > 0) then {
@@ -535,6 +556,9 @@ if(CTI_EAST_AI >= 0) then {
 		case CTI_NVA_ID: {
 			if(CTI_GM_DLC > 0) then {
 				((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA_GM.sqf";
+			};
+			if(CTI_SOG_DLC > 0) then {
+				((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_NVA_SOG.sqf";
 			};
 		};
 		case CTI_SOV_ID: {
