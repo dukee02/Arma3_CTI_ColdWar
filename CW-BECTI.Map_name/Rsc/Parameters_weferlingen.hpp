@@ -160,15 +160,15 @@ class Params {
 		values[] = {-1,0,2,8};
 		texts[] = {"no changes","Bundeswehr (West Germany)","USA","CDF"};
 		//values[] = {-1,0,1,2,3,7,8};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany) or (Viet Cong)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_EAST_TOWNS {
 		title = "OPFOR (East) Town Nation (change the defending Town Units | only needed if 2 nations at one side)";
 		values[] = {-1,1,3,7};
-		texts[] = {"no changes","NVA (East Germany)","Soviet","CHDKZ"};
+		texts[] = {"no changes","NVA (East Germany) or (Viet Cong)","Soviet","CHDKZ"};
 		//values[] = {-1,0,1,2,3,7,8};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany) or (Viet Cong)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_WEST_AI {
@@ -176,15 +176,15 @@ class Params {
 		values[] = {-1,0,2,8};
 		texts[] = {"no changes","Bundeswehr (West Germany)","USA","CDF"};
 		//values[] = {-1,0,1,2,3,7,8};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany) or (Viet Cong)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_EAST_AI {
 		title = "OPFOR (East) Player+AI Nation (change the startup Loadout and AI Units | only needed if 2 nations at one side)";
 		values[] = {-1,1,3,7};
-		texts[] = {"no changes","NVA (East Germany)","Soviet","CHDKZ"};
+		texts[] = {"no changes","NVA (East Germany) or (Viet Cong)","Soviet","CHDKZ"};
 		//values[] = {-1,0,1,2,3,7,8};
-		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany)","USA","Soviet","CHDKZ","CDF"};
+		//texts[] = {"no changes","Bundeswehr (West Germany)","NVA (East Germany) or (Viet Cong)","USA","Soviet","CHDKZ","CDF"};
 		default = -1;
 	};
 	class CTI_CAMO_ACTIVATION {
@@ -195,20 +195,20 @@ class Params {
 	};
 	class CTI_WEST_FLAG {
 		title = "FLAG: Flagtexture of the West-Side";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
-		texts[] = {"Standard Blue","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)","USA (SOG)"};
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+		texts[] = {"Standard Blue","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)"};
 		default = 0; //0
 	};
 	class CTI_EAST_FLAG {
 		title = "FLAG: Flagtexture of the East-Side";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
-		texts[] = {"Standard Red","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)","USA (SOG)"};
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+		texts[] = {"Standard Red","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)"};
 		default = 0; //0
 	};
 	class CTI_GUER_FLAG {
 		title = "FLAG: Flagtexture of the Independent-Side";
-		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21};
-		texts[] = {"Standard Green","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)","USA (SOG)"};
+		values[] = {0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20};
+		texts[] = {"Standard Green","NATO (ArmA)","USA (ArmA)","UNO (ArmA)","Germany (CUP)","Russia (CUP)","NPoC (CUP)","RACS (CUP)","USA (CUP)","US Army (CUP)","UK (CUP)","West Germany (GM)","East Germany (GM)","Denmark (GM)","Poland (GM)","USSR (GM)","GER BUND (BW)","RUS Fed (RHS)","VDV (RHS)","ChDKZ (RHS)","Viet Cong (SOG)"};
 		default = 0; //0
 	};
 	class CTI_ECONOMY_LEVEL_GEAR {
