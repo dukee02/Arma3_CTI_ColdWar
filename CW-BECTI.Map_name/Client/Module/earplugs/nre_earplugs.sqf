@@ -64,7 +64,7 @@ Manual:			Call from init.sqf via:
 
 waitUntil {!isNull player}; //to prevent MP / JIP issues
 
-NreEarplugsPath = "scripts\";
+NreEarplugsPath = "Client\Module\earplugs\";
 
 if (isNil "NreEarplugsActive") then {
 	NreEarplugsActive = 0;
