@@ -614,7 +614,7 @@ _tech_matrix =
 			//CTI_WS_ID
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_CUP_ID
-			[true,false,true,true,true,true,false,false,false],
+			[true,false,true,true,true,true,true,false,false],
 			//CTI_RHS_ID
 			[true,true,true,true,true,true,true,true,false],
 			//CTI_CWR3_ID

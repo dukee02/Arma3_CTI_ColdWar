@@ -376,17 +376,58 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1CUP_O_BTR90_RU", _sid];
 	_c pushBack format["%1CUP_O_BTR90_HQ_RU", _sid];
+	_c pushBack format["%1CUP_O_GAZ_Vodnik_Unarmed_RU", _sid];
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1CUP_O_Tigr_233014_WINTER_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_233011_WINTER_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_WINTER_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
+		_c pushBack format["%1CUP_O_Tigr_233011_DESERT_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_233014_DESERT_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_DESERT_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_O_Tigr_233011_GREEN_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_GREEN_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_233014_GREEN_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_Tigr_233011_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_233014_RU", _sid];
+	};
+	_c pushBack format["%1CUP_O_Tigr_233034_RU", _sid];
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
-	_c pushBack format["%1CUP_O_GAZ_Vodnik_Unarmed_RU", _sid];
 	_c pushBack format["%1CUP_O_GAZ_Vodnik_PK_RU", _sid];		//MG front + rear
 	_c pushBack format["%1CUP_O_GAZ_Vodnik_AGS_RU", _sid];		//GMG + rear MG
 	_c pushBack format["%1CUP_O_GAZ_Vodnik_BPPU_RU", _sid];		//3cm Cannon
 	_c pushBack format["%1CUP_O_GAZ_Vodnik_KPVT_RU", _sid];
 	_c pushBack format["%1CUP_O_GAZ_Vodnik_MedEvac_RU", _sid];	//Medic
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1CUP_O_Tigr_233014_WINTER_PK_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_WINTER_KORD_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_WINTER_PK_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
+		_c pushBack format["%1CUP_O_Tigr_233014_DESERT_PK_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_DESERT_KORD_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_DESERT_PK_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_O_Tigr_233014_GREEN_PK_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_GREEN_KORD_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_GREEN_PK_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_Tigr_233014_PK_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_KORD_RU", _sid];
+		_c pushBack format["%1CUP_O_Tigr_M_233114_PK_RU", _sid];
+	};
 };
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
@@ -446,6 +487,23 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1CUP_O_T90_RU", _sid];
+};
+
+_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1CUP_O_T90M_WINTER_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
+		_c pushBack format["%1CUP_O_T90M_DESERT_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1CUP_O_T90M_RU", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 3) then {		//main camo active
+		_c pushBack format["%1CUP_O_T90M_CAMO_RU", _sid];
+	};
 };
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_HEAVY];

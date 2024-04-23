@@ -596,6 +596,33 @@ this addItemToBackpack "vn_satchelcharge_02_throw_mag";
 
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 this addItemToBackpack "vn_mine_m112_remote_mag";
 this addItemToBackpack "vn_mine_ammobox_range_mag";
 this addItemToBackpack "vn_mine_bangalore_mag";
