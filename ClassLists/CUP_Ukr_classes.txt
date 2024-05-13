@@ -1,0 +1,381 @@
+// Export of 'CUP_ukr_units.Stratis' by dukee on v0.9
+
+
+//Backpack
+this addBackpack "CUP_B_AFU_Leader_Pack_MM14";
+this addBackpack "CUP_B_AFU_SaboteurPack";
+this addBackpack "CUP_B_AFU_AmmoPack";
+this addBackpack "CUP_B_PatrolPack";
+this addBackpack "CUP_B_ReconEngineerPack";
+this addBackpack "CUP_B_AFU_MedicPack";
+this addBackpack "CUP_B_AFU_RPG_Backpack";
+this addBackpack "CUP_B_AFU_IglaPack";
+this addBackpack "CUP_B_AFU_MGPack";
+this addBackpack "CUP_B_AFU_ScoutGLPack";
+this addBackpack "CUP_B_AFU_EngineerPack";
+this addBackpack "CUP_B_AFU_RPKPack";
+
+
+
+
+
+
+
+
+
+"CUP_B_AFU_Soldier_AAT"
+"CUP_B_AFU_Soldier_AAR"
+"CUP_B_AFU_Soldier_AMG"
+"CUP_B_AFU_Soldier_ATSpecialist_METIS"
+"CUP_B_AFU_Soldier_ATSpecialist"
+"CUP_B_AFU_Soldier_Autorifleman"
+"CUP_B_AFU_Soldier_Crewman"
+"CUP_B_AFU_Soldier_Engineer"
+"CUP_B_AFU_Soldier_Grenadier"
+"CUP_B_AFU_Soldier_HeliCrew"
+"CUP_B_AFU_Soldier_HeliPilot"
+"CUP_B_AFU_Soldier_Machinegunner"
+"CUP_B_AFU_Soldier_Marksman"
+"CUP_B_AFU_Soldier_Medic"
+"CUP_B_AFU_Soldier_MissileSoldier_AA"
+"CUP_B_AFU_Soldier_ReconDemo"
+"CUP_B_AFU_Soldier_ReconGL"
+"CUP_B_AFU_Soldier_ReconMarksman"
+"CUP_B_AFU_Soldier_ReconMedic"
+"CUP_B_AFU_Soldier_ReconScout"
+"CUP_B_AFU_Soldier_ReconScoutAT"
+"CUP_B_AFU_Soldier_ReconTL"
+"CUP_B_AFU_Soldier_Rifleman_AT"
+"CUP_B_AFU_Soldier_Rifleman"
+"CUP_B_AFU_Soldier_Rifleman_1P90"
+"CUP_B_AFU_Soldier_Rifleman_Ammo"
+"CUP_B_AFU_Soldier_Rifleman_PSO"
+"CUP_B_AFU_Soldier_Sapper"
+"CUP_B_AFU_Soldier_Sniper_AM"
+"CUP_B_AFU_Soldier_Spotter"
+"CUP_B_AFU_Soldier_SquadLeader"
+"CUP_B_AFU_Soldier_TeamLeader"
+
+
+
+"CUP_B_TDF_Soldier_AAT"
+"CUP_B_TDF_Soldier_AAR"
+"CUP_B_TDF_Soldier_AMG"
+"CUP_B_TDF_Soldier_ATSpecialist"
+"CUP_B_TDF_Soldier_Autorifleman"
+"CUP_B_TDF_Soldier_Crewman"
+"CUP_B_TDF_Soldier_Engineer"
+"CUP_B_TDF_Soldier_Grenadier"
+"CUP_B_TDF_Soldier_Grenatier_AKM"
+"CUP_B_TDF_Soldier_Machinegunner"
+"CUP_B_TDF_Soldier_Marksman"
+"CUP_B_TDF_Soldier_Medic"
+"CUP_B_TDF_Soldier_MissileSoldier_AA"
+"CUP_B_TDF_Soldier_Rifleman_AT"
+"CUP_B_TDF_Soldier_Rifleman"
+"CUP_B_TDF_Soldier_Rifleman_AKM"
+"CUP_B_TDF_Soldier_Rifleman_Ammo"
+"CUP_B_TDF_Soldier_Rifleman_PSO"
+"CUP_B_TDF_Soldier_Rifleman_SKS"
+"CUP_B_TDF_Soldier_Sapper_2"
+"CUP_B_TDF_Soldier_Sapper"
+"CUP_B_TDF_Soldier_Sniper_AM"
+"CUP_B_TDF_Soldier_Spotter_MM14"
+"CUP_B_TDF_Soldier_SquadLeader"
+"CUP_B_TDF_Solider_TeamLeader"
+
+
+
+"CUP_B_ILDU_Soldier_ATSpecialistUSA"
+"CUP_B_ILDU_Soldier_ARUS"
+"CUP_B_ILDU_Soldier_EngineerDE"
+"CUP_B_ILDU_Soldier_GrenadierGB"
+"CUP_B_ILDU_Soldier_MachinegunnerCZ"
+"CUP_B_ILDU_Soldier_MarksmanDE"
+"CUP_B_ILDU_Soldier_MedicGB"
+"CUP_B_ILDU_Soldier_MissileSpecialistAACDF"
+"CUP_B_ILDU_Soldier_ReconDemoSpecialist"
+"CUP_B_ILDU_Soldier_ReconGrenadier"
+"CUP_B_ILDU_Soldier_ReconMarksman"
+"CUP_B_ILDU_Soldier_ReconParamedic"
+"CUP_B_ILDU_Soldier_ReconScout"
+"CUP_B_ILDU_Soldier_ReconScoutAT"
+"CUP_B_ILDU_Soldier_ReconTeamLeader"
+"CUP_B_ILDU_Soldier_RiflemanUSAT"
+"CUP_B_ILDU_Soldier_RiflemanFR"
+"CUP_B_ILDU_Soldier_RiflemanUS"
+"CUP_B_ILDU_Soldier_RiflemanBE"
+"CUP_B_ILDU_Soldier_RiflemanATCZ"
+"CUP_B_ILDU_Soldier_SniperGB"
+"CUP_B_ILDU_Soldier_SpotterGB"
+"CUP_B_ILDU_Soldier_TeamleaderUS"
+
+
+"CUP_B_AFU_SF_Autorifleman"
+"CUP_B_AFU_SF_DroneOperator"
+"CUP_B_AFU_SF_FAC"
+"CUP_B_AFU_SF_MachineGunner"
+"CUP_B_AFU_SF_Marksman"
+"CUP_B_AFU_SF_Medic"
+"CUP_B_AFU_SF_Operator"
+"CUP_B_AFU_SF_OperatorAssault"
+"CUP_B_AFU_SF_TeamLeader"
+
+
+
+
+
+
+"CUP_B_UAZ_Unarmed_AFU"
+"CUP_B_UAZ_AGS30_AFU"
+"CUP_B_UAZ_MG_AFU"
+"CUP_B_UAZ_AMB_AFU"
+"CUP_B_UAZ_Open_AFU"
+"CUP_B_UAZ_SPG9_AFU"
+"CUP_B_Ural_AFU"
+"CUP_B_Ural_Reammo_AFU"
+"CUP_B_Ural_Empty_AFU"
+"CUP_B_Ural_Open_AFU"
+"CUP_B_Ural_Refuel_AFU"
+"CUP_B_Ural_Repair_AFU"
+"CUP_B_BRDM2_HQ_AFU"
+
+"CUP_B_Tigr_233011_AFU"
+"CUP_B_Tigr_233014_AFU"
+"CUP_B_Tigr_M_233114_AFU"
+"CUP_B_Tigr_233011_GREEN_AFU"
+"CUP_B_Tigr_233014_GREEN_AFU"
+"CUP_B_Tigr_M_233114_GREEN_AFU"
+"CUP_B_BRDM2_AFU"
+"CUP_B_BM21_AFU"
+"CUP_B_Ural_ZU23_AFU"
+
+"CUP_B_Tigr_233014_PK_AFU"
+"CUP_B_Tigr_233014_PK_GREEN_AFU"
+"CUP_B_Tigr_M_233114_KORD_GREEN_AFU"
+"CUP_B_Tigr_M_233114_PK_GREEN_AFU"
+"CUP_B_Tigr_M_233114_KORD_AFU"
+"CUP_B_Tigr_M_233114_PK_AFU"
+"CUP_B_nM1151_Unarmed_AFU"
+"CUP_B_nM1151_Unarmed_DF_AFU"
+"CUP_B_BRDM2_ATGM_AFU"
+"CUP_B_BTR60_AFU"
+"CUP_B_UAZ_AA_AFU"
+"CUP_B_UAZ_METIS_AFU"
+
+"CUP_B_nM1151_ogpk_m2_AFU"
+"CUP_B_nM1151_ogpk_m2_DF_AFU"
+"CUP_B_nM1151_ogpk_m240_AFU"
+"CUP_B_nM1151_ogpk_m240_DF_AFU"
+"CUP_B_nM1151_ogpk_mk19_AFU"
+"CUP_B_nM1151_ogpk_mk19_DF_AFU"
+"CUP_B_nM1097_AVENGER_AFU"
+
+
+
+
+"CUP_B_MTLB_pk_AFU"
+
+"CUP_B_Leopard_1A3GRNCROSS_UA"
+"CUP_B_Leopard_1A3GRN_UA"
+
+"CUP_B_M1A1_AFU"
+"CUP_B_M2Bradley_AFU"
+"CUP_B_M6LineBacker_AFU"
+
+"CUP_B_M2A3Bradley_AFU"
+"CUP_B_Leopard2A6Green_UA"
+"CUP_B_Leopard2A6_UA"
+"CUP_B_M1A1_TUSK_AFU"
+
+
+"CUP_B_Mi17_AFU"
+"CUP_B_Mi17_VIV_AFU"
+
+"CUP_B_Mi17_medevac_AFU"
+
+"CUP_B_Mi24_D_Dynamic_AFU"
+"CUP_B_Mi24_D_MEV_Dynamic_AFU"
+
+
+
+
+"CUP_B_AGS_AFU"
+"CUP_B_D30_AFU"
+"CUP_B_D30_AT_AFU"
+"CUP_B_DSHKM_AFU"
+"CUP_B_DSHkM_MiniTriPod_AFU"
+"CUP_B_Igla_AA_pod_AFU"
+"CUP_B_M2StaticMG_AFU"
+"CUP_B_M2StaticMG_MiniTripod_AFU"
+"CUP_B_2b14_82mm_AFU"
+"CUP_B_SearchLight_static_AFU"
+"CUP_B_SPG9_AFU"
+"CUP_B_ZU23_AFU"
+
+
+
+
+
+
+
+comment "Remove existing items";
+removeAllWeapons this;
+removeAllItems this;
+removeAllAssignedItems this;
+removeUniform this;
+removeVest this;
+removeBackpack this;
+removeHeadgear this;
+removeGoggles this;
+
+this addWeapon "Binocular";
+this linkItem "ItemMap";
+this linkItem "ItemCompass";
+this linkItem "ItemWatch";
+this linkItem "ItemRadio";
+this linkItem "ItemGPS";
+this addItemToUniform "FirstAidKit";
+for "_i" from 1 to 3 do {this addItemToUniform "SmokeShell";};
+for "_i" from 1 to 2 do {this addItemToVest "CUP_HandGrenade_RGD5";};
+for "_i" from 1 to 6 do {this addItemToVest "CUP_30Rnd_545x39_AK12_M";};
+for "_i" from 1 to 5 do {this addItemToVest "CUP_1Rnd_HE_GP25_M";};
+this addItemToBackpack "SmokeShellGreen";
+this addItemToBackpack "SmokeShellPurple";
+this addItemToBackpack "SmokeShellRed";
+for "_i" from 1 to 2 do {this addItemToBackpack "CUP_IlumFlareWhite_GP25_M";};
+this addItemToBackpack "CUP_FlareGreen_GP25_M";
+this addItemToBackpack "CUP_FlareRed_GP25_M";
+
+
+
+
+
+//uniforms
+this forceAddUniform "CUP_U_B_AFU_FATIGUES_M14";
+this forceAddUniform "CUP_U_B_CZ_DST_Ghillie";
+this forceAddUniform "CUP_U_B_USMC_PilotOverall";
+this forceAddUniform "CUP_U_B_AFU_ACU_Gloves_M14";
+this forceAddUniform "CUP_U_B_AFU_ACU_Kneepad_Gloves_M14";
+this forceAddUniform "CUP_U_B_USArmy_ACU_Gloves_UCP";
+this forceAddUniform "CUP_U_B_BDUv2_gloves_M81";
+this forceAddUniform "CUP_U_B_AFU_ACU_M14";
+this forceAddUniform "CUP_U_B_AFU_ACU_Kneepad_Rolled_Gloves_M14";
+this forceAddUniform "CUP_U_B_AFU_ACU_Kneepad_M14";
+this forceAddUniform "CUP_U_CRYE_MCAM_NP_Full";
+
+
+//Vests
+this addVest "CUP_V_PlateCarrier2_MM14";
+this addVest "V_BandollierB_rgr";
+this addVest "CUP_V_B_IOTV_MM14_Rifleman_USArmy";
+this addVest "CUP_V_PlateCarrierSpec_MM14";
+this addVest "CUP_V_B_IOTV_MM14_SAW_USArmy";
+this addVest "V_TacVest_blk";
+this addVest "CUP_V_PlateCarrierIAGL_MM14";
+this addVest "CUP_V_B_IOTV_MM14_MG_USArmy";
+this addVest "CUP_V_B_IOTV_MM14_Empty_USArmy";
+this addVest "CUP_V_B_IOTV_MM14_TL_USArmy";
+this addVest "CUP_V_B_Ciras_MCam";
+this addVest "CUP_V_B_Armatus_OD";
+this addVest "CUP_V_B_IOTV_MM14_Medic_USArmy";
+this addVest "CUP_V_PMC_CIRAS_OD_Patrol";
+
+
+//Headgear
+this addHeadgear "CUP_H_AFU_HelmetACH_MM_14";
+this addHeadgear "CUP_H_AFU_HelmetACH_ESS_MM_14";
+this addHeadgear "CUP_H_AFU_patrol_cap_MM14";
+this addHeadgear "CUP_H_Booniehat_mm14";
+this addHeadgear "CUP_H_AFU_HelmetACH_ESS_Headset_MM_14";
+this addHeadgear "H_CrewHelmetHeli_B";
+this addHeadgear "CUP_H_AFU_HelmetACH_Headset_MM_14";
+this addHeadgear "CUP_H_CVCH_des";
+this addHeadgear "CUP_H_AFU_HelmetACH_GCOVERED_MM_14";
+this addHeadgear "CUP_H_OpsCore_Covered_UCP_SF";
+this addHeadgear "CUP_H_USArmy_MICH_GCOVERED_M81";
+this addHeadgear "CUP_H_USArmy_HelmetACH_ESS_OCP";
+
+
+
+this addGoggles "CUP_G_Shades_Green";
+this addGoggles "CUP_G_Shades_Blue";
+this addGoggles "CUP_G_Shades_Red";
+this addGoggles "CUP_G_Oakleys_Clr";
+this addGoggles "CUP_G_Shades_Black";
+
+this linkItem "CUP_NVG_1PN138";
+this addWeapon "CUP_Vector21Nite";
+
+
+//Weapons
+
+this addWeapon "CUP_hgun_TT";
+this addHandgunItem "CUP_8Rnd_762x25_TT";
+
+this addWeapon "CUP_hgun_Makarov";
+this addHandgunItem "CUP_8Rnd_9x18_Makarov_M";
+
+this addWeapon "CUP_arifle_AKS74U";
+this addWeapon "CUP_arifle_AKS74U_top_rail";
+this addPrimaryWeaponItem "CUP_30Rnd_545x39_AK74_plum_M";
+
+this addWeapon "CUP_arifle_AK74M";
+this addWeapon "CUP_arifle_AK74M_camo";
+this addWeapon "CUP_arifle_AK74M_GL_camo";
+this addPrimaryWeaponItem "CUP_optic_PSO_1_AK";
+this addPrimaryWeaponItem "CUP_optic_PSO_1_AK_open";
+this addPrimaryWeaponItem "CUP_optic_ekp_8_02";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_AK545";
+this addPrimaryWeaponItem "CUP_acc_Zenit_2DS";
+this addPrimaryWeaponItem "CUP_30Rnd_545x39_AK74M_M";
+this addPrimaryWeaponItem "CUP_30Rnd_545x39_AK74M_camo_M";
+
+this addWeapon "CUP_arifle_AK107";
+this addPrimaryWeaponItem "CUP_optic_Kobra";
+
+this addWeapon "CUP_arifle_AK12_GP34_black";
+this addWeapon "CUP_arifle_AK12_black";
+this addWeapon "CUP_arifle_AK12_bicolor";
+this addPrimaryWeaponItem "CUP_optic_OKP_7_rail";
+this addPrimaryWeaponItem "CUP_optic_1P87_1P90_BLK";
+this addPrimaryWeaponItem "CUP_optic_1P87_RIS";
+this addPrimaryWeaponItem "CUP_30Rnd_545x39_AK12_M";
+this addPrimaryWeaponItem "CUP_1Rnd_HE_GP25_M";
+
+this addWeapon "CUP_srifle_ksvk";
+this addPrimaryWeaponItem "CUP_optic_PSO_3";
+this addPrimaryWeaponItem "CUP_5Rnd_127x108_KSVK_M";
+
+this addWeapon "CUP_launch_RPG26";
+
+this addWeapon "CUP_launch_RPG7V";
+this addSecondaryWeaponItem "CUP_optic_PGO7V3";
+this addSecondaryWeaponItem "CUP_PG7V_M";
+this addItemToBackpack "CUP_PG7VL_M";
+
+this addWeapon "CUP_srifle_SVD";
+this addWeapon "CUP_srifle_SVD_wdl";
+this addPrimaryWeaponItem "CUP_muzzle_snds_KZRZP_SVD_woodland";
+this addPrimaryWeaponItem "CUP_SVD_camo_g";
+this addPrimaryWeaponItem "CUP_optic_PSO_1";
+this addPrimaryWeaponItem "CUP_10Rnd_762x54_SVD_M";
+
+this addWeapon "CUP_launch_Igla";
+this addItemToBackpack "CUP_Igla_M";
+
+this addWeapon "CUP_lmg_Pecheneg";
+this addPrimaryWeaponItem "CUP_optic_PechenegScope";
+this addPrimaryWeaponItem "CUP_100Rnd_TE4_LRT4_762x54_PK_Tracer_Green_M";
+
+this addWeapon "CUP_arifle_RPK74M";
+this addPrimaryWeaponItem "CUP_45Rnd_TE4_LRT4_Green_Tracer_545x39_RPK74M_M";
+
+this addWeapon "CUP_launch_Metis";
+
+
+
+
+
+
+
