@@ -78,6 +78,14 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 //--------------------------------------------------------------------------------------------------------------------------//
 //															Weapons															//
 //--------------------------------------------------------------------------------------------------------------------------//
+//handguns 
+_c pushBack "CUP_hgun_Makarov";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "CUP_8Rnd_9x18_Makarov_M";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,8,(900*18)] call CTI_CO_FNC_GetCalculatedItemPrize);
+
 //AK 47 main weapon, AKM slightly lighter
 //AK 74 better precision
 //AK 101 (90s)
@@ -412,6 +420,13 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 
+_c pushBack "CUP_hgun_TT";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "CUP_8Rnd_762x25_TT";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,8,(762*25)] call CTI_CO_FNC_GetCalculatedItemPrize);
+
 _c pushBack "CUP_arifle_AK12_wood";
 _c pushBack "CUP_arifle_AK12_VG_wood";
 _c pushBack "CUP_arifle_AK12_AFG_wood";
@@ -545,6 +560,8 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_optic_PSO_1_1_open";
 	_c pushBack "CUP_optic_PSO_1_1";
 };
+_c pushBack "CUP_optic_PSO_1_AK";
+_c pushBack "CUP_optic_PSO_1_AK_open";
 _c pushBack "CUP_optic_1P87_1P90_BLK";
 _c pushBack "CUP_optic_PechenegScope";
 _c pushBack "CUP_optic_NSPU_RPG";
@@ -610,6 +627,7 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 		_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,100,(762*54)] call CTI_CO_FNC_GetCalculatedItemPrize);
 	};
 
+	_c pushBack "CUP_optic_PechenegScope";
 	_c pushBack "CUP_muzzle_mfsup_Flashhider_PK_Black";
 	_c pushBack "CUP_muzzle_mfsup_Flashhider_PK_OD";
 	_c pushBack "CUP_muzzle_mfsup_Flashhider_PK_Tan";
@@ -680,15 +698,9 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 _c pushBack "CUP_hgun_PB6P9";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
-
-_c pushBack "CUP_8Rnd_9x18_Makarov_M";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,8,(900*18)] call CTI_CO_FNC_GetCalculatedItemPrize);
-
 _c pushBack "CUP_8Rnd_9x18_MakarovSD_M";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,8,(900*18)] call CTI_CO_FNC_GetCalculatedItemPrize);
-
 
 _c pushBack "CUP_muzzle_PB6P9";
 _u pushBack _tech_level;
