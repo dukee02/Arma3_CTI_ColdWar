@@ -133,6 +133,12 @@ class Params {
 		texts[] = {"deactivated", "OPFOR (East)", "GUER (Independent)"};
 		default = -1;
 	};
+	class CTI_UKRAIN_SIDE {
+		title = "Ukrainian [CUP needed]";
+		values[] = {-1,0};
+		texts[] = {"deactivated","BLUFOR (West)"};
+		default = -1; //0
+	};
 	/*class CTI_DK_SIDE {
 		title = "Denmark Side";
 		values[] = {-1,0};

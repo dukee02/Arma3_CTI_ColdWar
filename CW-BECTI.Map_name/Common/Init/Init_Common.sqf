@@ -156,6 +156,7 @@ _nation = -1;
 		case (((CTI_CDF_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_RHS_ADDON > 0): {_nation = CTI_CDF_ID};
 		case (((CTI_US_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0 || (CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)))): {_nation = CTI_US_ID};
 		case (((CTI_SOV_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && (CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0)): {_nation = CTI_SOV_ID};
+		case (((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) == _x && CTI_CUP_ADDON > 0): {_nation = CTI_UKRAIN_ID};
 		//case (((CTI_RACS_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_nation = CTI_RACS_ID};
 		//case (((CTI_DK_SIDE) call CTI_CO_FNC_GetSideFromID) == _x): {_nation = CTI_DEN_ID};
 		default {
@@ -416,6 +417,19 @@ if(CTI_NVA_SIDE >= 0) then {
 			((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_NVA_SOG.sqf";
 		};
 		((CTI_NVA_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_NVA_SOG.sqf";
+	};
+};
+if(CTI_UKRAIN_SIDE >= 0) then {
+	if(CTI_CUP_ADDON > 0) then {
+		((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Units\units_UKR_CUP.sqf";
+		((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Factories\factory_UKR_CUP.sqf";
+		if((CTI_UKRAIN_SIDE == 0 && CTI_WEST_AI < 0) || (CTI_UKRAIN_SIDE == 1 && CTI_EAST_AI < 0)) then {
+			((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Squads\squad_UKR_CUP.sqf";
+		};
+		if((CTI_UKRAIN_SIDE == 0 && CTI_WEST_TOWNS < 0) || (CTI_UKRAIN_SIDE == 1 && CTI_EAST_TOWNS < 0) || (CTI_UKRAIN_SIDE == 2 && CTI_GUER_TOWNS == 2)) then {
+			((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Towns\towns_UKR_CUP.sqf";
+		};
+		((CTI_UKRAIN_SIDE) call CTI_CO_FNC_GetSideFromID) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_UKR.sqf";
 	};
 };
 

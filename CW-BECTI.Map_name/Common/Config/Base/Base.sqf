@@ -110,6 +110,11 @@ switch((_isThisMain select 0)) do {
 			};
 		};
 	};
+	case CTI_UKRAIN_ID: {
+		if(CTI_CUP_ADDON > 0) then {
+			missionNamespace setVariable [format["CTI_%1_HQ", _side], "CUP_B_BRDM2_HQ_AFU"];
+		};
+	};
 	//case CTI_BW_ID: {};
 	default {
 		if (CTI_Log_Level >= CTI_Log_ERROR) then { ["ERROR", "FILE: Common\Config\Base\Base.sqf", format ["Basic units setup failed <%1>", _isThisMain]] call CTI_CO_FNC_Log };	
@@ -798,7 +803,54 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		};
 	};
 };
-
+/********************************************************************************************************************************
+ *											Ukrainia																			*
+ ********************************************************************************************************************************/
+if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_CUP_ADDON > 0) then {
+		_headers pushBack 		"[RHS] Static MG (DSHKM)";
+		_classes pushBack 		"CUP_B_DSHKM_AFU";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[RHS] Static MG low (DSHKM)";
+		_classes pushBack 		"CUP_B_DSHkM_MiniTriPod_AFU";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] Static MG (M2)";
+		_classes pushBack 		"CUP_B_M2StaticMG_AFU";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] Static MG low (M2)";
+		_classes pushBack 		"CUP_B_M2StaticMG_MiniTripod_AFU";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[RHS] Static GW (AGS)";
+		_classes pushBack 		"CUP_B_AGS_AFU";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[RHS] Mortar";
+		_classes pushBack 		"CUP_B_2b14_82mm_AFU";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+	};
+};
 /********************************************************************************************************************************
  *														TECH 1																	*
  ********************************************************************************************************************************/
@@ -1245,7 +1297,40 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		};
 	};
 };
-
+/********************************************************************************************************************************
+ *											Ukrainia																			*
+ ********************************************************************************************************************************/
+ if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_RHS_ADDON > 0) then {
+		_headers pushBack 		"[CUP] D30 Arty";
+		_classes pushBack 		"CUP_B_D30_AFU";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] D30 AT";
+		_classes pushBack 		"CUP_B_D30_AT_AFU";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[CUP] SPG9 AT";
+		_classes pushBack 		"CUP_B_SPG9_AFU";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[CUP] AA Defense (ZU23)";
+		_classes pushBack 		"CUP_B_ZU23_AFU";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+	};
+ };
 /********************************************************************************************************************************
  *														TECH 2																	*
  ********************************************************************************************************************************/
@@ -1539,6 +1624,20 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 };
 
+/********************************************************************************************************************************
+ *											Ukrainia																			*
+ ********************************************************************************************************************************/
+ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_CUP_ADDON > 0) then {
+		_headers pushBack 		"[CUP] AA Defense (Igla)";
+		_classes pushBack 		"CUP_B_Igla_AA_pod_AFU";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+		
+	};
+ };
 /********************************************************************************************************************************
  *														TECH 3																	*
  ********************************************************************************************************************************/

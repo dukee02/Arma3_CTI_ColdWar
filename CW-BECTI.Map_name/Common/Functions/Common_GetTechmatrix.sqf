@@ -112,6 +112,7 @@ if(_mod >= 0) then {
 				};*/
 				if(CTI_CUP_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_CUP_ID] call CTI_CO_FNC_MergeMatrixArray;
+					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_CUP_ADDON: [%1,%2] <%3>", _factory, _nation_cnt, _tech]] call CTI_CO_FNC_Log;};
 				};
 				if(CTI_RHS_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _x select CTI_RHS_ID] call CTI_CO_FNC_MergeMatrixArray;
@@ -138,7 +139,7 @@ if(_mod >= 0) then {
 					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_REDD_ADDON: [%1,%2] <%3>", _factory, _nation_cnt, _tech]] call CTI_CO_FNC_Log;};
 				};
 			};	
-		} forEach [CTI_US_SIDE, CTI_SOV_SIDE, CTI_NPOC_SIDE, CTI_RACS_SIDE, CTI_FIA_SIDE, CTI_BW_SIDE, CTI_NVA_SIDE, CTI_CDF_SIDE, CTI_CHDKZ_SIDE];
+		} forEach [CTI_US_SIDE, CTI_SOV_SIDE, CTI_NPOC_SIDE, CTI_RACS_SIDE, CTI_FIA_SIDE, CTI_BW_SIDE, CTI_NVA_SIDE, CTI_CDF_SIDE, CTI_CHDKZ_SIDE, CTI_UKRAIN_SIDE];
 	};
 };
 

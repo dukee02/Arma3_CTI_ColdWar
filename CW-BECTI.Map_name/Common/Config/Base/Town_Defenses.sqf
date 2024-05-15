@@ -248,5 +248,27 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	};
 };
 
+/********************************************************************************************************************************
+ *											Ukrainian																			*
+ ********************************************************************************************************************************/
+if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_CUP_ADDON > 0) then {
+		_classes_town pushBack 		format["%1CUP_B_M2StaticMG_AFU", _sid];
+		_categories_town pushBack 	"MG";
+		
+		_classes_town pushBack 		format["%1CUP_B_2b14_82mm_AFU", _sid];
+		_categories_town pushBack 	"Mortar";
+		
+		_classes_town pushBack 		format["%1CUP_B_ZU23_AFU", _sid];
+		_categories_town pushBack 	"AA";
+		
+		_classes_town pushBack 		format["%1CUP_B_SPG9_AFU", _sid];
+		_categories_town pushBack 	"AT";
+		
+		_classes_town pushBack 		format["%1CUP_B_D30_AFU", _sid];
+		_categories_town pushBack 	"Artillery";
+	};
+};
+
 //--- Defenses management for towns.
 if (isServer) then {[_side, _classes_town, _categories_town] Call Compile preprocessFileLineNumbers "Common\Config\Config_Defenses_Towns.sqf"};

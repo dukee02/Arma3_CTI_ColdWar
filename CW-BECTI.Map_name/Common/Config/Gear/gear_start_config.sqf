@@ -513,6 +513,39 @@ switch(_nationID) do {
 			//default: {};
 		};
 	};
+	case CTI_UKRAIN_ID: {
+		switch _modID do	{
+			//case CTI_GM_ID: {};
+			//case CTI_PF_ID: {};
+			//case CTI_IC_ID: {};
+			//case CTI_WS_ID: {};
+			case CTI_CUP_ID: {
+				_weapon = "CUP_arifle_AK12_black";
+				_weapon_att_optic = "CUP_optic_1P87_RIS";
+				_weapon_ammo = "CUP_30Rnd_545x39_AK12_M";
+				_grenades = "CUP_HandGrenade_RGD5";
+				switch(CTI_CAMO_ACTIVATION) do {
+					case 2: {
+						_uniform = "CUP_U_B_AFU_ACU_Kneepad_Gloves_M14";
+						_vest = "CUP_V_B_IOTV_MM14_Rifleman_USArmy";
+						_helmet = "CUP_H_AFU_HelmetACH_MM_14";
+					};
+					default {
+						_uniform = "CUP_U_B_AFU_FATIGUES_M14";
+						_vest = "CUP_V_PlateCarrier2_MM14";
+						_helmet = "CUP_H_AFU_HelmetACH_MM_14";
+					};
+				};
+			};
+			//case CTI_RHS_ID: {};
+			//case CTI_VME_ID: {};
+			//case CTI_UKR_ID: {};
+			//case CTI_BWA3_ID: {};
+			//case CTI_BWADD_ID: {};
+			//case CTI_REDD_ID: {};
+			//default: {};
+		};
+	};
 	//case CTI_SLA_ID: {};
 	//case CTI_TKA_ID: {};
 	//case CTI_SAF_ID: {};
@@ -520,7 +553,6 @@ switch(_nationID) do {
 	//case CTI_NAPA_ID: {};
 	//case CTI_ION_ID: {};
 	//case CTI_PLA_ID: {};
-	//case CTI_UKRAIN_ID: {};
 	default {};
 };
 

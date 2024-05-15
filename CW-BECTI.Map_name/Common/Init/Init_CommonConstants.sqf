@@ -37,9 +37,9 @@ CTI_RACS_ID = 5;
 CTI_FIA_ID = 6;
 CTI_CHDKZ_ID = 7;
 CTI_CDF_ID = 8;
-CTI_DEN_ID = 9;
-CTI_POL_ID = 10;
-CTI_TK_ID = 11;
+CTI_UKRAIN_ID = 9;
+CTI_DEN_ID = 10;
+CTI_POL_ID = 11;
 CTI_CZ_ID = 12;
 CTI_SLA_ID = 13;
 CTI_TKA_ID = 14;
@@ -48,7 +48,7 @@ CTI_HIDF_ID = 16;
 CTI_NAPA_ID = 17;
 CTI_ION_ID = 18;
 CTI_PLA_ID = 19;
-CTI_UKRAIN_ID = 20;
+CTI_TK_ID = 20;
 CTI_BAF_ID = 21;
 
 //--- Mod IDs
@@ -814,6 +814,9 @@ with missionNamespace do {
 	if (isNil 'CTI_RACS_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CUP_ADDON > 0) then {CTI_RACS_SIDE = 2} else {CTI_RACS_SIDE = -1};
 	};	
+	if (isNil 'CTI_UKRAIN_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
+		CTI_UKRAIN_SIDE = -1; //if(CTI_CUP_ADDON > 0) then {CTI_UKRAIN_SIDE = -1} else {CTI_UKRAIN_SIDE = -1};
+	};	
 	//CWR3 only
 	if (isNil 'CTI_FIA_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CWR3_ADDON > 0) then {CTI_FIA_SIDE = 2} else {CTI_FIA_SIDE = -1};
@@ -835,7 +838,7 @@ with missionNamespace do {
 	//if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	
-	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9>", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE]] call CTI_CO_FNC_Log;
+	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9> <UKR-%10>", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE,CTI_UKRAIN_SIDE]] call CTI_CO_FNC_Log;
 	
 	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"
 	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Bundeswehr (West Germany)","USA","CDF"

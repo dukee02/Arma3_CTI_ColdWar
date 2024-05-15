@@ -1341,7 +1341,8 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
-if((_isThisMain select 0) == CTI_US_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {_setupBaseUnits = true;};
+if((_isThisMain select 0) == CTI_US_ID && (_isThisMain select 1) == CTI_CUP_ID) then {_setupBaseUnits = true;};
+//if((_isThisMain select 0) == CTI_US_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {_setupBaseUnits = true;};
 
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;

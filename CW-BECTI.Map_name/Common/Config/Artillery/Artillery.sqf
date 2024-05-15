@@ -173,6 +173,11 @@ if(CTI_CUP_ADDON > 0) then {
 	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
 	_b pushBack [1, 2, 4, 8];
 	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
+	
+	_c pushBack "CUP_B_2b14_82mm_AFU";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[90,500], [350,2000], [800,4000], [800,4000]];
 
 	_c pushBack "CUP_B_M252_US";
 	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
@@ -252,6 +257,12 @@ if(CTI_CUP_ADDON > 0) then {
 	_m pushBack ["CUP_30Rnd_122mmHE_D30_M", "CUP_30Rnd_122mmWP_D30_M", "CUP_30Rnd_122mmLASER_D30_M", "CUP_30Rnd_122mmSMOKE_D30_M", "CUP_30Rnd_122mmILLUM_D30_M"];
 	_b pushBack [2, 4, 8, 12];
 	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
+	
+	//CUP_I_D30_AAF,CUP_B_D30_CDF,CUP_O_D30_ChDKZ,CUP_O_D30_RU,CUP_O_D30_TK,CUP_O_D30_TK_INS,CUP_I_D30_TK_GUE,CUP_O_D30_SLA
+	_c pushBack "CUP_B_D30_AFU";
+	_m pushBack ["CUP_30Rnd_122mmHE_D30_M", "CUP_30Rnd_122mmWP_D30_M", "CUP_30Rnd_122mmLASER_D30_M", "CUP_30Rnd_122mmSMOKE_D30_M", "CUP_30Rnd_122mmILLUM_D30_M"];
+	_b pushBack [2, 4, 8, 12];
+	_r pushBack [[830,4400], [2060,6000], [5300,15400], [5300,15400]];
 };
 if(CTI_CWR3_ADDON > 0) then {
 	_c pushBack "cwr3_b_m119";
@@ -318,6 +329,11 @@ if(CTI_RHS_ADDON > 0) then {
 //_c = _c + ["I_Truck_02_MRL_F"];
 if(CTI_CUP_ADDON > 0) then {
 	_c pushBack "CUP_O_BM21_RU";
+	_m pushBack ["CUP_40Rnd_GRAD_HE"];
+	_b pushBack [1, 2, 5, 10, 20, 40];
+	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];
+
+	_c pushBack "CUP_B_BM21_AFU";
 	_m pushBack ["CUP_40Rnd_GRAD_HE"];
 	_b pushBack [1, 2, 5, 10, 20, 40];
 	_r pushBack [[1500,8500], [1710,9800], [2110,12000], [2750,15500]];

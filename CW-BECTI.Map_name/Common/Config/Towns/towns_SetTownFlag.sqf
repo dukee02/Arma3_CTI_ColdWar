@@ -1,4 +1,4 @@
-private ["_side","_texture"];
+private ["_side","_texture","_CUPMAPS"];
 _side = _this;
 
 if(_side == "WEST_") then {
@@ -13,6 +13,10 @@ else {
 	};
 };
 
+//some flags not in the CUP main mods, only the terrain mods included
+_CUPMAPS = 0;
+if (isClass(configFile >> "CfgVehicles" >> "FlagCarrierBAF")) then {_CUPMAPS = 1};
+
 switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 	case 1: {
 		_texture = "\A3\Data_F\Flags\Flag_nato_CO.paa";
@@ -24,25 +28,25 @@ switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 		_texture = "\A3\Data_F\Flags\Flag_uno_CO.paa";
 	};
 	case 4: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "ca\Ca_E\data\flag_ger_co.paa";};	//GER
+		if(_CUPMAPS > 0) then {_texture = "ca\Ca_E\data\flag_ger_co.paa";};	//GER
 	};
 	case 5: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "\ca\data\flag_rus_co.paa";};		//RUS
+		if(_CUPMAPS > 0) then {_texture = "\ca\data\flag_rus_co.paa";};		//RUS
 	};
 	case 6: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "\ca\data\flag_NAPA_co.paa";};		//NPoC
+		if(_CUPMAPS > 0) then {_texture = "\ca\data\flag_NAPA_co.paa";};		//NPoC
 	};
 	case 7: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "\ca\misc\data\jih_vlajka.paa";};	//RACS
+		if(_CUPMAPS > 0) then {_texture = "\ca\misc\data\jih_vlajka.paa";};	//RACS
 	};
 	case 8: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "\ca\misc\data\usa_vlajka.pac";};	//USA
+		if(_CUPMAPS > 0) then {_texture = "\ca\misc\data\usa_vlajka.pac";};	//USA
 	};
 	case 9: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "ca\Ca_E\data\flag_usarmy_co.paa";};	//US Army
+		if(_CUPMAPS > 0) then {_texture = "ca\Ca_E\data\flag_usarmy_co.paa";};	//US Army
 	};
 	case 10: {
-		if(CTI_CUP_ADDON > 0) then {_texture = "CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_unionjack_co";};		//UK
+		if(_CUPMAPS > 0) then {_texture = "CUP\BaseConfigs\CUP_BaseConfigs\Data\Flags\flag_unionjack_co";};		//UK
 	};
 	case 11: {
 		if(CTI_GM_DLC > 0) then {_texture = "\gm\gm_core\data\flags\gm_flag_GE_co.paa";};
@@ -74,6 +78,9 @@ switch (missionNamespace getVariable format["CTI_%1FLAG", _side]) do {
 	case 20: {
 		if(CTI_SOG_DLC > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_vc_co.paa";};	//Viet Cong
 	};
+	/*case 21: {
+		if(_CUPMAPS > 0) then {_texture = "\vn\objects_f_vietnam\flags\data\vn_flag_01_vc_co.paa";};	//Ukrainia
+	};*/
 	/*case 22: {
 		_texture = "";
 	};*/

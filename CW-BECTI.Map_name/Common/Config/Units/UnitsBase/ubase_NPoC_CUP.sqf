@@ -30,7 +30,7 @@ if((_side == west && ((CTI_WEST_AI >= 0 && CTI_WEST_AI == CTI_NPOC_ID) ||  CTI_W
 };
 
 if((_side == west && ((CTI_WEST_TOWNS >= 0 && CTI_WEST_TOWNS == CTI_NPOC_ID) ||  CTI_WEST_TOWNS == -1)) || (_side == east && ((CTI_EAST_TOWNS >= 0 && CTI_EAST_TOWNS == CTI_NPOC_ID) || CTI_EAST_TOWNS == -1)) || _tag == "GUER_") then {
-	missionNamespace setVariable [format["CTI_%1_TownLeader", _tag], format["%1CUP_I_GUE_Commander", _sid]];
+	missionNamespace setVariable [format["CTI_%1TownLeader", _tag], format["%1CUP_I_GUE_Commander", _sid]];
 	missionNamespace setVariable [format["CTI_%1TownSoldier", _tag], format["%1CUP_I_GUE_Soldier_AKM", _sid]];
 	missionNamespace setVariable [format["CTI_%1TownCrew", _tag], format["%1CUP_I_GUE_Soldier_AKS74", _sid]];
 };

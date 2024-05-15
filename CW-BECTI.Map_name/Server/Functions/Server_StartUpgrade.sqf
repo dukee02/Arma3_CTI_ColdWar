@@ -122,11 +122,13 @@ if!(0 in _evolve) then {
 		};
 		if(CTI_CUP_ADDON > 0) then {
 			if(_side == west) then {
-				if((_isThisMain select 0) == CTI_US_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {
+				if((_isThisMain select 0) == CTI_US_ID && (_isThisMain select 1) == CTI_CUP_ID) then {
+				//if((_isThisMain select 0) == CTI_US_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {
 					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_US_CUP.sqf";
 				};
 			} else {
-				if((_isThisMain select 0) == CTI_SOV_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {
+				if((_isThisMain select 0) == CTI_SOV_ID && (_isThisMain select 1) == CTI_CUP_ID) then {
+				//if((_isThisMain select 0) == CTI_SOV_ID && ((_isThisMain select 1) == CTI_CUP_ID || (count ((_side) call CTI_CO_FNC_GetSideUpgrades) > 0))) then {
 					[_side,_tag,_sid] call compile preprocessFileLineNumbers "Common\Config\Units\UnitsBase\ubase_SOV_CUP.sqf";
 				};
 			};

@@ -246,10 +246,36 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false]
+		],
+		//CTI_UKRAIN_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,true,true,true,false],
+			//CTI_RHS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
-		//CTI_TK_ID
 		//CTI_CZ_ID
 		//CTI_SLA_ID
 		//CTI_TKA_ID
@@ -259,7 +285,7 @@ _tech_matrix =
 		//CTI_NAPA_ID
 		//CTI_ION_ID
 		//CTI_PLA_ID
-		//CTI_UKRAIN_ID
+		//CTI_TK_ID
 	],
 	//CTI_UPGRADE_LIGHT
 	[
@@ -505,6 +531,33 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_UKRAIN_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[true,true,true,true,true,false,false,false,false,false],
+			//CTI_RHS_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
@@ -518,7 +571,6 @@ _tech_matrix =
 		//CTI_NAPA_ID
 		//CTI_ION_ID
 		//CTI_PLA_ID
-		//CTI_UKRAIN_ID
 	],
 	//CTI_UPGRADE_HEAVY
 	[
@@ -764,6 +816,33 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_UKRAIN_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[true,false,false,false,true,true,true,true,false],
+			//CTI_RHS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
@@ -777,7 +856,6 @@ _tech_matrix =
 		//CTI_NAPA_ID
 		//CTI_ION_ID
 		//CTI_PLA_ID
-		//CTI_UKRAIN_ID
 	],
 	//CTI_UPGRADE_AIR
 	[
@@ -1023,6 +1101,33 @@ _tech_matrix =
 			[false,false,false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false,false,false]
+		],
+		//CTI_UKRAIN_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[true,true,true,false,false,false,false,false,false],
+			//CTI_RHS_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
@@ -1036,7 +1141,6 @@ _tech_matrix =
 		//CTI_NAPA_ID
 		//CTI_ION_ID
 		//CTI_PLA_ID
-		//CTI_UKRAIN_ID
 	],
 	//CTI_UPGRADE_NAVAL
 	[
@@ -1282,6 +1386,33 @@ _tech_matrix =
 			[false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false]
+		],
+		//CTI_UKRAIN_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,false],
+			//CTI_RHS_ID
+			[false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
@@ -1295,7 +1426,6 @@ _tech_matrix =
 		//CTI_NAPA_ID
 		//CTI_ION_ID
 		//CTI_PLA_ID
-		//CTI_UKRAIN_ID
 	],
 	[],[],[],[],[],[],[],
 	//CTI_UPGRADE_GEAR
@@ -1543,6 +1673,33 @@ _tech_matrix =
 			[false,false,false,false,false,false,false],
 			//CTI_REDD_ID
 			[false,false,false,false,false,false,false]
+		],
+		//CTI_UKRAIN_ID
+		[
+			//CTI_GM_ID
+			[false,false,false,false,false,false,false],
+			//CTI_PF_ID
+			[false,false,false,false,false,false,false],
+			//CTI_IC_ID
+			[false,false,false,false,false,false,false],
+			//CTI_WS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CUP_ID
+			[false,false,false,true,true,true,false],
+			//CTI_RHS_ID
+			[false,false,false,false,false,false,false],
+			//CTI_CWR3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_SABAIR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_POOKAIR_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWA3_ID
+			[false,false,false,false,false,false,false],
+			//CTI_BWADD_ID
+			[false,false,false,false,false,false,false],
+			//CTI_REDD_ID
+			[false,false,false,false,false,false,false]
 		]
 		//CTI_DEN_ID
 		//CTI_POL_ID
@@ -1556,7 +1713,6 @@ _tech_matrix =
 		//CTI_NAPA_ID
 		//CTI_ION_ID
 		//CTI_PLA_ID
-		//CTI_UKRAIN_ID
 	]
 ];
 

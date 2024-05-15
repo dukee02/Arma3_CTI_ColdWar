@@ -147,12 +147,20 @@ if(CTI_CUP_ADDON > 0 || CTI_RHS_ADDON > 0 || CTI_BW_ADDON > 0 || CTI_GM_DLC > 0)
 	(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Basic.sqf";
 };
 if(CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_SOG.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_NVA_SOG.sqf"};
+	if(CTI_US_SIDE >= 0) then {
+		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_SOG.sqf"};
+	};
+	if(CTI_SOV_SIDE >= 0) then {
+		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_NVA_SOG.sqf"};
+	};
 };
 if(CTI_GM_DLC > 0 && ([1042220] call CTI_CO_FNC_HasDLC)) then {
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
+	if(CTI_BW_SIDE >= 0) then {
+		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_BW.sqf"};
+	};
+	if(CTI_NVA_SIDE >= 0) then {
+		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_GM_NVA.sqf"};
+	};
 };
 if(CTI_BW_SIDE >= 0) then {
 	if(CTI_BW_ADDON > 0) then {
@@ -167,13 +175,24 @@ if(CTI_BW_SIDE >= 0) then {
 };
 //--- Load CWR3 Gear
 if (CTI_CWR3_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_CWr3.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV_CWr3.sqf"};
+	if(CTI_US_SIDE >= 0) then {
+		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_CWr3.sqf"};
+	};
+	if(CTI_SOV_SIDE >= 0) then {
+		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_SOV_CWr3.sqf"};
+	};
 };
 //--- Load CUP Gear
 if (CTI_CUP_ADDON > 0) then { 
-	if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
-	if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_CUP_SOV.sqf"};
+	if(CTI_US_SIDE >= 0) then {
+		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_US.sqf"};
+	};
+	if(CTI_SOV_SIDE >= 0) then {
+		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\gear_CUP_SOV.sqf"};
+	};
+	if(CTI_UKRAIN_SIDE >= 0) then {
+		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_CUP_UKR.sqf"};
+	};
 };
 //--- Load RHS Gear
 if (CTI_RHS_ADDON > 0) then { 

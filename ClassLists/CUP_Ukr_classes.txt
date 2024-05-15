@@ -23,65 +23,69 @@ this addBackpack "CUP_B_AFU_RPKPack";
 
 
 
+"CUP_B_AFU_Soldier_Rifleman"
+"CUP_B_AFU_Soldier_Rifleman_AT"
+"CUP_B_AFU_Soldier_Rifleman_1P90"
+"CUP_B_AFU_Soldier_Rifleman_Ammo"
+"CUP_B_AFU_Soldier_Rifleman_PSO"
 "CUP_B_AFU_Soldier_AAT"
 "CUP_B_AFU_Soldier_AAR"
 "CUP_B_AFU_Soldier_AMG"
-"CUP_B_AFU_Soldier_ATSpecialist_METIS"
-"CUP_B_AFU_Soldier_ATSpecialist"
-"CUP_B_AFU_Soldier_Autorifleman"
 "CUP_B_AFU_Soldier_Crewman"
 "CUP_B_AFU_Soldier_Engineer"
 "CUP_B_AFU_Soldier_Grenadier"
+"CUP_B_AFU_Soldier_Medic"
+"CUP_B_AFU_Soldier_Sapper"
+
+"CUP_B_AFU_Soldier_Autorifleman"
 "CUP_B_AFU_Soldier_HeliCrew"
 "CUP_B_AFU_Soldier_HeliPilot"
 "CUP_B_AFU_Soldier_Machinegunner"
+"CUP_B_AFU_Soldier_ATSpecialist"
 "CUP_B_AFU_Soldier_Marksman"
-"CUP_B_AFU_Soldier_Medic"
+"CUP_B_AFU_Soldier_ReconTL"
+"CUP_B_AFU_Soldier_SquadLeader"
+
 "CUP_B_AFU_Soldier_MissileSoldier_AA"
+"CUP_B_AFU_Soldier_ATSpecialist_METIS"
+"CUP_B_AFU_Soldier_Sniper_AM"
+"CUP_B_AFU_Soldier_Spotter"
+"CUP_B_AFU_Soldier_TeamLeader"
 "CUP_B_AFU_Soldier_ReconDemo"
 "CUP_B_AFU_Soldier_ReconGL"
 "CUP_B_AFU_Soldier_ReconMarksman"
 "CUP_B_AFU_Soldier_ReconMedic"
 "CUP_B_AFU_Soldier_ReconScout"
 "CUP_B_AFU_Soldier_ReconScoutAT"
-"CUP_B_AFU_Soldier_ReconTL"
-"CUP_B_AFU_Soldier_Rifleman_AT"
-"CUP_B_AFU_Soldier_Rifleman"
-"CUP_B_AFU_Soldier_Rifleman_1P90"
-"CUP_B_AFU_Soldier_Rifleman_Ammo"
-"CUP_B_AFU_Soldier_Rifleman_PSO"
-"CUP_B_AFU_Soldier_Sapper"
-"CUP_B_AFU_Soldier_Sniper_AM"
-"CUP_B_AFU_Soldier_Spotter"
-"CUP_B_AFU_Soldier_SquadLeader"
-"CUP_B_AFU_Soldier_TeamLeader"
 
 
 
+"CUP_B_TDF_Soldier_Rifleman"
+"CUP_B_TDF_Soldier_Rifleman_AT"
+"CUP_B_TDF_Soldier_Rifleman_AKM"
+"CUP_B_TDF_Soldier_Rifleman_Ammo"
+"CUP_B_TDF_Soldier_Rifleman_PSO"
 "CUP_B_TDF_Soldier_AAT"
 "CUP_B_TDF_Soldier_AAR"
 "CUP_B_TDF_Soldier_AMG"
-"CUP_B_TDF_Soldier_ATSpecialist"
-"CUP_B_TDF_Soldier_Autorifleman"
 "CUP_B_TDF_Soldier_Crewman"
 "CUP_B_TDF_Soldier_Engineer"
 "CUP_B_TDF_Soldier_Grenadier"
 "CUP_B_TDF_Soldier_Grenatier_AKM"
-"CUP_B_TDF_Soldier_Machinegunner"
-"CUP_B_TDF_Soldier_Marksman"
 "CUP_B_TDF_Soldier_Medic"
-"CUP_B_TDF_Soldier_MissileSoldier_AA"
-"CUP_B_TDF_Soldier_Rifleman_AT"
-"CUP_B_TDF_Soldier_Rifleman"
-"CUP_B_TDF_Soldier_Rifleman_AKM"
-"CUP_B_TDF_Soldier_Rifleman_Ammo"
-"CUP_B_TDF_Soldier_Rifleman_PSO"
-"CUP_B_TDF_Soldier_Rifleman_SKS"
 "CUP_B_TDF_Soldier_Sapper_2"
 "CUP_B_TDF_Soldier_Sapper"
+
+"CUP_B_TDF_Soldier_Autorifleman"
+"CUP_B_TDF_Soldier_Machinegunner"
+"CUP_B_TDF_Soldier_ATSpecialist"
+"CUP_B_TDF_Soldier_Marksman"
+"CUP_B_TDF_Soldier_Rifleman_SKS"
+"CUP_B_TDF_Soldier_SquadLeader"
+
+"CUP_B_TDF_Soldier_MissileSoldier_AA"
 "CUP_B_TDF_Soldier_Sniper_AM"
 "CUP_B_TDF_Soldier_Spotter_MM14"
-"CUP_B_TDF_Soldier_SquadLeader"
 "CUP_B_TDF_Solider_TeamLeader"
 
 
@@ -127,49 +131,51 @@ this addBackpack "CUP_B_AFU_RPKPack";
 
 
 "CUP_B_UAZ_Unarmed_AFU"
+"CUP_B_UAZ_Open_AFU"
+
 "CUP_B_UAZ_AGS30_AFU"
 "CUP_B_UAZ_MG_AFU"
-"CUP_B_UAZ_AMB_AFU"
-"CUP_B_UAZ_Open_AFU"
-"CUP_B_UAZ_SPG9_AFU"
 "CUP_B_Ural_AFU"
-"CUP_B_Ural_Reammo_AFU"
 "CUP_B_Ural_Empty_AFU"
 "CUP_B_Ural_Open_AFU"
+"CUP_B_Ural_Reammo_AFU"
 "CUP_B_Ural_Refuel_AFU"
 "CUP_B_Ural_Repair_AFU"
-"CUP_B_BRDM2_HQ_AFU"
 
+"CUP_B_UAZ_AMB_AFU"
+"CUP_B_UAZ_SPG9_AFU"
+"CUP_B_BRDM2_HQ_AFU"
+"CUP_B_BRDM2_AFU"
+"CUP_B_Ural_ZU23_AFU"
+"CUP_B_BTR60_AFU"
+"CUP_B_nM1151_Unarmed_AFU"
+"CUP_B_nM1151_Unarmed_DF_AFU"
 "CUP_B_Tigr_233011_AFU"
 "CUP_B_Tigr_233014_AFU"
 "CUP_B_Tigr_M_233114_AFU"
 "CUP_B_Tigr_233011_GREEN_AFU"
 "CUP_B_Tigr_233014_GREEN_AFU"
 "CUP_B_Tigr_M_233114_GREEN_AFU"
-"CUP_B_BRDM2_AFU"
-"CUP_B_BM21_AFU"
-"CUP_B_Ural_ZU23_AFU"
 
+"CUP_B_BM21_AFU"
+"CUP_B_BRDM2_ATGM_AFU"
+"CUP_B_UAZ_METIS_AFU"
 "CUP_B_Tigr_233014_PK_AFU"
 "CUP_B_Tigr_233014_PK_GREEN_AFU"
 "CUP_B_Tigr_M_233114_KORD_GREEN_AFU"
 "CUP_B_Tigr_M_233114_PK_GREEN_AFU"
 "CUP_B_Tigr_M_233114_KORD_AFU"
 "CUP_B_Tigr_M_233114_PK_AFU"
-"CUP_B_nM1151_Unarmed_AFU"
-"CUP_B_nM1151_Unarmed_DF_AFU"
-"CUP_B_BRDM2_ATGM_AFU"
-"CUP_B_BTR60_AFU"
-"CUP_B_UAZ_AA_AFU"
-"CUP_B_UAZ_METIS_AFU"
-
 "CUP_B_nM1151_ogpk_m2_AFU"
 "CUP_B_nM1151_ogpk_m2_DF_AFU"
 "CUP_B_nM1151_ogpk_m240_AFU"
 "CUP_B_nM1151_ogpk_m240_DF_AFU"
 "CUP_B_nM1151_ogpk_mk19_AFU"
 "CUP_B_nM1151_ogpk_mk19_DF_AFU"
+
+"CUP_B_UAZ_AA_AFU"
 "CUP_B_nM1097_AVENGER_AFU"
+
 
 
 
@@ -184,15 +190,20 @@ this addBackpack "CUP_B_AFU_RPKPack";
 "CUP_B_M6LineBacker_AFU"
 
 "CUP_B_M2A3Bradley_AFU"
+
 "CUP_B_Leopard2A6Green_UA"
 "CUP_B_Leopard2A6_UA"
 "CUP_B_M1A1_TUSK_AFU"
+
+
+
 
 
 "CUP_B_Mi17_AFU"
 "CUP_B_Mi17_VIV_AFU"
 
 "CUP_B_Mi17_medevac_AFU"
+"CUP_B_Mi171Sh_AFU"
 
 "CUP_B_Mi24_D_Dynamic_AFU"
 "CUP_B_Mi24_D_MEV_Dynamic_AFU"
@@ -200,18 +211,20 @@ this addBackpack "CUP_B_AFU_RPKPack";
 
 
 
-"CUP_B_AGS_AFU"
-"CUP_B_D30_AFU"
-"CUP_B_D30_AT_AFU"
+"CUP_B_SearchLight_static_AFU"
 "CUP_B_DSHKM_AFU"
 "CUP_B_DSHkM_MiniTriPod_AFU"
-"CUP_B_Igla_AA_pod_AFU"
 "CUP_B_M2StaticMG_AFU"
 "CUP_B_M2StaticMG_MiniTripod_AFU"
+"CUP_B_AGS_AFU"
 "CUP_B_2b14_82mm_AFU"
-"CUP_B_SearchLight_static_AFU"
+
+"CUP_B_D30_AFU"
+"CUP_B_D30_AT_AFU"
 "CUP_B_SPG9_AFU"
 "CUP_B_ZU23_AFU"
+
+"CUP_B_Igla_AA_pod_AFU"
 
 
 
