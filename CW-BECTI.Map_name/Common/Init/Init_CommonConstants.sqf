@@ -777,68 +777,113 @@ with missionNamespace do {
 	if (isNil 'CTI_PERFORMANCE_CHECK') then {CTI_PERFORMANCE_CHECK = 0};
 	if (isNil 'CTI_PERSISTANT') then {CTI_PERSISTANT = 1};
 	if (isNil 'CTI_SAVE_PERIODE') then {CTI_SAVE_PERIODE = 900};		//900
+
+	if (isClass(configFile >> "CfgVehicles" >> "gm_ge_army_k125")) then {if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0}} else {CTI_GM_DLC = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "vn_b_wheeled_m151_01")) then {if (isNil 'CTI_SOG_DLC') then {CTI_SOG_DLC = 0}} else {CTI_SOG_DLC = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "CUP_B_M1030_USMC")) then {if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0}} else {CTI_CUP_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "cwr3_b_m151")) then {if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0}} else {CTI_CWR3_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0}} else {CTI_RHS_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0}} else {CTI_BW_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {if (isNil 'CTI_BWADD_ADDON') then {CTI_BWADD_ADDON = 0}} else {CTI_BWADD_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0}} else {CTI_REDD_ADDON = -1};
 	
-	if (isNil 'CTI_GM_DLC') then {CTI_GM_DLC = 0};
-	if (isNil 'CTI_SOG_DLC') then {CTI_SOG_DLC = 0};
-	if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0};
-	if !(isClass(configFile >> "CfgVehicles" >> "CUP_B_M1030_USMC")) then {CTI_CUP_ADDON = 0};
-	if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0};
-	if !(isClass(configFile >> "CfgVehicles" >> "cwr3_b_m151")) then {CTI_CWR3_ADDON = 0};
-	if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0};
-	if !(isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {CTI_RHS_ADDON = 0};
-	//if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 1} else {CTI_BW_ADDON = 0};
-	//if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0};
-	//if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0};
-	if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0};
-	if (isNil 'CTI_BWADD_ADDON') then {CTI_BWADD_ADDON = 0};
-	if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0};
-	if !(isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {CTI_BW_ADDON = 0};
-	if(CTI_BW_ADDON >= 1) then {
-		if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {CTI_BWADD_ADDON = 0} else {CTI_BWADD_ADDON = 0};
-		if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {CTI_REDD_ADDON = 0} else {CTI_REDD_ADDON = 0};
-	};
 	if (isNil 'CTI_AIR_ADDON') then {CTI_AIR_ADDON = -1};
 
-	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7> <SOG-%8>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC]] call CTI_CO_FNC_Log;
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7> <SOG-%8>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC]] call CTI_CO_FNC_Log;};
 	
 	if (isNil 'CTI_US_SIDE') then {							//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0) then {CTI_US_SIDE = 0} else {CTI_US_SIDE = -1};
+	} else {
+		if(CTI_CUP_ADDON < 0 && CTI_CWR3_ADDON < 0 && CTI_RHS_ADDON < 0) then {CTI_US_SIDE = -1};
 	};		
 	if (isNil 'CTI_SOV_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0) then {CTI_SOV_SIDE = 1} else {CTI_SOV_SIDE = -1};
+	} else {
+		if(CTI_CUP_ADDON < 0 && CTI_CWR3_ADDON < 0 && CTI_RHS_ADDON < 0) then {CTI_SOV_SIDE = -1};
 	};	
 	//CUP only
 	if (isNil 'CTI_NPOC_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		if(CTI_CUP_ADDON > 0) then {CTI_NPOC_SIDE = 2} else {CTI_NPOC_SIDE = -1};
+		CTI_NPOC_SIDE = -1;
+	} else {
+		if(CTI_CUP_ADDON < 0) then {CTI_NPOC_SIDE = -1};
 	};	
 	if (isNil 'CTI_RACS_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CUP_ADDON > 0) then {CTI_RACS_SIDE = 2} else {CTI_RACS_SIDE = -1};
+	} else {
+		if(CTI_CUP_ADDON < 0) then {CTI_RACS_SIDE = -1};
 	};	
 	if (isNil 'CTI_UKRAIN_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		CTI_UKRAIN_SIDE = -1; //if(CTI_CUP_ADDON > 0) then {CTI_UKRAIN_SIDE = -1} else {CTI_UKRAIN_SIDE = -1};
+		CTI_UKRAIN_SIDE = -1;
+	} else {
+		if(CTI_CUP_ADDON < 0) then {CTI_UKRAIN_SIDE = -1};
 	};	
 	//CWR3 only
 	if (isNil 'CTI_FIA_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CWR3_ADDON > 0) then {CTI_FIA_SIDE = 2} else {CTI_FIA_SIDE = -1};
-	};		
+	} else {
+		if(CTI_CWR3_ADDON < 0) then {CTI_FIA_SIDE = -1};
+	};
 	//GM only
 	if (isNil 'CTI_BW_SIDE') then {							//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		if(CTI_GM_DLC > 0) then {CTI_BW_SIDE = 0} else {CTI_BW_SIDE = -1};
+		if(CTI_GM_DLC > 0 || CTI_BW_ADDON > 0) then {CTI_BW_SIDE = 0} else {CTI_BW_SIDE = -1};
+	} else {
+		if(CTI_GM_DLC < 0 && CTI_BW_ADDON < 0) then {CTI_BW_SIDE = -1};
 	};		
 	if (isNil 'CTI_NVA_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		if(CTI_GM_DLC > 0 || CTI_GM_DLC > 0) then {CTI_NVA_SIDE = 1} else {CTI_NVA_SIDE = -1};
+		if(CTI_GM_DLC > 0 || CTI_SOG_DLC > 0) then {CTI_NVA_SIDE = 1} else {CTI_NVA_SIDE = -1};
+	} else {
+		if(CTI_GM_DLC < 0 && CTI_SOG_DLC < 0) then {CTI_NVA_SIDE = -1};
 	};
 	//RHS only
 	if (isNil 'CTI_CDF_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_RHS_ADDON > 0) then {CTI_CDF_SIDE = 2} else {CTI_CDF_SIDE = -1};
+	} else {
+		if(CTI_RHS_ADDON < 0) then {CTI_CDF_SIDE = -1};
 	};		
 	if (isNil 'CTI_CHDKZ_SIDE') then {						//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
-		if(CTI_RHS_ADDON > 0) then {CTI_CHDKZ_SIDE = 2} else {CTI_CHDKZ_SIDE = -1};
+		CTI_CHDKZ_SIDE = -1;
+	} else {
+		if(CTI_RHS_ADDON < 0) then {CTI_CHDKZ_SIDE = -1};
 	};	
 	//if (isNil 'CTI_DK_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_DK_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	//if (isNil 'CTI_POL_SIDE' || CTI_MAIN_ADDON > 0) then {CTI_POL_SIDE = -1};	//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 	
-	["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9> <UKR-%10>", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE,CTI_UKRAIN_SIDE]] call CTI_CO_FNC_Log;
+	//finally we check if all given params make sense or if we must change some thing to make the mission work
+	//blufor
+	if(CTI_US_SIDE < 0 && CTI_BW_SIDE < 0 && CTI_CDF_SIDE < 0 && CTI_UKRAIN_SIDE < 0) then {
+		switch (true) do {
+			case (CTI_CUP_ADDON >= 0 ): {CTI_US_SIDE = 0};
+			case (CTI_RHS_ADDON >= 0 ): {CTI_US_SIDE = 0};
+			case (CTI_SOG_DLC >= 0 ): {CTI_US_SIDE = 0};
+			case (CTI_GM_DLC >= 0 ): {CTI_BW_SIDE = 0};
+			default {["ERROR", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Can't find a valid BLUFOR nation for US:%1[CUP %2 | RHS %3 | SOG %4] and for BW:%5 [GM %6]", CTI_US_SIDE,CTI_CUP_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC,CTI_BW_SIDE,CTI_GM_DLC]] call CTI_CO_FNC_Log;};
+		};
+	};
+	//opfor
+	if(CTI_SOV_SIDE < 0 && CTI_NVA_SIDE < 0 && CTI_CHDKZ_SIDE < 0) then {
+		switch (true) do {
+			case (CTI_CUP_ADDON >= 0 ): {CTI_SOV_SIDE = 1};
+			case (CTI_RHS_ADDON >= 0 ): {CTI_SOV_SIDE = 1};
+			case (CTI_SOG_DLC >= 0 ): {CTI_NVA_SIDE = 1};
+			case (CTI_GM_DLC >= 0 ): {CTI_NVA_SIDE = 1};
+			default {["ERROR", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Can't find a valid OPFOR nation for US:%1[CUP %2 | RHS %3] and for NVA:%4 [SOG %5 | GM %6]", CTI_SOV_SIDE,CTI_CUP_ADDON,CTI_RHS_ADDON,CTI_NVA_SIDE,CTI_SOG_DLC,CTI_GM_DLC]] call CTI_CO_FNC_Log;};
+		};
+	};
+	//ind
+	if(CTI_GUER_TOWNS < 0) then {
+		if(CTI_RACS_SIDE < 0 && CTI_CDF_SIDE < 0 && CTI_CHDKZ_SIDE < 0) then {
+			switch (true) do {
+				case (CTI_CUP_ADDON >= 0 ): {CTI_RACS_SIDE = 2};
+				case (CTI_RHS_ADDON >= 0 ): {CTI_CDF_SIDE = 2};
+				default {["ERROR", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Can't find a valid IND nation for RACS:%1[CUP %2] and for CDF:%3 [RHS %4]", CTI_RACS_SIDE,CTI_CUP_ADDON,CTI_CDF_SIDE,CTI_RHS_ADDON]] call CTI_CO_FNC_Log;};
+			};
+		};
+	};
+	//SOG and GM didn't have any IND forces, so we check if there are other mods active to fill this gap or we set the towns to 50:50
+	if(CTI_SOG_DLC >= 0 || CTI_GM_DLC >= 0 && (CTI_CUP_ADDON < 0 && CTI_RHS_ADDON < 0)) then {
+		CTI_TOWNS_STARTING_MODE = 1;
+	};
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9> <UKR-%10> [Townset:%11]", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE,CTI_UKRAIN_SIDE,CTI_TOWNS_STARTING_MODE]] call CTI_CO_FNC_Log;};
 	
 	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"
 	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Bundeswehr (West Germany)","USA","CDF"
@@ -846,6 +891,7 @@ with missionNamespace do {
 	
 	if (isNil 'CTI_WEST_AI') then {CTI_WEST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
 	if (isNil 'CTI_EAST_AI') then {CTI_EAST_AI = -1};	//--- "no changes","Germany","Soviet Red Army","US Army","UK Army"
+	if (isNil 'CTI_CAMO_ACTIVATION') then {
 					//case 1: {//winter camo active
 					//case 2: {//desert camo active
 					//case 3: {//jungle camo active
@@ -853,7 +899,6 @@ with missionNamespace do {
 					//case 5: {//maritim camo active
 					//case 6: {//special camo active
 					//default {//main camo active
-	if (isNil 'CTI_CAMO_ACTIVATION') then {
 		CTI_CAMO_ACTIVATION = 0;
 		if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = CTI_CAMO_ACTIVATION};
 	} else {
