@@ -806,16 +806,16 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 /********************************************************************************************************************************
  *											Ukrainia																			*
  ********************************************************************************************************************************/
-if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+ if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CUP_ADDON > 0) then {
-		_headers pushBack 		"[RHS] Static MG (DSHKM)";
+		_headers pushBack 		"[CUP] Static MG (DSHKM)";
 		_classes pushBack 		"CUP_B_DSHKM_AFU";
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"[RHS] Static MG low (DSHKM)";
+		_headers pushBack 		"[CUP] Static MG low (DSHKM)";
 		_classes pushBack 		"CUP_B_DSHkM_MiniTriPod_AFU";
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
@@ -836,14 +836,14 @@ if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"[RHS] Static GW (AGS)";
+		_headers pushBack 		"[CUP] Static GW (AGS)";
 		_classes pushBack 		"CUP_B_AGS_AFU";
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
 		_tiers pushBack 		_tech_level;
 		
-		_headers pushBack 		"[RHS] Mortar";
+		_headers pushBack 		"[CUP] Mortar";
 		_classes pushBack 		"CUP_B_2b14_82mm_AFU";
 		_prices pushBack 		_priceArty;
 		_placements pushBack 	[180, 5];
@@ -1301,7 +1301,7 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  *											Ukrainia																			*
  ********************************************************************************************************************************/
  if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_RHS_ADDON > 0) then {
+	if(CTI_CUP_ADDON > 0) then {
 		_headers pushBack 		"[CUP] D30 Arty";
 		_classes pushBack 		"CUP_B_D30_AFU";
 		_prices pushBack 		_priceArty;
@@ -1627,7 +1627,7 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 /********************************************************************************************************************************
  *											Ukrainia																			*
  ********************************************************************************************************************************/
- if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+ if(CTI_UKRAIN_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_CUP_ADDON > 0) then {
 		_headers pushBack 		"[CUP] AA Defense (Igla)";
 		_classes pushBack 		"CUP_B_Igla_AA_pod_AFU";
