@@ -135,6 +135,16 @@ missionNamespace setVariable [format["CTI_%1_Base_Template", _side], [
 	[CTI_AMMO, 0, [80,37]]
 ]];
 
+missionNamespace setVariable [format["CTI_%1_Defense_Template", _side], [
+	[CTI_HEAVY, "AA", 270, 20],
+	[CTI_AMMO, "SAM", 90, 30],
+	[CTI_AIR, "RADAR", 90, 30],
+	[CTI_LIGHT, "AT", 90, 20],
+	[CTI_BARRACKS, "Defense", 90, 20],
+	[CTI_CONTROLCENTER, "Defense", 270, 20],
+	[CTI_REPAIR, "Defense", 90, 20]
+]];
+
 //--- Structures
 _headers = [];
 _classes = [];
@@ -1567,7 +1577,7 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_classes pushBack 		"vn_o_static_rsna75";
 		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"SAM";
+		_categories pushBack 	"RADAR";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"[SOG] sa2 SAM System";
@@ -1654,7 +1664,7 @@ if(_side == west) then {
 		_classes pushBack 		"TBW_MEADS_Radar_Fleck";
 		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"SAM";
+		_categories pushBack 	"RADAR";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"SAM System";
@@ -1668,7 +1678,7 @@ if(_side == west) then {
 		_classes pushBack 		"B_Radar_System_01_F";
 		_prices pushBack 		_priceBase;
 		_placements pushBack 	[180, 5];
-		_categories pushBack 	"SAM";
+		_categories pushBack 	"RADAR";
 		_tiers pushBack 		_tech_level;
 		
 		_headers pushBack 		"SAM System";
@@ -1683,7 +1693,7 @@ if(_side == west) then {
 	_classes pushBack 		"O_Radar_System_02_F";
 	_prices pushBack 		_priceBase;
 	_placements pushBack 	[180, 5];
-	_categories pushBack 	"SAM";
+	_categories pushBack 	"RADAR";
 	_tiers pushBack 		_tech_level;
 	
 	_headers pushBack 		"SAM System";
