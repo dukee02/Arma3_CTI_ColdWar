@@ -150,7 +150,7 @@ CTI_FSM_UpdateCommander_GetStructureEmplacement = {
 };
 
 CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
-	private ["_side", "_factory", "_template"];
+	private ["_side", "_factory", "_template", "_category", "_names", "_build", "_structures", "_commander", "_statics", "_selected"];
 	_side = _this select 0;
 	_template = _this select 1;
 
@@ -176,10 +176,9 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 		for [{ private _p = 0 }, { _p < count _statics }, { _p = _p + 1 }] do {
 			_placed = typeOf vehicle (_statics select _p);
 			if(_placed in _names) then {
-				//["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["defense found: <%1>", _placed]] call CTI_CO_FNC_Log;
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["DEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["defense found: <%1>", _placed]] call CTI_CO_FNC_Log;};
 				_build = false;
 			} else {
-				["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["no defense found: <%1> we want to build one", _placed]] call CTI_CO_FNC_Log;
 				//_build = true;
 			};
 		};
@@ -187,6 +186,7 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 		//check if we have the supply/funds to build a static
 		_selected = "";
 		if(_build) then {
+			private ["_selected_info", "_bill", "_attemps"];
 			_attemps = 0;
 			while {_attemps < ((count _names)*2)} do {
 				_selected = selectRandom _names;
@@ -201,7 +201,7 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 						_build = true;
 					} else {
 						_build = false;
-						["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["not enough supply: <%1> <%2S>", _selected, _bill]] call CTI_CO_FNC_Log;
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["not enough supply: <%1> <%2S>", _selected, _bill]] call CTI_CO_FNC_Log;};
 					};
 					
 				} else {
@@ -212,7 +212,7 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 						_build = true;
 					} else {
 						_build = false;
-						["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["not enough funds: <%1> <%2$>", _selected, _bill]] call CTI_CO_FNC_Log;
+						if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["not enough funds: <%1> <%2$>", _selected, _bill]] call CTI_CO_FNC_Log;};
 					};
 				};
 				_attemps = _attemps + 1;
@@ -221,6 +221,7 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 
 		//if all goes well we start building it
 		if(_build) then {
+			private ["_distance_structure", "_position", "_dir_to", "_new_pos", "_empty_pos"];
 			_distance_structure = _template select 3;
 			//_position = getPos _x;
 			_position = getPos (_structures select _s);
@@ -228,10 +229,10 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 			_new_pos = [(_position select 0) - ((sin _dir_to) * _distance_structure), (_position select 1) - ((cos _dir_to) * _distance_structure),0];
 			_empty_pos = _new_pos findEmptyPosition [0,10,_selected];
 			if(count _empty_pos > 0) then {
-				["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["place defense: <%1> <%2>", _selected, _empty_pos]] call CTI_CO_FNC_Log;
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["place defense: <%1> <%2>", _selected, _empty_pos]] call CTI_CO_FNC_Log;};
 				[format["CTI_%1_%2",_side,_selected], _side, [_new_pos select 0, _new_pos select 1], _dir_to, _commander, false, true] call CTI_SE_FNC_BuildDefense;
 			} else {
-				["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["no place found: <%1> <%2>", _selected, _new_pos]] call CTI_CO_FNC_Log;
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["no place found: <%1> <%2>", _selected, _new_pos]] call CTI_CO_FNC_Log;};
 				_build = false;
 			};
 			_s = count _structures;
