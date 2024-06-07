@@ -808,14 +808,14 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_DEPOT], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Naval Factory.
 _c = [];
-_matrix_full = [_side, CTI_UPGRADE_NAVAL] call CTI_CO_FNC_GetTechmatrix;
+/*_matrix_full = [_side, CTI_UPGRADE_NAVAL] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_NAVAL, CTI_BW_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_NAVAL >= _level) then {
 	//_c pushBack format["%", _sid];
-};
+};*/
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_NAVAL];
 if (isNil "_priorUnits") then { 

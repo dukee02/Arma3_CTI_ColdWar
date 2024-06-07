@@ -101,8 +101,8 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_BARRACKS], _c
 //											Wheeled Vehicles																				  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
-/*_c = [];
-_adds = 0;
+_c = [];
+/*_adds = 0;
 if(CTI_MAIN_ADDON == 0) then {
 	//Level start
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
@@ -124,7 +124,7 @@ if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 3) then {
 		_c pushBack format["%1", _sid];
 	};
-};
+};*/
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -134,7 +134,7 @@ if (isNil "_priorUnits") then {
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_DK.sqf", format["units in factory %1: [%2] ", CTI_LIGHT, count _c]] call CTI_CO_FNC_Log;};
 missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_LIGHT], _c];
-*/
+
 //*********************************************************************************************************************************************
 //											Tracked Vehicles																				  *
 //*********************************************************************************************************************************************
@@ -173,8 +173,8 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_HEAVY], _c];
 //											AIR - Choppers and Planes																		  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Air Factory.
-/*_c = [];
-//Level 0
+_c = [];
+/*//Level 0
 if(CTI_MAIN_ADDON == 0) then {
 	if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
 		_c pushBack format["%1gm_ge_army_bo105m_vbh", _sid];
@@ -191,7 +191,7 @@ if(CTI_MAIN_ADDON == 0) then {
 		_c pushBack format["%1gm_ge_army_ch53g", _sid];
 		_c pushBack format["%1gm_ge_army_ch53gs", _sid];
 	};
-};
+};*/
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AIR];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -200,7 +200,7 @@ if (isNil "_priorUnits") then {
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_DK.sqf", format["units in factory %1: [%2] ", CTI_AIR, count _c]] call CTI_CO_FNC_Log;};
-missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];*/
+missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 
 //*********************************************************************************************************************************************
 //											 Reapir Factory units																			  *
@@ -224,11 +224,11 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 //											 Ammo Factory units																			  	  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Ammo Factory.
-/*_c = [];
-if(CTI_MAIN_ADDON == 0) then {
+_c = [];
+/*if(CTI_MAIN_ADDON == 0) then {
 	_c pushBack format["%1gm_ge_army_kat1_451_reammo", _sid];
 	_c pushBack format["%1gm_ge_army_kat1_451_refuel", _sid];
-};
+};*/
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_AMMO];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -237,7 +237,7 @@ if (isNil "_priorUnits") then {
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_DK.sqf", format["units in factory %1: [%2] ", CTI_AMMO, count _c]] call CTI_CO_FNC_Log;};
-missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];*/
+missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 
 //*********************************************************************************************************************************************
 //											 Town Depot units																			  	  *
@@ -271,10 +271,10 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_DEPOT], _c];
 //											 Naval Factory units																		  	  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Naval Factory.
-/*_c = [];
-if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
+_c = [];
+/*if(CTI_ECONOMY_LEVEL_NAVAL >= 0) then {
 	_c pushBack format["%1B_Boat_Transport_01_F", _sid];
-};
+};*/
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_NAVAL];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -283,4 +283,4 @@ if (isNil "_priorUnits") then {
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_DK.sqf", format["units in factory %1: [%2] ", CTI_NAVAL, count _c]] call CTI_CO_FNC_Log;};
-missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_NAVAL], _c];*/
+missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_NAVAL], _c];

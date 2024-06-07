@@ -407,8 +407,8 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_DEPOT], _c];
 //											 Naval Factory units																		  	  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Naval Factory.
-/*_c = [];
-_matrix_full = [_side, CTI_UPGRADE_NAVAL] call CTI_CO_FNC_GetTechmatrix;
+_c = [];
+/*_matrix_full = [_side, CTI_UPGRADE_NAVAL] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_NAVAL, CTI_UKRAIN_ID, CTI_CUP_ID] call CTI_CO_FNC_GetTechmatrix;
 
 _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -421,7 +421,7 @@ if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;}
 if(CTI_ECONOMY_LEVEL_NAVAL >= _level) then {
 	_c pushBack format["%1", _sid];
 };
-
+*/
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_NAVAL];
 if (isNil "_priorUnits") then { 
 	_priorUnits = []; 
@@ -429,4 +429,4 @@ if (isNil "_priorUnits") then {
 	_c append _priorUnits; 
 };
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_UKR_CUP.sqf", format["units in factory %1: [%2] ", CTI_NAVAL, count _c]] call CTI_CO_FNC_Log;};
-missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_NAVAL], _c];*/
+missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_NAVAL], _c];
