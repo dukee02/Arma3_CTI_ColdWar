@@ -59,7 +59,7 @@ if(isNIL "_var") then {
 	//_position set [2, 0];
 	
 	_defense = objNull; 
-	if (_var select 3 == "SAM") then {
+	if (_var select 3 == "SAM" || _var select 3 == "RADAR") then {
 		_newObj = [_position, _direction, _var select 1, _side] call BIS_fnc_spawnVehicle;
 		_defense = _newObj select 0;
 	} else {
