@@ -91,3 +91,5 @@ if (_vehicle isKindOf "Air") then {[_vehicle, _side] call CTI_CO_FNC_SanitizeAir
 
 //--- Sanitize the artillery loadout, mines may lag the server for instance
 if (CTI_ARTILLERY_FILTER == 1) then {if (typeOf _vehicle in (missionNamespace getVariable ["CTI_ARTILLERY", []])) then {(_vehicle) call CTI_CO_FNC_SanitizeArtillery}};
+
+if (CTI_Log_Level >= CTI_Log_Information) then {["INFORMATION", "FILE: RearmVehicle.sqf", format["Units ammo: [%1]", someAmmo _vehicle]] call CTI_CO_FNC_Log;};
