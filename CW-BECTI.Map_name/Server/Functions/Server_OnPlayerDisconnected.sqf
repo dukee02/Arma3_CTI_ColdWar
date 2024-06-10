@@ -76,8 +76,9 @@ if (_is_commander && !isNull _team) then {
 	
 	//--- Send a message!
 	[["CLIENT", _side], "Client_OnMessageReceived", ["commander-disconnected"]] call CTI_CO_FNC_NetSend;
-	
+	//let this or maybe we change it to an automatic vote, but the popup may not wanted?
 	if ((missionNamespace getVariable "CTI_AI_COMMANDER_ENABLED") == 1) then { (_side) execFSM "Server\FSM\update_commander.fsm" }; //--- AI commander takeover
+	["INFORMATION", "FILE: Server\Functions\Server_OnPlayerDisconnected.sqf", format["Team [%1] Commander disconnected, AI take command.", _side]] call CTI_CO_FNC_Log;
 };
 
 _side = _get select 3; //--- Get the last side joined
