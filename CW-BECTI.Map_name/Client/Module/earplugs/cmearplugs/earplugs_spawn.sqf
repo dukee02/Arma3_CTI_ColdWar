@@ -40,10 +40,16 @@ uisleep 1;
 if ((_hasEPEH == "NEVER")) then {[] spawn cm_EP_LOOP;};	
 
 if (cmEarplugsKeyPressEnabled) then {
-	if (isNil "cmEarplugs_hotkeyDIKCodeNumber") then {
-		cmEarplugs_hotkeyDIKCodeNumber = cmEarplugs_hotkeyDIKCodeNumberINSERT;
+	if(cmEarplugs_myHotkeyTapTime <= (time+5)) then {
+		if(InsertAutoEarplugs) then {false} else {true};
+		if(RemoveAutoEarplugs) then {false} else {true};
+	} else {
+		cmEarplugs_myHotkeyTapTime = time;
+		if (isNil "cmEarplugs_hotkeyDIKCodeNumber") then {
+			cmEarplugs_hotkeyDIKCodeNumber = cmEarplugs_hotkeyDIKCodeNumberINSERT;
+		};
+		[] spawn {cmKeyPress = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == cmEarplugs_hotkeyDIKCodeNumber) then {[] call cm_Earplugs_FUNc;};"];};
 	};
-	[] spawn {cmKeyPress = (findDisplay 46) displayAddEventHandler ["KeyDown","if ((_this select 1) == cmEarplugs_hotkeyDIKCodeNumber) then {[] call cm_Earplugs_FUNc;};"];};
 };
 
 //cmEARPLUGS CODE END
