@@ -166,7 +166,7 @@ with missionNamespace do {
 		Expert > 0.85*/
 		CTI_AI_SKILL_BASE = 0.45;
 	} else {
-		CTI_AI_SKILL_BASE = switch (CTI_TOWNS_RESISTANCE) do {case 0: {0.05}; case 1: {0.25}; case 3: {0.65}; case 4: {0.80}; default {0.45}};
+		CTI_AI_SKILL_BASE = switch (CTI_AI_SKILL_BASE) do {case 0: {0.05}; case 1: {0.25}; case 3: {0.65}; case 4: {0.80}; default {0.45}};
 	};
 };
 //-----------------------------------------------------------------------------------------------------------------------//
@@ -730,15 +730,15 @@ CTI_MARKERS_TOWN_AREA_RANGE = 250;
 CTI_MARKERS_UNITS_DEAD_DELAY = 50;
 CTI_MARKERS_VEHICLES_DEAD_DELAY = 125;
 
-CTI_QUEUE_BARRACKS_LIMIT = 10;
-CTI_QUEUE_LIGHT_LIMIT = 3;
-CTI_QUEUE_HEAVY_LIMIT = 3;
-CTI_QUEUE_AIR_LIMIT = 2;
-CTI_QUEUE_AMMO_LIMIT = 3;
-CTI_QUEUE_REPAIR_LIMIT = 3;
-CTI_QUEUE_NAVAL_LIMIT = 3;
+CTI_QUEUE_BARRACKS_LIMIT = 20; //= 10;
+CTI_QUEUE_LIGHT_LIMIT = 6; // = 3;
+CTI_QUEUE_HEAVY_LIMIT = 6; // = 3;
+CTI_QUEUE_AIR_LIMIT = 6; // = 2;
+CTI_QUEUE_AMMO_LIMIT = 6; // = 3;
+CTI_QUEUE_REPAIR_LIMIT = 6; // = 3;
+CTI_QUEUE_NAVAL_LIMIT = 6; // = 3;
 //CTI_QUEUE_AIRPORT_LIMIT = 2;
-CTI_QUEUE_DEPOT_LIMIT = 3;
+CTI_QUEUE_DEPOT_LIMIT = 6; // = 3;
 
 CTI_PLAYER_DEFAULT_ALIAS = "Soldier";
 
