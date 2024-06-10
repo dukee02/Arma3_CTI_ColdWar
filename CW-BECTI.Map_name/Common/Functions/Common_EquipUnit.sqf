@@ -35,7 +35,7 @@
 	[player, _gear] call CTI_CO_FNC_EquipUnit; 
 */
 
-private ["_gear", "_item", "_magazine", "_unit"];
+private ["_gear", "_item", "_magazine", "_accessories", "_muzzles",  "_new", "_unit", "_voice", "_voices"];
 
 _unit = _this select 0;
 _gear = _this select 1;
@@ -198,5 +198,9 @@ if(count _voices <= 0) then {
 };
 _voice = selectRandom _voices;
 [_unit,"",_voice] call BIS_fnc_setIdentity;
+
+if([_unit] call BIS_fnc_getUnitInsignia != "") then {
+	[_unit, "MANW"] call BIS_fnc_setUnitInsignia;
+};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Functions\Common_EquipUnit.sqf", format ["Units Voice = <%1>", _voice]] call CTI_CO_FNC_Log };
