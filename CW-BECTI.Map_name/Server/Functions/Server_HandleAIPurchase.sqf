@@ -87,8 +87,10 @@ if !(_model isKindOf "Man") then { //--- Add the vehicle crew cost if applicable
 	if !(isNil '_var_crew_classname') then { _cost = _cost + ((count(_model call CTI_CO_FNC_GetVehicleTurrets)+1) * (_var_crew_classname select 2)) };
 };
 
-//AI will pay now less than a player (factor 100 or 10?)
-_cost = round(_cost/100);
+//AI will pay now less than a player (factor 100) it the AI is set harder than Rookie
+if(CTI_AI_SKILL_BASE < 0.40) then {
+	_cost = round(_cost/100); //_cost = round(_cost/(CTI_AI_SKILL_BASE*150));
+};
 
 _funds = [_req_buyer, _req_side] call CTI_CO_FNC_GetFunds;
 if (_funds < _cost) exitWith { [_req_seed, _req_classname, _req_target, _factory] call CTI_SE_FNC_OnClientPurchaseComplete };
