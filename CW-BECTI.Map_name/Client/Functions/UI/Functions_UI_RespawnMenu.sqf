@@ -273,7 +273,11 @@ CTI_UI_Respawn_OnRespawnReady = {
 				[player, missionNamespace getVariable format ["CTI_AI_%1_DEFAULT_GEAR", CTI_P_SideJoined]] call CTI_CO_FNC_EquipUnit; //--- Insufficient funds - Equip the default equipment
 			};
 		} else {
-			[player, missionNamespace getVariable format ["CTI_AI_%1_DEFAULT_GEAR", CTI_P_SideJoined]] call CTI_CO_FNC_EquipUnit; //--- No previous purchase found or parameter set to default gear - Equip the default equipment
+			if(CTI_RESPAWN_PENALTY == -1) then {
+				[player, missionNamespace getVariable "cti_gear_ondeath"] call CTI_CO_FNC_EquipUnit;
+			} else {
+				[player, missionNamespace getVariable format ["CTI_AI_%1_DEFAULT_GEAR", CTI_P_SideJoined]] call CTI_CO_FNC_EquipUnit; //--- No previous purchase found or parameter set to default gear - Equip the default equipment
+			};
 		};
 	} else { //--- Respawn in own AI
 		[player, _respawn_ai_gear] call CTI_CO_FNC_EquipUnit; //--- Equip the equipment of the AI on the player
