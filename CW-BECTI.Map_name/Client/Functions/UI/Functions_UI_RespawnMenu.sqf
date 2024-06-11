@@ -27,7 +27,9 @@ CTI_UI_Respawn_GetAvailableLocations = {
 	//--- Add the nearest player's AI (impersonation) minus the mobile's crew
 	if ((missionNamespace getVariable "CTI_RESPAWN_AI") > 0) then {
 		{
-			if (_x distance CTI_DeathPosition <= CTI_RESPAWN_AI_RANGE && !(_x in _ignore_mobile_crew) && !isPlayer _x) then {_list pushBack _x};
+			if ((missionNamespace getVariable "CTI_RESPAWN_AI") < 2) then {
+				if (_x distance CTI_DeathPosition <= CTI_RESPAWN_AI_RANGE && !(_x in _ignore_mobile_crew) && !isPlayer _x) then {_list pushBack _x};
+			};
 		} forEach ((units player - [player]) call CTI_CO_FNC_GetLiveUnits);
 	};
 	
