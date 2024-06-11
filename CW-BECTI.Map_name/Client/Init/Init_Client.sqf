@@ -403,7 +403,7 @@ if (!isClass(configFile >> "CfgPatches" >> "ace_main")) then
 		//[] execVM "Client\Module\zlt\zlt_fastrope.sqf";
 	};
 	//--- Earplug script to reduce sound level when required
-	execVM "Client\Module\earplugs\nre_earplugs.sqf";
+	//execVM "Client\Module\earplugs\nre_earplugs.sqf";
 	//[player] execVM "Client\Module\earplugs\simpleEP.sqf";
 	//--- cmEARPLUGS
 	call compile preProcessFileLineNumbers "Client\Module\earplugs\cmEarplugs\config.sqf";
