@@ -227,6 +227,7 @@ CTI_FSM_UpdateCommander_GetDefenseEmplacement = {
 			_position = getPos (_structures select _s);
 			_dir_to = _template select 2;
 			_new_pos = [(_position select 0) - ((sin _dir_to) * _distance_structure), (_position select 1) - ((cos _dir_to) * _distance_structure),0];
+			_dir_to = direction (_structures select _s);			//get the factory direction to set the satic faceing
 			_empty_pos = _new_pos findEmptyPosition [0,10,_selected];
 			if(count _empty_pos > 0) then {
 				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOCDEBUG", "FILE: Functions_FSM_UpdateCommander_@GetDefenseEmplacement.sqf", format["place defense: <%1> <%2>", _selected, _empty_pos]] call CTI_CO_FNC_Log;};
