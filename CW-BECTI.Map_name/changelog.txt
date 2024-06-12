@@ -1,3 +1,28 @@
+[V2.0.3.3] o. [V2.0.4] Changelog:
+Added: toggle mode for earplugs keybound to INSERT
+Added: Option to disable tokeover distance for units on respawn
+Added: Option to respawn with last gear
+Added: default "MANW" Insignia
+Added: commander ability to setup statics
+Added: Better Base-repair prise calculation
+Added: CUP Ukrainian forces
+Added: CUP new RUS units
+Changed: some param desriptions
+Changed: mods possibility check
+Changed: positioning of vehicles after loading
+Changed: rearming behavior for statics
+Changed: Max Queue amount in factorys
+Changed: discount for AI only in harderAI skills
+Fixed: ArmoredMBT error
+Fixed: M577(VN) medic price
+Fixed: M29(VN) Price and some descriptions
+Fixed: naked start if SOG not owned
+fixed: buggy US flag (deleted)
+Fixed: some old Arma2 damage stuff
+Fixed: error on loading if no ships in techtree
+Fixed: error on loading the supply
+Fixed: building blocked in not in restricted area
+
 [V2.0.3] Changelog:
 Added: more options for start $
 Added: Cam Lao Nam map

@@ -45,7 +45,7 @@
 	  -> Create a locked and handled "B_Quadbike_01_F" at the player's position facing South on the player's initial side
 */
 
-private ["_direction", "_handle", "_locked", "_net", "_position", "_side", "_special", "_type", "_vehicle", "_save_pos", "_placement"];
+private ["_direction", "_handle", "_locked", "_net", "_position", "_side", "_special", "_type", "_vehicle", "_save_pos", "_placement", "_result"];
 
 _type = _this select 0;
 _position = _this select 1;
@@ -81,14 +81,19 @@ if (_placement == 0) then {
 	};
 };
 
-_vehicle = createVehicle [_type, _save_pos, [], _placement, _special];
-_vehicle setDir _direction;
-VIOC_ZEUS addCuratorEditableObjects [[_vehicle], true];
-
+//handle UAVs/UGVs
+if((_type call BIS_fnc_objectType) select 0 == "VehicleAutonomous") then {
+	_result = [_save_pos, _direction, _type, _side] call BIS_fnc_spawnVehicle;
+	_vehicle = _result select 0;
+} else {
+	_vehicle = createVehicle [_type, _save_pos, [], _placement, _special];
+	_vehicle setDir _direction;
+};
 clearItemCargoGlobal _vehicle;
 clearMagazineCargoGlobal _vehicle;
 clearWeaponCargoGlobal _vehicle;
 clearBackpackCargoGlobal _vehicle;
+VIOC_ZEUS addCuratorEditableObjects [[_vehicle], true];
 
 if (_special == "FLY") then {
 	//makes the air unit starts to fly
