@@ -175,7 +175,7 @@ if (isClass(configFile >> "CfgVehicles" >> "CDF_WarfareBBarracks")) then {
 };
 _prices pushBack		2000;
 _times pushBack			60;
-_placements pushBack 	[90, 35];
+_placements pushBack 	[0, 35];
 _helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
 _specials pushBack 		[["DMG_Reduce", CTI_BASE_BUILDING_DMG_REDUCE]];
 
@@ -188,7 +188,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 	};
 	_prices pushBack 		4000;
 	_times pushBack 		80;
-	_placements pushBack 	[90, 30];
+	_placements pushBack 	[0, 30];
 	_helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
 	_specials pushBack 		[["DMG_Reduce", CTI_BASE_BUILDING_DMG_REDUCE]];
 };
@@ -201,7 +201,7 @@ if (isClass(configFile >> "CfgVehicles" >> "GUE_WarfareBUAVterminal")) then {
 };
 _prices pushBack 		4000;
 _times pushBack 		90;
-_placements pushBack 	[90, 25];
+_placements pushBack 	[0, 25];
 _helper pushBack		[""];
 _specials pushBack 		[["DMG_Reduce", CTI_BASE_BUILDING_DMG_REDUCE]];
 
@@ -215,7 +215,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= 0) then {
 	};
 	_prices pushBack 		6000;
 	_times pushBack 		120;
-	_placements pushBack 	[90, 25];
+	_placements pushBack 	[0, 25];
 	_helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
 	_specials pushBack 		[["DMG_Reduce", CTI_BASE_BUILDING_DMG_REDUCE]];
 };
@@ -229,7 +229,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= 0) then {
 	};
 	_prices pushBack 		8000;
 	_times pushBack 		140;
-	_placements pushBack 	[90, 40];
+	_placements pushBack 	[0, 40];
 	_helper pushBack		["Sign_Arrow_Large_Blue_F", 0];
 	_specials pushBack 		[["DMG_Reduce", CTI_BASE_BUILDING_DMG_REDUCE]]; 
 };
