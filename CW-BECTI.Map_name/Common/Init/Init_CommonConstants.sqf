@@ -450,6 +450,7 @@ CTI_TOWNS_MORTARS_RANGE_MIN = 125; //--- AI Mortars may not fire at targets with
 
 //--- Towns: Parameters
 with missionNamespace do {
+	if (isNil "CTI_TOWNS_REMOVEDPARAM") then {Towns_RemovedParam = []}; //--- Array with towns the should get removed
 	if (isNil "CTI_TOWNS_AMOUNT") then {CTI_TOWNS_AMOUNT = 6}; //--- Amount of towns (0: Very small, 1: Small, 2: Medium, 3: Large, 4: West, 5: East, 6: Full).
 	if (isNil "CTI_TOWNS_BUILD_PROTECTION_RANGE") then {CTI_TOWNS_BUILD_PROTECTION_RANGE = 300};	
 	if (isNil "CTI_TOWNS_CAMPS_CREATE") then {CTI_TOWNS_CAMPS_CREATE = 1}; //--- Create the camp models.
@@ -963,6 +964,8 @@ with missionNamespace do {
 	if (isNil 'CTI_GRAPHICS_VD_MAX') then {CTI_GRAPHICS_VD_MAX = 2500};
 	if (isNil 'CTI_GRAPHICS_TG_MAX') then {CTI_GRAPHICS_TG_MAX = 50};
 	
+	if (isNil "CTI_RESPAWN_CAMPS_RULE_MODE") then {CTI_RESPAWN_CAMPS_RULE_MODE = 2}; //--- Respawn Camps Rule (0: Disabled, 1: West | East, 2: West | East | Resistance).
+	if (isNil 'CTI_RESPAWN_MOBILE') then {CTI_RESPAWN_MOBILE = 1};
 	if (isNil 'CTI_RESPAWN_AI') then {CTI_RESPAWN_AI = 1};
 	if (isNil 'CTI_RESPAWN_FOB_RANGE') then {CTI_RESPAWN_FOB_RANGE = 1750}; 		//--- Range at which a unit can spawn at a FOB
 	CTI_RESPAWN_CAMPS_RANGE = CTI_RESPAWN_FOB_RANGE;								//--- Range at which a unit can spawn at a camp

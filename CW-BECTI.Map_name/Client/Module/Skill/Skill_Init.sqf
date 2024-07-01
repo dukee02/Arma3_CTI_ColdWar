@@ -5,6 +5,12 @@
 	Author: 		Benny (ported from WFBE by Sari)
 	Creation Date:	26-05-2014
 	Revision Date:	26-05-2014
+	
+	BI traits:
+	https://community.bistudio.com/wiki/setUnitTrait
+	https://community.bistudio.com/wiki/getAllUnitTraits
+	
+	https://community.bistudio.com/wiki/addRating
 */
 
 //--- Functions 
@@ -47,7 +53,6 @@ if (typeOf player in CTI_SK_SPOTTERS) then {CTI_SK_TYPE = CTI_SK_TYPE + ["Spotte
 //--- Special one time init - the soldier can hire more units than the others leader
 if ('Soldier' in CTI_SK_TYPE) then {missionNamespace setVariable ['CTI_AI_PLAYER_TEAMS_GROUPSIZE',(missionNamespace getVariable "CTI_AI_PLAYER_TEAMS_GROUPSIZE") + (missionNamespace getVariable "CTI_AI_PLAYERS_TEAMS_SOLDIER_GROUPSIZE")]};
 
-
 /*
 player setUnitTrait ["explosiveSpecialist",true];
 player setUnitTrait ["UAVHacker",true];
@@ -68,6 +73,4 @@ player setFatigue 2.75; 				// Menge an Ausdauer
 VIOC_ZEUS addCuratorEditableObjects [[this], false]; 
 this setUnitTrait ["UAVHacker",true];
 this setUnitTrait ["explosiveSpecialist",true];
-
 */
-//see: https://community.bistudio.com/wiki/setUnitTrait

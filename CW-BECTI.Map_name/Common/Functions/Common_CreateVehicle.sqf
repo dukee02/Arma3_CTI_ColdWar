@@ -83,7 +83,8 @@ if (_placement == 0) then {
 
 //handle UAVs/UGVs
 if((_type call BIS_fnc_objectType) select 0 == "VehicleAutonomous") then {
-	_result = [_save_pos, _direction, _type, _side] call BIS_fnc_spawnVehicle;
+	//[position, direction, type, sideOrGroup] call BIS_fnc_spawnVehicle
+	_result = [_save_pos, _direction, _type, ((_side) call CTI_CO_FNC_GetSideFromID)] call BIS_fnc_spawnVehicle;
 	_vehicle = _result select 0;
 } else {
 	_vehicle = createVehicle [_type, _save_pos, [], _placement, _special];
@@ -95,6 +96,11 @@ clearWeaponCargoGlobal _vehicle;
 clearBackpackCargoGlobal _vehicle;
 VIOC_ZEUS addCuratorEditableObjects [[_vehicle], true];
 
+//send the unit to the statistic managing for counting, but only if placement > 0 what means vehile not loaded from save
+if (_placement > 0) then {
+	[((_side) call CTI_CO_FNC_GetSideFromID), _type, "buyed"] call CTI_CO_FNC_ManageStatistics;
+};
+
 if (_special == "FLY") then {
 	//makes the air unit starts to fly
 	_vehicle setVelocity [50 * (sin _direction), 50 * (cos _direction), 0];
@@ -105,7 +111,7 @@ if (_vehicle isKindOf "Air") then {[_vehicle, _side] call CTI_CO_FNC_SanitizeAir
 
 {//unit sometimes a long time unrecognised -> force revealing units with reveal command usually solves the problem
 	player reveal [_vehicle, 4];
-} forEach allUnits;
+} forEach allUnits;	
 
 if (_locked) then {_vehicle lock 2} else {_vehicle lock 0};
 if (_net) then {_vehicle setVariable ["cti_net", _side, true]};

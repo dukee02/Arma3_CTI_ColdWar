@@ -344,7 +344,7 @@ class Params {
 		default = 0;
 	};
 	class CTI_BASE_AREA_MAX {
-		title = "BASE: Areas Limit";
+		title = "BASE: Maximum amount (Area)";
 		values[] = {0,1,2,3,4,5,6,7,8};
 		texts[] = {"Disabled","1","2","3","4","5","6","7","8"};
 		default = 4;
@@ -555,8 +555,8 @@ class Params {
 	};
   	class CTI_WEATHER_FAST_NIGHT {
 		title = "WEATHER: Night Duration";
-		values[] = {0.25,0.5,0.75,1,2,3,4,5,6,7,8,9,10,11,12};
-		texts[] = {"15 min","30 min","45 min","1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours"};
+		values[] = {1,2,3,4,5,6,7,8,9,10,11,12};
+		texts[] = {"1 hour","2 hours","3 hours","4 hours","5 hours","6 hours","7 hours","8 hours","9 hours","10 hours","11 hours","12 hours"};
 		default = 1;
 	};
   	class CTI_WEATHER_CHANGES {
@@ -679,9 +679,9 @@ class Params {
 	};
 	class CTI_TOWNS_AMOUNT {
 		title = "TOWNS: Amount";
-		values[] = {0,1,2,3,4,5,6};
-		texts[] = {"Extra Small","Small","Medium","Large","East","West","Full"};
-		default = 6;
+		values[] = {0,1,2,3,4,5,6,7,8,9};
+		texts[] = {"Extra Small","Small","Medium","Large","SpecialMode 1 (Full if no setup defined)","SpecialMode 2 (Full if no setup defined)","SpecialMode 3 (Full if no setup defined)","SpecialMode 4 (Full if no setup defined)","Parameter (Full if no param set)","Full"};
+		default = 9;
 	};
 	class CTI_TOWNS_CAMPS_CREATE {
 		title = "TOWNS: Camps";
@@ -808,6 +808,12 @@ class Params {
 		values[] = {2,4,6,8,10,12,14,16,18,20,22,24,26,28,30,35,40,45,50,60,70,80,90,100};
 		texts[] = {"2","4","6","8","10","12","14","16","18","20","22","24","26","28","30","35","40","45","50","60","70","80","90","100"};
 		default = 10;
+	};
+	class CTI_AI_VEHICLE_LOCK {
+		title = "AI Vehicles locked?";
+		values[] = {0,1};
+		texts[] = {"Disabled - needed if you want to transport AI Teams","Enabled (default)"};
+		default = 1;
 	};
 	class CTI_SALVAGE_SPECIAL {
 		title = "SPECIAL: Enable Rescue Vehicle as Salvager";

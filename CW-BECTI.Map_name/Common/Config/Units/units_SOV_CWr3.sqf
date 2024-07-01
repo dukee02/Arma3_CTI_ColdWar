@@ -27,7 +27,7 @@ _f = []; //--- Built from Factory.
 _s = []; //--- Script
 _d = []; //--- Extra Distance (From Factory)
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_SOV_CUP.sqf", format["starting units declaration: _sid: [%1] | _faction: [%2]", _sid, _faction]] call CTI_CO_FNC_Log};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_SOV_CWR3.sqf", format["starting units declaration: _sid: [%1] | _faction: [%2]", _sid, _faction]] call CTI_CO_FNC_Log};
 
 //*********************************************************************************************************************************************
 //											Infantry units																					  *
@@ -894,6 +894,6 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_NAVAL) then {
 	_upgrade_levels set [CTI_UPGRADE_NAVAL, _tech_level];
 };
 
-if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_SOV_CUP.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_SOV_CWR3.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};
 
 [_side, _faction, _c, _p, _n, _o, _t, _u, _f, _s, _d] call compile preprocessFileLineNumbers "Common\Config\Units\Set_Units.sqf";

@@ -1,4 +1,4 @@
-private ["_faction", "_c", "_p", "_side", "_u", "_tech_level", "_upgrade_levels", "_matrix_full", "_matrix_nation", "_matrix_cnt"];
+private ["_faction", "_c", "_p", "_side", "_u", "_tech_level", "_upgrade_levels", "_ownedDLCs", "_matrix_full", "_matrix_nation", "_matrix_cnt"];
 
 _side = _this;
 _upgrade_levels = [];

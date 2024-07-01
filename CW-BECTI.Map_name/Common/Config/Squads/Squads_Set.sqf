@@ -1,15 +1,15 @@
 _side = _this select 0;
-_v = _this select 1;
-_t = _this select 2;
-_p = _this select 3;
-_f = _this select 4;
-_m = _this select 5;
-_c = _this select 6;
-_s = _this select 7;
+_v = _this select 1;		//Name format ["CTI_SQUAD_%1_%2", _side, _v] -> CTI_SQUAD_WEST_ArmoredMBT
+_t = _this select 2;		//Label to show in menu?
+_p = _this select 3;		//Units pool
+_f = _this select 4;		//Factory
+_m = _this select 5;		//Money/prise
+_c = _this select 6;		//cathegory format ["CTI_SQUADS_%1_%2", _side, _c] -> CTI_SQUADS_WEST_AIR
+_s = _this select 7;		//special
 
 _squads = [];
 for '_i' from 0 to (count _v)-1 do {
-	if (CTI_Log_Level >= CTI_Log_Debug) then { ["VIO_DEBUG", "FILE: Common\Config\Squads\Squads_Set.sqf", format ["Setup Squad: <%1> | <%2>", _p select _i, _p]] call CTI_CO_FNC_Log };
+	if (CTI_Log_Level >= CTI_Log_Debug) then { ["VIO_DEBUG", "FILE: Common\Config\Squads\Squads_Set.sqf", format ["Setup Squad: <%1>", _p select _i]] call CTI_CO_FNC_Log };
 	_pool = [];
 	{ 
 		//--- Make sure that the pool contain valid units
