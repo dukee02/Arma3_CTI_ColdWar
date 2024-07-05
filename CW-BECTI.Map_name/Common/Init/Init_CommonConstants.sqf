@@ -159,17 +159,12 @@ with missionNamespace do {
 	if (isNil 'CTI_AI_COMMANDER_ENABLED') then {CTI_AI_COMMANDER_ENABLED = 1}; //--- Determine whether AI Commander is enabled or not
 	if (isNil 'CTI_AI_VEHICLE_LOCK') then {CTI_AI_VEHICLE_LOCKED = true;} else {if(CTI_AI_VEHICLE_LOCK == 1) then {CTI_AI_VEHICLE_LOCKED = true}else{CTI_AI_VEHICLE_LOCKED = false};}; //--- AI Teams lock the vehicles
 	if (isNil 'CTI_AI_SKILL_BASE') then {
-		/*Novice < 0.25
-		Rookie >= 0.25 and <= 0.45
-		Recruit > 0.45 and <= 0.65
-		Veteran > 0.65 and <= 0.85
-		Expert > 0.85*/
-		CTI_AI_SKILL_BASE = 0.45;
+		CTI_AI_SKILL_BASE = 0.4;
 	} else {
-		CTI_AI_SKILL_BASE = switch (CTI_AI_SKILL_BASE) do {case 0: {0.05}; case 1: {0.25}; case 3: {0.65}; case 4: {0.80}; default {0.45}};
+		CTI_AI_SKILL_BASE = switch (CTI_AI_SKILL_BASE) do {case 0: {0.1}; case 1: {0.2}; case 2: {0.3}; case 3: {0.4}; case 4: {0.5}; case 5: {0.6}; case 6: {0.7}; case 7: {0.8}; case 8: {0.9}; default {0.4}};
 	};
 	{
-		[_x,(CTI_AI_SKILL_BASE*0.8),((CTI_AI_SKILL_BASE-0.3)*0.8),CTI_AI_SKILL_BASE,(CTI_AI_SKILL_BASE-0.3)] call BIS_fnc_EXP_camp_setSkill;
+		[_x,(CTI_AI_SKILL_BASE*0.8),((CTI_AI_SKILL_BASE*0.85)*0.8),CTI_AI_SKILL_BASE,(CTI_AI_SKILL_BASE*0.85)] call BIS_fnc_EXP_camp_setSkill;
 	} forEach [east,west,resistance];
 };
 //-----------------------------------------------------------------------------------------------------------------------//
@@ -471,8 +466,8 @@ with missionNamespace do {
 
 //--- Towns: Misc.
 CTI_TOWNS_MARKER_RANGE = 1.0; //--- A town marker is updated (SV) on map if a unit is within the range (town range * coef).
-CTI_TOWNS_OCCUPATION_GROUPS_RATIO = switch (CTI_TOWNS_OCCUPATION) do {case 1: {0.1}; case 2: {0.125}; case 3: {0.15}; case 4: {0.2}; default {1}}; //--- Determine how many groups may spawn (scales with town value)
-CTI_TOWNS_RESISTANCE_GROUPS_RATIO = switch (CTI_TOWNS_RESISTANCE) do {case 1: {0.1}; case 2: {0.125}; case 3: {0.15}; case 4: {0.2}; default {1}}; //--- Determine how many groups may spawn (scales with town value)
+CTI_TOWNS_OCCUPATION_GROUPS_RATIO = switch (CTI_TOWNS_OCCUPATION) do {case 1: {0.005}; case 2: {0.01}; case 3: {0.02}; case 4: {0.03}; case 5: {0.04};  case 6: {0.05};  case 7: {0.06};  case 8: {0.07}; default {0.03}}; //--- Determine how many groups may spawn (scales with town value)
+CTI_TOWNS_RESISTANCE_GROUPS_RATIO = switch (CTI_TOWNS_RESISTANCE) do {case 1: {0.005}; case 2: {0.01}; case 3: {0.02}; case 4: {0.03}; case 5: {0.04};  case 6: {0.05};  case 7: {0.06};  case 8: {0.07}; default {0.03}}; //--- Determine how many groups may spawn (scales with town value)
 //-----------------------------------------------------------------------------------------------------------------------//
 
 
