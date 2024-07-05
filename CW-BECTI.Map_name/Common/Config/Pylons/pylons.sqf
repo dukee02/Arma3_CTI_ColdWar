@@ -586,7 +586,7 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_AGM65E_P_1rnd_M")) then {
 	_c pushBack "FIR_Kh29D_P_1rnd_M";					//Kh-29D 					<Air to surface missile , IR-guided>
 	_c pushBack "FIR_Kh25MS_P_1rnd_M";					//Kh-25MS 					<Air to surface missile , GLONASS guided>
 };
-if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
+if (isClass(configFile >> "CfgMagazines" >> "tu95_1Rnd_Kh65")) then {
 	_c pushBack "tu95_1Rnd_Kh65";				//Kh-65 (AS-15) 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 1<br />Warhead: HE>
 	_c pushBack "tu95_2Rnd_Kh65";				//Kh-65 (AS-15) x2 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 2<br />Warhead: HE>
 	_c pushBack "tu95_3Rnd_Kh65";				//Kh-65 (AS-15) x3 			<Type: Tactical Air-Surface Missile (TASM)<br />Kh-65 NATO:('AS-15')<br />Rounds: 3<br />Warhead: HE>
@@ -693,7 +693,7 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_AGM65H_P_1rnd_M")) then {
 	_c pushBack "FIR_CruiseMissile_01_P_9rnd_M";			//Cruise Missile HE 	<Long-range, data link guided, surface-to-surface missile with high-explosive warhead>
 	_c pushBack "FIR_CruiseMissile_01_Cluster_P_9rnd_M";	//Cruise Missile Cluster <Long-range, data link guided, surface-to-surface missile with cluster munitions>
 };
-if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
+if (isClass(configFile >> "CfgMagazines" >> "tu95_1Rnd_3M80")) then {
 	_c pushBack "tu95_1Rnd_3M80";				//Kh-41 (3M80) Moskit ASM 	<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Rounds: 1<br />Warhead: HE-Penetrator>
 	_c pushBack "tu95_1Rnd_Kh22";				//Kh-22 (AS-4) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Kh-22 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>		//Strange convex component01 in pook_tu16\wep\kh22_fly.p3d:geometry
 	_c pushBack "tu22_1Rnd_Kh22";				//Kh-22 (AS-4) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />Kh-22 NATO:('AS-4')<br />Rounds: 1<br />Warhead: HE-Penetrator>
@@ -739,7 +739,7 @@ if(CTI_RHS_ADDON > 0) then {
 	};
 };
 
-if (isClass(configFile >> "CfgMagazines" >> "FIR_Scalpel_P_1rnd_M")) then {
+if (isClass(configFile >> "CfgMagazines" >> "tu95_1Rnd_Kh55")) then {
 	_tech_level = 4;
 
 	_c pushBack "tu95_1Rnd_Kh55";				//Kh-55 (AS-15) 			<Type: Air-Launched Cruise Missile (ALCM)<br />Kh-55 NATO:('AS-15')<br />Rounds: 1<br />Warhead: Nuclear 200kt>
@@ -1396,7 +1396,7 @@ if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
 	_c pushBack "FIR_RBK250_P_1rnd_M";						//RBK-250 							<250kg bomb,cluster>
 	_c pushBack "FIR_RBK500_SPBE_D_P_1rnd_M";				//RBK-500 SPBE-D 					<500kg bomb,Sensor Fuzed Weapon>
 };
-if (isClass(configFile >> "CfgMagazines" >> "FIR_Mk82_GP_P_1rnd_M")) then {
+if (isClass(configFile >> "CfgMagazines" >> "tu95_24Rnd_FAB250")) then {
 	_c pushBack "tu95_24Rnd_FAB250";			//FAB-250 HE (x24) 	<Type: Conventional Low-Drag Bomb<br />Rounds: 24<br />550lb \ 250kg<br />Warhead: HE>
 	_c pushBack "tu16_24Rnd_FAB250";			//FAB-250 HE (x24) 	<Type: Conventional Low-Drag Bomb<br />Rounds: 24<br />550lb \ 250kg<br />Warhead: HE>
 	_c pushBack "tu22_33Rnd_FAB250";			//FAB-250 HE x33 	<Type: Conventional Low-Drag Bomb<br />Rounds: 33x 550lb (250kg)<br />Warhead: HE>
@@ -1955,7 +1955,7 @@ if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
 	//_c pushBack "BE200_WaterTank_F";				//Water, 2000 litres 			<Water, 2000 litres>"		//unable to create weapon for missile 'BE200_WaterTank_F', check config entry'pylonWeapon'	lot of errors!!!!
 	//_c pushBack "BE200_WaterTank_R";				//Water, 2000 litres 			<Water, 2000 litres>"		//unable to create weapon for missile 'BE200_WaterTank_R', check config entry'pylonWeapon'	lot of errors!!!!
 };
-if (isClass(configFile >> "CfgMagazines" >> "FIR_GBU16_Navy_P_1rnd_M")) then {
+if (isClass(configFile >> "CfgMagazines" >> "sab_milavi_1rnd_droptank_mag")) then {
 	_c pushBack "sab_milavi_1rnd_droptank_mag";			//MA TNK Droptank v1 <>
 	_c pushBack "sab_milavi_1rnd_droptank_2_mag";		//MA TNK Droptank v2 <>
 	_c pushBack "sab_milavi_1rnd_droptank_3_mag";		//MA TNK Droptank v3 <>

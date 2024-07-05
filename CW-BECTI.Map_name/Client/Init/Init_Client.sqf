@@ -393,7 +393,7 @@ if (CTI_DEBUG) then {
 	player addAction ["<t color='#ff0000'>DEBUGGER 2000</t>", "debug_diag.sqf"];//debug
 };
 
-if(CTI_ADD_MODULE >= 2) then {
+if(CTI_ADD_MODULE >= 1) then {
 	[] execVM "VAM_GUI\VAM_GUI_init.sqf";
 };
 //if(CTI_ADD_MODULE == 1 || CTI_ADD_MODULE == 3) then {

@@ -918,7 +918,7 @@ with missionNamespace do {
 	
 	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 15000}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, max. 5000m (can make units unusable),max. 10000m, max. 15000m, max. 20000m, max. 30000m, max. 40000m")
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission
-	if (isNil 'CTI_VAM_MODULE') then {CTI_VAM_MODULE = 0}; //--- Vehicle appereance module on/off
+	if (isNil 'CTI_ADD_MODULE') then {CTI_ADD_MODULE = 0}; //--- Vehicle appereance module on/off
 
 	CTI_ECONOMY_INCOME_COEF = 10; //--- Town Multiplicator Coefficient (SV * x)
 	//CTI_ECONOMY_INCOME_DIVIDED = 2.75; //--- Prevent commander from being a millionaire, and add the rest to the players pool.

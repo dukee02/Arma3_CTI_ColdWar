@@ -71,7 +71,7 @@ class Params {
 		texts[] = {"DISABLED: ignore loaded plane addons", "ACTIVE: Only planes that match the side", "ACTIVE: I will all planes (only some skins each type)", "ACTIVE: more skins each type", "ACTIVE: without restrictions !!can result in a large list in the factory!!"};
 		default = 0;
 	};
-	class CTI_VAM_MODULE {
+	class CTI_ADD_MODULE {
 		title = "Module: VAM (Vehicle Appearance Module)";
 		values[] = {0,1};
 		texts[] = {"Disabled","Enabled"};
