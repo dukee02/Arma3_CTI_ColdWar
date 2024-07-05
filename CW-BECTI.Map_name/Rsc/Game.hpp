@@ -4,16 +4,12 @@ respawnDelay = 3;
 respawnDialog = false;
 
 //--- Require briefing.html to show up.
-onLoadName = "VIO-BECTI Cold-War V2.0.4";
+onLoadName = "VIO-BECTI Cold-War V2.0.5beta";
 onLoadMissionTime = false;
-overviewText = "VIO-BECTI Cold-War V2.0.4";
-overviewTextLocked = "VIO-BECTI Cold-War V2.0.4";
-onLoadMission = "VIO-BECTI Cold-War V2.0.4_240701";
-briefingName = "VIO-BECTI Cold-War V2.0.4";
-
-overViewPicture="VIO_BECTI.jpg";
-overViewPictureLocked="VIO_BECTI.jpg";
-loadScreen="VIO_BECTI.jpg";
+overviewText = "VIO-BECTI Cold-War V2.0.5beta";
+overviewTextLocked = "VIO-BECTI Cold-War V2.0.5beta";
+onLoadMission = "VIO-BECTI Cold-War V2.0.5beta_240705";
+briefingName = "VIO-BECTI Cold-War V2.0.5beta";
 
 //--- ArmA 3 Specifics
 dev = "dukee";
