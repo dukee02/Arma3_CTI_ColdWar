@@ -86,6 +86,7 @@ CTI_P_WallsAutoAlign = true;
 CTI_P_DefensesAutoManning = true;
 CTI_P_Voted = false;
 CTI_P_VotePopUp = true;
+CTI_P_GearPersist = "VIOCW_PERSISTENT";
 
 CTI_P_Coloration_Money = "#BAFF81";
 
@@ -309,10 +310,8 @@ if ((CTI_P_SideLogic getVariable "cti_votetime") > 0) then {createDialog "CTI_Rs
 {uiNamespace setVariable [_x, displayNull]} forEach ["CTI_Title_Capture"];
 
 //--- Gear templates (persitent)
-if (isNil {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {call CTI_UI_Gear_InitializeProfileTemplates};
-// profileNamespace setVariable [format["CTI_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined], nil];
-// saveProfileNamespace;
-if !(isNil {profileNamespace getVariable format["CTI_VIOCW_PERSISTENT_GEAR_TEMPLATE_%1", CTI_P_SideJoined]}) then {execVM "Client\Init\Init_Persistent_Gear.sqf"};
+if (isNil {profileNamespace getVariable format["CTI_%1_GEAR_TEMPLATE_%2", CTI_P_GearPersist, CTI_P_SideJoined]}) then {call CTI_UI_Gear_InitializeProfileTemplates};
+if !(isNil {profileNamespace getVariable format["CTI_%1_GEAR_TEMPLATE_%2", CTI_P_GearPersist, CTI_P_SideJoined]}) then {execVM "Client\Init\Init_Persistent_Gear.sqf"};
 
 //--- Graphics/video thread (persistent)
 0 spawn {
@@ -394,6 +393,13 @@ if (CTI_DEBUG) then {
 	player addAction ["<t color='#ff0000'>DEBUGGER 2000</t>", "debug_diag.sqf"];//debug
 };
 
+if(CTI_ADD_MODULE >= 2) then {
+	[] execVM "VAM_GUI\VAM_GUI_init.sqf";
+};
+//if(CTI_ADD_MODULE == 1 || CTI_ADD_MODULE == 3) then {
+//	_igiload = execVM "IgiLoad\IgiLoadInit.sqf";
+//};
+
 //--- Optional Mod Stuff
 if (!isClass(configFile >> "CfgPatches" >> "ace_main")) then 
 {  
@@ -403,11 +409,7 @@ if (!isClass(configFile >> "CfgPatches" >> "ace_main")) then
 		//[] execVM "Client\Module\zlt\zlt_fastrope.sqf";
 	};
 	//--- Earplug script to reduce sound level when required
-	//execVM "Client\Module\earplugs\nre_earplugs.sqf";
-	//[player] execVM "Client\Module\earplugs\simpleEP.sqf";
-	//--- cmEARPLUGS
 	call compile preProcessFileLineNumbers "Client\Module\earplugs\cmEarplugs\config.sqf";
-	//--- Earplugs
 	0 spawn { call CTI_CL_FNC_EarPlugsSpawn; };
 };
 
