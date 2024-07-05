@@ -84,7 +84,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -131,7 +131,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -175,7 +175,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 	
@@ -229,7 +229,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -256,7 +256,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -285,7 +285,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;	
+	_d pushBack 5;	
 
 	_c pushBack format["%1gm_ge_army_k125", _sid];
 	_p pushBack '';
@@ -295,7 +295,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 
 	_c pushBack format["%1gm_ge_army_typ1200_cargo", _sid];
 	_c pushBack format["%1gm_ge_army_typ247_firefighter", _sid];
@@ -339,7 +339,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -356,7 +356,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;
+	_d pushBack 5;
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_iltis_mg3_win", _sid];
@@ -384,7 +384,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
@@ -428,7 +428,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
@@ -462,7 +462,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
@@ -491,7 +491,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "service-medic";
-		_d pushBack 0;		
+		_d pushBack 5;		
 	};
 };
 
@@ -527,7 +527,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -564,7 +564,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -600,7 +600,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -653,7 +653,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -690,7 +690,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -730,7 +730,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	_c pushBack format["%1gm_ge_army_Leopard1a1", _sid];
@@ -745,7 +745,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -791,7 +791,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -826,7 +826,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
@@ -865,7 +865,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -900,7 +900,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -936,7 +936,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -957,7 +957,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	_c pushBack format["%1gm_ge_airforce_do28d2_medevac", _sid];
@@ -972,7 +972,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "service-medic";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 	
@@ -995,7 +995,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1016,7 +1016,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -1049,7 +1049,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1EPA", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -1059,7 +1059,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		case (CTI_SALVAGE_SPECIAL > 0): {
 			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["Salvager GM Fire declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
@@ -1072,7 +1072,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1gm_ge_ff_u1300l_firefighter", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -1083,7 +1083,7 @@ if(_setupBaseUnits) then {
 			_f pushBack CTI_FACTORY_REPAIR;
 			//_s pushBack [format["%1gm_ge_ff_u1300l_firefighter", _sid],"salvager-independent"];
 			_s pushBack [format["%1gm_ge_ff_typ1200", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		default  {
 			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["Salvager default declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
@@ -1097,7 +1097,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_win", _sid],"salvager"];
-				_d pushBack 0;
+				_d pushBack 5;
 					
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 				_p pushBack '';
@@ -1107,7 +1107,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_win", _sid],"salvager-independent"];
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
@@ -1118,7 +1118,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_des", _sid],"salvager"];
-				_d pushBack 0;
+				_d pushBack 5;
 					
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 				_p pushBack '';
@@ -1128,7 +1128,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_des", _sid],"salvager-independent"];
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
@@ -1139,7 +1139,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_trp", _sid],"salvager"];
-				_d pushBack 0;
+				_d pushBack 5;
 					
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 				_p pushBack '';
@@ -1149,7 +1149,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_trp", _sid],"salvager-independent"];
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
@@ -1160,7 +1160,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_wdl", _sid],"salvager"];
-				_d pushBack 0;
+				_d pushBack 5;
 					
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 				_p pushBack '';
@@ -1170,7 +1170,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo_wdl", _sid],"salvager-independent"];
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 			if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
@@ -1181,7 +1181,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo", _sid],"salvager"];
-				_d pushBack 0;
+				_d pushBack 5;
 					
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 				_p pushBack '';
@@ -1191,7 +1191,7 @@ if(_setupBaseUnits) then {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1gm_ge_army_kat1_451_cargo", _sid],"salvager-independent"];
-				_d pushBack 0;
+				_d pushBack 5;
 			};
 		};
 	};
@@ -1230,7 +1230,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack "service-repairtruck";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 _matrix_full = [_side, CTI_UPGRADE_HEAVY] call CTI_CO_FNC_GetTechmatrix;
@@ -1265,7 +1265,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack "";
-		_d pushBack 0;
+		_d pushBack 5;
 	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
@@ -1294,7 +1294,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
 		_s pushBack "service-repairtruck";
-		_d pushBack 0;
+		_d pushBack 5;
 	};
 };
 	
@@ -1340,7 +1340,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 
@@ -1370,7 +1370,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //*********************************************************************************************************************************************
@@ -1393,7 +1393,7 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_NAVAL;
 	_s pushBack "";
-	_d pushBack 0;*/
+	_d pushBack 5;*/
 };
 
 //Update the calculatetd max upgrade level
@@ -1428,7 +1428,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _c pushBack format["%1gm_ge_ff_typ1200", _sid];
@@ -1449,7 +1449,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _c pushBack format["%1gm_ge_civ_w123", _sid];
@@ -1468,7 +1468,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _c pushBack format["%1gm_ge_ff_w123", _sid];
@@ -1485,7 +1485,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _c pushBack format["%1gm_ge_ff_u1300l_medic", _sid];
@@ -1500,7 +1500,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "service-medic";
-	_d pushBack 0;		
+	_d pushBack 5;		
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_BW_GM.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};

@@ -140,7 +140,7 @@ if(_loadSabPlanes) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -201,7 +201,7 @@ if(_loadSabPlanes) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -237,7 +237,7 @@ if(_loadSabPlanes) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -264,7 +264,7 @@ if(_loadSabPlanes) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 };
@@ -306,7 +306,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -357,7 +357,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -397,7 +397,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -440,7 +440,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -473,7 +473,7 @@ if(CTI_SOV_SIDE == _sideID || CTI_NVA_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 };
@@ -520,7 +520,7 @@ if(CTI_BW_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 	_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -562,7 +562,7 @@ if(CTI_BW_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};	
 };
@@ -1092,7 +1092,7 @@ if(CTI_US_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 
@@ -1149,7 +1149,7 @@ if(CTI_US_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 
@@ -1225,7 +1225,7 @@ if(CTI_US_SIDE == _sideID) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_AIR;
 			_s pushBack "";
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 };
@@ -1373,7 +1373,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1448,7 +1448,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1553,7 +1553,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 	};
@@ -1591,7 +1591,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 
@@ -1653,7 +1653,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1723,7 +1723,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 	};
@@ -1756,7 +1756,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 		
@@ -1796,7 +1796,7 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 0;	
+				_d pushBack 5;	
 			};
 		};
 		*/

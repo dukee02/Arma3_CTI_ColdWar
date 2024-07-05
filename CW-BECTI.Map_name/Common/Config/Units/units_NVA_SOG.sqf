@@ -73,7 +73,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -123,7 +123,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -156,7 +156,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_BARRACKS;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -190,7 +190,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	_c pushBack format["%1vn_o_wheeled_btr40_01_nva65", _sid];
@@ -205,7 +205,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -233,7 +233,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	_c pushBack format["%1vn_o_wheeled_btr40_mg_02_nva65", _sid];
@@ -254,7 +254,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	_c pushBack format["%1vn_o_wheeled_btr40_02_nva65", _sid];//Medic
@@ -265,7 +265,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "service-medic";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -285,7 +285,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	/*_c pushBack format["%1vn_o_wheeled_z157_04_nva65", _sid];		//Rocket arty?
@@ -300,7 +300,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};*/
 };
 
@@ -337,7 +337,7 @@ if(CTI_ECONOMY_PRIZE_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	_c pushBack format["%1vn_o_armor_btr50pk_03", _sid];			//medic
@@ -348,7 +348,7 @@ if(CTI_ECONOMY_PRIZE_TRACKED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "service-medic";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -371,7 +371,7 @@ if(CTI_ECONOMY_PRIZE_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	_c pushBack format["%1vn_o_armor_m577_02", _sid];				//medic	
@@ -382,7 +382,7 @@ if(CTI_ECONOMY_PRIZE_TRACKED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "service-medic";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -405,7 +405,7 @@ if(CTI_ECONOMY_PRIZE_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -426,7 +426,7 @@ if(CTI_ECONOMY_PRIZE_TRACKED >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -460,7 +460,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -482,7 +482,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 	
 	_c pushBack format["%1vn_o_air_mig19_cas", _sid];
@@ -497,7 +497,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -518,7 +518,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 
 	_c pushBack format["%1vn_o_air_mig21_cas", _sid];
@@ -533,7 +533,7 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_AIR;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -564,7 +564,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1chEPA_RenaultM", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -574,7 +574,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1ccfm_mercedes", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC >= 1): {};
 		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC < 1): {
@@ -586,7 +586,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -596,7 +596,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager-independent"];
-			_d pushBack 0;
+			_d pushBack 5;
 		};
 		default  {
 			_c pushBack format["CTI_Salvager_%1", _side];
@@ -607,7 +607,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1vn_o_wheeled_z157_02_nva65", _sid],"salvager"];
-			_d pushBack 0;
+			_d pushBack 5;
 				
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
 			_p pushBack '';
@@ -617,7 +617,7 @@ if(_setupBaseUnits) then {
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1vn_o_wheeled_z157_02_nva65", _sid],"salvager-independent"];
-			_d pushBack 0;	
+			_d pushBack 5;	
 		};
 	};
 };
@@ -638,7 +638,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_REPAIR;
 	_s pushBack "service-repairtruck";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //*********************************************************************************************************************************************
@@ -662,7 +662,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-ammotruck";
-	_d pushBack 0;	
+	_d pushBack 5;	
 	_c pushBack format["%1vn_o_wheeled_z157_fuel_nva65", _sid];				//Fueltruck
 	_p pushBack '';
 	_n pushBack 'Fuel Truck';
@@ -671,7 +671,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AMMO;
 	_s pushBack "service-fueltruck";
-	_d pushBack 0;
+	_d pushBack 5;
 };
 
 //*********************************************************************************************************************************************
@@ -695,7 +695,7 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_NAVAL;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -713,7 +713,7 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_NAVAL;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -731,7 +731,7 @@ if(CTI_ECONOMY_LEVEL_NAVAL >= _tech_level) then {
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_NAVAL;
 		_s pushBack "";
-		_d pushBack 0;	
+		_d pushBack 5;	
 	};
 };
 
@@ -759,7 +759,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
 	_s pushBack "";
-	_d pushBack 0;	
+	_d pushBack 5;	
 };
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_NVA_SOG.sqf", format["units declared: [%1] ", count _c]] call CTI_CO_FNC_Log};
