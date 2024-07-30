@@ -783,12 +783,12 @@ with missionNamespace do {
 	if (isClass(configFile >> "CfgVehicles" >> "cwr3_b_m151")) then {if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0}} else {CTI_CWR3_ADDON = -1};
 	if (isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0}} else {CTI_RHS_ADDON = -1};
 	if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0}} else {CTI_BW_ADDON = -1};
-	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {if (isNil 'CTI_BWADD_ADDON') then {CTI_BWADD_ADDON = 0}} else {CTI_BWADD_ADDON = -1};
-	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {if (isNil 'CTI_REDD_ADDON') then {CTI_REDD_ADDON = 0}} else {CTI_REDD_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {if (isNil 'CTI_BWADD_ADDON') then {if(CTI_BW_ADDON > 0) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0}}} else {CTI_BWADD_ADDON = -1};
+	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {if (isNil 'CTI_REDD_ADDON') then {if(CTI_BW_ADDON > 0) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0}}} else {CTI_REDD_ADDON = -1};
 	
 	if (isNil 'CTI_AIR_ADDON') then {CTI_AIR_ADDON = -1};
 
-	if (CTI_Log_Level >= CTI_Log_Information) then {["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7> <SOG-%8>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC]] call CTI_CO_FNC_Log;};
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFO", "FILE: Common\Init\Init_CommonConstants.sqf", format ["ADDONs <GM-%1> <CUP-%2> <CWR3-%3> <BW-%4> <BWADD-%5> <REDD-%6> <RHS-%7> <SOG-%8>", CTI_GM_DLC,CTI_CUP_ADDON,CTI_CWR3_ADDON,CTI_BW_ADDON,CTI_BWADD_ADDON,CTI_REDD_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC]] call CTI_CO_FNC_Log;};
 	
 	if (isNil 'CTI_US_SIDE') then {							//--- "deactivated","BLUFOR (West)", "OPFOR (East)", "GUER (Independent)"
 		if(CTI_CUP_ADDON > 0 || CTI_CWR3_ADDON > 0 || CTI_RHS_ADDON > 0) then {CTI_US_SIDE = 0} else {CTI_US_SIDE = -1};
@@ -855,7 +855,7 @@ with missionNamespace do {
 			case (CTI_RHS_ADDON >= 0 ): {CTI_US_SIDE = 0};
 			case (CTI_SOG_DLC >= 0 ): {CTI_US_SIDE = 0};
 			case (CTI_GM_DLC >= 0 ): {CTI_BW_SIDE = 0};
-			default {["ERROR", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Can't find a valid BLUFOR nation for US:%1[CUP %2 | RHS %3 | SOG %4] and for BW:%5 [GM %6]", CTI_US_SIDE,CTI_CUP_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC,CTI_BW_SIDE,CTI_GM_DLC]] call CTI_CO_FNC_Log;};
+			default {["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["Can't find a valid BLUFOR nation for US:%1[CUP %2 | RHS %3 | SOG %4] and for BW:%5 [GM %6]", CTI_US_SIDE,CTI_CUP_ADDON,CTI_RHS_ADDON,CTI_SOG_DLC,CTI_BW_SIDE,CTI_GM_DLC]] call CTI_CO_FNC_Log;};
 		};
 	};
 	//opfor
@@ -865,7 +865,7 @@ with missionNamespace do {
 			case (CTI_RHS_ADDON >= 0 ): {CTI_SOV_SIDE = 1};
 			case (CTI_SOG_DLC >= 0 ): {CTI_NVA_SIDE = 1};
 			case (CTI_GM_DLC >= 0 ): {CTI_NVA_SIDE = 1};
-			default {["ERROR", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Can't find a valid OPFOR nation for US:%1[CUP %2 | RHS %3] and for NVA:%4 [SOG %5 | GM %6]", CTI_SOV_SIDE,CTI_CUP_ADDON,CTI_RHS_ADDON,CTI_NVA_SIDE,CTI_SOG_DLC,CTI_GM_DLC]] call CTI_CO_FNC_Log;};
+			default {["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["Can't find a valid OPFOR nation for US:%1[CUP %2 | RHS %3] and for NVA:%4 [SOG %5 | GM %6]", CTI_SOV_SIDE,CTI_CUP_ADDON,CTI_RHS_ADDON,CTI_NVA_SIDE,CTI_SOG_DLC,CTI_GM_DLC]] call CTI_CO_FNC_Log;};
 		};
 	};
 	//ind
@@ -874,7 +874,7 @@ with missionNamespace do {
 			switch (true) do {
 				case (CTI_CUP_ADDON >= 0 ): {CTI_RACS_SIDE = 2};
 				case (CTI_RHS_ADDON >= 0 ): {CTI_CDF_SIDE = 2};
-				default {["ERROR", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Can't find a valid IND nation for RACS:%1[CUP %2] and for CDF:%3 [RHS %4]", CTI_RACS_SIDE,CTI_CUP_ADDON,CTI_CDF_SIDE,CTI_RHS_ADDON]] call CTI_CO_FNC_Log;};
+				default {["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["Can't find a valid IND nation for RACS:%1[CUP %2] and for CDF:%3 [RHS %4]", CTI_RACS_SIDE,CTI_CUP_ADDON,CTI_CDF_SIDE,CTI_RHS_ADDON]] call CTI_CO_FNC_Log;};
 			};
 		};
 	};
@@ -882,7 +882,7 @@ with missionNamespace do {
 	if(CTI_SOG_DLC >= 0 || CTI_GM_DLC >= 0 && (CTI_CUP_ADDON < 0 && CTI_RHS_ADDON < 0)) then {
 		CTI_TOWNS_STARTING_MODE = 1;
 	};
-	if (CTI_Log_Level >= CTI_Log_Information) then {["INFO", "FILE: Common\Init\Init_CommonConfig.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9> <UKR-%10> [Townset:%11]", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE,CTI_UKRAIN_SIDE,CTI_TOWNS_STARTING_MODE]] call CTI_CO_FNC_Log;};
+	if (CTI_Log_Level >= CTI_Log_Information) then {["INFO", "FILE: Common\Init\Init_CommonConstants.sqf", format ["Nations <US-%1> <SOV-%2> <NPOC-%3> <RACS-%4> <FIA-%5> <BW-%6> <NVA-%7> <CDF-%8> <CHDKZ-%9> <UKR-%10> [Townset:%11]", CTI_US_SIDE,CTI_SOV_SIDE,CTI_NPOC_SIDE,CTI_RACS_SIDE,CTI_FIA_SIDE,CTI_BW_SIDE,CTI_NVA_SIDE,CTI_CDF_SIDE,CTI_CHDKZ_SIDE,CTI_UKRAIN_SIDE,CTI_TOWNS_STARTING_MODE]] call CTI_CO_FNC_Log;};
 	
 	if (isNil 'CTI_GUER_TOWNS') then {CTI_GUER_TOWNS = 1};	//--- "no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"
 	if (isNil 'CTI_WEST_TOWNS') then {CTI_WEST_TOWNS = -1};	//--- "no changes","Bundeswehr (West Germany)","USA","CDF"
@@ -909,12 +909,12 @@ with missionNamespace do {
 			if(worldName in ["Tanoa"]) then {CTI_CAMO_ACTIVATION = 3};
 			//if(worldName in ["gm_weferlingen_summer"]) then {CTI_CAMO_ACTIVATION = 0};
 			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = 4};
-			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConfig.sqf", format ["automatic CTI_CAMO_ACTIVATION, now set to <%1>", CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log };
+			if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConstants.sqf", format ["automatic CTI_CAMO_ACTIVATION, now set to <%1>", CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log };
 		} else {
 			if (isNil 'CTI_TOWN_CAMO') then {CTI_TOWN_CAMO = CTI_CAMO_ACTIVATION};
 		};
 	};
-	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConfig.sqf", format ["CTI_TOWN_CAMO set to <%1>", CTI_TOWN_CAMO]] call CTI_CO_FNC_Log };
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: Common\Init\Init_CommonConstants.sqf", format ["CTI_TOWN_CAMO set to <%1>", CTI_TOWN_CAMO]] call CTI_CO_FNC_Log };
 	
 	if (isNil 'CTI_ARTILLERY_SETUP') then {CTI_ARTILLERY_SETUP = 15000}; //--- Artillery status (-2: Disabled, -1: Artillery Computer, max. 5000m (can make units unusable),max. 10000m, max. 15000m, max. 20000m, max. 30000m, max. 40000m")
 	if (isNil 'CTI_ARTILLERY_TIMEOUT') then {CTI_ARTILLERY_TIMEOUT = 300}; //--- Delay between each fire mission

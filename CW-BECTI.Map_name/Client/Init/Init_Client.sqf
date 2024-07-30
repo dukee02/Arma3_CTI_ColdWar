@@ -144,7 +144,7 @@ call compile preprocessFile "Client\Functions\UI\Functions_UI_UpgradeMenu.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_BuildMenu.sqf";
 call compile preprocessFile "Client\Functions\UI\Functions_UI_PylonMenu.sqf";
 
-if(CTI_CUP_ADDON > 0 || CTI_RHS_ADDON > 0 || CTI_BW_ADDON > 0 || CTI_GM_DLC > 0) then {
+if(CTI_CUP_ADDON > 0 || CTI_RHS_ADDON > 0 || CTI_BW_ADDON > 0) then {
 	(CTI_P_SideJoined) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_Basic.sqf";
 };
 if(CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)) then {		//Arma 3 Creator DLC: S.O.G. Prairie Fire
