@@ -23,33 +23,40 @@
     _tech_level = [_matrix_cnt + 1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 */
 
-private ["_counter", "_matrix_full", "_matrix_nation"];
+private ["_counter", "_counter_last", "_matrix_full", "_matrix_nation", "_i", "_found"];
 
-_counter = _this select 0;
+_counter_last = _this select 0;
 if(isNil "_counter") then {_counter = -1};
 _matrix_full = _this select 1;
 _matrix_nation = _this select 2;
+_counter = 0;
+_found = false;
 
-//if(_counter >= 0) then {
-	for [{_i = 0}, {_i < count _matrix_full}, {_i = _i + 1}] do {
-		if(_counter < count _matrix_full) then {
-			if(_matrix_full select _counter == _matrix_nation select _counter) then {
-				if(_matrix_full select _counter == true) then {
-					_i = count _matrix_full;
-				};
-			} else {
-				if(_matrix_nation select _counter == false) then {
-					_counter = _counter + 1;
-				} else {
-					_i = count _matrix_full;
-				};
+for [{_i = 0}, {_i < count _matrix_full}, {_i = _i + 1}] do {
+	if(_counter < count _matrix_full) then {
+		diag_log format["i = %1   cnt = %2 --- %3 - %4", _i, _counter, (_matrix_full select _counter), (_matrix_nation select _counter)];			
+		if((_matrix_full select _i) == (_matrix_nation select _i)) then {
+			if(_matrix_full select _i == true) then {
+				if(_found) then {_counter = _counter + 1;};
+				_found = true;
 			};
 		} else {
-			_i = count _matrix_full;
-			_counter = -1;
+			if((_matrix_nation select _i) == false) then {
+				_counter = _counter + 1;
+			} else {
+				_found = true;
+			};
 		};
+		if(_found) then {
+			if(_counter >= _counter_last) then {
+				_i = count _matrix_full;
+			};
+		};
+	} else {
+		_i = count _matrix_full;
+		_counter = -1;
 	};
-//};
+};
 
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_CheckCountUp.sqf", format["Counter: [%1] Matrix: <%2> <%3>", _counter, _matrix_full, _matrix_nation]] call CTI_CO_FNC_Log;};
 
