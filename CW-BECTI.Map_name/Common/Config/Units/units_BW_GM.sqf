@@ -388,31 +388,26 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		_c pushBack format["%1gm_ge_army_iltis_milan_win", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_451_container_win", _sid];
 		//_c pushBack format["%1gm_ge_army_kat1_451_cargo_win", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_454_cargo_win", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1gm_ge_army_iltis_milan_des", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_451_container_des", _sid];
 		//_c pushBack format["%1gm_ge_army_kat1_451_cargo_des", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_454_cargo_des", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%1gm_ge_army_iltis_milan_trp", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_451_container_trp", _sid];
 		//_c pushBack format["%1gm_ge_army_kat1_451_cargo_trp", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_454_cargo_trp", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-		_c pushBack format["%1gm_ge_army_iltis_milan_wdl", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_451_container_wdl", _sid];
 		//_c pushBack format["%1gm_ge_army_kat1_451_cargo_wdl", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_454_cargo_wdl", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-		_c pushBack format["%1gm_ge_army_iltis_milan", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_451_container", _sid];
 		//_c pushBack format["%1gm_ge_army_kat1_451_cargo", _sid];
 		_c pushBack format["%1gm_ge_army_kat1_454_cargo", _sid];
@@ -424,6 +419,35 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 5;	
+	};
+
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+		_c pushBack format["%1gm_ge_army_iltis_milan_win", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1gm_ge_army_iltis_milan_des", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1gm_ge_army_iltis_milan_trp", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1gm_ge_army_iltis_milan_wdl", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+		_c pushBack format["%1gm_ge_army_iltis_milan", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -457,7 +481,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -663,6 +687,15 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
 	_c pushBack format["%1gm_ge_army_m113a1g_medic", _sid];				//medic
+	_p pushBack '';
+	_n pushBack 'Sanitäter (Mobile Respawn)';
+	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,(_tech_level-1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "service-medic";
+	_d pushBack 5;
+
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_m113a1g_apc_milan_win", _sid];
 	};
@@ -685,7 +718,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,(_tech_level-1)] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;
@@ -700,23 +733,47 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		_c pushBack format["%1gm_ge_army_marder1a1a_win", _sid];	
+		_c pushBack format["%1gm_ge_army_marder1a1a_win", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1gm_ge_army_marder1a1a_des", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1gm_ge_army_marder1a1a_trp", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1gm_ge_army_marder1a1a_wdl", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+		_c pushBack format["%1gm_ge_army_marder1a1a", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,(_tech_level-1)] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 5;	
+	};
+	
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_marder1a1plus_win", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1gm_ge_army_marder1a1a_des", _sid];	
 		_c pushBack format["%1gm_ge_army_marder1a1plus_des", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-		_c pushBack format["%1gm_ge_army_marder1a1a_trp", _sid];	
 		_c pushBack format["%1gm_ge_army_marder1a1plus_trp", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-		_c pushBack format["%1gm_ge_army_marder1a1a_wdl", _sid];	
 		_c pushBack format["%1gm_ge_army_marder1a1plus_wdl", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-		_c pushBack format["%1gm_ge_army_marder1a1a", _sid];	
 		_c pushBack format["%1gm_ge_army_marder1a1plus", _sid];	
 	};
 	//set all other vars in a slope
@@ -725,7 +782,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,(_tech_level-1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_HEAVY;

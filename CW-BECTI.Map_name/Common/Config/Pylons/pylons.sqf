@@ -532,13 +532,6 @@ if(CTI_RHS_ADDON > 0) then {
 	_c pushBack "rhs_mag_agm65f_3";					//AGM-65F (LAU-88/A) 	<×3 IR-guided Anti-Ship Maverick>
 };
 
-
-if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
-	_c pushBack "EF2K_Brimstone_mag3x";				//Brimstone-AGM x3 		<Type: Radar-Guided AGM <br />Rounds: 3x HE-AT Warhead<br />Used in: EF-2000>
-	_c pushBack "EF2K_Brimstone_mag2x";				//Brimstone-AGM x2 		<Type: Radar-Guided AGM <br />Rounds: 2x HE-AT Warhead<br />Used in: EF-2000>
-	_c pushBack "EF2K_BrimstoneDM_mag3x";			//Brimstone-DM-AGM x3 	<Type: Dual-Mode Radar\Laser-Guided AGM<br />Rounds: 3x HE-AT Warhead<br />Used in: EF-2000>
-	_c pushBack "EF2K_BrimstoneDM_mag2x";			//Brimstone-DM-AGM x2 	<Type: Dual-Mode Radar\Laser-Guided AGM<br />Rounds: 2x HE-AT Warhead<br />Used in: EF-2000>
-};
 if (isClass(configFile >> "CfgVehicles" >> "pook_Mig23_OPFOR")) then {
 	_c pushBack "pook_mag_9K120";				//9M120 HEAT (AT-9) x8 	<9K120 SACLOS AT Guided Missile (ATGM)<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />HEAT<br />Rounds: 8>
 	_c pushBack "pook_mag_9K120x4";				//9M120 HEAT (AT-9) x4 	<9K120 SACLOS AT Guided Missile (ATGM)<br />'Ataka' (NATO: AT-9 'Spiral-2')<br />HEAT<br />Rounds: 4>
@@ -709,6 +702,12 @@ if (isClass(configFile >> "CfgMagazines" >> "tu95_1Rnd_3M80")) then {
 	_c pushBack "tu160_12Rnd_Kh15P";			//Kh-15/P (AS-16) ARM x12 	<Type: Long-Range Anti-Radiation Missile (LRARM)<br />Kh-15P NATO:('AS-16')<br />Rounds: 12x Radar Homing Missiles<br />Warhead: HE-Fragmentation>
 	_c pushBack "tu16_1Rnd_KSR2";				//KSR-2 (AS-5) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />KSR-2 NATO:('AS-5')<br />Rounds: 1<br />Warhead: HE-Penetrator>
 	_c pushBack "tu16_1Rnd_K10";				//K-10 (AS-2) ASM 			<Type: Long-Range Anti-Shipping Missile (LRASM)<br />K-10 NATO:('AS-2')<br />Rounds: 1<br />Warhead: HE-Penetrator>
+};
+if (isClass(configFile >> "CfgVehicles" >> "pook_EF2000_BLUFOR")) then {
+	_c pushBack "EF2K_Brimstone_mag3x";				//Brimstone-AGM x3 		<Type: Radar-Guided AGM <br />Rounds: 3x HE-AT Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_Brimstone_mag2x";				//Brimstone-AGM x2 		<Type: Radar-Guided AGM <br />Rounds: 2x HE-AT Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_BrimstoneDM_mag3x";			//Brimstone-DM-AGM x3 	<Type: Dual-Mode Radar\Laser-Guided AGM<br />Rounds: 3x HE-AT Warhead<br />Used in: EF-2000>
+	_c pushBack "EF2K_BrimstoneDM_mag2x";			//Brimstone-DM-AGM x2 	<Type: Dual-Mode Radar\Laser-Guided AGM<br />Rounds: 2x HE-AT Warhead<br />Used in: EF-2000>
 };
 
 // set all other vars in a slope

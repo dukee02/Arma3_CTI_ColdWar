@@ -343,17 +343,17 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		arm_to_add = [[format["%1gm_gc_army_t55a_win", _sid], 1, 40]];
 		arm_to_add pushBack [format["%1gm_gc_army_t55ak_win", _sid], 1, 40];
-		arm_to_add pushBack [format["%1gm_gc_army_2p16_win", _sid], 1, 40];
+		//arm_to_add pushBack [format["%1gm_gc_army_2p16_win", _sid], 1, 40];
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		arm_to_add = [[format["%1gm_gc_army_t55a_wdl", _sid], 1, 40]];
 		arm_to_add pushBack [format["%1gm_gc_army_t55ak_wdl", _sid], 1, 40];
-		arm_to_add pushBack [format["%1gm_gc_army_2p16_wdl", _sid], 1, 40];
+		//arm_to_add pushBack [format["%1gm_gc_army_2p16_wdl", _sid], 1, 40];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 		arm_to_add = [[format["%1gm_gc_army_t55a", _sid], 1, 40]];
 		arm_to_add pushBack [format["%1gm_gc_army_t55ak", _sid], 1, 40];
-		arm_to_add pushBack [format["%1gm_gc_army_2p16", _sid], 1, 40];	
+		//arm_to_add pushBack [format["%1gm_gc_army_2p16", _sid], 1, 40];	
 	};
 	units_tracked append arm_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {tracked_auto append arm_to_add;};

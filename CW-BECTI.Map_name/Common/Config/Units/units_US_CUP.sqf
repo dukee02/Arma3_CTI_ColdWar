@@ -454,7 +454,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack 'HMMWV Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,(_tech_level+1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -532,13 +532,11 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_c pushBack format["%1CUP_B_M1130_CV_M2_Desert", _sid];
 		_c pushBack format["%1CUP_B_M1126_ICV_M2_Desert", _sid];
 		_c pushBack format["%1CUP_B_M1126_ICV_MK19_Desert", _sid];
-		_c pushBack format["%1CUP_B_M1135_ATGMV_Desert", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1CUP_B_M1130_CV_M2_Woodland", _sid];
 		_c pushBack format["%1CUP_B_M1126_ICV_M2_Woodland", _sid];
 		_c pushBack format["%1CUP_B_M1126_ICV_MK19_Woodland", _sid];
-		_c pushBack format["%1CUP_B_M1135_ATGMV_Woodland", _sid];
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -547,6 +545,26 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "";
+		_d pushBack 5;	
+	};
+
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 76) then {		//Desert camo active
+		_c pushBack format["%1CUP_B_M1135_ATGMV_Desert", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+		_c pushBack format["%1CUP_B_M1135_ATGMV_Woodland", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -1481,7 +1499,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_c pushBack format["%1CUP_B_M113A3_Repair_desert_USA", _sid];
 		_p pushBack '';
 		_n pushBack 'M113A3 Repair';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
@@ -1492,7 +1510,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_c pushBack format["%1CUP_B_M113A3_Repair_olive_USA", _sid];
 		_p pushBack '';
 		_n pushBack 'M113A3 Repair';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;
@@ -1503,7 +1521,7 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_c pushBack format["%1CUP_B_M113A3_Repair_USA", _sid];
 		_p pushBack '';
 		_n pushBack 'M113A3 Repair';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_REPAIR;

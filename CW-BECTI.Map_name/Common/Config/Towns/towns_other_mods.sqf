@@ -53,17 +53,17 @@ _loadSabPlanes = false;
 switch (_side) do {
 	case west: {
 		_sid = "_b";
-		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR")) then {_loadSabPlanes = true};
+		if (isClass(configFile >> "CfgVehicles" >> "sab_mirageiv_i")) then {_loadSabPlanes = true};
 		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_SABAIR_ID] call CTI_CO_FNC_GetTechmatrix;
 	};
 	case east: {
 		_sid = "_o";
-		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR") && CTI_AIR_ADDON >= 1) then {_loadSabPlanes = true};
+		if (isClass(configFile >> "CfgVehicles" >> "sab_mirageiv_i") && CTI_AIR_ADDON >= 1) then {_loadSabPlanes = true};
 		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_SOV_ID, CTI_SABAIR_ID] call CTI_CO_FNC_GetTechmatrix;
 	};
 	case resistance: {
 		_sid = "_i";
-		if (isClass(configFile >> "CfgVehicles" >> "pook_MIG21_OPFOR") ) then {_loadSabPlanes = true};
+		if (isClass(configFile >> "CfgVehicles" >> "sab_mirageiv_i") ) then {_loadSabPlanes = true};
 		_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_NPOC_ID, CTI_SABAIR_ID] call CTI_CO_FNC_GetTechmatrix;
 	};
 	default {
