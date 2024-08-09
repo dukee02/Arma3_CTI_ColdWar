@@ -111,7 +111,7 @@ _nation = -1;
 	// Current result is saved in variable _x
 	switch true do
 	{
-		case ([1042220] call CTI_CO_FNC_HasDLC == false): {
+		case (CTI_GM_DLC > 1 && ([1042220] call CTI_CO_FNC_HasDLC) == false): {
 			switch true do {
 				case(CTI_CWR3_ADDON > 0): {_mainmod = CTI_CWR3_ID};
 				case(CTI_CUP_ADDON > 0): {_mainmod = CTI_CUP_ID};
@@ -120,7 +120,7 @@ _nation = -1;
 				default {["ERROR", "FILE: Common\Init\Init_Common.sqf", format ["Can't find a main mod without DLC: side %1", _x]] call CTI_CO_FNC_Log;};
 				};
 			};
-		case ([1227700] call CTI_CO_FNC_HasDLC == false): {
+		case (CTI_SOG_DLC > 1 && ([1227700] call CTI_CO_FNC_HasDLC) == false): {
 			switch true do {
 				case(CTI_CWR3_ADDON > 0): {_mainmod = CTI_CWR3_ID};
 				case(CTI_CUP_ADDON > 0): {_mainmod = CTI_CUP_ID};
