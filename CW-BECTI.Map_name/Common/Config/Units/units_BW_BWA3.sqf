@@ -266,21 +266,30 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_LIGHT,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-
+	
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1BWA3_Multi_Fleck", _sid];
 		_c pushBack format["%1BW_LKW_Transport_offen_Winter", _sid];	
 		_c pushBack format["%1BW_LKW_Transport_Winter", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Fleck", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1BWA3_Multi_Tropen", _sid];
 		_c pushBack format["%1BW_LKW_Transport_offen_Tropen", _sid];	
 		_c pushBack format["%1BW_LKW_Transport_Tropen", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Tropen", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Tropen", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Tropen", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1BWA3_Multi_Fleck", _sid];
 		_c pushBack format["%1BW_LKW_Transport_offen_fleck", _sid];	
 		_c pushBack format["%1BW_LKW_Transport_Fleck", _sid];
+		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Fleck", _sid];
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -289,35 +298,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_p pushBack '';
 		_n pushBack '';
 		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "";
-		_d pushBack 5;	
-	};
-	
-	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Fleck", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Fleck", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Fleck", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Tropen", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Tropen", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Tropen", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Fleck", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Fleck", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Fleck", _sid];
-	};
-	//set all other vars in a slope
-	_cntstart = count _c;
-	_cntend = count _p;
-	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;

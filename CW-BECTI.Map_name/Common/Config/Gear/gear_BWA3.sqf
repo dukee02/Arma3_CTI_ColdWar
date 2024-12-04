@@ -399,6 +399,7 @@ _c pushBack "BWA3_optic_RSAS_sand";
 _c pushBack "BWA3_optic_RSAS_tan";
 _c pushBack "BWA3_optic_ZO4x30";
 _c pushBack "BWA3_optic_ZO4x30_brown";
+_c pushBack "BWA3_optic_ZO4x30_rsas_brown_pip";
 _c pushBack "BWA3_optic_ZO4x30_MicroT2";
 _c pushBack "BWA3_optic_ZO4x30_MicroT2_brown";
 _c pushBack "BWA3_optic_ZO4x30_RSAS";

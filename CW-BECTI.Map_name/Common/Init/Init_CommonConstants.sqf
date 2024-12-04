@@ -781,7 +781,30 @@ with missionNamespace do {
 	if (isClass(configFile >> "CfgVehicles" >> "vn_b_wheeled_m151_01")) then {if (isNil 'CTI_SOG_DLC') then {CTI_SOG_DLC = 0}} else {CTI_SOG_DLC = -1};
 	if (isClass(configFile >> "CfgVehicles" >> "CUP_B_M1030_USMC")) then {if (isNil 'CTI_CUP_ADDON') then {CTI_CUP_ADDON = 0}} else {CTI_CUP_ADDON = -1};
 	if (isClass(configFile >> "CfgVehicles" >> "cwr3_b_m151")) then {if (isNil 'CTI_CWR3_ADDON') then {CTI_CWR3_ADDON = 0}} else {CTI_CWR3_ADDON = -1};
-	if (isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0}} else {CTI_RHS_ADDON = -1};
+	
+	if(!isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr") && !isClass(configFile >> "CfgVehicles" >> "rhs_gaz66_vdv") && 
+	!isClass(configFile >> "CfgVehicles" >> "rhsgref_cdf_b_gaz66") && !isClass(configFile >> "CfgVehicles" >> "rhsgref_ins_g_gaz66")) then {CTI_RHS_ADDON = -1} else {if (isNil 'CTI_RHS_ADDON') then {CTI_RHS_ADDON = 0}};
+	if (CTI_US_SIDE > -1 && !isClass(configFile >> "CfgVehicles" >> "rhsusf_m998_d_2dr")) then {
+		if(CTI_SOG_DLC <= 0 && CTI_CUP_ADDON <= 0 && CTI_CWR3_ADDON <= 0) then {
+			CTI_US_SIDE = -1;
+			["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["RHS part not loaded (US) Nation disabled %1", CTI_US_SIDE]] call CTI_CO_FNC_Log;
+		};
+	};
+	if (CTI_SOV_SIDE > -1 && !isClass(configFile >> "CfgVehicles" >> "rhs_gaz66_vdv")) then {
+		if(CTI_SOG_DLC <= 0 && CTI_CUP_ADDON <= 0 && CTI_CWR3_ADDON <= 0) then {
+			CTI_SOV_SIDE = -1;
+			["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["RHS part not loaded (SOV) Nation disabled %1", CTI_SOV_SIDE]] call CTI_CO_FNC_Log;
+		};
+	};
+	if (CTI_CDF_SIDE > -1 && !isClass(configFile >> "CfgVehicles" >> "rhsgref_cdf_b_gaz66")) then {
+		CTI_CDF_SIDE = -1;
+		["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["RHS part not loaded (CDF) Nation disabled %1", CTI_CDF_SIDE]] call CTI_CO_FNC_Log;
+	};
+	if (CTI_CHDKZ_SIDE > -1 && !isClass(configFile >> "CfgVehicles" >> "rhsgref_ins_g_gaz66")) then {
+		CTI_CHDKZ_SIDE = -1;
+		["ERROR", "FILE: Common\Init\Init_CommonConstants.sqf", format ["RHS part not loaded (CDF) Nation disabled %1", CTI_CHDKZ_SIDE]] call CTI_CO_FNC_Log;
+	};
+
 	if (isClass(configFile >> "CfgVehicles" >> "BW_LKW_Transport_Winter")) then {if (isNil 'CTI_BW_ADDON') then {CTI_BW_ADDON = 0}} else {CTI_BW_ADDON = -1};
 	if (isClass(configFile >> "CfgVehicles" >> "bw_unimog_cargo")) then {if (isNil 'CTI_BWADD_ADDON') then {if(CTI_BW_ADDON > 0) then {CTI_BWADD_ADDON = 1} else {CTI_BWADD_ADDON = 0}}} else {CTI_BWADD_ADDON = -1};
 	if (isClass(configFile >> "CfgVehicles" >> "Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu")) then {if (isNil 'CTI_REDD_ADDON') then {if(CTI_BW_ADDON > 0) then {CTI_REDD_ADDON = 1} else {CTI_REDD_ADDON = 0}}} else {CTI_REDD_ADDON = -1};
