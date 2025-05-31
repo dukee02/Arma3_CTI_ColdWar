@@ -157,8 +157,8 @@ class Params {
 	};*/
 	class CTI_GUER_TOWNS {
 		title = "INDEPENDENT Town Nation (change for easyer town defending or all nations are seperated into EAST and WEST)";
-		values[] = {-1,0,1};
-		texts[] = {"no changes","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]"};
+		values[] = {-1,0,1,2};
+		texts[] = {"3rd Party (needs one Side on GUER or set 50:50 at townsmode)","National Party of Chernarus (NPoC) [CUP needed]","FIA [CWR3 needed]","Zombies [one of Ryan|Max|WBK Zombie Mod]"};
 		default = 0;
 	};
 	class CTI_WEST_TOWNS {

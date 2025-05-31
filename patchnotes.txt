@@ -1,0 +1,46 @@
+[V2.0.5] Changelog:
+Added: gear purchasing for vehicle player sit in
+Added: small add to DLC check
+Added: Option to respawn with last gear see Issue#27
+Added: Option to disable tokeover distance for units on respawn
+Added: toggle mode for earplugs
+Added: check 4 AI take command
+Added: commander ability to setup statics
+Added: Ukrainian forces
+Added: Better Base-repair prise calculation
+Changed: town spawn changes, see Issue#34
+Changed: better persist gear handling
+Changed: AI skill param
+Changed: AI skill calculation
+Changed: info text if building destroyed
+Changed: some CW price missmatches
+Changed: spawn distance from factory +5m
+Changed: range check for Artys
+Changed: better static placement
+Changed: descr. for penalty param
+Changed: direction of commander placed statics
+Changed: discount for AI only in harderAI skills
+Changed: Max Queue amount in factorys (doubbled)
+Changed: rearming behavior for statics
+Changed: positioning of vehicles after loading
+Changed: mods possibility check
+Fixed: Salvager view as client not working
+Fixed: some spawn issues if RHS active
+Fixed: HQ repair cost
+Fixed: wrong calc for techtree in some special cases
+Fixed: VAM module not working
+Fixed: Respawn on own units don't work anymore
+Fixed: firefighter siren not working
+Fixed: commander stopped working in some cases - upsi
+Fixed: must allways hack UAVs+UGVs
+Fixed: earplug keybinding to INSERT
+Fixed: building blocked in not in restricted area
+Fixed: can't disban own units- empty list
+Fixed: error on loading the supply
+Fixed: error on loading if no ships in techtree
+Fixed: buggy US flag
+Fixed: nre earplugs not working
+Fixed: naked start if SOG not owned
+Fixed: M29 Prise and some descriptions
+Fixed: M577 medic price
+Fixed: ArmoredMBT error in log
