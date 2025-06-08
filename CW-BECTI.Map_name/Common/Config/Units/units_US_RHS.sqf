@@ -321,8 +321,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	if(CTI_ADDON_CHARLIECO > 0) then {
 		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
 		_p pushBack '';
-		_n pushBack 'Red Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Red Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Red Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -331,8 +336,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 
 		_c pushBack format["%1chmaster2_ap", _sid];				//medic
 		_p pushBack '';
-		_n pushBack 'Civil White Medic';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'White Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'White Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -345,8 +355,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_cntend = count _p;
 		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 			_p pushBack '';
-			_n pushBack 'GAZ66 Mobile Respawn';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+			if(CTI_RESPAWN_MOBILE <= 0) then {
+				_n pushBack 'GAZ66 Medic (Heal only)';
+				_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+			} else {
+				_n pushBack 'GAZ66 Medic (Mobile Respawn)';
+				_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+			};
 			_t pushBack _building_time;
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_LIGHT;
@@ -531,8 +546,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'M1085 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M1085 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M1085 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -670,8 +690,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'M1133 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M1133 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M1133 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -725,8 +750,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'M1230a1 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M1230a1 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M1230a1 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -840,8 +870,13 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'M113A1 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M113A1 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M113A1 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -1190,8 +1225,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'UH60M Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'UH60M Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'UH60M Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;

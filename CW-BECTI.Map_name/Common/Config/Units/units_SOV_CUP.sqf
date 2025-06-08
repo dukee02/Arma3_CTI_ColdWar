@@ -411,8 +411,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'UAZ Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'UAZ Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'UAZ Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -665,8 +670,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'Vodnik Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Vodnik Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Vodnik Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -745,13 +755,19 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	
 	_c pushBack format["%1CUP_O_BMP2_AMB_RU", _sid];		//Medic	
 	_p pushBack '';
-	_n pushBack 'BMP2 Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'BMP2 Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'BMP2 Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_HEAVY;
 	_s pushBack "service-medic";
 	_d pushBack 10;	
+
 	_c pushBack format["%1CUP_O_BMP3_RU", _sid];
 	_p pushBack '';
 	_n pushBack '';
@@ -864,15 +880,22 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "";
 	_d pushBack 10;
+
 	_c pushBack format["%1CUP_O_Mi8_medevac_RU", _sid];//Medic
 	_p pushBack '';
-	_n pushBack (format ["Mi8 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
-	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'Mi8 Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'Mi8 Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_AIR;
 	_s pushBack "service-medic";
 	_d pushBack 10;
+
 	_c pushBack format["%1CUP_O_Mi24_P_Dynamic_RU", _sid];
 	_p pushBack '';
 	_n pushBack '';

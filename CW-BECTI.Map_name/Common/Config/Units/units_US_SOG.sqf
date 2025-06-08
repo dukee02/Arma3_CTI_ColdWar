@@ -396,8 +396,13 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	
 	_c pushBack format["%1vn_b_armor_m577_02", _sid];//Medic
 	_p pushBack '';
-	_n pushBack 'm577 Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'm577 Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'm577 Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
@@ -563,8 +568,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 
 	_c pushBack format["%1vn_b_air_uh1d_01_07", _sid];
 	_p pushBack '';
-	_n pushBack 'UH1Y Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'UH1Y Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'UH1Y Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
@@ -626,8 +636,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	
 	_c pushBack format["%1vn_b_air_ch47_02_01", _sid];
 	_p pushBack '';
-	_n pushBack 'CH47 Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'CH47 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'CH47 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;

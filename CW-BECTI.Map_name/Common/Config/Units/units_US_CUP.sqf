@@ -453,8 +453,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'HMMWV Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,(_tech_level+1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'HMMWV Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'HMMWV Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -583,8 +588,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'M1133 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M1133 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M1133 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -737,8 +747,13 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'M113A1 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M113A1 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M113A1 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -762,10 +777,16 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 10;
+
 		_c pushBack format["%1CUP_B_M113A3_Med_desert_USA", _sid];
 		_p pushBack '';
-		_n pushBack 'M113A3 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M113A3 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M113A3 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -782,10 +803,16 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 10;
+
 		_c pushBack format["%1CUP_B_M113A3_Med_olive_USA", _sid];
 		_p pushBack '';
-		_n pushBack 'M113A3 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M113A3 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M113A3 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -802,10 +829,16 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 		_f pushBack CTI_FACTORY_HEAVY;
 		_s pushBack "";
 		_d pushBack 10;
+
 		_c pushBack format["%1CUP_B_M113A3_Med_USA", _sid];
 		_p pushBack '';
-		_n pushBack 'M113A3 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M113A3 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M113A3 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -1149,8 +1182,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	
 	_c pushBack format["%1CUP_B_UH1Y_MEV_USMC", _sid];
 	_p pushBack '';
-	_n pushBack 'UH1Y Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'UH1Y Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'UH1Y Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
@@ -1205,8 +1243,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	
 	_c pushBack format["%1CUP_B_UH60M_Unarmed_FFV_MEV_US", _sid];
 	_p pushBack '';
-	_n pushBack 'UH60M Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'UH60M Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'UH60M Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;

@@ -301,8 +301,13 @@ if(CTI_MAIN_ADDON == 0) then {
 		
 		_c pushBack format["%1gm_dk_army_m113a1dk_medic", _sid];						//medic
 		_p pushBack '';
-		_n pushBack (format ["M113 Mobile Respawn - Range %1 m",CTI_RESPAWN_MOBILE_RANGE]);
-		_o pushBack ((CTI_ECONOMY_PRIZE_TRACKED*(((_tech_level+1)*CTI_ECONOMY_LEVEL_MULTI)/100))+(CTI_ECONOMY_PRIZE_ARMED*(_tech_level+1)));
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'M113 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'M113 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack (_tech_level*_tech_level_no_upgrade_inv);
 		_f pushBack CTI_FACTORY_HEAVY;

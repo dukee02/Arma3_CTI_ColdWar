@@ -458,22 +458,27 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_fuchsa0_command_win", _sid];
 		_c pushBack format["%1gm_ge_army_fuchsa0_engineer_win", _sid];	
+		_c pushBack format["%1gm_ge_army_fuchsa1_jammer_win", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1gm_ge_army_fuchsa0_command_des", _sid];
 		_c pushBack format["%1gm_ge_army_fuchsa0_engineer_des", _sid];	
+		_c pushBack format["%1gm_ge_army_fuchsa1_jammer_des", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1gm_ge_army_fuchsa0_command_trp", _sid];
 		_c pushBack format["%1gm_ge_army_fuchsa0_engineer_trp", _sid];
+		_c pushBack format["%1gm_ge_army_fuchsa1_jammer_trp", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
 		_c pushBack format["%1gm_ge_army_fuchsa0_command_wdl", _sid];
 		_c pushBack format["%1gm_ge_army_fuchsa0_engineer_wdl", _sid];	
+		_c pushBack format["%1gm_ge_army_fuchsa1_jammer_wdl", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 		_c pushBack format["%1gm_ge_army_fuchsa0_command", _sid];
 		_c pushBack format["%1gm_ge_army_fuchsa0_engineer", _sid];	
+		_c pushBack format["%1gm_ge_army_fuchsa1_jammer", _sid];
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -509,8 +514,13 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'Rettungswagen (Mobile Respawn)';
-		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Rettungswagen (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Rettungswagen (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -553,6 +563,41 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_s pushBack "";
 		_d pushBack 10;	
 	};
+
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+		_c pushBack format["%1gm_ge_army_fuchsa0_medic_win", _sid];			//medic
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1gm_ge_army_fuchsa0_medic_des", _sid];			//medic
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active	
+		_c pushBack format["%1gm_ge_army_fuchsa0_medic_trp", _sid];			//medic
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1gm_ge_army_fuchsa0_medic_wdl", _sid];			//medic
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+		_c pushBack format["%1gm_ge_army_fuchsa0_medic", _sid];			//medic
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Fuchs Sanitäter (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Fuchs Sanitäter (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 10;		
+	};
+
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -688,8 +733,13 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 
 	_c pushBack format["%1gm_ge_army_m113a1g_medic", _sid];				//medic
 	_p pushBack '';
-	_n pushBack 'Sanitäter (Mobile Respawn)';
-	_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,(_tech_level-1),true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'm113 Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'm113 Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
@@ -697,18 +747,23 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_d pushBack 10;
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+		_c pushBack format["%1gm_ge_army_m113a1g_mortar_win", _sid];
 		_c pushBack format["%1gm_ge_army_m113a1g_apc_milan_win", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1gm_ge_army_m113a1g_mortar_des", _sid];
 		_c pushBack format["%1gm_ge_army_m113a1g_apc_milan_des", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1gm_ge_army_m113a1g_mortar_trp", _sid];
 		_c pushBack format["%1gm_ge_army_m113a1g_apc_milan_trp", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1gm_ge_army_m113a1g_mortar_wdl", _sid];
 		_c pushBack format["%1gm_ge_army_m113a1g_apc_milan_wdl", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+		_c pushBack format["%1gm_ge_army_m113a1g_mortar", _sid];
 		_c pushBack format["%1gm_ge_army_m113a1g_apc_milan", _sid];
 	};
 
@@ -859,18 +914,23 @@ if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_marder1a2_win", _sid];	
+		_c pushBack format["%1gm_ge_army_rakjpz2_win", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1gm_ge_army_marder1a2_des", _sid];	
+		_c pushBack format["%1gm_ge_army_rakjpz2_des", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
 		_c pushBack format["%1gm_ge_army_marder1a2_trp", _sid];	
+		_c pushBack format["%1gm_ge_army_rakjpz2_trp", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
 		_c pushBack format["%1gm_ge_army_marder1a2_wdl", _sid];	
+		_c pushBack format["%1gm_ge_army_rakjpz2_wdl", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
 		_c pushBack format["%1gm_ge_army_marder1a2", _sid];	
+		_c pushBack format["%1gm_ge_army_rakjpz2", _sid];	
 	};
 	//set all other vars in a slope
 	_cntstart = count _c;
@@ -930,6 +990,35 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _tech_level) then {
 	_building_time = [CTI_FACTORY_HEAVY,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+
+	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+		_c pushBack format["%1gm_ge_army_Leopard1a4_win", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1gm_ge_army_Leopard1a4_des", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+		_c pushBack format["%1gm_ge_army_Leopard1a4_trp", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+		_c pushBack format["%1gm_ge_army_Leopard1a4_wdl", _sid];
+	};
+	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+		_c pushBack format["%1gm_ge_army_Leopard1a4", _sid];
+	};
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack ([CTI_ECONOMY_PRIZE_TRACKED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 10;	
+	};
 
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
 		_c pushBack format["%1gm_ge_army_Leopard1a5_win", _sid];
@@ -1023,8 +1112,13 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_cntend = count _p;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
-		_n pushBack 'Do28d2 Mobile Respawn';
-		_o pushBack ([CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Do28d2 Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Do28d2 Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
 		_t pushBack _building_time;
 		_u pushBack _tech_level;
 		_f pushBack CTI_FACTORY_LIGHT;
@@ -1551,8 +1645,13 @@ _cntstart = count _c;
 _cntend = count _p;
 for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 	_p pushBack '';
-	_n pushBack 'Rettungswagen FW (Mobile Respawn)';
-	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'Rettungswagen FW (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	} else {
+		_n pushBack 'Rettungswagen FW (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+	};
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;
