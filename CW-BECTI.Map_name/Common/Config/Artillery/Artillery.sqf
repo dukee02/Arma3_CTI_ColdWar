@@ -15,6 +15,40 @@ _b pushBack [1, 2, 4, 8];
 _r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
 
 if(CTI_GM_DLC > 0) then {
+	
+	_c pushBack "gm_ge_army_m120";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+
+	_c pushBack "gm_gc_army_2b11";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+
+
+	_c pushBack "gm_ge_army_m113a1g_mortar_win";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+	_c pushBack "gm_ge_army_m113a1g_mortar_des";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+	_c pushBack "gm_ge_army_m113a1g_mortar_trp";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+	_c pushBack "gm_ge_army_m113a1g_mortar_wdl";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+	_c pushBack "gm_ge_army_m113a1g_mortar";
+	_m pushBack ["8Rnd_82mm_Mo_shells", "8Rnd_82mm_Mo_Smoke_white", "8Rnd_82mm_Mo_Flare_white"];
+	_b pushBack [1, 2, 4, 8];
+	_r pushBack [[100,2500], [100,3000], [100,3500], [100,4000]];
+
+
 	_c pushBack "gm_ge_army_m109g";
 	_m pushBack ["gm_20Rnd_155mm_he_dm21","gm_20Rnd_155mm_he_dm111","gm_20Rnd_155mm_icm_dm602","gm_20Rnd_155mm_smoke_dm105","gm_20Rnd_155mm_illum_dm106","gm_20Rnd_155mm_he_m107","gm_20Rnd_155mm_he_m795","gm_20Rnd_155mm_smoke_m116","gm_20Rnd_155mm_smoke_m110","gm_20Rnd_155mm_illum_m485"];
 	_b pushBack [1, 2, 5, 10];

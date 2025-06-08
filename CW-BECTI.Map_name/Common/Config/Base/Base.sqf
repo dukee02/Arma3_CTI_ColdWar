@@ -569,11 +569,18 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
 if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {
-		_headers pushBack 		"MG3 AA (GM)";
+		_headers pushBack 		"[GM] MG3 AA";
 		_classes pushBack 		"gm_ge_army_mg3_aatripod";
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[GM] M120 Mortar";
+		_classes pushBack 		"gm_ge_army_m120";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
 	};
 	if (CTI_REDD_ADDON > 0) then {
@@ -611,11 +618,18 @@ if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
 if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {
-		_headers pushBack 		"DShKM (GM)";
+		_headers pushBack 		"[GM] DShKM";
 		_classes pushBack 		"gm_gc_army_dshkm_aatripod";
 		_prices pushBack 		_priceMG;
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[GM] 2b11 mortar";
+		_classes pushBack 		"gm_gc_army_2b11";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
 	};
 	if(CTI_SOG_DLC > 0) then {
@@ -1505,7 +1519,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
 if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {
-		_headers pushBack 		"AT Milan (GM)";
+		_headers pushBack 		"[GM]AT Milan";
 		_classes pushBack 		"gm_ge_army_milan_launcher_tripod";
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -1513,7 +1527,7 @@ if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_tiers pushBack 		_tech_level;
 	};
 	if (CTI_REDD_ADDON > 0) then {
-		_headers pushBack 		"AT Milan (REDD)";
+		_headers pushBack 		"[REDD] AT Milan";
 		_classes pushBack 		"Redd_Milan_Static";
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
@@ -1529,7 +1543,7 @@ _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,16] call CTI_CO_FNC_GetCa
 
 if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {		
-		_headers pushBack 		"AT Fagot (GM)";
+		_headers pushBack 		"[GM] AT Fagot";
 		_classes pushBack 		"gm_gc_army_fagot_launcher_tripod";
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];

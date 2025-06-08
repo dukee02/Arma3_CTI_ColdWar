@@ -394,30 +394,13 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Launchers 																//
 //--------------------------------------------------------------------------------------------------------------------------//
+_c pushBack "rhs_weap_rpg18";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "rhs_weap_rpg7";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-_c pushBack "rhs_rpg7_PG7VL_mag";
-_c pushBack "rhs_rpg7_PG7V_mag";
-_c pushBack "rhs_rpg7_PG7VM_mag";
-_c pushBack "rhs_rpg7_PG7VS_mag";
-_c pushBack "rhs_rpg7_PG7VR_mag";
-_c pushBack "rhs_rpg7_OG7V_mag";
-_c pushBack "rhs_rpg7_TBG7V_mag";
-_c pushBack "rhs_rpg7_type69_airburst_mag";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
+_c pushBack "rhs_rpg18_mag";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Uniforms																//
@@ -990,13 +973,30 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //													Launchers 																//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-_c pushBack "rhs_weap_rpg18";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_c pushBack "rhs_weap_rpg7";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+_c pushBack "rhs_rpg7_PG7VL_mag";
+_c pushBack "rhs_rpg7_PG7V_mag";
+_c pushBack "rhs_rpg7_PG7VM_mag";
+_c pushBack "rhs_rpg7_PG7VS_mag";
+_c pushBack "rhs_rpg7_PG7VR_mag";
+_c pushBack "rhs_rpg7_OG7V_mag";
+_c pushBack "rhs_rpg7_TBG7V_mag";
+_c pushBack "rhs_rpg7_type69_airburst_mag";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
 
-_c pushBack "rhs_rpg18_mag";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Vests																	//

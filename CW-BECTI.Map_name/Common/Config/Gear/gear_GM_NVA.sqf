@@ -567,6 +567,30 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10,(762*54)] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
+
+_c pushBack "gm_40Rnd_762x39mm_B_T_57N231P_ak47_blk";
+_c pushBack "gm_40Rnd_762x39mm_AP_7N23_ak47_blk";
+_c pushBack "gm_40Rnd_762x39mm_B_57N231_mpikm_blk";
+_c pushBack "gm_40Rnd_762x39mm_BSD_57N231U_mpikm_blk";
+_c pushBack "gm_40Rnd_762x39mm_B_T_57N231P_mpikm_blk";
+_c pushBack "gm_40Rnd_762x39mm_AP_7N23_mpikm_blk";
+_c pushBack "gm_40Rnd_762x39mm_B_57N231_akm_blk";
+_c pushBack "gm_40Rnd_762x39mm_BSD_57N231U_akm_blk";
+_c pushBack "gm_40Rnd_762x39mm_B_T_57N231P_akm_blk";
+_c pushBack "gm_40Rnd_762x39mm_AP_7N23_akm_blk";
+_c pushBack "gm_40Rnd_762x39mm_B_57N231_akm_org";
+_c pushBack "gm_40Rnd_762x39mm_BSD_57N231U_akm_org";
+_c pushBack "gm_40Rnd_762x39mm_B_T_57N231P_akm_org";
+_c pushBack "gm_40Rnd_762x39mm_AP_7N23_akm_org";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+_itemprise = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,40,(762*39)] call CTI_CO_FNC_GetCalculatedItemPrize;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack _itemprise;
+};
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													MG																		//
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -598,6 +622,101 @@ _cntend = count _u;
 for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Helms																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+
+_c pushBack "gm_gc_army_headgear_hat_90_bg";
+_c pushBack "gm_gc_army_headgear_hat_90_sgr";
+_c pushBack "gm_gc_army_headgear_hat_90_str";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+_c pushBack "gm_gc_army_headgear_m86";
+_c pushBack "gm_gc_army_headgear_m86_cover_blu";
+_c pushBack "gm_gc_army_headgear_m86_net";
+_c pushBack "gm_gc_army_headgear_m86_cover_str";
+_c pushBack "gm_gc_army_headgear_m86_cover_win";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Uniforms																//
+//--------------------------------------------------------------------------------------------------------------------------//
+_c pushBack "gm_gc_army_uniform_soldier_90_str";
+_c pushBack "gm_gc_army_uniform_soldier_90_sgr";
+_c pushBack "gm_gc_army_uniform_soldier_rolled_90_str";
+_c pushBack "gm_gc_army_uniform_soldier_rolled_90_sgr";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//													Vests																	//
+//--------------------------------------------------------------------------------------------------------------------------//
+
+_c pushBack "gm_gc_army_vest_90_belt_str";
+_c pushBack "gm_gc_army_vest_90_leader_str";
+_c pushBack "gm_gc_army_vest_90_lmg_str";
+_c pushBack "gm_gc_army_vest_90_officer_str";
+_c pushBack "gm_gc_army_vest_90_rifleman_str";
+_c pushBack "gm_gc_army_vest_90_at_str";
+
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+_c pushBack "gm_gc_army_vest_bespa_80_none_str";
+_c pushBack "gm_gc_army_vest_bespa_80_belt_str";
+_c pushBack "gm_gc_army_vest_bespa_80_leader_str";
+_c pushBack "gm_gc_army_vest_bespa_80_lmg_str";
+_c pushBack "gm_gc_army_vest_bespa_80_rifleman_str";
+_c pushBack "gm_gc_army_vest_bespa_80_at_str";
+_c pushBack "gm_gc_army_vest_bespa_90_belt_str";
+_c pushBack "gm_gc_army_vest_bespa_90_leader_str";
+_c pushBack "gm_gc_army_vest_bespa_90_lmg_str";
+_c pushBack "gm_gc_army_vest_bespa_90_officer_str";
+_c pushBack "gm_gc_army_vest_bespa_90_rifleman_str";
+_c pushBack "gm_gc_army_vest_bespa_90_at_str";
+
+_c pushBack "gm_gc_army_vest_bespa_80_none_win";
+_c pushBack "gm_gc_army_vest_bespa_80_belt_win";
+_c pushBack "gm_gc_army_vest_bespa_80_leader_win";
+_c pushBack "gm_gc_army_vest_bespa_80_lmg_win";
+_c pushBack "gm_gc_army_vest_bespa_80_rifleman_win";
+_c pushBack "gm_gc_army_vest_bespa_80_at_win";
+_c pushBack "gm_gc_army_vest_bespa_90_belt_win";
+_c pushBack "gm_gc_army_vest_bespa_90_leader_win";
+_c pushBack "gm_gc_army_vest_bespa_90_lmg_win";
+_c pushBack "gm_gc_army_vest_bespa_90_officer_win";
+_c pushBack "gm_gc_army_vest_bespa_90_rifleman_win";
+_c pushBack "gm_gc_army_vest_bespa_90_at_win";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,3.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
 //Update the calculatetd max upgrade level

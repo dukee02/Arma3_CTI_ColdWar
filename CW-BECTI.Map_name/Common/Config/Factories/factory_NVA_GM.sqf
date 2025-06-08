@@ -184,6 +184,7 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1gm_gc_army_brdm2_9p133_win", _sid];//MG + 2cm + AT Rakete
 		_c pushBack format["%1gm_gc_army_btr60pa_win", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pu12_win", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pb_win", _sid];//MG + 2cm
@@ -191,6 +192,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs_win", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1gm_gc_army_brdm2_9p133_wdl", _sid];	//MG + 2cm + AT Rakete
 		_c pushBack format["%1gm_gc_army_btr60pa_wdl", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pu12_wdl", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pb_wdl", _sid];//MG + 2cm
@@ -198,6 +200,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1gm_gc_army_ural375d_mlrs_wdl", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1gm_gc_army_brdm2_9p133", _sid];	//MG + 2cm + AT Rakete	
 		_c pushBack format["%1gm_gc_army_btr60pa", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pu12", _sid];//unarmed
 		_c pushBack format["%1gm_gc_army_btr60pb", _sid];//MG + 2cm
@@ -242,16 +245,19 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_TRACKED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1gm_gc_army_bmp1p_win", _sid];
 		_c pushBack format["%1gm_gc_army_pt76b_win", _sid];
 		_c pushBack format["%1gm_gc_army_t55_win", _sid];
 		_c pushBack format["%1gm_gc_army_2s1_win", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+		_c pushBack format["%1gm_gc_army_bmp1p_wdl", _sid];
 		_c pushBack format["%1gm_gc_army_pt76b_wdl", _sid];
 		_c pushBack format["%1gm_gc_army_t55_wdl", _sid];
 		_c pushBack format["%1gm_gc_army_2s1_wdl", _sid];
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 1 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active	
+		_c pushBack format["%1gm_gc_army_bmp1p", _sid];
 		_c pushBack format["%1gm_gc_army_pt76b", _sid];
 		_c pushBack format["%1gm_gc_army_t55", _sid];
 		_c pushBack format["%1gm_gc_army_2s1", _sid];
