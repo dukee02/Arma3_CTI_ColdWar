@@ -44,6 +44,71 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 
+if(CTI_ADDON_CHARLIECO > 0) then {
+	if(_side == west) then {
+		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
+		_p pushBack '';
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Red Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Red Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 10;	
+
+		_c pushBack format["%1chmaster2_ap", _sid];				//medic
+		_p pushBack '';
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'White Medic (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'White Medic (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 10;
+	} else {
+		_c pushBack format["%1chdefender_vsavhr", _sid];				//medic
+		_p pushBack '';
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Medic Red (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Medic Red (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 10;	
+
+		_c pushBack format["%1chmerc_amb", _sid];				//medic
+		_p pushBack '';
+		if(CTI_RESPAWN_MOBILE <= 0) then {
+			_n pushBack 'Medic White (Heal only)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		} else {
+			_n pushBack 'Medic White (Mobile Respawn)';
+			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
+		};
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_LIGHT;
+		_s pushBack "service-medic";
+		_d pushBack 10;
+	};
+};
+
+
 //*********************************************************************************************************************************************
 //											Tracked Vehicles																				  *
 //*********************************************************************************************************************************************
@@ -1811,6 +1876,36 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //											 Reapir Factory units																			  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
+
+if(CTI_ADDON_CHARLIECO > 0) then {
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_other_mods.sqf", format["Salvager CHARLIECO declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
+	if(_side == west) then {
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_s pushBack [format["%1EPA", _sid],"salvager"];
+				
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
+	} else {
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_s pushBack [format["%1chEPA_RenaultM", _sid],"salvager"];
+				
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_s pushBack [format["%1ccfm_mercedes", _sid],"salvager-independent"];
+	};
+	
+	_cntstart = count _c;
+	_cntend = count _p;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack 'Salvager Truck';
+		_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_REPAIR;
+		_d pushBack 10;
+	};
+};
 
 //*********************************************************************************************************************************************
 //											 Ammo Factory units																			  	  *

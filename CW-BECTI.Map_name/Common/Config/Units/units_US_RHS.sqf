@@ -318,57 +318,20 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_d pushBack 10;	
 	};
 
-	if(CTI_ADDON_CHARLIECO > 0) then {
-		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
-		_p pushBack '';
-		if(CTI_RESPAWN_MOBILE <= 0) then {
-			_n pushBack 'Red Medic (Heal only)';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		} else {
-			_n pushBack 'Red Medic (Mobile Respawn)';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		};
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "service-medic";
-		_d pushBack 10;	
-
-		_c pushBack format["%1chmaster2_ap", _sid];				//medic
-		_p pushBack '';
-		if(CTI_RESPAWN_MOBILE <= 0) then {
-			_n pushBack 'White Medic (Heal only)';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		} else {
-			_n pushBack 'White Medic (Mobile Respawn)';
-			_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-		};
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "service-medic";
-		_d pushBack 10;
+	_c pushBack format["rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
+	_p pushBack '';
+	if(CTI_RESPAWN_MOBILE <= 0) then {
+		_n pushBack 'GAZ66 Medic (Heal only)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 	} else {
-		_c pushBack format["rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
-		//set all other vars in a slope
-		_cntstart = count _c;
-		_cntend = count _p;
-		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-			_p pushBack '';
-			if(CTI_RESPAWN_MOBILE <= 0) then {
-				_n pushBack 'GAZ66 Medic (Heal only)';
-				_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,false] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-			} else {
-				_n pushBack 'GAZ66 Medic (Mobile Respawn)';
-				_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-			};
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_LIGHT;
-			_s pushBack "service-medic";
-			_d pushBack 10;		
-		};
+		_n pushBack 'GAZ66 Medic (Mobile Respawn)';
+		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 	};
+	_t pushBack _building_time;
+	_u pushBack _tech_level;
+	_f pushBack CTI_FACTORY_LIGHT;
+	_s pushBack "service-medic";
+	_d pushBack 10;	
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
@@ -1367,93 +1330,40 @@ if((_isThisMain select 0) == CTI_US_ID && (_isThisMain select 1) == CTI_RHS_ID) 
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 if(_setupBaseUnits) then {
-	switch true do
-	{
-		case (CTI_ADDON_CHARLIECO == 1): {
+	if(CTI_ADDON_CHARLIECO < 1) then {
+		/*if (CTI_SALVAGE_SPECIAL > 0) then {
 			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["%1EPA", _sid],"salvager"];
-			_d pushBack 10;
-				
-			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
-			_d pushBack 10;
-		};
-		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC >= 1): {};
-		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC < 1): {
-			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager"];
-			_d pushBack 10;
-				
+					
 			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
 			_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
-			_d pushBack 10;
-		};
-		default  {
+		} else {*/
 			if(CTI_CAMO_ACTIVATION == 2) then {		//Desert camo active
 				_c pushBack format["CTI_Salvager_%1", _faction];
-				_p pushBack '';
-				_n pushBack 'Salvager Truck';
-				_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-				_t pushBack _building_time;
-				_u pushBack _tech_level;
-				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1rhsusf_M1084A1P2_B_D_fmtv_usarmy", _sid],"salvager"];
-				_d pushBack 10;
-					
+						
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-				_p pushBack '';
-				_n pushBack 'Salvager Truck';
-				_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-				_t pushBack _building_time;
-				_u pushBack _tech_level;
-				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1rhsusf_M1084A1P2_B_D_fmtv_usarmy", _sid],"salvager-independent"];
-				_d pushBack 10;
 			} else {
 				_c pushBack format["CTI_Salvager_%1", _faction];
-				_p pushBack '';
-				_n pushBack 'Salvager Truck';
-				_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-				_t pushBack _building_time;
-				_u pushBack _tech_level;
-				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1rhsusf_M1084A1P2_WD_fmtv_usarmy", _sid],"salvager"];
-				_d pushBack 10;
-					
+						
 				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-				_p pushBack '';
-				_n pushBack 'Salvager Truck';
-				_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-				_t pushBack _building_time;
-				_u pushBack _tech_level;
-				_f pushBack CTI_FACTORY_REPAIR;
 				_s pushBack [format["%1rhsusf_M1084A1P2_WD_fmtv_usarmy", _sid],"salvager-independent"];
-				_d pushBack 10;
 			};
+		//};
+
+		//set all other vars in a slope
+		_cntstart = count _c;
+		_cntend = count _p;
+		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_d pushBack 10;
 		};
 	};
 };
@@ -1461,7 +1371,7 @@ if(_setupBaseUnits) then {
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_US_ID, CTI_RHS_ID] call CTI_CO_FNC_GetTechmatrix;
 
-_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 

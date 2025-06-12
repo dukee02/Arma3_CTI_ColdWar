@@ -33,8 +33,25 @@ if (_setupBaseUnits) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 
-//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_other_mods.sqf", format["units in factory %1: [%2] ", CTI_LIGHT, count _c]] call CTI_CO_FNC_Log;};
-//missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_LIGHT], _c];
+if(CTI_ADDON_CHARLIECO > 0) then {
+	if(_side == west) then {
+		_c pushBack format["%1chvsavar_ivecoar", _sid];			//medic
+		_c pushBack format["%1chmaster2_ap", _sid];				//medic
+	} else {
+		_c pushBack format["%1chdefender_vsavhr", _sid];		//medic
+		_c pushBack format["%1chmerc_amb", _sid];				//medic
+	};
+};
+
+_priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
+if (isNil "_priorUnits") then { 
+	_priorUnits = []; 
+} else {
+	_c append _priorUnits; 
+};
+
+if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_other_mods.sqf", format["units in factory %1: [%2] ", CTI_LIGHT, count _c]] call CTI_CO_FNC_Log;};
+missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_LIGHT], _c];
 
 //*********************************************************************************************************************************************
 //											Tracked Vehicles																				  *

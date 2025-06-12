@@ -563,71 +563,31 @@ if(count _isThisMain > 0) then {
 _tech_level = 0;
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 if(_setupBaseUnits) then {
-	switch true do
-	{
-		case (CTI_ADDON_CHARLIECO == 1): {
-			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["chEPA_RenaultM", _sid],"salvager"];
-			_d pushBack 10;
+	if(CTI_ADDON_CHARLIECO < 1) then {
+		_c pushBack format["CTI_Salvager_%1", _faction];
+		_s pushBack [format["rhsgref_ins%1_zil131_flatbed_cover", _sid],"salvager"];
+					
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_s pushBack [format["rhsgref_ins%1_zil131_flatbed_cover", _sid],"salvager-independent"];
+		
+		/*
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager"];
 				
-			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_s pushBack [format["%1C_IDAP_Van_02_medevac_F", _sid],"salvager-independent"];
+		*/
+		//set all other vars in a slope
+		_cntstart = count _c;
+		_cntend = count _p;
+		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 			_p pushBack '';
 			_n pushBack 'Salvager Truck';
 			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
 			_t pushBack _building_time;
 			_u pushBack _tech_level;
 			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["ccfm_mercedes", _sid],"salvager-independent"];
 			_d pushBack 10;
-		};
-		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC >= 1): {};
-		case (CTI_SALVAGE_SPECIAL > 0 && CTI_GM_DLC < 1): {
-			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["C_IDAP_Van_02_medevac_F", _sid],"salvager"];
-			_d pushBack 10;
-				
-			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["C_IDAP_Van_02_medevac_F", _sid],"salvager-independent"];
-			_d pushBack 10;
-		};
-		default  {
-			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["rhsgref_ins%1_zil131_flatbed_cover", _sid],"salvager"];
-			_d pushBack 10;
-				
-			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["rhsgref_ins%1_zil131_flatbed_cover", _sid],"salvager-independent"];
-			_d pushBack 10;	
 		};
 	};
 };

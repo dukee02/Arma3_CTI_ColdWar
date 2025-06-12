@@ -425,82 +425,6 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 /*_setupBaseUnits = false;
 _isThisMain = missionNamespace getVariable [format ["CTI_%1_MAINNATIONS", _side], []];
 if((_isThisMain select 0) == CTI_BW_ID && (_isThisMain select 1) == CTI_BWADD_ID) then {_setupBaseUnits = true;};
-_tech_level = 0;
-_building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
-if(_setupBaseUnits) then {
-	switch true do
-	{
-		case (CTI_ADDON_CHARLIECO == 1): {
-			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["%1EPA", _sid],"salvager"];
-			_d pushBack 10;
-				
-			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["%1FPT_MAN", _sid],"salvager-independent"];
-			_d pushBack 10;
-		};
-		case (CTI_SALVAGE_SPECIAL > 0): {
-			_c pushBack format["CTI_Salvager_%1", _side];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			_s pushBack [format["%1gm_ge_ff_u1300l_firefighter", _sid],"salvager"];
-			_d pushBack 10;
-				
-			_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-			_p pushBack '';
-			_n pushBack 'Salvager Truck';
-			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-			_t pushBack _building_time;
-			_u pushBack _tech_level;
-			_f pushBack CTI_FACTORY_REPAIR;
-			//_s pushBack [format["%1gm_ge_ff_u1300l_firefighter", _sid],"salvager-independent"];
-			_s pushBack [format["%1gm_ge_ff_typ1200", _sid],"salvager-independent"];
-			_d pushBack 10;
-		};
-		//case (CTI_GM_DLC > 1): {};	//--- this is GM
-		default  {
-			if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-				_c pushBack format["CTI_Salvager_%1", _faction];
-				_p pushBack '';
-				_n pushBack 'Salvager Truck';
-				_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-				_t pushBack _building_time;
-				_u pushBack _tech_level;
-				_f pushBack CTI_FACTORY_REPAIR;
-				_s pushBack [format["%1gm_ge_army_kat1_451_cargo", _sid],"salvager"];
-				_d pushBack 10;
-					
-				_c pushBack format["CTI_Salvager_Independent_%1", _faction];
-				_p pushBack '';
-				_n pushBack 'Salvager Truck';
-				_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
-				_t pushBack _building_time;
-				_u pushBack _tech_level;
-				_f pushBack CTI_FACTORY_REPAIR;
-				_s pushBack [format["%1gm_ge_army_kat1_451_cargo", _sid],"salvager-independent"];
-				_d pushBack 10;
-			};
-		};
-	};
-};
-
-
 
 _matrix_full = [_side, CTI_UPGRADE_LIGHT] call CTI_CO_FNC_GetTechmatrix;
 _matrix_nation = [_side, CTI_UPGRADE_LIGHT, CTI_BW_ID, CTI_BWADD_ID] call CTI_CO_FNC_GetTechmatrix;
@@ -577,36 +501,7 @@ for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do {
 	_s pushBack "service-ammotruck";
 	_d pushBack 10;
 };
-
-
-if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-	_c pushBack format["%1gm_ge_army_kat1_451_refuel_win", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-	_c pushBack format["%1gm_ge_army_kat1_451_refuel_des", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-	_c pushBack format["%1gm_ge_army_kat1_451_refuel_trp", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-	_c pushBack format["%1gm_ge_army_kat1_451_refuel_wdl", _sid];
-};
-if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-	_c pushBack format["%1gm_ge_army_kat1_451_refuel", _sid];
-};
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _p;
-for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-	_p pushBack '';
-	_n pushBack 'Fuel Truck';
-	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize);
-	_t pushBack _building_time;
-	_u pushBack _tech_level;
-	_f pushBack CTI_FACTORY_AMMO;
-	_s pushBack "service-fueltruck";
-	_d pushBack 10;
-};*/
+*/
 
 //*********************************************************************************************************************************************
 //											 Naval Factory units																		  	  *

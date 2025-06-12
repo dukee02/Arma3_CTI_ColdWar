@@ -266,12 +266,7 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1rhsusf_m1025_d", _sid];
 	_c pushBack format["%1rhsusf_m1043_d", _sid];
 	_c pushBack format["%1rhsusf_mrzr4_d", _sid];
-	if(CTI_ADDON_CHARLIECO > 0) then {
-		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
-		_c pushBack format["%1chmaster2_ap", _sid];				//medic
-	} else {
-		_c pushBack format["%1rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
-	};
+	_c pushBack format["%1rhsgref_cdf_b_gaz66_ap2", _sid];//Medic
 };
 
 _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;

@@ -667,6 +667,36 @@ _matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 _building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
+//if(_setupBaseUnits) then {
+	if(CTI_ADDON_CHARLIECO < 1) then {
+		_c pushBack format["CTI_Salvager_%1", _faction];
+		_s pushBack [format["%1cwr3_i_v3s_open", _sid],"salvager"];
+					
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_s pushBack [format["%1cwr3_i_v3s_open", _sid],"salvager-independent"];
+		
+		/*
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager"];
+				
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_s pushBack [format["%1C_Van_02_medevac_F", _sid],"salvager-independent"];
+		*/
+		//set all other vars in a slope
+		_cntstart = count _c;
+		_cntend = count _p;
+		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+			_p pushBack '';
+			_n pushBack 'Salvager Truck';
+			_o pushBack CTI_VEHICLES_SALVAGER_PRICE;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_REPAIR;
+			_d pushBack 10;
+		};
+	};
+//};
+
 if(CTI_ECONOMY_LEVEL_WHEELED >=_tech_level) then {
 	_c pushBack format["%1cwr3_i_v3s_repair", _sid];				//Repairtruck
 	_p pushBack '';
