@@ -416,27 +416,16 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 _c = [];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
-			_c pushBack format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid];
-			_c pushBack format["%1gm_gc_army_medic_mpiak74n_80_win", _sid];
-		};
-		if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 1) then {		//default camo active
-			_c pushBack format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid];
-			_c pushBack format["%1gm_gc_army_medic_mpiak74n_80_str", _sid];
-		};
-	_c pushBack format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid];
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1gm_gc_army_bicycle_01_oli", _sid];	
+		_c pushBack format["%1gm_gc_army_p601", _sid];
+		
+		_c pushBack format["%1gm_gc_civ_p601", _sid];
+		_c pushBack format["%1gm_gc_dp_p601", _sid];
+		_c pushBack format["%1gm_gc_pol_p601", _sid];
 	};
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1gm_gc_army_bicycle_01_oli", _sid];	
-	_c pushBack format["%1gm_gc_army_p601", _sid];
-	
-	_c pushBack format["%1gm_gc_civ_p601", _sid];
-	_c pushBack format["%1gm_gc_dp_p601", _sid];
-	_c pushBack format["%1gm_gc_pol_p601", _sid];
-};	
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
 			_c pushBack format["%1gm_gc_army_ural4320_repair_win", _sid];//Repairtruck
@@ -453,6 +442,19 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 			_c pushBack format["%1gm_gc_army_ural4320_reammo", _sid];//Ammotruck
 			_c pushBack format["%1gm_gc_army_ural375d_refuel", _sid];//Fueltruck
 		};
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//Winter camo active
+			_c pushBack format["%1gm_gc_army_rifleman_mpiak74n_80_win", _sid];
+			_c pushBack format["%1gm_gc_army_medic_mpiak74n_80_win", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 1) then {		//default camo active
+			_c pushBack format["%1gm_gc_army_rifleman_mpiak74n_80_str", _sid];
+			_c pushBack format["%1gm_gc_army_medic_mpiak74n_80_str", _sid];
+		};
+	_c pushBack format["%1gm_gc_army_crew_mpiaks74nk_80_blk", _sid];
 	};
 };
 

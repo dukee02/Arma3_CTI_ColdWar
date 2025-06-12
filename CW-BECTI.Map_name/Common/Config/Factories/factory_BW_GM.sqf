@@ -727,67 +727,52 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		switch(CTI_CAMO_ACTIVATION) do {
-			case 1: {//desert camo active
-				_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid];
-				_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_win", _sid];
-			};
-			case 3: {//jungle camo active
-				_c pushBack format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid];
-				_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
-			};
-			default {//main camo active
-				_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid];
-				_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_ols", _sid];
-			};	
+
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+			_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
 		};
-		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			_c pushBack format["%1gm_ge_army_iltis_cargo_des", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
+			_c pushBack format["%1gm_ge_army_iltis_cargo_trp", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
+			_c pushBack format["%1gm_ge_army_iltis_cargo_wdl", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+			_c pushBack format["%1gm_ge_army_iltis_cargo", _sid];
+		};
+		_c pushBack format["%1gm_ge_army_k125", _sid];
+
+		_c pushBack format["%1gm_ge_civ_typ1200", _sid];
+		_c pushBack format["%1gm_ge_civ_typ247", _sid];
+		_c pushBack format["%1gm_ge_civ_typ251", _sid];
+		_c pushBack format["%1gm_ge_civ_typ253", _sid];
+		_c pushBack format["%1gm_ge_civ_w123", _sid];
+
+		_c pushBack format["%1gm_ge_taxi_typ253", _sid];
+		_c pushBack format["%1gm_ge_taxi_w123", _sid];
+
+		_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
+		_c pushBack format["%1gm_ge_dbp_typ247", _sid];
+		_c pushBack format["%1gm_ge_dbp_typ251", _sid];
+		_c pushBack format["%1gm_ge_dbp_w123", _sid];
+
+		_c pushBack format["%1gm_ge_ff_typ1200", _sid];
+		_c pushBack format["%1gm_ge_ff_typ247_firefighter", _sid];
+		_c pushBack format["%1gm_ge_ff_typ247", _sid];
+		_c pushBack format["%1gm_ge_ff_typ253", _sid];
+		_c pushBack format["%1gm_ge_ff_u1300l_medic", _sid];
+		_c pushBack format["%1gm_ge_ff_w123", _sid];
+
+		_c pushBack format["%1gm_ge_pol_typ1200", _sid];
+		_c pushBack format["%1gm_ge_pol_typ253", _sid];
+		_c pushBack format["%1gm_ge_pol_w123", _sid];
 	};
 };
-
-if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_win", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_des", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION == 7) then {		//jungle camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_trp", _sid];
-};
-if(CTI_CAMO_ACTIVATION == 6 || CTI_CAMO_ACTIVATION == 7) then {		//special camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo_wdl", _sid];
-};
-if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 3 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-	_c pushBack format["%1gm_ge_army_iltis_cargo", _sid];
-};
-_c pushBack format["%1gm_ge_army_k125", _sid];
-
-_c pushBack format["%1gm_ge_civ_typ1200", _sid];
-_c pushBack format["%1gm_ge_civ_typ247", _sid];
-_c pushBack format["%1gm_ge_civ_typ251", _sid];
-_c pushBack format["%1gm_ge_civ_typ253", _sid];
-_c pushBack format["%1gm_ge_civ_w123", _sid];
-
-_c pushBack format["%1gm_ge_taxi_typ253", _sid];
-_c pushBack format["%1gm_ge_taxi_w123", _sid];
-
-_c pushBack format["%1gm_ge_dbp_typ1200", _sid];
-_c pushBack format["%1gm_ge_dbp_typ247", _sid];
-_c pushBack format["%1gm_ge_dbp_typ251", _sid];
-_c pushBack format["%1gm_ge_dbp_w123", _sid];
-
-_c pushBack format["%1gm_ge_ff_typ1200", _sid];
-_c pushBack format["%1gm_ge_ff_typ247_firefighter", _sid];
-_c pushBack format["%1gm_ge_ff_typ247", _sid];
-_c pushBack format["%1gm_ge_ff_typ253", _sid];
-_c pushBack format["%1gm_ge_ff_u1300l_medic", _sid];
-_c pushBack format["%1gm_ge_ff_w123", _sid];
-
-_c pushBack format["%1gm_ge_pol_typ1200", _sid];
-_c pushBack format["%1gm_ge_pol_typ253", _sid];
-_c pushBack format["%1gm_ge_pol_w123", _sid];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
@@ -816,6 +801,26 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 			_c pushBack format["%1gm_ge_army_kat1_454_reammo", _sid];
 			_c pushBack format["%1gm_ge_army_u1300l_repair", _sid];			//repair
 		};
+	};
+};
+
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 1: {//desert camo active
+				_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_win", _sid];
+				_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_win", _sid];
+			};
+			case 3: {//jungle camo active
+				_c pushBack format["%1gm_ge_army_rifleman_g3a3_80_ols", _sid];
+				_c pushBack format["%1gm_ge_army_medic_g3a3_80_ols", _sid];
+			};
+			default {//main camo active
+				_c pushBack format["%1gm_ge_army_rifleman_g3a3_parka_80_ols", _sid];
+				_c pushBack format["%1gm_ge_army_medic_g3a3_parka_80_ols", _sid];
+			};	
+		};
+		_c pushBack format["%1gm_ge_army_crew_mp2a1_80_oli", _sid];
 	};
 };
 

@@ -369,7 +369,20 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1CUP_B_UAZ_Unarmed_AFU", _sid];
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1CUP_B_Ural_Repair_AFU", _sid];			//Repairtruck
+		_c pushBack format["%1CUP_B_Ural_Reammo_AFU", _sid];			//Ammotruck
+		_c pushBack format["%1CUP_B_Ural_Refuel_AFU", _sid];			//Fueltruck
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 2: {//desert camo active
@@ -381,16 +394,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 				_c pushBack format["%1CUP_B_AFU_Soldier_Medic", _sid];
 			};	
 		};
-	};
-};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1CUP_B_UAZ_Unarmed_AFU", _sid];
-};	
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		_c pushBack format["%1CUP_B_Ural_Repair_AFU", _sid];			//Repairtruck
-		_c pushBack format["%1CUP_B_Ural_Reammo_AFU", _sid];			//Ammotruck
-		_c pushBack format["%1CUP_B_Ural_Refuel_AFU", _sid];			//Fueltruck
 	};
 };
 

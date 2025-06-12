@@ -412,6 +412,19 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 _c = [];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["rhsgref_cdf%1_reg_uaz", _sid];
+		_c pushBack format["rhsgref_cdf%1_reg_uaz_open", _sid];
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["rhsgref_cdf%1_gaz66_repair", _sid];			//Repairtruck
+		_c pushBack format["rhsgref_cdf%1_gaz66_ammo", _sid];				//Ammotruck
+		_c pushBack format["rhsgref_cdf%1_ural_fuel", _sid];				//Fueltruck
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 3: {//jungle camo active
@@ -427,17 +440,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 				_c pushBack format["rhsgref_cdf%1_reg_crew", _sid];
 			};	
 		};
-	};
-};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["rhsgref_cdf%1_reg_uaz", _sid];
-	_c pushBack format["rhsgref_cdf%1_reg_uaz_open", _sid];
-};
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		_c pushBack format["rhsgref_cdf%1_gaz66_repair", _sid];			//Repairtruck
-		_c pushBack format["rhsgref_cdf%1_gaz66_ammo", _sid];				//Ammotruck
-		_c pushBack format["rhsgref_cdf%1_ural_fuel", _sid];				//Fueltruck
 	};
 };
 

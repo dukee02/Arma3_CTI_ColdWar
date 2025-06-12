@@ -326,7 +326,21 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+	_c pushBack format["%1vn_c_car_01_01", _sid];
+	_c pushBack format["%1vn_c_car_04_01", _sid];
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+	_c pushBack format["%1vn_o_wheeled_z157_repair_nva65", _sid];				//Repairtruck
+	_c pushBack format["%1vn_o_wheeled_z157_ammo_nva65", _sid];				//Ammotruck
+	_c pushBack format["%1vn_o_wheeled_z157_fuel_nva65", _sid];				//Fueltruck
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 4 || CTI_CAMO_ACTIVATION == 7) then {		//desert/urban camo active
 			_c pushBack format["%1vn_o_men_nva_65_36", _sid];		//Crewman (Driver)
@@ -338,17 +352,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 			_c pushBack format["%1vn_o_men_nva_08", _sid];		//Medic (PPS-43)
 			_c pushBack format["%1vn_o_men_nva_02", _sid];		//Rifleman (SKS)
 		};
-	};
-};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1vn_c_car_01_01", _sid];
-	_c pushBack format["%1vn_c_car_04_01", _sid];
-};	
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1vn_o_wheeled_z157_repair_nva65", _sid];				//Repairtruck
-	_c pushBack format["%1vn_o_wheeled_z157_ammo_nva65", _sid];				//Ammotruck
-	_c pushBack format["%1vn_o_wheeled_z157_fuel_nva65", _sid];				//Fueltruck
 	};
 };
 

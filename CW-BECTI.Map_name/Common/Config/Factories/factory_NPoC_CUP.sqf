@@ -283,22 +283,24 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 _c = [];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		_c pushBack format["%1CUP_I_GUE_Medic", _sid];
-		_c pushBack format["%1CUP_I_GUE_Soldier_AKM", _sid];
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1CUP_I_TT650_NAPA", _sid];
+		_c pushBack format["%1CUP_I_Datsun_PK_Random", _sid];
 	};
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1CUP_I_TT650_NAPA", _sid];
-	_c pushBack format["%1CUP_I_Datsun_PK_Random", _sid];
-};	
-/*if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+/*if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_c pushBack format["%1CUP_O_Ural_Repair_RU", _sid];				//repairtruck
 		_c pushBack format["%1CUP_O_Ural_Reammo_RU", _sid];				//ammotruck
 		_c pushBack format["%1CUP_O_Ural_Refuel_RU", _sid];				//Fueltruck
 	};
 };*/
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		_c pushBack format["%1CUP_I_GUE_Medic", _sid];
+		_c pushBack format["%1CUP_I_GUE_Soldier_AKM", _sid];
+	};
+};
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 

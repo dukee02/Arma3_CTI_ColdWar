@@ -199,14 +199,31 @@ _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_Fleck", _sid];	
+
+		_c pushBack format["%1BWA3_Multi_Fleck", _sid];	
+		_c pushBack format["%1BW_LKW_Transport_offen_Winter", _sid];	
+		_c pushBack format["%1BW_LKW_Transport_Winter", _sid];	
+	};
+	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_Tropen", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_Tropen", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_Tropen", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_Tropen", _sid];
+
+		_c pushBack format["%1BWA3_Multi_Tropen", _sid];	
+		_c pushBack format["%1BW_LKW_Transport_offen_Tropen", _sid];	
+		_c pushBack format["%1BW_LKW_Transport_Tropen", _sid];		
 	};
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_Fleck", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_Fleck", _sid];	
-		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_Fleck", _sid];	
+		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_Fleck", _sid];
+
+		_c pushBack format["%1BWA3_Multi_Fleck", _sid];	
+		_c pushBack format["%1BW_LKW_Transport_offen_fleck", _sid];	
+		_c pushBack format["%1BW_LKW_Transport_Fleck", _sid];	
 	};
 };
 
@@ -217,31 +234,19 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Fleck", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Fleck", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Fleck", _sid];	
-
-		_c pushBack format["%1BWA3_Multi_Fleck", _sid];	
 		_c pushBack format["%1BW_LKW_Medic_Winter", _sid];	
-		_c pushBack format["%1BW_LKW_Transport_offen_Winter", _sid];	
-		_c pushBack format["%1BW_LKW_Transport_Winter", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
 		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Tropen", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Tropen", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Tropen", _sid];	
-
-		_c pushBack format["%1BWA3_Multi_Tropen", _sid];	
 		_c pushBack format["%1BW_LKW_Medic_Tropen", _sid];	
-		_c pushBack format["%1BW_LKW_Transport_offen_Tropen", _sid];	
-		_c pushBack format["%1BW_LKW_Transport_Tropen", _sid];	
 	};
 	if(CTI_CAMO_ACTIVATION < 1 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
 		_c pushBack format["%1BWA3_Dingo2_FLW100_MG3_CG13_Fleck", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_M2_CG13_Fleck", _sid];	
 		_c pushBack format["%1BWA3_Dingo2_FLW200_GMW_CG13_Fleck", _sid];	
-
-		_c pushBack format["%1BWA3_Multi_Fleck", _sid];	
 		_c pushBack format["%1BW_LKW_Medic_Fleck", _sid];	
-		_c pushBack format["%1BW_LKW_Transport_offen_fleck", _sid];	
-		_c pushBack format["%1BW_LKW_Transport_Fleck", _sid];
 	};
 };
 
@@ -425,24 +430,23 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		switch(CTI_CAMO_ACTIVATION) do {
-			case 2: {//desert camo active
-				_c pushBack format["%1BWA3_Rifleman_Tropen", _sid];	
-				_c pushBack format["%1BWA3_Medic_Tropen", _sid];
-				_c pushBack format["%1BWA3_Crew_Tropen", _sid];
-			};
-			case 3: {//jungle camo active
-				_c pushBack format["%1BWA3_Rifleman_Fleck", _sid];
-				_c pushBack format["%1BWA3_Crew_Fleck", _sid];
-				_c pushBack format["%1BWA3_Medic_Fleck", _sid];
-			};
-			default {//main camo active
-				_c pushBack format["%1BWA3_Rifleman_Multi", _sid];	
-				_c pushBack format["%1BWA3_Medic_Multi", _sid];	
-				_c pushBack format["%1BWA3_Crew_Multi", _sid];	
-			};	
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+			_c pushBack format["%1BWA3_Multi_Fleck", _sid];
+			_c pushBack format["%1BW_LKW_Transport_offen_Winter", _sid];
+			_c pushBack format["%1BW_LKW_Transport_Winter", _sid];	
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			_c pushBack format["%1BWA3_Multi_Tropen", _sid];
+			_c pushBack format["%1BW_LKW_Transport_offen_Tropen", _sid];
+			_c pushBack format["%1BW_LKW_Transport_Tropen", _sid];	
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+			_c pushBack format["%1BWA3_Multi_Fleck", _sid];
+			_c pushBack format["%1BW_LKW_Transport_offen_fleck", _sid];
+			_c pushBack format["%1BW_LKW_Transport_Fleck", _sid];
 		};
 	};
 };
@@ -463,6 +467,27 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 			_c pushBack format["%1BW_LKW_Munition_Fleck", _sid];
 			_c pushBack format["%1BW_LKW_Treibstoff_Fleck", _sid];
 			_c pushBack format["%1BW_LKW_Reparatur_Fleck", _sid];
+		};
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		switch(CTI_CAMO_ACTIVATION) do {
+			case 2: {//desert camo active
+				_c pushBack format["%1BWA3_Rifleman_Tropen", _sid];	
+				_c pushBack format["%1BWA3_Medic_Tropen", _sid];
+				_c pushBack format["%1BWA3_Crew_Tropen", _sid];
+			};
+			case 3: {//jungle camo active
+				_c pushBack format["%1BWA3_Rifleman_Fleck", _sid];
+				_c pushBack format["%1BWA3_Crew_Fleck", _sid];
+				_c pushBack format["%1BWA3_Medic_Fleck", _sid];
+			};
+			default {//main camo active
+				_c pushBack format["%1BWA3_Rifleman_Multi", _sid];	
+				_c pushBack format["%1BWA3_Medic_Multi", _sid];	
+				_c pushBack format["%1BWA3_Crew_Multi", _sid];	
+			};	
 		};
 	};
 };

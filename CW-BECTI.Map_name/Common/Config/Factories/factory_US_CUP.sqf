@@ -765,7 +765,33 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+			_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
+		};
+		_c pushBack format["%1CUP_B_M1030_USMC", _sid];
+	};	
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
+		};
+		if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
+			_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
+			_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
+			_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
+		};
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 2: {//desert camo active
@@ -788,29 +814,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 				_c pushBack format["%1CUP_B_US_Soldier_OEFCP", _sid];
 				_c pushBack format["%1CUP_B_US_Medic_OEFCP", _sid];
 			};	
-		};
-	};
-};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USA", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-		_c pushBack format["%1CUP_B_HMMWV_Unarmed_USMC", _sid];
-	};
-	_c pushBack format["%1CUP_B_M1030_USMC", _sid];
-};	
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-			_c pushBack format["%1CUP_B_MTVR_Repair_USA", _sid];			//Repairtruck
-			_c pushBack format["%1CUP_B_MTVR_Ammo_USA", _sid];				//Ammotruck
-			_c pushBack format["%1CUP_B_MTVR_Refuel_USA", _sid];			//Fueltruck
-		};
-		if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION > 2) then {		//all camo active
-			_c pushBack format["%1CUP_B_MTVR_Ammo_USMC", _sid];					//Repairtruck
-			_c pushBack format["%1CUP_B_MTVR_Refuel_USMC", _sid];				//Ammotruck
-			_c pushBack format["%1CUP_B_MTVR_Repair_USMC", _sid];				//Fueltruck
 		};
 	};
 };

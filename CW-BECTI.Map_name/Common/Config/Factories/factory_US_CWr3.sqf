@@ -347,20 +347,23 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
+
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
-		_c pushBack format["%1cwr3_b_soldier82", _sid];
-		_c pushBack format["%1cwr3_b_soldier82_medic", _sid];
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1cwr3_b_m151", _sid];
 	};
 };
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1cwr3_b_m151", _sid];
-};	
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
 	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
 		_c pushBack format["%1cwr3_b_m939_repair", _sid];			//Repairtruck
 		_c pushBack format["%1cwr3_b_m939", _sid];				//Ammotruck
 		_c pushBack format["%1cwr3_b_m939_refuel", _sid];			//Fueltruck
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
+	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
+		_c pushBack format["%1cwr3_b_soldier82", _sid];
+		_c pushBack format["%1cwr3_b_soldier82_medic", _sid];
 	};
 };
 

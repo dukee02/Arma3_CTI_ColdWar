@@ -344,6 +344,12 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		_c pushBack format["%1bw_unimog_cargo", _sid];
+		_c pushBack format["%1bw_unimog_cargo_covered", _sid];
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_ECONOMY_LEVEL_INFANTRY >= 0) then {
 		switch(CTI_CAMO_ACTIVATION) do {
 			case 1: {//desert camo active
@@ -355,9 +361,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 		};
 	};
 };
-
-_c pushBack format["%1bw_unimog_cargo", _sid];
-_c pushBack format["%1bw_unimog_cargo_covered", _sid];
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_DEPOT];
 if (isNil "_priorUnits") then { 

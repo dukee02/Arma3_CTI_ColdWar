@@ -344,17 +344,17 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 //--- Below is classnames for Units and AI avaiable to puchase from Town Depot.
 _c = [];
 
-_matrix_cnt = [1, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
-if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
-if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
-	if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
-		_c pushBack format["%1Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
-		_c pushBack format["%1Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FueFu", _sid];
-	};
-	if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
-		_c pushBack format["%1Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu", _sid];
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
+		if(CTI_CAMO_ACTIVATION == 1 || CTI_CAMO_ACTIVATION == 7) then {		//winter camo active
+			_c pushBack format["%1Redd_Tank_LKW_leicht_gl_Wolf_Wintertarn_FueFu", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//Desert camo active
+			_c pushBack format["%1Redd_Tank_LKW_leicht_gl_Wolf_Tropentarn_FueFu", _sid];
+		};
+		if(CTI_CAMO_ACTIVATION < 1 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 6) || CTI_CAMO_ACTIVATION == 7) then {		//all camo active
+			_c pushBack format["%1Redd_Tank_LKW_leicht_gl_Wolf_Flecktarn_FueFu", _sid];
+		};
 	};
 };
 

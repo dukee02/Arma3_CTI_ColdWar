@@ -351,6 +351,18 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AMMO], _c];
 _c = [];
 
 if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+	_c pushBack format["%1CUP_I_LR_Transport_RACS", _sid];
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 1) then {
+	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
+		_c pushBack format["%1CUP_I_MTVR_Repair_RACS", _sid];				//Repairtruck
+		_c pushBack format["%1CUP_I_MTVR_Ammo_RACS", _sid];					//Ammotruck
+		_c pushBack format["%1CUP_I_MTVR_Refuel_RACS", _sid];				//Fueltruck
+	};
+};
+if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 2) then {
 	if(CTI_CAMO_ACTIVATION == 2 || CTI_CAMO_ACTIVATION == 7) then {		//desert camo active
 		_c pushBack format["%1CUP_I_RACS_Medic", _sid];
 		_c pushBack format["%1CUP_I_RACS_Soldier", _sid];
@@ -362,16 +374,6 @@ if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
 	if(CTI_CAMO_ACTIVATION < 2 || (CTI_CAMO_ACTIVATION > 2 && CTI_CAMO_ACTIVATION < 4) || CTI_CAMO_ACTIVATION > 4) then {		//main camo active
 		_c pushBack format["%1CUP_I_RACS_Medic_wdl", _sid];
 		_c pushBack format["%1CUP_I_RACS_Soldier_wdl", _sid];
-	};
-};
-if(CTI_ECONOMY_LEVEL_WHEELED >= 0) then {
-	_c pushBack format["%1CUP_I_LR_Transport_RACS", _sid];
-};	
-if ((missionNamespace getVariable "CTI_UNITS_TOWN_PURCHASE") > 0) then {
-	if(CTI_ECONOMY_LEVEL_WHEELED >= 1) then {
-		_c pushBack format["%1CUP_I_MTVR_Repair_RACS", _sid];				//Repairtruck
-		_c pushBack format["%1CUP_I_MTVR_Ammo_RACS", _sid];					//Ammotruck
-		_c pushBack format["%1CUP_I_MTVR_Refuel_RACS", _sid];				//Fueltruck
 	};
 };
 
