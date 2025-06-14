@@ -32,6 +32,7 @@ if (_setupBaseUnits) then {
 //											Wheeled Vehicles																				  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
+_c = [];
 
 if(CTI_ADDON_CHARLIECO > 0) then {
 	if(_side == west) then {
