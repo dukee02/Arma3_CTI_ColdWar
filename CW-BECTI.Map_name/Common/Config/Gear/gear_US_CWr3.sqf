@@ -69,16 +69,6 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
-//										Other Items																			//
-//--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "CUP_NVG_PVS7";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,3.0] call CTI_CO_FNC_GetCalculatedItemPrize);
-
-_c pushBack "CUP_NVG_PVS7_Hide";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,3.0] call CTI_CO_FNC_GetCalculatedItemPrize);
-//--------------------------------------------------------------------------------------------------------------------------//
 //															Weapons															//
 //--------------------------------------------------------------------------------------------------------------------------//
 
@@ -619,6 +609,17 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,3.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
+
+//--------------------------------------------------------------------------------------------------------------------------//
+//										Other Items																			//
+//--------------------------------------------------------------------------------------------------------------------------//
+_c pushBack "CUP_NVG_PVS7";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,3.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_NVG_PVS7_Hide";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,3.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //Update the calculatetd max upgrade level
 if(_tech_level > _upgrade_levels select CTI_UPGRADE_GEAR) then {

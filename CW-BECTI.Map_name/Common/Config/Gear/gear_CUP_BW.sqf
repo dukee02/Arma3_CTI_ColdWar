@@ -29,12 +29,13 @@ _matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
 if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 
 _c pushBack "CUP_Vector21Nite";
-_u pushBack 0;
+_u pushBack _tech_level;
 _p pushBack 500;
 
 _c pushBack "CUP_NVG_PVS7";
-_u pushBack 0;
+_u pushBack _tech_level;
 _p pushBack 100;
+
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Grenade and Mines														//
 //--------------------------------------------------------------------------------------------------------------------------//

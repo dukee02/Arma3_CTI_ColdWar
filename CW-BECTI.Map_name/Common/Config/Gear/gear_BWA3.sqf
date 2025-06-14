@@ -30,11 +30,11 @@ if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt 
 
 //--- Items
 _c pushBack "BWA3_Vector";
-_u pushBack 0;
+_u pushBack _tech_level;
 _p pushBack round 100;
 
 _c pushBack "BWA3_ItemNaviPad";
-_u pushBack 0;
+_u pushBack _tech_level;
 _p pushBack round 100;
 
 //--------------------------------------------------------------------------------------------------------------------------//
