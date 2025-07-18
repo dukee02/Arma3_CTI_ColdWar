@@ -1452,10 +1452,10 @@ if(CTI_ADDON_CHARLIECO > 0 && _side != resistance) then {
 
 	if(_side == west) then {
 		_c pushBack format["CTI_Salvager_%1", _side];
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_c pushBack format["CTI_Salvager_Independent_%1", _side];
 	} else {
 		_c pushBack format["CTI_Salvager_%1", _side];
-		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+		_c pushBack format["CTI_Salvager_Independent_%1", _side];
 	};
 };
 
