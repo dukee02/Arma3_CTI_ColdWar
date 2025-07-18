@@ -33,8 +33,8 @@ if (_setupBaseUnits) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 _c = [];
-
-if(CTI_ADDON_CHARLIECO > 0) then {
+_level = 0;
+if(CTI_ADDON_CHARLIECO > 0 && _side != resistance) then {
 	if(_side == west) then {
 		_c pushBack format["%1chvsavar_ivecoar", _sid];			//medic
 		_c pushBack format["%1chmaster2_ap", _sid];				//medic
@@ -1446,8 +1446,18 @@ missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_AIR], _c];
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
 _c = [];
-/*_c pushBack format["%1", _sid];					//repair
-_c pushBack format["CTI_Salvager_%1", _side];
+
+if(CTI_ADDON_CHARLIECO > 0 && _side != resistance) then {
+	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_other_mods.sqf", format["Salvager CHARLIECO declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
+
+	if(_side == west) then {
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+	} else {
+		_c pushBack format["CTI_Salvager_%1", _side];
+		_c pushBack format["CTI_Salvager_Independent_%1", _faction];
+	};
+};
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_REPAIR];
 if (isNil "_priorUnits") then { 
@@ -1455,7 +1465,7 @@ if (isNil "_priorUnits") then {
 } else {
 	_c append _priorUnits; 
 };
-*/
+
 if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\factories\factory_other_mods.sqf", format["units in factory %1: [%2] ", CTI_REPAIR, count _c]] call CTI_CO_FNC_Log;};
 //missionNamespace setVariable [format ["CTI_%1_%2Units", _side, CTI_REPAIR], _c];
 

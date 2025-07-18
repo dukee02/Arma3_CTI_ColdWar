@@ -264,8 +264,6 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_n pushBack 'UAZ Medic (Mobile Respawn)';
 		_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 	};
-	_n pushBack 'UAZ Mobile Respawn';
-	_o pushBack ([CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize);
 	_t pushBack _building_time;
 	_u pushBack _tech_level;
 	_f pushBack CTI_FACTORY_LIGHT;

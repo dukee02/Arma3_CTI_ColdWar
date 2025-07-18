@@ -44,7 +44,7 @@ if (CTI_Log_Level >= CTI_Log_Debug) then {
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Light Factory.
 
-if(CTI_ADDON_CHARLIECO > 0) then {
+if(CTI_ADDON_CHARLIECO > 0 && _side != resistance) then {
 	if(_side == west) then {
 		_c pushBack format["%1chvsavar_ivecoar", _sid];				//medic
 		_p pushBack '';
@@ -118,7 +118,6 @@ if(CTI_ADDON_CHARLIECO > 0) then {
 //											AIR - Choppers and Planes																		  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Air Factory.
-_c = [];
 _matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
 //_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_BW_ID, CTI_GM_ID] call CTI_CO_FNC_GetTechmatrix;
 
@@ -1876,8 +1875,8 @@ if(_tech_level > _upgrade_levels select CTI_UPGRADE_AIR) then {
 //											 Reapir Factory units																			  *
 //*********************************************************************************************************************************************
 //--- Below is classnames for Units and AI avaiable to puchase from Reapir Factory.
-
-if(CTI_ADDON_CHARLIECO > 0) then {
+_tech_level = 0;
+if(CTI_ADDON_CHARLIECO > 0 && _side != resistance) then {
 	if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\config\units\units_other_mods.sqf", format["Salvager CHARLIECO declared: [%1|%2|%3] ", CTI_ADDON_CHARLIECO, CTI_SALVAGE_SPECIAL, CTI_CAMO_ACTIVATION]] call CTI_CO_FNC_Log};
 
 	if(_side == west) then {
@@ -1896,6 +1895,7 @@ if(CTI_ADDON_CHARLIECO > 0) then {
 	
 	_cntstart = count _c;
 	_cntend = count _p;
+	_building_time = [CTI_FACTORY_REPAIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack 'Salvager Truck';

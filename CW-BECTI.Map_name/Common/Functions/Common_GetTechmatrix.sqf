@@ -96,7 +96,7 @@ if(_mod >= 0) then {
 		//combine the tech tree
 		{
 			if(_side == (_x) call CTI_CO_FNC_GetSideFromID) then {
-				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["No Nation: %1 [%2,%3] <%4>", (_x) call CTI_CO_FNC_GetSideFromID, _factory, _x, _tech]] call CTI_CO_FNC_Log;};
+				if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["By Side: %1 [%2,%3] <%4>", (_x) call CTI_CO_FNC_GetSideFromID, _factory, _x, _tech]] call CTI_CO_FNC_Log;};
 				if(CTI_GM_DLC > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_GM_ID] call CTI_CO_FNC_MergeMatrixArray;
 				};
@@ -111,7 +111,7 @@ if(_mod >= 0) then {
 				};*/
 				if(CTI_CUP_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_CUP_ID] call CTI_CO_FNC_MergeMatrixArray;
-					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_CUP_ADDON: [%1,%2] <%3>", _factory, _nation_cnt, _tech]] call CTI_CO_FNC_Log;};
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_CUP_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 				if(CTI_RHS_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_RHS_ID] call CTI_CO_FNC_MergeMatrixArray;
@@ -127,15 +127,15 @@ if(_mod >= 0) then {
 				};*/
 				if(CTI_BW_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_BWA3_ID] call CTI_CO_FNC_MergeMatrixArray;
-					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_BW_ADDON: [%1,%2] <%3>", _factory, _nation_cnt, _tech]] call CTI_CO_FNC_Log;};
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_BW_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 				if(CTI_BWADD_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_BWADD_ID] call CTI_CO_FNC_MergeMatrixArray;
-					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_BWADD_ADDON: [%1,%2] <%3>", _factory, _nation_cnt, _tech]] call CTI_CO_FNC_Log;};
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_BWADD_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 				if(CTI_REDD_ADDON > 0) then {
 					_tech = [_tech, _tech_matrix select _factory select _forEachIndex select CTI_REDD_ID] call CTI_CO_FNC_MergeMatrixArray;
-					if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_REDD_ADDON: [%1,%2] <%3>", _factory, _nation_cnt, _tech]] call CTI_CO_FNC_Log;};
+					//if (CTI_Log_Level >= CTI_Log_Debug) then {["VIOC_DEBUG", "FILE: common\functions\Common_GetTechmatrix.sqf", format["CTI_REDD_ADDON: [%1,%2] <%3>", _factory, _forEachIndex, _tech]] call CTI_CO_FNC_Log;};
 				};
 			};	
 		} forEach [CTI_BW_SIDE, CTI_NVA_SIDE, CTI_US_SIDE, CTI_SOV_SIDE, CTI_NPOC_SIDE, CTI_RACS_SIDE, CTI_FIA_SIDE, CTI_CDF_SIDE, CTI_CHDKZ_SIDE, CTI_UKRAIN_SIDE];
