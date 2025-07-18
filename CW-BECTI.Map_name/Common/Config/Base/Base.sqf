@@ -355,6 +355,23 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AT";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[SOG] l70mk2 (AA)";
+			_classes pushBack 		"vn_b_navy_static_l70mk2";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[SOG] l70mk2 (AA)";
+			_classes pushBack 		"vn_b_navy_static_l70mk2";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if (CTI_RHS_ADDON > 0) then {
 		_headers pushBack 		"[RHS] Static MG (M2)";
@@ -384,6 +401,23 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[RHS] Static MG (M2)";
+			_classes pushBack 		"RHS_M2StaticMG_D";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] Static MG (M2)";
+			_classes pushBack 		"RHS_M2StaticMG_D";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if (CTI_CUP_ADDON > 0) then {
 		_headers pushBack 		"[CUP] Static SearchLight";
@@ -420,6 +454,23 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;	
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[CUP] Static MG (M2)";
+			_classes pushBack 		"CUP_B_M2StaticMG_US";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[CUP] Static MG (M2)";
+			_classes pushBack 		"CUP_B_M2StaticMG_US";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if(CTI_CWR3_ADDON > 0) then {
 		_headers pushBack 		"[CWr3] Static SearchLight";
@@ -456,6 +507,23 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[CWr3] Static MG (M2 high)";
+			_classes pushBack 		"cwr3_b_m2hb_high";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[CWr3] Static MG (M2 high)";
+			_classes pushBack 		"cwr3_b_m2hb_high";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};	
 };
 /********************************************************************************************************************************
@@ -490,6 +558,23 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[RHS] Static MG (KORD)";
+			_classes pushBack 		"rhs_KORD_high_VDV";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[RHS] Static MG (KORD)";
+			_classes pushBack 		"rhs_KORD_high_VDV";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if(CTI_CUP_ADDON > 0) then {
 		_headers pushBack 		"[CUP] Static SearchLight";
@@ -526,6 +611,23 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[CUP] Static MG (KORD)";
+			_classes pushBack 		"CUP_O_KORD_high_RU";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[CUP] Static MG (KORD)";
+			_classes pushBack 		"CUP_O_KORD_high_RU";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if(CTI_CWR3_ADDON > 0) then {
 		_headers pushBack 		"[CWr3] Static SearchLight";
@@ -562,6 +664,23 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[CWr3] Static MG (NSV)";
+			_classes pushBack 		"cwr3_o_nsv_high";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[CWr3] Static MG (NSV)";
+			_classes pushBack 		"cwr3_o_nsv_high";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 };
 /********************************************************************************************************************************
@@ -582,6 +701,23 @@ if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[GM] MG3 AA";
+			_classes pushBack 		"gm_ge_army_mg3_aatripod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[GM] MG3 AA";
+			_classes pushBack 		"gm_ge_army_mg3_aatripod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if (CTI_REDD_ADDON > 0) then {
 		_headers pushBack 		"Static MG (MG3)";
@@ -611,6 +747,23 @@ if(CTI_BW_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"Static MG (MG3)";
+			_classes pushBack 		"rnt_mg3_static";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"Static MG (MG3)";
+			_classes pushBack 		"rnt_mg3_static";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;			
+		};
 	};
 };
 /********************************************************************************************************************************
@@ -631,70 +784,104 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[GM] DShKM";
+			_classes pushBack 		"gm_gc_army_dshkm_aatripod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+			
+			_headers pushBack 		"[GM] DShKM";
+			_classes pushBack 		"gm_gc_army_dshkm_aatripod";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 	if(CTI_SOG_DLC > 0) then {
-			_headers pushBack 		"[SOG] RPD (MG)";
-			_classes pushBack 		"vn_o_nva_static_rpd_high";
-			_prices pushBack 		_priceMG;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
+		_headers pushBack 		"[SOG] RPD (MG)";
+		_classes pushBack 		"vn_o_nva_static_rpd_high";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"[SOG] SMG";
-			_classes pushBack 		"vn_o_nva_static_sgm_low_01";
-			_prices pushBack 		_priceMG;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
+		_headers pushBack 		"[SOG] SMG";
+		_classes pushBack 		"vn_o_nva_static_sgm_low_01";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 
-			_headers pushBack 		"[SOG] SMG (Shield)";
-			_classes pushBack 		"vn_o_nva_static_sgm_low_02";
-			_prices pushBack 		_priceMG;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
+		_headers pushBack 		"[SOG] SMG (Shield)";
+		_classes pushBack 		"vn_o_nva_static_sgm_low_02";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
 
+		_headers pushBack 		"[SOG] SGM (AA MG)";
+		_classes pushBack 		"vn_o_nva_static_sgm_high_01";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AA";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[SOG] Type 63 mortar";
+		_classes pushBack 		"vn_o_nva_static_mortar_type63";
+		_prices pushBack 		_priceArty;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Arty";
+		_tiers pushBack 		_tech_level;
+			
+		_headers pushBack 		"[SOG] D44 AT";
+		_classes pushBack 		"vn_o_nva_static_d44";
+		_prices pushBack 		_priceGun;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"AT";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SOG] Spiderhole 1";
+		_classes pushBack 		"vn_o_nva_spiderhole_01";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SOG] Spiderhole 2";
+		_classes pushBack 		"vn_o_nva_spiderhole_02";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+
+		_headers pushBack 		"[SOG] Spiderhole 3";
+		_classes pushBack 		"vn_o_nva_spiderhole_03";
+		_prices pushBack 		_priceMG;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"Defense";
+		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
 			_headers pushBack 		"[SOG] SGM (AA MG)";
 			_classes pushBack 		"vn_o_nva_static_sgm_high_01";
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
-			_categories pushBack 	"AA";
+			_categories pushBack 	"RADAR";
 			_tiers pushBack 		_tech_level;
 			
-			_headers pushBack 		"[SOG] Type 63 mortar";
-			_classes pushBack 		"vn_o_nva_static_mortar_type63";
-			_prices pushBack 		_priceArty;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Arty";
-			_tiers pushBack 		_tech_level;
-			
-			_headers pushBack 		"[SOG] D44 AT";
-			_classes pushBack 		"vn_o_nva_static_d44";
-			_prices pushBack 		_priceGun;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"AT";
-			_tiers pushBack 		_tech_level;
-
-			_headers pushBack 		"[SOG] Spiderhole 1";
-			_classes pushBack 		"vn_o_nva_spiderhole_01";
+			_headers pushBack 		"[SOG] SGM (AA MG)";
+			_classes pushBack 		"vn_o_nva_static_sgm_high_01";
 			_prices pushBack 		_priceMG;
 			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
+			_categories pushBack 	"SAM";
 			_tiers pushBack 		_tech_level;
-
-			_headers pushBack 		"[SOG] Spiderhole 2";
-			_classes pushBack 		"vn_o_nva_spiderhole_02";
-			_prices pushBack 		_priceMG;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
-
-			_headers pushBack 		"[SOG] Spiderhole 3";
-			_classes pushBack 		"vn_o_nva_spiderhole_03";
-			_prices pushBack 		_priceMG;
-			_placements pushBack 	[180, 5];
-			_categories pushBack 	"Defense";
-			_tiers pushBack 		_tech_level;
+		};
 	};
 };
 
@@ -731,6 +918,23 @@ if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Arty";
 			_tiers pushBack 		_tech_level;
+		
+			//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+			if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_cdf_b_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"RADAR";
+				_tiers pushBack 		_tech_level;
+				
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_cdf_b_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"SAM";
+				_tiers pushBack 		_tech_level;
+			};
 		} else {
 			_headers pushBack 		"[RHS] Static MG (DSHKM)";
 			_classes pushBack 		"rhsgref_cdf_DSHKM";
@@ -759,6 +963,23 @@ if(CTI_CDF_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Arty";
 			_tiers pushBack 		_tech_level;
+		
+			//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+			if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_cdf_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"RADAR";
+				_tiers pushBack 		_tech_level;
+				
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_cdf_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"SAM";
+				_tiers pushBack 		_tech_level;
+			};
 		};
 	};
 };
@@ -796,6 +1017,23 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Arty";
 			_tiers pushBack 		_tech_level;
+		
+			//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+			if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_ins_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"RADAR";
+				_tiers pushBack 		_tech_level;
+				
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_ins_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"SAM";
+				_tiers pushBack 		_tech_level;
+			};
 		} else {
 			_headers pushBack 		"[RHS] Static MG (DSHKM)";
 			_classes pushBack 		"rhsgref_ins_g_DSHKM";
@@ -824,6 +1062,23 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 			_placements pushBack 	[180, 5];
 			_categories pushBack 	"Arty";
 			_tiers pushBack 		_tech_level;
+		
+			//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+			if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_ins_g_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"RADAR";
+				_tiers pushBack 		_tech_level;
+				
+				_headers pushBack 		"[RHS] Static MG (DSHKM)";
+				_classes pushBack 		"rhsgref_ins_g_DSHKM";
+				_prices pushBack 		_priceMG;
+				_placements pushBack 	[180, 5];
+				_categories pushBack 	"SAM";
+				_tiers pushBack 		_tech_level;
+			};
 		};
 	};
 };
@@ -873,8 +1128,26 @@ if(CTI_CHDKZ_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"Arty";
 		_tiers pushBack 		_tech_level;
+		
+		//we must declare some RADAR and SAM if we want to spawn them on the map, if we deactivate them we need an alternative unit
+		if(CTI_ECONOMY_LEVEL_DEFENSE < 3) then {
+			_headers pushBack 		"[CUP] Static MG (DSHKM)";
+			_classes pushBack 		"CUP_B_DSHKM_AFU";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"RADAR";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"[CUP] Static MG (DSHKM)";
+			_classes pushBack 		"CUP_B_DSHKM_AFU";
+			_prices pushBack 		_priceMG;
+			_placements pushBack 	[180, 5];
+			_categories pushBack 	"SAM";
+			_tiers pushBack 		_tech_level;
+		};
 	};
 };
+
 /********************************************************************************************************************************
  *														TECH 1																	*
  ********************************************************************************************************************************/
@@ -1585,21 +1858,6 @@ if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 		_placements pushBack 	[180, 5];
 		_categories pushBack 	"AT";
 		_tiers pushBack 		_tech_level;
-
-		
-		_headers pushBack 		"[SOG] rsna75 SAM Radar System";
-		_classes pushBack 		"vn_o_static_rsna75";
-		_prices pushBack 		_priceBase;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"RADAR";
-		_tiers pushBack 		_tech_level;
-		
-		_headers pushBack 		"[SOG] sa2 SAM System";
-		_classes pushBack 		"vn_sa2";
-		_prices pushBack 		_priceAA;
-		_placements pushBack 	[180, 5];
-		_categories pushBack 	"SAM";
-		_tiers pushBack 		_tech_level;
 	};
 };
 /********************************************************************************************************************************
@@ -1672,6 +1930,24 @@ _priceAA = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,true,16] call CTI_CO_FNC_GetCa
 /********************************************************************************************************************************
  *											Others		Surface to Air Missile													*
  ********************************************************************************************************************************/
+if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
+	if(CTI_SOG_DLC > 0) then {
+		_headers pushBack 		"[SOG] rsna75 SAM Radar System";
+		_classes pushBack 		"vn_o_static_rsna75";
+		_prices pushBack 		_priceBase*0.75;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"RADAR";
+		_tiers pushBack 		_tech_level;
+		
+		_headers pushBack 		"[SOG] sa2 SAM System";
+		_classes pushBack 		"vn_sa2";
+		_prices pushBack 		_priceAA;
+		_placements pushBack 	[180, 5];
+		_categories pushBack 	"SAM";
+		_tiers pushBack 		_tech_level;
+	};
+};
+
 if(_side == west) then {
 	if(CTI_BW_ADDON > 0) then {
 		_headers pushBack 		"SAM Radar System";
