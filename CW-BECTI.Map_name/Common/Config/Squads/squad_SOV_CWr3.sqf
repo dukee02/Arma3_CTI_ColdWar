@@ -44,7 +44,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		inf_to_add pushBack [format["%1cwr3_o_soldier82_at_rpg7", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier82_aat_rpg7", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier82_hg", _sid], 1, 20];
-		inf_to_add pushBack [format["%1cwr3_o_soldier82_driver", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1cwr3_o_soldier82_driver", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier82_sapper", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier82_engineer", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier82_medic", _sid], 1, 20];
@@ -54,7 +54,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 	if(CTI_CAMO_ACTIVATION < 2 || CTI_CAMO_ACTIVATION == 3 || CTI_CAMO_ACTIVATION > 4) then {		//main camo active
 		inf_to_add = [[format["%1cwr3_o_soldier", _sid], 1, 60]];	
 		inf_to_add pushBack [format["%1cwr3_o_soldier_at_rpg7", _sid], 1, 20];
-		inf_to_add pushBack [format["%1cwr3_o_soldier_driver", _sid], 1, 20];
+		//inf_to_add pushBack [format["%1cwr3_o_soldier_driver", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier_sapper", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier_engineer", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier_hg", _sid], 1, 20];
@@ -63,7 +63,7 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		inf_to_add pushBack [format["%1cwr3_o_soldier_backpack", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier_aat_rpg7", _sid], 1, 20];
 	};
-	inf_to_add pushBack [format["%1cwr3_o_soldier_crew", _sid], 1, 20];
+	//inf_to_add pushBack [format["%1cwr3_o_soldier_crew", _sid], 1, 20];
 
 	units_infantry append inf_to_add;
 	infantry_auto append inf_to_add;
@@ -102,10 +102,10 @@ if(CTI_ECONOMY_LEVEL_INFANTRY >= _level) then {
 		inf_to_add pushBack [format["%1cwr3_o_soldier_aa_strela", _sid], 1, 20];
 		inf_to_add pushBack [format["%1cwr3_o_soldier_aaa_strela", _sid], 1, 20];
 	};
-	inf_to_add pushBack [format["%1cwr3_o_camel_pilot", _sid], 1, 20];
-	inf_to_add pushBack [format["%1cwr3_o_soldier_pilot", _sid], 1, 20];
-	inf_to_add pushBack [format["%1cwr3_o_soldier_pilot_jet", _sid], 1, 20];
-	inf_to_add pushBack [format["%1cwr3_o_soldier_pilot_light", _sid], 1, 20];
+	//inf_to_add pushBack [format["%1cwr3_o_camel_pilot", _sid], 1, 20];
+	//inf_to_add pushBack [format["%1cwr3_o_soldier_pilot", _sid], 1, 20];
+	//inf_to_add pushBack [format["%1cwr3_o_soldier_pilot_jet", _sid], 1, 20];
+	//inf_to_add pushBack [format["%1cwr3_o_soldier_pilot_light", _sid], 1, 20];
 	
 	units_infantry append inf_to_add;
 	if(CTI_FACTORY_LEVEL_PRESET > _level) then {infantry_auto append inf_to_add;};

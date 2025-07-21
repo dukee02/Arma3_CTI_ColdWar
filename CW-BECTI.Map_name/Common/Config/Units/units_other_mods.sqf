@@ -1621,10 +1621,12 @@ switch(_side) do {
 
 			//Community wish, vanilla drones for both sides for ballance
 			if((CTI_CUP_ADDON >= 1 || CTI_RHS_ADDON >= 1) && CTI_AIR_ADDON >= 0 ) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+
 				_c pushBack format["%1B_UAV_02_dynamicLoadout_F", _sid];	
 				_p pushBack '';
 				_n pushBack '';
-				_o pushBack [CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				_o pushBack _unitsprise;
 				_t pushBack _building_time;
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
@@ -1803,10 +1805,12 @@ switch(_side) do {
 
 			//Community wish, vanilla drones for both sides for ballance
 			if((CTI_CUP_ADDON >= 1 || CTI_RHS_ADDON >= 1) && CTI_AIR_ADDON >= 0 ) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+
 				_c pushBack format["%1O_UAV_02_dynamicLoadout_F", _sid];
 				_p pushBack '';
 				_n pushBack '';
-				_o pushBack [CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				_o pushBack _unitsprise;
 				_t pushBack _building_time;
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
