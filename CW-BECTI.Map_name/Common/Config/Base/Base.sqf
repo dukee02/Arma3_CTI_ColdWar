@@ -530,7 +530,7 @@ if(CTI_US_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  *											Russia																				*
  ********************************************************************************************************************************/
 if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
-	if(CTI_CUP_ADDON > 0) then {
+	if(CTI_RHS_ADDON > 0) then {
 		_headers pushBack 		"[RHS] Static MG (KORD)";
 		_classes pushBack 		"rhs_KORD_high_VDV";
 		_prices pushBack 		_priceMG;
@@ -1337,7 +1337,7 @@ if(CTI_SOV_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
  ********************************************************************************************************************************/
 if(CTI_NVA_SIDE == (_side) call CTI_CO_FNC_GetSideID) then {
 	if(CTI_GM_DLC > 0) then {
-		_headers pushBack 		"SPG 9 (GM)";
+		_headers pushBack 		"[GM] SPG 9";
 		_classes pushBack 		"gm_gc_army_spg9_tripod";
 		_prices pushBack 		_priceGun;
 		_placements pushBack 	[180, 5];
