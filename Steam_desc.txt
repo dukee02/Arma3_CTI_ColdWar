@@ -185,20 +185,20 @@ Want to know more about the mission, setup your own server, find servers running
 -------------------------------------------------------------------------------
 Cold-War-Maps uploaded:
 
-Altis					https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892				V2.0.3
-Cam Lao Nam (SOG)		https://steamcommunity.com/sharedfiles/filedetails/?id=3180139142				V2.0.3
-Chernarus				https://steamcommunity.com/sharedfiles/filedetails/?id=3180118084				V2.0.3
-Chernarus Summer		https://steamcommunity.com/sharedfiles/filedetails/?id=3180120014				V2.0.3
-Chernarus Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=3180124472				V2.0.3
-Enoch / Livonia			https://steamcommunity.com/sharedfiles/filedetails/?id=2974800207				V2.0.3
-Weferlingen				https://steamcommunity.com/sharedfiles/filedetails/?id=2994391699				V2.0.3
-Weferlingen Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=2994392454				V2.0.3
-Malden					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799676				V2.0.3
-MSKE					https://steamcommunity.com/sharedfiles/filedetails/?id=3180136306				V2.0.3
-Stratis					https://steamcommunity.com/sharedfiles/filedetails/?id=2974798605				V2.0.3
-Takistan				https://steamcommunity.com/sharedfiles/filedetails/?id=3180125933				V2.0.3
-Tanoa					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799271				V2.0.3
-Rosche Germany			https://steamcommunity.com/sharedfiles/filedetails/?id=2187031931				V2.0.3
+Altis					https://steamcommunity.com/sharedfiles/filedetails/?id=1758094892				V2.0.6_250820
+Cam Lao Nam (SOG)		https://steamcommunity.com/sharedfiles/filedetails/?id=3180139142				V2.0.6_250820
+Chernarus				https://steamcommunity.com/sharedfiles/filedetails/?id=3180118084				V2.0.6_250820
+Chernarus Summer		https://steamcommunity.com/sharedfiles/filedetails/?id=3180120014				V2.0.6_250820
+Chernarus Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=3180124472				V2.0.6_250820
+Enoch / Livonia			https://steamcommunity.com/sharedfiles/filedetails/?id=2974800207				V2.0.6_250820
+Weferlingen				https://steamcommunity.com/sharedfiles/filedetails/?id=2994391699				V2.0.6_250820
+Weferlingen Winter		https://steamcommunity.com/sharedfiles/filedetails/?id=2994392454				V2.0.6_250820
+Malden					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799676				V2.0.6_250820
+MSKE					https://steamcommunity.com/sharedfiles/filedetails/?id=3180136306				V2.0.6_250820
+Stratis					https://steamcommunity.com/sharedfiles/filedetails/?id=2974798605				V2.0.6_250820
+Takistan				https://steamcommunity.com/sharedfiles/filedetails/?id=3180125933				V2.0.6_250820
+Tanoa					https://steamcommunity.com/sharedfiles/filedetails/?id=2974799271				V2.0.6_250820
+Rosche Germany			https://steamcommunity.com/sharedfiles/filedetails/?id=2187031931				V2.0.6_250820
 
 
 [list]
@@ -219,3 +219,71 @@ Rosche Germany			https://steamcommunity.com/sharedfiles/filedetails/?id=21870319
 [/list]
 -------------------------------------------------------------------------------
 
+[h1][V2.0.6] Changelog:[/h1]
+[b]Added:[/b] 2 vanilla drones, active if -AIR Addon Support- active
+[b]Added:[/b] GM 1.6
+[b]Added:[/b] dmg indicator for buildings and HQ
+[b]Added:[/b] remote controll if set CTI_RESPAWN_AI >= 3
+[b]Changed:[/b] Medic prise if no mobile-respawn
+[b]Changed:[/b] default value for town purchase to 1
+[b]Changed:[/b] no arty cooldown if EAT <= 0
+[b]Changed:[/b] deleting units/defenses behavior
+[b]Changed:[/b] default - Inf Marker now show icon for own units
+[b]Changed:[/b] commander now gives squads more money
+[b]Changed:[/b] set LOG to warning to got infos about arty ammo bug
+[b]Changed:[/b] time to capture camps now same for all SV
+[b]Fixed:[/b] some spawn issues if RHS active
+[b]Fixed:[/b] Town purchase param not same in all mods
+[b]Fixed:[/b] some positions in Altis and cherna
+[b]Fixed:[/b] Ai Com didn't place Radar
+[b]Fixed:[/b] errors if SAMs deactivated
+[b]Fixed:[/b] AI shoots player if nation didn't have original side
+[b]Fixed:[/b] OPFOR didn't shoot GUER
+[b]Fixed:[/b] HC didn't work if added after mission start
+
+[h1][V2.0.5] Changelog:[/h1]
+[b]Added:[/b] gear purchasing for vehicle player sit in
+[b]Added:[/b] small add to DLC check
+[b]Added:[/b] Option to respawn with last gear see Issue#27
+[b]Added:[/b] Option to disable tokeover distance for units on respawn
+[b]Added:[/b] toggle mode for earplugs
+[b]Added:[/b] check 4 AI take command
+[b]Added:[/b] commander ability to setup statics
+[b]Added:[/b] Ukrainian forces
+[b]Added:[/b] Better Base-repair prise calculation
+[b]Changed:[/b] town spawn changes, see Issue#34
+[b]Changed:[/b] better persist gear handling
+[b]Changed:[/b] AI skill param
+[b]Changed:[/b] AI skill calculation
+[b]Changed:[/b] info text if building destroyed
+[b]Changed:[/b] some CW price missmatches
+[b]Changed:[/b] spawn distance from factory +5m
+[b]Changed:[/b] range check for Artys
+[b]Changed:[/b] better static placement
+[b]Changed:[/b] descr. for penalty param
+[b]Changed:[/b] direction of commander placed statics
+[b]Changed:[/b] discount for AI only in harderAI skills
+[b]Changed:[/b] Max Queue amount in factorys (doubbled)
+[b]Changed:[/b] rearming behavior for statics
+[b]Changed:[/b] positioning of vehicles after loading
+[b]Changed:[/b] mods possibility check
+[b]Fixed:[/b] Salvager view as client not working
+[b]Fixed:[/b] some spawn issues if RHS active
+[b]Fixed:[/b] HQ repair cost
+[b]Fixed:[/b] wrong calc for techtree in some special cases
+[b]Fixed:[/b] VAM module not working
+[b]Fixed:[/b] Respawn on own units don't work anymore
+[b]Fixed:[/b] firefighter siren not working
+[b]Fixed:[/b] commander stopped working in some cases - upsi
+[b]Fixed:[/b] must allways hack UAVs+UGVs
+[b]Fixed:[/b] earplug keybinding to INSERT
+[b]Fixed:[/b] building blocked in not in restricted area
+[b]Fixed:[/b] can't disban own units- empty list
+[b]Fixed:[/b] error on loading the supply
+[b]Fixed:[/b] error on loading if no ships in techtree
+[b]Fixed:[/b] buggy US flag
+[b]Fixed:[/b] nre earplugs not working
+[b]Fixed:[/b] naked start if SOG not owned
+[b]Fixed:[/b] M29 Prise and some descriptions
+[b]Fixed:[/b] M577 medic price
+[b]Fixed:[/b] ArmoredMBT error in log

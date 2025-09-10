@@ -1,3 +1,25 @@
+[V2.0.6] Changelog:
+Added: 2 vanilla drones, active if -AIR Addon Support- active
+Added: GM 1.6
+Added: dmg indicator for buildings and HQ
+Added: remote controll if set CTI_RESPAWN_AI >= 3
+Changed: Medic prise if no mobile-respawn
+Changed: default value for town purchase to 1
+Changed: no arty cooldown if EAT <= 0
+Changed: deleting units/defenses behavior
+Changed: default - Inf Marker now show icon for own units
+Changed: commander now gives squads more money
+Changed: set LOG to warning to got infos about arty ammo bug
+Changed: time to capture camps now same for all SV
+Fixed: some spawn issues if RHS active
+Fixed: Town purchase param not same in all mods
+Fixed: some positions in Altis and cherna
+Fixed: Ai Com didn't place Radar
+Fixed: errors if SAMs deactivated
+Fixed: AI shoots player if nation didn't have original side
+Fixed: OPFOR didn't shoot GUER
+Fixed: HC didn't work if added after mission start
+
 [V2.0.5] Changelog:
 Added: gear purchasing for vehicle player sit in
 Added: small add to DLC check
