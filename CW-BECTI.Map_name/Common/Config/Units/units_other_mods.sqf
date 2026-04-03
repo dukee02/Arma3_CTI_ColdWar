@@ -1618,12 +1618,74 @@ switch(_side) do {
 				_s pushBack "";
 				_d pushBack 10;	
 			};
+		};
 
-			//Community wish, vanilla drones for both sides for ballance
-			if((CTI_CUP_ADDON >= 1 || CTI_RHS_ADDON >= 1) && CTI_AIR_ADDON >= 0 ) then {
-				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		//_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_DRONE_ID] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [false,false,false,false,false,false,true,true,true];
+		
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
-				_c pushBack format["%1B_UAV_02_dynamicLoadout_F", _sid];	
+			if (isClass(configFile >> "CfgVehicles" >> "GX_B_MQ8B_UAV_RECON")) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true,0.1] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				
+				_c pushBack format["%1GX_B_MQ8B_UAV_RECON", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+				
+				_c pushBack format["%1GX_B_MQ8B_UAV_RECON_SEATED", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+				
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true,0.3] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				_c pushBack format["%1GX_B_MQ8B_UAV_ARMED", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+			};
+		};
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+						
+			if (isClass(configFile >> "CfgVehicles" >> "rksla3_uav_rq7shadow_01_blufor")) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,false,0.04] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+
+				_c pushBack format["%1rksla3_uav_rq7shadow_01_blufor", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "MMM_UAV_Vampire")) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true,0.05] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				
+				_c pushBack format["%1MMM_UAV_Vampire", _sid];	
 				_p pushBack '';
 				_n pushBack '';
 				_o pushBack _unitsprise;
@@ -1802,12 +1864,21 @@ switch(_side) do {
 				_s pushBack "";
 				_d pushBack 10;	
 			};
+		};
 
-			//Community wish, vanilla drones for both sides for ballance
-			if((CTI_CUP_ADDON >= 1 || CTI_RHS_ADDON >= 1) && CTI_AIR_ADDON >= 0 ) then {
-				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		//_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_DRONE_ID] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [false,false,false,false,false,false,true,true,true];
+		
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 
-				_c pushBack format["%1O_UAV_02_dynamicLoadout_F", _sid];
+			if (isClass(configFile >> "CfgVehicles" >> "GX_O_MQ8B_UAV_RECON")) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true,0.1] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				
+				_c pushBack format["%1GX_O_MQ8B_UAV_RECON", _sid];	
 				_p pushBack '';
 				_n pushBack '';
 				_o pushBack _unitsprise;
@@ -1815,7 +1886,60 @@ switch(_side) do {
 				_u pushBack _tech_level;
 				_f pushBack CTI_FACTORY_AIR;
 				_s pushBack "";
-				_d pushBack 10;		
+				_d pushBack 10;	
+				
+				_c pushBack format["%1GX_O_MQ8B_UAV_RECON_SEATED", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+				
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true,0.3] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				_c pushBack format["%1GX_O_MQ8B_UAV_ARMED", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+			};
+		};
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_tech_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
+			_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
+			
+			if (isClass(configFile >> "CfgVehicles" >> "rksla3_uav_rq7shadow_01_opfor")) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,false,0.04] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+
+				_c pushBack format["%1rksla3_uav_rq7shadow_01_opfor", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "AKBM_Gerbera_O")) then {
+				_unitsprise = [CTI_ECONOMY_PRIZE_AIR,_tech_level,false,0.05] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+				
+				_c pushBack format["%1AKBM_Gerbera_O", _sid];	
+				_p pushBack '';
+				_n pushBack '';
+				_o pushBack _unitsprise;
+				_t pushBack _building_time;
+				_u pushBack _tech_level;
+				_f pushBack CTI_FACTORY_AIR;
+				_s pushBack "";
+				_d pushBack 10;	
 			};
 		};
 	};

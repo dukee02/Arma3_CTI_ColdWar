@@ -66,6 +66,7 @@ CTI_BWADD_ID = 10;
 CTI_REDD_ID = 11;
 CTI_UKR_ID = 12;
 CTI_VME_ID = 13;
+//CTI_DRONE_ID = 14;	//support for some drone mods
 
 CTI_GEAR_TAB_PRIMARY = 0;
 CTI_GEAR_TAB_SECONDARY = 1;

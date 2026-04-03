@@ -1268,11 +1268,62 @@ switch(_side) do {
 					_c pushBack format["%1FIR_F35B_Arctic", _sid];
 				};		
 			};
-			//Community wish, vanilla drones for both sides for ballance
-			if((CTI_CUP_ADDON >= 1 || CTI_RHS_ADDON >= 1) && CTI_AIR_ADDON >= 0 ) then {
-				_c pushBack format["%1B_UAV_02_dynamicLoadout_F", _sid];	
+		};
+		
+		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		//_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_DRONE_ID] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [false,false,false,false,false,false,true,true,true];
+		
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+			if (isClass(configFile >> "CfgVehicles" >> "GX_B_MQ8B_UAV_RECON")) then {
+				
+				_c pushBack format["%1GX_B_MQ8B_UAV_RECON", _sid];	
+				_c pushBack format["%1GX_B_MQ8B_UAV_RECON_SEATED", _sid];	
+				_c pushBack format["%1GX_B_MQ8B_UAV_ARMED", _sid];	
 			};
 		};
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+			
+			if (isClass(configFile >> "CfgVehicles" >> "B_KVN_AP")) then {
+				_c pushBack format["%1B_KVN_AP", _sid];	
+				_c pushBack format["%1B_KVN_AP_TI", _sid];	
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "GX_B_RQ11B_UAV")) then {
+				_c pushBack format["%1GX_B_RQ11B_UAV", _sid];	
+				_c pushBack format["%1GX_B_HONEYBADGER_UGV_AT_BLACK", _sid];	
+				_c pushBack format["%1GX_B_HONEYBADGER_UGV_AT_GREEN", _sid];	
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "rksla3_uav_rq7shadow_01_blufor")) then {
+				_c pushBack format["%1rksla3_uav_rq7shadow_01_blufor", _sid];
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "MMM_UAV_Vampire")) then {
+				_c pushBack format["%1MMM_UAV_Vampire", _sid];
+			};
+		};
+
+		if (isClass(configFile >> "CfgVehicles" >> "GX_B_DRONE40_UAV_SMOKE_BLUE")) then {
+			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+			if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+			if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_BLUE", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_GREEN", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_ORANGE", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_PURPLE", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_RED", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_WHITE", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_SMOKE_YELLOW", _sid];
+			
+				_c pushBack format["%1GX_B_BLACKHORNET_UAV", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_HE", _sid];
+				_c pushBack format["%1GX_B_DRONE40_UAV_RECON", _sid];
+			};
+		};
+
+
 	};
 	case east: {
 		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
@@ -1391,9 +1442,58 @@ switch(_side) do {
 					_c pushBack format["%1AWS_SU34_TK_BOMBER", _sid];
 				};		
 			};
-			//Community wish, vanilla drones for both sides for ballance
-			if((CTI_CUP_ADDON >= 1 || CTI_RHS_ADDON >= 1) && CTI_AIR_ADDON >= 0 ) then {
-				_c pushBack format["%1O_UAV_02_dynamicLoadout_F", _sid];	
+		};
+		
+		_matrix_full = [_side, CTI_UPGRADE_AIR] call CTI_CO_FNC_GetTechmatrix;
+		//_matrix_nation = [_side, CTI_UPGRADE_AIR, CTI_US_ID, CTI_DRONE_ID] call CTI_CO_FNC_GetTechmatrix;
+		_matrix_nation = [false,false,false,false,false,false,true,true,true];
+		
+		_matrix_cnt = [0, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+
+			if (isClass(configFile >> "CfgVehicles" >> "GX_O_MQ8B_UAV_RECON")) then {
+				
+				_c pushBack format["%1GX_O_MQ8B_UAV_RECON", _sid];	
+				_c pushBack format["%1GX_O_MQ8B_UAV_RECON_SEATED", _sid];	
+				_c pushBack format["%1GX_O_MQ8B_UAV_ARMED", _sid];	
+			};
+		};
+		_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+		if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+		if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+			if (isClass(configFile >> "CfgVehicles" >> "O_KVN_AT")) then {
+				_c pushBack format["%1O_KVN_AT", _sid];	
+				_c pushBack format["%1O_KVN_AT_TI", _sid];	
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "GX_O_RQ11B_UAV")) then {
+				_c pushBack format["%1GX_O_RQ11B_UAV", _sid];	
+				_c pushBack format["%1GX_O_HONEYBADGER_UGV_AT", _sid];	
+			};
+
+			if (isClass(configFile >> "CfgVehicles" >> "rksla3_uav_rq7shadow_01_opfor")) then {
+				_c pushBack format["%1rksla3_uav_rq7shadow_01_opfor", _sid];
+			};
+			if (isClass(configFile >> "CfgVehicles" >> "AKBM_Gerbera_O")) then {
+				_c pushBack format["%1AKBM_Gerbera_O", _sid];
+			};
+		};
+
+		if (isClass(configFile >> "CfgVehicles" >> "GX_O_DRONE40_UAV_SMOKE_BLUE")) then {
+			_matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckCountUp;
+			if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
+			if(CTI_ECONOMY_LEVEL_AIR >= _level) then {
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_BLUE", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_GREEN", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_ORANGE", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_PURPLE", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_RED", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_WHITE", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_SMOKE_YELLOW", _sid];
+			
+				_c pushBack format["%1GX_O_BLACKHORNET_UAV", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_HE", _sid];
+				_c pushBack format["%1GX_O_DRONE40_UAV_RECON", _sid];
 			};
 		};
 	};

@@ -513,22 +513,39 @@ if(CTI_ECONOMY_LEVEL_WHEELED >= _tech_level) then {
 		_d pushBack 10;	
 	};
 
-	_c pushBack format["%1rhs_9k79", _sid];
-	_c pushBack format["%1rhs_9k79_K", _sid];
-	_c pushBack format["%1rhs_9k79_B", _sid];
-	//set all other vars in a slope
-	_cntstart = count _c;
-	_cntend = count _p;
-	_price_unit = [CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize;
-	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
-		_p pushBack '';
-		_n pushBack '';
-		_o pushBack _price_unit;
-		_t pushBack _building_time;
-		_u pushBack _tech_level;
-		_f pushBack CTI_FACTORY_LIGHT;
-		_s pushBack "";
-		_d pushBack 10;	
+	if(CTI_ARTILLERY_SETUP == -1) then {
+		_c pushBack format["%1rhs_9k79", _sid];
+		_c pushBack format["%1rhs_9k79_K", _sid];
+		//set all other vars in a slope
+		_cntstart = count _c;
+		_cntend = count _p;
+		_price_unit = [CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack _price_unit;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_LIGHT;
+			_s pushBack "";
+			_d pushBack 10;	
+		};
+		
+		_c pushBack format["%1rhs_9k79_B", _sid];		//Atomic
+		//set all other vars in a slope
+		_cntstart = count _c;
+		_cntend = count _p;
+		_price_unit = [CTI_ECONOMY_PRIZE_WHEELED,_tech_level,true,2.0] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+		for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+			_p pushBack '';
+			_n pushBack '';
+			_o pushBack _price_unit;
+			_t pushBack _building_time;
+			_u pushBack _tech_level;
+			_f pushBack CTI_FACTORY_LIGHT;
+			_s pushBack "";
+			_d pushBack 10;	
+		};
 	};
 };
 
@@ -1036,11 +1053,26 @@ if(CTI_ECONOMY_LEVEL_AIR >= _tech_level) then {
 	_building_time = [CTI_FACTORY_AIR,_tech_level] call CTI_CO_FNC_GetCalculatedBuildtime;
 	
 	_c pushBack format["%1RHS_Ka52_vvs", _sid];
-	_c pushBack format["%1rhs_pchela1t_vvs", _sid];//drone
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _p;
 	_price_unit = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true] call CTI_CO_FNC_GetCalculatedUnitsPrize;
+	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
+		_p pushBack '';
+		_n pushBack '';
+		_o pushBack _price_unit;
+		_t pushBack _building_time;
+		_u pushBack _tech_level;
+		_f pushBack CTI_FACTORY_HEAVY;
+		_s pushBack "";
+		_d pushBack 10;	
+	};
+
+	_c pushBack format["%1rhs_pchela1t_vvs", _sid];//drone
+	//set all other vars in a slope
+	_cntstart = count _c;
+	_cntend = count _p;
+	_price_unit = [CTI_ECONOMY_PRIZE_AIR,_tech_level,true,0.06] call CTI_CO_FNC_GetCalculatedUnitsPrize;
 	for [{ _i = 0 }, { _i < _cntstart-_cntend }, { _i = _i + 1 }] do { 
 		_p pushBack '';
 		_n pushBack '';
