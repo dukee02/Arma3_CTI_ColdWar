@@ -151,7 +151,7 @@ if(CTI_SOG_DLC > 0 && ([1227700] call CTI_CO_FNC_HasDLC)) then {		//Arma 3 Creat
 	if(CTI_US_SIDE >= 0) then {
 		if (CTI_P_SideJoined == west) then {(west) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_US_SOG.sqf"};
 	};
-	if(CTI_SOV_SIDE >= 0) then {
+	if(CTI_NVA_SIDE >= 0) then {
 		if (CTI_P_SideJoined == east) then {(east) call compile preprocessFileLineNumbers "Common\Config\Gear\Gear_NVA_SOG.sqf"};
 	};
 };
