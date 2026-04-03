@@ -225,7 +225,7 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.5,30,(556*45)] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
-_c pushBack "CUP_launch_M136";
+_c pushBack "CUP_launch_M136";		//[1976]
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
@@ -634,7 +634,7 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,30] call CTI_CO_FNC_GetC
 
 
 
-_c pushBack "CUP_launch_MAAWS";
+_c pushBack "CUP_launch_MAAWS";			//[1948] but M3: 1986
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 

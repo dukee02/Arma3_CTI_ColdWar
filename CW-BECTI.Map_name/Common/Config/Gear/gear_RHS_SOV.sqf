@@ -394,13 +394,41 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Launchers 																//
 //--------------------------------------------------------------------------------------------------------------------------//
-_c pushBack "rhs_weap_rpg18";
-_u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "rhs_rpg18_mag";
+_c pushBack "rhs_weap_rpg7";
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+_c pushBack "rhs_rpg7_type69_airburst_mag";
+_c pushBack "rhs_rpg7_PG7V_mag";	//[c.1961] 330 pen.
+_c pushBack "rhs_rpg7_PG7VS_mag";	//[c.1972] 250 pen + frag
+
+_c pushBack "rhs_rpg7_TBG7V_mag";	//[c.1988] Vakuum
+_c pushBack "rhs_rpg7_OG7V_mag";	//[c.1999] Frag
+
+//set all other vars in a slope
+_cntstart = count _c;
+_cntend = count _u;
+for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
+};
+
+_c pushBack "rhs_rpg7_PG7VM_mag";	//[c.1969] 400 pen.
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "rhs_rpg7_PG7VL_mag";	//[c.1977] 500–550 pen.
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "rhs_rpg7_PG7VR_mag";	//[c.1988] 600–700 pen.
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,450] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Uniforms																//
@@ -796,16 +824,16 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalc
 //--------------------------------------------------------------------------------------------------------------------------//
 //Optics
 //AK 
-_c pushBack"rhs_acc_rakursPM";			//1P76 Rakurs-PM RIS Collimator
-_c pushBack"rhs_acc_1p63";				//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_ekp1";				//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_ekp8_02";			//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_nita";				//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_okp7_dovetail";		//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_pkas";				//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_1p87";				//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_ekp8_18";			//Collimator Sight<br />Magnification: 1x
-_c pushBack"rhs_acc_okp7_picatinny";	//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_rakursPM";			//1P76 Rakurs-PM RIS Collimator
+_c pushBack "rhs_acc_1p63";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_ekp1";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_ekp8_02";			//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_nita";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_okp7_dovetail";		//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_pkas";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_1p87";				//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_ekp8_18";			//Collimator Sight<br />Magnification: 1x
+_c pushBack "rhs_acc_okp7_picatinny";	//Collimator Sight<br />Magnification: 1x
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -814,7 +842,13 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.5] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
-_c pushBack"rhs_acc_2dpZenit";			//2DP Zenit LED Flashlight
+_c pushBack "rhs_acc_2dpZenit";			//2DP Zenit LED Flashlight
+
+_c pushBack "rhs_acc_grip_ffg2";			//Grips & Bipods
+_c pushBack "rhs_acc_grip_rk2";
+_c pushBack "rhs_acc_grip_rk6";
+_c pushBack "rhs_acc_harris_swivel";
+
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -973,30 +1007,13 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //													Launchers 																//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-_c pushBack "rhs_weap_rpg7";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
-_c pushBack "rhs_rpg7_PG7VL_mag";
-_c pushBack "rhs_rpg7_PG7V_mag";
-_c pushBack "rhs_rpg7_PG7VM_mag";
-_c pushBack "rhs_rpg7_PG7VS_mag";
-_c pushBack "rhs_rpg7_PG7VR_mag";
-_c pushBack "rhs_rpg7_OG7V_mag";
-_c pushBack "rhs_rpg7_TBG7V_mag";
-_c pushBack "rhs_rpg7_type69_airburst_mag";
-//set all other vars in a slope
-_cntstart = count _c;
-_cntend = count _u;
-for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do { 
-	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
-};
+_c pushBack "rhs_weap_rpg18";	//[1972]
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
+_c pushBack "rhs_rpg18_mag";
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //													Vests																	//
@@ -1316,16 +1333,16 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //													Launchers 																//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-_c pushBack "rhs_weap_rpg26";
+_c pushBack "rhs_weap_rpg26";	//[1985]
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 _c pushBack "rhs_rpg26_mag";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-_c pushBack "rhs_weap_rshg2";
+_c pushBack "rhs_weap_rshg2";	//[1985] thermobaric
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 _c pushBack "rhs_rshg2_mag";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
@@ -1333,7 +1350,7 @@ _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_Get
 
 _c pushBack "rhs_weap_igla";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 _c pushBack "rhs_mag_9k38_rocket";
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);

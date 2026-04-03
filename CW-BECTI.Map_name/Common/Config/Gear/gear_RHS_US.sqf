@@ -291,11 +291,11 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //													Launchers																//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-_c pushBack "rhs_weap_M136";
+_c pushBack "rhs_weap_M136";			//[1976]
 _c pushBack "rhs_weap_M136_hedp";
 _c pushBack "rhs_weap_M136_hp";
 
-_c pushBack "rhs_weap_m72a7";
+_c pushBack "rhs_weap_m72a7";			//[1963]
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -789,7 +789,7 @@ _c pushBack "rhsusf_acc_wmx_bk";					//Weapon mounted light
 _c pushBack "rhsusf_acc_anpeq15_top";				//IR Laser
 _c pushBack "rhsusf_acc_anpeq15_bk_top";			//IR Laser
 
-//bipod
+//bipods and grips
 _c pushBack "rhsusf_acc_grip2";
 _c pushBack "rhsusf_acc_grip2_tan";
 _c pushBack "rhsusf_acc_grip2_wd";
@@ -805,6 +805,15 @@ _c pushBack "rhsusf_acc_tdstubby_blk";
 _c pushBack "rhsusf_acc_tdstubby_tan";
 _c pushBack "rhsusf_acc_grip3";
 _c pushBack "rhsusf_acc_grip3_tan";
+_c pushBack "rhsusf_acc_grip_m203_blk";
+_c pushBack "rhsusf_acc_grip_m203_d";
+_c pushBack "rhsusf_acc_grip_m203_wd";
+_c pushBack "rhsusf_acc_grip4";
+_c pushBack "rhsusf_acc_grip4_bipod";
+_c pushBack "rhsusf_acc_saw_lw_bipod";
+_c pushBack "rhsusf_acc_m14_bipod";
+_c pushBack "rhsusf_acc_saw_bipod";
+
 //set all other vars in a slope
 _cntstart = count _c;
 _cntend = count _u;
@@ -1178,9 +1187,9 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 //													Launchers																//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-_c pushBack "rhs_weap_maaws";
+_c pushBack "rhs_weap_maaws";			//[1948] but M3: 1986
 
-_c pushBack "rhs_weap_smaw";
+_c pushBack "rhs_weap_smaw";			//[1984]
 _c pushBack "rhs_weap_smaw_green";
 //set all other vars in a slope
 _cntstart = count _c;
@@ -1496,7 +1505,7 @@ _p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,0.33] call CTI_CO_FNC_GetC
 //													Launchers																//
 //--------------------------------------------------------------------------------------------------------------------------//
 
-_c pushBack "rhs_weap_fgm148";
+_c pushBack "rhs_weap_fgm148";		//[1989]
 _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 _c pushBack "rhs_fgm148_magazine_AT";

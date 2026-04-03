@@ -117,9 +117,6 @@ _u pushBack _tech_level;
 _p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 _c pushBack "CUP_PG7V_M";		//Monoblock-Hohlladung		R=300	P=280
-_c pushBack "CUP_PG7VM_M";		//Monoblock-Hohlladung		R=500	P=300–330
-_c pushBack "CUP_PG7VL_M";		//Monoblock-Hohlladung		R=300	P=500–550
-_c pushBack "CUP_PG7VR_M";		//Tandemhohlladung			R=200	P=600–700
 _c pushBack "CUP_OG7_M";		//Splitter					R=1000	P= -
 _c pushBack "CUP_TBG7V_M";		//Thermobar					R=300	P= -
 _c pushBack "RPG7_F";
@@ -130,6 +127,18 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
+
+_c pushBack "CUP_PG7VM_M";		//Monoblock-Hohlladung		R=500	P=300–330
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_PG7VL_M";		//Monoblock-Hohlladung		R=300	P=500–550
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+_c pushBack "CUP_PG7VR_M";		//Tandemhohlladung			R=200	P=600–700
+_u pushBack _tech_level;
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,450] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //															Wearables														//

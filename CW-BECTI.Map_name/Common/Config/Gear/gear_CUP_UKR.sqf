@@ -172,13 +172,11 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_u pushBack _tech_level;
 	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
 
-	_c pushBack "CUP_PG7V_M";			//Monoblock-Hohlladung		R=300	P=280
-	_c pushBack "CUP_PG7VM_M";			//Monoblock-Hohlladung		R=500	P=300–330
-	_c pushBack "CUP_PG7VL_M";			//Monoblock-Hohlladung		R=300	P=500–550
-	_c pushBack "CUP_PG7VR_M";			//Tandemhohlladung			R=200	P=600–700
-	_c pushBack "CUP_OG7_M";			//Splitter					R=1000	P= -
-	_c pushBack "CUP_TBG7V_M";			//Thermobar					R=300	P= -
+	_c pushBack "CUP_PG7V_M";			//[c.1961] Monoblock-Hohlladung		R=300	P=280
+	_c pushBack "CUP_OG7_M";			//[c.1999] Splitter					R=1000	P= -
+	_c pushBack "CUP_TBG7V_M";			//[c.1988] Thermobar				R=300	P= -
 	_c pushBack "RPG7_F";
+
 	//set all other vars in a slope
 	_cntstart = count _c;
 	_cntend = count _u;
@@ -186,6 +184,18 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 		_u pushBack _tech_level;
 		_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,150] call CTI_CO_FNC_GetCalculatedItemPrize);
 	};
+	
+	_c pushBack "CUP_PG7VM_M";		//Monoblock-Hohlladung		R=500	P=300–330
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+	_c pushBack "CUP_PG7VL_M";		//Monoblock-Hohlladung		R=300	P=500–550
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,300] call CTI_CO_FNC_GetCalculatedItemPrize);
+
+	_c pushBack "CUP_PG7VR_M";		//Tandemhohlladung			R=200	P=600–700
+	_u pushBack _tech_level;
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,450] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
 //--------------------------------------------------------------------------------------------------------------------------//
@@ -570,7 +580,7 @@ if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 //--------------------------------------------------------------------------------------------------------------------------//
 _c pushBack "CUP_launch_RPG26";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 //--------------------------------------------------------------------------------------------------------------------------//
 //															Wearables														//
@@ -652,12 +662,12 @@ for [{ _j = 0 }, { _j < _cntstart-_cntend }, { _j = _j + 1 }] do {
 if(CTI_CWR3_ADDON < 1) then {				//already defined in CWr3 mod
 	_c pushBack "CUP_launch_Igla";
 	_u pushBack _tech_level;
-	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+	_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 };
 
 _c pushBack "CUP_launch_Metis";
 _u pushBack _tech_level;
-_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level] call CTI_CO_FNC_GetCalculatedItemPrize);
+_p pushBack ([CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,2.0] call CTI_CO_FNC_GetCalculatedItemPrize);
 
 _c pushBack "CUP_AT13_M";
 _u pushBack _tech_level;
