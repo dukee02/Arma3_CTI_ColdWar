@@ -285,9 +285,11 @@ _matrix_cnt = [_matrix_cnt, _matrix_full, _matrix_nation] call CTI_CO_FNC_CheckC
 if(_matrix_cnt >= 0) then {_level = _matrix_cnt; _matrix_cnt = _matrix_cnt + 1;};
 if(CTI_ECONOMY_LEVEL_WHEELED >= _level) then {
 	_c pushBack format["%1rhs_typhoon_vdv", _sid];
-	_c pushBack format["%1rhs_9k79", _sid];
-	_c pushBack format["%1rhs_9k79_K", _sid];
-	_c pushBack format["%1rhs_9k79_B", _sid];
+	if(CTI_ARTILLERY_SETUP == -1) then {
+		_c pushBack format["%1rhs_9k79", _sid];
+		_c pushBack format["%1rhs_9k79_K", _sid];
+		_c pushBack format["%1rhs_9k79_B", _sid];		//Atomic
+	};
 };
 
 _priorUnits = missionNamespace getVariable format ["CTI_%1_%2Units", _side, CTI_LIGHT];
