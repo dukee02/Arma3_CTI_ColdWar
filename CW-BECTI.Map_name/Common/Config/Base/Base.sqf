@@ -3939,6 +3939,120 @@ if(CTI_SOG_DLC > 0) then {
 	_tiers pushBack 		_tech_level;
 };
 
+
+//******************************Ammoboxes*******************************************************************************************************
+_tech_level = 0;
+
+_priceMags = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,200] call CTI_CO_FNC_GetCalculatedItemPrize;
+_priceGear = [CTI_ECONOMY_PRIZE_EQUIPMENT,_tech_level,1.0,500] call CTI_CO_FNC_GetCalculatedItemPrize;
+_priceLauncher = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,10000] call CTI_CO_FNC_GetCalculatedItemPrize;
+_priceWeapon = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,3000] call CTI_CO_FNC_GetCalculatedItemPrize;
+_priceSpec = [CTI_ECONOMY_PRIZE_WEAPONS,_tech_level,1.0,2000] call CTI_CO_FNC_GetCalculatedItemPrize;
+
+switch (_side) do {
+	case west: {
+		if (CTI_RHS_ADDON > 0) then {
+
+			_headers pushBack 		"3Ya40";
+			_classes pushBack 		"rhs_3Ya40_1_single";
+			_prices pushBack 		_priceMags;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"7ya37";
+			_classes pushBack 		"rhs_7ya37_1_single";
+			_prices pushBack 		_priceMags;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"SOV mags";
+			_classes pushBack 		"rhs_mags_crate";
+			_prices pushBack 		_priceMags;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"SOV gear";
+			_classes pushBack 		"rhs_gear_crate";
+			_prices pushBack 		_priceGear;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"SOV launcher";
+			_classes pushBack 		"rhs_launcher_crate";
+			_prices pushBack 		_priceLauncher;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"SOV spec_weapons";
+			_classes pushBack 		"rhs_spec_weapons_crate";
+			_prices pushBack 		_priceSpec;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"SOV weapon";
+			_classes pushBack 		"rhs_weapon_crate";
+			_prices pushBack 		_priceWeapon;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+		};
+	};
+	case east: {
+		if (CTI_RHS_ADDON > 0) then {
+			_headers pushBack 		"US mags";
+			_classes pushBack 		"rhsusf_mags_crate";
+			_prices pushBack 		_priceMags;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"US gear";
+			_classes pushBack 		"rhsusf_gear_crate";
+			_prices pushBack 		_priceGear;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"US launcher";
+			_classes pushBack 		"rhsusf_launcher_crate";
+			_prices pushBack 		_priceLauncher;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"US spec weapons";
+			_classes pushBack 		"rhsusf_spec_weapons_crate";
+			_prices pushBack 		_priceSpec;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"US weapon";
+			_classes pushBack 		"rhsusf_weapon_crate";
+			_prices pushBack 		_priceWeapon;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+
+			_headers pushBack 		"US weapons";
+			_classes pushBack 		"rhsusf_weapons_crate";
+			_prices pushBack 		_priceWeapon;
+			_placements pushBack 	[180, 15];
+			_categories pushBack 	"Fortification";
+			_tiers pushBack 		_tech_level;
+		};
+	};
+	case resistance: {
+	};
+	default {};
+};
+
 [_side, _headers, _classes, _prices, _placements, _categories, _tiers] call compile preprocessFileLineNumbers "Common\Config\Base\Set_Defenses.sqf";
 
 //all units are declared, we update the possible upgrades
